@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SVG Selector</title>
+  <link href="tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      width: 360px;
+      min-height: 420px;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    .animate-spin {
+      animation: spin 1s linear infinite;
+    }
+  </style>
+</head>
+<body class="bg-white">
+  <div class="flex flex-col min-h-full">
+    <!-- Header -->
+    <div class="flex items-center justify-between p-4 border-b border-gray-200">
+      <div class="flex items-center space-x-2">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 5h18v14H3V5zm9 10l4-4-4-4M8 10l4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h1 class="text-lg font-semibold">SVG Selector</h1>
+      </div>
+      <div class="flex items-center space-x-3">
+        <div class="text-sm text-gray-500" id="counter">0 SVGs found</div>
+        <button id="refreshBtn" class="p-2 hover:bg-gray-100 rounded-full" title="Refresh SVGs">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="p-4">
+      <!-- Preview Area -->
+      <div class="border-2 border-dashed border-gray-200 rounded-lg p-4 mb-4 min-h-[200px] flex items-center justify-center relative">
+        <div id="loading" class="hidden absolute inset-0 bg-white bg-opacity-90 flex items-center justify-center">
+          <svg class="w-6 h-6 animate-spin" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div id="empty-state" class="hidden flex flex-col items-center justify-center space-y-3">
+          <p class="text-gray-400 text-center">No SVGs found on this page</p>
+          <button id="retryBtn" class="px-4 py-2 bg-black text-white rounded-md hover:bg-gray-800 flex items-center space-x-2">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Refresh SVGs</span>
+          </button>
+        </div>
+        <p id="no-preview" class="text-gray-400">Loading SVGs...</p>
+        <div id="preview" class="hidden w-full h-full flex items-center justify-center"></div>
+      </div>
+
+      <!-- Navigation Controls -->
+      <div class="flex justify-between mb-4">
+        <button id="prevBtn" class="px-4 py-2 bg-black text-white rounded-md hover:bg-gray-800 disabled:bg-gray-300 disabled:cursor-not-allowed">
+          Previous
+        </button>
+        <button id="nextBtn" class="px-4 py-2 bg-black text-white rounded-md hover:bg-gray-800 disabled:bg-gray-300 disabled:cursor-not-allowed">
+          Next
+        </button>
+      </div>
+
+      <!-- Download Controls -->
+      <div class="space-y-2">
+        <!-- Filename input -->
+        <div class="mb-2">
+          <input type="text" id="filenameInput" placeholder="Enter filename (without .svg)" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-black">
+        </div>
+
+        <!-- Color changer link -->
+        <div class="mb-2 text-sm text-gray-600">
+          Need to change SVG colors? <a href="https://app.clasicwebtools.com/tools/image/svg-color-changer" target="_blank" class="text-blue-600 hover:underline">Use SVG Color Changer</a>
+        </div>
+
+        <button id="downloadBtn" class="w-full py-2 bg-black text-white rounded-md hover:bg-gray-800 flex items-center justify-center space-x-2 disabled:bg-gray-300 disabled:cursor-not-allowed">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Download Current SVG</span>
+        </button>
+        <button id="downloadAllBtn" class="w-full py-2 border-2 border-black text-black rounded-md hover:bg-gray-100 flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4M9 9h6M9 13h6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Download All as ZIP</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <footer class="mt-6 text-center">
+    <hr class="border-gray-300 my-2">
+    <p class="text-sm text-gray-500">
+      <a href="https://github.com/Flozad" target="_blank" class="hover:underline">GitHub</a> |
+      <a href="https://clasicwebtools.com" target="_blank" class="hover:underline">My site</a> |
+      <a href="https://twitter.com/lozards" target="_blank" class="hover:underline">Twitter</a>
+    </p>
+  </footer>
+  <script src="popup.js"></script>
+</body>
+</html> 
