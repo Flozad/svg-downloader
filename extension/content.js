@@ -22,6 +22,17 @@ function collectSVGs() {
     content: img.src
   }))];
 
+  const seenContent = new Set();
+  
+  svgElements = svgElements.filter(svgElement => {
+    if (seenContent.has(svgElement.content)) {
+      return false;
+    }
+
+    seenContent.add(svgElement.content);
+    return true;
+  });
+
   console.log('Total SVGs found:', svgElements.length);
 
   // Send initial count to popup
