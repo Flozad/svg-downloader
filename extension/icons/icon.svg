@@ -1,5 +1,30 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
-  <rect width="48" height="48" rx="8" fill="black" stroke-width="2"/>
-  <path d="M24 14v14m0 0l-6-6m6 6l6-6" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-  <rect x="18" y="34" width="12" height="2" fill="white"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="128" y2="128" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1f5a3a"/>
+      <stop offset="1" stop-color="#143f29"/>
+    </linearGradient>
+    <linearGradient id="hi" x1="64" y1="0" x2="64" y2="128" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.14"/>
+      <stop offset="0.5" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- tile: the site's plotter green -->
+  <rect width="128" height="128" rx="30" fill="url(#bg)"/>
+  <rect width="128" height="128" rx="30" fill="url(#hi)"/>
+
+  <!-- the moving stroke: a vector pulled down into the tray -->
+  <g stroke="#fbf8f0" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M64 36 V72"/>
+    <path d="M44 58 L64 80 L84 58"/>
+    <path d="M42 96 H86"/>
+  </g>
+
+  <!-- anchor nodes: the drafting handles that define the path -->
+  <g fill="url(#bg)" stroke="#fbf8f0" stroke-width="4">
+    <rect x="58" y="30" width="12" height="12" rx="2"/>
+    <rect x="38" y="52" width="12" height="12" rx="2"/>
+    <rect x="78" y="52" width="12" height="12" rx="2"/>
+  </g>
 </svg>

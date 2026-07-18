@@ -1,0 +1,17 @@
+{
+  "name": "svg-downloader-extension",
+  "version": "1.3.0",
+  "private": true,
+  "description": "Chrome extension that extracts and downloads SVGs from any website.",
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "package": "bash scripts/package.sh"
+  },
+  "devDependencies": {
+    "jsdom": "^25.0.1",
+    "sharp": "^0.35.3",
+    "vitest": "^2.1.8"
+  }
+}

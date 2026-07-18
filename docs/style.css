@@ -1,0 +1,533 @@
+/* SVG Downloader — the "drafting table" system.
+   Warm bone stock, graphite ink, one plotter-green voice, and a signature drawn
+   from the thing the product is actually about: the vector path. Where a raster
+   site would reach for gradients and grain, this one reaches for the grid, the
+   ruled measurement, the anchor point and its Bézier handles. Hierarchy comes
+   from a hard contrast — a heavy grotesque display against a monospace technical
+   voice — and from hairlines and ticks, never from cards stacked on cards.
+
+   Two faces are self-hosted (no third-party origin at runtime):
+     Bricolage Grotesque — the engineered display cut, variable opsz+wght
+     Space Mono          — the drafting/coordinate voice: eyebrows, keys, ticks
+   Body rides a quiet humanist system sans so the two bundled faces stay loud. */
+
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  font-style: normal;
+  font-weight: 200 800;
+  font-stretch: 75% 100%;
+  font-display: swap;
+  src: url('fonts/bricolage-var.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Space Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/space-mono-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Space Mono';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/space-mono-700.woff2') format('woff2');
+}
+
+:root {
+  /* ── Paper & ink ──────────────────────────────────────────────────────── */
+  --paper: #ece4d3;         /* warm bone stock — the drafting sheet */
+  --paper-2: #e3d9c3;       /* a stop deeper — wells, footer */
+  --surface: #f6f1e6;       /* raised paper — panels, shot mounts */
+  --surface-hi: #fbf8f0;    /* the whitest paper the system allows */
+  --ink: #1b1a15;           /* warm graphite near-black */
+  --ink-2: #47443a;         /* softened ink — standfirst */
+  --dim: rgba(27, 26, 21, 0.62);
+  --dim-2: rgba(27, 26, 21, 0.40);
+  --line: rgba(27, 26, 21, 0.16);   /* hairline */
+  --line-2: rgba(27, 26, 21, 0.28); /* a ruled line you're meant to notice */
+  --tick: rgba(27, 26, 21, 0.34);   /* measurement ticks */
+
+  /* ── The one voice ────────────────────────────────────────────────────── */
+  --plot: #1f5a3a;          /* deep plotter green — links, marks, the accent */
+  --plot-bright: #2e8b57;   /* the live pen — active nodes, the moving stroke */
+  --plot-deep: #143f29;     /* pressed / on-ink */
+  --plot-wash: rgba(31, 90, 58, 0.10);
+  --plot-line: rgba(31, 90, 58, 0.30);
+
+  /* ── Geometry ─────────────────────────────────────────────────────────── */
+  --r-node: 3px;            /* anchor-square radius: the product is orthogonal */
+  --r-panel: 10px;
+  --r-pill: 999px;
+  --grid: 26px;             /* the drafting grid module */
+
+  /* Motion — decided curves, never the mushy defaults. */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-io: cubic-bezier(0.76, 0, 0.24, 1);
+
+  --sans: 'Inter var', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  --display: 'Bricolage Grotesque', 'Arial Narrow', var(--sans);
+  --mono: 'Space Mono', ui-monospace, 'SF Mono', SFMono-Regular, Menlo, monospace;
+
+  /* The blueprint grid: two hairline sets, ruled onto the paper itself. Felt,
+     not read — this is a drafting sheet, so the module is always faintly there. */
+  --sheet:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.55;
+  letter-spacing: -0.006em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+  background-color: var(--paper);
+  /* The sheet: a 26px grid, drawn faint and pinned so it reads as the surface
+     the whole page is drafted on rather than a decoration that scrolls with it. */
+  background-image: var(--sheet);
+  background-size: var(--grid) var(--grid);
+  background-position: center top;
+  background-attachment: fixed;
+}
+
+::selection { background: var(--plot-wash); }
+
+img, svg, video { display: block; max-width: 100%; }
+
+/* ── Measure ──────────────────────────────────────────────────────────────
+   Every text run rides the same 720px measure; media is allowed to break out. */
+.wrap { max-width: 720px; margin-inline: auto; padding-inline: 24px; }
+.bleed { max-width: 1040px; margin-inline: auto; padding-inline: 24px; }
+
+/* ── Type roles ───────────────────────────────────────────────────────────
+   The eyebrow is the drafting label: monospace, wide-tracked, prefixed with a
+   filled node so it reads as a marked point on the sheet. */
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--dim);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 22px;
+}
+.eyebrow::before {
+  content: '';
+  width: 7px; height: 7px;
+  background: var(--plot);
+  border-radius: 1px;              /* an anchor square, not a dot */
+  transform: rotate(0deg);
+  flex: none;
+}
+
+h1, h2, h3 {
+  font-family: var(--display);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.02;
+  margin: 0;
+  text-wrap: balance;
+}
+
+h2 {
+  font-size: clamp(30px, 5.2vw, 46px);
+  font-variation-settings: 'opsz' 40, 'wght' 620;
+  margin-bottom: 20px;
+}
+h3 {
+  font-size: clamp(21px, 2.6vw, 25px);
+  font-variation-settings: 'opsz' 24, 'wght' 600;
+  letter-spacing: -0.02em;
+}
+
+p { margin: 0 0 18px; }
+.standfirst {
+  font-family: var(--display);
+  font-weight: 400;
+  font-variation-settings: 'opsz' 32, 'wght' 440;
+  font-size: clamp(20px, 2.6vw, 25px);
+  line-height: 1.28;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 22px;
+}
+.lead { color: var(--ink-2); font-size: 18px; }
+.lead:last-child { margin-bottom: 0; }
+em { font-style: italic; color: var(--ink); }
+strong { font-weight: 600; }
+code, .kbd {
+  font-family: var(--mono);
+  font-size: 0.86em;
+  background: var(--plot-wash);
+  color: var(--plot-deep);
+  padding: 0.1em 0.4em;
+  border-radius: 4px;
+}
+a.inline {
+  color: var(--plot);
+  text-decoration: none;
+  border-bottom: 1px solid var(--plot-line);
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+a.inline:hover { border-color: var(--plot); background: var(--plot-wash); }
+
+/* ── Section rhythm ───────────────────────────────────────────────────────
+   Sections are separated by a ruled measurement line, not whitespace alone. */
+section { padding-block: clamp(72px, 11vw, 128px); position: relative; }
+.section-rule { border: 0; height: 0; }
+.section-rule::before {
+  content: '';
+  display: block;
+  max-width: 1040px;
+  margin-inline: auto;
+  border-top: 1px solid var(--line-2);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   NAV
+   ═════════════════════════════════════════════════════════════════════════ */
+.nav {
+  position: sticky; top: 0; z-index: 40;
+  display: flex; align-items: center; gap: 14px;
+  padding: 13px 24px;
+  background: color-mix(in srgb, var(--paper) 82%, transparent);
+  -webkit-backdrop-filter: saturate(140%) blur(14px);
+  backdrop-filter: saturate(140%) blur(14px);
+  border-bottom: 1px solid var(--line);
+}
+.brand { display: inline-flex; align-items: center; gap: 11px; text-decoration: none; color: var(--ink); }
+.mark { width: 26px; height: 26px; flex: none; }
+.brand strong {
+  font-family: var(--display);
+  font-size: 16px;
+  font-weight: 600;
+  font-variation-settings: 'opsz' 18, 'wght' 640;
+  letter-spacing: -0.02em;
+}
+.nav .spacer { flex: 1; }
+.nav-links { display: flex; align-items: center; gap: 2px; }
+.nav-links a {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--dim);
+  text-decoration: none;
+  padding: 7px 11px;
+  border-radius: var(--r-node);
+  transition: color 0.18s ease, background-color 0.18s ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .nav-links a:hover { color: var(--ink); background: var(--plot-wash); }
+}
+.nav-links .at-only { display: none; }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   HERO
+   ═════════════════════════════════════════════════════════════════════════ */
+.hero { padding: clamp(64px, 11vw, 120px) 0 clamp(40px, 7vw, 72px); position: relative; overflow: hidden; }
+.hero .wrap { position: relative; z-index: 2; }
+
+/* The signature ornament: a Bézier segment with its anchor squares and control
+   handles, plotted large behind the hero. This is the identity's whole idea —
+   the page draws the same object the product downloads. */
+.hero-plot {
+  position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  opacity: 0.9;
+  -webkit-mask-image: linear-gradient(180deg, #000 55%, transparent);
+  mask-image: linear-gradient(180deg, #000 55%, transparent);
+}
+.hero-plot .curve {
+  fill: none;
+  stroke: var(--plot);
+  stroke-width: 2;
+  stroke-dasharray: 1400;
+  stroke-dashoffset: 1400;
+  animation: draw 2.4s var(--ease-io) 0.15s forwards;
+}
+.hero-plot .handle { stroke: var(--plot-line); stroke-width: 1.25; }
+.hero-plot .ctrl { fill: var(--surface-hi); stroke: var(--plot); stroke-width: 1.5; }
+.hero-plot .anchor { fill: var(--plot); }
+.hero-plot .node-pop { opacity: 0; animation: pop 0.5s var(--ease-out) forwards; }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+@keyframes pop { to { opacity: 1; } }
+
+.hero h1 {
+  font-size: clamp(42px, 8.2vw, 82px);
+  font-variation-settings: 'opsz' 72, 'wght' 640;
+  letter-spacing: -0.045em;
+  line-height: 0.96;
+  margin-bottom: 26px;
+  animation: rise 0.8s var(--ease-out) both;
+}
+.hero h1 .plot { color: var(--plot); }
+.hero .lede {
+  font-size: clamp(18px, 2.3vw, 21px);
+  line-height: 1.5;
+  color: var(--ink-2);
+  max-width: 34em;
+  margin-bottom: 32px;
+  animation: rise 0.8s var(--ease-out) 0.08s both;
+}
+@keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+
+.cta { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; animation: rise 0.8s var(--ease-out) 0.16s both; }
+.btn {
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  display: inline-flex; align-items: center; gap: 9px;
+  padding: 13px 20px;
+  border-radius: var(--r-node);
+  transition: transform 0.16s var(--ease-out), background-color 0.2s ease, box-shadow 0.2s ease;
+}
+.btn:active { transform: translateY(1px) scale(0.99); }
+.btn.primary {
+  background: var(--plot); color: var(--surface-hi);
+  box-shadow: 0 1px 0 var(--plot-deep), 0 10px 24px -12px rgba(20, 63, 41, 0.6);
+}
+.btn.primary:hover { background: var(--plot-deep); }
+.btn.quiet { color: var(--ink); border: 1px solid var(--line-2); background: transparent; }
+.btn.quiet:hover { background: var(--surface); border-color: var(--ink); }
+.btn svg { width: 15px; height: 15px; }
+
+.hero-meta {
+  margin-top: 26px;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  color: var(--dim);
+  display: flex; flex-wrap: wrap; gap: 8px 18px;
+  animation: rise 0.8s var(--ease-out) 0.24s both;
+}
+.hero-meta span { display: inline-flex; align-items: center; gap: 7px; }
+.hero-meta span::before { content: '+'; color: var(--plot); font-weight: 700; }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SHOT FRAME — the drafting mount: a recording pinned to the sheet with corner
+   ticks and a coordinate label, the way a plate is registered on a light table.
+   ═════════════════════════════════════════════════════════════════════════ */
+.shot { margin: 0; position: relative; }
+.shot-mount {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--line-2);
+  border-radius: var(--r-panel);
+  padding: 12px;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.5) inset, 0 30px 60px -40px rgba(27, 26, 21, 0.5);
+}
+.shot-mount video, .shot-mount img {
+  width: 100%; height: auto; display: block;
+  border-radius: 5px;
+  background: #f4f4f5;   /* the product's own paper, so a poster never flashes bone */
+}
+/* Registration ticks at each corner of the mount. */
+.shot-mount::before, .shot-mount::after {
+  content: ''; position: absolute; width: 12px; height: 12px; pointer-events: none;
+  border-color: var(--tick); border-style: solid; border-width: 0;
+}
+.shot-mount::before { top: -1px; left: -1px; border-top-width: 1px; border-left-width: 1px; }
+.shot-mount::after  { bottom: -1px; right: -1px; border-bottom-width: 1px; border-right-width: 1px; }
+.shot-tag {
+  position: absolute; top: -10px; right: 16px; z-index: 2;
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--dim); background: var(--paper); padding: 2px 9px; border: 1px solid var(--line);
+  border-radius: var(--r-pill);
+}
+.shot-cap {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  color: var(--dim);
+  margin-top: 14px;
+  padding-left: 16px;
+  position: relative;
+}
+.shot-cap::before {
+  content: ''; position: absolute; left: 0; top: 6px; bottom: 6px; width: 2px;
+  background: var(--plot-line);
+}
+.shot-cap code { background: none; color: var(--plot-deep); padding: 0; }
+
+/* The demo sits right under the hero; it's allowed the wide measure. */
+.demo .eyebrow { justify-content: flex-start; }
+.demo-head { text-align: center; margin-bottom: 30px; }
+.demo-head .eyebrow { display: inline-flex; margin-bottom: 0; }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   STEPS — the interactions, numbered. A coordinate dial on the rail, the copy
+   and its clip in the body.
+   ═════════════════════════════════════════════════════════════════════════ */
+.steps { list-style: none; margin: 40px 0 0; padding: 0; display: grid; gap: clamp(56px, 8vw, 88px); }
+.step { display: grid; grid-template-columns: 64px 1fr; gap: 22px; align-items: start; }
+.dial {
+  position: relative; width: 64px; height: 64px; flex: none;
+  font-family: var(--mono); font-weight: 700; font-size: 16px; color: var(--plot);
+  display: grid; place-items: center;
+}
+.dial svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.dial .ring { fill: none; stroke: var(--line-2); stroke-width: 1.5; }
+.dial .arc {
+  fill: none; stroke: var(--plot); stroke-width: 2.5; stroke-linecap: round;
+  transform: rotate(-90deg); transform-origin: center;
+}
+.dial b { position: relative; z-index: 1; }
+.step h3 { margin-bottom: 12px; }
+.step p { color: var(--ink-2); margin-bottom: 22px; max-width: 40em; }
+.step .shot { margin-top: 4px; }
+
+.coda {
+  font-family: var(--mono); font-size: 13px; letter-spacing: 0.02em; color: var(--dim);
+  margin-top: 40px; padding: 16px 20px; border: 1px dashed var(--line-2); border-radius: var(--r-node);
+  display: inline-flex; align-items: center; gap: 12px;
+}
+.coda b { color: var(--plot); font-weight: 700; }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SPECIMEN — the problem section's figure: an SVG shown the two ways, so the
+   argument (vector, not raster) is drawn rather than asserted.
+   ═════════════════════════════════════════════════════════════════════════ */
+.specimen {
+  margin: 34px 0 8px; display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+  border: 1px solid var(--line-2); border-radius: var(--r-panel); overflow: hidden;
+  background: var(--surface);
+}
+.specimen > div { padding: 30px 26px; position: relative; }
+.specimen > div + div { border-left: 1px solid var(--line-2); }
+.specimen .sv-label {
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--dim); margin-bottom: 18px;
+}
+.specimen .sv-label b { color: var(--ink); font-weight: 700; }
+.specimen figure { margin: 0; display: grid; place-items: center; height: 96px; }
+.specimen svg { width: 76px; height: 76px; }
+.specimen .raster { image-rendering: pixelated; filter: none; }
+.specimen figcaption {
+  font-family: var(--mono); font-size: 11px; color: var(--dim-2); text-align: center; margin-top: 16px;
+  letter-spacing: 0.02em;
+}
+.specimen .bad { color: color-mix(in srgb, var(--ink) 60%, #9a3b26); }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SPEC SHEET — the focuses. A ruled table, mono keys, no card grid (the product
+   is a plain list of facts; it should look like one).
+   ═════════════════════════════════════════════════════════════════════════ */
+.specs { margin: 36px 0 0; border-top: 1px solid var(--line-2); }
+.specs > div {
+  display: grid; grid-template-columns: 200px 1fr; gap: 28px;
+  padding: 26px 4px; border-bottom: 1px solid var(--line);
+  align-items: baseline;
+}
+.specs dt {
+  font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--plot); display: flex; align-items: center; gap: 11px;
+}
+.specs dt .glyph { width: 22px; height: 22px; flex: none; }
+.specs dd { margin: 0; }
+.specs h3 { font-size: 19px; margin-bottom: 7px; font-variation-settings: 'opsz' 20, 'wght' 620; }
+.specs p { color: var(--ink-2); margin: 0; font-size: 16px; }
+
+/* ── Callout (a pulled statement) ── */
+.callout {
+  margin: 30px 0; padding: 26px 28px;
+  border-left: 3px solid var(--plot);
+  background: var(--surface);
+  border-radius: 0 var(--r-panel) var(--r-panel) 0;
+}
+.callout p {
+  font-family: var(--display); font-weight: 440; font-variation-settings: 'opsz' 28, 'wght' 460;
+  font-size: 20px; line-height: 1.36; letter-spacing: -0.015em; color: var(--ink); margin: 0;
+}
+
+.mt { margin-top: 20px; }
+
+/* The build pipeline, set as a title block from a drawing — mono, ruled, the
+   output paths marked in the green. */
+.pipeline {
+  margin-top: 30px;
+  font-family: var(--mono);
+  font-size: 13px;
+  line-height: 2.1;
+  letter-spacing: 0.01em;
+  color: var(--ink-2);
+  background: var(--surface);
+  border: 1px solid var(--line-2);
+  border-radius: var(--r-node);
+  padding: 22px 24px;
+  overflow-x: auto;
+}
+.pipeline .pl-root { color: var(--ink); font-weight: 700; }
+.pipeline .pl-branch { color: var(--dim); }
+.pipeline .pl-out { color: var(--plot); font-weight: 700; }
+.pipeline .pl-dim { color: var(--dim-2); }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   FOOTER — a colophon, signed like a drawing's title block.
+   ═════════════════════════════════════════════════════════════════════════ */
+footer { background: var(--paper-2); border-top: 1px solid var(--line-2); }
+.colophon { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; padding-block: 56px 24px; }
+.colophon-brand .mark { width: 34px; height: 34px; margin-bottom: 16px; }
+.colophon-brand .wordmark {
+  font-family: var(--display); font-size: 22px; font-variation-settings: 'opsz' 24, 'wght' 660;
+  letter-spacing: -0.03em; margin: 0 0 8px;
+}
+.colophon-brand .line { color: var(--dim); font-size: 15px; margin: 0; max-width: 34ch; }
+.title-block { border: 1px solid var(--line-2); border-radius: var(--r-node); align-self: start; }
+.title-block > div {
+  display: grid; grid-template-columns: 1fr 1.3fr; font-family: var(--mono); font-size: 12px;
+}
+.title-block > div + div { border-top: 1px solid var(--line); }
+.title-block dt { padding: 10px 14px; color: var(--dim); letter-spacing: 0.06em; text-transform: uppercase; border-right: 1px solid var(--line); }
+.title-block dd { padding: 10px 14px; margin: 0; color: var(--ink); }
+.colophon-foot {
+  display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+  padding-block: 20px 40px; border-top: 1px solid var(--line);
+  font-family: var(--mono); font-size: 12px; color: var(--dim); letter-spacing: 0.02em;
+}
+.colophon-foot a { color: var(--dim); text-decoration: none; }
+.colophon-foot a:hover { color: var(--plot); }
+.colophon-foot .grow { flex: 1; }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   MOTION-IN — sections rise as they enter. Gated on a class the player adds.
+   ═════════════════════════════════════════════════════════════════════════ */
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out); }
+.reveal.in { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; animation-delay: 0ms !important; transition-duration: 0.001ms !important; }
+  .hero-plot .curve { stroke-dashoffset: 0; }
+  .reveal { opacity: 1; transform: none; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   RESPONSIVE
+   ═════════════════════════════════════════════════════════════════════════ */
+@media (max-width: 720px) {
+  body { font-size: 16px; }
+  .nav-links .at-only { display: none; }
+  .step { grid-template-columns: 1fr; gap: 14px; }
+  .dial { width: 52px; height: 52px; }
+  .specimen { grid-template-columns: 1fr; }
+  .specimen > div + div { border-left: 0; border-top: 1px solid var(--line-2); }
+  .specs > div { grid-template-columns: 1fr; gap: 10px; }
+  .colophon { grid-template-columns: 1fr; gap: 28px; }
+  .title-block > div { grid-template-columns: 1fr 1.2fr; }
+}
+@media (max-width: 480px) {
+  .nav-links a { padding: 7px 8px; }
+}

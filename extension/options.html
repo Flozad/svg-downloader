@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>SVG Downloader — Settings</title>
+  <link href="options.css" rel="stylesheet">
+</head>
+<body>
+  <svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+    <defs>
+      <g id="mark-art">
+        <rect width="48" height="48" rx="10" fill="var(--plot)"/>
+        <path d="M24 13v15m0 0l-6.5-6.5M24 28l6.5-6.5" fill="none" stroke="var(--surface-hi)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="16.5" y="33.5" width="15" height="2.4" rx="1.2" fill="var(--surface-hi)"/>
+      </g>
+    </defs>
+  </svg>
+
+  <main class="sheet">
+    <header class="masthead">
+      <a class="brand" href="https://clasicwebtools.com" target="_blank" rel="noopener">
+        <svg class="mark" viewBox="0 0 48 48" aria-hidden="true"><use href="#mark-art"/></svg>
+        <span>
+          <strong>SVG&nbsp;Downloader</strong>
+          <em>Settings</em>
+        </span>
+      </a>
+      <p class="masthead-note">Preferences sync with your browser. Nothing leaves your machine.</p>
+    </header>
+
+    <form id="settingsForm">
+      <!-- ── Naming ── -->
+      <section class="group">
+        <p class="eyebrow">01 — Naming</p>
+        <div class="rows">
+          <div class="row">
+            <div class="row-key">
+              <label for="filenamePrefix">Filename prefix</label>
+              <p class="row-desc">Used when a download has no name of its own, as <code>prefix-1.svg</code>.</p>
+            </div>
+            <div class="row-control">
+              <span class="input-affix">
+                <input type="text" id="filenamePrefix" autocomplete="off" spellcheck="false" placeholder="svg">
+                <span class="affix">-1.svg</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="row-key">
+              <label for="zipName">ZIP archive name</label>
+              <p class="row-desc">The file you get from <code>Download all as ZIP</code>.</p>
+            </div>
+            <div class="row-control">
+              <span class="input-affix">
+                <input type="text" id="zipName" autocomplete="off" spellcheck="false" placeholder="all-svgs">
+                <span class="affix">.zip</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Behaviour ── -->
+      <section class="group">
+        <p class="eyebrow">02 — Behaviour</p>
+        <div class="rows">
+          <div class="row">
+            <div class="row-key">
+              <label for="autoScan">Scan on open</label>
+              <p class="row-desc">Count and preview SVGs the moment the popup opens. Turn off to scan manually.</p>
+            </div>
+            <div class="row-control">
+              <button type="button" class="switch" id="autoScan" role="switch" aria-checked="true">
+                <span class="switch-track"><span class="switch-thumb"></span></span>
+              </button>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="row-key">
+              <label for="showColorLink">Show colour hand-off</label>
+              <p class="row-desc">Show the link to the SVG Color Changer under the download buttons.</p>
+            </div>
+            <div class="row-control">
+              <button type="button" class="switch" id="showColorLink" role="switch" aria-checked="true">
+                <span class="switch-track"><span class="switch-thumb"></span></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="bar">
+        <button type="button" id="resetBtn" class="btn btn-quiet">Reset to defaults</button>
+        <span class="grow"></span>
+        <span class="saved" id="savedFlag" hidden>Saved</span>
+        <button type="submit" id="saveBtn" class="btn btn-primary">Save changes</button>
+      </div>
+    </form>
+
+    <footer class="colophon">
+      <a href="https://github.com/Flozad/svg-downloader" target="_blank" rel="noopener">GitHub</a>
+      <span class="dot">·</span>
+      <a href="https://clasicwebtools.com" target="_blank" rel="noopener">clasicwebtools</a>
+      <span class="grow"></span>
+      <span class="sig">Bone stock · graphite · one plotter green</span>
+    </footer>
+  </main>
+
+  <script type="module" src="options.js"></script>
+</body>
+</html>

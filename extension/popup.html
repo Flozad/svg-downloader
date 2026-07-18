@@ -1,118 +1,134 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>SVG Downloader & Extractor</title>
-  <link href="lib/tailwind.min.css" rel="stylesheet">
-  <style>
-    body {
-      width: 360px;
-      min-height: 420px;
-    }
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-    .animate-spin {
-      animation: spin 1s linear infinite;
-    }
-    .preview-container {
-      height: 200px;
-    }
-    #preview svg {
-      max-width: 100%;
-      max-height: 100%;
-      width: auto;
-      height: auto;
-      display: block;
-    }
-  </style>
+  <meta charset="utf-8">
+  <title>SVG Downloader &amp; Extractor</title>
+  <link href="popup.css" rel="stylesheet">
 </head>
-<body class="bg-white">
-  <div class="flex flex-col min-h-full">
-    <!-- Header -->
-    <div class="flex items-center justify-between p-4 border-b border-gray-200">
-      <div class="flex items-center space-x-2">
-        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M3 5h18v14H3V5zm9 10l4-4-4-4M8 10l4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <h1 class="text-lg font-semibold">SVG Selector</h1>
-      </div>
-      <div class="flex items-center space-x-3">
-        <div class="text-sm text-gray-500" id="counter">0 SVGs found</div>
-        <button id="refreshBtn" class="p-2 hover:bg-gray-100 rounded-full" title="Refresh SVGs">
-          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-            <path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<body>
+  <!-- Shared vector defs: the product mark and a bare download glyph, drawn once. -->
+  <svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+    <defs>
+      <g id="mark-art">
+        <rect width="48" height="48" rx="10" fill="var(--plot)"/>
+        <path d="M24 13v15m0 0l-6.5-6.5M24 28l6.5-6.5" fill="none" stroke="var(--surface-hi)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="16.5" y="33.5" width="15" height="2.4" rx="1.2" fill="var(--surface-hi)"/>
+      </g>
+      <g id="arrow-art">
+        <path d="M24 12v16m0 0l-7-7m7 7l7-7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="16" y="34" width="16" height="2.6" rx="1.3" fill="currentColor"/>
+      </g>
+    </defs>
+  </svg>
+
+  <div class="panel">
+    <!-- ── Header ── -->
+    <header class="head">
+      <a class="brand" href="#">
+        <svg class="mark" viewBox="0 0 48 48" aria-hidden="true"><use href="#mark-art"/></svg>
+        <strong>SVG&nbsp;Downloader</strong>
+      </a>
+      <div class="head-tools">
+        <span class="counter" id="counter">0 found</span>
+        <button id="refreshBtn" class="icon-btn" title="Rescan this page" aria-label="Rescan this page">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+            <path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <button id="settingsBtn" class="icon-btn" title="Settings" aria-label="Settings">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+            <circle cx="12" cy="12" r="3" stroke-width="1.8"/>
+            <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06A1.65 1.65 0 004.6 15a1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06A1.65 1.65 0 009 4.6a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06A1.65 1.65 0 0019.4 9c.14.31.22.65.22 1s-.08.69-.22 1z" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </button>
       </div>
-    </div>
+    </header>
 
-    <div class="p-4">
-      <!-- Preview Area -->
-      <div class="preview-container border-2 border-dashed border-gray-200 rounded-lg p-4 mb-4 overflow-hidden flex items-center justify-center relative">
-        <div id="loading" class="hidden absolute inset-0 bg-white bg-opacity-90 flex items-center justify-center">
-          <svg class="w-6 h-6 animate-spin" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-            <path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <div class="body">
+      <!-- ── Preview mount ── -->
+      <figure class="mount">
+        <span class="mount-tag" id="mountTag">preview</span>
+
+        <div id="loading" class="hidden overlay">
+          <svg class="spinner" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+            <path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
-        <div id="empty-state" class="hidden flex flex-col items-center justify-center space-y-3">
-          <p class="text-gray-400 text-center">No SVGs found on this page</p>
-          <button id="retryBtn" class="px-4 py-2 bg-black text-white rounded-md hover:bg-gray-800 flex items-center space-x-2">
-            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+        <div id="empty-state" class="hidden empty">
+          <svg class="empty-glyph" viewBox="0 0 48 48" aria-hidden="true"><use href="#mark-art"/></svg>
+          <p>No SVGs found on this page</p>
+          <button id="retryBtn" class="btn btn-quiet btn-sm">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+              <path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
-            <span>Refresh SVGs</span>
+            <span>Scan page</span>
           </button>
         </div>
-        <p id="no-preview" class="text-gray-400">Loading SVGs...</p>
-        <div id="preview" class="hidden w-full h-full overflow-hidden flex items-center justify-center"></div>
+
+        <p id="no-preview" class="loading-label">Loading SVGs&hellip;</p>
+        <div id="preview" class="hidden preview"></div>
+      </figure>
+
+      <!-- ── Pager ── -->
+      <div class="pager">
+        <button id="prevBtn" class="btn btn-quiet">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M15 18l-6-6 6-6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Prev</span>
+        </button>
+        <span class="pager-pos" id="pagerPos">—</span>
+        <button id="nextBtn" class="btn btn-quiet">
+          <span>Next</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
       </div>
 
-      <!-- Navigation Controls -->
-      <div class="flex justify-between mb-4">
-        <button id="prevBtn" class="px-4 py-2 bg-black text-white rounded-md hover:bg-gray-800 disabled:bg-gray-300 disabled:cursor-not-allowed">
-          Previous
+      <!-- ── Filename ── -->
+      <label class="field">
+        <span class="field-key">Filename</span>
+        <span class="field-input">
+          <input type="text" id="filenameInput" placeholder="star" autocomplete="off" spellcheck="false">
+          <span class="field-ext">.svg</span>
+        </span>
+      </label>
+
+      <!-- ── Actions ── -->
+      <div class="actions">
+        <button id="downloadBtn" class="btn btn-primary">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><use href="#arrow-art"/></svg>
+          <span>Download current</span>
         </button>
-        <button id="nextBtn" class="px-4 py-2 bg-black text-white rounded-md hover:bg-gray-800 disabled:bg-gray-300 disabled:cursor-not-allowed">
-          Next
-        </button>
-      </div>
-
-      <!-- Download Controls -->
-      <div class="space-y-2">
-        <!-- Filename input -->
-        <div class="mb-2">
-          <input type="text" id="filenameInput" placeholder="Enter filename (without .svg)" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-black">
-        </div>
-
-        <!-- Color changer link -->
-        <div class="mb-2 text-sm text-gray-600">
-          Need to change SVG colors? <a href="https://app.clasicwebtools.com/tools/image/svg-color-changer" target="_blank" class="text-blue-600 hover:underline">Use SVG Color Changer</a>
-        </div>
-
-        <button id="downloadBtn" class="w-full py-2 bg-black text-white rounded-md hover:bg-gray-800 flex items-center justify-center space-x-2 disabled:bg-gray-300 disabled:cursor-not-allowed">
-          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-            <path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <button id="downloadAllBtn" class="btn btn-quiet">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+            <path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4M9 9h6M9 13h6" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-          <span>Download Current SVG</span>
-        </button>
-        <button id="downloadAllBtn" class="w-full py-2 border-2 border-black text-black rounded-md hover:bg-gray-100 flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed">
-          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-            <path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4M9 9h6M9 13h6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <span>Download All as ZIP</span>
+          <span>Download all as ZIP</span>
         </button>
       </div>
+
+      <!-- Non-destructive status line for ZIP outcomes (partial / full success). -->
+      <p id="status" class="status hidden" role="status"></p>
+
+      <!-- ── Color hand-off ── -->
+      <p class="handoff" id="colorLink">
+        Need a different colour?
+        <a href="https://app.clasicwebtools.com/tools/image/svg-color-changer" target="_blank" rel="noopener">Open SVG Color Changer</a>
+      </p>
     </div>
+
+    <!-- ── Colophon ── -->
+    <footer class="foot">
+      <a href="https://github.com/Flozad" target="_blank" rel="noopener">GitHub</a>
+      <span class="dot">·</span>
+      <a href="https://clasicwebtools.com" target="_blank" rel="noopener">clasicwebtools</a>
+      <span class="dot">·</span>
+      <a href="https://twitter.com/lozards" target="_blank" rel="noopener">Twitter</a>
+      <span class="grow"></span>
+      <span class="sig">on&nbsp;device</span>
+    </footer>
   </div>
-  <footer class="mt-6 text-center">
-    <hr class="border-gray-300 my-2">
-    <p class="text-sm text-gray-500">
-      <a href="https://github.com/Flozad" target="_blank" class="hover:underline">GitHub</a> |
-      <a href="https://clasicwebtools.com" target="_blank" class="hover:underline">My site</a> |
-      <a href="https://twitter.com/lozards" target="_blank" class="hover:underline">Twitter</a>
-    </p>
-  </footer>
+
   <script src="lib/jszip.min.js"></script>
-  <script src="popup.js"></script>
+  <script type="module" src="popup.js"></script>
 </body>
-</html> 
+</html>

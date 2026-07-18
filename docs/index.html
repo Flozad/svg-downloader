@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SVG Downloader — Save the real vector. Not a screenshot of it.</title>
+<meta name="description" content="A Chrome extension that finds every SVG on any page — inline icons, image SVGs, CSS backgrounds and sprites — previews each one, and downloads the original vector, or all of them as a ZIP.">
+<meta name="theme-color" content="#ece4d3">
+<meta property="og:title" content="SVG Downloader & Extractor">
+<meta property="og:description" content="Find every SVG on any page, preview each one, and save the original vector — one at a time, or all of them as a ZIP.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="motion/06-brand.png">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/bricolage-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ── Shared vector defs: the mark, drawn once and referenced everywhere ── -->
+<svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+  <defs>
+    <!-- The mark: the product's own icon — a tray with a vector dropping into it —
+         recut in the site's green so the chrome wears the site's voice while the
+         recordings keep the product's true black. -->
+    <g id="mark-art">
+      <rect width="48" height="48" rx="10" fill="var(--plot)"/>
+      <path d="M24 13v15m0 0l-6.5-6.5M24 28l6.5-6.5" fill="none" stroke="var(--surface-hi)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="16.5" y="33.5" width="15" height="2.4" rx="1.2" fill="var(--surface-hi)"/>
+    </g>
+    <!-- A bare download glyph for buttons that already carry their own ground. -->
+    <g id="arrow-art">
+      <path d="M24 12v16m0 0l-7-7m7 7l7-7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="16" y="34" width="16" height="2.6" rx="1.3" fill="currentColor"/>
+    </g>
+  </defs>
+</svg>
+
+<!-- ═══════════════════════════════ NAV ═══════════════════════════════ -->
+<nav class="nav">
+  <a class="brand" href="#top">
+    <svg class="mark" viewBox="0 0 48 48" aria-hidden="true"><use href="#mark-art"/></svg>
+    <strong>SVG&nbsp;Downloader</strong>
+  </a>
+  <span class="spacer"></span>
+  <span class="nav-links">
+    <a href="#why">Why</a>
+    <a href="#how">How it works</a>
+    <a href="#details">Details</a>
+    <a href="#made">Remotion</a>
+    <a href="#privacy">Privacy</a>
+  </span>
+</nav>
+
+<!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
+<header class="hero" id="top">
+  <!-- The signature: a Bézier segment drawn with its anchor squares and control
+       handles — the exact object the extension pulls off a page, plotted large.
+       pathLength is pinned so the CSS draw-on works regardless of real length. -->
+  <svg class="hero-plot" viewBox="0 0 1280 620" preserveAspectRatio="xMidYMin slice" aria-hidden="true">
+    <g class="handle" stroke-dasharray="4 5">
+      <line x1="120" y1="440" x2="330" y2="150"/>
+      <line x1="820" y1="290" x2="580" y2="540"/>
+      <line x1="820" y1="290" x2="1010" y2="150"/>
+      <line x1="1220" y1="210" x2="1120" y2="380"/>
+    </g>
+    <path class="curve" pathLength="1400"
+      d="M120 440 C330 150 580 540 820 290 C1010 150 1120 380 1220 210"/>
+    <g>
+      <circle class="ctrl node-pop" style="animation-delay:1.2s" cx="330" cy="150" r="6"/>
+      <circle class="ctrl node-pop" style="animation-delay:1.5s" cx="580" cy="540" r="6"/>
+      <circle class="ctrl node-pop" style="animation-delay:2s" cx="1010" cy="150" r="6"/>
+      <circle class="ctrl node-pop" style="animation-delay:2.3s" cx="1120" cy="380" r="6"/>
+      <rect class="anchor node-pop" style="animation-delay:0.9s" x="112" y="432" width="16" height="16" rx="2"/>
+      <rect class="anchor node-pop" style="animation-delay:1.8s" x="812" y="282" width="16" height="16" rx="2"/>
+      <rect class="anchor node-pop" style="animation-delay:2.5s" x="1212" y="202" width="16" height="16" rx="2"/>
+    </g>
+  </svg>
+
+  <div class="wrap">
+    <h1>Save the real&nbsp;SVG.<br><span class="plot">Not a screenshot of&nbsp;it.</span></h1>
+    <p class="lede">
+      Right-click &rarr; <em>Save image as&hellip;</em> gives you a PNG, or nothing at
+      all. SVG Downloader finds every vector on the page — inline icons, image
+      SVGs, CSS backgrounds, sprite sheets — previews each one, and hands you the
+      original file.
+    </p>
+    <div class="cta">
+      <a class="btn primary" href="https://github.com/Flozad/svg-downloader">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><use href="#arrow-art"/></svg>
+        Get the extension
+      </a>
+      <a class="btn quiet" href="#demo">See it work &darr;</a>
+    </div>
+    <p class="hero-meta">
+      <span>Free, no account</span>
+      <span>Nothing leaves your browser</span>
+      <span>Inline, image, CSS &amp; sprites</span>
+    </p>
+  </div>
+</header>
+
+<main>
+
+<!-- ═══════════════════════ THE DEMO (main video) ═══════════════════════ -->
+<section class="demo" id="demo">
+  <div class="bleed">
+    <div class="demo-head">
+      <p class="eyebrow">The whole thing, in one take</p>
+    </div>
+    <figure class="shot">
+      <div class="shot-mount">
+        <span class="shot-tag">rec · vectorly.io/icons</span>
+        <video src="motion/hero.mp4" poster="motion/hero.jpg"
+          muted loop playsinline preload="none"
+          aria-label="An icon-packed page: the extension opens, scans, and reports 24 SVGs found. The preview pages through search, heart and star. One is downloaded as star.svg, then all 24 are saved as a ZIP."></video>
+      </div>
+      <figcaption class="shot-cap">
+        One session on one real page: open, scan, <code>24 SVGs found</code>, page
+        through the previews, download <code>star.svg</code>, then grab all
+        twenty-four as a ZIP. No mockups — that's the extension, running.
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<hr class="section-rule">
+
+<!-- ═══════════════════════════ 01 — WHY ═══════════════════════════ -->
+<section id="why" class="reveal">
+  <div class="wrap">
+    <p class="eyebrow">01 — The problem</p>
+    <h2>The browser won't just give it to you</h2>
+    <p class="standfirst">
+      An SVG is text — a few hundred bytes of coordinates. The one thing you want
+      is the one thing the page makes hardest to get.
+    </p>
+    <p class="lead">
+      Inline <code>&lt;svg&gt;</code> has no right-click menu of its own. An icon
+      set behind a CSS <code>background-image</code> can't be dragged. A sprite
+      sheet hides forty glyphs inside one file. So people screenshot the icon and
+      trace it, or dig through DevTools for the node — and end up with a raster of
+      a vector, fuzzy the moment it's resized.
+    </p>
+
+    <!-- The argument, drawn: the same star as the file you'd save vs. the picture
+         you'd take of it. The point of the whole product, in one figure. -->
+    <figure class="specimen">
+      <div>
+        <p class="sv-label"><b>star.svg</b> — what you want</p>
+        <figure>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#1b1a15" stroke-width="1.4" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 1.7l3.09 6.26 6.91 1-5 4.87 1.18 6.88L12 17.5l-6.18 3.25L7 13.83l-5-4.87 6.91-1z"/>
+          </svg>
+        </figure>
+        <figcaption>Sharp at 16px or 1600px. Recolourable. A few hundred bytes.</figcaption>
+      </div>
+      <div>
+        <p class="sv-label"><b>star.png</b> — what you get</p>
+        <figure>
+          <svg class="raster" viewBox="0 0 24 24" fill="none" stroke="#1b1a15" stroke-width="1.4" stroke-linejoin="round" style="filter:blur(1.1px) contrast(0.92);opacity:0.9" aria-hidden="true">
+            <path d="M12 1.7l3.09 6.26 6.91 1-5 4.87 1.18 6.88L12 17.5l-6.18 3.25L7 13.83l-5-4.87 6.91-1z"/>
+          </svg>
+        </figure>
+        <figcaption class="bad">A screenshot. Fuzzy off its one size. Can't restyle.</figcaption>
+      </div>
+    </figure>
+
+    <div class="callout">
+      <p>The vector is already sitting in the page. You shouldn't have to redraw it to keep it.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="section-rule">
+
+<!-- ════════════════════ 02 — HOW IT WORKS (interactions) ════════════════════ -->
+<section id="how" class="reveal">
+  <div class="wrap">
+    <p class="eyebrow">02 — How it works</p>
+    <h2>Four moves, one popup</h2>
+    <p class="lead">
+      Everything happens in a 360px panel that drops from the toolbar. These are
+      the four beats of the demo above, one at a time — each recording is the real
+      extension on the same live page.
+    </p>
+
+    <ol class="steps">
+      <!-- 01 detect -->
+      <li class="step">
+        <span class="dial" aria-hidden="true">
+          <svg viewBox="0 0 64 64">
+            <circle class="ring" cx="32" cy="32" r="27"/>
+            <circle class="arc" cx="32" cy="32" r="27" pathLength="100" stroke-dasharray="25 100"/>
+          </svg>
+          <b>01</b>
+        </span>
+        <div>
+          <h3>Open it, and it counts every SVG</h3>
+          <p>
+            Click the icon on any page and the panel scans the DOM as it opens —
+            inline <code>&lt;svg&gt;</code>, <code>&lt;img&gt;</code> vectors, CSS
+            <code>background-image</code>s and <code>&lt;use&gt;</code> sprite
+            references alike. The counter runs up to what it finds:
+            <code>0 &rarr; 24 SVGs found</code>.
+          </p>
+          <figure class="shot">
+            <div class="shot-mount">
+              <span class="shot-tag">01 · detect</span>
+              <video src="motion/clip-detect.mp4" poster="motion/poster-150.jpg"
+                muted loop playsinline preload="none"
+                aria-label="The extension icon is clicked, the SVG Selector panel drops from the toolbar, and the counter climbs from 0 to 24 SVGs found."></video>
+            </div>
+            <figcaption class="shot-cap">The panel drops in and the counter settles on <code>24 SVGs found</code>.</figcaption>
+          </figure>
+        </div>
+      </li>
+
+      <!-- 02 preview + page -->
+      <li class="step">
+        <span class="dial" aria-hidden="true">
+          <svg viewBox="0 0 64 64">
+            <circle class="ring" cx="32" cy="32" r="27"/>
+            <circle class="arc" cx="32" cy="32" r="27" pathLength="100" stroke-dasharray="50 100"/>
+          </svg>
+          <b>02</b>
+        </span>
+        <div>
+          <h3>Preview each one, and page through</h3>
+          <p>
+            Every detected vector gets a clean, isolated preview — on its own, off
+            the busy page, so you can see the exact thing you're about to save.
+            <strong>Previous</strong> and <strong>Next</strong> walk the whole set:
+            search, heart, star, and the twenty-one behind them.
+          </p>
+          <figure class="shot">
+            <div class="shot-mount">
+              <span class="shot-tag">02 · preview</span>
+              <video src="motion/clip-page.mp4" poster="motion/hero.jpg"
+                muted loop playsinline preload="none"
+                aria-label="Next is pressed and the isolated preview steps from the search icon to a heart to a star, the filename field updating with each."></video>
+            </div>
+            <figcaption class="shot-cap">Paging the previews — the filename tracks along: <code>search-24</code>, <code>heart-24</code>, <code>star-24</code>.</figcaption>
+          </figure>
+        </div>
+      </li>
+
+      <!-- 03 download one -->
+      <li class="step">
+        <span class="dial" aria-hidden="true">
+          <svg viewBox="0 0 64 64">
+            <circle class="ring" cx="32" cy="32" r="27"/>
+            <circle class="arc" cx="32" cy="32" r="27" pathLength="100" stroke-dasharray="75 100"/>
+          </svg>
+          <b>03</b>
+        </span>
+        <div>
+          <h3>Download the original, in one click</h3>
+          <p>
+            Name it if you like, hit <strong>Download Current SVG</strong>, and the
+            real file lands in your downloads — the actual markup lifted off the
+            page, with a missing <code>xmlns</code> repaired so it opens
+            everywhere. A <code>Saved star.svg</code> tick confirms it.
+          </p>
+          <figure class="shot">
+            <div class="shot-mount">
+              <span class="shot-tag">03 · download</span>
+              <video src="motion/clip-download.mp4" poster="motion/poster-430.jpg"
+                muted loop playsinline preload="none"
+                aria-label="The Download Current SVG button is pressed and a Saved star.svg confirmation appears."></video>
+            </div>
+            <figcaption class="shot-cap">One click, and <code>Saved&nbsp;star.svg</code> — the original vector, not a screenshot.</figcaption>
+          </figure>
+        </div>
+      </li>
+
+      <!-- 04 download all -->
+      <li class="step">
+        <span class="dial" aria-hidden="true">
+          <svg viewBox="0 0 64 64">
+            <circle class="ring" cx="32" cy="32" r="27"/>
+            <circle class="arc" cx="32" cy="32" r="27" pathLength="100" stroke-dasharray="100 100"/>
+          </svg>
+          <b>04</b>
+        </span>
+        <div>
+          <h3>Or take the whole page as a ZIP</h3>
+          <p>
+            <strong>Download All as ZIP</strong> bundles every SVG the page has —
+            all twenty-four here — into one archive, each file named and
+            de-duplicated, with a report of anything that couldn't be fetched
+            rather than a silent skip. A whole icon set, in one click.
+          </p>
+          <figure class="shot">
+            <div class="shot-mount">
+              <span class="shot-tag">04 · bundle</span>
+              <video src="motion/clip-zip.mp4" poster="motion/poster-520.jpg"
+                muted loop playsinline preload="none"
+                aria-label="Download All as ZIP is pressed and a 24 SVGs saved confirmation appears."></video>
+            </div>
+            <figcaption class="shot-cap">Every vector on the page, bundled: <code>24&nbsp;SVGs&nbsp;saved</code>.</figcaption>
+          </figure>
+        </div>
+      </li>
+    </ol>
+
+    <p class="coda"><b>done</b> The vectors were always in the page. Now they're in your downloads.</p>
+  </div>
+</section>
+
+<hr class="section-rule">
+
+<!-- ═══════════════════════ 03 — DETAILS (the focuses) ═══════════════════════ -->
+<section id="details" class="reveal">
+  <div class="wrap">
+    <p class="eyebrow">03 — The details</p>
+    <h2>What it catches, and what it keeps</h2>
+    <p class="lead">
+      Four claims about how it behaves — the kind of thing you only notice when a
+      simpler tool gets it wrong.
+    </p>
+
+    <dl class="specs">
+      <div>
+        <dt>
+          <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="var(--plot)" stroke-width="1.6" aria-hidden="true">
+            <rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/>
+            <rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>
+          </svg>
+          Every source
+        </dt>
+        <dd>
+          <h3>Inline, image, background, sprite</h3>
+          <p>Four ways a page can carry a vector, and it reads all four — data URIs, <code>&lt;object&gt;</code>, CSS backgrounds and <code>&lt;use&gt;</code> sprite refs most extractors miss entirely.</p>
+        </dd>
+      </div>
+      <div>
+        <dt>
+          <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="var(--plot)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 15.5V6a2 2 0 0 1 2-2h8l6 6v5.5"/><path d="M14 4v6h6"/><path d="M8 20l3-3 3 3 3-4"/>
+          </svg>
+          Fidelity
+        </dt>
+        <dd>
+          <h3>The original markup, not a re-render</h3>
+          <p>What saves is the SVG that was in the page — its paths, its <code>viewBox</code>, its own precision. Sharp at any size, and still editable text you can recolour.</p>
+        </dd>
+      </div>
+      <div>
+        <dt>
+          <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="var(--plot)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 12l9 4 9-4"/><path d="M3 17l9 4 9-4"/>
+          </svg>
+          At scale
+        </dt>
+        <dd>
+          <h3>One, or all of them at once</h3>
+          <p>Name and save a single icon, or take the whole page as a de-duplicated ZIP. Grabbing a forty-icon set costs the same one click as grabbing one.</p>
+        </dd>
+      </div>
+      <div>
+        <dt>
+          <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="var(--plot)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z"/><path d="M9.5 12l1.8 1.8L15 10"/>
+          </svg>
+          On device
+        </dt>
+        <dd>
+          <h3>No server, no account, no upload</h3>
+          <p>Everything runs in your browser on the page in front of you. Nothing is sent anywhere — there's nowhere for it to be sent. Need to recolour first? A link hands off to the SVG Color Changer.</p>
+        </dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<hr class="section-rule">
+
+<!-- ═══════════════════ 04 — MADE (everything is Remotion) ═══════════════════ -->
+<section id="made" class="reveal">
+  <div class="wrap">
+    <p class="eyebrow">04 — How this page is made</p>
+    <h2>Every frame here is Remotion</h2>
+    <p class="standfirst">
+      Nothing on this page is a screen recording. The hero video, the four clips,
+      every poster and every store screenshot are rendered from one React project.
+    </p>
+    <p class="lead">
+      A small kit in <code>motion/src/kit</code> rebuilds the popup, the browser
+      chrome and a human-feeling cursor as components, all drawing from one theme —
+      the same monochrome palette the real extension ships. One 24-second
+      <em>promo</em> composition choreographs the whole flow; the clips above are
+      frame ranges cut straight from it, and the stills are single frames of
+      dedicated compositions. Change a word and every asset re-renders in sync,
+      from one command.
+    </p>
+    <div class="pipeline" aria-hidden="true">
+      <span class="pl-root">motion/src</span> <span class="pl-dim">— React + Remotion</span><br>
+      <span class="pl-branch">├─ render-all.ts&nbsp;&nbsp;→</span> <span class="pl-out">store-assets/</span> <span class="pl-dim">screenshots · tiles · promo.mp4</span><br>
+      <span class="pl-branch">└─ render-site.ts →</span> <span class="pl-out">docs/motion/</span> <span class="pl-dim">hero.mp4 · 4 clips · posters · stills</span>
+    </div>
+  </div>
+</section>
+
+<hr class="section-rule">
+
+<!-- ═══════════════════════════ 05 — PRIVACY ═══════════════════════════ -->
+<section id="privacy" class="reveal">
+  <div class="wrap">
+    <p class="eyebrow">05 — Privacy</p>
+    <h2>There is no server</h2>
+    <p class="standfirst">
+      No backend, no analytics, no account, no upload. The extension reads the page
+      you're on, only when you open it, and writes files to your own machine.
+    </p>
+    <p class="lead">
+      An SVG never has to leave your browser to be saved — it's already there, and
+      so are you. That's the whole trust model: there is nothing in the middle,
+      because there is no middle. The one outbound link is optional and yours to
+      click: a hand-off to the <a class="inline" href="https://clasicwebtools.com">SVG Color Changer</a> when
+      you want to restyle before you save.
+    </p>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+<footer>
+  <div class="bleed colophon">
+    <div class="colophon-brand">
+      <svg class="mark" viewBox="0 0 48 48" aria-hidden="true"><use href="#mark-art"/></svg>
+      <p class="wordmark">SVG Downloader &amp; Extractor</p>
+      <p class="line">The vector was always in the page. This just gives it back to you — sharp, original, and yours.</p>
+    </div>
+    <dl class="title-block">
+      <div><dt>Ships as</dt><dd>A Chrome extension</dd></div>
+      <div><dt>Chrome</dt><dd>88 or newer</dd></div>
+      <div><dt>Catches</dt><dd>Inline · image · CSS · sprite</dd></div>
+      <div><dt>Price</dt><dd>Free · MIT</dd></div>
+    </dl>
+  </div>
+  <div class="bleed colophon-foot">
+    <a href="https://github.com/Flozad/svg-downloader">GitHub</a>
+    <a href="https://github.com/Flozad/svg-downloader/issues">Issues</a>
+    <a href="https://clasicwebtools.com">clasicwebtools.com</a>
+    <span class="grow"></span>
+    <span>Bone stock, graphite, one plotter&nbsp;green</span>
+  </div>
+</footer>
+
+<!-- Plays each clip only while it's on screen, and reveals sections as they
+     enter. Deferred + external so a strict CSP needs no 'unsafe-inline'. -->
+<script src="player.js" defer></script>
+</body>
+</html>
