@@ -1,4 +1,4 @@
-# Chrome Web Store assets — SVG Downloader & Extractor
+# Chrome Web Store assets — SVG Web Downloader & Extractor
 
 Every marketing asset for the store listing, rendered from the Remotion project
 in [`../motion`](../motion). All monochrome, matching the extension's black-and-white
@@ -29,10 +29,10 @@ popup. To regenerate any of these, see "Rebuilding" at the bottom.
 - **Promotional video** is a **YouTube URL**, not a file upload. Upload
   `promo.mp4` to YouTube (unlisted is fine) and paste the link into the listing.
 - **Store icon** must be **128 × 128 PNG**. This is NOT in this folder — it ships
-  inside the extension itself at [`../extension/icons/icon.png`](../extension/icons/icon.png)
-  and is declared in `manifest.json` (`"icons": { "128": "icons/icon.png" }`).
-  If the store requires a separate upload, export a 128 × 128 PNG from
-  `../extension/icons/icon.svg`.
+  inside the extension itself at [`../extension/icons/icon128.png`](../extension/icons/icon128.png)
+  and is declared in `manifest.json` (`"icons": { "128": "icons/icon128.png", … }`).
+  If the store requires a separate upload, use that file (or export a 128 × 128
+  PNG from `../extension/icons/icon.svg`).
 
 ## What each screenshot shows
 

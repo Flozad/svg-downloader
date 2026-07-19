@@ -53,6 +53,45 @@
     return false;
   }
 
+  // Colors that only resolve against the live page: currentColor (inherits the
+  // element's `color`) and CSS custom properties (var(--x)). In a standalone
+  // file neither exists, so the shape paints with the initial/inherited value —
+  // often nothing (e.g. figma's icons inherit fill:none). Bake the live
+  // computed color into fill/stroke so the extracted SVG looks like the page.
+  function needsColorResolution(value) {
+    return !!value && (value === 'currentColor' || value.includes('var('));
+  }
+
+  // Walk the live element tree and its clone in lockstep — cloneNode preserves
+  // order, so index i corresponds. Must run BEFORE any structural edits (use
+  // inlining) so the two trees still match.
+  function resolveColors(liveRoot, cloneRoot) {
+    const live = [liveRoot, ...liveRoot.querySelectorAll('*')];
+    const copy = [cloneRoot, ...cloneRoot.querySelectorAll('*')];
+    if (live.length !== copy.length) return;
+
+    for (let i = 0; i < live.length; i++) {
+      const node = copy[i];
+      if (node.namespaceURI !== SVG_NS) continue;
+
+      let computed = null;
+      for (const prop of ['fill', 'stroke']) {
+        if (
+          !needsColorResolution(node.getAttribute(prop)) &&
+          !needsColorResolution(node.style[prop])
+        ) {
+          continue;
+        }
+        computed = computed || getComputedStyle(live[i]);
+        const resolved = computed[prop];
+        if (resolved && resolved !== 'none') {
+          if (node.style[prop]) node.style[prop] = resolved;
+          node.setAttribute(prop, resolved);
+        }
+      }
+    }
+  }
+
   // Inline <svg>. For sprite icons (<use href="#id">) whose target is a
   // same-document symbol, inline the referenced node into a clone so the
   // extracted file is not an empty husk. Never mutate the live page DOM.
@@ -63,6 +102,7 @@
 
       const uses = svg.querySelectorAll('use');
       const clone = svg.cloneNode(true);
+      resolveColors(svg, clone);
       let hasExternalUse = false;
 
       if (uses.length > 0) {
@@ -82,7 +122,9 @@
               }
               // Resolve one level only; a symbol may itself contain a <use>
               // pointing at another symbol, which is left unresolved.
-              defs.appendChild(target.cloneNode(true));
+              const targetClone = target.cloneNode(true);
+              resolveColors(target, targetClone);
+              defs.appendChild(targetClone);
               inlined.add(id);
             }
           } else {
