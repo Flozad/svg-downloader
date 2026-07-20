@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SVG Downloader FAQ — Free, Private, Browsers & Fixes</title>
-<meta name="description" content="SVG Downloader FAQ — is it free, does data leave your browser, which browsers, why inline SVG won't right-click, why an icon saves black, and permissions.">
+<meta name="description" content="SVG Downloader FAQ — is it free, does data leave your browser, which browsers, why inline SVG won't right-click, why an icon saves black, and the four permissions.">
 <link rel="canonical" href="https://svg.clasicwebtools.com/docs/faq">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <meta name="author" content="Flozad">
 <meta name="theme-color" content="#ece4d3">
 <meta property="og:site_name" content="SVG Downloader">
 <meta property="og:title" content="SVG Downloader FAQ — Free, Private, Browsers & Fixes">
-<meta property="og:description" content="SVG Downloader FAQ — is it free, does data leave your browser, which browsers, why inline SVG won't right-click, why an icon saves black, and permissions.">
+<meta property="og:description" content="SVG Downloader FAQ — is it free, does data leave your browser, which browsers, why inline SVG won't right-click, why an icon saves black, and the four permissions.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://svg.clasicwebtools.com/docs/faq">
 <meta property="og:image" content="https://svg.clasicwebtools.com/motion/06-brand.png">
@@ -22,7 +22,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@lozards">
 <meta name="twitter:title" content="SVG Downloader FAQ">
-<meta name="twitter:description" content="SVG Downloader FAQ — is it free, does data leave your browser, which browsers, why inline SVG won't right-click, why an icon saves black, and permissions.">
+<meta name="twitter:description" content="SVG Downloader FAQ — is it free, does data leave your browser, which browsers, why inline SVG won't right-click, why an icon saves black, and the four permissions.">
 <meta name="twitter:image" content="https://svg.clasicwebtools.com/motion/06-brand.png">
 <link rel="icon" href="/icon.svg" type="image/svg+xml">
 <link rel="manifest" href="/site.webmanifest">
@@ -55,7 +55,7 @@
         {
           "@type": "Question",
           "name": "Does any of my data leave my browser?",
-          "acceptedAnswer": { "@type": "Answer", "text": "No. Detection, preview and download all happen on-device. There's no server, no account, no upload and no analytics or tracking. The only network activity is fetching SVG assets the page itself already references, so they can be included in a download, plus the optional link to the SVG Color Changer if you choose to click it." }
+          "acceptedAnswer": { "@type": "Answer", "text": "No page content does. Detection, preview and download all happen on-device. There's no server, no account, no upload and no analytics or tracking. Two things do go out: SVG assets the page itself already references, fetched so they can be included in a download, and the optional link to the SVG Color Changer if you choose to click it. Your four preferences are also kept in chrome.storage.sync, so they follow your Google Account across machines — settings only, never page content or browsing history." }
         },
         {
           "@type": "Question",
@@ -80,7 +80,7 @@
         {
           "@type": "Question",
           "name": "Can I download a whole icon set at once?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Click Download All as ZIP and it bundles every SVG it detected on the page into one archive, de-duplicated so you don't get the same glyph twice, with a report of anything it couldn't fetch." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Click Download All as ZIP and it bundles every SVG it detected on the page into one archive, de-duplicated so you don't get the same glyph twice and numbered svg-1.svg upward. Anything it couldn't fetch is named in the popup's status line." }
         },
         {
           "@type": "Question",
@@ -95,7 +95,7 @@
         {
           "@type": "Question",
           "name": "What permissions does it need?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Two, both narrow. It reads the active tab only when you open the popup, so it can scan that page's SVGs, and it writes files to your downloads when you save. It has no background access to your other tabs and collects nothing." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Four, all narrow. activeTab and scripting let it read the current page's DOM, but only at the moment you open the popup. downloads lets it write the files you save. storage keeps your four preferences — filename prefix, ZIP name, scan-on-open and the colour-tool link — which sync through your Google Account. It has no background access to your other tabs, and no page content or browsing history is stored anywhere." }
         }
       ]
     }
@@ -165,7 +165,7 @@
       </details>
       <details>
         <summary>Does any of my data leave my browser?</summary>
-        <div class="faq-body"><p>No. Detection, preview and download all happen on-device. There's no server, no account, no upload and no analytics or tracking. The only network activity is fetching SVG assets the page itself already references, so they can be included in a download, plus the optional link to the SVG Color Changer if you choose to click it.</p></div>
+        <div class="faq-body"><p>No page content does. Detection, preview and download all happen on-device. There's no server, no account, no upload and no analytics or tracking. Two things do go out: SVG assets the page itself already references, fetched so they can be included in a download, and the optional link to the SVG Color Changer if you choose to click it. Your four preferences are also kept in <code>chrome.storage.sync</code>, so they follow your Google Account across machines — settings only, never page content or browsing history.</p></div>
       </details>
       <details>
         <summary>Which browsers does it work in?</summary>
@@ -185,7 +185,7 @@
       </details>
       <details>
         <summary>Can I download a whole icon set at once?</summary>
-        <div class="faq-body"><p>Yes. Click <strong>Download All as ZIP</strong> and it bundles every SVG it detected on the page into one archive, de-duplicated so you don't get the same glyph twice, with a report of anything it couldn't fetch.</p></div>
+        <div class="faq-body"><p>Yes. Click <strong>Download All as ZIP</strong> and it bundles every SVG it detected on the page into one archive, de-duplicated so you don't get the same glyph twice and numbered <code>svg-1.svg</code> upward. Anything it couldn't fetch is named in the popup's status line.</p></div>
       </details>
       <details>
         <summary>Does it work on sprites and CSS background SVGs?</summary>
@@ -197,7 +197,7 @@
       </details>
       <details>
         <summary>What permissions does it need?</summary>
-        <div class="faq-body"><p>Two, both narrow. It reads the active tab only when you open the popup, so it can scan that page's SVGs, and it writes files to your downloads when you save. It has no background access to your other tabs and collects nothing.</p></div>
+        <div class="faq-body"><p>Four, all narrow. <code>activeTab</code> and <code>scripting</code> let it read the current page's DOM, but only at the moment you open the popup. <code>downloads</code> lets it write the files you save. <code>storage</code> keeps your four preferences — filename prefix, ZIP name, scan-on-open and the colour-tool link — which sync through your Google Account. It has no background access to your other tabs, and no page content or browsing history is stored anywhere. The full breakdown is in the <a href="/privacy">privacy policy</a>.</p></div>
       </details>
     </div>
     <p>Still stuck? Open an issue at <a href="https://github.com/Flozad/svg-downloader/issues">github.com/Flozad/svg-downloader/issues</a>, or read the <a href="/privacy">privacy policy</a> for the full data story.</p>

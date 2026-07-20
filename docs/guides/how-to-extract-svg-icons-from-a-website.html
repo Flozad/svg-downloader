@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>How to Extract SVG Icons From a Website (Whole Set)</title>
-<meta name="description" content="Extract SVG icons from any website and save the whole set — page the inline components, name each file, and grab every icon at once as a de-duplicated ZIP.">
+<meta name="description" content="Extract SVG icons from any website and save the whole set — page the inline components, name a single file, and grab the icons at once as a de-duplicated ZIP.">
 <link rel="canonical" href="https://svg.clasicwebtools.com/guides/how-to-extract-svg-icons-from-a-website">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <meta name="author" content="Flozad">
 <meta name="theme-color" content="#ece4d3">
 <meta property="og:site_name" content="SVG Downloader">
 <meta property="og:title" content="How to Extract SVG Icons From a Website (Whole Set)">
-<meta property="og:description" content="Extract SVG icons from any website and save the whole set — page the inline components, name each file, and grab every icon at once as a de-duplicated ZIP.">
+<meta property="og:description" content="Extract SVG icons from any website and save the whole set — page the inline components, name a single file, and grab the icons at once as a de-duplicated ZIP.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://svg.clasicwebtools.com/guides/how-to-extract-svg-icons-from-a-website">
 <meta property="og:image" content="https://svg.clasicwebtools.com/motion/06-brand.png">
@@ -22,7 +22,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@lozards">
 <meta name="twitter:title" content="How to Extract SVG Icons From a Website (Whole Set)">
-<meta name="twitter:description" content="Extract SVG icons from any website and save the whole set — page the inline components, name each file, and grab every icon at once as a de-duplicated ZIP.">
+<meta name="twitter:description" content="Extract SVG icons from any website and save the whole set — page the inline components, name a single file, and grab the icons at once as a de-duplicated ZIP.">
 <meta name="twitter:image" content="https://svg.clasicwebtools.com/motion/06-brand.png">
 <link rel="icon" href="/icon.svg" type="image/svg+xml">
 <link rel="manifest" href="/site.webmanifest">
@@ -79,7 +79,7 @@
         {
           "@type": "HowToStep",
           "name": "Grab the whole set as a ZIP",
-          "text": "Click Download All as ZIP to save every icon at once, de-duplicated, with a report of anything that couldn't be resolved.",
+          "text": "Click Download All as ZIP to save the icons at once, de-duplicated and numbered, with anything skipped named in the popup's status line.",
           "url": "https://svg.clasicwebtools.com/guides/how-to-extract-svg-icons-from-a-website#steps"
         }
       ]
@@ -90,7 +90,7 @@
         {
           "@type": "Question",
           "name": "How do I save an entire icon set, not one icon at a time?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Open the page that renders the set and click Download All as ZIP. The extension collects every SVG on the page into one archive, de-duplicated, so a set of a few dozen icons comes down in a single click." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Open the page that renders the set and click Download All as ZIP. The extension collects the SVGs it found on the page into one archive, de-duplicated, so a set of a few dozen icons comes down in a single click." }
         },
         {
           "@type": "Question",
@@ -100,12 +100,12 @@
         {
           "@type": "Question",
           "name": "Can I control the filenames?",
-          "acceptedAnswer": { "@type": "Answer", "text": "For a single icon, set the optional filename before you click Download Current SVG. In a ZIP, files are named from each icon's own hints — its id, aria-label or class — so you get meaningful names rather than a run of numbers." }
+          "acceptedAnswer": { "@type": "Answer", "text": "For a single icon, type the filename you want before you click Download Current SVG and the file saves under exactly that name. A ZIP is numbered instead — svg-1.svg, svg-2.svg in page order — and you can change the svg prefix to anything you like in the extension's options, so a set can land as acme-1.svg upward." }
         },
         {
           "@type": "Question",
           "name": "Does it only find inline icons, or hidden ones too?",
-          "acceptedAnswer": { "@type": "Answer", "text": "It detects inline SVG components, CSS background icons, sprite use references and img or object sources including data URIs. If the icon is rendered on the page, it's in scope. Icons the page hasn't loaded yet won't appear until they do." }
+          "acceptedAnswer": { "@type": "Answer", "text": "It detects inline SVG components, CSS background icons, same-document sprite use references and img or object sources including data URIs. If the icon is rendered on the page, it's in scope. Icons the page hasn't loaded yet won't appear until they do." }
         },
         {
           "@type": "Question",
@@ -149,7 +149,7 @@
   </ol>
   <p class="eyebrow">Guide — icon sets</p>
   <h1>How to <span class="plot">extract SVG icons</span> from a website</h1>
-  <p class="lede">Grabbing one icon is easy. Grabbing a whole set — every arrow, glyph and logo a page renders, named and de-duplicated — is what this guide is for.</p>
+  <p class="lede">Grabbing one icon is easy. Grabbing a whole set — every arrow, glyph and logo a page renders, numbered and de-duplicated — is what this guide is for.</p>
   <div class="cta">
     <a class="btn primary" href="https://github.com/Flozad/svg-downloader">
       <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 12v16m0 0l-7-7m7 7l7-7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><rect x="16" y="34" width="16" height="2.6" rx="1.3" fill="currentColor"/></svg>
@@ -173,11 +173,11 @@
     <li><strong>Open the popup and scan.</strong> Click the toolbar icon. SVG Downloader detects the inline SVG icon components across the page and lists every one it finds.</li>
     <li><strong>Page through the set.</strong> Use <em>Previous</em> and <em>Next</em> to move through the isolated previews and confirm what the page exposes. This is also your sanity check that the whole set is present before you export.</li>
     <li><strong>Name the ones you want on their own.</strong> For a single icon, set the optional filename, then click <em>Download Current SVG</em> so it lands as <code>chevron-left.svg</code> rather than <code>download (3).svg</code>.</li>
-    <li><strong>Grab the whole set as a ZIP.</strong> Click <em>Download All as ZIP</em>. Every icon comes down at once, de-duplicated, with a short report of anything that couldn't be resolved — see the <a href="/guides/download-all-svgs-as-zip">ZIP guide</a> for how that export behaves in detail.</li>
+    <li><strong>Grab the whole set as a ZIP.</strong> Click <em>Download All as ZIP</em>. The icons come down at once, de-duplicated, and the popup's status line names anything that couldn't be resolved — see the <a href="/guides/download-all-svgs-as-zip">ZIP guide</a> for how that export behaves in detail.</li>
   </ol>
 
   <h2>Why the whole-set export is the fast path</h2>
-  <p>The <a href="/features/bulk-zip-download">bulk ZIP feature</a> is built for exactly this. Icon sets are full of repeats — the same arrow in a dozen menus, one logo in the header and footer — and a naïve grab would save each instance. SVG Downloader de-duplicates identical SVGs, so the archive reflects the real set: sixty renders might be forty unique icons, and that's what you get. Filenames come from each icon's own <code>id</code>, <code>aria-label</code> or class, so the ZIP is usable the moment it unpacks, not a pile of numbered files you have to rename.</p>
+  <p>The <a href="/features/bulk-zip-download">bulk ZIP feature</a> is built for exactly this. Icon sets are full of repeats — the same arrow in a dozen menus, one logo in the header and footer — and a naïve grab would save each instance. SVG Downloader de-duplicates identical SVGs, so the archive reflects the real set: sixty renders might be forty unique icons, and that's what you get. Files are numbered in page order — <code>svg-1.svg</code>, <code>svg-2.svg</code> — so they unpack in the same sequence you paged through in the preview, and the <code>svg</code> prefix is yours to change in the extension's options.</p>
 
   <h2>What you can rely on</h2>
   <ul>
@@ -202,7 +202,7 @@
   <div class="faq">
     <details>
       <summary>How do I save an entire icon set, not one icon at a time?</summary>
-      <div class="faq-body"><p>Open the page that renders the set and click <em>Download All as ZIP</em>. The extension collects every SVG on the page into one archive, de-duplicated, so a set of a few dozen icons comes down in a single click.</p></div>
+      <div class="faq-body"><p>Open the page that renders the set and click <em>Download All as ZIP</em>. The extension collects the SVGs it found on the page into one archive, de-duplicated, so a set of a few dozen icons comes down in a single click.</p></div>
     </details>
     <details>
       <summary>Will duplicate icons be saved twice?</summary>
@@ -210,11 +210,11 @@
     </details>
     <details>
       <summary>Can I control the filenames?</summary>
-      <div class="faq-body"><p>For a single icon, set the optional filename before you click <em>Download Current SVG</em>. In a ZIP, files are named from each icon's own hints — its <code>id</code>, <code>aria-label</code> or class — so you get meaningful names rather than a run of numbers.</p></div>
+      <div class="faq-body"><p>For a single icon, type the filename you want before you click <em>Download Current SVG</em> and the file saves under exactly that name. A ZIP is numbered instead — <code>svg-1.svg</code>, <code>svg-2.svg</code> in page order — and you can change the <code>svg</code> prefix to anything you like in the extension's options, so a set can land as <code>acme-1.svg</code> upward.</p></div>
     </details>
     <details>
       <summary>Does it only find inline icons, or hidden ones too?</summary>
-      <div class="faq-body"><p>It detects inline SVG components, CSS background icons, sprite <code>&lt;use&gt;</code> references and <code>&lt;img&gt;</code> or <code>&lt;object&gt;</code> sources including <code>data:</code> URIs. If the icon is rendered on the page, it's in scope. Icons the page hasn't loaded yet won't appear until they do.</p></div>
+      <div class="faq-body"><p>It detects inline SVG components, CSS background icons, same-document sprite <code>&lt;use&gt;</code> references and <code>&lt;img&gt;</code> or <code>&lt;object&gt;</code> sources including <code>data:</code> URIs. If the icon is rendered on the page, it's in scope. Icons the page hasn't loaded yet won't appear until they do.</p></div>
     </details>
     <details>
       <summary>Are the extracted icons still editable vectors?</summary>

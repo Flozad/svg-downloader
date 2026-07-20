@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Download All SVGs From a Website as a ZIP — SVG Downloader</title>
-<meta name="description" content="Download every SVG on a page at once — inline, background and sprite — as a ZIP of de-duplicated, named files, with a report of anything it couldn't fetch.">
+<meta name="description" content="Download the SVGs on a page at once — inline, background and same-document sprite — as a ZIP of de-duplicated, numbered files, with anything skipped named in the popup.">
 <link rel="canonical" href="https://svg.clasicwebtools.com/features/bulk-zip-download">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <meta name="author" content="Flozad">
 <meta name="theme-color" content="#ece4d3">
 <meta property="og:site_name" content="SVG Downloader">
 <meta property="og:title" content="Download All SVGs From a Website as a ZIP">
-<meta property="og:description" content="Download every SVG on a page at once — inline, background and sprite — as a ZIP of de-duplicated, named files, with a report of anything it couldn't fetch.">
+<meta property="og:description" content="Download the SVGs on a page at once — inline, background and same-document sprite — as a ZIP of de-duplicated, numbered files, with anything skipped named in the popup.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://svg.clasicwebtools.com/features/bulk-zip-download">
 <meta property="og:image" content="https://svg.clasicwebtools.com/motion/06-brand.png">
@@ -22,7 +22,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@lozards">
 <meta name="twitter:title" content="Download All SVGs From a Website as a ZIP">
-<meta name="twitter:description" content="Download every SVG on a page at once — inline, background and sprite — as a ZIP of de-duplicated, named files, with a report of anything it couldn't fetch.">
+<meta name="twitter:description" content="Download the SVGs on a page at once — inline, background and same-document sprite — as a ZIP of de-duplicated, numbered files, with anything skipped named in the popup.">
 <meta name="twitter:image" content="https://svg.clasicwebtools.com/motion/06-brand.png">
 <link rel="icon" href="/icon.svg" type="image/svg+xml">
 <link rel="manifest" href="/site.webmanifest">
@@ -87,7 +87,7 @@
   </ol>
   <p class="eyebrow">Feature — every source · 4 of 4</p>
   <h1>Download <span class="plot">every&nbsp;SVG</span> on a page as a ZIP</h1>
-  <p class="lede">Saving icons one at a time is fine for one icon. When you want the whole set, <strong>Download All as ZIP</strong> collects every SVG the page contains — from all four sources — de-duplicates it, names it, and bundles it into a single archive.</p>
+  <p class="lede">Saving icons one at a time is fine for one icon. When you want the whole set, <strong>Download All as ZIP</strong> collects the SVGs the page contains — from all four sources — de-duplicates them, numbers them, and bundles them into a single archive.</p>
   <div class="cta">
     <a class="btn primary" href="https://github.com/Flozad/svg-downloader">
       <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 12v16m0 0l-7-7m7 7l7-7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><rect x="16" y="34" width="16" height="2.6" rx="1.3" fill="currentColor"/></svg>
@@ -104,19 +104,19 @@
   <p>The manual route also has no memory. Two components reuse the same icon, you save it twice under two different names. A <code>&lt;use&gt;</code> reference fails to resolve, you don't notice until you open an empty file later. What should be a two-minute job becomes an afternoon of bookkeeping.</p>
 
   <h2>What SVG Downloader does instead</h2>
-  <p>Click <strong>Download All as ZIP</strong> and it runs the full detection pass — inline <code>&lt;svg&gt;</code>, <code>&lt;img&gt;</code> and <code>&lt;object&gt;</code> vector images, CSS <code>background-image</code> SVGs and <code>&lt;use&gt;</code> sprite references — collects every result, and writes one ZIP. The bookkeeping is done for you.</p>
+  <p>Click <strong>Download All as ZIP</strong> and it runs the full detection pass — inline <code>&lt;svg&gt;</code>, <code>&lt;img&gt;</code> and <code>&lt;object&gt;</code> vector images, CSS <code>background-image</code> SVGs and same-document <code>&lt;use&gt;</code> sprite references — collects the results, and writes one ZIP. The bookkeeping is done for you.</p>
   <ul>
     <li><strong>De-duplicated.</strong> The same icon reused across a dozen components lands in the archive once, not a dozen times. You get a clean set, not a pile of copies.</li>
-    <li><strong>Named, not numbered.</strong> Each file is named from the SVG's own hints — <code>id</code>, <code>aria-label</code>, class or symbol name — so the archive is browsable, not a wall of <code>svg-1</code>, <code>svg-2</code>.</li>
-    <li><strong>Honest about misses.</strong> If an SVG can't be fetched — a cross-origin file the page won't share, a broken reference — it's listed in a report inside the download rather than silently dropped, so you know exactly what didn't make it.</li>
+    <li><strong>Numbered in order, with a prefix you set.</strong> Files land as <code>svg-1.svg</code>, <code>svg-2.svg</code> in the order they appear on the page, so the archive unpacks in the same sequence as the previews you paged through. Change <code>svg</code> to anything you like — <code>acme-icon</code>, <code>logo</code> — in the extension's options, and the whole archive follows it.</li>
+    <li><strong>Honest about misses.</strong> If an SVG can't be fetched — a cross-origin file the page won't share, a broken reference — the popup's status line names it: <code>Downloaded 8 of 10 SVGs. Skipped: 3, 7.</code> Nothing is dropped without telling you which items went missing.</li>
     <li><strong>Still the originals.</strong> Every file in the ZIP is the page's own markup with its <code>viewBox</code> intact and its namespace repaired — the same fidelity as saving one by hand, at set scale.</li>
   </ul>
 
   <h2>What you get back</h2>
   <dl class="facts">
-    <div><dt>Format</dt><dd>One <strong>.zip</strong> of standards-clean <code>.svg</code> files — original markup, namespaces repaired, sensibly named.</dd></div>
-    <div><dt>Coverage</dt><dd>Every source in one pass — inline, <code>&lt;img&gt;</code>/<code>&lt;object&gt;</code>, CSS backgrounds and <code>&lt;use&gt;</code> sprites — <strong>de-duplicated</strong>.</dd></div>
-    <div><dt>On failures</dt><dd>Anything it couldn't fetch is <strong>reported, not hidden</strong>, so the set you get is one you can trust.</dd></div>
+    <div><dt>Format</dt><dd>One <strong>.zip</strong> of standards-clean <code>.svg</code> files — original markup, namespaces repaired, numbered <code>svg-1.svg</code> upward with <strong>your own prefix</strong>.</dd></div>
+    <div><dt>Coverage</dt><dd>All four sources in one pass — inline, <code>&lt;img&gt;</code>/<code>&lt;object&gt;</code>, CSS backgrounds and same-document <code>&lt;use&gt;</code> sprites — <strong>de-duplicated</strong>.</dd></div>
+    <div><dt>On failures</dt><dd>Anything it couldn't fetch is <strong>named in the popup</strong>, not hidden, so the set you get is one you can trust.</dd></div>
     <div><dt>Where it runs</dt><dd>Entirely <strong>in your browser</strong>. The archive is built on-device — no upload, no server, no account.</dd></div>
   </dl>
 </div></section>
@@ -129,11 +129,15 @@
   <div class="faq">
     <details>
       <summary>Does the ZIP include icons from CSS backgrounds and sprites too?</summary>
-      <div class="faq-body"><p>Yes. The bulk pass runs the same detection as single-file saves across all four sources — <a href="/features/inline-svg">inline SVG</a>, <a href="/features/css-background-svg">CSS backgrounds</a>, <code>&lt;img&gt;</code>/<code>&lt;object&gt;</code> vector images, and <a href="/features/svg-sprite-extractor">sprite references</a> — so the archive is the whole page's SVG, not just the easy ones.</p></div>
+      <div class="faq-body"><p>Yes. The bulk pass runs the same detection as single-file saves across all four sources — <a href="/features/inline-svg">inline SVG</a>, <a href="/features/css-background-svg">CSS backgrounds</a>, <code>&lt;img&gt;</code>/<code>&lt;object&gt;</code> vector images, and <a href="/features/svg-sprite-extractor">same-document sprite references</a> — so the archive covers the hard sources, not just the easy ones.</p></div>
     </details>
     <details>
       <summary>What happens when an SVG can't be downloaded?</summary>
-      <div class="faq-body"><p>It's recorded in a report included with the ZIP rather than dropped without a trace. A cross-origin file the page won't share, or a reference that fails to resolve, shows up on that list — so you can see what's missing and go after it directly.</p></div>
+      <div class="faq-body"><p>The popup's status line names it rather than dropping it without a trace — <code>Downloaded 8 of 10 SVGs. Skipped: 3, 7.</code> Those numbers are the positions you paged through in the preview, so you can go back to the ones that failed and chase them directly. Nothing is added to the archive itself; the ZIP holds only the files that came through.</p></div>
+    </details>
+    <details>
+      <summary>Is there anything the bulk pass won't pick up?</summary>
+      <div class="faq-body"><p>Three things, and it tells you about them. A <code>&lt;use&gt;</code> pointing at an <strong>external</strong> sprite file — <code>&lt;use href="/sprite.svg#cart"&gt;</code> — is skipped, because only same-document references are resolved. On very large pages (over 10,000 elements) the <a href="/features/css-background-svg">CSS background scan</a> is skipped for speed. And the pass caps at 2,000 inline SVGs, with any single SVG over about 2 MB of markup left out. All of it shows up in the popup's count and status line rather than quietly shrinking the archive.</p></div>
     </details>
     <details>
       <summary>Will I get the same icon several times?</summary>
@@ -148,7 +152,7 @@
   <div class="cta-band">
     <div>
       <h2>Take the whole icon set in one click</h2>
-      <p>Free, private, and it does the de-duping and naming for you.</p>
+      <p>Free, private, and it does the de-duping and the bookkeeping for you.</p>
     </div>
     <div class="cta">
       <a class="btn primary" href="https://github.com/Flozad/svg-downloader">Get the extension</a>

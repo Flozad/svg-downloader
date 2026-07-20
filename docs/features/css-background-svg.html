@@ -104,7 +104,7 @@
   <p>Reaching it by hand is worse than it sounds. You open DevTools, find the element, read its computed <code>background-image</code>, and then you're staring at either a relative URL you have to resolve against the page, or a URL-encoded <code>data:image/svg+xml</code> string with every angle bracket escaped. Decoding that into a clean file is a copy-paste job you'll get wrong at least once.</p>
 
   <h2>What SVG Downloader does instead</h2>
-  <p>Open the popup and it inspects the computed styles of every element on the page, not just the ones you can see. Wherever a <code>background-image</code> resolves to an SVG — a linked <code>.svg</code> file or an inline data URI — it pulls the source out and gives it an isolated preview alongside every other SVG it found. Page through with Previous/Next, pick the one you want, and it writes the original vector to a <code>.svg</code> file.</p>
+  <p>Open the popup and it inspects the computed styles of the page's elements, not just the ones you can see. Wherever a <code>background-image</code> resolves to an SVG — a linked <code>.svg</code> file or an inline data URI — it pulls the source out and gives it an isolated preview alongside every other SVG it found. Page through with Previous/Next, pick the one you want, and it writes the original vector to a <code>.svg</code> file.</p>
   <ul>
     <li><strong>URLs resolved for you.</strong> A relative <code>url(../img/logo.svg)</code> is turned into a real address and fetched; the file that lands is the file the stylesheet pointed at, not a guess.</li>
     <li><strong>Data URIs decoded properly.</strong> An inline <code>data:image/svg+xml</code> background — URL-encoded or Base64 — is unpacked back into plain SVG markup, so what you save opens as text you can read and edit.</li>
@@ -114,7 +114,7 @@
   <h2>What you get back</h2>
   <dl class="facts">
     <div><dt>Format</dt><dd>A standards-clean <strong>.svg</strong> file — the exact vector the CSS referenced, decoded and namespace-repaired.</dd></div>
-    <div><dt>Sources read</dt><dd>Both <code>url()</code> links and inline <code>data:</code> URIs, whether <strong>URL-encoded or Base64</strong>.</dd></div>
+    <div><dt>Sources read</dt><dd>Both <code>url()</code> links and inline <code>data:</code> URIs, whether <strong>URL-encoded or Base64</strong>. Skipped on pages over 10,000 elements.</dd></div>
     <div><dt>Where it runs</dt><dd>Entirely <strong>in your browser</strong>. Computed styles are read locally — no upload, no server, no account.</dd></div>
     <div><dt>Also handles</dt><dd><a href="/features/inline-svg">Inline SVG</a>, <a href="/features/svg-sprite-extractor">sprite references</a> and <a href="/features/bulk-zip-download">whole-page ZIP</a>.</dd></div>
   </dl>
@@ -133,6 +133,10 @@
     <details>
       <summary>Can it handle a data: URI background, not just a linked file?</summary>
       <div class="faq-body"><p>Yes. Inline <code>data:image/svg+xml</code> backgrounds are common, and they're usually URL-encoded with every bracket escaped — hard to decode by hand. SVG Downloader unpacks both URL-encoded and Base64 data URIs back into clean SVG markup before saving.</p></div>
+    </details>
+    <details>
+      <summary>Does it check every element, however big the page?</summary>
+      <div class="faq-body"><p>Reading computed styles means touching elements one by one, which gets expensive fast. So there's a ceiling: if a page holds more than <strong>10,000 elements</strong>, the background scan is skipped entirely and you'll see only the other three sources. The popup says so rather than quietly returning a short list. Below that threshold every element is checked, visible or not.</p></div>
     </details>
     <details>
       <summary>The background uses a sprite or shows only part of a larger SVG. What downloads?</summary>

@@ -108,7 +108,7 @@
   <ul>
     <li><strong>The real paths, not a re-render.</strong> What saves is the SVG that was in the page — its exact <code>d</code> attributes, its <code>viewBox</code>, its own precision. It stays sharp at 16px or 1600px and stays editable text you can recolour.</li>
     <li><strong>A repaired <code>xmlns</code>.</strong> Inline SVG usually omits the <code>xmlns="http://www.w3.org/2000/svg"</code> namespace because the browser supplies it. Copied to a bare file, that SVG won't open. SVG Downloader adds it back so the file works in Figma, Illustrator, VS Code and every browser.</li>
-    <li><strong>A sensible filename.</strong> The download is named from the icon's own hints — its <code>id</code>, <code>aria-label</code> or class — so you get <code>star.svg</code>, not <code>download (3).svg</code>.</li>
+    <li><strong>The filename is yours.</strong> Type a name into the popup before you save and the file lands as exactly that — <code>star.svg</code>, not <code>download (3).svg</code>. Leave it blank and it falls back to a numbered <code>svg-1.svg</code>, using whatever prefix you've set in the extension's options.</li>
   </ul>
 
   <h2>What you get back</h2>

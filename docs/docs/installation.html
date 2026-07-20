@@ -131,7 +131,7 @@
     <p>An unpacked extension stays installed as long as its folder stays put. If you move or delete the folder, the browser drops the extension on the next launch — just reload it from the same steps. To update, pull the latest repo and click the reload icon on the extension's card.</p>
 
     <h2>What it can touch</h2>
-    <p>The permissions are narrow by design. SVG Downloader reads the active tab only when you open the popup, and writes files to your downloads folder when you save. It has no background access to other tabs and makes no network calls of its own beyond fetching SVG assets the page already references. The full breakdown is in the <a href="/docs/faq">FAQ</a> and the <a href="/privacy">privacy policy</a>.</p>
+    <p>There are four permissions, all narrow by design. <code>activeTab</code> and <code>scripting</code> read the current page's DOM, and only when you open the popup. <code>downloads</code> writes files to your downloads folder when you save. <code>storage</code> keeps your preferences. It has no background access to other tabs and makes no network calls of its own beyond fetching SVG assets the page already references. The full breakdown is in the <a href="/docs/faq">FAQ</a> and the <a href="/privacy">privacy policy</a>.</p>
 
     <p>Installed? Head to <a href="/docs/usage">Usage</a> to learn the popup, or jump to a task in the <a href="/guides">guides</a>.</p>
   </div>

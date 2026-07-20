@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SVG Downloader — Extract & Save Any SVG From a Website (Free)</title>
-<meta name="description" content="Free Chrome extension that finds every SVG on any page — inline, CSS background, sprite — previews each, and saves the original vector, one or all as a ZIP.">
+<meta name="description" content="Free Chrome extension that finds the SVGs on any page — inline, CSS background, same-document sprite — previews each, and saves the original vector, one or all as a ZIP.">
 <link rel="canonical" href="https://svg.clasicwebtools.com/">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="author" content="Flozad">
@@ -13,7 +13,7 @@
 <!-- Open Graph -->
 <meta property="og:site_name" content="SVG Downloader">
 <meta property="og:title" content="SVG Downloader — Extract & Save Any SVG From a Website">
-<meta property="og:description" content="Free Chrome extension that finds every SVG on any page — inline, CSS background, sprite — previews each, and saves the original vector, one or all as a ZIP.">
+<meta property="og:description" content="Free Chrome extension that finds the SVGs on any page — inline, CSS background, same-document sprite — previews each, and saves the original vector, one or all as a ZIP.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://svg.clasicwebtools.com/">
 <meta property="og:image" content="https://svg.clasicwebtools.com/motion/06-brand.png">
@@ -27,7 +27,7 @@
 <meta name="twitter:site" content="@lozards">
 <meta name="twitter:creator" content="@lozards">
 <meta name="twitter:title" content="SVG Downloader — Extract & Save Any SVG From a Website">
-<meta name="twitter:description" content="Free Chrome extension that finds every SVG on any page — inline, CSS background, sprite — previews each, and saves the original vector, one or all as a ZIP.">
+<meta name="twitter:description" content="Free Chrome extension that finds the SVGs on any page — inline, CSS background, same-document sprite — previews each, and saves the original vector, one or all as a ZIP.">
 <meta name="twitter:image" content="https://svg.clasicwebtools.com/motion/06-brand.png">
 
 <link rel="icon" href="icon.svg" type="image/svg+xml">
@@ -66,12 +66,12 @@
       "name": "SVG Web Downloader & Extractor",
       "alternateName": "SVG Downloader",
       "url": "https://svg.clasicwebtools.com/",
-      "description": "Chrome extension that finds every SVG on a web page — inline icons, image SVGs, CSS backgrounds and sprite references — previews each one, and downloads the original vector, one at a time or all of them as a ZIP.",
+      "description": "Chrome extension that finds the SVGs on a web page — inline icons, image SVGs, CSS backgrounds and same-document sprite references — previews each one, and downloads the original vector, one at a time or all of them as a ZIP.",
       "applicationCategory": "BrowserApplication",
       "applicationSubCategory": "DeveloperApplication",
       "operatingSystem": "Chrome 88+, Chromium, Microsoft Edge, Brave",
       "browserRequirements": "Requires Chromium-based browser, version 88 or newer",
-      "softwareVersion": "1.3.0",
+      "softwareVersion": "1.3",
       "downloadUrl": "https://github.com/Flozad/svg-downloader",
       "image": "https://svg.clasicwebtools.com/motion/06-brand.png",
       "screenshot": "https://svg.clasicwebtools.com/motion/06-brand.png",
@@ -293,7 +293,7 @@
           <b>01</b>
         </span>
         <div>
-          <h3>Open it, and it counts every SVG</h3>
+          <h3>Open it, and it counts what it finds</h3>
           <p>
             Click the icon on any page and the panel scans the DOM as it opens —
             inline <code>&lt;svg&gt;</code>, <code>&lt;img&gt;</code> vectors, CSS
@@ -335,7 +335,7 @@
               <span class="shot-tag">02 · preview</span>
               <video src="motion/clip-page.mp4" poster="motion/hero.jpg"
                 muted loop playsinline preload="none"
-                aria-label="Next is pressed and the isolated preview steps from the search icon to a heart to a star, the filename field updating with each."></video>
+                aria-label="Next is pressed and the isolated preview steps from the search icon to a heart to a star, the counter tracking each one."></video>
             </div>
             <figcaption class="shot-cap">Paging the previews — the filename tracks along: <code>search-24</code>, <code>heart-24</code>, <code>star-24</code>.</figcaption>
           </figure>
@@ -383,10 +383,11 @@
         <div>
           <h3>Or take the whole page as a ZIP</h3>
           <p>
-            <strong>Download All as ZIP</strong> bundles every SVG the page has —
-            all twenty-four here — into one archive, each file named and
-            de-duplicated, with a report of anything that couldn't be fetched
-            rather than a silent skip. A whole icon set, in one click.
+            <strong>Download All as ZIP</strong> bundles the SVGs it found —
+            all twenty-four here — into one archive, de-duplicated and numbered
+            <code>svg-1.svg</code> upward with a prefix you can change. Anything
+            that couldn't be fetched is named in the status line rather than
+            silently skipped. A whole icon set, in one click.
           </p>
           <figure class="shot">
             <div class="shot-mount">

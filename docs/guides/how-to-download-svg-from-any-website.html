@@ -67,7 +67,7 @@
         {
           "@type": "HowToStep",
           "name": "Let it scan the page",
-          "text": "The extension walks the DOM and collects every SVG — inline elements, CSS background images, sprite references and img or object sources, including data URIs.",
+          "text": "The extension walks the DOM and collects the SVGs it finds — inline elements, CSS background images, same-document sprite references and img or object sources, including data URIs.",
           "url": "https://svg.clasicwebtools.com/guides/how-to-download-svg-from-any-website#steps"
         },
         {
@@ -79,7 +79,7 @@
         {
           "@type": "HowToStep",
           "name": "Download the vector",
-          "text": "Click Download Current SVG to save the selected one, or Download All as ZIP to save every SVG at once, de-duplicated. Set an optional filename first if you want.",
+          "text": "Click Download Current SVG to save the selected one, or Download All as ZIP to save the whole set at once, de-duplicated and numbered. Type a filename first if you want the single save named your way.",
           "url": "https://svg.clasicwebtools.com/guides/how-to-download-svg-from-any-website#steps"
         }
       ]
@@ -95,7 +95,7 @@
         {
           "@type": "Question",
           "name": "Does it work on every website?",
-          "acceptedAnswer": { "@type": "Answer", "text": "It works on any page you can open in Chrome 88 or later, Edge or Brave. It detects inline SVG, img and object sources including data URIs, CSS background-image SVGs and sprite use references. It cannot reach content locked behind a login you don't have or served from a domain the page never loads." }
+          "acceptedAnswer": { "@type": "Answer", "text": "It works on any page you can open in Chrome 88 or later, Edge or Brave. It detects inline SVG, img and object sources including data URIs, CSS background-image SVGs and same-document sprite use references. It cannot reach content locked behind a login you don't have or served from a domain the page never loads." }
         },
         {
           "@type": "Question",
@@ -115,7 +115,7 @@
         {
           "@type": "Question",
           "name": "Is it really free?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes. SVG Downloader is free and MIT-licensed, currently version 1.3.0, authored by Flozad. You can read and build the source yourself." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. SVG Downloader is free and MIT-licensed, currently version 1.3, authored by Flozad. You can read and build the source yourself." }
         }
       ]
     }
@@ -180,9 +180,9 @@
   <ol>
     <li><strong>Install the extension.</strong> Add <a href="https://github.com/Flozad/svg-downloader">SVG Downloader</a> to Chrome, Edge or Brave (Chrome 88+). It's free, MIT-licensed, and nothing about it phones home.</li>
     <li><strong>Open the popup on the page.</strong> Navigate to the page holding the SVG you want, then click the toolbar icon to open the popup.</li>
-    <li><strong>Let it scan.</strong> The extension walks the DOM and collects every vector it finds — inline elements, CSS backgrounds, sprite references and image sources, including <code>data:</code> URIs.</li>
-    <li><strong>Preview and pick.</strong> Each SVG appears in an isolated preview so you see it clean, off the busy page. Use <em>Previous</em> and <em>Next</em> to page through, and set an optional filename if you care what the file is called.</li>
-    <li><strong>Download.</strong> Click <em>Download Current SVG</em> for the one on screen, or <em>Download All as ZIP</em> to take every SVG on the page at once, de-duplicated, with a short report of anything that couldn't be resolved.</li>
+    <li><strong>Let it scan.</strong> The extension walks the DOM and collects the vectors it finds — inline elements, CSS backgrounds, same-document sprite references and image sources, including <code>data:</code> URIs.</li>
+    <li><strong>Preview and pick.</strong> Each SVG appears in an isolated preview so you see it clean, off the busy page. Use <em>Previous</em> and <em>Next</em> to page through, and type a filename if you care what the file is called.</li>
+    <li><strong>Download.</strong> Click <em>Download Current SVG</em> for the one on screen — under the filename you typed, or a numbered <code>svg-1.svg</code> if you left the field blank — or <em>Download All as ZIP</em> to take the whole set at once, de-duplicated and numbered, with anything that couldn't be resolved named in the popup's status line.</li>
   </ol>
 
   <figure class="shot"><div class="shot-mount"><span class="shot-tag">Preview</span><img src="/motion/02-preview.png" alt="SVG Downloader popup showing an isolated preview of an SVG icon with Previous and Next controls" width="1280" height="800" loading="lazy"></div><figcaption class="shot-cap">Every detected SVG gets an isolated preview — confirm the right one before you save it.</figcaption></figure>
@@ -217,7 +217,7 @@
     </details>
     <details>
       <summary>Does it work on every website?</summary>
-      <div class="faq-body"><p>It works on any page you can open in Chrome 88 or later, Edge or Brave. It detects inline SVG, <code>&lt;img&gt;</code> and <code>&lt;object&gt;</code> sources including <code>data:</code> URIs, CSS <code>background-image</code> SVGs and sprite <code>&lt;use&gt;</code> references. It can't reach content behind a login you don't have or served from a domain the page never loads.</p></div>
+      <div class="faq-body"><p>It works on any page you can open in Chrome 88 or later, Edge or Brave. It detects inline SVG, <code>&lt;img&gt;</code> and <code>&lt;object&gt;</code> sources including <code>data:</code> URIs, CSS <code>background-image</code> SVGs and same-document sprite <code>&lt;use&gt;</code> references. It can't reach content behind a login you don't have or served from a domain the page never loads.</p></div>
     </details>
     <details>
       <summary>Why is my downloaded icon black instead of coloured?</summary>
@@ -233,7 +233,7 @@
     </details>
     <details>
       <summary>Is it really free?</summary>
-      <div class="faq-body"><p>Yes. SVG Downloader is free and MIT-licensed, currently version 1.3.0, authored by Flozad. You can read and build the source yourself.</p></div>
+      <div class="faq-body"><p>Yes. SVG Downloader is free and MIT-licensed, currently version 1.3, authored by Flozad. You can read and build the source yourself.</p></div>
     </details>
   </div>
 </div></section>

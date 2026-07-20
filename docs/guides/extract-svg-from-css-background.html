@@ -162,7 +162,7 @@
   <h2 id="install">Step by step: background to file</h2>
   <ol>
     <li><strong id="open">Install and open the popup.</strong> Add the free extension to Chrome, Edge or Brave, open the page, and click the toolbar icon. Everything happens locally.</li>
-    <li><strong id="read">Let it read the computed styles.</strong> SVG Downloader inspects the page's styles and gathers every background SVG alongside the inline, <code>&lt;img&gt;</code> and sprite sources it also detects.</li>
+    <li><strong id="read">Let it read the computed styles.</strong> SVG Downloader inspects the page's styles and gathers the background SVGs alongside the inline, <code>&lt;img&gt;</code> and same-document sprite sources it also detects. On pages over 10,000 elements this scan is skipped for speed, and the popup says so.</li>
     <li><strong id="preview">Preview and pick.</strong> Each background SVG shows in an isolated preview, off the busy page. Use Previous/Next to land on the one you want.</li>
     <li><strong id="download">Download the original vector.</strong> Click <strong>Download Current SVG</strong>. You get a real <code>.svg</code> file with its <code>viewBox</code> and paths intact and a missing <code>xmlns</code> repaired, ready for Figma, Illustrator or VS Code.</li>
   </ol>

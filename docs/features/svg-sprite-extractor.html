@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Extract SVG From a Sprite Sheet — SVG Downloader</title>
-<meta name="description" content="A sprite packs many icons behind &lt;use&gt; references, so a plain save gives the whole sheet. SVG Downloader resolves each symbol and saves the glyph you want.">
+<meta name="description" content="A sprite packs many icons behind &lt;use&gt; references, so a plain save gives the whole sheet. SVG Downloader resolves each same-document symbol and saves the glyph you want.">
 <link rel="canonical" href="https://svg.clasicwebtools.com/features/svg-sprite-extractor">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <meta name="author" content="Flozad">
 <meta name="theme-color" content="#ece4d3">
 <meta property="og:site_name" content="SVG Downloader">
 <meta property="og:title" content="Extract SVG From a Sprite Sheet">
-<meta property="og:description" content="A sprite packs many icons behind &lt;use&gt; references, so a plain save gives the whole sheet. SVG Downloader resolves each symbol and saves the glyph you want.">
+<meta property="og:description" content="A sprite packs many icons behind &lt;use&gt; references, so a plain save gives the whole sheet. SVG Downloader resolves each same-document symbol and saves the glyph you want.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://svg.clasicwebtools.com/features/svg-sprite-extractor">
 <meta property="og:image" content="https://svg.clasicwebtools.com/motion/06-brand.png">
@@ -22,7 +22,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@lozards">
 <meta name="twitter:title" content="Extract SVG From a Sprite Sheet">
-<meta name="twitter:description" content="A sprite packs many icons behind &lt;use&gt; references, so a plain save gives the whole sheet. SVG Downloader resolves each symbol and saves the glyph you want.">
+<meta name="twitter:description" content="A sprite packs many icons behind &lt;use&gt; references, so a plain save gives the whole sheet. SVG Downloader resolves each same-document symbol and saves the glyph you want.">
 <meta name="twitter:image" content="https://svg.clasicwebtools.com/motion/06-brand.png">
 <link rel="icon" href="/icon.svg" type="image/svg+xml">
 <link rel="manifest" href="/site.webmanifest">
@@ -46,7 +46,7 @@
       "@id": "https://svg.clasicwebtools.com/features/svg-sprite-extractor",
       "url": "https://svg.clasicwebtools.com/features/svg-sprite-extractor",
       "name": "Extract SVG From a Sprite Sheet",
-      "description": "How SVG Downloader resolves <use> references in an SVG sprite and saves individual glyphs.",
+      "description": "How SVG Downloader resolves same-document <use> references in an SVG sprite and saves individual glyphs.",
       "inLanguage": "en",
       "isPartOf": { "@id": "https://svg.clasicwebtools.com/#website" },
       "about": { "@id": "https://svg.clasicwebtools.com/#app" },
@@ -104,17 +104,17 @@
   <p>The trap is that a <code>&lt;use&gt;</code> element holds no artwork. It's a pointer. Try to save the icon you see and you're saving an empty reference — a file that renders nothing on its own because the symbol it points to isn't in it. Go the other way and save the sprite source, and you get all forty icons welded into one file, most of them defined at coordinates far outside any single viewBox. Neither is the one icon you wanted.</p>
 
   <h2>What SVG Downloader does instead</h2>
-  <p>Open the popup and it follows the pointers. For every <code>&lt;use&gt;</code> on the page it looks up the referenced <code>&lt;symbol&gt;</code> or <code>&lt;g&gt;</code> — in the inline sprite or in an external sprite file the page loads — and reconstructs a complete, standalone SVG for that single glyph. Each one gets its own isolated preview, so a sheet of forty icons becomes forty previews you can page through and save one at a time.</p>
+  <p>Open the popup and it follows the pointers. For every <code>&lt;use&gt;</code> that points somewhere in the same document — the usual <code>&lt;use href="#chevron"&gt;</code> into a hidden inline sprite — it looks up the referenced <code>&lt;symbol&gt;</code> or <code>&lt;g&gt;</code> and reconstructs a complete, standalone SVG for that single glyph. Each one gets its own isolated preview, so a sheet of forty icons becomes forty previews you can page through and save one at a time.</p>
   <ul>
-    <li><strong>The reference resolved.</strong> The <code>href</code> (or legacy <code>xlink:href</code>) is followed to its symbol, and the symbol's own <code>viewBox</code> and paths are lifted into a self-contained file that renders correctly on its own.</li>
-    <li><strong>One glyph, not the sheet.</strong> You save the chevron, not the chevron plus thirty-nine neighbours. Each symbol is extracted separately and named from its <code>id</code>, so you get <code>chevron.svg</code>, not <code>icons.svg</code>.</li>
+    <li><strong>The reference resolved.</strong> The <code>href</code> (or legacy <code>xlink:href</code>) is followed to its symbol, and that symbol is cloned into a fresh <code>&lt;defs&gt;</code> at the top of the saved file. The <code>&lt;use&gt;</code> stays where it was and now resolves against markup the file carries itself — so it renders correctly anywhere, with no sprite alongside it.</li>
+    <li><strong>One glyph, not the sheet.</strong> You save the chevron, not the chevron plus thirty-nine neighbours. Each reference is extracted separately, and you can type the name you want before saving it — or take the lot as a numbered set with <a href="/features/bulk-zip-download">Download All as ZIP</a>.</li>
     <li><strong>Or take them all.</strong> When you want the full set, <a href="/features/bulk-zip-download">Download All as ZIP</a> extracts every referenced symbol at once, de-duplicated, into one archive.</li>
   </ul>
 
   <h2>What you get back</h2>
   <dl class="facts">
-    <div><dt>Format</dt><dd>A standards-clean <strong>.svg</strong> per glyph — the symbol lifted into a self-contained file, namespace repaired.</dd></div>
-    <div><dt>References read</dt><dd><code>&lt;use&gt;</code> pointing at inline or external sprites, via <code>href</code> and <strong>legacy xlink:href</strong>.</dd></div>
+    <div><dt>Format</dt><dd>A standards-clean <strong>.svg</strong> per glyph — the symbol inlined into a self-contained file, namespace repaired.</dd></div>
+    <div><dt>References read</dt><dd><code>&lt;use&gt;</code> pointing <strong>inside the same document</strong>, via <code>href</code> and legacy <code>xlink:href</code>. External sprite files aren't resolved.</dd></div>
     <div><dt>Where it runs</dt><dd>Entirely <strong>in your browser</strong>. References are resolved locally — no upload, no server, no account.</dd></div>
     <div><dt>Also handles</dt><dd><a href="/features/inline-svg">Inline SVG</a>, <a href="/features/css-background-svg">CSS backgrounds</a> and <a href="/features/bulk-zip-download">whole-page ZIP</a>.</dd></div>
   </dl>
@@ -136,7 +136,11 @@
     </details>
     <details>
       <summary>Does it work with an external sprite file, not just an inline one?</summary>
-      <div class="faq-body"><p>Yes. Whether the symbols sit in a hidden inline <code>&lt;svg&gt;</code> or in a separate <code>sprite.svg</code> the page loads, the <code>&lt;use&gt;</code> reference is followed to its source and the single symbol is reconstructed into a standalone file.</p></div>
+      <div class="faq-body"><p>No — external sprites aren't supported. If the reference points outside the current document, as in <code>&lt;use href="/sprite.svg#cart"&gt;</code>, that <code>&lt;svg&gt;</code> is skipped and counted as a skip rather than handed to you broken. Only same-document references — <code>&lt;use href="#cart"&gt;</code> into a hidden inline sprite, which is how most sites ship one — are resolved. If a site uses an external sprite, opening <code>sprite.svg</code> directly gets you the source sheet.</p></div>
+    </details>
+    <details>
+      <summary>What about a symbol that references another symbol?</summary>
+      <div class="faq-body"><p>Resolution goes one level deep. A <code>&lt;symbol&gt;</code> whose own contents include a further <code>&lt;use&gt;</code> pointing at a second symbol is left unresolved, so that nested piece won't draw in the saved file. It's uncommon — most sprites define each glyph flat — but worth checking the preview if an icon looks partly empty.</p></div>
     </details>
   </div>
 </div></section>
