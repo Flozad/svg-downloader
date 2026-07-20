@@ -67,11 +67,26 @@
         <div class="rows">
           <div class="row">
             <div class="row-key">
-              <label for="autoScan">Scan on open</label>
+              <label id="autoScanLabel" for="autoScan">Scan on open</label>
               <p class="row-desc">Count and preview SVGs the moment the popup opens. Turn off to scan manually.</p>
             </div>
             <div class="row-control">
-              <button type="button" class="switch" id="autoScan" role="switch" aria-checked="true">
+              <!-- aria-labelledby names the switch explicitly rather than
+                   relying on the <label for> alone: `role="switch"` replaces
+                   the button's native semantics, and naming it outright is the
+                   version that behaves the same across screen readers.
+                   The <label for> still matters — <button> IS a labelable
+                   element, so it forwards clicks to the switch natively. Do not
+                   add a click handler to the label: options.js used to, and the
+                   resulting double-toggle made the label a no-op. -->
+              <button
+                type="button"
+                class="switch"
+                id="autoScan"
+                role="switch"
+                aria-checked="true"
+                aria-labelledby="autoScanLabel"
+              >
                 <span class="switch-track"><span class="switch-thumb"></span></span>
               </button>
             </div>
@@ -79,11 +94,18 @@
 
           <div class="row">
             <div class="row-key">
-              <label for="showColorLink">Show colour hand-off</label>
+              <label id="showColorLinkLabel" for="showColorLink">Show colour hand-off</label>
               <p class="row-desc">Show the link to the SVG Color Changer under the download buttons.</p>
             </div>
             <div class="row-control">
-              <button type="button" class="switch" id="showColorLink" role="switch" aria-checked="true">
+              <button
+                type="button"
+                class="switch"
+                id="showColorLink"
+                role="switch"
+                aria-checked="true"
+                aria-labelledby="showColorLinkLabel"
+              >
                 <span class="switch-track"><span class="switch-thumb"></span></span>
               </button>
             </div>
