@@ -56,7 +56,8 @@
   --display: "Bricolage Grotesque", "Arial Narrow", var(--sans);
   --mono: "Space Mono", ui-monospace, "SF Mono", SFMono-Regular, Menlo, monospace;
 
-  --sheet: linear-gradient(var(--line) 1px, transparent 1px),
+  --sheet:
+    linear-gradient(var(--line) 1px, transparent 1px),
     linear-gradient(90deg, var(--line) 1px, transparent 1px);
 
   color-scheme: light;
@@ -155,7 +156,9 @@ input {
   font-family: var(--display);
   font-size: 15px;
   font-weight: 600;
-  font-variation-settings: "opsz" 18, "wght" 640;
+  font-variation-settings:
+    "opsz" 18,
+    "wght" 640;
   letter-spacing: -0.02em;
 }
 .head-tools {
@@ -190,7 +193,10 @@ input {
   color: var(--dim);
   border: 1px solid transparent;
   border-radius: var(--r-node);
-  transition: color 0.16s ease, background-color 0.16s ease, border-color 0.16s ease;
+  transition:
+    color 0.16s ease,
+    background-color 0.16s ease,
+    border-color 0.16s ease;
 }
 .icon-btn svg {
   width: 15px;
@@ -224,7 +230,9 @@ input {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6) inset, 0 20px 40px -34px rgba(27, 26, 21, 0.6);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.6) inset,
+    0 20px 40px -34px rgba(27, 26, 21, 0.6);
 }
 /* registration ticks at opposite corners */
 .mount::before,
@@ -367,7 +375,11 @@ input {
   padding: 9px 14px;
   border-radius: var(--r-node);
   transition:
-    transform 0.14s var(--ease-out), background-color 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease, color 0.18s ease;
+    transform 0.14s var(--ease-out),
+    background-color 0.18s ease,
+    border-color 0.18s ease,
+    box-shadow 0.18s ease,
+    color 0.18s ease;
 }
 .btn svg {
   width: 15px;
@@ -385,7 +397,9 @@ input {
 .btn-primary {
   background: var(--plot);
   color: var(--surface-hi);
-  box-shadow: 0 1px 0 var(--plot-deep), 0 10px 22px -14px rgba(20, 63, 41, 0.7);
+  box-shadow:
+    0 1px 0 var(--plot-deep),
+    0 10px 22px -14px rgba(20, 63, 41, 0.7);
 }
 .btn-primary:hover:not(:disabled) {
   background: var(--plot-deep);
@@ -425,7 +439,9 @@ input {
   background: var(--surface-hi);
   border: 1px solid var(--line-2);
   border-radius: var(--r-node);
-  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
 }
 .field-input:focus-within {
   border-color: var(--plot);
@@ -488,7 +504,9 @@ input {
 .handoff a {
   color: var(--plot);
   border-bottom: 1px solid var(--plot-line);
-  transition: border-color 0.18s ease, background-color 0.18s ease;
+  transition:
+    border-color 0.18s ease,
+    background-color 0.18s ease;
 }
 .handoff a:hover {
   border-color: var(--plot);

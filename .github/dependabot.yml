@@ -1,20 +1,40 @@
 version: 2
 updates:
+  # Grouped deliberately. Ungrouped, a single monthly run opened eight PRs
+  # across three ecosystems, which is more review load than a project this size
+  # can absorb and encourages rubber-stamping. Majors stay separate so they get
+  # looked at on their own — vitest 2→4, Biome 1→2 and jsdom 25→29 all needed
+  # real verification, and jsdom's turned out to be broken upstream.
   - package-ecosystem: npm
     directory: /
     schedule:
       interval: monthly
     open-pull-requests-limit: 5
+    groups:
+      dev-minor-and-patch:
+        dependency-type: development
+        update-types:
+          - minor
+          - patch
 
-  # The Remotion project is independent of the extension and updates noisily;
-  # keep it on the same cadence but in its own PRs.
   - package-ecosystem: npm
     directory: /motion
     schedule:
       interval: monthly
     open-pull-requests-limit: 3
+    groups:
+      motion-minor-and-patch:
+        update-types:
+          - minor
+          - patch
 
   - package-ecosystem: github-actions
     directory: /
     schedule:
       interval: monthly
+    groups:
+      actions:
+        update-types:
+          - major
+          - minor
+          - patch
