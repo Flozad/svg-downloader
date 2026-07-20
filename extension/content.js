@@ -92,13 +92,25 @@
     }
   }
 
+  // Caps on the collected corpus. Every inline SVG is serialized to a string and
+  // the whole list crosses the chrome.runtime message boundary in one response,
+  // so a page with a few thousand SVGs — or one SVG holding megabytes of
+  // generated <path> data — would hang or OOM the popup. Skipped items are
+  // counted, so the popup can say so rather than silently under-reporting.
+  const MAX_INLINE_SVGS = 2000;
+  const MAX_SVG_BYTES = 2_000_000;
+
   // Inline <svg>. For sprite icons (<use href="#id">) whose target is a
   // same-document symbol, inline the referenced node into a clone so the
   // extracted file is not an empty husk. Never mutate the live page DOM.
   function collectInlineSVGs(counters) {
     const items = [];
-    document.querySelectorAll('svg').forEach(svg => {
+    document.querySelectorAll('svg').forEach((svg) => {
       if (!paintsSomething(svg)) return;
+      if (items.length >= MAX_INLINE_SVGS) {
+        counters.skipped++;
+        return;
+      }
 
       const uses = svg.querySelectorAll('use');
       const clone = svg.cloneNode(true);
@@ -108,7 +120,7 @@
       if (uses.length > 0) {
         let defs = null;
         const inlined = new Set();
-        clone.querySelectorAll('use').forEach(use => {
+        clone.querySelectorAll('use').forEach((use) => {
           const ref = use.getAttribute('href') || use.getAttribute('xlink:href');
           if (!ref) return;
           if (ref.startsWith('#')) {
@@ -147,14 +159,17 @@
       if (!clone.getAttribute('xmlns')) {
         clone.setAttribute('xmlns', SVG_NS);
       }
-      if (
-        !clone.getAttribute('xmlns:xlink') &&
-        /xlink:/.test(clone.outerHTML)
-      ) {
+      if (!clone.getAttribute('xmlns:xlink') && /xlink:/.test(clone.outerHTML)) {
         clone.setAttribute('xmlns:xlink', 'http://www.w3.org/1999/xlink');
       }
 
-      items.push({ type: 'svg', content: clone.outerHTML });
+      const content = clone.outerHTML;
+      if (content.length > MAX_SVG_BYTES) {
+        counters.skipped++;
+        return;
+      }
+
+      items.push({ type: 'svg', content });
     });
     return items;
   }
@@ -163,7 +178,7 @@
   // data URIs, which the old suffix-only attribute selector all missed.
   function collectImageSVGs() {
     const items = [];
-    document.querySelectorAll('img').forEach(img => {
+    document.querySelectorAll('img').forEach((img) => {
       if (isSvgUrl(img.src)) {
         items.push({ type: 'img', content: img.src });
       }
@@ -175,7 +190,7 @@
   function collectEmbeddedSVGs() {
     const items = [];
 
-    document.querySelectorAll('object').forEach(el => {
+    document.querySelectorAll('object').forEach((el) => {
       const data = el.getAttribute('data');
       if (el.getAttribute('type') === 'image/svg+xml' || isSvgUrl(data)) {
         const abs = data && toAbsolute(data);
@@ -183,7 +198,7 @@
       }
     });
 
-    document.querySelectorAll('embed').forEach(el => {
+    document.querySelectorAll('embed').forEach((el) => {
       const src = el.getAttribute('src');
       if (el.getAttribute('type') === 'image/svg+xml' || isSvgUrl(src)) {
         const abs = src && toAbsolute(src);
@@ -191,7 +206,7 @@
       }
     });
 
-    document.querySelectorAll('iframe').forEach(el => {
+    document.querySelectorAll('iframe').forEach((el) => {
       const src = el.getAttribute('src');
       if (isSvgUrl(src)) {
         const abs = toAbsolute(src);
@@ -217,7 +232,7 @@
     }
 
     const items = [];
-    all.forEach(el => {
+    all.forEach((el) => {
       const bg = getComputedStyle(el).backgroundImage;
       if (!bg || bg === 'none') return;
 
@@ -235,7 +250,7 @@
 
   function dedupe(items) {
     const seen = new Set();
-    return items.filter(item => {
+    return items.filter((item) => {
       if (seen.has(item.content)) {
         return false;
       }
@@ -257,17 +272,20 @@
 
     // Send initial count to popup
     try {
-      chrome.runtime.sendMessage({
-        action: 'svgsCollected',
-        data: {
-          count: svgElements.length,
-          skipped: counters.skipped
+      chrome.runtime.sendMessage(
+        {
+          action: 'svgsCollected',
+          data: {
+            count: svgElements.length,
+            skipped: counters.skipped,
+          },
+        },
+        () => {
+          // Must read lastError or Chrome logs "Unchecked runtime.lastError"
+          // (e.g. when the popup closed before this message arrived).
+          void chrome.runtime.lastError;
         }
-      }, () => {
-        // Must read lastError or Chrome logs "Unchecked runtime.lastError"
-        // (e.g. when the popup closed before this message arrived).
-        void chrome.runtime.lastError;
-      });
+      );
 
       if (svgElements.length > 0) {
         currentIndex = 0;
@@ -281,18 +299,21 @@
   function sendCurrentSVG() {
     if (currentIndex >= 0 && currentIndex < svgElements.length) {
       try {
-        chrome.runtime.sendMessage({
-          action: 'elementSelected',
-          data: {
-            ...svgElements[currentIndex],
-            currentIndex,
-            total: svgElements.length
+        chrome.runtime.sendMessage(
+          {
+            action: 'elementSelected',
+            data: {
+              ...svgElements[currentIndex],
+              currentIndex,
+              total: svgElements.length,
+            },
+          },
+          () => {
+            // Must read lastError or Chrome logs "Unchecked runtime.lastError"
+            // (e.g. when the popup closed before this message arrived).
+            void chrome.runtime.lastError;
           }
-        }, () => {
-          // Must read lastError or Chrome logs "Unchecked runtime.lastError"
-          // (e.g. when the popup closed before this message arrived).
-          void chrome.runtime.lastError;
-        });
+        );
       } catch (error) {
         console.error('Error in sendCurrentSVG:', error);
       }
@@ -340,14 +361,14 @@
             break;
           }
           fetch(request.url)
-            .then(response => {
+            .then((response) => {
               if (!response.ok) {
                 throw new Error(`HTTP ${response.status}`);
               }
               return response.text();
             })
-            .then(text => sendResponse({ success: true, content: text }))
-            .catch(error => sendResponse({ success: false, error: error.message }));
+            .then((text) => sendResponse({ success: true, content: text }))
+            .catch((error) => sendResponse({ success: false, error: error.message }));
           return true; // async response
         }
       }

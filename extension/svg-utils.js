@@ -13,7 +13,7 @@ function ensureXlinkDeclared(content) {
   const tag = openTag[0];
   if (/\bxmlns:xlink\s*=/i.test(tag)) return content;
 
-  const patched = tag.slice(0, tag.length - 1) + ` xmlns:xlink="${XLINK_NS}"` + tag.slice(tag.length - 1);
+  const patched = `${tag.slice(0, tag.length - 1)} xmlns:xlink="${XLINK_NS}"${tag.slice(tag.length - 1)}`;
   return content.replace(tag, patched);
 }
 
@@ -46,7 +46,7 @@ export async function formatSVGContent(content) {
   let output = serializer.serializeToString(doc);
 
   if (!output.startsWith('<?xml')) {
-    output = '<?xml version="1.0" encoding="UTF-8" standalone="no"?>\n' + output;
+    output = `<?xml version="1.0" encoding="UTF-8" standalone="no"?>\n${output}`;
   }
 
   return output;
@@ -60,17 +60,25 @@ export async function formatSVGContent(content) {
 const INVALID_FILENAME_CHARS = /[<>:"/\\|?*\u0000-\u001f]/g;
 const RESERVED_NAMES = /^(con|prn|aux|nul|com[1-9]|lpt[1-9])$/i;
 
-export function sanitizeFilename(name, fallback) {
+// Clean a name to its bare (extension-less) form. Order matters: the path
+// separators are destroyed *before* dot runs are collapsed, so `../../etc` can
+// never reassemble into a traversal. Returns '' when nothing usable survives.
+export function sanitizeNamePart(name) {
   const cleaned = (name || '')
     .trim()
-    .replace(/\.svg$/i, '')          // user may have typed the extension themselves
+    .replace(/\.svg$/i, '') // user may have typed the extension themselves
     .replace(INVALID_FILENAME_CHARS, '-')
-    .replace(/\.+/g, '.')            // collapse dot runs, killing '..'
+    .replace(/\.+/g, '.') // collapse dot runs, killing '..'
     .replace(/^[.\s]+|[.\s]+$/g, '') // no leading/trailing dots or spaces
     .slice(0, 100);
 
-  if (!cleaned || RESERVED_NAMES.test(cleaned)) {
-    return `${fallback}.svg`;
-  }
-  return `${cleaned}.svg`;
+  // Windows reserves these device names with *any* extension (CON.txt too), so
+  // test the basename rather than the whole string.
+  if (RESERVED_NAMES.test(cleaned.split('.')[0])) return '';
+  return cleaned;
+}
+
+export function sanitizeFilename(name, fallback) {
+  const cleaned = sanitizeNamePart(name);
+  return cleaned ? `${cleaned}.svg` : `${fallback}.svg`;
 }

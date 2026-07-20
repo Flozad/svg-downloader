@@ -4,9 +4,15 @@
 // document, and its CSS cannot escape the image. That is a browser-level
 // guarantee, not a sanitizer we have to maintain.
 //
-// Returns the object URL it created (or null for a URL-backed image) so the
-// caller can hand it back on the next call to be revoked.
-export function renderPreview(previewEl, svg, previousObjectUrl) {
+// Takes SVG *markup*, never a URL. Remote SVGs are fetched to markup by the
+// caller (through the content script, at page origin) before they get here —
+// pointing this <img> straight at a page-controlled URL would make the
+// extension origin issue an attacker-attributable request, leaking that the
+// extension is installed along with the user's IP and popup-open timing.
+//
+// Returns the object URL it created so the caller can hand it back on the next
+// call to be revoked.
+export function renderPreview(previewEl, markup, previousObjectUrl) {
   if (previousObjectUrl) {
     URL.revokeObjectURL(previousObjectUrl);
   }
@@ -14,14 +20,9 @@ export function renderPreview(previewEl, svg, previousObjectUrl) {
   const img = document.createElement('img');
   img.className = 'max-w-full max-h-full object-contain';
 
-  let objectUrl = null;
-  if (svg.type === 'svg') {
-    const blob = new Blob([svg.content], { type: 'image/svg+xml;charset=utf-8' });
-    objectUrl = URL.createObjectURL(blob);
-    img.src = objectUrl;
-  } else {
-    img.src = svg.content;
-  }
+  const blob = new Blob([markup], { type: 'image/svg+xml;charset=utf-8' });
+  const objectUrl = URL.createObjectURL(blob);
+  img.src = objectUrl;
 
   img.onerror = () => {
     previewEl.textContent = 'This SVG could not be previewed.';

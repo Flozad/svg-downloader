@@ -1,6 +1,6 @@
-import { formatSVGContent, sanitizeFilename } from './svg-utils.js';
 import { renderPreview } from './preview.js';
 import { getSettings } from './settings.js';
+import { formatSVGContent, sanitizeFilename } from './svg-utils.js';
 
 let currentSVG = null;
 let isLoading = false;
@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       // Inject the content script
       await chrome.scripting.executeScript({
         target: { tabId: tab.id },
-        files: ['content.js']
+        files: ['content.js'],
       });
 
       return tab;
@@ -138,8 +138,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   // re-injection lands. Classify those so refreshSVGs can retry once.
   function isConnectionError(error) {
     const m = error?.message || '';
-    return m.includes('Receiving end does not exist') ||
-           m.includes('message port closed');
+    return m.includes('Receiving end does not exist') || m.includes('message port closed');
   }
 
   async function injectAndCollect() {
@@ -168,7 +167,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     } catch (error) {
       console.error('Error refreshing SVGs:', error);
       if (error.message.includes('restricted') || error.message.includes('cannot be scripted')) {
-        showError("This is a browser page the extension can't read. Open a regular website and try again.");
+        showError(
+          "This is a browser page the extension can't read. Open a regular website and try again."
+        );
       } else if (error.message.includes('Cannot access')) {
         showError('Cannot access SVGs on this page. Try opening a webpage first.');
       } else if (isConnectionError(error)) {
@@ -198,9 +199,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   // Handle navigation
   async function sendTabMessage(action) {
     try {
-      const [tab] = await chrome.tabs.query({active: true, currentWindow: true});
+      const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
       if (!tab) throw new Error('No active tab found');
-      return await chrome.tabs.sendMessage(tab.id, {action});
+      return await chrome.tabs.sendMessage(tab.id, { action });
     } catch (error) {
       console.error(`Error sending ${action} message:`, error);
       showError('Error navigating SVGs. Please try again.');
@@ -219,6 +220,30 @@ document.addEventListener('DOMContentLoaded', async () => {
       throw new Error(response?.error || 'Failed to fetch SVG');
     }
     return response.content;
+  }
+
+  // Render the current item into the preview plate. Inline markup goes straight
+  // to a blob; a remote SVG is fetched to markup first so the popup never loads
+  // a page-controlled URL from the extension origin (see preview.js). Previews
+  // race — Prev/Next can outrun a slow fetch — so a stale response is dropped.
+  let previewToken = 0;
+  async function showPreview(svg) {
+    const token = ++previewToken;
+
+    if (svg.type === 'svg') {
+      previewObjectUrl = renderPreview(preview, svg.content, previewObjectUrl);
+      return;
+    }
+
+    try {
+      const markup = await fetchSVGContent(svg.content);
+      if (token !== previewToken) return;
+      previewObjectUrl = renderPreview(preview, markup, previewObjectUrl);
+    } catch (error) {
+      if (token !== previewToken) return;
+      console.error('Error loading SVG preview:', error);
+      preview.textContent = 'This SVG could not be previewed.';
+    }
   }
 
   prevBtn.addEventListener('click', () => sendTabMessage('previousSVG'));
@@ -278,19 +303,21 @@ document.addEventListener('DOMContentLoaded', async () => {
       }
 
       // Generate and download the zip
-      const blob = await zip.generateAsync({type: 'blob'});
+      const blob = await zip.generateAsync({ type: 'blob' });
       const url = URL.createObjectURL(blob);
       try {
         await chrome.downloads.download({
           url: url,
-          filename: `${settings.zipName}.zip`
+          filename: `${settings.zipName}.zip`,
         });
       } finally {
         URL.revokeObjectURL(url);
       }
 
       if (failures.length > 0) {
-        showStatus(`Downloaded ${svgs.length - failures.length} of ${svgs.length} SVGs. Skipped: ${failures.join(', ')}.`);
+        showStatus(
+          `Downloaded ${svgs.length - failures.length} of ${svgs.length} SVGs. Skipped: ${failures.join(', ')}.`
+        );
       } else {
         showStatus(`Downloaded ${svgs.length} SVGs as ZIP.`);
       }
@@ -302,7 +329,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   async function downloadSVG(svg) {
     const filenameInput = document.getElementById('filenameInput');
-    const filename = sanitizeFilename(filenameInput.value, `${settings.filenamePrefix}-${svg.currentIndex + 1}`);
+    const filename = sanitizeFilename(
+      filenameInput.value,
+      `${settings.filenamePrefix}-${svg.currentIndex + 1}`
+    );
 
     let formattedContent;
     try {
@@ -314,7 +344,9 @@ document.addEventListener('DOMContentLoaded', async () => {
           svgContent = await fetchSVGContent(svg.content);
         } catch (error) {
           console.error('Error fetching SVG:', error);
-          showError('This SVG is hosted on another domain and could not be downloaded. Try opening the image in a new tab and saving it directly.');
+          showError(
+            'This SVG is hosted on another domain and could not be downloaded. Try opening the image in a new tab and saving it directly.'
+          );
           return;
         }
         formattedContent = await formatSVGContent(svgContent);
@@ -329,7 +361,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       return;
     }
 
-    const blob = new Blob([formattedContent], {type: 'image/svg+xml;charset=utf-8'});
+    const blob = new Blob([formattedContent], { type: 'image/svg+xml;charset=utf-8' });
     const url = URL.createObjectURL(blob);
     try {
       await chrome.downloads.download({ url, filename });
@@ -344,7 +376,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   // Handle messages from content script
   chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     switch (request.action) {
-      case 'svgsCollected':
+      case 'svgsCollected': {
         const { count } = request.data;
         setCounter(count);
         setLoading(false);
@@ -361,8 +393,9 @@ document.addEventListener('DOMContentLoaded', async () => {
           downloadAllBtn.disabled = true;
         }
         break;
+      }
 
-      case 'elementSelected':
+      case 'elementSelected': {
         currentSVG = request.data;
 
         // Update preview
@@ -370,7 +403,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         emptyState.classList.add('hidden');
         preview.classList.remove('hidden');
 
-        previewObjectUrl = renderPreview(preview, currentSVG, previewObjectUrl);
+        showPreview(currentSVG);
 
         // Position readout: 03 / 24, with the mount tag tracking the same index.
         const pos = String(currentSVG.currentIndex + 1).padStart(2, '0');
@@ -384,6 +417,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         downloadBtn.disabled = false;
         downloadAllBtn.disabled = false;
         break;
+      }
     }
   });
 });
