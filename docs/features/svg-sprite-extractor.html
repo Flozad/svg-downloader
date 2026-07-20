@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Extract SVG From a Sprite Sheet — SVG Downloader</title>
+<meta name="description" content="A sprite packs many icons behind &lt;use&gt; references, so a plain save gives the whole sheet. SVG Downloader resolves each same-document symbol and saves the glyph you want.">
+<link rel="canonical" href="https://svg.clasicwebtools.com/features/svg-sprite-extractor">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="author" content="Flozad">
+<meta name="theme-color" content="#ece4d3">
+<meta property="og:site_name" content="SVG Downloader">
+<meta property="og:title" content="Extract SVG From a Sprite Sheet">
+<meta property="og:description" content="A sprite packs many icons behind &lt;use&gt; references, so a plain save gives the whole sheet. SVG Downloader resolves each same-document symbol and saves the glyph you want.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://svg.clasicwebtools.com/features/svg-sprite-extractor">
+<meta property="og:image" content="https://svg.clasicwebtools.com/motion/06-brand.png">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="SVG Downloader saving an inline vector from a page.">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@lozards">
+<meta name="twitter:title" content="Extract SVG From a Sprite Sheet">
+<meta name="twitter:description" content="A sprite packs many icons behind &lt;use&gt; references, so a plain save gives the whole sheet. SVG Downloader resolves each same-document symbol and saves the glyph you want.">
+<meta name="twitter:image" content="https://svg.clasicwebtools.com/motion/06-brand.png">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/fonts/bricolage-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/pages.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://svg.clasicwebtools.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Features", "item": "https://svg.clasicwebtools.com/features" },
+        { "@type": "ListItem", "position": 3, "name": "SVG sprite extractor", "item": "https://svg.clasicwebtools.com/features/svg-sprite-extractor" }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://svg.clasicwebtools.com/features/svg-sprite-extractor",
+      "url": "https://svg.clasicwebtools.com/features/svg-sprite-extractor",
+      "name": "Extract SVG From a Sprite Sheet",
+      "description": "How SVG Downloader resolves same-document <use> references in an SVG sprite and saves individual glyphs.",
+      "inLanguage": "en",
+      "isPartOf": { "@id": "https://svg.clasicwebtools.com/#website" },
+      "about": { "@id": "https://svg.clasicwebtools.com/#app" },
+      "primaryImageOfPage": "https://svg.clasicwebtools.com/motion/06-brand.png"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<nav class="nav">
+  <a class="brand" href="/">
+    <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+      <rect width="48" height="48" rx="10" fill="var(--plot)"/>
+      <path d="M24 13v15m0 0l-6.5-6.5M24 28l6.5-6.5" fill="none" stroke="var(--surface-hi)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="16.5" y="33.5" width="15" height="2.4" rx="1.2" fill="var(--surface-hi)"/>
+    </svg>
+    <strong>SVG&nbsp;Downloader</strong>
+  </a>
+  <span class="spacer"></span>
+  <span class="nav-links">
+    <a href="/features" aria-current="page">Features</a>
+    <a href="/guides">Guides</a>
+    <a href="/docs">Docs</a>
+    <a href="/privacy">Privacy</a>
+  </span>
+  <a class="nav-cta" href="https://github.com/Flozad/svg-downloader">Get the extension</a>
+</nav>
+
+<main id="main">
+<header class="page-hero"><div class="wrap">
+  <ol class="crumbs">
+    <li><a href="/">Home</a></li>
+    <li><a href="/features">Features</a></li>
+    <li><span aria-current="page">SVG sprite extractor</span></li>
+  </ol>
+  <p class="eyebrow">Feature — every source · 3 of 4</p>
+  <h1>Extract one icon from an <span class="plot">SVG&nbsp;sprite</span></h1>
+  <p class="lede">A sprite sheet stacks dozens of icons into one file and paints each with <code>&lt;use href="#id"&gt;</code>. Save it the obvious way and you get the entire sheet — or a blank. SVG Downloader resolves the reference and hands you the one glyph.</p>
+  <div class="cta">
+    <a class="btn primary" href="https://github.com/Flozad/svg-downloader">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 12v16m0 0l-7-7m7 7l7-7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><rect x="16" y="34" width="16" height="2.6" rx="1.3" fill="currentColor"/></svg>
+      Get the extension
+    </a>
+    <a class="btn quiet" href="/guides/how-to-extract-svg-icons-from-a-website">Read the how-to →</a>
+  </div>
+</div></header>
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">The problem</p>
+  <h2>Why a sprite gives you the whole sheet or nothing</h2>
+  <p class="lead-in">SVG sprites are how large icon sets stay fast. Every icon is defined once — usually as a <code>&lt;symbol&gt;</code> with an <code>id</code>, tucked inside a single hidden <code>&lt;svg&gt;</code> — and each place that shows an icon just writes <code>&lt;use href="#chevron"&gt;</code>. The browser stamps a copy of that symbol wherever the reference sits. Efficient to load, and a trap to extract from.</p>
+  <p>The trap is that a <code>&lt;use&gt;</code> element holds no artwork. It's a pointer. Try to save the icon you see and you're saving an empty reference — a file that renders nothing on its own because the symbol it points to isn't in it. Go the other way and save the sprite source, and you get all forty icons welded into one file, most of them defined at coordinates far outside any single viewBox. Neither is the one icon you wanted.</p>
+
+  <h2>What SVG Downloader does instead</h2>
+  <p>Open the popup and it follows the pointers. For every <code>&lt;use&gt;</code> that points somewhere in the same document — the usual <code>&lt;use href="#chevron"&gt;</code> into a hidden inline sprite — it looks up the referenced <code>&lt;symbol&gt;</code> or <code>&lt;g&gt;</code> and reconstructs a complete, standalone SVG for that single glyph. Each one gets its own isolated preview, so a sheet of forty icons becomes forty previews you can page through and save one at a time.</p>
+  <ul>
+    <li><strong>The reference resolved.</strong> The <code>href</code> (or legacy <code>xlink:href</code>) is followed to its symbol, and that symbol is cloned into a fresh <code>&lt;defs&gt;</code> at the top of the saved file. The <code>&lt;use&gt;</code> stays where it was and now resolves against markup the file carries itself — so it renders correctly anywhere, with no sprite alongside it.</li>
+    <li><strong>One glyph, not the sheet.</strong> You save the chevron, not the chevron plus thirty-nine neighbours. Each reference is extracted separately, and you can type the name you want before saving it — or take the lot as a numbered set with <a href="/features/bulk-zip-download">Download All as ZIP</a>.</li>
+    <li><strong>Or take them all.</strong> When you want the full set, <a href="/features/bulk-zip-download">Download All as ZIP</a> extracts every referenced symbol at once, de-duplicated, into one archive.</li>
+  </ul>
+
+  <h2>What you get back</h2>
+  <dl class="facts">
+    <div><dt>Format</dt><dd>A standards-clean <strong>.svg</strong> per glyph — the symbol inlined into a self-contained file, namespace repaired.</dd></div>
+    <div><dt>References read</dt><dd><code>&lt;use&gt;</code> pointing <strong>inside the same document</strong>, via <code>href</code> and legacy <code>xlink:href</code>. External sprite files aren't resolved.</dd></div>
+    <div><dt>Where it runs</dt><dd>Entirely <strong>in your browser</strong>. References are resolved locally — no upload, no server, no account.</dd></div>
+    <div><dt>Also handles</dt><dd><a href="/features/inline-svg">Inline SVG</a>, <a href="/features/css-background-svg">CSS backgrounds</a> and <a href="/features/bulk-zip-download">whole-page ZIP</a>.</dd></div>
+  </dl>
+</div></section>
+
+<hr class="section-rule">
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Good to know</p>
+  <h2>Questions about SVG sprites</h2>
+  <div class="faq">
+    <details>
+      <summary>What is an SVG sprite, exactly?</summary>
+      <div class="faq-body"><p>One SVG file that defines many icons as separate <code>&lt;symbol&gt;</code> elements, each with its own <code>id</code>. Pages reference an icon with <code>&lt;use href="#id"&gt;</code> instead of repeating its markup. It's the icon-set equivalent of a CSS sprite sheet — one download, many glyphs.</p></div>
+    </details>
+    <details>
+      <summary>Why does saving the icon give me an empty file?</summary>
+      <div class="faq-body"><p>Because a <code>&lt;use&gt;</code> element contains no artwork — it points at a symbol defined elsewhere. Copied out on its own, that reference has nothing to render. SVG Downloader resolves the pointer to the actual symbol first, so the file you save draws the icon.</p></div>
+    </details>
+    <details>
+      <summary>Does it work with an external sprite file, not just an inline one?</summary>
+      <div class="faq-body"><p>No — external sprites aren't supported. If the reference points outside the current document, as in <code>&lt;use href="/sprite.svg#cart"&gt;</code>, that <code>&lt;svg&gt;</code> is skipped and counted as a skip rather than handed to you broken. Only same-document references — <code>&lt;use href="#cart"&gt;</code> into a hidden inline sprite, which is how most sites ship one — are resolved. If a site uses an external sprite, opening <code>sprite.svg</code> directly gets you the source sheet.</p></div>
+    </details>
+    <details>
+      <summary>What about a symbol that references another symbol?</summary>
+      <div class="faq-body"><p>Resolution goes one level deep. A <code>&lt;symbol&gt;</code> whose own contents include a further <code>&lt;use&gt;</code> pointing at a second symbol is left unresolved, so that nested piece won't draw in the saved file. It's uncommon — most sprites define each glyph flat — but worth checking the preview if an icon looks partly empty.</p></div>
+    </details>
+  </div>
+</div></section>
+
+<hr class="section-rule">
+
+<section><div class="wrap">
+  <div class="cta-band">
+    <div>
+      <h2>Pull one clean icon out of the sheet</h2>
+      <p>Free, private, and it follows the reference the browser hides.</p>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="https://github.com/Flozad/svg-downloader">Get the extension</a>
+      <a class="btn quiet" href="/features">All features →</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="related"><div class="wrap">
+  <p class="eyebrow">Keep reading</p>
+  <ul>
+    <li><a href="/features/inline-svg">Inline SVG<span>The simplest source</span></a></li>
+    <li><a href="/features/bulk-zip-download">Whole page as ZIP<span>Grab the whole set</span></a></li>
+    <li><a href="/guides/how-to-extract-svg-icons-from-a-website">Extract SVG icons<span>Step-by-step guide</span></a></li>
+  </ul>
+</div></section>
+</main>
+
+<footer>
+  <nav class="bleed foot-map" aria-label="Site map">
+    <div class="col"><p>Product</p><ul>
+      <li><a href="/">Overview</a></li>
+      <li><a href="/features">Features</a></li>
+      <li><a href="/compare/svg-downloader-vs-screenshotting-icons">Vs. screenshotting</a></li>
+      <li><a href="/privacy">Privacy</a></li>
+    </ul></div>
+    <div class="col"><p>Catches</p><ul>
+      <li><a href="/features/inline-svg">Inline SVG</a></li>
+      <li><a href="/features/css-background-svg">CSS background SVG</a></li>
+      <li><a href="/features/svg-sprite-extractor">Sprite / &lt;use&gt; SVG</a></li>
+      <li><a href="/features/bulk-zip-download">Whole page as ZIP</a></li>
+    </ul></div>
+    <div class="col"><p>Guides</p><ul>
+      <li><a href="/guides/how-to-download-svg-from-any-website">Download from any site</a></li>
+      <li><a href="/guides/how-to-extract-svg-icons-from-a-website">Extract SVG icons</a></li>
+      <li><a href="/guides/download-all-svgs-as-zip">Download all at once</a></li>
+      <li><a href="/guides/extract-svg-from-css-background">CSS background SVG</a></li>
+    </ul></div>
+    <div class="col"><p>Docs</p><ul>
+      <li><a href="/docs/installation">Installation</a></li>
+      <li><a href="/docs/usage">Usage</a></li>
+      <li><a href="/docs/faq">FAQ</a></li>
+      <li><a href="/docs/changelog">Changelog</a></li>
+    </ul></div>
+  </nav>
+  <div class="bleed colophon-foot">
+    <a href="https://github.com/Flozad/svg-downloader">GitHub</a>
+    <a href="https://github.com/Flozad/svg-downloader/issues">Issues</a>
+    <a href="https://clasicwebtools.com">clasicwebtools.com</a>
+    <span class="grow"></span>
+    <span>Bone stock, graphite, one plotter&nbsp;green</span>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,23 @@
+# robots.txt — svg.clasicwebtools.com
+# The whole site is public and meant to be indexed. Nothing is disallowed.
+
+User-agent: *
+Allow: /
+
+# Well-behaved AI answer engines are welcome to read and cite these pages.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://svg.clasicwebtools.com/sitemap.xml

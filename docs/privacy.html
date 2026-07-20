@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy — SVG Downloader (No Server, No Tracking)</title>
+<meta name="description" content="SVG Downloader privacy — no server, no account, no upload, no analytics, no tracking. Reads the active tab only when you open the popup; only your settings sync.">
+<link rel="canonical" href="https://svg.clasicwebtools.com/privacy">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="author" content="Flozad">
+<meta name="theme-color" content="#ece4d3">
+<meta property="og:site_name" content="SVG Downloader">
+<meta property="og:title" content="Privacy — SVG Downloader (No Server, No Tracking)">
+<meta property="og:description" content="SVG Downloader privacy — no server, no account, no upload, no analytics, no tracking. Reads the active tab only when you open the popup; only your settings sync.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://svg.clasicwebtools.com/privacy">
+<meta property="og:image" content="https://svg.clasicwebtools.com/motion/06-brand.png">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="SVG Downloader saving an inline vector from a page.">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@lozards">
+<meta name="twitter:title" content="Privacy — SVG Downloader">
+<meta name="twitter:description" content="SVG Downloader privacy — no server, no account, no upload, no analytics, no tracking. Reads the active tab only when you open the popup; only your settings sync.">
+<meta name="twitter:image" content="https://svg.clasicwebtools.com/motion/06-brand.png">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/fonts/bricolage-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/pages.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://svg.clasicwebtools.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Privacy", "item": "https://svg.clasicwebtools.com/privacy" }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://svg.clasicwebtools.com/privacy",
+      "url": "https://svg.clasicwebtools.com/privacy",
+      "name": "Privacy — SVG Downloader",
+      "description": "The privacy policy for the SVG Downloader browser extension: no server, no account, no upload, no analytics — only your four settings sync.",
+      "inLanguage": "en",
+      "isPartOf": { "@id": "https://svg.clasicwebtools.com/#website" },
+      "about": { "@id": "https://svg.clasicwebtools.com/#app" },
+      "primaryImageOfPage": "https://svg.clasicwebtools.com/motion/06-brand.png"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<nav class="nav">
+  <a class="brand" href="/">
+    <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+      <rect width="48" height="48" rx="10" fill="var(--plot)"/>
+      <path d="M24 13v15m0 0l-6.5-6.5M24 28l6.5-6.5" fill="none" stroke="var(--surface-hi)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="16.5" y="33.5" width="15" height="2.4" rx="1.2" fill="var(--surface-hi)"/>
+    </svg>
+    <strong>SVG&nbsp;Downloader</strong>
+  </a>
+  <span class="spacer"></span>
+  <span class="nav-links">
+    <a href="/features">Features</a>
+    <a href="/guides">Guides</a>
+    <a href="/docs">Docs</a>
+    <a href="/privacy" aria-current="page">Privacy</a>
+  </span>
+  <a class="nav-cta" href="https://github.com/Flozad/svg-downloader">Get the extension</a>
+</nav>
+
+<main id="main">
+<header class="page-hero"><div class="wrap">
+  <ol class="crumbs">
+    <li><a href="/">Home</a></li>
+    <li><span aria-current="page">Privacy</span></li>
+  </ol>
+  <p class="eyebrow">Privacy — reviewed for v1.3</p>
+  <h1>No server. <span class="plot">No tracking.</span></h1>
+  <p class="lede">SVG Downloader does its work on your device. It has no back end to send data to, and it's built that way on purpose — the short version is that there's nothing to collect because it never collects anything. The one exception is your own four settings, which ride Chrome's built-in sync.</p>
+</div></header>
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">The short version</p>
+  <h2>What we don't do</h2>
+  <p class="lead-in">There is no server, no account, no upload, no analytics and no tracking. SVG Downloader does not gather personal data, browsing history, page contents or usage statistics, and it has nothing to sell because it stores nothing about you. The only thing it stores at all is your own four preferences — see <em>Data storage</em> below.</p>
+
+  <h2>What the extension actually touches</h2>
+  <ul>
+    <li><strong>The active tab, only when you open the popup.</strong> To find SVGs it reads the current page's DOM — but only at the moment you click the extension. It has no standing access to your other tabs and does nothing in the background.</li>
+    <li><strong>Your downloads folder, when you save.</strong> Choosing <em>Download Current SVG</em> or <em>Download All as ZIP</em> writes files to your browser's downloads. That's the only thing it writes to disk, and only when you ask.</li>
+    <li><strong>Your own settings.</strong> Four preferences — filename prefix, ZIP name, whether it scans on open, and whether the colour-tool link is shown — are saved so the extension remembers how you like it. Nothing else is stored.</li>
+  </ul>
+
+  <h2>Network activity</h2>
+  <p>The extension makes no calls of its own to any server we run — there isn't one. The only outbound requests are:</p>
+  <ul>
+    <li><strong>Fetching SVG assets the page already references.</strong> When an SVG lives at a URL — an <code>&lt;img&gt;</code> source, a CSS background, a sprite the page links to — the extension fetches that same asset so it can be included in your download or ZIP. These are the requests your browser would already make to render the page.</li>
+    <li><strong>An optional, user-initiated link.</strong> If you choose to hand a file to the <a href="https://clasicwebtools.com">SVG Color Changer</a>, that opens <code>clasicwebtools.com</code> in your browser. It happens only when you click it, and never automatically.</li>
+  </ul>
+  <p>Separately, Chrome itself syncs the extension's four settings to your Google Account. That transfer is the browser's, not the extension's, and it carries nothing but those settings — see <em>Data storage</em> below.</p>
+
+  <h2>Data storage</h2>
+  <p>Nothing about your activity is stored by the extension — no page content, no browsing history, no usage data, and not on a server, because there is none. What is stored is your four preferences, and they're kept in <code>chrome.storage.sync</code>. That's Chrome's own mechanism: it means the settings follow your Google Account to your other machines, which also means they pass through Google's servers on the way. Settings only — the prefix you typed, the ZIP name, two toggles. Nothing about the pages you visit or the files you save goes with them. The SVG files themselves live wherever your browser puts downloads, under your control, and can be deleted like any other file.</p>
+
+  <h2>Permissions, plainly</h2>
+  <dl class="facts">
+    <div><dt><code>activeTab</code></dt><dd>Read the current page's DOM <strong>only when you open the popup</strong>, so it can detect the SVGs on that page. No standing access to your other tabs.</dd></div>
+    <div><dt><code>scripting</code></dt><dd>Run the detection pass in that same tab, on demand. It's what <strong>does the scanning</strong> the popup then shows you.</dd></div>
+    <div><dt><code>downloads</code></dt><dd>Write the SVG files you choose to save into your <strong>downloads folder</strong>. Nothing is written until you click download.</dd></div>
+    <div><dt><code>storage</code></dt><dd>Remember your four preferences via <code>chrome.storage.sync</code>, so they follow your Google Account. <strong>Settings only.</strong></dd></div>
+    <div><dt>No tracking</dt><dd>No analytics, no cookies, no identifiers, <strong>no third-party calls</strong> beyond assets the page already references.</dd></div>
+  </dl>
+
+  <h2>Open source</h2>
+  <p>SVG Downloader is MIT-licensed and its full source is public. You don't have to take this policy on trust — read the code at <a href="https://github.com/Flozad/svg-downloader">github.com/Flozad/svg-downloader</a> and confirm exactly what it does.</p>
+
+  <h2>Changes and contact</h2>
+  <p>This policy is <strong>last reviewed for v1.3</strong>. If the extension's behaviour changes in a way that affects it, this page will be updated alongside the release. Questions or concerns go to the issue tracker at <a href="https://github.com/Flozad/svg-downloader/issues">github.com/Flozad/svg-downloader/issues</a>.</p>
+</div></section>
+
+<hr class="section-rule">
+
+<section><div class="wrap">
+  <div class="cta-band">
+    <div>
+      <h2>Private by construction</h2>
+      <p>Free, MIT-licensed, on-device. Chrome 88+, Edge and Brave.</p>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="https://github.com/Flozad/svg-downloader">Get the extension</a>
+      <a class="btn quiet" href="/docs">Read the docs →</a>
+    </div>
+  </div>
+</div></section>
+</main>
+
+<footer>
+  <nav class="bleed foot-map" aria-label="Site map">
+    <div class="col"><p>Product</p><ul>
+      <li><a href="/">Overview</a></li>
+      <li><a href="/features">Features</a></li>
+      <li><a href="/compare/svg-downloader-vs-screenshotting-icons">Vs. screenshotting</a></li>
+      <li><a href="/privacy">Privacy</a></li>
+    </ul></div>
+    <div class="col"><p>Catches</p><ul>
+      <li><a href="/features/inline-svg">Inline SVG</a></li>
+      <li><a href="/features/css-background-svg">CSS background SVG</a></li>
+      <li><a href="/features/svg-sprite-extractor">Sprite / &lt;use&gt; SVG</a></li>
+      <li><a href="/features/bulk-zip-download">Whole page as ZIP</a></li>
+    </ul></div>
+    <div class="col"><p>Guides</p><ul>
+      <li><a href="/guides/how-to-download-svg-from-any-website">Download from any site</a></li>
+      <li><a href="/guides/how-to-extract-svg-icons-from-a-website">Extract SVG icons</a></li>
+      <li><a href="/guides/download-all-svgs-as-zip">Download all at once</a></li>
+      <li><a href="/guides/extract-svg-from-css-background">CSS background SVG</a></li>
+    </ul></div>
+    <div class="col"><p>Docs</p><ul>
+      <li><a href="/docs/installation">Installation</a></li>
+      <li><a href="/docs/usage">Usage</a></li>
+      <li><a href="/docs/faq">FAQ</a></li>
+      <li><a href="/docs/changelog">Changelog</a></li>
+    </ul></div>
+  </nav>
+  <div class="bleed colophon-foot">
+    <a href="https://github.com/Flozad/svg-downloader">GitHub</a>
+    <a href="https://github.com/Flozad/svg-downloader/issues">Issues</a>
+    <a href="https://clasicwebtools.com">clasicwebtools.com</a>
+    <span class="grow"></span>
+    <span>Bone stock, graphite, one plotter&nbsp;green</span>
+  </div>
+</footer>
+</body>
+</html>

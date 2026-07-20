@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Download an SVG From Any Website (Free)</title>
+<meta name="description" content="Download any SVG from a web page — inline icons, CSS backgrounds, sprites and image sources — even when right-click won't save it. On-device and stays sharp.">
+<link rel="canonical" href="https://svg.clasicwebtools.com/guides/how-to-download-svg-from-any-website">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="author" content="Flozad">
+<meta name="theme-color" content="#ece4d3">
+<meta property="og:site_name" content="SVG Downloader">
+<meta property="og:title" content="How to Download an SVG From Any Website (Free)">
+<meta property="og:description" content="Download any SVG from a web page — inline icons, CSS backgrounds, sprites and image sources — even when right-click won't save it. On-device and stays sharp.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://svg.clasicwebtools.com/guides/how-to-download-svg-from-any-website">
+<meta property="og:image" content="https://svg.clasicwebtools.com/motion/06-brand.png">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="SVG Downloader saving an inline vector from a page.">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@lozards">
+<meta name="twitter:title" content="How to Download an SVG From Any Website (Free)">
+<meta name="twitter:description" content="Download any SVG from a web page — inline icons, CSS backgrounds, sprites and image sources — even when right-click won't save it. On-device and stays sharp.">
+<meta name="twitter:image" content="https://svg.clasicwebtools.com/motion/06-brand.png">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/fonts/bricolage-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/pages.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://svg.clasicwebtools.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://svg.clasicwebtools.com/guides" },
+        { "@type": "ListItem", "position": 3, "name": "Download an SVG from any website", "item": "https://svg.clasicwebtools.com/guides/how-to-download-svg-from-any-website" }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "name": "How to download an SVG from any website",
+      "description": "Save any SVG from a web page — inline, CSS background, sprite or image source — using the SVG Downloader browser extension, keeping the original vector markup.",
+      "image": "https://svg.clasicwebtools.com/motion/06-brand.png",
+      "totalTime": "PT2M",
+      "tool": {
+        "@type": "HowToTool",
+        "name": "SVG Downloader browser extension"
+      },
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Install the extension",
+          "text": "Add the free SVG Downloader extension to Chrome, Edge or Brave. It is MIT-licensed and runs entirely on your machine.",
+          "url": "https://svg.clasicwebtools.com/guides/how-to-download-svg-from-any-website#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Open the popup on the page",
+          "text": "Go to the page with the SVG you want and click the SVG Downloader toolbar icon to open the popup.",
+          "url": "https://svg.clasicwebtools.com/guides/how-to-download-svg-from-any-website#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Let it scan the page",
+          "text": "The extension walks the DOM and collects the SVGs it finds — inline elements, CSS background images, same-document sprite references and img or object sources, including data URIs.",
+          "url": "https://svg.clasicwebtools.com/guides/how-to-download-svg-from-any-website#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Preview and pick",
+          "text": "Each SVG gets an isolated preview. Use Previous and Next to page through them and confirm the one you want, off the busy page.",
+          "url": "https://svg.clasicwebtools.com/guides/how-to-download-svg-from-any-website#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Download the vector",
+          "text": "Click Download Current SVG to save the selected one, or Download All as ZIP to save the whole set at once, de-duplicated and numbered. Type a filename first if you want the single save named your way.",
+          "url": "https://svg.clasicwebtools.com/guides/how-to-download-svg-from-any-website#steps"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why can't I right-click and save an SVG?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Most SVGs on a modern page are inline markup, CSS backgrounds or sprite references — none of which the browser treats as a saveable image. There is no URL behind them, so Save image as… never appears or is greyed out. SVG Downloader reads them from the DOM instead." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it work on every website?",
+          "acceptedAnswer": { "@type": "Answer", "text": "It works on any page you can open in Chrome 88 or later, Edge or Brave. It detects inline SVG, img and object sources including data URIs, CSS background-image SVGs and same-document sprite use references. It cannot reach content locked behind a login you don't have or served from a domain the page never loads." }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is my downloaded icon black instead of coloured?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Many inline icons inherit their colour from CSS using currentColor, so the standalone file has no colour baked in and renders black. That is the true source markup. To lock a colour in, hand the file off to the SVG Color Changer and recolour it, then save." }
+        },
+        {
+          "@type": "Question",
+          "name": "The SVG I saved won't open — what's wrong?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A standalone SVG needs an explicit xmlns namespace that inline markup usually omits. SVG Downloader repairs the missing xmlns automatically, so its files open in Figma, Illustrator, VS Code and every browser without editing." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the SVG uploaded to a server?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. Everything runs on-device inside your browser. There is no server, no account, no upload and no analytics — the vector never leaves your machine." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it really free?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. SVG Downloader is free and MIT-licensed, currently version 1.3, authored by Flozad. You can read and build the source yourself." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<nav class="nav">
+  <a class="brand" href="/">
+    <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+      <rect width="48" height="48" rx="10" fill="var(--plot)"/>
+      <path d="M24 13v15m0 0l-6.5-6.5M24 28l6.5-6.5" fill="none" stroke="var(--surface-hi)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="16.5" y="33.5" width="15" height="2.4" rx="1.2" fill="var(--surface-hi)"/>
+    </svg>
+    <strong>SVG&nbsp;Downloader</strong>
+  </a>
+  <span class="spacer"></span>
+  <span class="nav-links">
+    <a href="/features">Features</a>
+    <a href="/guides" aria-current="page">Guides</a>
+    <a href="/docs">Docs</a>
+    <a href="/privacy">Privacy</a>
+  </span>
+  <a class="nav-cta" href="https://github.com/Flozad/svg-downloader">Get the extension</a>
+</nav>
+
+<main id="main">
+<header class="page-hero"><div class="wrap">
+  <ol class="crumbs">
+    <li><a href="/">Home</a></li>
+    <li><a href="/guides">Guides</a></li>
+    <li><span aria-current="page">Download from any site</span></li>
+  </ol>
+  <p class="eyebrow">Guide — the universal method</p>
+  <h1>How to <span class="plot">download an SVG</span> from any website</h1>
+  <p class="lede">A modern page hides its vectors where <em>Save image as…</em> can't reach them. This is the method that gets every one — the original markup, sharp and editable, not a screenshot.</p>
+  <div class="cta">
+    <a class="btn primary" href="https://github.com/Flozad/svg-downloader">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 12v16m0 0l-7-7m7 7l7-7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><rect x="16" y="34" width="16" height="2.6" rx="1.3" fill="currentColor"/></svg>
+      Get the extension
+    </a>
+    <a class="btn quiet" href="#steps">Jump to the steps ↓</a>
+  </div>
+</div></header>
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">The four hiding places</p>
+  <h2>Where SVGs actually live on a page</h2>
+  <p class="lead-in">Before the method, it helps to know why the obvious approach fails. An SVG on a web page is almost never a plain <code>image.svg</code> you can open in a new tab. It's usually one of four things, and each one defeats the browser's save menu in its own way.</p>
+  <ul>
+    <li><strong>Inline <code>&lt;svg&gt;</code>.</strong> The markup is drawn directly into the HTML. There's no <code>src</code> and no image URL, so the right-click menu offers nothing. This is how most icon systems ship today. See <a href="/features/inline-svg">inline SVG</a>.</li>
+    <li><strong>CSS <code>background-image</code>.</strong> The vector is set in a stylesheet — sometimes as a file, often as an inline <code>data:</code> URI. The browser treats it as decoration, not a saveable image. See <a href="/features/css-background-svg">CSS background SVG</a>.</li>
+    <li><strong>Sprite <code>&lt;use&gt;</code> references.</strong> One hidden sprite holds many icons; each place they appear is just a <code>&lt;use&gt;</code> pointer. Saving the pointer gives you nothing usable. See <a href="/features/svg-sprite-extractor">sprite extractor</a>.</li>
+    <li><strong><code>&lt;img&gt;</code> and <code>&lt;object&gt;</code> sources.</strong> The friendliest case — but even here the source can be a <code>data:</code> URI the save menu mangles, or a cross-origin URL that downloads with the wrong name.</li>
+  </ul>
+
+  <h2 id="steps">The universal method — five steps</h2>
+  <p>SVG Downloader ignores the distinction between those four cases. It reads the live page, resolves each source to real SVG markup, and hands you a file. The whole run is about two minutes the first time and a few seconds after that.</p>
+  <ol>
+    <li><strong>Install the extension.</strong> Add <a href="https://github.com/Flozad/svg-downloader">SVG Downloader</a> to Chrome, Edge or Brave (Chrome 88+). It's free, MIT-licensed, and nothing about it phones home.</li>
+    <li><strong>Open the popup on the page.</strong> Navigate to the page holding the SVG you want, then click the toolbar icon to open the popup.</li>
+    <li><strong>Let it scan.</strong> The extension walks the DOM and collects the vectors it finds — inline elements, CSS backgrounds, same-document sprite references and image sources, including <code>data:</code> URIs.</li>
+    <li><strong>Preview and pick.</strong> Each SVG appears in an isolated preview so you see it clean, off the busy page. Use <em>Previous</em> and <em>Next</em> to page through, and type a filename if you care what the file is called.</li>
+    <li><strong>Download.</strong> Click <em>Download Current SVG</em> for the one on screen — under the filename you typed, or a numbered <code>svg-1.svg</code> if you left the field blank — or <em>Download All as ZIP</em> to take the whole set at once, de-duplicated and numbered, with anything that couldn't be resolved named in the popup's status line.</li>
+  </ol>
+
+  <figure class="shot"><div class="shot-mount"><span class="shot-tag">Preview</span><img src="/motion/02-preview.png" alt="SVG Downloader popup showing an isolated preview of an SVG icon with Previous and Next controls" width="1280" height="800" loading="lazy"></div><figcaption class="shot-cap">Every detected SVG gets an isolated preview — confirm the right one before you save it.</figcaption></figure>
+
+  <h2>Why not just right-click?</h2>
+  <p>Right-click <em>Save image as…</em> only appears for things the browser classifies as images with an address it can fetch: an <code>&lt;img&gt;</code> with a URL, a canvas, sometimes a CSS background. Three of the four sources above aren't that. Inline SVG has no URL. A sprite <code>&lt;use&gt;</code> resolves to a fragment of a document. A <code>data:</code> URI background is a string in a stylesheet. Even when the menu <em>does</em> appear, it often saves a re-rendered raster or a file named <code>download.svg</code> with a broken namespace. Reading the DOM sidesteps all of it and returns the actual vector.</p>
+
+  <h2>Two things that trip people up</h2>
+  <p>Two results surprise first-time users, and both are expected behaviour, not bugs.</p>
+  <ul>
+    <li><strong>The file wouldn't open before — now it does.</strong> Inline SVG usually omits the <code>xmlns="http://www.w3.org/2000/svg"</code> namespace because the HTML parser supplies it. Copied to a bare file, that SVG won't open. SVG Downloader repairs the missing <code>xmlns</code> on the way out, so its files open in Figma, Illustrator, VS Code and every browser.</li>
+    <li><strong>The icon looks black.</strong> Many icons inherit their colour from CSS via <code>currentColor</code>, so the standalone file has no colour of its own and renders black. That's the true markup. If you need a specific colour locked in, use the optional hand-off to the <a href="https://clasicwebtools.com">SVG Color Changer</a>, recolour, then save.</li>
+  </ul>
+
+  <dl class="facts">
+    <div><dt>Works on</dt><dd>Chrome 88+, Edge and Brave. <strong>Any page</strong> you can open — inline, CSS, sprite and image sources.</dd></div>
+    <div><dt>Output</dt><dd>The <strong>original vector markup</strong>, namespace repaired, resolution-independent and recolourable.</dd></div>
+    <div><dt>Privacy</dt><dd><strong>100% on-device.</strong> No server, no account, no upload, no analytics.</dd></div>
+    <div><dt>Next</dt><dd>Grabbing a whole set? See <a href="/guides/how-to-extract-svg-icons-from-a-website">extract SVG icons</a> and <a href="/guides/download-all-svgs-as-zip">download all as ZIP</a>.</dd></div>
+  </dl>
+</div></section>
+
+<hr class="section-rule">
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Good to know</p>
+  <h2>Frequently asked</h2>
+  <div class="faq">
+    <details>
+      <summary>Why can't I right-click and save an SVG?</summary>
+      <div class="faq-body"><p>Most SVGs on a modern page are inline markup, CSS backgrounds or sprite references — none of which the browser treats as a saveable image. There's no URL behind them, so <em>Save image as…</em> never appears or is greyed out. SVG Downloader reads them from the DOM instead.</p></div>
+    </details>
+    <details>
+      <summary>Does it work on every website?</summary>
+      <div class="faq-body"><p>It works on any page you can open in Chrome 88 or later, Edge or Brave. It detects inline SVG, <code>&lt;img&gt;</code> and <code>&lt;object&gt;</code> sources including <code>data:</code> URIs, CSS <code>background-image</code> SVGs and same-document sprite <code>&lt;use&gt;</code> references. It can't reach content behind a login you don't have or served from a domain the page never loads.</p></div>
+    </details>
+    <details>
+      <summary>Why is my downloaded icon black instead of coloured?</summary>
+      <div class="faq-body"><p>Many inline icons inherit their colour from CSS using <code>currentColor</code>, so the standalone file has no colour baked in and renders black. That's the true source markup. To lock a colour in, hand the file off to the SVG Color Changer and recolour it, then save.</p></div>
+    </details>
+    <details>
+      <summary>The SVG I saved won't open — what's wrong?</summary>
+      <div class="faq-body"><p>A standalone SVG needs an explicit <code>xmlns</code> namespace that inline markup usually omits. SVG Downloader repairs the missing <code>xmlns</code> automatically, so its files open in Figma, Illustrator, VS Code and every browser without editing.</p></div>
+    </details>
+    <details>
+      <summary>Is the SVG uploaded to a server?</summary>
+      <div class="faq-body"><p>No. Everything runs on-device inside your browser. There's no server, no account, no upload and no analytics — the vector never leaves your machine.</p></div>
+    </details>
+    <details>
+      <summary>Is it really free?</summary>
+      <div class="faq-body"><p>Yes. SVG Downloader is free and MIT-licensed, currently version 1.3, authored by Flozad. You can read and build the source yourself.</p></div>
+    </details>
+  </div>
+</div></section>
+
+<hr class="section-rule">
+
+<section><div class="wrap">
+  <div class="cta-band">
+    <div>
+      <h2>Save the next vector in two clicks</h2>
+      <p>Free, private, and it reads the SVGs the browser pretends aren't there.</p>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="https://github.com/Flozad/svg-downloader">Get the extension</a>
+      <a class="btn quiet" href="/guides">All guides →</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="related"><div class="wrap">
+  <p class="eyebrow">Keep reading</p>
+  <ul>
+    <li><a href="/guides/how-to-extract-svg-icons-from-a-website">Extract SVG icons<span>Grab a whole set</span></a></li>
+    <li><a href="/guides/download-all-svgs-as-zip">Download all as ZIP<span>Every SVG at once</span></a></li>
+    <li><a href="/guides/extract-svg-from-css-background">CSS background SVG<span>Pull it from the stylesheet</span></a></li>
+  </ul>
+</div></section>
+</main>
+
+<footer>
+  <nav class="bleed foot-map" aria-label="Site map">
+    <div class="col"><p>Product</p><ul>
+      <li><a href="/">Overview</a></li>
+      <li><a href="/features">Features</a></li>
+      <li><a href="/compare/svg-downloader-vs-screenshotting-icons">Vs. screenshotting</a></li>
+      <li><a href="/privacy">Privacy</a></li>
+    </ul></div>
+    <div class="col"><p>Catches</p><ul>
+      <li><a href="/features/inline-svg">Inline SVG</a></li>
+      <li><a href="/features/css-background-svg">CSS background SVG</a></li>
+      <li><a href="/features/svg-sprite-extractor">Sprite / &lt;use&gt; SVG</a></li>
+      <li><a href="/features/bulk-zip-download">Whole page as ZIP</a></li>
+    </ul></div>
+    <div class="col"><p>Guides</p><ul>
+      <li><a href="/guides/how-to-download-svg-from-any-website">Download from any site</a></li>
+      <li><a href="/guides/how-to-extract-svg-icons-from-a-website">Extract SVG icons</a></li>
+      <li><a href="/guides/download-all-svgs-as-zip">Download all at once</a></li>
+      <li><a href="/guides/extract-svg-from-css-background">CSS background SVG</a></li>
+    </ul></div>
+    <div class="col"><p>Docs</p><ul>
+      <li><a href="/docs/installation">Installation</a></li>
+      <li><a href="/docs/usage">Usage</a></li>
+      <li><a href="/docs/faq">FAQ</a></li>
+      <li><a href="/docs/changelog">Changelog</a></li>
+    </ul></div>
+  </nav>
+  <div class="bleed colophon-foot">
+    <a href="https://github.com/Flozad/svg-downloader">GitHub</a>
+    <a href="https://github.com/Flozad/svg-downloader/issues">Issues</a>
+    <a href="https://clasicwebtools.com">clasicwebtools.com</a>
+    <span class="grow"></span>
+    <span>Bone stock, graphite, one plotter&nbsp;green</span>
+  </div>
+</footer>
+</body>
+</html>

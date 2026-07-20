@@ -1,0 +1,199 @@
+/* pages.css — shared components for the content pages (features, guides, docs,
+   compare, privacy). Loaded AFTER style.css, which owns the design tokens, the
+   nav, the shot frame and the footer. This file only adds what the marketing
+   landing page didn't need: breadcrumbs, a compact page-hero, long-form prose,
+   card grids for the hubs, a doc shell with a rail, FAQ disclosures, CTA bands
+   and cross-link rails. Same drafting-table voice, same tokens — no new colours. */
+
+/* ── Skip link (a11y) ──────────────────────────────────────────────────────*/
+.skip {
+  position: absolute; left: -9999px; top: 0; z-index: 100;
+  font-family: var(--mono); font-size: 13px;
+  background: var(--plot); color: var(--surface-hi);
+  padding: 10px 16px; border-radius: var(--r-node);
+}
+.skip:focus { left: 12px; top: 12px; }
+
+/* ── Nav CTA (real pages need a persistent install button) ──────────────────*/
+.nav .nav-cta {
+  font-family: var(--mono); font-size: 12px; letter-spacing: 0.02em;
+  text-decoration: none; color: var(--surface-hi); background: var(--plot);
+  padding: 8px 14px; border-radius: var(--r-node);
+  box-shadow: 0 1px 0 var(--plot-deep);
+  transition: background-color 0.2s ease;
+}
+.nav .nav-cta:hover { background: var(--plot-deep); }
+.nav-links a[aria-current="page"] { color: var(--ink); background: var(--plot-wash); }
+
+/* ── Breadcrumbs ────────────────────────────────────────────────────────────*/
+.crumbs {
+  font-family: var(--mono); font-size: 12px; letter-spacing: 0.02em;
+  color: var(--dim); display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
+  margin: 0 0 22px; padding: 0; list-style: none;
+}
+.crumbs li { display: inline-flex; align-items: center; gap: 8px; }
+.crumbs li:not(:last-child)::after { content: '/'; color: var(--dim-2); }
+.crumbs a { color: var(--dim); text-decoration: none; border-bottom: 1px solid transparent; }
+.crumbs a:hover { color: var(--plot); border-color: var(--plot-line); }
+.crumbs [aria-current="page"] { color: var(--ink); }
+
+/* ── Page hero (compact, for interior pages) ────────────────────────────────*/
+.page-hero { padding: clamp(40px, 7vw, 72px) 0 clamp(28px, 4vw, 40px); }
+.page-hero h1 {
+  font-size: clamp(34px, 6vw, 58px);
+  font-variation-settings: 'opsz' 60, 'wght' 640;
+  letter-spacing: -0.04em; line-height: 0.98; margin-bottom: 20px;
+}
+.page-hero h1 .plot { color: var(--plot); }
+.page-hero .lede {
+  font-size: clamp(18px, 2.2vw, 21px); line-height: 1.5; color: var(--ink-2);
+  max-width: 36em; margin-bottom: 26px;
+}
+.page-hero .cta { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+
+/* ── Long-form prose ────────────────────────────────────────────────────────*/
+.prose h2 { margin-top: 8px; margin-bottom: 18px; }
+.prose h3 { margin: 40px 0 12px; }
+.prose > p, .prose li { color: var(--ink-2); }
+.prose p { margin: 0 0 18px; }
+.prose ul, .prose ol { margin: 0 0 22px; padding-left: 22px; }
+.prose li { margin-bottom: 8px; }
+.prose ul { list-style: none; padding-left: 0; }
+.prose ul > li { position: relative; padding-left: 24px; }
+.prose ul > li::before {
+  content: ''; position: absolute; left: 4px; top: 0.62em;
+  width: 7px; height: 7px; background: var(--plot); border-radius: 1px;
+}
+.prose ol { counter-reset: step; list-style: none; padding-left: 0; }
+.prose ol > li { position: relative; padding-left: 34px; margin-bottom: 14px; counter-increment: step; }
+.prose ol > li::before {
+  content: counter(step, decimal-leading-zero);
+  position: absolute; left: 0; top: 0.05em;
+  font-family: var(--mono); font-size: 12px; font-weight: 700; color: var(--plot);
+}
+.prose a:not(.btn) {
+  color: var(--plot); text-decoration: none;
+  border-bottom: 1px solid var(--plot-line);
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+.prose a:not(.btn):hover { border-color: var(--plot); background: var(--plot-wash); }
+.prose strong { color: var(--ink); }
+.lead-in { font-size: 18px; }
+
+/* ── Card grid (hub pages) ──────────────────────────────────────────────────*/
+.cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin: 36px 0 0; padding: 0; list-style: none; }
+.card {
+  display: flex; flex-direction: column; gap: 10px;
+  padding: 26px 26px 24px; background: var(--surface);
+  border: 1px solid var(--line-2); border-radius: var(--r-panel);
+  text-decoration: none; color: inherit; position: relative;
+  transition: transform 0.16s var(--ease-out), box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.card:hover { transform: translateY(-2px); border-color: var(--plot-line); box-shadow: 0 24px 48px -34px rgba(27,26,21,0.5); }
+.card .card-tag {
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--plot); display: inline-flex; align-items: center; gap: 9px;
+}
+.card .card-tag .glyph { width: 20px; height: 20px; flex: none; }
+.card h3 { font-size: 20px; font-variation-settings: 'opsz' 22, 'wght' 620; }
+.card p { color: var(--ink-2); font-size: 15.5px; margin: 0; }
+.card .card-go {
+  margin-top: auto; font-family: var(--mono); font-size: 12px; letter-spacing: 0.04em;
+  color: var(--plot); display: inline-flex; align-items: center; gap: 6px;
+}
+.card:hover .card-go { gap: 10px; }
+
+/* ── Feature/value rows (mono-keyed, no cards) ──────────────────────────────*/
+.facts { margin: 30px 0 0; border-top: 1px solid var(--line-2); }
+.facts > div { display: grid; grid-template-columns: 180px 1fr; gap: 28px; padding: 24px 4px; border-bottom: 1px solid var(--line); align-items: baseline; }
+.facts dt { font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--plot); }
+.facts dd { margin: 0; color: var(--ink-2); }
+.facts dd strong { color: var(--ink); }
+
+/* ── FAQ (native disclosure, styled as ruled rows) ──────────────────────────*/
+.faq { margin: 30px 0 0; border-top: 1px solid var(--line-2); }
+.faq details { border-bottom: 1px solid var(--line); }
+.faq summary {
+  list-style: none; cursor: pointer; padding: 20px 40px 20px 4px; position: relative;
+  font-family: var(--display); font-variation-settings: 'opsz' 22, 'wght' 600;
+  font-size: 19px; letter-spacing: -0.02em; color: var(--ink);
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after {
+  content: '+'; position: absolute; right: 8px; top: 18px;
+  font-family: var(--mono); font-size: 20px; color: var(--plot); transition: transform 0.2s ease;
+}
+.faq details[open] summary::after { content: '\2212'; }
+.faq .faq-body { padding: 0 4px 22px; }
+.faq .faq-body p { color: var(--ink-2); margin: 0 0 12px; }
+.faq .faq-body p:last-child { margin-bottom: 0; }
+
+/* ── Doc shell (rail + body) ────────────────────────────────────────────────*/
+.doc-shell { display: grid; grid-template-columns: 220px 1fr; gap: 48px; align-items: start; }
+.doc-nav { position: sticky; top: 76px; align-self: start; }
+.doc-nav p { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dim); margin: 0 0 12px; }
+.doc-nav ul { list-style: none; margin: 0 0 26px; padding: 0; border-left: 1px solid var(--line-2); }
+.doc-nav li { margin: 0; }
+.doc-nav a {
+  display: block; font-family: var(--mono); font-size: 12.5px; color: var(--dim);
+  text-decoration: none; padding: 6px 0 6px 14px; margin-left: -1px;
+  border-left: 1px solid transparent; transition: color 0.18s ease, border-color 0.18s ease;
+}
+.doc-nav a:hover { color: var(--ink); }
+.doc-nav a[aria-current="page"] { color: var(--plot); border-left-color: var(--plot); }
+
+/* ── CTA band ───────────────────────────────────────────────────────────────*/
+.cta-band {
+  margin: 8px 0 0; padding: 40px 34px; background: var(--surface);
+  border: 1px solid var(--line-2); border-radius: var(--r-panel);
+  display: flex; flex-wrap: wrap; align-items: center; gap: 18px 26px; justify-content: space-between;
+}
+.cta-band h2 { font-size: clamp(24px, 3.4vw, 32px); margin: 0; max-width: 18ch; }
+.cta-band p { color: var(--ink-2); margin: 6px 0 0; font-size: 15.5px; max-width: 40ch; }
+.cta-band .cta { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* ── Related links rail ─────────────────────────────────────────────────────*/
+.related { margin-top: 8px; }
+.related p.eyebrow { margin-bottom: 18px; }
+.related ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.related a {
+  display: block; padding: 16px 18px; border: 1px solid var(--line-2); border-radius: var(--r-node);
+  text-decoration: none; color: var(--ink); font-family: var(--mono); font-size: 13px;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+.related a:hover { border-color: var(--plot-line); background: var(--plot-wash); }
+.related a span { display: block; color: var(--dim); font-size: 11px; margin-top: 4px; letter-spacing: 0.02em; }
+
+/* ── Comparison table ───────────────────────────────────────────────────────*/
+.cmp { width: 100%; border-collapse: collapse; margin: 30px 0 0; font-size: 15.5px; }
+.cmp th, .cmp td { text-align: left; padding: 14px 16px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.cmp thead th { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--dim); border-bottom: 1px solid var(--line-2); }
+.cmp tbody th { font-family: var(--sans); font-weight: 600; color: var(--ink); }
+.cmp .yes { color: var(--plot); font-weight: 600; }
+.cmp .no { color: color-mix(in srgb, var(--ink) 55%, #9a3b26); }
+.cmp-wrap { overflow-x: auto; }
+
+/* ── Steps figure block for guides (reuses .shot from style.css) ────────────*/
+.figrow { margin: 26px 0; }
+
+/* ── Footer sitemap (homepage + interior) ───────────────────────────────────*/
+.foot-map { display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; padding-block: 48px 8px; }
+.foot-map .col p { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dim); margin: 0 0 14px; }
+.foot-map .col ul { list-style: none; margin: 0; padding: 0; }
+.foot-map .col li { margin: 0 0 9px; }
+.foot-map .col a { font-size: 14px; color: var(--ink-2); text-decoration: none; }
+.foot-map .col a:hover { color: var(--plot); }
+
+@media (max-width: 860px) {
+  .doc-shell { grid-template-columns: 1fr; gap: 24px; }
+  .doc-nav { position: static; border-bottom: 1px solid var(--line-2); padding-bottom: 8px; }
+  .doc-nav ul { border-left: 0; display: flex; flex-wrap: wrap; gap: 4px 14px; margin-bottom: 12px; }
+  .doc-nav a { padding: 4px 0; border-left: 0; }
+}
+@media (max-width: 720px) {
+  .cards { grid-template-columns: 1fr; }
+  .related ul { grid-template-columns: 1fr; }
+  .facts > div { grid-template-columns: 1fr; gap: 8px; }
+  .foot-map { grid-template-columns: 1fr 1fr; gap: 22px; }
+  .cta-band { flex-direction: column; align-items: flex-start; }
+}

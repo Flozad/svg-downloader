@@ -1,0 +1,13 @@
+{
+  "name": "SVG Web Downloader & Extractor",
+  "short_name": "SVG Downloader",
+  "description": "Find every SVG on any web page and download the original vector — one at a time, or all of them as a ZIP.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "browser",
+  "background_color": "#ece4d3",
+  "theme_color": "#ece4d3",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
