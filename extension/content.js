@@ -222,12 +222,14 @@
   // rather than walking document.styleSheets.
   const URL_RE = /url\((['"]?)(.*?)\1\)/g;
 
-  function collectBackgroundSVGs() {
+  function collectBackgroundSVGs(counters) {
     const all = document.querySelectorAll('*');
     // Cap the work: querySelectorAll('*') + getComputedStyle on every element is
     // O(n) with a real constant. A popup that hangs is worse than one that
-    // misses a background icon on a huge page.
+    // misses a background icon on a huge page. Flag the bail-out so the popup
+    // can say the scan was partial instead of implying it found everything.
     if (all.length > 10000) {
+      counters.bgScanSkipped = true;
       return [];
     }
 
@@ -260,12 +262,12 @@
   }
 
   function collectSVGs() {
-    const counters = { skipped: 0 };
+    const counters = { skipped: 0, bgScanSkipped: false };
     const items = [
       ...collectInlineSVGs(counters),
       ...collectImageSVGs(),
       ...collectEmbeddedSVGs(),
-      ...collectBackgroundSVGs(),
+      ...collectBackgroundSVGs(counters),
     ];
 
     svgElements = dedupe(items);
@@ -278,6 +280,7 @@
           data: {
             count: svgElements.length,
             skipped: counters.skipped,
+            bgScanSkipped: counters.bgScanSkipped,
           },
         },
         () => {

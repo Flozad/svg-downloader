@@ -294,3 +294,31 @@ describe('popup.js — injection failure recovery (plan 014)', () => {
     );
   });
 });
+
+// The content script counts what it could not extract (external sprite
+// references, oversized SVGs, anything past the collection caps) and flags a
+// bailed-out CSS-background scan. Reporting none of that made the count look
+// authoritative when it wasn't.
+describe('popup.js — reporting what was skipped', () => {
+  it('says nothing when nothing was skipped', () => {
+    send('svgsCollected', { count: 3, skipped: 0, bgScanSkipped: false });
+    expect(document.getElementById('status').classList.contains('hidden')).toBe(true);
+  });
+
+  it('reports skipped SVGs, pluralized', () => {
+    send('svgsCollected', { count: 3, skipped: 2, bgScanSkipped: false });
+    const status = document.getElementById('status');
+    expect(status.classList.contains('hidden')).toBe(false);
+    expect(status.textContent).toMatch(/Skipped 2 SVGs/);
+
+    send('svgsCollected', { count: 3, skipped: 1, bgScanSkipped: false });
+    expect(document.getElementById('status').textContent).toMatch(/Skipped 1 SVG\b/);
+  });
+
+  it('reports a bailed-out background scan in preference to the count', () => {
+    send('svgsCollected', { count: 3, skipped: 4, bgScanSkipped: true });
+    expect(document.getElementById('status').textContent).toMatch(
+      /too large to scan CSS backgrounds/
+    );
+  });
+});

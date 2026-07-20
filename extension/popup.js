@@ -377,9 +377,21 @@ document.addEventListener('DOMContentLoaded', async () => {
   chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     switch (request.action) {
       case 'svgsCollected': {
-        const { count } = request.data;
+        const { count, skipped, bgScanSkipped } = request.data;
         setCounter(count);
         setLoading(false);
+
+        // Say what was missed. The content script skips external sprite
+        // references, oversized SVGs and anything past the collection caps, and
+        // bails out of the CSS-background scan entirely on very large pages.
+        // Reporting zero of that made the count look authoritative when it
+        // wasn't.
+        if (bgScanSkipped) {
+          showStatus('This page is too large to scan CSS backgrounds — other SVGs still found.');
+        } else if (skipped > 0) {
+          const noun = skipped === 1 ? 'SVG' : 'SVGs';
+          showStatus(`Skipped ${skipped} ${noun} that can't be extracted standalone.`);
+        }
 
         if (count === 0) {
           noPreview.classList.add('hidden');
