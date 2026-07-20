@@ -1,0 +1,59 @@
+name: Bug report
+description: Something in the extension doesn't work
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Found a security vulnerability? Don't file it here — see [SECURITY.md](https://github.com/Flozad/svg-downloader/blob/main/SECURITY.md) for private reporting.
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What did you expect, and what did you get instead?
+    validations:
+      required: true
+
+  - type: input
+    id: page
+    attributes:
+      label: Page URL
+      description: The page you were extracting from, if it's public. This is usually the single most useful detail.
+      placeholder: https://example.com/icons
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open the page above
+        2. Click the extension icon
+        3. Press "Download all as ZIP"
+        4. ...
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Extension version
+      description: Shown on chrome://extensions
+      placeholder: "1.3"
+    validations:
+      required: true
+
+  - type: input
+    id: browser
+    attributes:
+      label: Browser and OS
+      placeholder: Chrome 138 on macOS 15
+    validations:
+      required: true
+
+  - type: textarea
+    id: console
+    attributes:
+      label: Console output
+      description: Right-click the popup → Inspect → Console. Paste anything red.
+      render: text
