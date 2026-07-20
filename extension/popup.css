@@ -554,3 +554,9 @@ input {
     transition-duration: 0.001ms !important;
   }
 }
+
+/* Hidden <symbol> sheet. A class rather than an inline style attribute so
+   the extension_pages CSP can keep style-src at 'self' with no unsafe-inline. */
+.sprite-sheet {
+  position: absolute;
+}
