@@ -63,7 +63,19 @@ jobs:
         with:
           # Offline: internal links and anchors only. External URLs are someone
           # else's uptime, and failing the build on their outage is noise.
-          args: --offline --include-fragments --verbose --no-progress 'docs/**/*.html'
+          #
+          # --root-dir resolves the root-relative hrefs (`/features`, `/style.css`)
+          # the pages are written with; without it every one is unresolvable
+          # rather than broken, which fails the job on all 19 pages at once.
+          #
+          # --fallback-extensions html because the site is served with clean URLs:
+          # `/features/inline-svg` is `docs/features/inline-svg.html` on disk, and
+          # matching only the literal path marks every internal link dead.
+          args: >-
+            --offline --include-fragments --verbose --no-progress
+            --root-dir "${{ github.workspace }}/docs"
+            --fallback-extensions html
+            'docs/**/*.html'
           fail: true
 
   package:
