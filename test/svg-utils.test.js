@@ -146,3 +146,28 @@ describe('sanitizeNamePart', () => {
     expect(sanitizeNamePart('mis íconos')).toBe('mis íconos');
   });
 });
+
+describe('sanitizeNamePart truncation', () => {
+  it('never emits a lone surrogate when truncating at the cap', () => {
+    // 99 BMP chars then an emoji: a UTF-16 slice(0,100) would cut the pair.
+    const out = sanitizeNamePart('a'.repeat(99) + '\u{1F600}');
+    expect(
+      [...out].every((ch) => {
+        const c = ch.codePointAt(0);
+        return c < 0xd800 || c > 0xdfff;
+      })
+    ).toBe(true);
+  });
+
+  it('caps at 100 code points', () => {
+    expect([...sanitizeNamePart('x'.repeat(250))].length).toBe(100);
+  });
+
+  it('does not leave a trailing dot that would form `..` with the extension', () => {
+    // Truncation used to run after the trim, reintroducing a trailing dot that
+    // chrome.downloads rejects outright once `.svg` is appended.
+    const name = sanitizeFilename('a'.repeat(99) + '..bb', 'fallback');
+    expect(name).not.toContain('..');
+    expect(name.endsWith('.svg')).toBe(true);
+  });
+});

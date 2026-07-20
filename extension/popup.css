@@ -554,3 +554,17 @@ input {
     transition-duration: 0.001ms !important;
   }
 }
+
+/* Hidden <symbol> sheet. A class rather than an inline style attribute so
+   the extension_pages CSP can keep style-src at 'self' with no unsafe-inline. */
+.sprite-sheet {
+  position: absolute;
+}
+
+/* Keyboard focus ring. The popup previously fell back to the UA default, which
+   is low-contrast against --surface-hi; this mirrors the options page. */
+.btn:focus-visible,
+.icon-btn:focus-visible {
+  outline: 2px solid var(--plot);
+  outline-offset: 3px;
+}

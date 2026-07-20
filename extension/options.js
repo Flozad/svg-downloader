@@ -47,7 +47,11 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   paint(await getSettings());
 
-  // Switches toggle in place; changes commit on Save.
+  // Switches toggle in place; changes commit on Save. One listener only: a
+  // <button> is a labelable element, so `<label for>` already forwards its
+  // click to the switch natively. An extra handler on the label ran the toggle
+  // a second time, landing aria-checked exactly where it started — the label
+  // looked clickable and silently wasn't.
   for (const id of SWITCHES) {
     const el = document.getElementById(id);
     el.addEventListener('click', () => {

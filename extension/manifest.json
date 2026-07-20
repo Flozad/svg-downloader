@@ -9,7 +9,7 @@
     "open_in_tab": true
   },
   "content_security_policy": {
-    "extension_pages": "script-src 'self'; object-src 'self'; img-src 'self' blob: data:;"
+    "extension_pages": "default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' blob: data:; object-src 'none'; frame-src 'none'; connect-src 'none'; base-uri 'none'; form-action 'none'"
   },
   "action": {
     "default_popup": "popup.html",
