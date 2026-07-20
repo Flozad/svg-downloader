@@ -10,13 +10,13 @@
   },
   "dependencies": {
     "@remotion/cli": "4.0.410",
-    "react": "19.1.0",
+    "react": "19.2.7",
     "react-dom": "19.1.0",
     "remotion": "4.0.410"
   },
   "devDependencies": {
     "@types/bun": "^1.3.14",
-    "@types/react": "19.1.0",
+    "@types/react": "19.2.17",
     "typescript": "5.8.3"
   }
 }
