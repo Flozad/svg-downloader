@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
-    "jsdom": "^25.0.1",
+    "jsdom": "^29.1.1",
     "sharp": "^0.35.3",
     "vitest": "^2.1.8"
   }
