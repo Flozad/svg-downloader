@@ -1,11 +1,15 @@
-import { beforeAll, beforeEach, describe, expect, it, vi } from 'vitest';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { beforeAll, beforeEach, describe, expect, it, vi } from 'vitest';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const flush = () => new Promise((resolve) => setTimeout(resolve, 0));
-const settle = async () => { await flush(); await flush(); await flush(); };
+const settle = async () => {
+  await flush();
+  await flush();
+  await flush();
+};
 
 const VALID_SVG = '<svg xmlns="http://www.w3.org/2000/svg"><circle r="4"/></svg>';
 
@@ -30,16 +34,26 @@ beforeAll(async () => {
     },
     scripting: { executeScript: vi.fn(async () => {}) },
     runtime: {
-      onMessage: { addListener: (fn) => { runtimeListener = fn; } },
+      onMessage: {
+        addListener: (fn) => {
+          runtimeListener = fn;
+        },
+      },
       openOptionsPage: vi.fn(),
       lastError: null,
     },
     downloads: { download: vi.fn(async () => 1) },
   };
   globalThis.JSZip = class {
-    constructor() { this.files = {}; }
-    file(name, content) { this.files[name] = content; }
-    async generateAsync() { return new Blob(['zip']); }
+    constructor() {
+      this.files = {};
+    }
+    file(name, content) {
+      this.files[name] = content;
+    }
+    async generateAsync() {
+      return new Blob(['zip']);
+    }
   };
   globalThis.URL.createObjectURL = vi.fn(() => 'blob:fake');
   globalThis.URL.revokeObjectURL = vi.fn();
@@ -155,10 +169,13 @@ describe('popup.js — ZIP outcomes (plan 011)', () => {
     const counterBefore = document.getElementById('counter').textContent;
     sendMessageImpl = async (tabId, msg) => {
       if (msg.action === 'getAllSVGs') {
-        return { success: true, svgs: [
-          { type: 'svg', content: VALID_SVG },
-          { type: 'img', content: 'https://cdn.example/x.svg' },
-        ] };
+        return {
+          success: true,
+          svgs: [
+            { type: 'svg', content: VALID_SVG },
+            { type: 'img', content: 'https://cdn.example/x.svg' },
+          ],
+        };
       }
       if (msg.action === 'fetchSVG') return { success: false, error: 'HTTP 403' };
       return { success: true };
@@ -181,10 +198,13 @@ describe('popup.js — ZIP outcomes (plan 011)', () => {
     selectFirst(2);
     sendMessageImpl = async (tabId, msg) => {
       if (msg.action === 'getAllSVGs') {
-        return { success: true, svgs: [
-          { type: 'svg', content: VALID_SVG },
-          { type: 'svg', content: VALID_SVG.replace('r="4"', 'r="5"') },
-        ] };
+        return {
+          success: true,
+          svgs: [
+            { type: 'svg', content: VALID_SVG },
+            { type: 'svg', content: VALID_SVG.replace('r="4"', 'r="5"') },
+          ],
+        };
       }
       return { success: true };
     };
@@ -211,7 +231,9 @@ describe('popup.js — ZIP outcomes (plan 011)', () => {
 
     const empty = document.getElementById('empty-state');
     expect(empty.classList.contains('hidden')).toBe(false);
-    expect(empty.querySelector('p').textContent).toBe('None of the SVGs on this page could be exported.');
+    expect(empty.querySelector('p').textContent).toBe(
+      'None of the SVGs on this page could be exported.'
+    );
     expect(chrome.downloads.download).not.toHaveBeenCalled();
   });
 });
@@ -252,7 +274,9 @@ describe('popup.js — injection failure recovery (plan 014)', () => {
     expect(chrome.scripting.executeScript).toHaveBeenCalledTimes(2);
     const empty = document.getElementById('empty-state');
     expect(empty.classList.contains('hidden')).toBe(false);
-    expect(empty.querySelector('p').textContent).toBe('Could not reach this page. Reload the page, then try again.');
+    expect(empty.querySelector('p').textContent).toBe(
+      'Could not reach this page. Reload the page, then try again.'
+    );
   });
 
   it('does not retry non-connection errors', async () => {
@@ -265,7 +289,36 @@ describe('popup.js — injection failure recovery (plan 014)', () => {
     await settle();
 
     expect(chrome.scripting.executeScript).toHaveBeenCalledTimes(1);
-    expect(document.getElementById('empty-state').querySelector('p').textContent)
-      .toBe('Error loading SVGs. Please try again.');
+    expect(document.getElementById('empty-state').querySelector('p').textContent).toBe(
+      'Error loading SVGs. Please try again.'
+    );
+  });
+});
+
+// The content script counts what it could not extract (external sprite
+// references, oversized SVGs, anything past the collection caps) and flags a
+// bailed-out CSS-background scan. Reporting none of that made the count look
+// authoritative when it wasn't.
+describe('popup.js — reporting what was skipped', () => {
+  it('says nothing when nothing was skipped', () => {
+    send('svgsCollected', { count: 3, skipped: 0, bgScanSkipped: false });
+    expect(document.getElementById('status').classList.contains('hidden')).toBe(true);
+  });
+
+  it('reports skipped SVGs, pluralized', () => {
+    send('svgsCollected', { count: 3, skipped: 2, bgScanSkipped: false });
+    const status = document.getElementById('status');
+    expect(status.classList.contains('hidden')).toBe(false);
+    expect(status.textContent).toMatch(/Skipped 2 SVGs/);
+
+    send('svgsCollected', { count: 3, skipped: 1, bgScanSkipped: false });
+    expect(document.getElementById('status').textContent).toMatch(/Skipped 1 SVG\b/);
+  });
+
+  it('reports a bailed-out background scan in preference to the count', () => {
+    send('svgsCollected', { count: 3, skipped: 4, bgScanSkipped: true });
+    expect(document.getElementById('status').textContent).toMatch(
+      /too large to scan CSS backgrounds/
+    );
   });
 });

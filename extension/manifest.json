@@ -3,18 +3,13 @@
   "name": "SVG Web Downloader & Extractor",
   "version": "1.3",
   "description": "Extract and download SVG images from any website. Save vector graphics, icons, and logos in high quality SVG format.",
-  "permissions": [
-    "activeTab",
-    "downloads",
-    "scripting",
-    "storage"
-  ],
+  "permissions": ["activeTab", "downloads", "scripting", "storage"],
   "options_ui": {
     "page": "options.html",
     "open_in_tab": true
   },
   "content_security_policy": {
-    "extension_pages": "script-src 'self'; object-src 'self'; img-src 'self' blob: data: https:;"
+    "extension_pages": "script-src 'self'; object-src 'self'; img-src 'self' blob: data:;"
   },
   "action": {
     "default_popup": "popup.html",
@@ -31,4 +26,4 @@
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
   }
-} 
+}

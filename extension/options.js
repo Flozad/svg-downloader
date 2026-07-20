@@ -1,4 +1,5 @@
-import { DEFAULT_SETTINGS, getSettings, saveSettings, resetSettings } from './settings.js';
+import { DEFAULT_SETTINGS, getSettings, resetSettings, saveSettings } from './settings.js';
+import { sanitizeNamePart } from './svg-utils.js';
 
 const TEXT_FIELDS = ['filenamePrefix', 'zipName'];
 const SWITCHES = ['autoScan', 'showColorLink'];
@@ -20,10 +21,13 @@ document.addEventListener('DOMContentLoaded', async () => {
   function readForm() {
     const patch = {};
     for (const id of TEXT_FIELDS) {
-      // Fall back to the default when the user clears the field, so downloads
-      // are never named with an empty prefix.
-      const value = document.getElementById(id).value.trim();
-      patch[id] = value || DEFAULT_SETTINGS[id];
+      // Sanitize at the write boundary. These names reach chrome.downloads and
+      // ZIP entry names without passing through sanitizeFilename, so a value
+      // like `../../evil` would otherwise be stored verbatim. Falls back to the
+      // default when the user clears the field or types nothing usable, so
+      // downloads are never named with an empty prefix.
+      const value = document.getElementById(id).value;
+      patch[id] = sanitizeNamePart(value) || DEFAULT_SETTINGS[id];
     }
     for (const id of SWITCHES) {
       patch[id] = document.getElementById(id).getAttribute('aria-checked') === 'true';
@@ -47,7 +51,10 @@ document.addEventListener('DOMContentLoaded', async () => {
   for (const id of SWITCHES) {
     const el = document.getElementById(id);
     el.addEventListener('click', () => {
-      el.setAttribute('aria-checked', el.getAttribute('aria-checked') === 'true' ? 'false' : 'true');
+      el.setAttribute(
+        'aria-checked',
+        el.getAttribute('aria-checked') === 'true' ? 'false' : 'true'
+      );
     });
   }
 

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { formatSVGContent, sanitizeFilename } from '../extension/svg-utils.js';
+import { formatSVGContent, sanitizeFilename, sanitizeNamePart } from '../extension/svg-utils.js';
 
 describe('formatSVGContent', () => {
   it('prepends an XML declaration when absent', async () => {
@@ -33,9 +33,7 @@ describe('formatSVGContent', () => {
   });
 
   it('declares xmlns:xlink when an xlink: prefix is used', async () => {
-    const out = await formatSVGContent(
-      '<svg viewBox="0 0 1 1"><use xlink:href="#a"/></svg>'
-    );
+    const out = await formatSVGContent('<svg viewBox="0 0 1 1"><use xlink:href="#a"/></svg>');
     expect(out).toContain('xmlns:xlink="http://www.w3.org/1999/xlink"');
   });
 
@@ -102,6 +100,12 @@ describe('sanitizeFilename', () => {
     expect(sanitizeFilename('con', 'svg-1')).toBe('svg-1.svg');
   });
 
+  // Windows reserves the device names with any extension, not just bare.
+  it('falls back on a reserved name carrying an extension', () => {
+    expect(sanitizeFilename('con.txt', 'svg-1')).toBe('svg-1.svg');
+    expect(sanitizeFilename('LPT1.backup', 'svg-1')).toBe('svg-1.svg');
+  });
+
   it('caps the length', () => {
     const out = sanitizeFilename('x'.repeat(300), 'svg-1');
     expect(out.length).toBeLessThanOrEqual(104);
@@ -109,5 +113,36 @@ describe('sanitizeFilename', () => {
 
   it('falls back on a bare dot-dot', () => {
     expect(sanitizeFilename('..', 'svg-1')).toBe('svg-1.svg');
+  });
+});
+
+// filenamePrefix / zipName reach chrome.downloads and ZIP entry names without
+// passing through sanitizeFilename, so the bare-name cleaner is the boundary
+// that has to hold for them.
+describe('sanitizeNamePart', () => {
+  it('returns a bare name with no extension appended', () => {
+    expect(sanitizeNamePart('my-icons')).toBe('my-icons');
+  });
+
+  it('defuses traversal so it cannot become a zip-slip entry name', () => {
+    const out = sanitizeNamePart('../../../.bashrc');
+    expect(out).not.toContain('/');
+    expect(out).not.toContain('..');
+  });
+
+  it('strips separators from an absolute path', () => {
+    const out = sanitizeNamePart('C:\\Windows\\System32');
+    expect(out).not.toContain('\\');
+    expect(out).not.toContain(':');
+  });
+
+  it('returns empty when nothing usable survives, so callers fall back', () => {
+    expect(sanitizeNamePart('')).toBe('');
+    expect(sanitizeNamePart('...')).toBe('');
+    expect(sanitizeNamePart('con')).toBe('');
+  });
+
+  it('preserves spaces and accents', () => {
+    expect(sanitizeNamePart('mis íconos')).toBe('mis íconos');
   });
 });
