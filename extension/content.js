@@ -2,13 +2,19 @@
   // Injection guard. The popup injects this file with executeScript on every
   // open; re-declaring top-level `let`s in the same isolated world throws
   // "already been declared" and registers a duplicate message listener. Hang a
-  // flag off window (the isolated world's own view; the page cannot see it) and
-  // on a repeat injection just re-scan instead of re-initializing.
-  if (window.__svgDownloaderInjected) {
-    window.__svgDownloaderCollect();
+  // flag off window (the isolated world's own view; the page cannot see it).
+  // On a repeat injection the listener from the first injection is still live,
+  // so bail out entirely and let the popup's `collectSVGs` message drive the
+  // re-scan through it.
+  // Stamped with the extension's own id rather than a bare `true`: after an
+  // extension reload the page keeps the flag while its listener is orphaned, so
+  // a bare boolean made re-injection bail and left messaging dead until the user
+  // reloaded the page. A new build gets a new stamp and re-initializes.
+  const INJECTION_STAMP = `${chrome.runtime.id}@${chrome.runtime.getManifest?.()?.version ?? '0'}`;
+  if (window.__svgDownloaderInjected === INJECTION_STAMP) {
     return;
   }
-  window.__svgDownloaderInjected = true;
+  window.__svgDownloaderInjected = INJECTION_STAMP;
 
   let svgElements = [];
   let currentIndex = -1;
@@ -100,12 +106,108 @@
   const MAX_INLINE_SVGS = 2000;
   const MAX_SVG_BYTES = 2_000_000;
 
+  // The same ceiling for the remote path, plus a wall-clock bound so a stalled
+  // or streaming response cannot leave the popup waiting forever.
+  const MAX_FETCH_BYTES = 2_000_000;
+  const FETCH_TIMEOUT_MS = 10_000;
+
+  // Read the body incrementally and bail the moment it exceeds the cap.
+  // response.text() would buffer the whole thing first, so a 500MB response was
+  // fully materialized in memory before being rejected — content-length is
+  // advisory and absent on chunked or compressed responses. Counting bytes off
+  // the wire also avoids text.length's UTF-16 undercount on CJK payloads.
+  async function readCapped(response) {
+    if (!response.body?.getReader) {
+      const text = await response.text();
+      if (new Blob([text]).size > MAX_FETCH_BYTES) throw new Error('SVG too large');
+      return text;
+    }
+
+    const reader = response.body.getReader();
+    const decoder = new TextDecoder();
+    let received = 0;
+    let text = '';
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      received += value.byteLength;
+      if (received > MAX_FETCH_BYTES) {
+        await reader.cancel();
+        throw new Error('SVG too large');
+      }
+      text += decoder.decode(value, { stream: true });
+    }
+    return text + decoder.decode();
+  }
+
+  // querySelectorAll does not cross shadow boundaries, so on any site built
+  // from web components — YouTube, Salesforce Lightning, Ionic, most design
+  // systems shipping custom elements — a flat query reports zero SVGs against a
+  // page visibly full of icons. Walk open shadow roots too. Closed roots stay
+  // unreachable by design; nothing can be done about those from here.
+  // One traversal per scan, shared by every caller. Five collectors plus the id
+  // index plus the background scan each used to run their own '*' walk; the DOM
+  // does not change mid-scan, so they can all filter one snapshot instead. The
+  // list is flat and built iteratively — `found.push(...recurse())` blew the
+  // argument limit with a RangeError once a single root held ~65k matches.
+  let deepElements = null;
+
+  function allElements() {
+    if (deepElements) return deepElements;
+    const out = [];
+    const roots = [document];
+    while (roots.length > 0) {
+      for (const el of roots.pop().querySelectorAll('*')) {
+        out.push(el);
+        if (el.shadowRoot) roots.push(el.shadowRoot);
+      }
+    }
+    deepElements = out;
+    return out;
+  }
+
+  function deepQueryAll(selector) {
+    return allElements().filter((el) => el.matches(selector));
+  }
+
+  // Fallback index of every id reachable through open shadow roots, built once
+  // per scan. The miss path used to run a whole-document walk per <use>, and a
+  // miss is the *common* case: a page using an external sprite file misses on
+  // every single icon, which on a large page is millions of element visits with
+  // the popup spinner up. Reset at the top of collectSVGs.
+  let shadowIdIndex = null;
+
+  function buildShadowIdIndex() {
+    const map = new Map();
+    for (const el of deepQueryAll('[id]')) {
+      if (!map.has(el.id)) map.set(el.id, el);
+    }
+    return map;
+  }
+
+  // Resolve a same-document id the way the page itself would. Id scoping is the
+  // entire point of shadow DOM — collisions across roots are normal — so
+  // resolution starts in the referring node's own root and only then falls back
+  // outward. Searching the document first inlined an unrelated component's
+  // artwork whenever two roots happened to share an id.
+  function resolveRef(fromNode, id) {
+    const root = fromNode.getRootNode?.();
+    const scoped = root?.getElementById?.(id);
+    if (scoped) return scoped;
+
+    const direct = document.getElementById(id);
+    if (direct) return direct;
+
+    shadowIdIndex = shadowIdIndex || buildShadowIdIndex();
+    return shadowIdIndex.get(id) || null;
+  }
+
   // Inline <svg>. For sprite icons (<use href="#id">) whose target is a
   // same-document symbol, inline the referenced node into a clone so the
   // extracted file is not an empty husk. Never mutate the live page DOM.
   function collectInlineSVGs(counters) {
     const items = [];
-    document.querySelectorAll('svg').forEach((svg) => {
+    deepQueryAll('svg').forEach((svg) => {
       if (!paintsSomething(svg)) return;
       if (items.length >= MAX_INLINE_SVGS) {
         counters.skipped++;
@@ -126,7 +228,7 @@
           if (ref.startsWith('#')) {
             const id = ref.slice(1);
             if (inlined.has(id)) return;
-            const target = document.getElementById(id);
+            const target = resolveRef(svg, id);
             if (target) {
               if (!defs) {
                 defs = document.createElementNS(SVG_NS, 'defs');
@@ -178,7 +280,7 @@
   // data URIs, which the old suffix-only attribute selector all missed.
   function collectImageSVGs() {
     const items = [];
-    document.querySelectorAll('img').forEach((img) => {
+    deepQueryAll('img').forEach((img) => {
       if (isSvgUrl(img.src)) {
         items.push({ type: 'img', content: img.src });
       }
@@ -190,7 +292,7 @@
   function collectEmbeddedSVGs() {
     const items = [];
 
-    document.querySelectorAll('object').forEach((el) => {
+    deepQueryAll('object').forEach((el) => {
       const data = el.getAttribute('data');
       if (el.getAttribute('type') === 'image/svg+xml' || isSvgUrl(data)) {
         const abs = data && toAbsolute(data);
@@ -198,7 +300,7 @@
       }
     });
 
-    document.querySelectorAll('embed').forEach((el) => {
+    deepQueryAll('embed').forEach((el) => {
       const src = el.getAttribute('src');
       if (el.getAttribute('type') === 'image/svg+xml' || isSvgUrl(src)) {
         const abs = src && toAbsolute(src);
@@ -206,7 +308,7 @@
       }
     });
 
-    document.querySelectorAll('iframe').forEach((el) => {
+    deepQueryAll('iframe').forEach((el) => {
       const src = el.getAttribute('src');
       if (isSvgUrl(src)) {
         const abs = toAbsolute(src);
@@ -223,7 +325,9 @@
   const URL_RE = /url\((['"]?)(.*?)\1\)/g;
 
   function collectBackgroundSVGs(counters) {
-    const all = document.querySelectorAll('*');
+    // Shares the one deep snapshot, so this now sees shadow-DOM elements too —
+    // and costs no extra walk to do it.
+    const all = allElements();
     // Cap the work: querySelectorAll('*') + getComputedStyle on every element is
     // O(n) with a real constant. A popup that hangs is worse than one that
     // misses a background icon on a huge page. Flag the bail-out so the popup
@@ -262,6 +366,9 @@
   }
 
   function collectSVGs() {
+    // Rebuilt lazily per scan — the page may have changed since the last one.
+    deepElements = null;
+    shadowIdIndex = null;
     const counters = { skipped: 0, bgScanSkipped: false };
     const items = [
       ...collectInlineSVGs(counters),
@@ -363,15 +470,32 @@
             sendResponse({ success: false, error: 'Unsupported URL scheme' });
             break;
           }
-          fetch(request.url)
-            .then((response) => {
-              if (!response.ok) {
-                throw new Error(`HTTP ${response.status}`);
-              }
-              return response.text();
-            })
-            .then((text) => sendResponse({ success: true, content: text }))
-            .catch((error) => sendResponse({ success: false, error: error.message }));
+          // The inline collector has MAX_SVG_BYTES / MAX_INLINE_SVGS caps; the
+          // remote path had none, so a single huge or never-closing response
+          // could hang the popup with no recoverable error. Bound it in both
+          // directions. `credentials: 'omit'` keeps an authenticated,
+          // user-specific response from being silently baked into a saved file.
+          {
+            const controller = new AbortController();
+            const timer = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
+            fetch(request.url, { signal: controller.signal, credentials: 'omit' })
+              .then((response) => {
+                if (!response.ok) {
+                  throw new Error(`HTTP ${response.status}`);
+                }
+                const declared = Number(response.headers.get('content-length'));
+                if (declared > MAX_FETCH_BYTES) {
+                  throw new Error('SVG too large');
+                }
+                return readCapped(response);
+              })
+              .then((text) => sendResponse({ success: true, content: text }))
+              .catch((error) => {
+                const message = error.name === 'AbortError' ? 'Timed out' : error.message;
+                sendResponse({ success: false, error: message });
+              })
+              .finally(() => clearTimeout(timer));
+          }
           return true; // async response
         }
       }
@@ -383,10 +507,9 @@
     return true; // Keep the message channel open for async responses
   });
 
-  // Expose the collector so a repeat injection can re-scan without
-  // re-registering the message listener.
-  window.__svgDownloaderCollect = collectSVGs;
-
-  // Initialize when the script loads
-  collectSVGs();
+  // No scan on load. The popup always follows injection with a `collectSVGs`
+  // message, so scanning here too meant every popup open paid for two full
+  // passes — two querySelectorAll('*') + getComputedStyle sweeps, two
+  // serializations of every inline SVG — and pushed `elementSelected` twice.
+  // The popup is the single initiator.
 })();
