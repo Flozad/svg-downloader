@@ -21,6 +21,9 @@ dist/
 build/
 *.zip
 
+# Test output
+coverage/
+
 # Temporary files
 *.tmp
 *.temp

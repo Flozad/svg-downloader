@@ -83,5 +83,26 @@
         "noParameterAssign": "off"
       }
     }
-  }
+  },
+  "overrides": [
+    {
+      // The fixture-capture probe is a devtools-console harness: it fetches the
+      // shipped content.js and eval()s it inside a live page so the tests run
+      // the real collector rather than a hand-ported copy. eval is the
+      // mechanism, not an oversight. It never ships — nothing under scripts/ is
+      // packaged into the extension.
+      // console is the harness's only output channel — it is run by hand from a
+      // devtools console and a local server, never from the extension — and
+      // `(0, eval)` is the indirect-eval idiom, chosen so the collector runs in
+      // global scope exactly as an injected content script would.
+      "includes": ["scripts/fixture-capture/**"],
+      "linter": {
+        "rules": {
+          "security": { "noGlobalEval": "off" },
+          "suspicious": { "noConsole": "off" },
+          "complexity": { "noCommaOperator": "off" }
+        }
+      }
+    }
+  ]
 }

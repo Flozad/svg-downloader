@@ -16,12 +16,15 @@
   "scripts": {
     "test": "vitest run",
     "test:watch": "vitest",
-    "lint": "biome check extension test",
-    "format": "biome check --write extension test",
-    "package": "bash scripts/package.sh"
+    "test:coverage": "vitest run --coverage",
+    "lint": "biome check extension test scripts",
+    "format": "biome check --write extension test scripts",
+    "package": "bash scripts/package.sh",
+    "fixtures:serve": "node scripts/fixture-capture/serve.mjs"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.5.4",
+    "@vitest/coverage-v8": "^4.1.10",
     "jsdom": "^25.0.1",
     "sharp": "^0.35.3",
     "vitest": "^4.1.10"
