@@ -560,3 +560,11 @@ input {
 .sprite-sheet {
   position: absolute;
 }
+
+/* Keyboard focus ring. The popup previously fell back to the UA default, which
+   is low-contrast against --surface-hi; this mirrors the options page. */
+.btn:focus-visible,
+.icon-btn:focus-visible {
+  outline: 2px solid var(--plot);
+  outline-offset: 3px;
+}

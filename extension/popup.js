@@ -55,6 +55,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     preview.classList.add('hidden');
     emptyState.classList.remove('hidden');
     emptyState.querySelector('p').textContent = message;
+    // The idle prompt renames this button; an error arriving afterwards would
+    // otherwise leave it reading "Scan this page" next to a failure message.
+    retryBtn.querySelector('span').textContent = 'Scan page';
     setCounter(0);
     pagerPos.textContent = '—';
     mountTag.textContent = 'preview';
@@ -103,9 +106,21 @@ document.addEventListener('DOMContentLoaded', async () => {
     );
   }
 
-  async function injectContentScript() {
+  // The tab this popup is bound to, captured at injection. Navigation and fetch
+  // messages target it explicitly rather than re-resolving "active tab" on every
+  // call — in a detached popup the active tab can change underneath us, which
+  // would silently drive a different page's content script.
+  let activeTabId = null;
+
+  // `pinnedTabId` is passed on the recovery path. Without it, re-injection ran a
+  // fresh "active tab" query and could rebind the popup to a *different* tab —
+  // reintroducing the exact bug the pinning below exists to prevent.
+  async function injectContentScript(pinnedTabId = null) {
     try {
-      const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+      const tab =
+        pinnedTabId === null
+          ? (await chrome.tabs.query({ active: true, currentWindow: true }))[0]
+          : await chrome.tabs.get(pinnedTabId);
       if (!tab) throw new Error('No active tab found');
 
       // Check if we can access the tab. Chrome allows only http(s) pages, and
@@ -124,6 +139,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         files: ['content.js'],
       });
 
+      activeTabId = tab.id;
       return tab;
     } catch (error) {
       console.error('Error injecting content script:', error);
@@ -139,8 +155,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     return m.includes('Receiving end does not exist') || m.includes('message port closed');
   }
 
-  async function injectAndCollect() {
-    const tab = await injectContentScript();
+  async function injectAndCollect(pinnedTabId = null) {
+    const tab = await injectContentScript(pinnedTabId);
     const response = await chrome.tabs.sendMessage(tab.id, { action: 'collectSVGs' });
     if (!response?.success) {
       throw new Error('Failed to collect SVGs');
@@ -194,13 +210,28 @@ document.addEventListener('DOMContentLoaded', async () => {
     showScanPrompt();
   }
 
-  // Handle navigation
+  // Handle navigation. If the page navigated out from under us the content
+  // script is gone with it, and the retry that refreshSVGs already does for
+  // connection-shaped failures applies here too — without it, Prev/Next dead-
+  // ends on an error the user has no way to clear.
   async function sendTabMessage(action) {
+    if (activeTabId === null) {
+      showError('Could not reach this page. Reload the page, then try again.');
+      return;
+    }
     try {
-      const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-      if (!tab) throw new Error('No active tab found');
-      return await chrome.tabs.sendMessage(tab.id, { action });
+      return await chrome.tabs.sendMessage(activeTabId, { action });
     } catch (error) {
+      if (isConnectionError(error)) {
+        try {
+          await injectAndCollect(activeTabId);
+          return await chrome.tabs.sendMessage(activeTabId, { action });
+        } catch (retryError) {
+          console.error(`Error sending ${action} message after re-inject:`, retryError);
+          showError('Could not reach this page. Reload the page, then try again.');
+          return;
+        }
+      }
       console.error(`Error sending ${action} message:`, error);
       showError('Error navigating SVGs. Please try again.');
     }
@@ -210,10 +241,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   // page's own origin under activeTab — so no host permission is needed. Throws
   // on failure; callers turn the rejection into the right user-facing message.
   async function fetchSVGContent(url) {
-    const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-    if (!tab) throw new Error('No active tab found');
+    if (activeTabId === null) throw new Error('No active tab found');
 
-    const response = await chrome.tabs.sendMessage(tab.id, { action: 'fetchSVG', url });
+    const response = await chrome.tabs.sendMessage(activeTabId, { action: 'fetchSVG', url });
     if (!response?.success) {
       throw new Error(response?.error || 'Failed to fetch SVG');
     }
@@ -244,6 +274,57 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   }
 
+  // chrome.downloads.download resolves when the download is *initiated*, not
+  // when the blob has been read. Revoking in a `finally` therefore raced the
+  // transfer and truncated large ZIPs. Hold the object URL until the download
+  // reaches a terminal state, with a timeout so a download the user leaves
+  // paused indefinitely cannot leak the blob for the life of the popup.
+  const REVOKE_TIMEOUT_MS = 60_000;
+
+  function downloadBlob(blob, filename) {
+    const url = URL.createObjectURL(blob);
+    return chrome.downloads
+      .download({ url, filename })
+      .then((downloadId) => {
+        let timer = null;
+        let released = false;
+        const release = () => {
+          if (released) return;
+          released = true;
+          chrome.downloads.onChanged.removeListener(onChanged);
+          clearTimeout(timer);
+          URL.revokeObjectURL(url);
+        };
+        function onChanged(delta) {
+          if (delta.id !== downloadId || !delta.state) return;
+          // `complete` is the only truly terminal state. `interrupted` is
+          // resumable — Chrome auto-retries some network interrupts — and
+          // revoking there would make chrome.downloads.resume fetch a dead
+          // blob: URL, losing the file for good.
+          if (delta.state.current === 'complete') release();
+          if (delta.state.current === 'interrupted' && delta.canResume?.current === false) {
+            release();
+          }
+        }
+        chrome.downloads.onChanged.addListener(onChanged);
+
+        // A small download often reaches `complete` before the listener is
+        // registered, in which case onChanged never fires for it. Ask once.
+        chrome.downloads.search?.({ id: downloadId })?.then?.(([item]) => {
+          if (item?.state === 'complete') release();
+        });
+
+        // Backstop only, for a download left paused indefinitely. It is
+        // deliberately long: revoking under a paused-but-resumable download
+        // would break the resume this function exists to protect.
+        timer = setTimeout(release, REVOKE_TIMEOUT_MS);
+      })
+      .catch((error) => {
+        URL.revokeObjectURL(url);
+        throw error;
+      });
+  }
+
   prevBtn.addEventListener('click', () => sendTabMessage('previousSVG'));
   nextBtn.addEventListener('click', () => sendTabMessage('nextSVG'));
 
@@ -253,8 +334,23 @@ document.addEventListener('DOMContentLoaded', async () => {
     downloadSVG(currentSVG);
   });
 
-  // Handle bulk download
+  // Handle bulk download. Guarded against re-entry: the export can take many
+  // seconds on a large page, and a second click used to start a whole parallel
+  // batch against the same origin.
+  let zipInProgress = false;
   downloadAllBtn.addEventListener('click', async () => {
+    if (zipInProgress) return;
+    zipInProgress = true;
+    downloadAllBtn.disabled = true;
+    try {
+      await buildAndDownloadZip();
+    } finally {
+      zipInProgress = false;
+      downloadAllBtn.disabled = false;
+    }
+  });
+
+  async function buildAndDownloadZip() {
     // Ask the content script for the full list on demand — navigation messages
     // no longer carry it, so it isn't re-serialized on every Prev/Next click.
     let svgs;
@@ -273,8 +369,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       const zip = new JSZip();
       const failures = [];
 
-      // Add all SVGs to the zip
-      const promises = svgs.map(async (svg, index) => {
+      async function addToZip(svg, index) {
         const filename = `${settings.filenamePrefix}-${index + 1}.svg`;
         try {
           let formattedContent;
@@ -291,9 +386,21 @@ document.addEventListener('DOMContentLoaded', async () => {
           console.error(`Error processing SVG ${index + 1}:`, error);
           failures.push(index + 1);
         }
-      });
+      }
 
-      await Promise.all(promises);
+      // Bounded worker pool. Mapping straight to Promise.all opened one fetch
+      // per SVG at once — on an icon-heavy page that is hundreds of concurrent
+      // requests against the origin, which stalls the tab and fails items that
+      // would have succeeded serially.
+      const CONCURRENCY = 6;
+      let cursor = 0;
+      const worker = async () => {
+        while (cursor < svgs.length) {
+          const index = cursor++;
+          await addToZip(svgs[index], index);
+        }
+      };
+      await Promise.all(Array.from({ length: Math.min(CONCURRENCY, svgs.length) }, () => worker()));
 
       if (failures.length === svgs.length) {
         showError('None of the SVGs on this page could be exported.');
@@ -302,15 +409,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
       // Generate and download the zip
       const blob = await zip.generateAsync({ type: 'blob' });
-      const url = URL.createObjectURL(blob);
-      try {
-        await chrome.downloads.download({
-          url: url,
-          filename: `${settings.zipName}.zip`,
-        });
-      } finally {
-        URL.revokeObjectURL(url);
-      }
+      await downloadBlob(blob, `${settings.zipName}.zip`);
 
       if (failures.length > 0) {
         showStatus(
@@ -323,7 +422,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       console.error('Error creating ZIP:', error);
       showError('Error creating ZIP file. Please try again.');
     }
-  });
+  }
 
   async function downloadSVG(svg) {
     const filenameInput = document.getElementById('filenameInput');
@@ -360,19 +459,22 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     const blob = new Blob([formattedContent], { type: 'image/svg+xml;charset=utf-8' });
-    const url = URL.createObjectURL(blob);
     try {
-      await chrome.downloads.download({ url, filename });
+      await downloadBlob(blob, filename);
     } catch (error) {
       console.error('Error downloading SVG:', error);
       showError('Error downloading SVG. Please try again.');
-    } finally {
-      URL.revokeObjectURL(url);
     }
   }
 
-  // Handle messages from content script
-  chrome.runtime.onMessage.addListener((request) => {
+  // Handle messages from content script. The popup receives broadcasts from
+  // every content script in every tab, so ignore anything that isn't the tab
+  // this popup scanned — otherwise a stale injection elsewhere can overwrite
+  // the current selection and the pager readout.
+  chrome.runtime.onMessage.addListener((request, sender) => {
+    if (activeTabId !== null && sender?.tab?.id !== undefined && sender.tab.id !== activeTabId) {
+      return;
+    }
     switch (request.action) {
       case 'svgsCollected': {
         const { count, skipped, bgScanSkipped } = request.data;

@@ -59,7 +59,11 @@
 
         <div id="empty-state" class="hidden empty">
           <svg class="empty-glyph" viewBox="0 0 48 48" aria-hidden="true"><use href="#mark-art"/></svg>
-          <p>No SVGs found on this page</p>
+          <!-- role="status" because every failure message the user most needs
+               — "Cannot access SVGs on this page", "Could not reach this page"
+               — is written here. Without a live region they are announced to
+               nobody. -->
+          <p role="status">No SVGs found on this page</p>
           <button type="button" id="retryBtn" class="btn btn-quiet btn-sm">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
               <path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
@@ -125,6 +129,8 @@
       <a href="https://clasicwebtools.com" target="_blank" rel="noopener">clasicwebtools</a>
       <span class="dot">·</span>
       <a href="https://twitter.com/lozards" target="_blank" rel="noopener">Twitter</a>
+      <span class="dot">·</span>
+      <a href="mailto:clasicwebtools@gmail.com?subject=SVG%20Downloader%20issue" target="_blank" rel="noopener">Report issue</a>
       <span class="grow"></span>
       <span class="sig">on&nbsp;device</span>
     </footer>
