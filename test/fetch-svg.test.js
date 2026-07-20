@@ -1,7 +1,7 @@
-import { beforeEach, describe, expect, it, vi } from 'vitest';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const src = fs.readFileSync(path.join(here, '../extension/content.js'), 'utf8');
@@ -14,7 +14,11 @@ function setup(fetchImpl) {
   let listener = null;
   globalThis.chrome = {
     runtime: {
-      onMessage: { addListener: (fn) => { listener = fn; } },
+      onMessage: {
+        addListener: (fn) => {
+          listener = fn;
+        },
+      },
       sendMessage: () => {},
       lastError: null,
     },
@@ -41,7 +45,11 @@ describe('content.js fetchSVG handler', () => {
     const listener = setup(fetchMock);
     const sendResponse = vi.fn();
 
-    const ret = listener({ action: 'fetchSVG', url: 'https://cdn.example/a.svg' }, {}, sendResponse);
+    const ret = listener(
+      { action: 'fetchSVG', url: 'https://cdn.example/a.svg' },
+      {},
+      sendResponse
+    );
     expect(ret).toBe(true);
     await flush();
 

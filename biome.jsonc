@@ -1,0 +1,72 @@
+{
+  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "files": {
+    "ignore": [
+      "extension/lib/**",
+      "dist/**",
+      "motion/**",
+      "docs/**",
+      "node_modules/**"
+    ]
+  },
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineWidth": 100
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "single",
+      "semicolons": "always",
+      "trailingCommas": "es5"
+    },
+    "globals": ["chrome", "JSZip"]
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "complexity": {
+        // The DOM-walking code reads better as querySelectorAll(...).forEach(...)
+        // than as a for..of over a NodeList. Stylistic, not a defect.
+        "noForEach": "off"
+      },
+      "suspicious": {
+        "noConsole": {
+          "level": "warn",
+          "options": { "allow": ["error", "warn"] }
+        },
+        // INVALID_FILENAME_CHARS in svg-utils.js matches the C0 control range on
+        // purpose: stripping control characters out of filenames before they
+        // reach chrome.downloads is the point of that regex.
+        "noControlCharactersInRegex": "off",
+        // `while ((match = RE.exec(s)) !== null)` is the standard way to walk a
+        // global regex; the assignment is intentional and explicitly compared.
+        "noAssignInExpressions": "off"
+      },
+      "performance": {
+        // Tests use `delete window.__svgDownloaderInjected` to reset module
+        // state between cases. The perf concern behind this rule is irrelevant
+        // there, and an undefined assignment would not actually clear the key.
+        "noDelete": "off"
+      },
+      "security": {
+        "noDangerouslySetInnerHtml": "error",
+        "noGlobalEval": "error"
+      },
+      "style": {
+        "useConst": "error",
+        "noVar": "error",
+        // `content = content.trim()` at the top of a function is the existing
+        // idiom here and is clearer than introducing a shadow name.
+        "noParameterAssign": "off"
+      }
+    }
+  }
+}

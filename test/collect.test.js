@@ -1,7 +1,7 @@
-import { beforeEach, describe, expect, it } from 'vitest';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { beforeEach, describe, expect, it } from 'vitest';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const src = fs.readFileSync(path.join(here, '../extension/content.js'), 'utf8');
@@ -15,8 +15,14 @@ function run(html) {
   let listener = null;
   globalThis.chrome = {
     runtime: {
-      onMessage: { addListener: (fn) => { listener = fn; } },
-      sendMessage: (msg) => { messages.push(msg); },
+      onMessage: {
+        addListener: (fn) => {
+          listener = fn;
+        },
+      },
+      sendMessage: (msg) => {
+        messages.push(msg);
+      },
       lastError: null,
     },
   };
@@ -29,7 +35,9 @@ function run(html) {
 // the popup does, via the getAllSVGs message.
 function items({ listener }) {
   let svgs = [];
-  listener({ action: 'getAllSVGs' }, {}, (res) => { svgs = res.svgs; });
+  listener({ action: 'getAllSVGs' }, {}, (res) => {
+    svgs = res.svgs;
+  });
   return svgs;
 }
 
@@ -86,7 +94,7 @@ describe('collectSVGs', () => {
     const its = items(
       run(
         '<svg style="display:none"><symbol id="i"><path d="M0 0"/></symbol></svg>' +
-        '<svg><use href="#i"/></svg>'
+          '<svg><use href="#i"/></svg>'
       )
     );
     expect(its.some((i) => i.content.includes('M0 0'))).toBe(true);
@@ -106,7 +114,7 @@ describe('collectSVGs', () => {
   it('never mutates the page DOM when inlining sprites', () => {
     run(
       '<svg style="display:none"><symbol id="i"><path d="M0 0"/></symbol></svg>' +
-      '<svg><use href="#i"/></svg>'
+        '<svg><use href="#i"/></svg>'
     );
     const symbol = document.querySelector('symbol');
     expect(symbol).not.toBeNull();
