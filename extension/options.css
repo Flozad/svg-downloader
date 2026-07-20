@@ -56,7 +56,8 @@
   --display: "Bricolage Grotesque", "Arial Narrow", var(--sans);
   --mono: "Space Mono", ui-monospace, "SF Mono", SFMono-Regular, Menlo, monospace;
 
-  --sheet: linear-gradient(var(--line) 1px, transparent 1px),
+  --sheet:
+    linear-gradient(var(--line) 1px, transparent 1px),
     linear-gradient(90deg, var(--line) 1px, transparent 1px);
 
   color-scheme: light;
@@ -141,7 +142,9 @@ input {
   font-family: var(--display);
   font-size: 24px;
   font-weight: 600;
-  font-variation-settings: "opsz" 24, "wght" 660;
+  font-variation-settings:
+    "opsz" 24,
+    "wght" 660;
   letter-spacing: -0.03em;
 }
 .brand em {
@@ -204,7 +207,9 @@ input {
 .row-key label {
   font-family: var(--display);
   font-size: 17px;
-  font-variation-settings: "opsz" 18, "wght" 600;
+  font-variation-settings:
+    "opsz" 18,
+    "wght" 600;
   letter-spacing: -0.015em;
   color: var(--ink);
   display: block;
@@ -237,7 +242,9 @@ input {
   background: var(--surface-hi);
   border: 1px solid var(--line-2);
   border-radius: var(--r-node);
-  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
 }
 .input-affix:focus-within {
   border-color: var(--plot);
@@ -281,7 +288,9 @@ input {
   background: var(--paper-2);
   border: 1px solid var(--line-2);
   border-radius: var(--r-pill);
-  transition: background-color 0.2s var(--ease-out), border-color 0.2s var(--ease-out);
+  transition:
+    background-color 0.2s var(--ease-out),
+    border-color 0.2s var(--ease-out);
 }
 .switch-thumb {
   position: absolute;
@@ -344,7 +353,10 @@ input {
   gap: 9px;
   padding: 11px 20px;
   border-radius: var(--r-node);
-  transition: transform 0.14s var(--ease-out), background-color 0.18s ease, border-color 0.18s ease,
+  transition:
+    transform 0.14s var(--ease-out),
+    background-color 0.18s ease,
+    border-color 0.18s ease,
     box-shadow 0.18s ease;
 }
 .btn:active {
@@ -353,7 +365,9 @@ input {
 .btn-primary {
   background: var(--plot);
   color: var(--surface-hi);
-  box-shadow: 0 1px 0 var(--plot-deep), 0 10px 24px -14px rgba(20, 63, 41, 0.6);
+  box-shadow:
+    0 1px 0 var(--plot-deep),
+    0 10px 24px -14px rgba(20, 63, 41, 0.6);
 }
 .btn-primary:hover {
   background: var(--plot-deep);

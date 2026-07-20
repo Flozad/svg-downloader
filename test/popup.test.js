@@ -167,7 +167,7 @@ describe('popup.js — ZIP outcomes (plan 011)', () => {
   it('reports partial success as a status notice without wrecking the UI', async () => {
     selectFirst(2);
     const counterBefore = document.getElementById('counter').textContent;
-    sendMessageImpl = async (tabId, msg) => {
+    sendMessageImpl = async (_tabId, msg) => {
       if (msg.action === 'getAllSVGs') {
         return {
           success: true,
@@ -196,7 +196,7 @@ describe('popup.js — ZIP outcomes (plan 011)', () => {
 
   it('confirms a fully successful ZIP with a status line', async () => {
     selectFirst(2);
-    sendMessageImpl = async (tabId, msg) => {
+    sendMessageImpl = async (_tabId, msg) => {
       if (msg.action === 'getAllSVGs') {
         return {
           success: true,
@@ -218,7 +218,7 @@ describe('popup.js — ZIP outcomes (plan 011)', () => {
 
   it('keeps the destructive error state when every SVG fails', async () => {
     selectFirst(1);
-    sendMessageImpl = async (tabId, msg) => {
+    sendMessageImpl = async (_tabId, msg) => {
       if (msg.action === 'getAllSVGs') {
         return { success: true, svgs: [{ type: 'img', content: 'https://cdn.example/x.svg' }] };
       }
@@ -241,7 +241,7 @@ describe('popup.js — ZIP outcomes (plan 011)', () => {
 describe('popup.js — injection failure recovery (plan 014)', () => {
   it('retries once on a connection error and then succeeds', async () => {
     let collectCalls = 0;
-    sendMessageImpl = async (tabId, msg) => {
+    sendMessageImpl = async (_tabId, msg) => {
       if (msg.action === 'collectSVGs') {
         collectCalls++;
         if (collectCalls === 1) {
@@ -261,7 +261,7 @@ describe('popup.js — injection failure recovery (plan 014)', () => {
   });
 
   it('advises reloading the page when the retry also fails', async () => {
-    sendMessageImpl = async (tabId, msg) => {
+    sendMessageImpl = async (_tabId, msg) => {
       if (msg.action === 'collectSVGs') {
         throw new Error('Could not establish connection. Receiving end does not exist.');
       }
@@ -280,7 +280,7 @@ describe('popup.js — injection failure recovery (plan 014)', () => {
   });
 
   it('does not retry non-connection errors', async () => {
-    sendMessageImpl = async (tabId, msg) => {
+    sendMessageImpl = async (_tabId, msg) => {
       if (msg.action === 'collectSVGs') throw new Error('boom');
       return { success: true };
     };

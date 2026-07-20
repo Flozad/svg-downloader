@@ -3,7 +3,6 @@ import { getSettings } from './settings.js';
 import { formatSVGContent, sanitizeFilename } from './svg-utils.js';
 
 let currentSVG = null;
-let isLoading = false;
 let settings = null;
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -37,7 +36,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   let previewObjectUrl = null;
 
   function setLoading(loading_state) {
-    isLoading = loading_state;
     loading.classList.toggle('hidden', !loading_state);
     refreshBtn.disabled = loading_state;
     if (loading_state) {
@@ -113,7 +111,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       // Check if we can access the tab. Chrome allows only http(s) pages, and
       // even then hard-blocks injection on the Web Store / extensions gallery,
       // so treat those as unreachable up front with a clear message.
-      if (!tab.url || !tab.url.startsWith('http')) {
+      if (!tab.url?.startsWith('http')) {
         throw new Error('Cannot access this page');
       }
       if (isRestrictedUrl(tab.url)) {
@@ -144,7 +142,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   async function injectAndCollect() {
     const tab = await injectContentScript();
     const response = await chrome.tabs.sendMessage(tab.id, { action: 'collectSVGs' });
-    if (!response || !response.success) {
+    if (!response?.success) {
       throw new Error('Failed to collect SVGs');
     }
   }
@@ -216,7 +214,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (!tab) throw new Error('No active tab found');
 
     const response = await chrome.tabs.sendMessage(tab.id, { action: 'fetchSVG', url });
-    if (!response || !response.success) {
+    if (!response?.success) {
       throw new Error(response?.error || 'Failed to fetch SVG');
     }
     return response.content;
@@ -262,7 +260,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     let svgs;
     try {
       const response = await sendTabMessage('getAllSVGs');
-      if (!response || !response.success) throw new Error('Failed to list SVGs');
+      if (!response?.success) throw new Error('Failed to list SVGs');
       svgs = response.svgs;
     } catch (error) {
       console.error('Error listing SVGs:', error);
@@ -374,7 +372,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 
   // Handle messages from content script
-  chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  chrome.runtime.onMessage.addListener((request) => {
     switch (request.action) {
       case 'svgsCollected': {
         const { count, skipped, bgScanSkipped } = request.data;

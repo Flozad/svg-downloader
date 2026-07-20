@@ -24,18 +24,20 @@
   <div class="panel">
     <!-- ── Header ── -->
     <header class="head">
-      <a class="brand" href="#">
+      <!-- Decorative wordmark, not a link: the popup has nowhere to navigate
+           to, and href="#" gave screen readers a link that goes nowhere. -->
+      <div class="brand">
         <svg class="mark" viewBox="0 0 48 48" aria-hidden="true"><use href="#mark-art"/></svg>
         <strong>SVG&nbsp;Downloader</strong>
-      </a>
+      </div>
       <div class="head-tools">
         <span class="counter" id="counter">0 found</span>
-        <button id="refreshBtn" class="icon-btn" title="Rescan this page" aria-label="Rescan this page">
+        <button type="button" id="refreshBtn" class="icon-btn" title="Rescan this page" aria-label="Rescan this page">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
             <path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </button>
-        <button id="settingsBtn" class="icon-btn" title="Settings" aria-label="Settings">
+        <button type="button" id="settingsBtn" class="icon-btn" title="Settings" aria-label="Settings">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
             <circle cx="12" cy="12" r="3" stroke-width="1.8"/>
             <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06A1.65 1.65 0 004.6 15a1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06A1.65 1.65 0 009 4.6a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06A1.65 1.65 0 0019.4 9c.14.31.22.65.22 1s-.08.69-.22 1z" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
@@ -58,7 +60,7 @@
         <div id="empty-state" class="hidden empty">
           <svg class="empty-glyph" viewBox="0 0 48 48" aria-hidden="true"><use href="#mark-art"/></svg>
           <p>No SVGs found on this page</p>
-          <button id="retryBtn" class="btn btn-quiet btn-sm">
+          <button type="button" id="retryBtn" class="btn btn-quiet btn-sm">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
               <path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
@@ -72,12 +74,12 @@
 
       <!-- ── Pager ── -->
       <div class="pager">
-        <button id="prevBtn" class="btn btn-quiet">
+        <button type="button" id="prevBtn" class="btn btn-quiet">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M15 18l-6-6 6-6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           <span>Prev</span>
         </button>
         <span class="pager-pos" id="pagerPos">—</span>
-        <button id="nextBtn" class="btn btn-quiet">
+        <button type="button" id="nextBtn" class="btn btn-quiet">
           <span>Next</span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
@@ -94,11 +96,11 @@
 
       <!-- ── Actions ── -->
       <div class="actions">
-        <button id="downloadBtn" class="btn btn-primary">
+        <button type="button" id="downloadBtn" class="btn btn-primary">
           <svg viewBox="0 0 48 48" aria-hidden="true"><use href="#arrow-art"/></svg>
           <span>Download current</span>
         </button>
-        <button id="downloadAllBtn" class="btn btn-quiet">
+        <button type="button" id="downloadAllBtn" class="btn btn-quiet">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
             <path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4M9 9h6M9 13h6" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>

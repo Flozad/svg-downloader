@@ -324,7 +324,7 @@
   }
 
   // Listen for messages from the popup
-  chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  chrome.runtime.onMessage.addListener((request, _sender, sendResponse) => {
     try {
       switch (request.action) {
         case 'collectSVGs':
