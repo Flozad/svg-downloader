@@ -63,23 +63,42 @@ export const SiteLogo: React.FC<{size?: number; color?: string}> = ({size = 26, 
 )
 
 /**
- * The extension's OWN icon, traced from extension/icons/icon.svg: a black rounded
- * square, a download arrow, and the tray line under it. This is the mark that
- * rides the browser's extension row and the store tiles.
+ * The extension's OWN icon, traced from extension/icons/icon.svg: a plotter-green
+ * tile with a top-down gradient, a download arrow, and the tray line under it.
+ * This is the mark that rides the browser's extension row and the store tiles,
+ * so it has to be the shipped icon — a black square here would be a different
+ * product's badge sitting in the toolbar of every recording.
  */
-export const ExtMark: React.FC<{size?: number; radius?: number}> = ({size = 20, radius}) => (
-  <svg width={size} height={size} viewBox="0 0 48 48" fill="none">
-    <rect width="48" height="48" rx={radius ?? 10} fill="#0a0a0a" />
-    <path
-      d="M24 13v15m0 0l-6.5-6.5M24 28l6.5-6.5"
-      stroke="#fff"
-      strokeWidth="3.4"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-    <rect x="17" y="33.5" width="14" height="2.6" rx="1.3" fill="#fff" />
-  </svg>
-)
+export const ExtMark: React.FC<{size?: number; radius?: number}> = ({size = 20, radius}) => {
+  // The gradient ids must be unique per instance: several marks share a frame
+  // (toolbar, title card, brand card) and duplicate ids resolve to the first.
+  const uid = `ext-${size}-${radius ?? 'd'}`
+  return (
+    <svg width={size} height={size} viewBox="0 0 48 48" fill="none">
+      <defs>
+        <linearGradient id={`${uid}-bg`} x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stopColor="#1f5a3a" />
+          <stop offset="1" stopColor="#143f29" />
+        </linearGradient>
+        <linearGradient id={`${uid}-hi`} x1="24" y1="0" x2="24" y2="48" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stopColor="#ffffff" stopOpacity="0.14" />
+          <stop offset="0.5" stopColor="#ffffff" stopOpacity="0" />
+        </linearGradient>
+      </defs>
+      <rect width="48" height="48" rx={radius ?? 10} fill={`url(#${uid}-bg)`} />
+      <rect width="48" height="48" rx={radius ?? 10} fill={`url(#${uid}-hi)`} />
+      <path
+        d="M24 13v15m0 0l-6.5-6.5M24 28l6.5-6.5"
+        stroke="#fbf8f0"
+        strokeWidth="3.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        fill="none"
+      />
+      <rect x="17" y="33.5" width="14" height="2.6" rx="1.3" fill="#fbf8f0" />
+    </svg>
+  )
+}
 
 /** The small header glyph the popup shows next to "SVG Selector". */
 export const HeaderGlyph: React.FC<{size?: number; color?: string}> = ({size = 20, color = '#0a0a0a'}) => (

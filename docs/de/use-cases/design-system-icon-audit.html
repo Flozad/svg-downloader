@@ -1,0 +1,261 @@
+<!DOCTYPE html><html lang="de"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eine abdriftende Icon-Bibliothek prüfen — eine Design-Systems-Geschichte</title>
+<meta name="description" content="Eine Design-Systems-Entwicklerin erbt eine App mit Icons aus vier verschiedenen Epochen. Das echte Inline-SVG-Markup von jedem Screen zu ziehen machte aus einer Icon-Prüfung ein Diff statt Rätselraten.">
+<link rel="canonical" href="https://svg.clasicwebtools.com/de/use-cases/design-system-icon-audit"><!--i18n:alternates-->
+<link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/use-cases/design-system-icon-audit">
+<link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/use-cases/design-system-icon-audit">
+<link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/use-cases/design-system-icon-audit">
+<link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/use-cases/design-system-icon-audit">
+<link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/use-cases/design-system-icon-audit">
+<link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/use-cases/design-system-icon-audit">
+<!--/i18n:alternates-->
+<link rel="alternate" type="text/plain" href="https://svg.clasicwebtools.com/llms.txt" title="llms.txt — machine-readable site summary">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="Flozad">
+<meta name="theme-color" content="#ece4d3">
+<meta property="og:site_name" content="SVG Downloader">
+<meta property="og:title" content="Eine abdriftende Icon-Bibliothek prüfen — eine Design-Systems-Geschichte">
+<meta property="og:description" content="Eine Design-Systems-Entwicklerin erbt eine App mit Icons aus vier verschiedenen Epochen. Das echte Inline-SVG-Markup von jedem Screen zu ziehen machte aus einer Prüfung ein Diff.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://svg.clasicwebtools.com/de/use-cases/design-system-icon-audit">
+<meta property="og:image" content="https://svg.clasicwebtools.com/motion/01-find.png">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="SVG Downloader erkennt und zählt die Inline-SVGs einer Seite.">
+<meta property="og:locale" content="de_DE">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@lozards">
+<meta name="twitter:title" content="Eine abdriftende Icon-Bibliothek prüfen — eine Design-Systems-Geschichte">
+<meta name="twitter:description" content="Das echte Inline-SVG-Markup von jedem Screen zu ziehen machte aus einer Icon-Prüfung ein Diff statt Rätselraten.">
+<meta name="twitter:image" content="https://svg.clasicwebtools.com/motion/01-find.png">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/fonts/bricolage-var.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/pages.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Start",
+          "item": "https://svg.clasicwebtools.com/de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Praxis",
+          "item": "https://svg.clasicwebtools.com/de/use-cases"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Eine abdriftende Icon-Bibliothek prüfen",
+          "item": "https://svg.clasicwebtools.com/de/use-cases/design-system-icon-audit"
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "headline": "Eine abdriftende Icon-Bibliothek prüfen",
+      "description": "Wie eine Design-Systems-Entwicklerin mit SVG Downloader das echte Inline-Markup von den Screens einer App zog und einen Icon-Satz prüfte, der über vier Design-Epochen abgedriftet war.",
+      "image": "https://svg.clasicwebtools.com/motion/01-find.png",
+      "inLanguage": "de",
+      "isPartOf": {
+        "@id": "https://svg.clasicwebtools.com/de/#website"
+      },
+      "about": {
+        "@id": "https://svg.clasicwebtools.com/de/#app"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "SVG Downloader",
+        "url": "https://svg.clasicwebtools.com/de/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "SVG Downloader",
+        "url": "https://svg.clasicwebtools.com/de/"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Zum Inhalt springen</a>
+
+<nav class="nav">
+  <a class="brand" href="/de/">
+    <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+      <rect width="48" height="48" rx="10" fill="var(--plot)"></rect>
+      <path d="M24 13v15m0 0l-6.5-6.5M24 28l6.5-6.5" fill="none" stroke="var(--surface-hi)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+      <rect x="16.5" y="33.5" width="15" height="2.4" rx="1.2" fill="var(--surface-hi)"></rect>
+    </svg>
+    <strong>SVG&nbsp;Downloader</strong>
+  </a>
+  <span class="spacer"></span>
+  <span class="nav-links">
+    <a href="/de/features">Funktionen</a>
+    <a href="/de/tutorials">Tutorials</a>
+    <a href="/de/guides">Anleitungen</a>
+    <a href="/de/docs">Doku</a>
+    <a href="/de/use-cases" aria-current="page">Praxis</a>
+    <a href="/de/privacy">Datenschutz</a>
+  </span><!--i18n:switch-->
+  <details class="lang-switch">
+    <summary aria-label="Sprache"><span>DE</span></summary>
+    <ul>
+      <li><a href="/use-cases/design-system-icon-audit" hreflang="en" lang="en">English</a></li>
+      <li><a href="/es/use-cases/design-system-icon-audit" hreflang="es" lang="es">Español</a></li>
+      <li><a href="/fr/use-cases/design-system-icon-audit" hreflang="fr" lang="fr">Français</a></li>
+      <li><a href="/de/use-cases/design-system-icon-audit" hreflang="de" lang="de" aria-current="true">Deutsch</a></li>
+      <li><a href="/pt-br/use-cases/design-system-icon-audit" hreflang="pt-BR" lang="pt-BR">Português</a></li>
+    </ul>
+  </details>
+  <!--/i18n:switch-->
+  <a class="nav-cta" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Erweiterung installieren</a>
+</nav>
+
+<main id="main">
+<header class="page-hero"><div class="wrap">
+  <ol class="crumbs">
+    <li><a href="/de/">Start</a></li>
+    <li><a href="/de/use-cases">Praxis</a></li>
+    <li><span aria-current="page">Prüfung der Icon-Bibliothek</span></li>
+  </ol>
+  <p class="eyebrow">Geschichte — Design Systems</p>
+  <h1>Eine <span class="plot">abdriftende Icon-Bibliothek</span> prüfen, Screen für Screen</h1>
+  <div class="byline">
+    <span class="mono-badge" aria-hidden="true">MO</span>
+    <span><b>Maya Okafor</b><span>Design-Systems-Entwicklerin · B2B-Fintech-Dashboard</span></span>
+  </div>
+  <p class="lede">„Ich habe ein Produkt geerbt, in dem Icons aus vier verschiedenen Epochen übereinandergestapelt waren. Bevor ich irgendetwas zusammenführen konnte, musste ich genau wissen, was auf der Seite ist — nicht, was die Figma-Datei <em>behauptete</em>, was auf der Seite sei.“</p>
+</div></header>
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Der Ausgangspunkt</p>
+  <h2>Sechshundert Screens und eine Designdatei, der niemand traute</h2>
+  <dl class="facts case-meta">
+    <div><dt>Wer</dt><dd>Maya, eine <strong>Design-Systems-Entwicklerin</strong>, geholt, um die Komponentenbibliothek eines fünf Jahre alten Fintech-Dashboards zu vereinheitlichen.</dd></div>
+    <div><dt>Stack</dt><dd><span class="stack">React, ein internes Icon-Paket, Figma, Storybook.</span> Die Icons waren eine Mischung aus Inline-<code>&lt;svg&gt;</code>, ein paar alten Sprite-Sheets und einigen verirrten <code>&lt;img&gt;</code>-Tags.</dd></div>
+    <div><dt>Die Aufgabe</dt><dd>Jedes Icon prüfen, das tatsächlich in der App ausgeliefert wird, die <strong>Dubletten und Fast-Dubletten</strong> finden und sie vor einem Umbau mit der Designbibliothek abgleichen.</dd></div>
+    <div><dt>Die Wand</dt><dd>Die gerenderte App war die einzige Quelle der Wahrheit — und keines dieser Icons ließ sich per Rechtsklick speichern.</dd></div>
+  </dl>
+
+  <h2>Was nicht funktionierte</h2>
+  <p>„Die Figma-Bibliothek war vor Jahren abgedriftet. Drei ‚Einstellungen‘-Zahnräder, zwei ‚Schließen‘-Kreuze in unterschiedlichen Strichstärken, ein ‚Export‘-Pfeil, der 2022 still neu gezeichnet, aber nie in der Designdatei aktualisiert wurde. Ich konnte nicht gegen Figma prüfen, weil Figma Teil des Problems war. Die Wahrheit stand im DOM.“</p>
+  <p>Mayas erster Anlauf war der manuelle, den jede Frontend-Person kennt: DevTools öffnen, den <code>&lt;svg&gt;</code>-Knoten finden, das äußere HTML kopieren, in eine Notizdatei einfügen, das <code>xmlns</code> von Hand ergänzen, damit es überhaupt gezeichnet wird, wiederholen. „Etwa vierzig Icons später, an einem Dienstag, habe ich eingesehen, dass das meine ganze Woche fressen würde — und ich mich trotzdem vertippen würde.“</p>
+
+  <h2>Der Wechsel</h2>
+  <p>Statt Knoten einzeln zu kopieren, ließ Maya <a href="/de/features/inline-svg">SVG Downloader</a> auf jedem wichtigen Screen laufen. Das Popup durchläuft das DOM und meldet eine Zahl — <code>0 → 24 SVGs gefunden</code> — und übergibt dann jedes davon als echte Datei, Namensraum repariert, sodass sie direkt in Figma und VS Code öffnet.</p>
+
+  <figure class="shot">
+    <div class="shot-mount">
+      <span class="shot-tag">erkennen</span>
+      <video src="/motion/clip-detect.mp4" poster="/motion/poster-150.jpg" muted="" loop="" playsinline="" preload="none" aria-label="Das Symbol der Erweiterung wird geklickt, das Panel fährt aus der Symbolleiste herunter, und der Zähler klettert von 0 auf 24 gefundene SVGs."></video>
+    </div>
+    <figcaption class="shot-cap">Ein Klick pro Screen: Das Panel fährt ein, und der Zähler bleibt bei der echten Zahl vorhandener Vektoren stehen — inline, Hintergrund und Sprite gleichermaßen.</figcaption>
+  </figure>
+
+  <p>„Die Zahl war das Erste, was half. Ein Screen, von dem ich <em>dachte</em>, er habe acht Icons, meldete vierzehn — sechs davon waren dekorative Hintergründe aus dem CSS, die in keiner Inventur je auftauchten. Dann gab mir <em>Alle als ZIP laden</em> den ganzen Satz des Screens auf einmal, dublettenfrei und nummeriert.“ Eigenständige Dateien zu diffen ist trivial; eine laufende App zu diffen nicht.</p>
+
+  <div class="pull">
+    <p>„Es machte aus der Prüfung statt Archäologie ein Diff. Ich hatte das tatsächliche Markup jedes Icons im Produkt nebeneinander, an einem Nachmittag — und konnte endlich belegen, welche wirklich dieselben waren.“</p>
+    <cite>— <b>Maya Okafor</b>, Design-Systems-Entwicklerin</cite>
+  </div>
+
+  <p class="eyebrow">Das Ergebnis</p>
+  <ul class="outcomes">
+    <li><b>~40</b><span>Fast-Dubletten gefunden und auf einen kanonischen Satz zusammengeführt</span></li>
+    <li><b>1 Nachmittag</b><span>statt der Woche, auf die der manuelle Copy-Paste-Durchgang zusteuerte</span></li>
+    <li><b>0</b><span>von Hand getippte <code>xmlns</code>-Korrekturen — jede Datei öffnete beim ersten Versuch</span></li>
+  </ul>
+
+  <dl class="facts">
+    <div><dt>Was die Arbeit gemacht hat</dt><dd>Die <a href="/de/features/inline-svg">Inline-SVG-Erkennung</a> für die Komponenten, das Erfassen von <a href="/de/features/css-background-svg">CSS-Hintergründen</a> für die dekorativen und <a href="/de/features/bulk-zip-download">Alle als ZIP laden</a> pro Screen.</dd></div>
+    <div><dt>Warum nicht DevTools</dt><dd>Knoten von Hand zu kopieren verliert das <code>xmlns</code>, verpasst CSS- und Sprite-Quellen völlig und skaliert nicht über ein paar Icons hinaus. Siehe <a href="/de/guides/how-to-extract-svg-icons-from-a-website">SVG-Icons extrahieren</a>.</dd></div>
+    <div><dt>Datenschutz</dt><dd>Proprietäres Dashboard, deshalb wichtig: <strong>nichts verließ den Rechner.</strong> Kein Upload, kein Konto, keine Analyse.</dd></div>
+  </dl>
+
+  <p class="disclosure">Zusammengesetzte Geschichte — ein illustrativer, aber typischer Ablauf. Person und Firma sind fiktiv; das hier beschriebene Verhalten der Erweiterung ist echt. <a href="/de/use-cases">Mehr Geschichten →</a></p>
+</div></section>
+
+<hr class="section-rule">
+
+<section><div class="wrap">
+  <div class="cta-band">
+    <div>
+      <h2>Prüf, was wirklich auf der Seite ist</h2>
+      <p>Zähl die Vektoren, zieh das echte Markup, nimm den ganzen Screen als ZIP. Kostenlos und auf dem Gerät.</p>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Erweiterung installieren</a>
+      <a class="btn quiet" href="/de/guides/how-to-extract-svg-icons-from-a-website">So extrahierst du Icons →</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="related"><div class="wrap">
+  <p class="eyebrow">Weiterlesen</p>
+  <ul>
+    <li><a href="/de/use-cases/migrate-sprite-sheet-to-components">Ein Sprite-Sheet migrieren<span>Die Frontend-Geschichte</span></a></li>
+    <li><a href="/de/features/inline-svg">Inline-SVG<span>Wie das DOM-Lesen funktioniert</span></a></li>
+    <li><a href="/de/guides/how-to-extract-svg-icons-from-a-website">SVG-Icons extrahieren<span>Die vollständige Methode</span></a></li>
+  </ul>
+</div></section>
+</main>
+
+<footer>
+  <nav class="bleed foot-map" aria-label="Sitemap">
+    <div class="col"><p>Produkt</p><ul>
+      <li><a href="/de/">Überblick</a></li>
+      <li><a href="/de/features">Funktionen</a></li>
+      <li><a href="/de/compare/svg-downloader-vs-screenshotting-icons">Vs. Screenshot</a></li>
+      <li><a href="/de/privacy">Datenschutz</a></li>
+      <li><a href="/de/use-cases">Anwendungsfälle</a></li>
+    </ul></div>
+    <div class="col"><p>Erkennt</p><ul>
+      <li><a href="/de/features/inline-svg">Inline-SVG</a></li>
+      <li><a href="/de/features/css-background-svg">SVG im CSS-Hintergrund</a></li>
+      <li><a href="/de/features/svg-sprite-extractor">Sprite- / &lt;use&gt;-SVG</a></li>
+      <li><a href="/de/features/bulk-zip-download">Ganze Seite als ZIP</a></li>
+    </ul></div>
+    <div class="col"><p>Praxis</p><ul>
+      <li><a href="/de/use-cases/design-system-icon-audit">Prüfung der Icon-Bibliothek</a></li>
+      <li><a href="/de/use-cases/recover-brand-assets-redesign">Markenmaterial retten</a></li>
+      <li><a href="/de/use-cases/migrate-sprite-sheet-to-components">Ein Sprite-Sheet migrieren</a></li>
+      <li><a href="/de/use-cases/icon-set-for-pitch-deck">Icon-Satz für ein Deck</a></li>
+    </ul></div>
+    <div class="col"><p>Tutorials</p><ul>
+      <li><a href="/de/tutorials">Alle 15 Tutorials</a></li>
+      <li><a href="/de/tutorials/extract-svg-logo-from-website">Ein Logo extrahieren</a></li>
+      <li><a href="/de/tutorials/extract-svg-from-website">Jedes SVG extrahieren</a></li>
+      <li><a href="/de/guides">Ausführliche Anleitungen</a></li>
+    </ul></div>
+    <div class="col"><p>Doku</p><ul>
+      <li><a href="/de/docs/installation">Installation</a></li>
+      <li><a href="/de/docs/usage">Bedienung</a></li>
+      <li><a href="/de/docs/faq">FAQ</a></li>
+      <li><a href="/de/docs/changelog">Changelog</a></li>
+    </ul></div>
+  </nav>
+  <div class="bleed colophon-foot">
+    <a href="https://github.com/Flozad/svg-downloader">GitHub</a>
+    <a href="https://github.com/Flozad/svg-downloader/issues">Issues</a>
+    <a href="https://clasicwebtools.com">clasicwebtools.com</a>
+    <span class="grow"></span>
+    <span>Knochenpapier, Graphit, ein einziges Plotter&nbsp;grün</span>
+  </div>
+</footer>
+<script src="/player.js" defer=""></script>
+
+
+</body></html>

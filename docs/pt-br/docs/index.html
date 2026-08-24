@@ -1,0 +1,253 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Docs do SVG Downloader — instalar, usar e resolver problemas</title>
+<meta name="description" content="Docs do SVG Downloader — instale a extensão do Chrome, aprenda o popup, leia as perguntas frequentes e acompanhe as mudanças. Tudo roda no dispositivo, grátis e com licença MIT.">
+<link rel="canonical" href="https://svg.clasicwebtools.com/pt-br/docs"><!--i18n:alternates-->
+<link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/docs">
+<link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/docs">
+<link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/docs">
+<link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/docs">
+<link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/docs">
+<link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/docs">
+<!--/i18n:alternates-->
+<link rel="alternate" type="text/plain" href="https://svg.clasicwebtools.com/llms.txt" title="llms.txt — machine-readable site summary">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="author" content="Flozad">
+<meta name="theme-color" content="#ece4d3">
+<meta property="og:site_name" content="SVG Downloader">
+<meta property="og:title" content="Docs do SVG Downloader — instalar, usar e resolver problemas">
+<meta property="og:description" content="Docs do SVG Downloader — instale a extensão do Chrome, aprenda o popup, leia as perguntas frequentes e acompanhe as mudanças. Tudo roda no dispositivo, grátis e com licença MIT.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://svg.clasicwebtools.com/pt-br/docs">
+<meta property="og:image" content="https://svg.clasicwebtools.com/motion/06-brand.png">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="SVG Downloader salvando um vetor inline de uma página.">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@lozards">
+<meta name="twitter:title" content="Docs do SVG Downloader — instalar, usar e resolver problemas">
+<meta name="twitter:description" content="Docs do SVG Downloader — instale a extensão do Chrome, aprenda o popup, leia as perguntas frequentes e acompanhe as mudanças. Tudo roda no dispositivo, grátis e com licença MIT.">
+<meta name="twitter:image" content="https://svg.clasicwebtools.com/motion/06-brand.png">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/fonts/bricolage-var.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/pages.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Início",
+          "item": "https://svg.clasicwebtools.com/pt-br/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Docs",
+          "item": "https://svg.clasicwebtools.com/pt-br/docs"
+        }
+      ]
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://svg.clasicwebtools.com/pt-br/docs",
+      "url": "https://svg.clasicwebtools.com/pt-br/docs",
+      "name": "Docs do SVG Downloader",
+      "description": "Documentação da extensão de navegador SVG Downloader — instalação, uso, perguntas frequentes e mudanças.",
+      "inLanguage": "pt-BR",
+      "isPartOf": {
+        "@id": "https://svg.clasicwebtools.com/pt-br/#website"
+      },
+      "about": {
+        "@id": "https://svg.clasicwebtools.com/pt-br/#app"
+      },
+      "primaryImageOfPage": "https://svg.clasicwebtools.com/motion/06-brand.png"
+    },
+    {
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Instalação",
+          "url": "https://svg.clasicwebtools.com/pt-br/docs/installation"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Uso",
+          "url": "https://svg.clasicwebtools.com/pt-br/docs/usage"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Perguntas frequentes",
+          "url": "https://svg.clasicwebtools.com/pt-br/docs/faq"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Mudanças",
+          "url": "https://svg.clasicwebtools.com/pt-br/docs/changelog"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Pular para o conteúdo</a>
+
+<nav class="nav">
+  <a class="brand" href="/pt-br/">
+    <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+      <rect width="48" height="48" rx="10" fill="var(--plot)"></rect>
+      <path d="M24 13v15m0 0l-6.5-6.5M24 28l6.5-6.5" fill="none" stroke="var(--surface-hi)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+      <rect x="16.5" y="33.5" width="15" height="2.4" rx="1.2" fill="var(--surface-hi)"></rect>
+    </svg>
+    <strong>SVG&nbsp;Downloader</strong>
+  </a>
+  <span class="spacer"></span>
+  <span class="nav-links">
+    <a href="/pt-br/features">Recursos</a>
+    <a href="/pt-br/tutorials">Tutoriais</a>
+    <a href="/pt-br/guides">Guias</a>
+    <a href="/pt-br/docs" aria-current="page">Docs</a>
+    <a href="/pt-br/privacy">Privacidade</a>
+    <a href="/pt-br/use-cases">Histórias</a>
+  </span><!--i18n:switch-->
+  <details class="lang-switch">
+    <summary aria-label="Idioma"><span>PT</span></summary>
+    <ul>
+      <li><a href="/docs" hreflang="en" lang="en">English</a></li>
+      <li><a href="/es/docs" hreflang="es" lang="es">Español</a></li>
+      <li><a href="/fr/docs" hreflang="fr" lang="fr">Français</a></li>
+      <li><a href="/de/docs" hreflang="de" lang="de">Deutsch</a></li>
+      <li><a href="/pt-br/docs" hreflang="pt-BR" lang="pt-BR" aria-current="true">Português</a></li>
+    </ul>
+  </details>
+  <!--/i18n:switch-->
+  <a class="nav-cta" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Instalar a extensão</a>
+</nav>
+
+<main id="main">
+<header class="page-hero"><div class="wrap">
+  <ol class="crumbs">
+    <li><a href="/pt-br/">Início</a></li>
+    <li><span aria-current="page">Docs</span></li>
+  </ol>
+  <p class="eyebrow">Documentação — v1.3</p>
+  <h1><span class="plot">Docs</span> do SVG Downloader</h1>
+  <p class="lede">Tudo para instalar a extensão, conduzir o popup e resolver os casos estranhos — o ícone preto, o arquivo que não abre, o sprite escondido atrás de uma referência. Páginas curtas, sem enrolação.</p>
+  <div class="cta">
+    <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 12v16m0 0l-7-7m7 7l7-7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"></path><rect x="16" y="34" width="16" height="2.6" rx="1.3" fill="currentColor"></rect></svg>
+      Instalar a extensão</a>
+    <a class="btn quiet" href="/pt-br/docs/installation">Guia de instalação →</a>
+  </div>
+</div></header>
+
+<section><div class="bleed"><div class="doc-shell">
+  <aside class="doc-nav" aria-label="Navegação da documentação">
+    <p>Documentação</p>
+    <ul>
+      <li><a href="/pt-br/docs" aria-current="page">Visão geral</a></li>
+      <li><a href="/pt-br/docs/installation">Instalação</a></li>
+      <li><a href="/pt-br/docs/usage">Uso</a></li>
+      <li><a href="/pt-br/docs/faq">Perguntas frequentes</a></li>
+      <li><a href="/pt-br/docs/changelog">Mudanças</a></li>
+    </ul>
+  </aside>
+  <div class="prose">
+    <p class="eyebrow">Comece por aqui</p>
+    <h2>O que é isto</h2>
+    <p class="lead-in">O SVG Downloader é uma extensão do Chrome que encontra os SVGs de uma página web — markup inline, vetores em <code>&lt;img&gt;</code> e <code>&lt;object&gt;</code>, imagens de fundo CSS e referências <code>&lt;use&gt;</code> a sprites do mesmo documento — e salva o arquivo original. Ela roda inteiramente no seu navegador: sem servidor, sem conta, sem upload, sem analytics. Grátis, com licença MIT, atualmente na v1.3.</p>
+    <p>Estes docs são propositalmente curtos. Se você só quer que funcione, leia <a href="/pt-br/docs/installation">Instalação</a> e <a href="/pt-br/docs/usage">Uso</a>. Se algo parecer errado, as <a href="/pt-br/docs/faq">perguntas frequentes</a> cobrem os suspeitos de sempre.</p>
+
+    <h2>Início rápido</h2>
+    <p>Ainda não há ficha na Chrome Web Store. Quando houver, instalar será um clique; até lá, carregue descompactada:</p>
+    <ol>
+      <li>Baixe ou clone o repositório em <a href="https://github.com/Flozad/svg-downloader">github.com/Flozad/svg-downloader</a>.</li>
+      <li>Abra <code>chrome://extensions</code> no Chrome, Edge ou Brave.</li>
+      <li>Ative o <strong>Modo do desenvolvedor</strong> no botão no canto superior direito.</li>
+      <li>Clique em <strong>Carregar sem compactação</strong> e selecione a pasta <code>extension</code> do repositório.</li>
+      <li>Abra qualquer página com ícones, clique no botão do SVG Downloader e salve.</li>
+    </ol>
+    <p>O passo a passo completo — com as observações de Edge e Brave — está na página <a href="/pt-br/docs/installation">Instalação</a>.</p>
+
+    <h2>Os docs</h2>
+    <dl class="facts">
+      <div><dt>Instalação</dt><dd>Carregue a extensão sem compactação no <strong>Chrome, Edge ou Brave</strong>. Passo a passo, mais o que fazer quando ela estiver na Web Store. <a href="/pt-br/docs/installation">Ler →</a></dd></div>
+      <div><dt>Uso</dt><dd>Abra o popup, leia a contagem, navegue pelas prévias, defina um nome de arquivo, salve um ou <strong>baixe tudo em ZIP</strong>. <a href="/pt-br/docs/usage">Ler →</a></dd></div>
+      <div><dt>Perguntas frequentes</dt><dd>É grátis, algum dado sai do navegador, por que meu ícone está preto, por que o SVG que copiei não abre. <a href="/pt-br/docs/faq">Ler →</a></dd></div>
+      <div><dt>Mudanças</dt><dd>Histórico de versões, da mais recente à mais antiga, da versão inicial até a <strong>v1.3</strong>. <a href="/pt-br/docs/changelog">Ler →</a></dd></div>
+    </dl>
+
+    <h2>Prefere começar pela tarefa?</h2>
+    <p>Os <a href="/pt-br/guides">guias</a> tratam de trabalhos concretos — <a href="/pt-br/guides/how-to-download-svg-from-any-website">baixar um SVG de qualquer site</a>, <a href="/pt-br/guides/how-to-extract-svg-icons-from-a-website">extrair um conjunto inteiro de ícones</a> ou <a href="/pt-br/guides/download-all-svgs-as-zip">empacotar tudo num ZIP</a> — enquanto estes docs descrevem a ferramenta em si.</p>
+  </div>
+</div></div></section>
+
+<hr class="section-rule">
+
+<section><div class="wrap">
+  <div class="cta-band">
+    <div>
+      <h2>Instale uma vez, salve todo SVG</h2>
+      <p>Grátis, licença MIT, no dispositivo. Chrome 88+, Edge e Brave.</p>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Instalar a extensão</a>
+      <a class="btn quiet" href="/pt-br/features">Todos os recursos →</a>
+    </div>
+  </div>
+</div></section>
+</main>
+
+<footer>
+  <nav class="bleed foot-map" aria-label="Mapa do site">
+    <div class="col"><p>Produto</p><ul>
+      <li><a href="/pt-br/">Visão geral</a></li>
+      <li><a href="/pt-br/features">Recursos</a></li>
+      <li><a href="/pt-br/compare/svg-downloader-vs-screenshotting-icons">Vs. print de tela</a></li>
+      <li><a href="/pt-br/privacy">Privacidade</a></li>
+      <li><a href="/pt-br/use-cases">Casos de uso</a></li>
+    </ul></div>
+    <div class="col"><p>O que ele encontra</p><ul>
+      <li><a href="/pt-br/features/inline-svg">SVG inline</a></li>
+      <li><a href="/pt-br/features/css-background-svg">SVG em fundo CSS</a></li>
+      <li><a href="/pt-br/features/svg-sprite-extractor">SVG de sprite / &lt;use&gt;</a></li>
+      <li><a href="/pt-br/features/bulk-zip-download">Página inteira em ZIP</a></li>
+    </ul></div>
+    <div class="col"><p>Tutoriais</p><ul>
+      <li><a href="/pt-br/tutorials">Todos os 15 tutoriais</a></li>
+      <li><a href="/pt-br/tutorials/how-to-download-svg-files">Como baixar arquivos SVG</a></li>
+      <li><a href="/pt-br/tutorials/copy-svg-from-website">Copiar um SVG</a></li>
+      <li><a href="/pt-br/guides">Guias completos</a></li>
+    </ul></div>
+    <div class="col"><p>Docs</p><ul>
+      <li><a href="/pt-br/docs/installation">Instalação</a></li>
+      <li><a href="/pt-br/docs/usage">Uso</a></li>
+      <li><a href="/pt-br/docs/faq">Perguntas frequentes</a></li>
+      <li><a href="/pt-br/docs/changelog">Mudanças</a></li>
+    </ul></div>
+  </nav>
+  <div class="bleed colophon-foot">
+    <a href="https://github.com/Flozad/svg-downloader">GitHub</a>
+    <a href="https://github.com/Flozad/svg-downloader/issues">Issues</a>
+    <a href="https://clasicwebtools.com">clasicwebtools.com</a>
+    <span class="grow"></span>
+    <span>Papel osso, grafite e um único verde&nbsp;plotter</span>
+  </div>
+</footer>
+
+
+</body></html>

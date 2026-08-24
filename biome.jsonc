@@ -103,6 +103,19 @@
           "complexity": { "noCommaOperator": "off" }
         }
       }
+    },
+    {
+      // The static-site generators are command-line tools, run by hand by the
+      // author to regenerate docs/. stdout is how a CLI reports what it wrote —
+      // "Wrote 15 tutorial pages", "run i18n/build.mjs to refresh the sitemap" —
+      // so console here is the interface, not a stray debug statement. Like
+      // fixture-capture, nothing under scripts/ is packaged into the extension.
+      "includes": ["scripts/*.mjs", "scripts/i18n/**"],
+      "linter": {
+        "rules": {
+          "suspicious": { "noConsole": "off" }
+        }
+      }
     }
   ]
 }

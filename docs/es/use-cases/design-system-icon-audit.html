@@ -1,0 +1,261 @@
+<!DOCTYPE html><html lang="es"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Auditar una biblioteca de iconos a la deriva — una historia de sistemas de diseño</title>
+<meta name="description" content="Una ingeniera de sistemas de diseño hereda una app con iconos de cuatro épocas distintas. Sacar el marcado SVG en línea real de cada pantalla convirtió una auditoría de iconos de conjetura en diff.">
+<link rel="canonical" href="https://svg.clasicwebtools.com/es/use-cases/design-system-icon-audit"><!--i18n:alternates-->
+<link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/use-cases/design-system-icon-audit">
+<link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/use-cases/design-system-icon-audit">
+<link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/use-cases/design-system-icon-audit">
+<link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/use-cases/design-system-icon-audit">
+<link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/use-cases/design-system-icon-audit">
+<link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/use-cases/design-system-icon-audit">
+<!--/i18n:alternates-->
+<link rel="alternate" type="text/plain" href="https://svg.clasicwebtools.com/llms.txt" title="llms.txt — machine-readable site summary">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="Flozad">
+<meta name="theme-color" content="#ece4d3">
+<meta property="og:site_name" content="SVG Downloader">
+<meta property="og:title" content="Auditar una biblioteca de iconos a la deriva — una historia de sistemas de diseño">
+<meta property="og:description" content="Una ingeniera de sistemas de diseño hereda una app con iconos de cuatro épocas distintas. Sacar el marcado SVG en línea real de cada pantalla convirtió una auditoría en un diff.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://svg.clasicwebtools.com/es/use-cases/design-system-icon-audit">
+<meta property="og:image" content="https://svg.clasicwebtools.com/motion/01-find.png">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="SVG Downloader detectando y contando los SVG en línea de una página.">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@lozards">
+<meta name="twitter:title" content="Auditar una biblioteca de iconos a la deriva — una historia de sistemas de diseño">
+<meta name="twitter:description" content="Sacar el marcado SVG en línea real de cada pantalla convirtió una auditoría de iconos de conjetura en diff.">
+<meta name="twitter:image" content="https://svg.clasicwebtools.com/motion/01-find.png">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/fonts/bricolage-var.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/pages.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://svg.clasicwebtools.com/es/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Historias",
+          "item": "https://svg.clasicwebtools.com/es/use-cases"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Auditar una biblioteca de iconos a la deriva",
+          "item": "https://svg.clasicwebtools.com/es/use-cases/design-system-icon-audit"
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "headline": "Auditar una biblioteca de iconos a la deriva",
+      "description": "Cómo una ingeniera de sistemas de diseño usó SVG Downloader para sacar el marcado en línea real de las pantallas de una app y auditar un set de iconos que había derivado a lo largo de cuatro épocas de diseño.",
+      "image": "https://svg.clasicwebtools.com/motion/01-find.png",
+      "inLanguage": "es",
+      "isPartOf": {
+        "@id": "https://svg.clasicwebtools.com/es/#website"
+      },
+      "about": {
+        "@id": "https://svg.clasicwebtools.com/es/#app"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "SVG Downloader",
+        "url": "https://svg.clasicwebtools.com/es/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "SVG Downloader",
+        "url": "https://svg.clasicwebtools.com/es/"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Saltar al contenido</a>
+
+<nav class="nav">
+  <a class="brand" href="/es/">
+    <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+      <rect width="48" height="48" rx="10" fill="var(--plot)"></rect>
+      <path d="M24 13v15m0 0l-6.5-6.5M24 28l6.5-6.5" fill="none" stroke="var(--surface-hi)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+      <rect x="16.5" y="33.5" width="15" height="2.4" rx="1.2" fill="var(--surface-hi)"></rect>
+    </svg>
+    <strong>SVG&nbsp;Downloader</strong>
+  </a>
+  <span class="spacer"></span>
+  <span class="nav-links">
+    <a href="/es/features">Funciones</a>
+    <a href="/es/tutorials">Tutoriales</a>
+    <a href="/es/guides">Guías</a>
+    <a href="/es/docs">Docs</a>
+    <a href="/es/use-cases" aria-current="page">Historias</a>
+    <a href="/es/privacy">Privacidad</a>
+  </span><!--i18n:switch-->
+  <details class="lang-switch">
+    <summary aria-label="Idioma"><span>ES</span></summary>
+    <ul>
+      <li><a href="/use-cases/design-system-icon-audit" hreflang="en" lang="en">English</a></li>
+      <li><a href="/es/use-cases/design-system-icon-audit" hreflang="es" lang="es" aria-current="true">Español</a></li>
+      <li><a href="/fr/use-cases/design-system-icon-audit" hreflang="fr" lang="fr">Français</a></li>
+      <li><a href="/de/use-cases/design-system-icon-audit" hreflang="de" lang="de">Deutsch</a></li>
+      <li><a href="/pt-br/use-cases/design-system-icon-audit" hreflang="pt-BR" lang="pt-BR">Português</a></li>
+    </ul>
+  </details>
+  <!--/i18n:switch-->
+  <a class="nav-cta" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Instalar la extensión</a>
+</nav>
+
+<main id="main">
+<header class="page-hero"><div class="wrap">
+  <ol class="crumbs">
+    <li><a href="/es/">Inicio</a></li>
+    <li><a href="/es/use-cases">Historias</a></li>
+    <li><span aria-current="page">Auditoría de biblioteca de iconos</span></li>
+  </ol>
+  <p class="eyebrow">Historia — sistemas de diseño</p>
+  <h1>Auditar una <span class="plot">biblioteca de iconos a la deriva</span>, pantalla a pantalla</h1>
+  <div class="byline">
+    <span class="mono-badge" aria-hidden="true">MO</span>
+    <span><b>Maya Okafor</b><span>Ingeniera de sistemas de diseño · panel fintech B2B</span></span>
+  </div>
+  <p class="lede">«Heredé un producto con iconos de cuatro épocas distintas apilados unos sobre otros. Antes de poder consolidar nada, necesitaba saber exactamente qué había en la página, no lo que el archivo de Figma <em>decía</em> que había en la página.»</p>
+</div></header>
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">El punto de partida</p>
+  <h2>Seiscientas pantallas y un archivo de diseño en el que nadie confiaba</h2>
+  <dl class="facts case-meta">
+    <div><dt>Quién</dt><dd>Maya, <strong>ingeniera de sistemas de diseño</strong> incorporada para unificar la biblioteca de componentes de un panel fintech de cinco años.</dd></div>
+    <div><dt>Stack</dt><dd><span class="stack">React, un paquete de iconos interno, Figma, Storybook.</span> Los iconos eran una mezcla de <code>&lt;svg&gt;</code> en línea, un par de hojas de sprites antiguas y algunas etiquetas <code>&lt;img&gt;</code> sueltas.</dd></div>
+    <div><dt>El trabajo</dt><dd>Auditar todos los iconos que realmente se publican en la app, encontrar los <strong>duplicados y casi duplicados</strong> y reconciliarlos con la biblioteca de diseño antes de una reconstrucción.</dd></div>
+    <div><dt>El muro</dt><dd>La app dibujada era la única fuente de verdad, y ninguno de esos iconos se podía guardar con clic derecho.</dd></div>
+  </dl>
+
+  <h2>Lo que no funcionaba</h2>
+  <p>«La biblioteca de Figma llevaba años a la deriva. Tres engranajes de “ajustes”, dos cruces de “cerrar” con grosores de trazo distintos, una flecha de “exportar” que se había redibujado discretamente en 2022 pero nunca se actualizó en el archivo de diseño. No podía auditar contra Figma porque Figma era parte del problema. La verdad estaba en el DOM.»</p>
+  <p>El primer intento de Maya fue el manual que conoce cualquier persona de front-end: abrir DevTools, encontrar el nodo <code>&lt;svg&gt;</code>, copiar el HTML externo, pegarlo en un archivo de borrador, añadir el <code>xmlns</code> a mano para que se dibujara de verdad, repetir. «Como a los cuarenta iconos, un martes, admití que esto se iba a comer mi semana entera y aun así cometería errores de transcripción.»</p>
+
+  <h2>El cambio</h2>
+  <p>En vez de copiar nodos de uno en uno, Maya ejecutó <a href="/es/features/inline-svg">SVG Downloader</a> en cada pantalla importante. El popup recorre el DOM e informa de un recuento —<code>0 → 24 SVG encontrados</code>— y luego entrega cada uno como archivo real, con el espacio de nombres reparado para que abra directamente en Figma y VS Code.</p>
+
+  <figure class="shot">
+    <div class="shot-mount">
+      <span class="shot-tag">detectar</span>
+      <video src="/motion/clip-detect.mp4" poster="/motion/poster-150.jpg" muted="" loop="" playsinline="" preload="none" aria-label="Se pulsa el icono de la extensión, el panel baja de la barra de herramientas y el contador sube de 0 a 24 SVG encontrados."></video>
+    </div>
+    <figcaption class="shot-cap">Un clic por pantalla: el panel entra y el contador se asienta en el número real de vectores presentes, tanto en línea como de fondo o de sprite.</figcaption>
+  </figure>
+
+  <p>«El recuento fue lo primero que ayudó. Una pantalla que yo <em>creía</em> que tenía ocho iconos informó de catorce: seis eran fondos decorativos puestos en CSS que nunca aparecían en ningún inventario. Luego <em>Descargar todo en ZIP</em> me dio el conjunto de la pantalla entera, sin duplicados y numerado, de una vez.» Hacer diff de archivos independientes es trivial; hacer diff de una app en ejecución no.</p>
+
+  <div class="pull">
+    <p>«Convirtió la auditoría de arqueología en un diff. Tenía el marcado real de cada icono del producto, uno al lado del otro, en una tarde, y por fin podía demostrar cuáles eran genuinamente iguales.»</p>
+    <cite>— <b>Maya Okafor</b>, ingeniera de sistemas de diseño</cite>
+  </div>
+
+  <p class="eyebrow">El resultado</p>
+  <ul class="outcomes">
+    <li><b>~40</b><span>iconos casi duplicados encontrados y reducidos a un set canónico</span></li>
+    <li><b>1 tarde</b><span>en vez de la semana a la que iba camino la pasada manual de copiar y pegar</span></li>
+    <li><b>0</b><span>arreglos de <code>xmlns</code> escritos a mano: todos los archivos abrieron al primer intento</span></li>
+  </ul>
+
+  <dl class="facts">
+    <div><dt>Qué hizo el trabajo</dt><dd>La <a href="/es/features/inline-svg">detección de SVG en línea</a> para los componentes, la captura de <a href="/es/features/css-background-svg">fondos CSS</a> para los decorativos y <a href="/es/features/bulk-zip-download">Descargar todo en ZIP</a> por pantalla.</dd></div>
+    <div><dt>Por qué no DevTools</dt><dd>Copiar nodos a mano pierde el <code>xmlns</code>, se pierde por completo las fuentes CSS y de sprite, y no escala más allá de unos pocos iconos. Ver <a href="/es/guides/how-to-extract-svg-icons-from-a-website">extraer iconos SVG</a>.</dd></div>
+    <div><dt>Privacidad</dt><dd>Un panel propietario, así que importaba: <strong>nada salió del equipo.</strong> Sin subidas, sin cuenta, sin analítica.</dd></div>
+  </dl>
+
+  <p class="disclosure">Historia compuesta: un flujo ilustrativo pero representativo. La persona y la empresa son ficticias; el comportamiento de la extensión aquí descrito es real. <a href="/es/use-cases">Más historias →</a></p>
+</div></section>
+
+<hr class="section-rule">
+
+<section><div class="wrap">
+  <div class="cta-band">
+    <div>
+      <h2>Audita lo que hay de verdad en la página</h2>
+      <p>Cuenta los vectores, saca el marcado real, llévate la pantalla entera en un ZIP. Gratis y en tu dispositivo.</p>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Instalar la extensión</a>
+      <a class="btn quiet" href="/es/guides/how-to-extract-svg-icons-from-a-website">Cómo extraer iconos →</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="related"><div class="wrap">
+  <p class="eyebrow">Seguir leyendo</p>
+  <ul>
+    <li><a href="/es/use-cases/migrate-sprite-sheet-to-components">Migrar una hoja de sprites<span>La historia de frontend</span></a></li>
+    <li><a href="/es/features/inline-svg">SVG en línea<span>Cómo funciona la lectura del DOM</span></a></li>
+    <li><a href="/es/guides/how-to-extract-svg-icons-from-a-website">Extraer iconos SVG<span>El método completo</span></a></li>
+  </ul>
+</div></section>
+</main>
+
+<footer>
+  <nav class="bleed foot-map" aria-label="Mapa del sitio">
+    <div class="col"><p>Producto</p><ul>
+      <li><a href="/es/">Visión general</a></li>
+      <li><a href="/es/features">Funciones</a></li>
+      <li><a href="/es/compare/svg-downloader-vs-screenshotting-icons">Frente a la captura</a></li>
+      <li><a href="/es/privacy">Privacidad</a></li>
+      <li><a href="/es/use-cases">Casos de uso</a></li>
+    </ul></div>
+    <div class="col"><p>Detecta</p><ul>
+      <li><a href="/es/features/inline-svg">SVG en línea</a></li>
+      <li><a href="/es/features/css-background-svg">SVG en fondo CSS</a></li>
+      <li><a href="/es/features/svg-sprite-extractor">SVG de sprite / &lt;use&gt;</a></li>
+      <li><a href="/es/features/bulk-zip-download">Página entera en ZIP</a></li>
+    </ul></div>
+    <div class="col"><p>Historias</p><ul>
+      <li><a href="/es/use-cases/design-system-icon-audit">Auditoría de biblioteca de iconos</a></li>
+      <li><a href="/es/use-cases/recover-brand-assets-redesign">Rescatar recursos de marca</a></li>
+      <li><a href="/es/use-cases/migrate-sprite-sheet-to-components">Migrar una hoja de sprites</a></li>
+      <li><a href="/es/use-cases/icon-set-for-pitch-deck">Set de iconos para una presentación</a></li>
+    </ul></div>
+    <div class="col"><p>Tutoriales</p><ul>
+      <li><a href="/es/tutorials">Los 15 tutoriales</a></li>
+      <li><a href="/es/tutorials/extract-svg-logo-from-website">Extraer un logotipo</a></li>
+      <li><a href="/es/tutorials/extract-svg-from-website">Extraer todos los SVG</a></li>
+      <li><a href="/es/guides">Guías extensas</a></li>
+    </ul></div>
+    <div class="col"><p>Docs</p><ul>
+      <li><a href="/es/docs/installation">Instalación</a></li>
+      <li><a href="/es/docs/usage">Uso</a></li>
+      <li><a href="/es/docs/faq">Preguntas frecuentes</a></li>
+      <li><a href="/es/docs/changelog">Cambios</a></li>
+    </ul></div>
+  </nav>
+  <div class="bleed colophon-foot">
+    <a href="https://github.com/Flozad/svg-downloader">GitHub</a>
+    <a href="https://github.com/Flozad/svg-downloader/issues">Incidencias</a>
+    <a href="https://clasicwebtools.com">clasicwebtools.com</a>
+    <span class="grow"></span>
+    <span>Papel hueso, grafito y un solo verde&nbsp;plóter</span>
+  </div>
+</footer>
+<script src="/player.js" defer=""></script>
+
+
+</body></html>

@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Online SVG Extractor vs. Extension — Why One Sees More</title>
+<meta name="description" content="A paste-a-URL extractor fetches HTML but never renders it, so inline and JavaScript-drawn icons stay invisible. Here is the technical reason, and the privacy one.">
+<link rel="canonical" href="https://svg.clasicwebtools.com/tutorials/svg-extractor-online"><!--i18n:alternates-->
+<link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/svg-extractor-online">
+<link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/svg-extractor-online">
+<link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/svg-extractor-online">
+<link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/svg-extractor-online">
+<link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/svg-extractor-online">
+<link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/svg-extractor-online">
+<!--/i18n:alternates-->
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="Flozad">
+<meta name="theme-color" content="#ece4d3">
+<meta property="og:site_name" content="SVG Downloader">
+<meta property="og:title" content="Online SVG Extractor vs. Extension — Why One Sees More">
+<meta property="og:description" content="A paste-a-URL extractor fetches HTML but never renders it, so inline and JavaScript-drawn icons stay invisible. Here is the technical reason, and the privacy one.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://svg.clasicwebtools.com/tutorials/svg-extractor-online">
+<meta property="og:image" content="https://svg.clasicwebtools.com/motion/tutorials/svg-extractor-online.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="The SVG Downloader popup finding every vector on a page that a server-side fetch would miss.">
+<meta property="og:locale" content="en_US">
+<meta property="og:video" content="https://svg.clasicwebtools.com/motion/tutorials/svg-extractor-online.mp4">
+<meta property="og:video:secure_url" content="https://svg.clasicwebtools.com/motion/tutorials/svg-extractor-online.mp4">
+<meta property="og:video:type" content="video/mp4">
+<meta property="og:video:width" content="1280">
+<meta property="og:video:height" content="800">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@lozards">
+<meta name="twitter:title" content="Online SVG Extractor vs. Extension — Why One Sees More">
+<meta name="twitter:description" content="A paste-a-URL extractor fetches HTML but never renders it, so inline and JavaScript-drawn icons stay invisible. Here is the technical reason, and the privacy one.">
+<meta name="twitter:image" content="https://svg.clasicwebtools.com/motion/tutorials/svg-extractor-online.jpg">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/fonts/bricolage-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/pages.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://svg.clasicwebtools.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tutorials",
+          "item": "https://svg.clasicwebtools.com/tutorials"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Online vs. extension",
+          "item": "https://svg.clasicwebtools.com/tutorials/svg-extractor-online"
+        }
+      ]
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Why an online SVG extractor cannot see this page",
+      "description": "A page whose icons are drawn inline. The SVG Downloader popup, running inside the page, scans and finds all 24 and saves them as a ZIP — including icons no server-side fetch would see.",
+      "thumbnailUrl": [
+        "https://svg.clasicwebtools.com/motion/tutorials/svg-extractor-online.jpg"
+      ],
+      "uploadDate": "2026-08-22",
+      "duration": "PT17S",
+      "contentUrl": "https://svg.clasicwebtools.com/motion/tutorials/svg-extractor-online.mp4",
+      "embedUrl": "https://svg.clasicwebtools.com/tutorials/svg-extractor-online",
+      "isFamilyFriendly": true,
+      "publisher": {
+        "@type": "Organization",
+        "name": "SVG Downloader",
+        "url": "https://svg.clasicwebtools.com"
+      }
+    },
+    {
+      "@type": "HowTo",
+      "name": "Why an online SVG extractor can’t see this page",
+      "description": "A paste-a-URL extractor fetches HTML but never renders it, so inline and JavaScript-drawn icons stay invisible. Here is the technical reason, and the privacy one.",
+      "image": "https://svg.clasicwebtools.com/motion/tutorials/svg-extractor-online.jpg",
+      "totalTime": "PT2M",
+      "tool": {
+        "@type": "HowToTool",
+        "name": "SVG Downloader browser extension"
+      },
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Get the page into the state you want",
+          "text": "Log in if it needs a login. Scroll, open the menu, switch to the tab with the icons on it. Whatever you can see, the scan can read.",
+          "url": "https://svg.clasicwebtools.com/tutorials/svg-extractor-online#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Click the toolbar button",
+          "text": "The scan runs against the live DOM — framework-rendered icons, CSS backgrounds and sprite references included.",
+          "url": "https://svg.clasicwebtools.com/tutorials/svg-extractor-online#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Compare the count",
+          "text": "This is the moment the difference shows. The number found here is typically several times what a URL fetch reported.",
+          "url": "https://svg.clasicwebtools.com/tutorials/svg-extractor-online#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Take them",
+          "text": "Individually with Download current, or the whole set with Download all as ZIP. Nothing leaves your machine at any point.",
+          "url": "https://svg.clasicwebtools.com/tutorials/svg-extractor-online#steps"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why did the online extractor only find a few icons?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It fetched the HTML but never rendered the page. On a JavaScript-rendered site most icons do not exist in the initial HTML at all, CSS background vectors require computed styles, and sprite references cannot be resolved without a live document."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can an online tool extract from a page I have to log in to see?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Its server is not logged in as you, so it receives a login page. An extension runs in your browser with your session, so it works normally."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it safe to paste a URL into an online extractor?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For a public marketing page, generally yes. For an internal dashboard, a staging site or an unreleased design, you are handing a third party a URL and its contents — worth thinking about before you do it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the extension upload anything?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It cannot. Its content security policy sets connect-src to none, so its pages are forbidden from opening a network connection. It works with your network disconnected."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When is an online tool actually better?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "When the URL points straight at a .svg file and you want to optimise or convert it, or when you are on a machine where you cannot install extensions. Online SVG optimisers in particular do a job this extension does not attempt."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<nav class="nav">
+  <a class="brand" href="/">
+    <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+      <rect width="48" height="48" rx="10" fill="var(--plot)"/>
+      <path d="M24 13v15m0 0l-6.5-6.5M24 28l6.5-6.5" fill="none" stroke="var(--surface-hi)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="16.5" y="33.5" width="15" height="2.4" rx="1.2" fill="var(--surface-hi)"/>
+    </svg>
+    <strong>SVG&nbsp;Downloader</strong>
+  </a>
+  <span class="spacer"></span>
+  <span class="nav-links">
+    <a href="/features">Features</a>
+    <a href="/tutorials" aria-current="page">Tutorials</a>
+    <a href="/guides">Guides</a>
+    <a href="/docs">Docs</a>
+    <a href="/use-cases">Stories</a>
+  </span><!--i18n:switch-->
+  <details class="lang-switch">
+    <summary aria-label="Language"><span>EN</span></summary>
+    <ul>
+      <li><a href="/tutorials/svg-extractor-online" hreflang="en" lang="en" aria-current="true">English</a></li>
+      <li><a href="/es/tutorials/svg-extractor-online" hreflang="es" lang="es">Español</a></li>
+      <li><a href="/fr/tutorials/svg-extractor-online" hreflang="fr" lang="fr">Français</a></li>
+      <li><a href="/de/tutorials/svg-extractor-online" hreflang="de" lang="de">Deutsch</a></li>
+      <li><a href="/pt-br/tutorials/svg-extractor-online" hreflang="pt-BR" lang="pt-BR">Português</a></li>
+    </ul>
+  </details>
+  <!--/i18n:switch-->
+  <a class="nav-cta" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Get the extension</a>
+</nav>
+
+<main id="main">
+<header class="page-hero"><div class="wrap">
+  <ol class="crumbs">
+    <li><a href="/">Home</a></li>
+    <li><a href="/tutorials">Tutorials</a></li>
+    <li><span aria-current="page">Online vs. extension</span></li>
+  </ol>
+  <p class="eyebrow">Tutorial — why the online one missed them</p>
+  <h1>Why an <span class="plot">online SVG extractor</span> can’t see this page</h1>
+  <p class="lede">You pasted the URL, it found four icons, and you can see thirty. Nothing is broken — it simply never ran the page.</p>
+  <div class="cta">
+    <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 12v16m0 0l-7-7m7 7l7-7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><rect x="16" y="34" width="16" height="2.6" rx="1.3" fill="currentColor"/></svg>
+      Get the extension
+    </a>
+    <a class="btn quiet" href="#steps">Jump to the steps ↓</a>
+  </div>
+</div></header>
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Watch it — 17 seconds</p>
+  <h2>What running the page gets you</h2>
+  <figure class="shot">
+    <div class="shot-mount">
+      <span class="shot-tag">tutorial · comparison</span>
+      <video src="/motion/tutorials/svg-extractor-online.mp4" poster="/motion/tutorials/svg-extractor-online.jpg"
+        muted loop playsinline preload="none"
+        aria-label="A page whose icons are drawn inline. The SVG Downloader popup, running inside the page, scans and finds all 24 and saves them as a ZIP — including icons no server-side fetch would see."></video>
+    </div>
+    <figcaption class="shot-cap">Running inside the page is the whole difference. Everything else follows from it.</figcaption>
+  </figure>
+
+  <p class="lead-in">The distinction is not quality or effort — it is architectural. One approach reads a document; the other reads a rendered page.</p>
+  <p class="eyebrow">What the recording shows</p>
+  <ol class="beats">
+    <li>An online tool only gets the URL you paste</li>
+    <li>It never runs the page, so inline icons stay invisible</li>
+    <li>An extension runs inside the page you are already on</li>
+    <li>Logged-in pages and private dashboards included</li>
+    <li>And nothing leaves your machine to make it work</li>
+  </ol>
+</div></section>
+
+<hr class="section-rule">
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">The technical reason</p>
+  <h2>Fetching a URL and rendering a page are different things</h2>
+  
+  <p class="lead-in">When you paste a URL into an online extractor, its server sends a plain HTTP request and gets back the HTML the server chose to send. It then searches that text for things that look like SVGs. That is a reasonable approach, and it misses most of a modern site, for four separate reasons.</p>
+  <ul>
+    <li><strong>No JavaScript runs.</strong> On a React, Vue, Svelte or Angular site, the initial HTML is frequently close to empty — a root element and a script tag. Every icon appears only after the framework executes. A fetch sees the empty shell.</li>
+    <li><strong>No CSS is applied.</strong> A vector set as a <code>background-image</code> in a stylesheet only exists once styles are computed against elements. Text-searching HTML will not find it.</li>
+    <li><strong>No session.</strong> The server fetching your URL is not logged in as you. Anything behind authentication returns a login page, so a dashboard, an admin panel or a paid tool is simply unreachable.</li>
+    <li><strong>Sprites are not resolved.</strong> A <code>&lt;use href="#star"&gt;</code> found in raw HTML is a pointer. Without a rendered document there is nothing to resolve it against, so you get an empty file.</li>
+  </ul>
+  <p>An extension has none of these problems because it is not fetching anything. It runs inside the page you are already looking at, after the framework has rendered, after the styles have applied, with your session intact and the full document available to resolve references against.</p>
+
+  <h2 id="steps">Doing it in the page instead</h2>
+  <p>There is no URL to paste, which is the point.</p>
+  <ol>
+    <li><strong>Get the page into the state you want.</strong> Log in if it needs a login. Scroll, open the menu, switch to the tab with the icons on it. Whatever you can see, the scan can read.</li>
+    <li><strong>Click the toolbar button.</strong> The scan runs against the live DOM — framework-rendered icons, CSS backgrounds and sprite references included.</li>
+    <li><strong>Compare the count.</strong> This is the moment the difference shows. The number found here is typically several times what a URL fetch reported.</li>
+    <li><strong>Take them.</strong> Individually with <em>Download current</em>, or the whole set with <em>Download all as ZIP</em>. Nothing leaves your machine at any point.</li>
+  </ol>
+
+  
+  <h2>The other question: where does your file go?</h2>
+  <p>An online tool has to receive your data to work on it. Depending on the service that can mean the URL of a page you were logged into, or an uploaded file, sitting on somebody else's server — subject to their retention policy, their logging, their jurisdiction and their security. For a public marketing page that may be a fine trade. For an internal dashboard, a client's staging site or an unreleased design, it is a data transfer you probably did not intend to make.</p>
+  <p>The on-device version does not involve that trade at all, and not as a policy commitment: the extension's content security policy sets <code>connect-src 'none'</code>, so its pages cannot open a network connection. There is no endpoint to send to. It also means the whole thing works offline.</p>
+
+  <h2>Where an online tool is genuinely the better choice</h2>
+  <p>Being fair about it: if the URL points directly at a <code>.svg</code> file and all you want is to convert or optimise it, an online tool is quick and requires installing nothing. If you are on a locked-down machine where you cannot install an extension, it may be your only option. And for optimising SVGs specifically — running SVGO over them, stripping metadata, shrinking paths — the good online optimisers do a job this extension does not attempt at all.</p>
+
+  <h2>The honest limits on this side</h2>
+  <p>An extension needs installing, needs a Chromium browser, and cannot do anything on a page you cannot yourself open — <code>chrome://</code> pages, the Web Store, extension galleries. It is also strictly interactive: there is no API and no way to run it over a list of a thousand URLs. For that, a headless browser is the correct tool.</p>
+
+  <dl class="facts">
+    <div><dt>A URL fetch misses</dt><dd>JavaScript-rendered icons, CSS backgrounds, logged-in pages and sprite targets.</dd></div>
+    <div><dt>An extension sees</dt><dd>The <strong>rendered DOM</strong> — after the framework, after the styles, with your session.</dd></div>
+    <div><dt>Privacy</dt><dd><code>connect-src 'none'</code>. No endpoint to upload to; works offline.</dd></div>
+    <div><dt>Online tools win at</dt><dd>Optimising a <code>.svg</code> you already have, and machines where you cannot install anything.</dd></div>
+  </dl>
+</div></section>
+
+<hr class="section-rule">
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Good to know</p>
+  <h2>Frequently asked</h2>
+  <div class="faq">
+    <details>
+      <summary>Why did the online extractor only find a few icons?</summary>
+      <div class="faq-body"><p>It fetched the HTML but never rendered the page. On a JavaScript-rendered site most icons do not exist in the initial HTML at all, CSS background vectors require computed styles, and sprite references cannot be resolved without a live document.</p></div>
+    </details>
+    <details>
+      <summary>Can an online tool extract from a page I have to log in to see?</summary>
+      <div class="faq-body"><p>No. Its server is not logged in as you, so it receives a login page. An extension runs in your browser with your session, so it works normally.</p></div>
+    </details>
+    <details>
+      <summary>Is it safe to paste a URL into an online extractor?</summary>
+      <div class="faq-body"><p>For a public marketing page, generally yes. For an internal dashboard, a staging site or an unreleased design, you are handing a third party a URL and its contents — worth thinking about before you do it.</p></div>
+    </details>
+    <details>
+      <summary>Does the extension upload anything?</summary>
+      <div class="faq-body"><p>It cannot. Its content security policy sets connect-src to none, so its pages are forbidden from opening a network connection. It works with your network disconnected.</p></div>
+    </details>
+    <details>
+      <summary>When is an online tool actually better?</summary>
+      <div class="faq-body"><p>When the URL points straight at a .svg file and you want to optimise or convert it, or when you are on a machine where you cannot install extensions. Online SVG optimisers in particular do a job this extension does not attempt.</p></div>
+    </details>
+  </div>
+</div></section>
+
+<hr class="section-rule">
+
+<section><div class="wrap">
+  <div class="cta-band">
+    <div>
+      <h2>Read the page, not a copy of its HTML</h2>
+      <p>Framework-rendered icons, logged-in pages, and nothing uploaded.</p>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Get the extension</a>
+      <a class="btn quiet" href="/tutorials">All 15 tutorials →</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="related"><div class="wrap">
+  <p class="eyebrow">Keep going</p>
+  <ul>
+    <li><a href="/tutorials/download-svg-from-url">From a URL<span>The address case</span></a></li>
+    <li><a href="/privacy">Privacy position<span>What it can see</span></a></li>
+    <li><a href="/tutorials/extract-svg-from-website">Extract everything<span>One ZIP</span></a></li>
+  </ul>
+</div></section>
+</main>
+
+<footer>
+  <nav class="bleed foot-map" aria-label="Site map">
+    <div class="col"><p>Product</p><ul>
+      <li><a href="/">Overview</a></li>
+      <li><a href="/features">Features</a></li>
+      <li><a href="/compare/svg-downloader-vs-screenshotting-icons">Vs. screenshotting</a></li>
+      <li><a href="/privacy">Privacy</a></li>
+      <li><a href="/use-cases">Use cases</a></li>
+    </ul></div>
+    <div class="col"><p>Catches</p><ul>
+      <li><a href="/features/inline-svg">Inline SVG</a></li>
+      <li><a href="/features/css-background-svg">CSS background SVG</a></li>
+      <li><a href="/features/svg-sprite-extractor">Sprite / &lt;use&gt; SVG</a></li>
+      <li><a href="/features/bulk-zip-download">Whole page as ZIP</a></li>
+    </ul></div>
+    <div class="col"><p>Tutorials</p><ul>
+      <li><a href="/tutorials">All 15 tutorials</a></li>
+      <li><a href="/tutorials/how-to-download-svg-files">How to download SVG files</a></li>
+      <li><a href="/tutorials/copy-svg-from-website">Copy an SVG</a></li>
+      <li><a href="/tutorials/extract-svg-from-website">Extract every SVG</a></li>
+    </ul></div>
+    <div class="col"><p>Docs</p><ul>
+      <li><a href="/docs/installation">Installation</a></li>
+      <li><a href="/docs/usage">Usage</a></li>
+      <li><a href="/docs/faq">FAQ</a></li>
+      <li><a href="/docs/changelog">Changelog</a></li>
+    </ul></div>
+  </nav>
+  <div class="bleed colophon-foot">
+    <a href="https://github.com/Flozad/svg-downloader">GitHub</a>
+    <a href="https://github.com/Flozad/svg-downloader/issues">Issues</a>
+    <a href="https://clasicwebtools.com">clasicwebtools.com</a>
+    <span class="grow"></span>
+    <span>Bone stock, graphite, one plotter&nbsp;green</span>
+  </div>
+</footer>
+<script src="/player.js" defer></script>
+</body>
+</html>

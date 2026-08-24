@@ -38,6 +38,10 @@ export function installChrome({ id = 'abcdefghijklmnop', version = '0' } = {}) {
       onMessage: { addListener: handle.addListener },
       sendMessage: handle.sendMessage,
       lastError: null,
+      // The right-click save path does `import(chrome.runtime.getURL('svg-utils.js'))`.
+      // Resolve it to the real module on disk so the test exercises the actual
+      // sanitizer + external-use resolver rather than a stub.
+      getURL: (rel) => new URL(`../../extension/${rel}`, import.meta.url).href,
     },
   };
 

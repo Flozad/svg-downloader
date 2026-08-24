@@ -1,7 +1,7 @@
 import React from 'react'
 import {interpolate, useCurrentFrame, useVideoConfig} from 'remotion'
 import {BrandCard} from '../kit/Brand'
-import {BrowserFrame, Stage} from '../kit/Chrome'
+import {BrowserFrame, CHROME_TOP, Stage} from '../kit/Chrome'
 import {Cursor} from '../kit/Cursor'
 import {ICONS} from '../kit/icons'
 import {IconPage} from '../kit/IconPage'
@@ -22,18 +22,25 @@ import {useCursor} from '../kit/human'
 // The browser is the spine: it never unmounts. Everything the extension draws
 // (the popup) sits ON it in canvas coordinates, so nothing can escape the frame.
 
-const BROWSER = {left: 40, top: 30, w: 1200, h: 690}
-const EXT = {x: BROWSER.left + BROWSER.w - 26, y: BROWSER.top + 42 + 21} // 1214, 93
-const P_TOP = BROWSER.top + 86 + 6 // 122
-const P_LEFT = 876 // right edge ≈ 1236
+// The window is tall because the popup is: the shipped popup runs ~672px with a
+// status line showing, and it is anchored under the toolbar, so the frame has to
+// be deep enough that the panel never hangs off the bottom of the canvas.
+const BROWSER = {left: 40, top: 18, w: 1200, h: 764}
+const EXT = {x: BROWSER.left + BROWSER.w - 26, y: BROWSER.top + 42 + 21} // 1214, 81
+const P_TOP = BROWSER.top + CHROME_TOP + 6 // 110
+const P_LEFT = 876 // right edge = 1236, four px inside the window
 
-// Button centres in canvas coordinates (derived from the popup's own layout).
+// Button centres in canvas coordinates, derived from the popup's own layout —
+// see HIT in kit/Popup layout terms: header 53, body pad 14, mount 190, gap 12.
 const HIT = {
   ext: {x: EXT.x, y: EXT.y},
-  preview: {x: P_LEFT + 180, y: P_TOP + 171},
-  next: {x: P_LEFT + 360 - 16 - 33, y: P_TOP + 304},
-  download: {x: P_LEFT + 180, y: P_TOP + 425},
-  zip: {x: P_LEFT + 180, y: P_TOP + 467},
+  preview: {x: P_LEFT + 180, y: P_TOP + 162},
+  prev: {x: P_LEFT + 79, y: P_TOP + 287},
+  next: {x: P_LEFT + 281, y: P_TOP + 287},
+  download: {x: P_LEFT + 180, y: P_TOP + 453},
+  zip: {x: P_LEFT + 180, y: P_TOP + 498},
+  copyCode: {x: P_LEFT + 95, y: P_TOP + 546},
+  copyImage: {x: P_LEFT + 265, y: P_TOP + 546},
 }
 
 // The SVGs the preview walks, by ICONS index: search → heart → star.
@@ -111,10 +118,10 @@ export const Promo: React.FC = () => {
   const pressed =
     between(t, 8.0, 8.13) || between(t, 9.8, 9.93) || between(t, 14.0, 14.15) || between(t, 16.4, 16.55)
 
-  // The saved confirmations.
-  let toast: string | undefined
-  if (between(t, 14.2, 16.2)) toast = `Saved ${name}.svg`
-  else if (between(t, 16.6, 18.6)) toast = '24 SVGs saved'
+  // The status line, quoting what popup.js actually writes into it.
+  let status: string | undefined
+  if (between(t, 14.2, 16.2)) status = `Saved ${name}.svg`
+  else if (between(t, 16.6, 18.6)) status = 'Downloaded 24 SVGs as ZIP.'
 
   // The extension button: armed once the popup is up; a ripple as the cursor
   // arrives, just before the click.
@@ -158,11 +165,11 @@ export const Promo: React.FC = () => {
               count={count}
               index={index}
               total={ICONS.length}
-              filename={`${name}-24`}
+              filename={name}
               preview={preview}
               hot={hot}
               pressed={pressed}
-              toast={toast}
+              status={status}
               progress={popupProgress}
               refreshSpin={refreshSpin}
             />
@@ -175,16 +182,18 @@ export const Promo: React.FC = () => {
             style={{
               position: 'absolute',
               left: '50%',
-              bottom: 22,
+              bottom: 20,
               transform: 'translateX(-50%)',
               opacity: edgeFade(t, caption.a, caption.b, 0.35) * (1 - brand),
-              padding: '10px 20px',
-              borderRadius: 999,
-              background: '#fff',
+              padding: '10px 22px',
+              borderRadius: theme.radius.pill,
+              background: theme.surfaceHi,
+              border: `1px solid ${theme.line2}`,
               boxShadow: theme.shadow.pop,
-              fontSize: 17,
-              fontWeight: 600,
-              color: theme.text,
+              fontFamily: theme.font.mono,
+              fontSize: 15,
+              letterSpacing: '0.01em',
+              color: theme.ink,
               whiteSpace: 'nowrap',
               zIndex: 50,
             }}

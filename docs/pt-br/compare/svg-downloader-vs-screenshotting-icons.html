@@ -1,0 +1,322 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SVG Downloader vs. print de tela — qual vence?</title>
+<meta name="description" content="SVG Downloader contra tirar print de ícones: um print é um PNG borrado preso a um único tamanho. Compare print, DevTools e o SVG real, e quando usar cada um.">
+<link rel="canonical" href="https://svg.clasicwebtools.com/pt-br/compare/svg-downloader-vs-screenshotting-icons"><!--i18n:alternates-->
+<link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/compare/svg-downloader-vs-screenshotting-icons">
+<link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/compare/svg-downloader-vs-screenshotting-icons">
+<link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/compare/svg-downloader-vs-screenshotting-icons">
+<link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/compare/svg-downloader-vs-screenshotting-icons">
+<link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/compare/svg-downloader-vs-screenshotting-icons">
+<link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/compare/svg-downloader-vs-screenshotting-icons">
+<!--/i18n:alternates-->
+<link rel="alternate" type="text/plain" href="https://svg.clasicwebtools.com/llms.txt" title="llms.txt — machine-readable site summary">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="author" content="Flozad">
+<meta name="theme-color" content="#ece4d3">
+<meta property="og:site_name" content="SVG Downloader">
+<meta property="og:title" content="SVG Downloader vs. print de ícones">
+<meta property="og:description" content="SVG Downloader contra tirar print de ícones: um print é um PNG borrado preso a um único tamanho. Compare print, DevTools e o SVG real, e quando usar cada um.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://svg.clasicwebtools.com/pt-br/compare/svg-downloader-vs-screenshotting-icons">
+<meta property="og:image" content="https://svg.clasicwebtools.com/motion/06-brand.png">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="Um SVG nítido ao lado de um print borrado do mesmo ícone.">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@lozards">
+<meta name="twitter:title" content="SVG Downloader vs. print de ícones">
+<meta name="twitter:description" content="SVG Downloader contra tirar print de ícones: um print é um PNG borrado preso a um único tamanho. Compare print, DevTools e o SVG real, e quando usar cada um.">
+<meta name="twitter:image" content="https://svg.clasicwebtools.com/motion/06-brand.png">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/fonts/bricolage-var.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/pages.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Início",
+          "item": "https://svg.clasicwebtools.com/pt-br/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Recursos",
+          "item": "https://svg.clasicwebtools.com/pt-br/features"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Vs. print de tela",
+          "item": "https://svg.clasicwebtools.com/pt-br/compare/svg-downloader-vs-screenshotting-icons"
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://svg.clasicwebtools.com/pt-br/compare/svg-downloader-vs-screenshotting-icons",
+      "url": "https://svg.clasicwebtools.com/pt-br/compare/svg-downloader-vs-screenshotting-icons",
+      "name": "SVG Downloader vs. print de ícones",
+      "description": "Uma comparação entre tirar print, copiar pelo DevTools e o SVG Downloader para tirar um ícone de uma página web.",
+      "inLanguage": "pt-BR",
+      "isPartOf": {
+        "@id": "https://svg.clasicwebtools.com/pt-br/#website"
+      },
+      "about": {
+        "@id": "https://svg.clasicwebtools.com/pt-br/#app"
+      },
+      "primaryImageOfPage": "https://svg.clasicwebtools.com/motion/06-brand.png"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Um print de um ícone chega a ser suficiente?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim — como referência visual rápida. Se você só precisa colar a imagem de um ícone num documento ou num chat para apontar para ele, um print serve. Deixa de servir no instante em que você precisa redimensionar, recolorir ou publicar o ícone, porque um print é um raster de tamanho fixo, não o arquivo."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Por que um SVG é melhor que um PNG para um ícone?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Um SVG é texto vetorial: continua perfeitamente nítido em qualquer tamanho, costuma ocupar uma fração do tamanho de um raster e você pode recolorir ou editar seus traçados. Um PNG vindo de um print está preso aos pixels que você capturou e borra assim que é ampliado."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Pular para o conteúdo</a>
+
+<nav class="nav">
+  <a class="brand" href="/pt-br/">
+    <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+      <rect width="48" height="48" rx="10" fill="var(--plot)"></rect>
+      <path d="M24 13v15m0 0l-6.5-6.5M24 28l6.5-6.5" fill="none" stroke="var(--surface-hi)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+      <rect x="16.5" y="33.5" width="15" height="2.4" rx="1.2" fill="var(--surface-hi)"></rect>
+    </svg>
+    <strong>SVG&nbsp;Downloader</strong>
+  </a>
+  <span class="spacer"></span>
+  <span class="nav-links">
+    <a href="/pt-br/features" aria-current="page">Recursos</a>
+    <a href="/pt-br/tutorials">Tutoriais</a>
+    <a href="/pt-br/guides">Guias</a>
+    <a href="/pt-br/docs">Docs</a>
+    <a href="/pt-br/privacy">Privacidade</a>
+    <a href="/pt-br/use-cases">Histórias</a>
+  </span><!--i18n:switch-->
+  <details class="lang-switch">
+    <summary aria-label="Idioma"><span>PT</span></summary>
+    <ul>
+      <li><a href="/compare/svg-downloader-vs-screenshotting-icons" hreflang="en" lang="en">English</a></li>
+      <li><a href="/es/compare/svg-downloader-vs-screenshotting-icons" hreflang="es" lang="es">Español</a></li>
+      <li><a href="/fr/compare/svg-downloader-vs-screenshotting-icons" hreflang="fr" lang="fr">Français</a></li>
+      <li><a href="/de/compare/svg-downloader-vs-screenshotting-icons" hreflang="de" lang="de">Deutsch</a></li>
+      <li><a href="/pt-br/compare/svg-downloader-vs-screenshotting-icons" hreflang="pt-BR" lang="pt-BR" aria-current="true">Português</a></li>
+    </ul>
+  </details>
+  <!--/i18n:switch-->
+  <a class="nav-cta" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Instalar a extensão</a>
+</nav>
+
+<main id="main">
+<header class="page-hero"><div class="wrap">
+  <ol class="crumbs">
+    <li><a href="/pt-br/">Início</a></li>
+    <li><a href="/pt-br/features">Recursos</a></li>
+    <li><span aria-current="page">Vs. print de tela</span></li>
+  </ol>
+  <p class="eyebrow">Comparação — SVG vs. print</p>
+  <h1>SVG Downloader vs. <span class="plot">print</span> de ícones</h1>
+  <p class="lede">Quando você vê um ícone que quer, o reflexo é tirar um print. É a ferramenta errada no instante em que você precisa do arquivo de verdade. Aqui vai a comparação honesta entre um print, uma cópia pelo DevTools e extrair o SVG real.</p>
+  <div class="cta">
+    <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 12v16m0 0l-7-7m7 7l7-7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"></path><rect x="16" y="34" width="16" height="2.6" rx="1.3" fill="currentColor"></rect></svg>
+      Instalar a extensão</a>
+    <a class="btn quiet" href="/pt-br/features">Todos os recursos →</a>
+  </div>
+</div></header>
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">O trade-off</p>
+  <h2>A foto de um ícone não é o ícone</h2>
+  <p class="lead-in">Um print é um raster: uma grade fixa de pixels capturada em um único tamanho. Isso é genuinamente útil quando você só quer uma referência visual rápida — algo para jogar num documento ou numa mensagem e dizer “esse aqui, este”. Sem instalar nada, sem pensar, pronto.</p>
+  <p>Tudo desmorona no instante em que você precisa <em>usar</em> o ícone. Amplie e ele borra, porque não há pixels além dos que você capturou. Tente recolorir e você estará pintando sobre uma foto. Coloque num build e você entregou um PNG pesado onde cabia um vetor de 400 bytes. O print respondeu “com o que se parece”; nunca respondeu “me dê o arquivo”.</p>
+  <p>Copiar pelo DevTools é o meio-termo honesto — você consegue o markup real — mas é trabalhoso. Você caça o nó <code>&lt;svg&gt;</code> certo, copia o HTML externo, cola num arquivo e então descobre que ele não abre porque falta o namespace. Também não resolve nada para fundos CSS, referências <code>&lt;use&gt;</code> de sprite ou os outros vinte ícones da página.</p>
+
+  <div class="cmp-wrap">
+    <table class="cmp">
+      <thead>
+        <tr>
+          <th scope="col">&nbsp;</th>
+          <th scope="col">Print / PNG</th>
+          <th scope="col">Copiar pelo DevTools</th>
+          <th scope="col">SVG Downloader</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Formato de saída</th>
+          <td>PNG raster</td>
+          <td>Markup SVG (na mão)</td>
+          <td><span class="yes">Arquivo .svg real</span></td>
+        </tr>
+        <tr>
+          <th scope="row">Continua nítido ao redimensionar</th>
+          <td><span class="no">Não — borra</span></td>
+          <td><span class="yes">Sim</span></td>
+          <td><span class="yes">Sim</span></td>
+        </tr>
+        <tr>
+          <th scope="row">Editável / recolorível</th>
+          <td><span class="no">Não</span></td>
+          <td><span class="yes">Sim</span></td>
+          <td><span class="yes">Sim</span></td>
+        </tr>
+        <tr>
+          <th scope="row">Tamanho do arquivo</th>
+          <td><span class="no">Pesado</span></td>
+          <td><span class="yes">Minúsculo</span></td>
+          <td><span class="yes">Minúsculo</span></td>
+        </tr>
+        <tr>
+          <th scope="row">Funciona com SVG inline</th>
+          <td><span class="no">Só como imagem</span></td>
+          <td><span class="yes">Sim</span></td>
+          <td><span class="yes">Sim</span></td>
+        </tr>
+        <tr>
+          <th scope="row">Funciona com fundos CSS</th>
+          <td><span class="no">Só como imagem</span></td>
+          <td><span class="no">Não</span></td>
+          <td><span class="yes">Sim</span></td>
+        </tr>
+        <tr>
+          <th scope="row">Funciona com sprites (&lt;use&gt;)</th>
+          <td><span class="no">Só como imagem</span></td>
+          <td><span class="no">Raramente</span></td>
+          <td><span class="yes">Sim — no mesmo documento</span></td>
+        </tr>
+        <tr>
+          <th scope="row">Em lote / página inteira</th>
+          <td><span class="no">Não</span></td>
+          <td><span class="no">Não</span></td>
+          <td><span class="yes">Sim — em ZIP</span></td>
+        </tr>
+        <tr>
+          <th scope="row">Esforço</th>
+          <td>Baixo</td>
+          <td><span class="no">Alto e trabalhoso</span></td>
+          <td><span class="yes">Dois cliques</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Quando cada um faz sentido</h2>
+  <ul>
+    <li><strong>Print</strong> — você quer uma referência visual para apontar, não o arquivo. Perfeitamente válido, e mais rápido que qualquer outra coisa para isso.</li>
+    <li><strong>Copiar pelo DevTools</strong> — você precisa de exatamente um ícone inline, já está no inspetor e não se importa em consertar o namespace por conta própria.</li>
+    <li><strong>SVG Downloader</strong> — você quer o vetor real: nítido, editável, minúsculo. Ele lê <a href="/pt-br/features/inline-svg">SVG inline</a>, <a href="/pt-br/features/css-background-svg">fundos CSS</a> e <a href="/pt-br/features/svg-sprite-extractor">referências de sprite</a>, conserta o <code>xmlns</code> ausente, dá um nome sensato ao arquivo e pode empacotar <a href="/pt-br/features/bulk-zip-download">a página inteira num ZIP</a>. Tudo no seu dispositivo — nada é enviado.</li>
+  </ul>
+  <p>Se você já decidiu que quer o arquivo em vez de uma foto dele, o <a href="/pt-br/guides/how-to-download-svg-from-any-website">guia de download de qualquer site</a> percorre o fluxo inteiro.</p>
+</div></section>
+
+<hr class="section-rule">
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Vale saber</p>
+  <h2>Print ou SVG?</h2>
+  <div class="faq">
+    <details>
+      <summary>Um print de um ícone chega a ser suficiente?</summary>
+      <div class="faq-body"><p>Sim — como referência visual rápida. Se você só precisa colar a imagem de um ícone num documento ou num chat para apontar para ele, um print serve. Deixa de servir no instante em que você precisa redimensionar, recolorir ou publicar o ícone, porque um print é um raster de tamanho fixo, não o arquivo.</p></div>
+    </details>
+    <details>
+      <summary>Por que um SVG é melhor que um PNG para um ícone?</summary>
+      <div class="faq-body"><p>Um SVG é texto vetorial: continua perfeitamente nítido em qualquer tamanho, costuma ocupar uma fração do tamanho de um raster e você pode recolorir ou editar seus traçados. Um PNG vindo de um print está preso aos pixels que você capturou e borra assim que é ampliado.</p></div>
+    </details>
+  </div>
+</div></section>
+
+<hr class="section-rule">
+
+<section><div class="wrap">
+  <div class="cta-band">
+    <div>
+      <h2>Leve o ícone, não uma foto dele</h2>
+      <p>Grátis, privado, e salva o vetor real em dois cliques.</p>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Instalar a extensão</a>
+      <a class="btn quiet" href="/pt-br/guides">Ler os guias →</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="related"><div class="wrap">
+  <p class="eyebrow">Continue lendo</p>
+  <ul>
+    <li><a href="/pt-br/features/inline-svg">SVG inline<span>O que o DevTools complica</span></a></li>
+    <li><a href="/pt-br/guides/how-to-download-svg-from-any-website">Baixar de qualquer site<span>Guia passo a passo</span></a></li>
+    <li><a href="/pt-br/guides/download-all-svgs-as-zip">Baixar tudo em ZIP<span>A página inteira de uma vez</span></a></li>
+  </ul>
+</div></section>
+</main>
+
+<footer>
+  <nav class="bleed foot-map" aria-label="Mapa do site">
+    <div class="col"><p>Produto</p><ul>
+      <li><a href="/pt-br/">Visão geral</a></li>
+      <li><a href="/pt-br/features">Recursos</a></li>
+      <li><a href="/pt-br/compare/svg-downloader-vs-screenshotting-icons">Vs. print de tela</a></li>
+      <li><a href="/pt-br/privacy">Privacidade</a></li>
+      <li><a href="/pt-br/use-cases">Casos de uso</a></li>
+    </ul></div>
+    <div class="col"><p>O que ele encontra</p><ul>
+      <li><a href="/pt-br/features/inline-svg">SVG inline</a></li>
+      <li><a href="/pt-br/features/css-background-svg">SVG em fundo CSS</a></li>
+      <li><a href="/pt-br/features/svg-sprite-extractor">SVG de sprite / &lt;use&gt;</a></li>
+      <li><a href="/pt-br/features/bulk-zip-download">Página inteira em ZIP</a></li>
+    </ul></div>
+    <div class="col"><p>Tutoriais</p><ul>
+      <li><a href="/pt-br/tutorials">Todos os 15 tutoriais</a></li>
+      <li><a href="/pt-br/tutorials/how-to-download-svg-files">Como baixar arquivos SVG</a></li>
+      <li><a href="/pt-br/tutorials/copy-svg-from-website">Copiar um SVG</a></li>
+      <li><a href="/pt-br/guides">Guias completos</a></li>
+    </ul></div>
+    <div class="col"><p>Docs</p><ul>
+      <li><a href="/pt-br/docs/installation">Instalação</a></li>
+      <li><a href="/pt-br/docs/usage">Uso</a></li>
+      <li><a href="/pt-br/docs/faq">Perguntas frequentes</a></li>
+      <li><a href="/pt-br/docs/changelog">Mudanças</a></li>
+    </ul></div>
+  </nav>
+  <div class="bleed colophon-foot">
+    <a href="https://github.com/Flozad/svg-downloader">GitHub</a>
+    <a href="https://github.com/Flozad/svg-downloader/issues">Issues</a>
+    <a href="https://clasicwebtools.com">clasicwebtools.com</a>
+    <span class="grow"></span>
+    <span>Papel osso, grafite e um único verde&nbsp;plotter</span>
+  </div>
+</footer>
+
+
+</body></html>

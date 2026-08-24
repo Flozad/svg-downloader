@@ -1,19 +1,27 @@
 import React from 'react'
+import {useBrandFonts} from '../kit/fonts'
 import {ExtMark, ICONS} from '../kit/icons'
 import {Popup} from '../kit/Popup'
-import {theme} from '../kit/theme'
+import {SHEET, theme} from '../kit/theme'
 
 // The two Chrome Web Store promo tiles. Both are pure brand — the mark, the
-// name, the promise — in the product's monochrome. Rendered as stills.
+// name, the promise — on the product's ruled bone stock, in the display face
+// with the plotter green as the only colour. Rendered as stills.
 
 /** Small promo tile — 440 × 280. Exact size the store's "Small tile" slot wants. */
-export const PromoTile: React.FC = () => (
+export const PromoTile: React.FC = () => {
+  // These tiles do not sit in <Stage>, which is what normally blocks a frame
+  // until Bricolage and Space Mono are ready. Without this the wordmark renders
+  // in the fallback sans — visibly a different product from every other asset.
+  useBrandFonts()
+  return (
   <div
     style={{
       width: '100%',
       height: '100%',
       position: 'relative',
-      background: theme.bg,
+      background: theme.paper,
+      ...SHEET,
       overflow: 'hidden',
       fontFamily: theme.font.sans,
       display: 'flex',
@@ -27,21 +35,39 @@ export const PromoTile: React.FC = () => (
     }}
   >
     <IconStrip />
-    <div style={{borderRadius: 15, boxShadow: '0 16px 40px -18px rgba(10,10,10,0.5)', zIndex: 1}}>
+    <div style={{borderRadius: 15, boxShadow: '0 16px 40px -18px rgba(27,26,21,0.5)', zIndex: 1}}>
       <ExtMark size={68} radius={16} />
     </div>
     <div style={{zIndex: 1}}>
-      <div style={{fontSize: 24, fontWeight: 700, letterSpacing: '-0.03em', color: theme.text, lineHeight: 1.1}}>
+      <div
+        style={{
+          fontFamily: theme.font.display,
+          fontVariationSettings: '"opsz" 26, "wght" 700',
+          fontSize: 24,
+          letterSpacing: '-0.035em',
+          color: theme.ink,
+          lineHeight: 1.1,
+        }}
+      >
         SVG Downloader
         <br />
-        <span style={{color: theme.dim}}>&amp; Extractor</span>
+        <span style={{color: theme.plot}}>&amp; Extractor</span>
       </div>
-      <div style={{fontSize: 12.5, color: theme.dim, marginTop: 10, fontWeight: 500}}>
+      <div
+        style={{
+          fontFamily: theme.font.mono,
+          fontSize: 10.5,
+          letterSpacing: '0.02em',
+          color: theme.dim,
+          marginTop: 10,
+        }}
+      >
         Extract &amp; download any SVG from any site
       </div>
     </div>
   </div>
-)
+  )
+}
 
 const IconStrip: React.FC = () => {
   const picks = [0, 1, 2, 3, 5, 9, 18, 22]
@@ -57,10 +83,10 @@ const IconStrip: React.FC = () => {
             width: 40,
             height: 40,
             transform: 'translate(-50%, -50%)',
-            color: '#0a0a0a',
+            color: theme.ink,
           }}
         >
-          {ICONS[p].node('#0a0a0a')}
+          {ICONS[p].node(theme.ink)}
         </div>
       ))}
     </div>
@@ -68,13 +94,16 @@ const IconStrip: React.FC = () => {
 }
 
 /** Marquee promo tile — 1400 × 560. Brand block left, a live popup right. */
-export const Marquee: React.FC = () => (
+export const Marquee: React.FC = () => {
+  useBrandFonts()
+  return (
   <div
     style={{
       width: '100%',
       height: '100%',
       position: 'relative',
-      background: theme.bg,
+      background: theme.paper,
+      ...SHEET,
       overflow: 'hidden',
       fontFamily: theme.font.sans,
       display: 'flex',
@@ -93,10 +122,10 @@ export const Marquee: React.FC = () => (
             width: 46,
             height: 46,
             transform: 'translate(-50%, -50%)',
-            color: '#0a0a0a',
+            color: theme.ink,
           }}
         >
-          {ic.node('#0a0a0a')}
+          {ic.node(theme.ink)}
         </div>
       ))}
     </div>
@@ -104,16 +133,35 @@ export const Marquee: React.FC = () => (
     {/* left — the brand block */}
     <div style={{flex: 1, padding: '0 40px 0 84px', zIndex: 1}}>
       <div style={{display: 'flex', alignItems: 'center', gap: 18, marginBottom: 26}}>
-        <div style={{borderRadius: 16, boxShadow: '0 16px 40px -18px rgba(10,10,10,0.5)'}}>
+        <div style={{borderRadius: 16, boxShadow: '0 16px 40px -18px rgba(27,26,21,0.5)'}}>
           <ExtMark size={72} radius={17} />
         </div>
       </div>
-      <div style={{fontSize: 52, fontWeight: 700, letterSpacing: '-0.035em', color: theme.text, lineHeight: 1.05}}>
+      <div
+        style={{
+          fontFamily: theme.font.display,
+          fontVariationSettings: '"opsz" 56, "wght" 700',
+          fontSize: 52,
+          letterSpacing: '-0.04em',
+          color: theme.ink,
+          lineHeight: 1.05,
+        }}
+      >
         SVG Downloader
         <br />
         <span style={{color: theme.dim}}>&amp; Extractor</span>
       </div>
-      <div style={{fontSize: 21, color: theme.dim, marginTop: 18, fontWeight: 500, maxWidth: 520}}>
+      <div
+        style={{
+          fontFamily: theme.font.mono,
+          fontSize: 16,
+          letterSpacing: '0.02em',
+          lineHeight: 1.5,
+          color: theme.dim,
+          marginTop: 18,
+          maxWidth: 520,
+        }}
+      >
         Extract &amp; download any SVG from any website — icons, logos and vectors,
         in original quality.
       </div>
@@ -130,8 +178,9 @@ export const Marquee: React.FC = () => (
           filter: 'drop-shadow(0 30px 60px rgba(10,10,10,0.28))',
         }}
       >
-        <Popup count={24} index={2} total={ICONS.length} filename="star-24" progress={1} />
+        <Popup count={24} index={2} total={ICONS.length} filename="star" progress={1} />
       </div>
     </div>
   </div>
-)
+  )
+}

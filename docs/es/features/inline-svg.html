@@ -1,0 +1,243 @@
+<!DOCTYPE html><html lang="es"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Descargar SVG en línea de cualquier página — SVG Downloader</title>
+<meta name="description" content="El SVG en línea no tiene menú de clic derecho, así que el navegador no lo guarda. SVG Downloader lo lee del DOM, repara el xmlns y guarda el vector original.">
+<link rel="canonical" href="https://svg.clasicwebtools.com/es/features/inline-svg"><!--i18n:alternates-->
+<link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/features/inline-svg">
+<link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/features/inline-svg">
+<link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/features/inline-svg">
+<link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/features/inline-svg">
+<link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/features/inline-svg">
+<link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/features/inline-svg">
+<!--/i18n:alternates-->
+<link rel="alternate" type="text/plain" href="https://svg.clasicwebtools.com/llms.txt" title="llms.txt — machine-readable site summary">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="author" content="Flozad">
+<meta name="theme-color" content="#ece4d3">
+<meta property="og:site_name" content="SVG Downloader">
+<meta property="og:title" content="Descargar SVG en línea de cualquier página">
+<meta property="og:description" content="El SVG en línea no tiene menú de clic derecho, así que el navegador no lo guarda. SVG Downloader lo lee del DOM, repara el xmlns y guarda el vector original.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://svg.clasicwebtools.com/es/features/inline-svg">
+<meta property="og:image" content="https://svg.clasicwebtools.com/motion/06-brand.png">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="SVG Downloader guardando un vector en línea de una página.">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@lozards">
+<meta name="twitter:title" content="Descargar SVG en línea de cualquier página">
+<meta name="twitter:description" content="El SVG en línea no tiene menú de clic derecho, así que el navegador no lo guarda. SVG Downloader lo lee del DOM, repara el xmlns y guarda el vector original.">
+<meta name="twitter:image" content="https://svg.clasicwebtools.com/motion/06-brand.png">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/fonts/bricolage-var.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/pages.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://svg.clasicwebtools.com/es/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Funciones",
+          "item": "https://svg.clasicwebtools.com/es/features"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "SVG en línea",
+          "item": "https://svg.clasicwebtools.com/es/features/inline-svg"
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://svg.clasicwebtools.com/es/features/inline-svg",
+      "url": "https://svg.clasicwebtools.com/es/features/inline-svg",
+      "name": "Descargar SVG en línea de cualquier página",
+      "description": "Cómo extrae SVG Downloader los elementos <svg> en línea del DOM y guarda el vector original.",
+      "inLanguage": "es",
+      "isPartOf": {
+        "@id": "https://svg.clasicwebtools.com/es/#website"
+      },
+      "about": {
+        "@id": "https://svg.clasicwebtools.com/es/#app"
+      },
+      "primaryImageOfPage": "https://svg.clasicwebtools.com/motion/06-brand.png"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Saltar al contenido</a>
+
+<nav class="nav">
+  <a class="brand" href="/es/">
+    <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+      <rect width="48" height="48" rx="10" fill="var(--plot)"></rect>
+      <path d="M24 13v15m0 0l-6.5-6.5M24 28l6.5-6.5" fill="none" stroke="var(--surface-hi)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+      <rect x="16.5" y="33.5" width="15" height="2.4" rx="1.2" fill="var(--surface-hi)"></rect>
+    </svg>
+    <strong>SVG&nbsp;Downloader</strong>
+  </a>
+  <span class="spacer"></span>
+  <span class="nav-links">
+    <a href="/es/features" aria-current="page">Funciones</a>
+    <a href="/es/tutorials">Tutoriales</a>
+    <a href="/es/guides">Guías</a>
+    <a href="/es/docs">Docs</a>
+    <a href="/es/privacy">Privacidad</a>
+    <a href="/es/use-cases">Historias</a>
+  </span><!--i18n:switch-->
+  <details class="lang-switch">
+    <summary aria-label="Idioma"><span>ES</span></summary>
+    <ul>
+      <li><a href="/features/inline-svg" hreflang="en" lang="en">English</a></li>
+      <li><a href="/es/features/inline-svg" hreflang="es" lang="es" aria-current="true">Español</a></li>
+      <li><a href="/fr/features/inline-svg" hreflang="fr" lang="fr">Français</a></li>
+      <li><a href="/de/features/inline-svg" hreflang="de" lang="de">Deutsch</a></li>
+      <li><a href="/pt-br/features/inline-svg" hreflang="pt-BR" lang="pt-BR">Português</a></li>
+    </ul>
+  </details>
+  <!--/i18n:switch-->
+  <a class="nav-cta" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Instalar la extensión</a>
+</nav>
+
+<main id="main">
+<header class="page-hero"><div class="wrap">
+  <ol class="crumbs">
+    <li><a href="/es/">Inicio</a></li>
+    <li><a href="/es/features">Funciones</a></li>
+    <li><span aria-current="page">SVG en línea</span></li>
+  </ol>
+  <p class="eyebrow">Función — todas las fuentes · 1 de 4</p>
+  <h1>Descarga <span class="plot">SVG&nbsp;en&nbsp;línea</span> de cualquier página</h1>
+  <p class="lede">Un <code>&lt;svg&gt;</code> en línea se dibuja directamente en el HTML, así que no tiene URL de imagen ni menú de clic derecho. SVG Downloader lo lee directo del DOM, lo repara y te entrega el archivo original.</p>
+  <div class="cta">
+    <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 12v16m0 0l-7-7m7 7l7-7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"></path><rect x="16" y="34" width="16" height="2.6" rx="1.3" fill="currentColor"></rect></svg>
+      Instalar la extensión</a>
+    <a class="btn quiet" href="/es/guides/how-to-download-svg-from-any-website">Leer el paso a paso →</a>
+  </div>
+</div></header>
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">El problema</p>
+  <h2>Por qué el navegador no guarda el SVG en línea</h2>
+  <p class="lead-in">Casi todos los iconos de un sitio moderno son SVG en línea: el marcado vive directamente en el HTML de la página y no en un archivo aparte. Estupendo para el rendimiento y los estilos, y pésimo para guardarlo. No hay <code>src</code> que abrir en otra pestaña, no hay entrada en el menú del clic derecho y <em>Guardar imagen como…</em> está atenuado o directamente no aparece.</p>
+  <p>Los apaños habituales son malos. Capturar el icono te da un mapa de bits borroso atado a un tamaño. Rebuscar en DevTools significa cazar el nodo <code>&lt;svg&gt;</code> correcto, copiar su HTML externo, pegarlo en un archivo y descubrir que no abre porque falta el espacio de nombres. Querías un archivo de 400 bytes; te llevaste una tarea.</p>
+
+  <h2>Qué hace SVG Downloader en su lugar</h2>
+  <p>Abre el popup en cualquier página y recorre el DOM en busca de todos los elementos <code>&lt;svg&gt;</code>, incluidos los anidados en lo hondo de componentes, el marcado adyacente al shadow DOM y los sets de iconos repetidos. Cada uno recibe una vista previa aislada para que veas exactamente qué vas a guardar, fuera de la página abarrotada. Elige uno y escribirá el marcado original en un archivo <code>.svg</code> de verdad.</p>
+  <ul>
+    <li><strong>Los trazados reales, no un redibujado.</strong> Lo que se guarda es el SVG que estaba en la página: sus atributos <code>d</code> exactos, su <code>viewBox</code>, su propia precisión. Se mantiene nítido a 16 px o a 1600 px y sigue siendo texto editable que puedes recolorear.</li>
+    <li><strong>Un <code>xmlns</code> reparado.</strong> El SVG en línea suele omitir el espacio de nombres <code>xmlns="http://www.w3.org/2000/svg"</code> porque lo aporta el navegador. Copiado a un archivo suelto, ese SVG no abre. SVG Downloader lo devuelve para que el archivo funcione en Figma, Illustrator, VS Code y todos los navegadores.</li>
+    <li><strong>El nombre lo pones tú.</strong> Escribe un nombre en el popup antes de guardar y el archivo saldrá exactamente así —<code>star.svg</code>, no <code>descarga (3).svg</code>—. Déjalo en blanco y recurrirá a un <code>svg-1.svg</code> numerado, con el prefijo que hayas puesto en las opciones de la extensión.</li>
+  </ul>
+
+  <h2>Qué obtienes</h2>
+  <dl class="facts">
+    <div><dt>Formato</dt><dd>Un archivo <strong>.svg</strong> limpio y conforme al estándar: el marcado vectorial original con el espacio de nombres reparado.</dd></div>
+    <div><dt>Fidelidad</dt><dd>Cada trazado y cada <code>viewBox</code> conservados. <strong>Independiente de la resolución</strong> y todavía recoloreable.</dd></div>
+    <div><dt>Dónde se ejecuta</dt><dd>Por completo <strong>en tu navegador</strong>. El SVG en línea nunca sale de la página: no hay subidas ni servidor.</dd></div>
+    <div><dt>También detecta</dt><dd><a href="/es/features/css-background-svg">Fondos CSS</a>, <a href="/es/features/svg-sprite-extractor">referencias de sprite</a> y <a href="/es/features/bulk-zip-download">ZIP de la página entera</a>.</dd></div>
+  </dl>
+</div></section>
+
+<hr class="section-rule">
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Conviene saber</p>
+  <h2>Preguntas sobre el SVG en línea</h2>
+  <div class="faq">
+    <details>
+      <summary>¿Por qué no puedo guardar un SVG en línea con clic derecho?</summary>
+      <div class="faq-body"><p>Porque un <code>&lt;svg&gt;</code> en línea forma parte del documento, no es una imagen con dirección propia. El navegador solo ofrece <em>Guardar imagen como…</em> para lo que trata como imágenes: <code>&lt;img&gt;</code>, fondos CSS, canvas. El SVG en línea no tiene URL que guardar, así que la opción nunca aparece.</p></div>
+    </details>
+    <details>
+      <summary>El SVG que copié de DevTools no abre. ¿Por qué?</summary>
+      <div class="faq-body"><p>Casi siempre falta el espacio de nombres. El SVG en línea depende del analizador de HTML para saber que es SVG; un archivo suelto necesita un <code>xmlns="http://www.w3.org/2000/svg"</code> explícito. SVG Downloader lo añade automáticamente, así que sus archivos abren en cualquier sitio sin retoques.</p></div>
+    </details>
+    <details>
+      <summary>¿El icono descargado conservará su color?</summary>
+      <div class="faq-body"><p>Conserva el color que esté grabado en el marcado. Muchos iconos en línea heredan su color del CSS (<code>currentColor</code>), así que el archivo guardado puede salir negro. Si quieres fijar antes un color concreto, usa el salto a SVG Color Changer y luego guarda.</p></div>
+    </details>
+  </div>
+</div></section>
+
+<hr class="section-rule">
+
+<section><div class="wrap">
+  <div class="cta-band">
+    <div>
+      <h2>Llévate ese icono en dos clics</h2>
+      <p>Gratis, privado, y lee el SVG en línea que el navegador finge que no está.</p>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Instalar la extensión</a>
+      <a class="btn quiet" href="/es/features">Todas las funciones →</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="related"><div class="wrap">
+  <p class="eyebrow">Seguir leyendo</p>
+  <ul>
+    <li><a href="/es/features/css-background-svg">SVG en fondo CSS<span>La otra fuente invisible</span></a></li>
+    <li><a href="/es/features/svg-sprite-extractor">SVG de sprite y &lt;use&gt;<span>Partir una hoja de sprites</span></a></li>
+    <li><a href="/es/guides/how-to-extract-svg-icons-from-a-website">Extraer iconos SVG<span>Guía paso a paso</span></a></li>
+  </ul>
+</div></section>
+</main>
+
+<footer>
+  <nav class="bleed foot-map" aria-label="Mapa del sitio">
+    <div class="col"><p>Producto</p><ul>
+      <li><a href="/es/">Visión general</a></li>
+      <li><a href="/es/features">Funciones</a></li>
+      <li><a href="/es/compare/svg-downloader-vs-screenshotting-icons">Frente a la captura</a></li>
+      <li><a href="/es/privacy">Privacidad</a></li>
+      <li><a href="/es/use-cases">Casos de uso</a></li>
+    </ul></div>
+    <div class="col"><p>Detecta</p><ul>
+      <li><a href="/es/features/inline-svg">SVG en línea</a></li>
+      <li><a href="/es/features/css-background-svg">SVG en fondo CSS</a></li>
+      <li><a href="/es/features/svg-sprite-extractor">SVG de sprite / &lt;use&gt;</a></li>
+      <li><a href="/es/features/bulk-zip-download">Página entera en ZIP</a></li>
+    </ul></div>
+    <div class="col"><p>Tutoriales</p><ul>
+      <li><a href="/es/tutorials">Los 15 tutoriales</a></li>
+      <li><a href="/es/tutorials/how-to-download-svg-files">Cómo descargar archivos SVG</a></li>
+      <li><a href="/es/tutorials/copy-svg-from-website">Copiar un SVG</a></li>
+      <li><a href="/es/guides">Guías extensas</a></li>
+    </ul></div>
+    <div class="col"><p>Docs</p><ul>
+      <li><a href="/es/docs/installation">Instalación</a></li>
+      <li><a href="/es/docs/usage">Uso</a></li>
+      <li><a href="/es/docs/faq">Preguntas frecuentes</a></li>
+      <li><a href="/es/docs/changelog">Cambios</a></li>
+    </ul></div>
+  </nav>
+  <div class="bleed colophon-foot">
+    <a href="https://github.com/Flozad/svg-downloader">GitHub</a>
+    <a href="https://github.com/Flozad/svg-downloader/issues">Incidencias</a>
+    <a href="https://clasicwebtools.com">clasicwebtools.com</a>
+    <span class="grow"></span>
+    <span>Papel hueso, grafito y un solo verde&nbsp;plóter</span>
+  </div>
+</footer>
+
+
+</body></html>

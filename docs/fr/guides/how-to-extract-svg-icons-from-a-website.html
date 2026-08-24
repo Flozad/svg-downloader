@@ -1,0 +1,336 @@
+<!DOCTYPE html><html lang="fr"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comment extraire les icônes SVG d'un site (le jeu complet)</title>
+<meta name="description" content="Extrayez les icônes SVG de n'importe quel site et enregistrez tout le jeu — feuilletez les composants en ligne, nommez un fichier isolé, puis récupérez les icônes d'un coup en ZIP dédoublonné.">
+<link rel="canonical" href="https://svg.clasicwebtools.com/fr/guides/how-to-extract-svg-icons-from-a-website"><!--i18n:alternates-->
+<link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/guides/how-to-extract-svg-icons-from-a-website">
+<link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/guides/how-to-extract-svg-icons-from-a-website">
+<link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/guides/how-to-extract-svg-icons-from-a-website">
+<link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/guides/how-to-extract-svg-icons-from-a-website">
+<link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/guides/how-to-extract-svg-icons-from-a-website">
+<link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/guides/how-to-extract-svg-icons-from-a-website">
+<!--/i18n:alternates-->
+<link rel="alternate" type="text/plain" href="https://svg.clasicwebtools.com/llms.txt" title="llms.txt — machine-readable site summary">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="author" content="Flozad">
+<meta name="theme-color" content="#ece4d3">
+<meta property="og:site_name" content="SVG Downloader">
+<meta property="og:title" content="Comment extraire les icônes SVG d'un site (le jeu complet)">
+<meta property="og:description" content="Extrayez les icônes SVG de n'importe quel site et enregistrez tout le jeu — feuilletez les composants en ligne, nommez un fichier isolé, puis récupérez les icônes d'un coup en ZIP dédoublonné.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://svg.clasicwebtools.com/fr/guides/how-to-extract-svg-icons-from-a-website">
+<meta property="og:image" content="https://svg.clasicwebtools.com/motion/06-brand.png">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="SVG Downloader enregistrant un vecteur en ligne depuis une page.">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@lozards">
+<meta name="twitter:title" content="Comment extraire les icônes SVG d'un site (le jeu complet)">
+<meta name="twitter:description" content="Extrayez les icônes SVG de n'importe quel site et enregistrez tout le jeu — feuilletez les composants en ligne, nommez un fichier isolé, puis récupérez les icônes d'un coup en ZIP dédoublonné.">
+<meta name="twitter:image" content="https://svg.clasicwebtools.com/motion/06-brand.png">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/fonts/bricolage-var.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/pages.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://svg.clasicwebtools.com/fr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://svg.clasicwebtools.com/fr/guides"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Extraire les icônes SVG d'un site",
+          "item": "https://svg.clasicwebtools.com/fr/guides/how-to-extract-svg-icons-from-a-website"
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "name": "Comment extraire les icônes SVG d'un site",
+      "description": "Enregistrez tout un jeu d'icônes SVG depuis un site avec l'extension SVG Downloader — feuilletez les composants d'icônes en ligne, nommez chaque fichier, et exportez le jeu entier en ZIP dédoublonné.",
+      "image": "https://svg.clasicwebtools.com/motion/06-brand.png",
+      "totalTime": "PT3M",
+      "tool": {
+        "@type": "HowToTool",
+        "name": "Extension de navigateur SVG Downloader"
+      },
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Ouvrez la page du jeu d'icônes",
+          "text": "Allez sur la page qui affiche les icônes — une galerie de composants, une barre de navigation ou une grille de documentation — pour que chaque icône voulue soit présente dans le DOM.",
+          "url": "https://svg.clasicwebtools.com/fr/guides/how-to-extract-svg-icons-from-a-website#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Ouvrez le popup et analysez",
+          "text": "Cliquez sur l'icône SVG Downloader dans la barre d'outils. Il détecte les composants d'icônes SVG en ligne sur toute la page et les liste tous.",
+          "url": "https://svg.clasicwebtools.com/fr/guides/how-to-extract-svg-icons-from-a-website#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Feuilletez le jeu",
+          "text": "Utilisez Précédent et Suivant pour parcourir les aperçus isolés et confirmer les icônes que la page expose.",
+          "url": "https://svg.clasicwebtools.com/fr/guides/how-to-extract-svg-icons-from-a-website#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Nommez des icônes précises (facultatif)",
+          "text": "Pour une icône que vous voulez à part, renseignez le nom de fichier facultatif et cliquez sur Télécharger le SVG courant pour qu'elle arrive sous un nom reconnaissable.",
+          "url": "https://svg.clasicwebtools.com/fr/guides/how-to-extract-svg-icons-from-a-website#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Prenez tout le jeu en ZIP",
+          "text": "Cliquez sur Tout télécharger en ZIP pour enregistrer les icônes d'un coup, dédoublonnées et numérotées, avec les ignorées nommées dans la ligne d'état du popup.",
+          "url": "https://svg.clasicwebtools.com/fr/guides/how-to-extract-svg-icons-from-a-website#steps"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Comment enregistrer un jeu d'icônes entier, pas une icône à la fois ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ouvrez la page qui affiche le jeu et cliquez sur Tout télécharger en ZIP. L'extension réunit les SVG trouvés sur la page dans une archive, dédoublonnée : un jeu de quelques dizaines d'icônes descend en un clic."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Les icônes en double seront-elles enregistrées deux fois ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Non. L'export ZIP dédoublonne les SVG identiques : une flèche de navigation présente à dix endroits est enregistrée une fois. L'archive reste propre et correspond à la taille réelle du jeu."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Puis-je contrôler les noms de fichiers ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pour une icône isolée, tapez le nom voulu avant de cliquer sur Télécharger le SVG courant et le fichier s'enregistre exactement sous ce nom. Un ZIP est numéroté à la place — svg-1.svg, svg-2.svg dans l'ordre de la page — et vous pouvez changer le préfixe svg comme bon vous semble dans les options, pour que le jeu arrive en acme-1.svg et suivants."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Trouve-t-il seulement les icônes en ligne, ou aussi les cachées ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Il détecte les composants SVG en ligne, les icônes en fond CSS, les références use vers un sprite du même document et les sources img ou object y compris les URI de données. Si l'icône est affichée sur la page, elle est dans le périmètre. Les icônes que la page n'a pas encore chargées n'apparaîtront qu'une fois chargées."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Les icônes extraites restent-elles des vecteurs modifiables ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. Chaque fichier est le balisage SVG d'origine, tracés et viewBox intacts et espace de noms xmlns réparé : il s'ouvre et se modifie proprement dans Figma, Illustrator ou un éditeur de code."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Aller au contenu</a>
+
+<nav class="nav">
+  <a class="brand" href="/fr/">
+    <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+      <rect width="48" height="48" rx="10" fill="var(--plot)"></rect>
+      <path d="M24 13v15m0 0l-6.5-6.5M24 28l6.5-6.5" fill="none" stroke="var(--surface-hi)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+      <rect x="16.5" y="33.5" width="15" height="2.4" rx="1.2" fill="var(--surface-hi)"></rect>
+    </svg>
+    <strong>SVG&nbsp;Downloader</strong>
+  </a>
+  <span class="spacer"></span>
+  <span class="nav-links">
+    <a href="/fr/features">Fonctions</a>
+    <a href="/fr/tutorials">Tutoriels</a>
+    <a href="/fr/guides" aria-current="page">Guides</a>
+    <a href="/fr/docs">Docs</a>
+    <a href="/fr/privacy">Confidentialité</a>
+    <a href="/fr/use-cases">Histoires</a>
+  </span><!--i18n:switch-->
+  <details class="lang-switch">
+    <summary aria-label="Langue"><span>FR</span></summary>
+    <ul>
+      <li><a href="/guides/how-to-extract-svg-icons-from-a-website" hreflang="en" lang="en">English</a></li>
+      <li><a href="/es/guides/how-to-extract-svg-icons-from-a-website" hreflang="es" lang="es">Español</a></li>
+      <li><a href="/fr/guides/how-to-extract-svg-icons-from-a-website" hreflang="fr" lang="fr" aria-current="true">Français</a></li>
+      <li><a href="/de/guides/how-to-extract-svg-icons-from-a-website" hreflang="de" lang="de">Deutsch</a></li>
+      <li><a href="/pt-br/guides/how-to-extract-svg-icons-from-a-website" hreflang="pt-BR" lang="pt-BR">Português</a></li>
+    </ul>
+  </details>
+  <!--/i18n:switch-->
+  <a class="nav-cta" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Installer l'extension</a>
+</nav>
+
+<main id="main">
+<header class="page-hero"><div class="wrap">
+  <ol class="crumbs">
+    <li><a href="/fr/">Accueil</a></li>
+    <li><a href="/fr/guides">Guides</a></li>
+    <li><span aria-current="page">Extraire des icônes SVG</span></li>
+  </ol>
+  <p class="eyebrow">Guide — jeux d'icônes</p>
+  <h1>Comment <span class="plot">extraire les icônes SVG</span> d'un site</h1>
+  <p class="lede">Prendre une icône est facile. Prendre tout un jeu — chaque flèche, glyphe et logo qu'une page affiche, numéroté et dédoublonné — c'est à cela que sert ce guide.</p>
+  <div class="cta">
+    <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 12v16m0 0l-7-7m7 7l7-7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"></path><rect x="16" y="34" width="16" height="2.6" rx="1.3" fill="currentColor"></rect></svg>
+      Installer l'extension</a>
+    <a class="btn quiet" href="#steps">Aller aux étapes ↓</a>
+  </div>
+</div></header>
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">La forme du problème</p>
+  <h2>Un jeu d'icônes n'est pas un dossier de fichiers</h2>
+  <p class="lead-in">Quand un site livre un jeu d'icônes, vous voyez rarement des fichiers. Vous voyez des composants. Chaque icône est un <code>&lt;svg&gt;</code> en ligne rendu par le framework, ou une référence <code>&lt;use&gt;</code> vers un sprite caché, ou un fond CSS. Enregistrer tout le jeu à la main, c'est ouvrir DevTools des dizaines de fois, copier du balisage, réparer des espaces de noms et inventer des noms de fichiers — pour un jeu qui peut compter soixante icônes.</p>
+  <p>SVG Downloader transforme cela en une seule analyse. Il lit la page rendue, détecte chaque icône comme du vrai balisage SVG — voyez <a href="/fr/features/inline-svg">comment marche la lecture en ligne</a> — et vous laisse deux sorties : une icône à la fois avec le nom de votre choix, ou le jeu entier dans un seul ZIP.</p>
+
+  <figure class="shot"><div class="shot-mount"><span class="shot-tag">Détecter</span><img src="/motion/01-find.png" alt="SVG Downloader détectant un jeu complet de composants d'icônes SVG en ligne sur un site" width="1280" height="800" loading="lazy"></div><figcaption class="shot-cap">Une analyse liste chaque icône en ligne que la page affiche — sans DevTools, sans copier-coller.</figcaption></figure>
+
+  <h2 id="steps">Extraire le jeu — pas à pas</h2>
+  <ol>
+    <li><strong>Ouvrez la page du jeu d'icônes.</strong> Allez sur la vue qui affiche réellement les icônes — une galerie de composants, une barre de navigation, une grille de documentation. Ce que la page n'a pas encore dessiné n'est pas dans le DOM : assurez-vous que le jeu est à l'écran.</li>
+    <li><strong>Ouvrez le popup et analysez.</strong> Cliquez sur l'icône de la barre d'outils. SVG Downloader détecte les composants d'icônes SVG en ligne sur toute la page et liste chacun d'eux.</li>
+    <li><strong>Feuilletez le jeu.</strong> Utilisez <em>Précédent</em> et <em>Suivant</em> pour parcourir les aperçus isolés et confirmer ce que la page expose. C'est aussi votre vérification que tout le jeu est présent avant l'export.</li>
+    <li><strong>Nommez ceux que vous voulez à part.</strong> Pour une icône isolée, renseignez le nom de fichier facultatif, puis cliquez sur <em>Télécharger le SVG courant</em> pour qu'elle arrive en <code>chevron-left.svg</code> plutôt qu'en <code>téléchargement (3).svg</code>.</li>
+    <li><strong>Prenez tout le jeu en ZIP.</strong> Cliquez sur <em>Tout télécharger en ZIP</em>. Les icônes descendent d'un coup, dédoublonnées, et la ligne d'état du popup nomme tout ce qui n'a pas pu être résolu — voyez le <a href="/fr/guides/download-all-svgs-as-zip">guide ZIP</a> pour le détail de cet export.</li>
+  </ol>
+
+  <h2>Pourquoi l'export du jeu entier est la voie rapide</h2>
+  <p>La <a href="/fr/features/bulk-zip-download">fonction ZIP en masse</a> est faite exactement pour ça. Les jeux d'icônes regorgent de répétitions — la même flèche dans une douzaine de menus, un logo en en-tête et en pied — et une récolte naïve enregistrerait chaque instance. SVG Downloader dédoublonne les SVG identiques : l'archive reflète le jeu réel — soixante rendus peuvent faire quarante icônes uniques, et c'est ce que vous obtenez. Les fichiers sont numérotés dans l'ordre de la page — <code>svg-1.svg</code>, <code>svg-2.svg</code> — pour se déballer dans la séquence feuilletée dans l'aperçu, et le préfixe <code>svg</code> est modifiable dans les options de l'extension.</p>
+
+  <h2>Ce sur quoi vous pouvez compter</h2>
+  <ul>
+    <li><strong>Des vecteurs d'origine, pas des rendus.</strong> Chaque fichier est le SVG qui était dans la page — ses tracés exacts et son <code>viewBox</code> — chaque icône reste donc nette à toute taille et reste modifiable.</li>
+    <li><strong>Espaces de noms réparés.</strong> Le <code>xmlns</code> manquant qui casse un SVG en ligne copié est remis, si bien que chaque fichier du ZIP s'ouvre dans Figma, Illustrator et VS Code.</li>
+    <li><strong>Rien ne quitte votre machine.</strong> Toute l'extraction tourne sur l'appareil — pas de serveur, pas de compte, pas d'envoi, pas d'analytique.</li>
+  </ul>
+
+  <dl class="facts">
+    <div><dt>Idéal pour</dt><dd>Les <strong>jeux d'icônes</strong> complets — galeries, barres de navigation, grilles de documentation rendues en composants en ligne.</dd></div>
+    <div><dt>Deux sorties</dt><dd><strong>Télécharger le courant</strong> avec un nom personnalisé, ou <strong>Tout télécharger en ZIP</strong> pour le jeu.</dd></div>
+    <div><dt>Dédoublonné</dt><dd>Les icônes répétées sont enregistrées <strong>une fois</strong> : l'archive correspond au jeu réel.</dd></div>
+    <div><dt>À voir aussi</dt><dd>Voyez <a href="/fr/features/inline-svg">SVG en ligne</a> et <a href="/fr/features/bulk-zip-download">ZIP de page entière</a>.</dd></div>
+  </dl>
+</div></section>
+
+<hr class="section-rule">
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Bon à savoir</p>
+  <h2>Questions fréquentes</h2>
+  <div class="faq">
+    <details>
+      <summary>Comment enregistrer un jeu d'icônes entier, pas une icône à la fois ?</summary>
+      <div class="faq-body"><p>Ouvrez la page qui affiche le jeu et cliquez sur <em>Tout télécharger en ZIP</em>. L'extension réunit les SVG trouvés sur la page dans une archive, dédoublonnée : un jeu de quelques dizaines d'icônes descend en un clic.</p></div>
+    </details>
+    <details>
+      <summary>Les icônes en double seront-elles enregistrées deux fois ?</summary>
+      <div class="faq-body"><p>Non. L'export ZIP dédoublonne les SVG identiques : une flèche de navigation présente à dix endroits est enregistrée une fois. L'archive reste propre et correspond à la taille réelle du jeu.</p></div>
+    </details>
+    <details>
+      <summary>Puis-je contrôler les noms de fichiers ?</summary>
+      <div class="faq-body"><p>Pour une icône isolée, tapez le nom voulu avant de cliquer sur <em>Télécharger le SVG courant</em> et le fichier s'enregistre exactement sous ce nom. Un ZIP est numéroté à la place — <code>svg-1.svg</code>, <code>svg-2.svg</code> dans l'ordre de la page — et vous pouvez changer le préfixe <code>svg</code> comme bon vous semble dans les options, pour que le jeu arrive en <code>acme-1.svg</code> et suivants.</p></div>
+    </details>
+    <details>
+      <summary>Trouve-t-il seulement les icônes en ligne, ou aussi les cachées ?</summary>
+      <div class="faq-body"><p>Il détecte les composants SVG en ligne, les icônes en fond CSS, les références <code>&lt;use&gt;</code> vers un sprite du même document et les sources <code>&lt;img&gt;</code> ou <code>&lt;object&gt;</code> y compris les URI <code>data:</code>. Si l'icône est affichée sur la page, elle est dans le périmètre. Les icônes que la page n'a pas encore chargées n'apparaîtront qu'une fois chargées.</p></div>
+    </details>
+    <details>
+      <summary>Les icônes extraites restent-elles des vecteurs modifiables ?</summary>
+      <div class="faq-body"><p>Oui. Chaque fichier est le balisage SVG d'origine, tracés et <code>viewBox</code> intacts et espace de noms <code>xmlns</code> réparé : il s'ouvre et se modifie proprement dans Figma, Illustrator ou un éditeur de code.</p></div>
+    </details>
+  </div>
+</div></section>
+
+<hr class="section-rule">
+
+<section><div class="wrap">
+  <div class="cta-band">
+    <div>
+      <h2>Prenez tout le jeu en un clic</h2>
+      <p>Gratuit, privé, et il dédoublonne le jeu pour ne garder que l'essentiel.</p>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Installer l'extension</a>
+      <a class="btn quiet" href="/fr/guides">Tous les guides →</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="related"><div class="wrap">
+  <p class="eyebrow">À lire ensuite</p>
+  <ul>
+    <li><a href="/fr/guides/how-to-download-svg-from-any-website">Télécharger depuis n'importe quel site<span>La méthode universelle</span></a></li>
+    <li><a href="/fr/guides/download-all-svgs-as-zip">Tout télécharger en ZIP<span>Tous les SVG d'un coup</span></a></li>
+    <li><a href="/fr/features/bulk-zip-download">Page entière en ZIP<span>La fonction en masse</span></a></li>
+  </ul>
+</div></section>
+</main>
+
+<footer>
+  <nav class="bleed foot-map" aria-label="Plan du site">
+    <div class="col"><p>Produit</p><ul>
+      <li><a href="/fr/">Vue d'ensemble</a></li>
+      <li><a href="/fr/features">Fonctions</a></li>
+      <li><a href="/fr/compare/svg-downloader-vs-screenshotting-icons">Face à la capture</a></li>
+      <li><a href="/fr/privacy">Confidentialité</a></li>
+      <li><a href="/fr/use-cases">Cas d'usage</a></li>
+    </ul></div>
+    <div class="col"><p>Ce qu'il attrape</p><ul>
+      <li><a href="/fr/features/inline-svg">SVG en ligne</a></li>
+      <li><a href="/fr/features/css-background-svg">SVG en fond CSS</a></li>
+      <li><a href="/fr/features/svg-sprite-extractor">SVG de sprite / &lt;use&gt;</a></li>
+      <li><a href="/fr/features/bulk-zip-download">Page entière en ZIP</a></li>
+    </ul></div>
+    <div class="col"><p>Tutoriels</p><ul>
+      <li><a href="/fr/tutorials">Les 15 tutoriels</a></li>
+      <li><a href="/fr/tutorials/how-to-download-svg-files">Comment télécharger des fichiers SVG</a></li>
+      <li><a href="/fr/tutorials/copy-svg-from-website">Copier un SVG</a></li>
+      <li><a href="/fr/guides">Guides détaillés</a></li>
+    </ul></div>
+    <div class="col"><p>Docs</p><ul>
+      <li><a href="/fr/docs/installation">Installation</a></li>
+      <li><a href="/fr/docs/usage">Utilisation</a></li>
+      <li><a href="/fr/docs/faq">FAQ</a></li>
+      <li><a href="/fr/docs/changelog">Journal des versions</a></li>
+    </ul></div>
+  </nav>
+  <div class="bleed colophon-foot">
+    <a href="https://github.com/Flozad/svg-downloader">GitHub</a>
+    <a href="https://github.com/Flozad/svg-downloader/issues">Tickets</a>
+    <a href="https://clasicwebtools.com">clasicwebtools.com</a>
+    <span class="grow"></span>
+    <span>Papier os, graphite, un seul vert&nbsp;traceur</span>
+  </div>
+</footer>
+
+
+</body></html>

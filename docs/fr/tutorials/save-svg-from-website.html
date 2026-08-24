@@ -1,0 +1,380 @@
+<!DOCTYPE html><html lang="fr"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Enregistrer un SVG depuis un site quand le clic droit refuse</title>
+<meta name="description" content="« Enregistrer l'image sous… » absent ou grisé sur l'icône voulue ? Voici exactement pourquoi, quelles sont les quatre cachettes, et comment enregistrer le vrai vecteur quand même.">
+<link rel="canonical" href="https://svg.clasicwebtools.com/fr/tutorials/save-svg-from-website"><!--i18n:alternates-->
+<link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/save-svg-from-website">
+<link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/save-svg-from-website">
+<link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/save-svg-from-website">
+<link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/save-svg-from-website">
+<link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/save-svg-from-website">
+<link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/save-svg-from-website">
+<!--/i18n:alternates-->
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="Flozad">
+<meta name="theme-color" content="#ece4d3">
+<meta property="og:site_name" content="SVG Downloader">
+<meta property="og:title" content="Enregistrer un SVG depuis un site quand le clic droit refuse">
+<meta property="og:description" content="« Enregistrer l'image sous… » absent ou grisé sur l'icône voulue ? Voici exactement pourquoi, quelles sont les quatre cachettes, et comment enregistrer le vrai vecteur quand même.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://svg.clasicwebtools.com/fr/tutorials/save-svg-from-website">
+<meta property="og:image" content="https://svg.clasicwebtools.com/motion/tutorials/save-svg-from-website.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="Le popup SVG Downloader affichant l'aperçu d'une icône cœur sur une page dont le menu contextuel n'offre aucune option d'enregistrement.">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:video" content="https://svg.clasicwebtools.com/motion/tutorials/save-svg-from-website.mp4">
+<meta property="og:video:secure_url" content="https://svg.clasicwebtools.com/motion/tutorials/save-svg-from-website.mp4">
+<meta property="og:video:type" content="video/mp4">
+<meta property="og:video:width" content="1280">
+<meta property="og:video:height" content="800">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@lozards">
+<meta name="twitter:title" content="Enregistrer un SVG depuis un site quand le clic droit refuse">
+<meta name="twitter:description" content="« Enregistrer l'image sous… » absent ou grisé sur l'icône voulue ? Voici exactement pourquoi, quelles sont les quatre cachettes, et comment enregistrer le vrai vecteur quand même.">
+<meta name="twitter:image" content="https://svg.clasicwebtools.com/motion/tutorials/save-svg-from-website.jpg">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/fonts/bricolage-var.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/pages.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://svg.clasicwebtools.com/fr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tutoriels",
+          "item": "https://svg.clasicwebtools.com/fr/tutorials"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Quand le clic droit échoue",
+          "item": "https://svg.clasicwebtools.com/fr/tutorials/save-svg-from-website"
+        }
+      ]
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Enregistrer un SVG quand le clic droit n'a rien à offrir",
+      "description": "Une page dont les icônes n'offrent pas d'option Enregistrer l'image sous…. Le popup SVG Downloader s'ouvre, analyse le DOM, trouve chaque vecteur, feuillette jusqu'à un cœur, le nomme et l'enregistre.",
+      "thumbnailUrl": [
+        "https://svg.clasicwebtools.com/motion/tutorials/save-svg-from-website.jpg"
+      ],
+      "uploadDate": "2026-08-22",
+      "duration": "PT19S",
+      "contentUrl": "https://svg.clasicwebtools.com/motion/tutorials/save-svg-from-website.mp4",
+      "embedUrl": "https://svg.clasicwebtools.com/tutorials/save-svg-from-website",
+      "isFamilyFriendly": true,
+      "publisher": {
+        "@type": "Organization",
+        "name": "SVG Downloader",
+        "url": "https://svg.clasicwebtools.com/fr/"
+      }
+    },
+    {
+      "@type": "HowTo",
+      "name": "Comment enregistrer un SVG quand le clic droit refuse",
+      "description": "« Enregistrer l'image sous… » absent ou grisé sur l'icône voulue ? Voici exactement pourquoi, quelles sont les quatre cachettes, et comment enregistrer le vrai vecteur quand même.",
+      "image": "https://svg.clasicwebtools.com/motion/tutorials/save-svg-from-website.jpg",
+      "totalTime": "PT2M",
+      "tool": {
+        "@type": "HowToTool",
+        "name": "Extension de navigateur SVG Downloader"
+      },
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Laissez le menu contextuel tranquille",
+          "text": "Si Enregistrer l'image sous… manque ou est grisé, aucun nombre de tentatives ne le fera apparaître. L'absence est une information, pas un défaut.",
+          "url": "https://svg.clasicwebtools.com/fr/tutorials/save-svg-from-website#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Ouvrez le popup",
+          "text": "Cliquez sur le bouton de la barre d'outils sur la page. L'analyse résout les quatre sources en balisage autonome — en ligne, fond CSS, référence de sprite et source d'image pareillement.",
+          "url": "https://svg.clasicwebtools.com/fr/tutorials/save-svg-from-website#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Prévisualisez pour identifier la bonne",
+          "text": "L'aperçu isolé est le moyen le plus rapide de distinguer deux icônes semblables, surtout dans un jeu où la page les affiche en 16 px.",
+          "url": "https://svg.clasicwebtools.com/fr/tutorials/save-svg-from-website#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Nommez-la et enregistrez",
+          "text": "Tapez un nom de fichier et appuyez sur Télécharger le courant. L'espace de noms est réparé à la sortie, le fichier s'ouvre donc dans Figma, Illustrator et tous les navigateurs.",
+          "url": "https://svg.clasicwebtools.com/fr/tutorials/save-svg-from-website#steps"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Pourquoi Enregistrer l'image sous… est-il grisé sur un SVG ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Parce que le navigateur ne classe pas cet élément comme une image récupérable. Le balisage SVG en ligne, les images de fond CSS et les références de sprite n'ont aucune adresse derrière eux : l'entrée de menu n'a donc rien sur quoi agir."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Existe-t-il un réglage du navigateur qui active cela ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Non. Ce n'est ni une permission ni une préférence — l'entrée manque parce que la chose sous-jacente n'est réellement pas une ressource image enregistrable. Lire la page est le contournement."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Puis-je simplement faire une capture à la place ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Vous pouvez, mais vous perdez tout l'intérêt d'un vecteur. Une capture est une grille fixe de pixels qui floute à l'agrandissement et ne peut pas être recolorée. Le SVG enregistré reste net à toute taille et peut être restylé."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Et copier le balisage depuis DevTools ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cela marche, mais le balisage copié manque souvent de l'espace de noms xmlns : le fichier ne s'ouvrira pas tant que vous ne l'aurez pas ajouté à la main. L'extension répare cela automatiquement."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Cela marche-t-il sur tous les sites ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sur toute page ouvrable dans Chrome 88+, Edge ou Brave. Il ne peut pas atteindre les pages internes du navigateur, les galeries d'extensions, ni un contenu derrière une connexion que vous n'avez pas."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Aller au contenu</a>
+
+<nav class="nav">
+  <a class="brand" href="/fr/">
+    <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+      <rect width="48" height="48" rx="10" fill="var(--plot)"></rect>
+      <path d="M24 13v15m0 0l-6.5-6.5M24 28l6.5-6.5" fill="none" stroke="var(--surface-hi)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+      <rect x="16.5" y="33.5" width="15" height="2.4" rx="1.2" fill="var(--surface-hi)"></rect>
+    </svg>
+    <strong>SVG&nbsp;Downloader</strong>
+  </a>
+  <span class="spacer"></span>
+  <span class="nav-links">
+    <a href="/fr/features">Fonctions</a>
+    <a href="/fr/tutorials" aria-current="page">Tutoriels</a>
+    <a href="/fr/guides">Guides</a>
+    <a href="/fr/docs">Docs</a>
+    <a href="/fr/use-cases">Histoires</a>
+  </span><!--i18n:switch-->
+  <details class="lang-switch">
+    <summary aria-label="Langue"><span>FR</span></summary>
+    <ul>
+      <li><a href="/tutorials/save-svg-from-website" hreflang="en" lang="en">English</a></li>
+      <li><a href="/es/tutorials/save-svg-from-website" hreflang="es" lang="es">Español</a></li>
+      <li><a href="/fr/tutorials/save-svg-from-website" hreflang="fr" lang="fr" aria-current="true">Français</a></li>
+      <li><a href="/de/tutorials/save-svg-from-website" hreflang="de" lang="de">Deutsch</a></li>
+      <li><a href="/pt-br/tutorials/save-svg-from-website" hreflang="pt-BR" lang="pt-BR">Português</a></li>
+    </ul>
+  </details>
+  <!--/i18n:switch-->
+  <a class="nav-cta" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Installer l'extension</a>
+</nav>
+
+<main id="main">
+<header class="page-hero"><div class="wrap">
+  <ol class="crumbs">
+    <li><a href="/fr/">Accueil</a></li>
+    <li><a href="/fr/tutorials">Tutoriels</a></li>
+    <li><span aria-current="page">Quand le clic droit échoue</span></li>
+  </ol>
+  <p class="eyebrow">Tutoriel — le menu grisé</p>
+  <h1>Comment <span class="plot">enregistrer un SVG</span> quand le clic droit refuse</h1>
+  <p class="lede">Vous faites un clic droit sur l'icône et il n'y a aucun <em>Enregistrer l'image sous…</em>. Rien n'est cassé et vous n'avez raté aucun réglage — le navigateur ne considère réellement pas cette chose comme une image.</p>
+  <div class="cta">
+    <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 12v16m0 0l-7-7m7 7l7-7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"></path><rect x="16" y="34" width="16" height="2.6" rx="1.3" fill="currentColor"></rect></svg>
+      Installer l'extension</a>
+    <a class="btn quiet" href="#steps">Aller aux étapes ↓</a>
+  </div>
+</div></header>
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">À regarder — 19 secondes</p>
+  <h2>Enregistrer ce que le menu refuse d'offrir</h2>
+  <figure class="shot">
+    <div class="shot-mount">
+      <span class="shot-tag">tutoriel · sans clic droit</span>
+      <video src="/motion/tutorials/save-svg-from-website.mp4" poster="/motion/tutorials/save-svg-from-website.jpg" muted="" loop="" playsinline="" preload="none" aria-label="Une page dont les icônes n'offrent pas d'option Enregistrer l'image sous…. Le popup SVG Downloader s'ouvre, analyse le DOM, trouve chaque vecteur, feuillette jusqu'à un cœur, le nomme et l'enregistre."></video>
+    </div>
+    <figcaption class="shot-cap">Chaque icône de cette page refuse le menu d'enregistrement. Les 24 sortent quand même.</figcaption>
+  </figure>
+
+  <p class="lead-in">L'enregistrement s'ouvre sur une page où pas une icône n'offre d'option d'enregistrement. Ce n'est pas une page inhabituelle — c'est ainsi que la plupart des systèmes d'icônes sont livrés.</p>
+  <p class="eyebrow">Ce que montre l'enregistrement</p>
+  <ol class="beats">
+    <li>Enregistrer l'image sous… manque sur chaque icône ici</li>
+    <li>L'extension lit le DOM plutôt que le menu</li>
+    <li>En ligne, fond CSS, sprite, img — tous trouvés</li>
+    <li>Choisissez celui que vous voulez vraiment</li>
+    <li>Nommez-le</li>
+    <li>Enregistré — un vrai vecteur, pas une capture</li>
+  </ol>
+</div></section>
+
+<hr class="section-rule">
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">La vraie raison</p>
+  <h2>Le navigateur ne propose d'enregistrer que ce qu'il peut récupérer</h2>
+  
+  <p class="lead-in"><em>Enregistrer l'image sous…</em> apparaît quand le navigateur a une image avec une adresse qu'il peut demander. Cette catégorie est plus étroite qu'il n'y paraît, et les systèmes d'icônes modernes en sortent presque entièrement. Un SVG se cache à quatre endroits sur une page, et un seul se comporte bien.</p>
+  <ul>
+    <li><strong><code>&lt;svg&gt;</code> en ligne.</strong> Le balisage est écrit droit dans le HTML. Pas de <code>src</code>, pas d'URL, rien à récupérer — le menu n'offre donc rien. C'est ainsi que la grande majorité des icônes sont livrées aujourd'hui. <a href="/fr/features/inline-svg">Comment il est lu →</a></li>
+    <li><strong><code>background-image</code> CSS.</strong> Le vecteur est posé dans une feuille de style, souvent en URI <code>data:</code> encastré. Le navigateur le classe en décoration plutôt qu'en contenu. <a href="/fr/features/css-background-svg">Comment il est lu →</a></li>
+    <li><strong>Références <code>&lt;use&gt;</code> de sprite.</strong> Un sprite caché contient toutes les icônes ; chaque endroit où une icône apparaît n'est qu'un pointeur vers lui. Enregistrer le pointeur donne un fichier vide. <a href="/fr/features/svg-sprite-extractor">Comment il est lu →</a></li>
+    <li><strong>Sources <code>&lt;img&gt;</code> et <code>&lt;object&gt;</code>.</strong> Le cas aimable — et même là, la source peut être un URI <code>data:</code> que la boîte d'enregistrement massacre, ou une URL cross-origin enregistrée sous un nom sans intérêt.</li>
+  </ul>
+  <p>Trois des quatre ne peuvent donc pas être enregistrés ainsi, même en principe. Lire le DOM marche pour les quatre, car à ce stade chacun a été résolu en balisage réel par le navigateur lui-même.</p>
+
+  <h2 id="steps">L'enregistrer quand même</h2>
+  <p>Vous n'avez pas besoin de savoir lequel des quatre vous regardez. C'est tout l'intérêt.</p>
+  <ol>
+    <li><strong>Laissez le menu contextuel tranquille.</strong> Si <em>Enregistrer l'image sous…</em> manque ou est grisé, aucun nombre de tentatives ne le fera apparaître. L'absence est une information, pas un défaut.</li>
+    <li><strong>Ouvrez le popup.</strong> Cliquez sur le bouton de la barre d'outils sur la page. L'analyse résout les quatre sources en balisage autonome — en ligne, fond CSS, référence de sprite et source d'image pareillement.</li>
+    <li><strong>Prévisualisez pour identifier la bonne.</strong> L'aperçu isolé est le moyen le plus rapide de distinguer deux icônes semblables, surtout dans un jeu où la page les affiche en 16 px.</li>
+    <li><strong>Nommez-la et enregistrez.</strong> Tapez un nom de fichier et appuyez sur <em>Télécharger le courant</em>. L'espace de noms est réparé à la sortie, le fichier s'ouvre donc dans Figma, Illustrator et tous les navigateurs.</li>
+  </ol>
+
+  
+  <h2>Des choses qui ressemblent à des solutions mais n'en sont pas</h2>
+  <ul>
+    <li><strong>En faire une capture.</strong> Cela convertit un vecteur indépendant de la résolution en une grille fixe de pixels, définitivement. Il floutera dès qu'on l'agrandira, et il ne peut pas être recoloré. <a href="/fr/compare/svg-downloader-vs-screenshotting-icons">La comparaison complète →</a></li>
+    <li><strong>Copier le balisage depuis DevTools.</strong> Cela marche, mais c'est fastidieux, et le balisage copié n'a pas l'espace de noms <code>xmlns</code> : le fichier obtenu ne s'ouvrira pas tant que vous ne l'aurez pas ajouté à la main. Si vous voulez le balisage plutôt qu'un fichier, <a href="/fr/tutorials/copy-svg-from-website">Copier le code</a> fait le même travail avec l'espace de noms déjà corrigé.</li>
+    <li><strong>Chercher le fichier dans l'onglet Réseau.</strong> Très bien pour les sources <code>&lt;img&gt;</code>. Inutile pour les trois autres, car aucune requête n'a jamais été faite — le balisage est arrivé dans le document HTML.</li>
+  </ul>
+
+  <dl class="facts">
+    <div><dt>Pourquoi ça échoue</dt><dd>Trois des quatre sources de SVG <strong>n'ont aucune adresse récupérable</strong>.</dd></div>
+    <div><dt>Ce qui marche</dt><dd>Lire le DOM affiché, où les quatre ont été résolues en balisage réel.</dd></div>
+    <div><dt>En prime</dt><dd>Le <code>xmlns</code> manquant est réparé, le fichier s'ouvre donc réellement.</dd></div>
+    <div><dt>À voir aussi</dt><dd><a href="/fr/tutorials/grab-svg-from-website">Une voie plus rapide pour une icône</a> · <a href="/fr/features/inline-svg">SVG en ligne</a></dd></div>
+  </dl>
+</div></section>
+
+<hr class="section-rule">
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Bon à savoir</p>
+  <h2>Questions fréquentes</h2>
+  <div class="faq">
+    <details>
+      <summary>Pourquoi Enregistrer l'image sous… est-il grisé sur un SVG ?</summary>
+      <div class="faq-body"><p>Parce que le navigateur ne classe pas cet élément comme une image récupérable. Le balisage SVG en ligne, les images de fond CSS et les références de sprite n'ont aucune adresse derrière eux : l'entrée de menu n'a donc rien sur quoi agir.</p></div>
+    </details>
+    <details>
+      <summary>Existe-t-il un réglage du navigateur qui active cela ?</summary>
+      <div class="faq-body"><p>Non. Ce n'est ni une permission ni une préférence — l'entrée manque parce que la chose sous-jacente n'est réellement pas une ressource image enregistrable. Lire la page est le contournement.</p></div>
+    </details>
+    <details>
+      <summary>Puis-je simplement faire une capture à la place ?</summary>
+      <div class="faq-body"><p>Vous pouvez, mais vous perdez tout l'intérêt d'un vecteur. Une capture est une grille fixe de pixels qui floute à l'agrandissement et ne peut pas être recolorée. Le SVG enregistré reste net à toute taille et peut être restylé.</p></div>
+    </details>
+    <details>
+      <summary>Et copier le balisage depuis DevTools ?</summary>
+      <div class="faq-body"><p>Cela marche, mais le balisage copié manque souvent de l'espace de noms xmlns : le fichier ne s'ouvrira pas tant que vous ne l'aurez pas ajouté à la main. L'extension répare cela automatiquement.</p></div>
+    </details>
+    <details>
+      <summary>Cela marche-t-il sur tous les sites ?</summary>
+      <div class="faq-body"><p>Sur toute page ouvrable dans Chrome 88+, Edge ou Brave. Il ne peut pas atteindre les pages internes du navigateur, les galeries d'extensions, ni un contenu derrière une connexion que vous n'avez pas.</p></div>
+    </details>
+  </div>
+</div></section>
+
+<hr class="section-rule">
+
+<section><div class="wrap">
+  <div class="cta-band">
+    <div>
+      <h2>Le menu a dit non. Prenez-le quand même.</h2>
+      <p>Quatre cachettes, une analyse, et un fichier qui s'ouvre vraiment.</p>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Installer l'extension</a>
+      <a class="btn quiet" href="/fr/tutorials">Les 15 tutoriels →</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="related"><div class="wrap">
+  <p class="eyebrow">Continuez</p>
+  <ul>
+    <li><a href="/fr/tutorials/grab-svg-from-website">Prise au clic droit<span>L'entrée de menu qui marche</span></a></li>
+    <li><a href="/fr/compare/svg-downloader-vs-screenshotting-icons">Face à la capture<span>Pourquoi le vecteur gagne</span></a></li>
+    <li><a href="/fr/tutorials/copy-svg-from-website">Copier le code<span>Aucun fichier nécessaire</span></a></li>
+  </ul>
+</div></section>
+</main>
+
+<footer>
+  <nav class="bleed foot-map" aria-label="Plan du site">
+    <div class="col"><p>Produit</p><ul>
+      <li><a href="/fr/">Vue d'ensemble</a></li>
+      <li><a href="/fr/features">Fonctions</a></li>
+      <li><a href="/fr/compare/svg-downloader-vs-screenshotting-icons">Face à la capture</a></li>
+      <li><a href="/fr/privacy">Confidentialité</a></li>
+      <li><a href="/fr/use-cases">Cas d'usage</a></li>
+    </ul></div>
+    <div class="col"><p>Ce qu'il attrape</p><ul>
+      <li><a href="/fr/features/inline-svg">SVG en ligne</a></li>
+      <li><a href="/fr/features/css-background-svg">SVG en fond CSS</a></li>
+      <li><a href="/fr/features/svg-sprite-extractor">SVG de sprite / &lt;use&gt;</a></li>
+      <li><a href="/fr/features/bulk-zip-download">Page entière en ZIP</a></li>
+    </ul></div>
+    <div class="col"><p>Tutoriels</p><ul>
+      <li><a href="/fr/tutorials">Les 15 tutoriels</a></li>
+      <li><a href="/fr/tutorials/how-to-download-svg-files">Comment télécharger des fichiers SVG</a></li>
+      <li><a href="/fr/tutorials/copy-svg-from-website">Copier un SVG</a></li>
+      <li><a href="/fr/tutorials/extract-svg-from-website">Extraire chaque SVG</a></li>
+    </ul></div>
+    <div class="col"><p>Docs</p><ul>
+      <li><a href="/fr/docs/installation">Installation</a></li>
+      <li><a href="/fr/docs/usage">Utilisation</a></li>
+      <li><a href="/fr/docs/faq">FAQ</a></li>
+      <li><a href="/fr/docs/changelog">Journal des versions</a></li>
+    </ul></div>
+  </nav>
+  <div class="bleed colophon-foot">
+    <a href="https://github.com/Flozad/svg-downloader">GitHub</a>
+    <a href="https://github.com/Flozad/svg-downloader/issues">Tickets</a>
+    <a href="https://clasicwebtools.com">clasicwebtools.com</a>
+    <span class="grow"></span>
+    <span>Papier os, graphite, un seul vert&nbsp;traceur</span>
+  </div>
+</footer>
+<script src="/player.js" defer=""></script>
+
+
+</body></html>

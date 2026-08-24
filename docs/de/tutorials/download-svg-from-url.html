@@ -1,0 +1,386 @@
+<!DOCTYPE html><html lang="de"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SVG von einer URL laden — ohne Konverter-Website</title>
+<meta name="description" content="Du hast eine URL, aber keine Datei? Öffne sie, scanne die lebende Seite und speichere den echten Vektor — auch wenn in der Adresse kein .svg steht und die Seite alles inline zeichnet.">
+<link rel="canonical" href="https://svg.clasicwebtools.com/de/tutorials/download-svg-from-url"><!--i18n:alternates-->
+<link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/download-svg-from-url">
+<link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/download-svg-from-url">
+<link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/download-svg-from-url">
+<link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/download-svg-from-url">
+<link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/download-svg-from-url">
+<link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/download-svg-from-url">
+<!--/i18n:alternates-->
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="Flozad">
+<meta name="theme-color" content="#ece4d3">
+<meta property="og:site_name" content="SVG Downloader">
+<meta property="og:title" content="SVG von einer URL laden — ohne Konverter-Website">
+<meta property="og:description" content="Du hast eine URL, aber keine Datei? Öffne sie, scanne die lebende Seite und speichere den echten Vektor — auch wenn in der Adresse kein .svg steht und die Seite alles inline zeichnet.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://svg.clasicwebtools.com/de/tutorials/download-svg-from-url">
+<meta property="og:image" content="https://svg.clasicwebtools.com/motion/tutorials/download-svg-from-url.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="Ein Browser bei einer gewöhnlichen Seiten-URL, mit dem SVG-Downloader-Popup, das die gefundenen Vektoren auflistet.">
+<meta property="og:locale" content="de_DE">
+<meta property="og:video" content="https://svg.clasicwebtools.com/motion/tutorials/download-svg-from-url.mp4">
+<meta property="og:video:secure_url" content="https://svg.clasicwebtools.com/motion/tutorials/download-svg-from-url.mp4">
+<meta property="og:video:type" content="video/mp4">
+<meta property="og:video:width" content="1280">
+<meta property="og:video:height" content="800">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@lozards">
+<meta name="twitter:title" content="SVG von einer URL laden — ohne Konverter-Website">
+<meta name="twitter:description" content="Du hast eine URL, aber keine Datei? Öffne sie, scanne die lebende Seite und speichere den echten Vektor — auch wenn in der Adresse kein .svg steht und die Seite alles inline zeichnet.">
+<meta name="twitter:image" content="https://svg.clasicwebtools.com/motion/tutorials/download-svg-from-url.jpg">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/fonts/bricolage-var.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/pages.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Start",
+          "item": "https://svg.clasicwebtools.com/de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tutorials",
+          "item": "https://svg.clasicwebtools.com/de/tutorials"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Von einer URL laden",
+          "item": "https://svg.clasicwebtools.com/de/tutorials/download-svg-from-url"
+        }
+      ]
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Ein SVG laden, wenn du nur eine URL hast",
+      "description": "Eine Seite ist unter einer gewöhnlichen URL ohne .svg geöffnet. Das SVG-Downloader-Popup scannt die lebende Seite, findet 24 Vektoren, blättert zu einem Stern, übernimmt den Dateinamen star und lädt ihn.",
+      "thumbnailUrl": [
+        "https://svg.clasicwebtools.com/motion/tutorials/download-svg-from-url.jpg"
+      ],
+      "uploadDate": "2026-08-22",
+      "duration": "PT22S",
+      "contentUrl": "https://svg.clasicwebtools.com/motion/tutorials/download-svg-from-url.mp4",
+      "embedUrl": "https://svg.clasicwebtools.com/tutorials/download-svg-from-url",
+      "isFamilyFriendly": true,
+      "publisher": {
+        "@type": "Organization",
+        "name": "SVG Downloader",
+        "url": "https://svg.clasicwebtools.com/de/"
+      }
+    },
+    {
+      "@type": "HowTo",
+      "name": "So lädst du ein SVG von einer URL",
+      "description": "Du hast eine URL, aber keine Datei? Öffne sie, scanne die lebende Seite und speichere den echten Vektor — auch wenn in der Adresse kein .svg steht und die Seite alles inline zeichnet.",
+      "image": "https://svg.clasicwebtools.com/motion/tutorials/download-svg-from-url.jpg",
+      "totalTime": "PT2M",
+      "tool": {
+        "@type": "HowToTool",
+        "name": "Browser-Erweiterung SVG Downloader"
+      },
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Öffne die URL in einem Tab",
+          "text": "Lass die Seite fertig laden. Das zählt mehr, als es klingt: Icons, die JavaScript nach dem Laden einfügt, werden trotzdem gefunden, weil der Scan das DOM liest, wie es beim Klick dasteht, nicht das HTML, das der Server zuerst geschickt hat.",
+          "url": "https://svg.clasicwebtools.com/de/tutorials/download-svg-from-url#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Klick auf den Button in der Symbolleiste",
+          "text": "Das Popup öffnet sich zum Tab, in dem du bist. Es gibt nichts einzufügen und nichts zu konfigurieren.",
+          "url": "https://svg.clasicwebtools.com/de/tutorials/download-svg-from-url#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Lies den Zähler",
+          "text": "Er meldet, wie viele Vektoren diese URL tatsächlich zeichnet. Diese Zahl ist meist höher, als man erwartet, weil sie das Logo, die Oberfläche und die Icons im Fußbereich einschließt.",
+          "url": "https://svg.clasicwebtools.com/de/tutorials/download-svg-from-url#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Blättere zu dem, für den du gekommen bist",
+          "text": "Nutze Zurück und Weiter. Die Vorschau zeigt jeden isoliert — der schnellste Weg, zwei ähnliche Icons auseinanderzuhalten.",
+          "url": "https://svg.clasicwebtools.com/de/tutorials/download-svg-from-url#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Benenne ihn und lade",
+          "text": "Tipp einen Dateinamen und drück Aktuelles laden. Du bekommst das Original-Markup von dieser URL, mit repariertem xmlns-Namensraum, damit die Datei überall öffnet.",
+          "url": "https://svg.clasicwebtools.com/de/tutorials/download-svg-from-url#steps"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Kann ich einfach eine URL in einen Online-SVG-Downloader einfügen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nur wenn die URL direkt auf eine .svg-Datei zeigt. Ein Online-Tool holt die Adresse, rendert die Seite aber nie, also ist jeder als Inline-Markup gezeichnete Vektor — und das sind die meisten — für es unsichtbar. Eine Erweiterung läuft in der Seite, nachdem sie gerendert wurde, deshalb sieht sie sie."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "In der URL steht kein .svg. Ist das ein Problem?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nein. Der Scan liest, was die Seite gezeichnet hat, nicht, was die Adresse versprach. Eine URL, die auf /icons oder /preise endet, funktioniert genauso wie eine, die auf .svg endet."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Warum zeigt mir das Öffnen der .svg-URL Code statt eines Bildes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Der Server sendet sie mit dem Content-Type text/plain statt image/svg+xml, der Browser zeigt sie also an, statt sie zu rendern. Die Datei selbst ist in Ordnung — sie zu speichern gibt dir ein funktionierendes SVG."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Funktioniert es auf einer Seite, für die ich mich anmelden musste?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. Es läuft in deinem Browser auf der Seite, die du ohnehin ansiehst, deine Sitzung gilt also normal. Das ist die Hauptsache, die ein „URL einfügen“-Dienst nicht kann."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Und eine URL, die weiterleitet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Folge ihr erst im Tab. Die Seite, auf der du landest, ist die, die gescannt wird — und fast immer die, die du ohnehin wolltest."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Zum Inhalt springen</a>
+
+<nav class="nav">
+  <a class="brand" href="/de/">
+    <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+      <rect width="48" height="48" rx="10" fill="var(--plot)"></rect>
+      <path d="M24 13v15m0 0l-6.5-6.5M24 28l6.5-6.5" fill="none" stroke="var(--surface-hi)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+      <rect x="16.5" y="33.5" width="15" height="2.4" rx="1.2" fill="var(--surface-hi)"></rect>
+    </svg>
+    <strong>SVG&nbsp;Downloader</strong>
+  </a>
+  <span class="spacer"></span>
+  <span class="nav-links">
+    <a href="/de/features">Funktionen</a>
+    <a href="/de/tutorials" aria-current="page">Tutorials</a>
+    <a href="/de/guides">Anleitungen</a>
+    <a href="/de/docs">Doku</a>
+    <a href="/de/use-cases">Praxis</a>
+  </span><!--i18n:switch-->
+  <details class="lang-switch">
+    <summary aria-label="Sprache"><span>DE</span></summary>
+    <ul>
+      <li><a href="/tutorials/download-svg-from-url" hreflang="en" lang="en">English</a></li>
+      <li><a href="/es/tutorials/download-svg-from-url" hreflang="es" lang="es">Español</a></li>
+      <li><a href="/fr/tutorials/download-svg-from-url" hreflang="fr" lang="fr">Français</a></li>
+      <li><a href="/de/tutorials/download-svg-from-url" hreflang="de" lang="de" aria-current="true">Deutsch</a></li>
+      <li><a href="/pt-br/tutorials/download-svg-from-url" hreflang="pt-BR" lang="pt-BR">Português</a></li>
+    </ul>
+  </details>
+  <!--/i18n:switch-->
+  <a class="nav-cta" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Erweiterung installieren</a>
+</nav>
+
+<main id="main">
+<header class="page-hero"><div class="wrap">
+  <ol class="crumbs">
+    <li><a href="/de/">Start</a></li>
+    <li><a href="/de/tutorials">Tutorials</a></li>
+    <li><span aria-current="page">Von einer URL laden</span></li>
+  </ol>
+  <p class="eyebrow">Tutorial — du hast eine Adresse</p>
+  <h1>So <span class="plot">lädst du ein SVG von einer URL</span></h1>
+  <p class="lede">Eine URL ist keine Datei. Mal zeigt sie direkt auf einen Vektor, mal auf eine Seite, die einen zeichnet, und beides braucht völlig unterschiedliche Behandlung — deshalb funktionieren „URL einfügen“-Tools etwa in der Hälfte der Fälle.</p>
+  <div class="cta">
+    <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 12v16m0 0l-7-7m7 7l7-7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"></path><rect x="16" y="34" width="16" height="2.6" rx="1.3" fill="currentColor"></rect></svg>
+      Erweiterung installieren</a>
+    <a class="btn quiet" href="#steps">Zu den Schritten ↓</a>
+  </div>
+</div></header>
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Ansehen — 22 Sekunden</p>
+  <h2>Von der Adressleiste zur gespeicherten Datei</h2>
+  <figure class="shot">
+    <div class="shot-mount">
+      <span class="shot-tag">Tutorial · von einer URL</span>
+      <video src="/motion/tutorials/download-svg-from-url.mp4" poster="/motion/tutorials/download-svg-from-url.jpg" muted="" loop="" playsinline="" preload="none" aria-label="Eine Seite ist unter einer gewöhnlichen URL ohne .svg geöffnet. Das SVG-Downloader-Popup scannt die lebende Seite, findet 24 Vektoren, blättert zu einem Stern, übernimmt den Dateinamen star und lädt ihn."></video>
+    </div>
+    <figcaption class="shot-cap">In der Adressleiste steht <code>vectorly.io/icons</code> — nirgends eine Dateiendung. Der Vektor kommt trotzdem heraus.</figcaption>
+  </figure>
+
+  <p class="lead-in">Achte in der Aufnahme darauf, was in der Adressleiste steht. Da ist kein <code>.svg</code>, und das muss auch nicht sein: Der Scan liest, was die Seite gezeichnet hat, nicht, was die URL verspricht.</p>
+  <p class="eyebrow">Was die Aufnahme zeigt</p>
+  <ol class="beats">
+    <li>Öffne die URL, die den Vektor enthält</li>
+    <li>Klick auf den Button in der Symbolleiste — er liest die lebende Seite</li>
+    <li>In der Adressleiste steht kein .svg. Es braucht auch keins.</li>
+    <li>Blättere zu dem Vektor, für den du gekommen bist</li>
+    <li>Benenne die Datei, bevor du sie speicherst</li>
+    <li>Aktuelles laden — das echte Markup, von dieser URL</li>
+    <li>Als star.svg gespeichert. Scharf in jeder Größe.</li>
+  </ol>
+</div></section>
+
+<hr class="section-rule">
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Der Unterschied, auf den es ankommt</p>
+  <h2>Zwei völlig verschiedene Dinge heißen „eine SVG-URL“</h2>
+  
+  <p class="lead-in">Kläre vor allem anderen, welche der beiden du wirklich hast — die richtige Methode ist jeweils eine andere, und genau hier bleiben die meisten stecken.</p>
+  <ul>
+    <li><strong>Eine direkte URL zu einer Vektordatei</strong>, endend auf <code>.svg</code>, oft auf einem CDN. Öffne sie in einem Tab, und du siehst die Grafik auf leerem weißem Grund, sonst nichts. Diese <em>kann</em> dein Browser selbst speichern — <kbd>Strg</kbd>/<kbd>Cmd</kbd>+<kbd>S</kbd> funktioniert, auch wenn der Name manchmal wenig hilfreich ist.</li>
+    <li><strong>Eine URL zu einer Seite, die Vektoren zeichnet.</strong> Fast jede echte URL ist von dieser Art. Die Adresse endet auf <code>/icons</code> oder <code>/preise</code> oder auf gar nichts, und die gewünschten Grafiken sind Inline-Markup im HTML, das die Seite zurückgibt. An keiner Adresse liegt eine Datei zum Holen, es gibt also nichts direkt zu speichern.</li>
+  </ul>
+  <p>„URL einfügen“-Konverter-Websites decken immer nur den ersten Fall ab, und deshalb kommen sie so oft mit einem Fehler zurück oder mit dem HTML der Seite, umbenannt in <code>.svg</code>. Sie holen die Adresse; sie rendern sie nicht.</p>
+
+  <h2 id="steps">Von einer Seiten-URL speichern</h2>
+  <p>Das ist der zweite Fall — der übliche. Der Trick ist, die URL nicht mehr als Datei zu behandeln und die Seite zuerst rendern zu lassen.</p>
+  <ol>
+    <li><strong>Öffne die URL in einem Tab.</strong> Lass die Seite fertig laden. Das zählt mehr, als es klingt: Icons, die JavaScript nach dem Laden einfügt, werden trotzdem gefunden, weil der Scan das DOM liest, wie es beim Klick dasteht, nicht das HTML, das der Server zuerst geschickt hat.</li>
+    <li><strong>Klick auf den Button in der Symbolleiste.</strong> Das Popup öffnet sich zum Tab, in dem du bist. Es gibt nichts einzufügen und nichts zu konfigurieren.</li>
+    <li><strong>Lies den Zähler.</strong> Er meldet, wie viele Vektoren diese URL tatsächlich zeichnet. Diese Zahl ist meist höher, als man erwartet, weil sie das Logo, die Oberfläche und die Icons im Fußbereich einschließt.</li>
+    <li><strong>Blättere zu dem, für den du gekommen bist.</strong> Nutze <em>Zurück</em> und <em>Weiter</em>. Die Vorschau zeigt jeden isoliert — der schnellste Weg, zwei ähnliche Icons auseinanderzuhalten.</li>
+    <li><strong>Benenne ihn und lade.</strong> Tipp einen Dateinamen und drück <em>Aktuelles laden</em>. Du bekommst das Original-Markup von dieser URL, mit repariertem <code>xmlns</code>-Namensraum, damit die Datei überall öffnet.</li>
+  </ol>
+
+  
+  <h2>Wenn deine URL wirklich auf .svg endet</h2>
+  <p>Dann hast du den einfachen Fall und mehrere Möglichkeiten. Öffnen und <kbd>Strg</kbd>/<kbd>Cmd</kbd>+<kbd>S</kbd> speichert sie. Die Erweiterung auch, und die lässt dich zusätzlich die Datei ordentlich benennen und den Namensraum reparieren, falls die Quelle fehlerhaft ist — lohnt sich für alles, was du gleich eincheckst.</p>
+  <p>Ein Vorbehalt bei direkten URLs: Viele CDN-Links liefern die Datei mit dem <code>Content-Type</code> <code>text/plain</code> aus, dann zeigt dein Browser dir das Markup als Text, statt es zu rendern. Die Datei ist in Ordnung; der Header ist falsch. Speichern gibt dir trotzdem ein funktionierendes SVG.</p>
+
+  <h2>URLs, die die Erweiterung nicht erreicht</h2>
+  <p>Sie läuft auf Seiten, die du öffnen kannst — was du nicht öffnen kannst, kann sie auch nicht lesen. In der Praxis heißt das <code>chrome://</code> und andere browserinterne Seiten, den Chrome Web Store und Add-on-Galerien (dort blockieren Browser Erweiterungen absichtlich), lokale <code>file://</code>-Seiten, sofern du keinen Dateizugriff erteilst, und alles hinter einem Login, das du nicht hast. Bist du dagegen <em>angemeldet</em>, funktioniert sie normal — und das kann kein Online-Tool mit einer eingefügten URL.</p>
+
+  <dl class="facts">
+    <div><dt>Eingabe</dt><dd>Jede <strong>Seiten-URL</strong>, die du öffnen kannst — keine <code>.svg</code>-Endung nötig.</dd></div>
+    <div><dt>Bewältigt</dt><dd>Per JavaScript gerenderte Icons, Seiten mit Login und Inline-Markup ohne jede Adresse dahinter.</dd></div>
+    <div><dt>Ergebnis</dt><dd>Den Originalvektor, <strong>Namensraum repariert</strong>, benannt, wie du willst.</dd></div>
+    <div><dt>Siehe auch</dt><dd><a href="/de/tutorials/download-svg-from-link">Von einem Link</a> · <a href="/de/tutorials/svg-extractor-online">Warum Online-Extraktoren das verpassen</a></dd></div>
+  </dl>
+</div></section>
+
+<hr class="section-rule">
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Gut zu wissen</p>
+  <h2>Häufig gefragt</h2>
+  <div class="faq">
+    <details>
+      <summary>Kann ich einfach eine URL in einen Online-SVG-Downloader einfügen?</summary>
+      <div class="faq-body"><p>Nur wenn die URL direkt auf eine .svg-Datei zeigt. Ein Online-Tool holt die Adresse, rendert die Seite aber nie, also ist jeder als Inline-Markup gezeichnete Vektor — und das sind die meisten — für es unsichtbar. Eine Erweiterung läuft in der Seite, nachdem sie gerendert wurde, deshalb sieht sie sie.</p></div>
+    </details>
+    <details>
+      <summary>In der URL steht kein .svg. Ist das ein Problem?</summary>
+      <div class="faq-body"><p>Nein. Der Scan liest, was die Seite gezeichnet hat, nicht, was die Adresse versprach. Eine URL, die auf /icons oder /preise endet, funktioniert genauso wie eine, die auf .svg endet.</p></div>
+    </details>
+    <details>
+      <summary>Warum zeigt mir das Öffnen der .svg-URL Code statt eines Bildes?</summary>
+      <div class="faq-body"><p>Der Server sendet sie mit dem Content-Type text/plain statt image/svg+xml, der Browser zeigt sie also an, statt sie zu rendern. Die Datei selbst ist in Ordnung — sie zu speichern gibt dir ein funktionierendes SVG.</p></div>
+    </details>
+    <details>
+      <summary>Funktioniert es auf einer Seite, für die ich mich anmelden musste?</summary>
+      <div class="faq-body"><p>Ja. Es läuft in deinem Browser auf der Seite, die du ohnehin ansiehst, deine Sitzung gilt also normal. Das ist die Hauptsache, die ein „URL einfügen“-Dienst nicht kann.</p></div>
+    </details>
+    <details>
+      <summary>Und eine URL, die weiterleitet?</summary>
+      <div class="faq-body"><p>Folge ihr erst im Tab. Die Seite, auf der du landest, ist die, die gescannt wird — und fast immer die, die du ohnehin wolltest.</p></div>
+    </details>
+  </div>
+</div></section>
+
+<hr class="section-rule">
+
+<section><div class="wrap">
+  <div class="cta-band">
+    <div>
+      <h2>Richte es auf eine URL und nimm den Vektor mit</h2>
+      <p>Nichts einfügen, nichts hochladen, und es funktioniert auf Seiten, die eine Anmeldung verlangen.</p>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Erweiterung installieren</a>
+      <a class="btn quiet" href="/de/tutorials">Alle 15 Tutorials →</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="related"><div class="wrap">
+  <p class="eyebrow">Weiter geht's</p>
+  <ul>
+    <li><a href="/de/tutorials/download-svg-from-link">Von einem Link<span>„Link speichern unter…“ lügt</span></a></li>
+    <li><a href="/de/tutorials/svg-extractor-online">Vs. Online-Extraktoren<span>Warum sie Dinge verpassen</span></a></li>
+    <li><a href="/de/tutorials/download-svg-from-webpage">Inventur der ganzen Seite<span>Alles auf einmal</span></a></li>
+  </ul>
+</div></section>
+</main>
+
+<footer>
+  <nav class="bleed foot-map" aria-label="Sitemap">
+    <div class="col"><p>Produkt</p><ul>
+      <li><a href="/de/">Überblick</a></li>
+      <li><a href="/de/features">Funktionen</a></li>
+      <li><a href="/de/compare/svg-downloader-vs-screenshotting-icons">Vs. Screenshot</a></li>
+      <li><a href="/de/privacy">Datenschutz</a></li>
+      <li><a href="/de/use-cases">Anwendungsfälle</a></li>
+    </ul></div>
+    <div class="col"><p>Erkennt</p><ul>
+      <li><a href="/de/features/inline-svg">Inline-SVG</a></li>
+      <li><a href="/de/features/css-background-svg">SVG im CSS-Hintergrund</a></li>
+      <li><a href="/de/features/svg-sprite-extractor">Sprite- / &lt;use&gt;-SVG</a></li>
+      <li><a href="/de/features/bulk-zip-download">Ganze Seite als ZIP</a></li>
+    </ul></div>
+    <div class="col"><p>Tutorials</p><ul>
+      <li><a href="/de/tutorials">Alle 15 Tutorials</a></li>
+      <li><a href="/de/tutorials/how-to-download-svg-files">SVG-Dateien herunterladen</a></li>
+      <li><a href="/de/tutorials/copy-svg-from-website">Ein SVG kopieren</a></li>
+      <li><a href="/de/tutorials/extract-svg-from-website">Jedes SVG extrahieren</a></li>
+    </ul></div>
+    <div class="col"><p>Doku</p><ul>
+      <li><a href="/de/docs/installation">Installation</a></li>
+      <li><a href="/de/docs/usage">Bedienung</a></li>
+      <li><a href="/de/docs/faq">FAQ</a></li>
+      <li><a href="/de/docs/changelog">Changelog</a></li>
+    </ul></div>
+  </nav>
+  <div class="bleed colophon-foot">
+    <a href="https://github.com/Flozad/svg-downloader">GitHub</a>
+    <a href="https://github.com/Flozad/svg-downloader/issues">Issues</a>
+    <a href="https://clasicwebtools.com">clasicwebtools.com</a>
+    <span class="grow"></span>
+    <span>Knochenpapier, Graphit, ein einziges Plotter&nbsp;grün</span>
+  </div>
+</footer>
+<script src="/player.js" defer=""></script>
+
+
+</body></html>

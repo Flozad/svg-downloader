@@ -1,0 +1,381 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Extrair todo SVG de um site numa passagem só</title>
+<meta name="description" content="Escaneie uma página uma vez e leve todo vetor que ela renderiza num ZIP numerado e sem duplicatas — ícones inline, fundos CSS, sprites e origens de imagem juntos.">
+<link rel="canonical" href="https://svg.clasicwebtools.com/pt-br/tutorials/extract-svg-from-website"><!--i18n:alternates-->
+<link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/extract-svg-from-website">
+<link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/extract-svg-from-website">
+<link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/extract-svg-from-website">
+<link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/extract-svg-from-website">
+<link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/extract-svg-from-website">
+<link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/extract-svg-from-website">
+<!--/i18n:alternates-->
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="Flozad">
+<meta name="theme-color" content="#ece4d3">
+<meta property="og:site_name" content="SVG Downloader">
+<meta property="og:title" content="Extrair todo SVG de um site numa passagem só">
+<meta property="og:description" content="Escaneie uma página uma vez e leve todo vetor que ela renderiza num ZIP numerado e sem duplicatas — ícones inline, fundos CSS, sprites e origens de imagem juntos.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://svg.clasicwebtools.com/pt-br/tutorials/extract-svg-from-website">
+<meta property="og:image" content="https://svg.clasicwebtools.com/motion/tutorials/extract-svg-from-website.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="O popup do SVG Downloader no meio da varredura com o contador marcando 24 encontrados.">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:video" content="https://svg.clasicwebtools.com/motion/tutorials/extract-svg-from-website.mp4">
+<meta property="og:video:secure_url" content="https://svg.clasicwebtools.com/motion/tutorials/extract-svg-from-website.mp4">
+<meta property="og:video:type" content="video/mp4">
+<meta property="og:video:width" content="1280">
+<meta property="og:video:height" content="800">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@lozards">
+<meta name="twitter:title" content="Extrair todo SVG de um site numa passagem só">
+<meta name="twitter:description" content="Escaneie uma página uma vez e leve todo vetor que ela renderiza num ZIP numerado e sem duplicatas — ícones inline, fundos CSS, sprites e origens de imagem juntos.">
+<meta name="twitter:image" content="https://svg.clasicwebtools.com/motion/tutorials/extract-svg-from-website.jpg">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/fonts/bricolage-var.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/pages.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Início",
+          "item": "https://svg.clasicwebtools.com/pt-br/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tutoriais",
+          "item": "https://svg.clasicwebtools.com/pt-br/tutorials"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Extrair todo SVG",
+          "item": "https://svg.clasicwebtools.com/pt-br/tutorials/extract-svg-from-website"
+        }
+      ]
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Extrair todo SVG de um site numa passagem só",
+      "description": "O popup do SVG Downloader escaneia uma página e informa 24 encontrados, percorre várias prévias para conferir o conjunto, então aperta Baixar tudo em ZIP e informa “Baixados 24 SVGs em ZIP”.",
+      "thumbnailUrl": [
+        "https://svg.clasicwebtools.com/motion/tutorials/extract-svg-from-website.jpg"
+      ],
+      "uploadDate": "2026-08-22",
+      "duration": "PT17S",
+      "contentUrl": "https://svg.clasicwebtools.com/motion/tutorials/extract-svg-from-website.mp4",
+      "embedUrl": "https://svg.clasicwebtools.com/tutorials/extract-svg-from-website",
+      "isFamilyFriendly": true,
+      "publisher": {
+        "@type": "Organization",
+        "name": "SVG Downloader",
+        "url": "https://svg.clasicwebtools.com/pt-br/"
+      }
+    },
+    {
+      "@type": "HowTo",
+      "name": "Como extrair todo SVG de um site",
+      "description": "Escaneie uma página uma vez e leve todo vetor que ela renderiza num ZIP numerado e sem duplicatas — ícones inline, fundos CSS, sprites e origens de imagem juntos.",
+      "image": "https://svg.clasicwebtools.com/motion/tutorials/extract-svg-from-website.jpg",
+      "totalTime": "PT2M",
+      "tool": {
+        "@type": "HowToTool",
+        "name": "Extensão de navegador SVG Downloader"
+      },
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Abra o popup na página",
+          "text": "Clique no botão da barra de ferramentas. O contador informa quantos vetores distintos a página renderiza.",
+          "url": "https://svg.clasicwebtools.com/pt-br/tutorials/extract-svg-from-website#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Reescaneie se a página mudou",
+          "text": "Se desde então você abriu um menu, trocou de aba ou rolou uma grade preguiçosa até aparecer, aperte o botão de reescanear no cabeçalho para os ícones novos entrarem.",
+          "url": "https://svg.clasicwebtools.com/pt-br/tutorials/extract-svg-from-website#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Percorra para conferir o conjunto",
+          "text": "Ande por ele com Ant. e Próx. Trinta segundos aqui te dizem se você vai levar o conjunto de ícones que queria ou o conjunto mais toda firula decorativa da página.",
+          "url": "https://svg.clasicwebtools.com/pt-br/tutorials/extract-svg-from-website#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Aperte Baixar tudo em ZIP",
+          "text": "O conjunto inteiro é empacotado, sem duplicatas e numerado. A linha de status informa quantos foram salvos — e nomeia o que não pôde ser extraído de forma independente, em vez de descartar em silêncio.",
+          "url": "https://svg.clasicwebtools.com/pt-br/tutorials/extract-svg-from-website#steps"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Ele pega todo SVG da página?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Todo aquele que consegue resolver num arquivo independente: elementos inline, imagens de fundo CSS, referências de sprite do mesmo documento, e origens img ou object. O que ele não consegue resolver é nomeado na linha de status em vez de descartado em silêncio."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Vou receber o mesmo ícone vinte vezes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Não. As duplicatas são reduzidas antes de o ZIP ser montado, então um chevron renderizado em dezenove lugares chega uma vez."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Alguns ícones só apareceram depois que eu rolei.",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Conteúdo com carregamento preguiçoso não está no DOM até renderizar. Role até aparecer e então aperte o botão de reescanear no cabeçalho do popup para capturá-lo."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "O que significa “grande demais para escanear fundos CSS”?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A página tem CSS o bastante para que escanear tudo travasse a aba, então aquela origem foi pulada. Elementos inline, sprites e origens de imagem foram coletados mesmo assim."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Dá para mudar os nomes dos arquivos no ZIP?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim — o prefixo de numeração e o nome do ZIP são definidos nas configurações da extensão."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Pular para o conteúdo</a>
+
+<nav class="nav">
+  <a class="brand" href="/pt-br/">
+    <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+      <rect width="48" height="48" rx="10" fill="var(--plot)"></rect>
+      <path d="M24 13v15m0 0l-6.5-6.5M24 28l6.5-6.5" fill="none" stroke="var(--surface-hi)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+      <rect x="16.5" y="33.5" width="15" height="2.4" rx="1.2" fill="var(--surface-hi)"></rect>
+    </svg>
+    <strong>SVG&nbsp;Downloader</strong>
+  </a>
+  <span class="spacer"></span>
+  <span class="nav-links">
+    <a href="/pt-br/features">Recursos</a>
+    <a href="/pt-br/tutorials" aria-current="page">Tutoriais</a>
+    <a href="/pt-br/guides">Guias</a>
+    <a href="/pt-br/docs">Docs</a>
+    <a href="/pt-br/use-cases">Histórias</a>
+  </span><!--i18n:switch-->
+  <details class="lang-switch">
+    <summary aria-label="Idioma"><span>PT</span></summary>
+    <ul>
+      <li><a href="/tutorials/extract-svg-from-website" hreflang="en" lang="en">English</a></li>
+      <li><a href="/es/tutorials/extract-svg-from-website" hreflang="es" lang="es">Español</a></li>
+      <li><a href="/fr/tutorials/extract-svg-from-website" hreflang="fr" lang="fr">Français</a></li>
+      <li><a href="/de/tutorials/extract-svg-from-website" hreflang="de" lang="de">Deutsch</a></li>
+      <li><a href="/pt-br/tutorials/extract-svg-from-website" hreflang="pt-BR" lang="pt-BR" aria-current="true">Português</a></li>
+    </ul>
+  </details>
+  <!--/i18n:switch-->
+  <a class="nav-cta" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Instalar a extensão</a>
+</nav>
+
+<main id="main">
+<header class="page-hero"><div class="wrap">
+  <ol class="crumbs">
+    <li><a href="/pt-br/">Início</a></li>
+    <li><a href="/pt-br/tutorials">Tutoriais</a></li>
+    <li><span aria-current="page">Extrair todo SVG</span></li>
+  </ol>
+  <p class="eyebrow">Tutorial — o conjunto todo de uma vez</p>
+  <h1>Como <span class="plot">extrair todo SVG</span> de um site</h1>
+  <p class="lede">Percorrer quarenta ícones um a um não é a tarde de ninguém. Uma varredura acha todos; um clique leva todos.</p>
+  <div class="cta">
+    <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 12v16m0 0l-7-7m7 7l7-7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"></path><rect x="16" y="34" width="16" height="2.6" rx="1.3" fill="currentColor"></rect></svg>
+      Instalar a extensão</a>
+    <a class="btn quiet" href="#steps">Ir para os passos ↓</a>
+  </div>
+</div></header>
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Assista — 17 segundos</p>
+  <h2>Uma varredura, um ZIP</h2>
+  <figure class="shot">
+    <div class="shot-mount">
+      <span class="shot-tag">tutorial · em lote</span>
+      <video src="/motion/tutorials/extract-svg-from-website.mp4" poster="/motion/tutorials/extract-svg-from-website.jpg" muted="" loop="" playsinline="" preload="none" aria-label="O popup do SVG Downloader escaneia uma página e informa 24 encontrados, percorre várias prévias para conferir o conjunto, então aperta Baixar tudo em ZIP e informa “Baixados 24 SVGs em ZIP”."></video>
+    </div>
+    <figcaption class="shot-cap">Confira o conjunto na prévia primeiro, e então leve os vinte e quatro num único clique.</figcaption>
+  </figure>
+
+  <p class="lead-in">O percorrer no meio não é enchimento — é o passo que a maioria pula e depois lamenta, porque é sua única chance de ver o que está prestes a levar.</p>
+  <p class="eyebrow">O que a gravação mostra</p>
+  <ol class="beats">
+    <li>Uma varredura acha todo vetor que a página renderiza</li>
+    <li>Confira o conjunto antes de levar</li>
+    <li>Ant. e Próx. percorrem a lista inteira</li>
+    <li>Baixar tudo em ZIP — o conjunto inteiro de uma vez</li>
+    <li>Sem duplicatas, numerado e nomeado na linha de status</li>
+  </ol>
+</div></section>
+
+<hr class="section-rule">
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">O que uma passagem realmente coleta</p>
+  <h2>Quatro origens, resolvidas numa pasta só</h2>
+  
+  <p class="lead-in">A varredura não procura arquivos <code>.svg</code>. Ela lê a página renderizada e resolve todo vetor que alcança em markup independente, e é por isso que a contagem costuma ser maior que o número de ícones óbvios na tela.</p>
+  <ul>
+    <li><strong>Elementos <code>&lt;svg&gt;</code> inline</strong> — o grosso de qualquer conjunto de ícones moderno, mais o logo e boa parte da interface.</li>
+    <li><strong>Vetores em <code>background-image</code> do CSS</strong>, incluindo URIs <code>data:</code> embutidos lidos da folha de estilo.</li>
+    <li><strong>Referências <code>&lt;use&gt;</code> a sprites do mesmo documento</strong>, resolvidas de volta ao símbolo apontado para cada uma virar um arquivo real e autossuficiente.</li>
+    <li><strong>Origens <code>&lt;img&gt;</code> e <code>&lt;object&gt;</code></strong>, buscadas e embutidas.</li>
+  </ul>
+  <p>As duplicatas são reduzidas antes de o ZIP ser montado. Uma página que renderiza o mesmo chevron em dezenove lugares te dá um chevron, não dezenove — que é a diferença entre uma pasta usável e uma bagunça.</p>
+
+  <h2 id="steps">Levando o conjunto</h2>
+  <p>Quatro passos, e o terceiro é o que vale não pular.</p>
+  <ol>
+    <li><strong>Abra o popup na página.</strong> Clique no botão da barra de ferramentas. O contador informa quantos vetores distintos a página renderiza.</li>
+    <li><strong>Reescaneie se a página mudou.</strong> Se desde então você abriu um menu, trocou de aba ou rolou uma grade preguiçosa até aparecer, aperte o botão de reescanear no cabeçalho para os ícones novos entrarem.</li>
+    <li><strong>Percorra para conferir o conjunto.</strong> Ande por ele com <em>Ant.</em> e <em>Próx.</em>. Trinta segundos aqui te dizem se você vai levar o conjunto de ícones que queria ou o conjunto mais toda firula decorativa da página.</li>
+    <li><strong>Aperte Baixar tudo em ZIP.</strong> O conjunto inteiro é empacotado, sem duplicatas e numerado. A linha de status informa quantos foram salvos — e nomeia o que não pôde ser extraído de forma independente, em vez de descartar em silêncio.</li>
+  </ol>
+
+  
+  <h2>Leia a linha de status</h2>
+  <p>Quando tudo resolve, você recebe um simples <em>Baixados 24 SVGs em ZIP.</em> Quando algo não resolve, você recebe a contagem do que deu certo <em>e os nomes dos que não deram</em> — porque uma ferramenta em lote que descarta arquivos caladinha é pior do que uma que falha em voz alta. Os motivos usuais de um vetor não poder ser extraído de forma independente são uma referência de sprite apontando para outro documento que a página nunca carregou, ou uma origem de imagem num domínio que recusa leituras de origem cruzada.</p>
+
+  <h2>Páginas muito grandes</h2>
+  <p>Escanear toda folha de estilo de uma página com milhares de regras é caro, então a varredura de fundos CSS é limitada. Se esse limite for atingido você verá <em>Esta página é grande demais para escanear fundos CSS — os outros SVGs ainda foram encontrados</em>, o que significa que elementos inline, sprites e origens de imagem foram todos coletados mesmo assim. Na prática vetores de fundo CSS são os mais raros dos quatro, então é uma perda pequena numa página em que a alternativa é uma aba travada.</p>
+
+  <h2>Nomeando o que sai</h2>
+  <p>Os arquivos do ZIP são numerados a partir de um prefixo que você pode mudar nas configurações da extensão, junto com o nome do próprio ZIP. Se você costuma puxar conjuntos de sites diferentes, definir um prefixo por projeto é mais rápido que renomear vinte arquivos depois.</p>
+
+  <dl class="facts">
+    <div><dt>Uma passagem</dt><dd>Inline, fundo CSS, <code>&lt;use&gt;</code> de sprite e origens de imagem — <strong>juntos</strong>.</dd></div>
+    <div><dt>Sem duplicatas</dt><dd>O mesmo ícone renderizado dezenove vezes chega <strong>uma vez</strong>.</dd></div>
+    <div><dt>Honesto</dt><dd>O que não pôde ser resolvido é <strong>nomeado na linha de status</strong>.</dd></div>
+    <div><dt>Veja também</dt><dd><a href="/pt-br/features/bulk-zip-download">O recurso em lote</a> · <a href="/pt-br/tutorials/download-svg-from-webpage">Inventário da página</a></dd></div>
+  </dl>
+</div></section>
+
+<hr class="section-rule">
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Vale saber</p>
+  <h2>Perguntas frequentes</h2>
+  <div class="faq">
+    <details>
+      <summary>Ele pega todo SVG da página?</summary>
+      <div class="faq-body"><p>Todo aquele que consegue resolver num arquivo independente: elementos inline, imagens de fundo CSS, referências de sprite do mesmo documento, e origens img ou object. O que ele não consegue resolver é nomeado na linha de status em vez de descartado em silêncio.</p></div>
+    </details>
+    <details>
+      <summary>Vou receber o mesmo ícone vinte vezes?</summary>
+      <div class="faq-body"><p>Não. As duplicatas são reduzidas antes de o ZIP ser montado, então um chevron renderizado em dezenove lugares chega uma vez.</p></div>
+    </details>
+    <details>
+      <summary>Alguns ícones só apareceram depois que eu rolei.</summary>
+      <div class="faq-body"><p>Conteúdo com carregamento preguiçoso não está no DOM até renderizar. Role até aparecer e então aperte o botão de reescanear no cabeçalho do popup para capturá-lo.</p></div>
+    </details>
+    <details>
+      <summary>O que significa “grande demais para escanear fundos CSS”?</summary>
+      <div class="faq-body"><p>A página tem CSS o bastante para que escanear tudo travasse a aba, então aquela origem foi pulada. Elementos inline, sprites e origens de imagem foram coletados mesmo assim.</p></div>
+    </details>
+    <details>
+      <summary>Dá para mudar os nomes dos arquivos no ZIP?</summary>
+      <div class="faq-body"><p>Sim — o prefixo de numeração e o nome do ZIP são definidos nas configurações da extensão.</p></div>
+    </details>
+  </div>
+</div></section>
+
+<hr class="section-rule">
+
+<section><div class="wrap">
+  <div class="cta-band">
+    <div>
+      <h2>Leve o conjunto inteiro num clique</h2>
+      <p>Sem duplicatas, numerado e honesto sobre tudo que não conseguiu alcançar.</p>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Instalar a extensão</a>
+      <a class="btn quiet" href="/pt-br/tutorials">Todos os 15 tutoriais →</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="related"><div class="wrap">
+  <p class="eyebrow">Continue</p>
+  <ul>
+    <li><a href="/pt-br/features/bulk-zip-download">O recurso de ZIP<span>Como ele empacota</span></a></li>
+    <li><a href="/pt-br/tutorials/download-svg-from-webpage">Inventário da página<span>Conte antes de levar</span></a></li>
+    <li><a href="/pt-br/tutorials/extract-svg-logo-from-website">Só o logo<span>Um vetor, tamanho cheio</span></a></li>
+  </ul>
+</div></section>
+</main>
+
+<footer>
+  <nav class="bleed foot-map" aria-label="Mapa do site">
+    <div class="col"><p>Produto</p><ul>
+      <li><a href="/pt-br/">Visão geral</a></li>
+      <li><a href="/pt-br/features">Recursos</a></li>
+      <li><a href="/pt-br/compare/svg-downloader-vs-screenshotting-icons">Vs. print de tela</a></li>
+      <li><a href="/pt-br/privacy">Privacidade</a></li>
+      <li><a href="/pt-br/use-cases">Casos de uso</a></li>
+    </ul></div>
+    <div class="col"><p>O que ele encontra</p><ul>
+      <li><a href="/pt-br/features/inline-svg">SVG inline</a></li>
+      <li><a href="/pt-br/features/css-background-svg">SVG em fundo CSS</a></li>
+      <li><a href="/pt-br/features/svg-sprite-extractor">SVG de sprite / &lt;use&gt;</a></li>
+      <li><a href="/pt-br/features/bulk-zip-download">Página inteira em ZIP</a></li>
+    </ul></div>
+    <div class="col"><p>Tutoriais</p><ul>
+      <li><a href="/pt-br/tutorials">Todos os 15 tutoriais</a></li>
+      <li><a href="/pt-br/tutorials/how-to-download-svg-files">Como baixar arquivos SVG</a></li>
+      <li><a href="/pt-br/tutorials/copy-svg-from-website">Copiar um SVG</a></li>
+      <li><a href="/pt-br/tutorials/extract-svg-from-website">Extrair todo SVG</a></li>
+    </ul></div>
+    <div class="col"><p>Docs</p><ul>
+      <li><a href="/pt-br/docs/installation">Instalação</a></li>
+      <li><a href="/pt-br/docs/usage">Uso</a></li>
+      <li><a href="/pt-br/docs/faq">Perguntas frequentes</a></li>
+      <li><a href="/pt-br/docs/changelog">Mudanças</a></li>
+    </ul></div>
+  </nav>
+  <div class="bleed colophon-foot">
+    <a href="https://github.com/Flozad/svg-downloader">GitHub</a>
+    <a href="https://github.com/Flozad/svg-downloader/issues">Issues</a>
+    <a href="https://clasicwebtools.com">clasicwebtools.com</a>
+    <span class="grow"></span>
+    <span>Papel osso, grafite e um único verde&nbsp;plotter</span>
+  </div>
+</footer>
+<script src="/player.js" defer=""></script>
+
+
+</body></html>

@@ -1,0 +1,382 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Extrator de SVG online vs. extensão — por que um enxerga mais</title>
+<meta name="description" content="Um extrator de “cole uma URL” busca o HTML mas nunca o renderiza, então ícones inline e desenhados por JavaScript ficam invisíveis. Aqui está o motivo técnico, e o de privacidade.">
+<link rel="canonical" href="https://svg.clasicwebtools.com/pt-br/tutorials/svg-extractor-online"><!--i18n:alternates-->
+<link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/svg-extractor-online">
+<link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/svg-extractor-online">
+<link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/svg-extractor-online">
+<link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/svg-extractor-online">
+<link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/svg-extractor-online">
+<link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/svg-extractor-online">
+<!--/i18n:alternates-->
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="Flozad">
+<meta name="theme-color" content="#ece4d3">
+<meta property="og:site_name" content="SVG Downloader">
+<meta property="og:title" content="Extrator de SVG online vs. extensão — por que um enxerga mais">
+<meta property="og:description" content="Um extrator de “cole uma URL” busca o HTML mas nunca o renderiza, então ícones inline e desenhados por JavaScript ficam invisíveis. Aqui está o motivo técnico, e o de privacidade.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://svg.clasicwebtools.com/pt-br/tutorials/svg-extractor-online">
+<meta property="og:image" content="https://svg.clasicwebtools.com/motion/tutorials/svg-extractor-online.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="O popup do SVG Downloader encontrando todo vetor de uma página que uma busca no servidor perderia.">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:video" content="https://svg.clasicwebtools.com/motion/tutorials/svg-extractor-online.mp4">
+<meta property="og:video:secure_url" content="https://svg.clasicwebtools.com/motion/tutorials/svg-extractor-online.mp4">
+<meta property="og:video:type" content="video/mp4">
+<meta property="og:video:width" content="1280">
+<meta property="og:video:height" content="800">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@lozards">
+<meta name="twitter:title" content="Extrator de SVG online vs. extensão — por que um enxerga mais">
+<meta name="twitter:description" content="Um extrator de “cole uma URL” busca o HTML mas nunca o renderiza, então ícones inline e desenhados por JavaScript ficam invisíveis. Aqui está o motivo técnico, e o de privacidade.">
+<meta name="twitter:image" content="https://svg.clasicwebtools.com/motion/tutorials/svg-extractor-online.jpg">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/fonts/bricolage-var.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/pages.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Início",
+          "item": "https://svg.clasicwebtools.com/pt-br/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tutoriais",
+          "item": "https://svg.clasicwebtools.com/pt-br/tutorials"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Online vs. extensão",
+          "item": "https://svg.clasicwebtools.com/pt-br/tutorials/svg-extractor-online"
+        }
+      ]
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Por que um extrator de SVG online não consegue ver esta página",
+      "description": "Uma página cujos ícones são desenhados inline. O popup do SVG Downloader, rodando dentro da página, escaneia e acha os 24 e salva em ZIP — incluindo ícones que nenhuma busca no servidor veria.",
+      "thumbnailUrl": [
+        "https://svg.clasicwebtools.com/motion/tutorials/svg-extractor-online.jpg"
+      ],
+      "uploadDate": "2026-08-22",
+      "duration": "PT17S",
+      "contentUrl": "https://svg.clasicwebtools.com/motion/tutorials/svg-extractor-online.mp4",
+      "embedUrl": "https://svg.clasicwebtools.com/tutorials/svg-extractor-online",
+      "isFamilyFriendly": true,
+      "publisher": {
+        "@type": "Organization",
+        "name": "SVG Downloader",
+        "url": "https://svg.clasicwebtools.com/pt-br/"
+      }
+    },
+    {
+      "@type": "HowTo",
+      "name": "Por que um extrator de SVG online não consegue ver esta página",
+      "description": "Um extrator de “cole uma URL” busca o HTML mas nunca o renderiza, então ícones inline e desenhados por JavaScript ficam invisíveis. Aqui está o motivo técnico, e o de privacidade.",
+      "image": "https://svg.clasicwebtools.com/motion/tutorials/svg-extractor-online.jpg",
+      "totalTime": "PT2M",
+      "tool": {
+        "@type": "HowToTool",
+        "name": "Extensão de navegador SVG Downloader"
+      },
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Deixe a página no estado que você quer",
+          "text": "Faça login se precisar. Role, abra o menu, mude para a aba com os ícones. Tudo que você consegue ver, a varredura consegue ler.",
+          "url": "https://svg.clasicwebtools.com/pt-br/tutorials/svg-extractor-online#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Clique no botão da barra de ferramentas",
+          "text": "A varredura roda contra o DOM vivo — incluindo ícones renderizados pelo framework, fundos CSS e referências de sprite.",
+          "url": "https://svg.clasicwebtools.com/pt-br/tutorials/svg-extractor-online#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Compare a contagem",
+          "text": "É o momento em que a diferença aparece. O número encontrado aqui costuma ser várias vezes o que uma busca por URL informou.",
+          "url": "https://svg.clasicwebtools.com/pt-br/tutorials/svg-extractor-online#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Leve",
+          "text": "Um a um com Baixar o atual, ou o conjunto todo com Baixar tudo em ZIP. Nada sai da sua máquina em momento algum.",
+          "url": "https://svg.clasicwebtools.com/pt-br/tutorials/svg-extractor-online#steps"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Por que o extrator online achou só alguns ícones?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ele buscou o HTML mas nunca renderizou a página. Num site renderizado por JavaScript a maioria dos ícones nem existe no HTML inicial, vetores de fundo CSS exigem estilos computados, e referências de sprite não podem ser resolvidas sem um documento vivo."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Uma ferramenta online consegue extrair de uma página que eu preciso logar para ver?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Não. O servidor dela não está logado como você, então ele recebe uma página de login. Uma extensão roda no seu navegador com sua sessão, então funciona normalmente."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "É seguro colar uma URL num extrator online?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Para uma página pública de marketing, em geral sim. Para um painel interno, um ambiente de homologação ou um design não lançado, você está entregando a um terceiro uma URL e o conteúdo dela — vale pensar antes de fazer."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A extensão envia alguma coisa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ela não consegue. A política de segurança de conteúdo dela define connect-src como none, então as páginas dela estão proibidas de abrir conexão de rede. Ela funciona com a rede desconectada."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quando uma ferramenta online é de fato melhor?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Quando a URL aponta direto para um arquivo .svg e você quer otimizar ou converter, ou quando você está numa máquina em que não pode instalar extensões. Otimizadores de SVG online, em especial, fazem um trabalho que esta extensão não tenta."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Pular para o conteúdo</a>
+
+<nav class="nav">
+  <a class="brand" href="/pt-br/">
+    <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+      <rect width="48" height="48" rx="10" fill="var(--plot)"></rect>
+      <path d="M24 13v15m0 0l-6.5-6.5M24 28l6.5-6.5" fill="none" stroke="var(--surface-hi)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+      <rect x="16.5" y="33.5" width="15" height="2.4" rx="1.2" fill="var(--surface-hi)"></rect>
+    </svg>
+    <strong>SVG&nbsp;Downloader</strong>
+  </a>
+  <span class="spacer"></span>
+  <span class="nav-links">
+    <a href="/pt-br/features">Recursos</a>
+    <a href="/pt-br/tutorials" aria-current="page">Tutoriais</a>
+    <a href="/pt-br/guides">Guias</a>
+    <a href="/pt-br/docs">Docs</a>
+    <a href="/pt-br/use-cases">Histórias</a>
+  </span><!--i18n:switch-->
+  <details class="lang-switch">
+    <summary aria-label="Idioma"><span>PT</span></summary>
+    <ul>
+      <li><a href="/tutorials/svg-extractor-online" hreflang="en" lang="en">English</a></li>
+      <li><a href="/es/tutorials/svg-extractor-online" hreflang="es" lang="es">Español</a></li>
+      <li><a href="/fr/tutorials/svg-extractor-online" hreflang="fr" lang="fr">Français</a></li>
+      <li><a href="/de/tutorials/svg-extractor-online" hreflang="de" lang="de">Deutsch</a></li>
+      <li><a href="/pt-br/tutorials/svg-extractor-online" hreflang="pt-BR" lang="pt-BR" aria-current="true">Português</a></li>
+    </ul>
+  </details>
+  <!--/i18n:switch-->
+  <a class="nav-cta" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Instalar a extensão</a>
+</nav>
+
+<main id="main">
+<header class="page-hero"><div class="wrap">
+  <ol class="crumbs">
+    <li><a href="/pt-br/">Início</a></li>
+    <li><a href="/pt-br/tutorials">Tutoriais</a></li>
+    <li><span aria-current="page">Online vs. extensão</span></li>
+  </ol>
+  <p class="eyebrow">Tutorial — por que o online perdeu eles</p>
+  <h1>Por que um <span class="plot">extrator de SVG online</span> não consegue ver esta página</h1>
+  <p class="lede">Você colou a URL, ele achou quatro ícones, e você vê trinta. Nada está quebrado — ele simplesmente nunca rodou a página.</p>
+  <div class="cta">
+    <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 12v16m0 0l-7-7m7 7l7-7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"></path><rect x="16" y="34" width="16" height="2.6" rx="1.3" fill="currentColor"></rect></svg>
+      Instalar a extensão</a>
+    <a class="btn quiet" href="#steps">Ir para os passos ↓</a>
+  </div>
+</div></header>
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Assista — 17 segundos</p>
+  <h2>O que rodar a página te dá</h2>
+  <figure class="shot">
+    <div class="shot-mount">
+      <span class="shot-tag">tutorial · comparação</span>
+      <video src="/motion/tutorials/svg-extractor-online.mp4" poster="/motion/tutorials/svg-extractor-online.jpg" muted="" loop="" playsinline="" preload="none" aria-label="Uma página cujos ícones são desenhados inline. O popup do SVG Downloader, rodando dentro da página, escaneia e acha os 24 e salva em ZIP — incluindo ícones que nenhuma busca no servidor veria."></video>
+    </div>
+    <figcaption class="shot-cap">Rodar dentro da página é a diferença inteira. Todo o resto decorre disso.</figcaption>
+  </figure>
+
+  <p class="lead-in">A distinção não é de qualidade nem de esforço — é arquitetural. Uma abordagem lê um documento; a outra lê uma página renderizada.</p>
+  <p class="eyebrow">O que a gravação mostra</p>
+  <ol class="beats">
+    <li>Uma ferramenta online só recebe a URL que você cola</li>
+    <li>Ela nunca roda a página, então ícones inline continuam invisíveis</li>
+    <li>Uma extensão roda dentro da página em que você já está</li>
+    <li>Incluindo páginas com login e painéis privados</li>
+    <li>E nada sai da sua máquina para isso funcionar</li>
+  </ol>
+</div></section>
+
+<hr class="section-rule">
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">O motivo técnico</p>
+  <h2>Buscar uma URL e renderizar uma página são coisas diferentes</h2>
+  
+  <p class="lead-in">Quando você cola uma URL num extrator online, o servidor dele manda uma requisição HTTP simples e recebe de volta o HTML que o servidor escolheu mandar. Depois ele procura naquele texto coisas que pareçam SVGs. É uma abordagem razoável, e ela perde a maior parte de um site moderno, por quatro motivos separados.</p>
+  <ul>
+    <li><strong>Nenhum JavaScript roda.</strong> Num site React, Vue, Svelte ou Angular, o HTML inicial costuma estar quase vazio — um elemento raiz e uma tag de script. Todo ícone aparece só depois que o framework executa. Uma busca vê a casca vazia.</li>
+    <li><strong>Nenhum CSS é aplicado.</strong> Um vetor definido como <code>background-image</code> numa folha de estilo só existe depois que os estilos são computados contra os elementos. Procurar texto no HTML não vai achar.</li>
+    <li><strong>Nenhuma sessão.</strong> O servidor que busca sua URL não está logado como você. Qualquer coisa atrás de autenticação devolve uma página de login, então um painel, uma área administrativa ou uma ferramenta paga fica simplesmente inalcançável.</li>
+    <li><strong>Sprites não são resolvidos.</strong> Um <code>&lt;use href="#star"&gt;</code> encontrado no HTML cru é um ponteiro. Sem um documento renderizado não há contra o que resolvê-lo, então você recebe um arquivo vazio.</li>
+  </ul>
+  <p>Uma extensão não tem nenhum desses problemas porque não está buscando nada. Ela roda dentro da página que você já está olhando, depois de o framework ter renderizado, depois de os estilos terem sido aplicados, com sua sessão intacta e o documento inteiro disponível para resolver referências.</p>
+
+  <h2 id="steps">Fazendo isso na página em vez disso</h2>
+  <p>Não há URL para colar, e esse é o ponto.</p>
+  <ol>
+    <li><strong>Deixe a página no estado que você quer.</strong> Faça login se precisar. Role, abra o menu, mude para a aba com os ícones. Tudo que você consegue ver, a varredura consegue ler.</li>
+    <li><strong>Clique no botão da barra de ferramentas.</strong> A varredura roda contra o DOM vivo — incluindo ícones renderizados pelo framework, fundos CSS e referências de sprite.</li>
+    <li><strong>Compare a contagem.</strong> É o momento em que a diferença aparece. O número encontrado aqui costuma ser várias vezes o que uma busca por URL informou.</li>
+    <li><strong>Leve.</strong> Um a um com <em>Baixar o atual</em>, ou o conjunto todo com <em>Baixar tudo em ZIP</em>. Nada sai da sua máquina em momento algum.</li>
+  </ol>
+
+  
+  <h2>A outra pergunta: para onde vai o seu arquivo?</h2>
+  <p>Uma ferramenta online precisa receber seus dados para trabalhar neles. Dependendo do serviço, isso pode significar a URL de uma página em que você estava logado, ou um arquivo enviado, parado no servidor de outra pessoa — sujeito à política de retenção dela, aos logs dela, à jurisdição dela e à segurança dela. Para uma página pública de marketing pode ser uma troca aceitável. Para um painel interno, o ambiente de homologação de um cliente ou um design não lançado, é uma transferência de dados que você provavelmente não pretendia fazer.</p>
+  <p>A versão no dispositivo não envolve essa troca de jeito nenhum, e não como compromisso de política: a política de segurança de conteúdo da extensão define <code>connect-src 'none'</code>, então as páginas dela não conseguem abrir conexão de rede. Não há endpoint para onde enviar. Isso também significa que tudo funciona offline.</p>
+
+  <h2>Onde uma ferramenta online é genuinamente a melhor escolha</h2>
+  <p>Sendo justo: se a URL aponta direto para um arquivo <code>.svg</code> e tudo que você quer é converter ou otimizar, uma ferramenta online é rápida e não exige instalar nada. Se você está numa máquina travada em que não pode instalar extensão, pode ser sua única opção. E para otimizar SVGs especificamente — rodar SVGO neles, tirar metadados, encolher traçados — os bons otimizadores online fazem um trabalho que esta extensão nem tenta.</p>
+
+  <h2>Os limites honestos deste lado</h2>
+  <p>Uma extensão precisa ser instalada, precisa de um navegador Chromium, e não consegue fazer nada numa página que você mesmo não consegue abrir — páginas <code>chrome://</code>, a Web Store, galerias de extensões. Ela também é estritamente interativa: não há API nem jeito de rodá-la sobre uma lista de mil URLs. Para isso, um navegador headless é a ferramenta correta.</p>
+
+  <dl class="facts">
+    <div><dt>Uma busca por URL perde</dt><dd>Ícones renderizados por JavaScript, fundos CSS, páginas com login e alvos de sprite.</dd></div>
+    <div><dt>Uma extensão enxerga</dt><dd>O <strong>DOM renderizado</strong> — depois do framework, depois dos estilos, com a sua sessão.</dd></div>
+    <div><dt>Privacidade</dt><dd><code>connect-src 'none'</code>. Nenhum endpoint para onde enviar; funciona offline.</dd></div>
+    <div><dt>Ferramentas online ganham em</dt><dd>Otimizar um <code>.svg</code> que você já tem, e máquinas em que não dá para instalar nada.</dd></div>
+  </dl>
+</div></section>
+
+<hr class="section-rule">
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Vale saber</p>
+  <h2>Perguntas frequentes</h2>
+  <div class="faq">
+    <details>
+      <summary>Por que o extrator online achou só alguns ícones?</summary>
+      <div class="faq-body"><p>Ele buscou o HTML mas nunca renderizou a página. Num site renderizado por JavaScript a maioria dos ícones nem existe no HTML inicial, vetores de fundo CSS exigem estilos computados, e referências de sprite não podem ser resolvidas sem um documento vivo.</p></div>
+    </details>
+    <details>
+      <summary>Uma ferramenta online consegue extrair de uma página que eu preciso logar para ver?</summary>
+      <div class="faq-body"><p>Não. O servidor dela não está logado como você, então ele recebe uma página de login. Uma extensão roda no seu navegador com sua sessão, então funciona normalmente.</p></div>
+    </details>
+    <details>
+      <summary>É seguro colar uma URL num extrator online?</summary>
+      <div class="faq-body"><p>Para uma página pública de marketing, em geral sim. Para um painel interno, um ambiente de homologação ou um design não lançado, você está entregando a um terceiro uma URL e o conteúdo dela — vale pensar antes de fazer.</p></div>
+    </details>
+    <details>
+      <summary>A extensão envia alguma coisa?</summary>
+      <div class="faq-body"><p>Ela não consegue. A política de segurança de conteúdo dela define connect-src como none, então as páginas dela estão proibidas de abrir conexão de rede. Ela funciona com a rede desconectada.</p></div>
+    </details>
+    <details>
+      <summary>Quando uma ferramenta online é de fato melhor?</summary>
+      <div class="faq-body"><p>Quando a URL aponta direto para um arquivo .svg e você quer otimizar ou converter, ou quando você está numa máquina em que não pode instalar extensões. Otimizadores de SVG online, em especial, fazem um trabalho que esta extensão não tenta.</p></div>
+    </details>
+  </div>
+</div></section>
+
+<hr class="section-rule">
+
+<section><div class="wrap">
+  <div class="cta-band">
+    <div>
+      <h2>Leia a página, não uma cópia do HTML dela</h2>
+      <p>Ícones renderizados pelo framework, páginas com login, e nada enviado.</p>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Instalar a extensão</a>
+      <a class="btn quiet" href="/pt-br/tutorials">Todos os 15 tutoriais →</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="related"><div class="wrap">
+  <p class="eyebrow">Continue</p>
+  <ul>
+    <li><a href="/pt-br/tutorials/download-svg-from-url">De uma URL<span>O caso do endereço</span></a></li>
+    <li><a href="/pt-br/privacy">Posição sobre privacidade<span>O que ela consegue ver</span></a></li>
+    <li><a href="/pt-br/tutorials/extract-svg-from-website">Extrair tudo<span>Um ZIP</span></a></li>
+  </ul>
+</div></section>
+</main>
+
+<footer>
+  <nav class="bleed foot-map" aria-label="Mapa do site">
+    <div class="col"><p>Produto</p><ul>
+      <li><a href="/pt-br/">Visão geral</a></li>
+      <li><a href="/pt-br/features">Recursos</a></li>
+      <li><a href="/pt-br/compare/svg-downloader-vs-screenshotting-icons">Vs. print de tela</a></li>
+      <li><a href="/pt-br/privacy">Privacidade</a></li>
+      <li><a href="/pt-br/use-cases">Casos de uso</a></li>
+    </ul></div>
+    <div class="col"><p>O que ele encontra</p><ul>
+      <li><a href="/pt-br/features/inline-svg">SVG inline</a></li>
+      <li><a href="/pt-br/features/css-background-svg">SVG em fundo CSS</a></li>
+      <li><a href="/pt-br/features/svg-sprite-extractor">SVG de sprite / &lt;use&gt;</a></li>
+      <li><a href="/pt-br/features/bulk-zip-download">Página inteira em ZIP</a></li>
+    </ul></div>
+    <div class="col"><p>Tutoriais</p><ul>
+      <li><a href="/pt-br/tutorials">Todos os 15 tutoriais</a></li>
+      <li><a href="/pt-br/tutorials/how-to-download-svg-files">Como baixar arquivos SVG</a></li>
+      <li><a href="/pt-br/tutorials/copy-svg-from-website">Copiar um SVG</a></li>
+      <li><a href="/pt-br/tutorials/extract-svg-from-website">Extrair todo SVG</a></li>
+    </ul></div>
+    <div class="col"><p>Docs</p><ul>
+      <li><a href="/pt-br/docs/installation">Instalação</a></li>
+      <li><a href="/pt-br/docs/usage">Uso</a></li>
+      <li><a href="/pt-br/docs/faq">Perguntas frequentes</a></li>
+      <li><a href="/pt-br/docs/changelog">Mudanças</a></li>
+    </ul></div>
+  </nav>
+  <div class="bleed colophon-foot">
+    <a href="https://github.com/Flozad/svg-downloader">GitHub</a>
+    <a href="https://github.com/Flozad/svg-downloader/issues">Issues</a>
+    <a href="https://clasicwebtools.com">clasicwebtools.com</a>
+    <span class="grow"></span>
+    <span>Papel osso, grafite e um único verde&nbsp;plotter</span>
+  </div>
+</footer>
+<script src="/player.js" defer=""></script>
+
+
+</body></html>

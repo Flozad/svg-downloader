@@ -1,9 +1,11 @@
 import React from 'react'
 import {Composition} from 'remotion'
+import {TUTORIALS} from './data/tutorials'
 import {Promo} from './scenes/Promo'
+import {Tutorial, tutorialSeconds} from './scenes/Tutorial'
 import {Shot01, Shot02, Shot03, Shot04, Shot05, ShotBrand} from './shots/Shots'
 import {Marquee, PromoTile} from './shots/Tiles'
-import {MARQUEE, PROMO, PROMO_TILE, SHOT} from './kit/theme'
+import {MARQUEE, PROMO, PROMO_TILE, SHOT, TUTORIAL} from './kit/theme'
 
 // One composition per deliverable. The id is the render's output name, so it is
 // the store filename too — don't rename one without the render script.
@@ -13,6 +15,11 @@ import {MARQUEE, PROMO, PROMO_TILE, SHOT} from './kit/theme'
 //   shot-brand    → a spare brand screenshot
 //   promo-tile    → the Small promo tile, 440×280
 //   marquee-tile  → the Marquee promo tile, 1400×560
+//   tut-<slug>    → one tutorial recording per page under /tutorials
+//
+// The tutorial compositions are generated from src/data/tutorials.ts rather than
+// written out, so a tutorial cannot exist as a page without a video or as a
+// video without a page — the list is the single source for both.
 
 export const RemotionRoot: React.FC = () => (
   <>
@@ -27,5 +34,16 @@ export const RemotionRoot: React.FC = () => (
 
     <Composition id="promo-tile" component={PromoTile} durationInFrames={1} {...PROMO_TILE} />
     <Composition id="marquee-tile" component={Marquee} durationInFrames={1} {...MARQUEE} />
+
+    {TUTORIALS.map((spec) => (
+      <Composition
+        key={spec.id}
+        id={`tut-${spec.id}`}
+        component={Tutorial}
+        defaultProps={{spec}}
+        durationInFrames={Math.round(tutorialSeconds(spec) * TUTORIAL.fps)}
+        {...TUTORIAL}
+      />
+    ))}
   </>
 )

@@ -96,10 +96,10 @@ export const IconPage: React.FC<{lit?: number; style?: React.CSSProperties}> = (
               justifyContent: 'center',
               gap: 12,
               borderRadius: 12,
-              border: `1px solid ${on ? theme.text : theme.line}`,
-              background: on ? '#fafafa' : '#fff',
+              border: `1px solid ${on ? theme.plot : theme.line}`,
+              background: on ? theme.plotWash : '#fff',
               boxShadow: on
-                ? '0 10px 24px -12px rgba(10,10,10,0.35)'
+                ? '0 10px 24px -12px rgba(31,90,58,0.45)'
                 : '0 1px 2px rgba(10,10,10,0.03)',
               transform: on ? 'translateY(-2px)' : 'none',
             }}

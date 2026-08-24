@@ -5,7 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SVG Downloader — Extract & Save Any SVG From a Website (Free)</title>
 <meta name="description" content="Free Chrome extension that finds the SVGs on any page — inline, CSS background, same-document sprite — previews each, and saves the original vector, one or all as a ZIP.">
-<link rel="canonical" href="https://svg.clasicwebtools.com/">
+<link rel="canonical" href="https://svg.clasicwebtools.com/"><!--i18n:alternates-->
+<link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/">
+<link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/">
+<link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/">
+<link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/">
+<link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/">
+<link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/">
+<!--/i18n:alternates-->
+<link rel="alternate" type="text/plain" href="https://svg.clasicwebtools.com/llms.txt" title="llms.txt — machine-readable site summary">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="author" content="Flozad">
 <meta name="theme-color" content="#ece4d3">
@@ -33,6 +41,7 @@
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="manifest" href="site.webmanifest">
 <link rel="preload" href="fonts/bricolage-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/space-mono-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="pages.css">
 
@@ -72,7 +81,7 @@
       "operatingSystem": "Chrome 88+, Chromium, Microsoft Edge, Brave",
       "browserRequirements": "Requires Chromium-based browser, version 88 or newer",
       "softwareVersion": "1.3",
-      "downloadUrl": "https://github.com/Flozad/svg-downloader",
+      "downloadUrl": "https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn",
       "image": "https://svg.clasicwebtools.com/motion/06-brand.png",
       "screenshot": "https://svg.clasicwebtools.com/motion/06-brand.png",
       "featureList": [
@@ -142,11 +151,24 @@
   <span class="nav-links">
     <a href="#how">How it works</a>
     <a href="/features">Features</a>
+    <a href="/tutorials">Tutorials</a>
     <a href="/guides">Guides</a>
     <a href="/docs">Docs</a>
     <a href="/privacy">Privacy</a>
-  </span>
-  <a class="nav-cta" href="https://github.com/Flozad/svg-downloader">Get the extension</a>
+    <a href="/use-cases">Stories</a>
+  </span><!--i18n:switch-->
+  <details class="lang-switch">
+    <summary aria-label="Language"><span>EN</span></summary>
+    <ul>
+      <li><a href="/" hreflang="en" lang="en" aria-current="true">English</a></li>
+      <li><a href="/es/" hreflang="es" lang="es">Español</a></li>
+      <li><a href="/fr/" hreflang="fr" lang="fr">Français</a></li>
+      <li><a href="/de/" hreflang="de" lang="de">Deutsch</a></li>
+      <li><a href="/pt-br/" hreflang="pt-BR" lang="pt-BR">Português</a></li>
+    </ul>
+  </details>
+  <!--/i18n:switch-->
+  <a class="nav-cta" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Get the extension</a>
 </nav>
 
 <!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
@@ -183,7 +205,7 @@
       original file.
     </p>
     <div class="cta">
-      <a class="btn primary" href="https://github.com/Flozad/svg-downloader">
+      <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">
         <svg viewBox="0 0 48 48" aria-hidden="true"><use href="#arrow-art"/></svg>
         Get the extension
       </a>
@@ -208,9 +230,7 @@
     <figure class="shot">
       <div class="shot-mount">
         <span class="shot-tag">rec · vectorly.io/icons</span>
-        <video src="motion/hero.mp4" poster="motion/hero.jpg"
-          muted loop playsinline preload="none"
-          aria-label="An icon-packed page: the extension opens, scans, and reports 24 SVGs found. The preview pages through search, heart and star. One is downloaded as star.svg, then all 24 are saved as a ZIP."></video>
+        <video src="motion/hero.mp4" poster="motion/hero.webp" width="1280" height="800" muted loop playsinline preload="none" aria-label="An icon-packed page: the extension opens, scans, and reports 24 SVGs found. The preview pages through search, heart and star. One is downloaded as star.svg, then all 24 are saved as a ZIP."></video>
       </div>
       <figcaption class="shot-cap">
         One session on one real page: open, scan, <code>24 SVGs found</code>, page
@@ -304,9 +324,7 @@
           <figure class="shot">
             <div class="shot-mount">
               <span class="shot-tag">01 · detect</span>
-              <video src="motion/clip-detect.mp4" poster="motion/poster-150.jpg"
-                muted loop playsinline preload="none"
-                aria-label="The extension icon is clicked, the SVG Selector panel drops from the toolbar, and the counter climbs from 0 to 24 SVGs found."></video>
+              <video src="motion/clip-detect.mp4" data-poster="motion/poster-150.webp" width="1280" height="800" muted loop playsinline preload="none" aria-label="The extension icon is clicked, the SVG Selector panel drops from the toolbar, and the counter climbs from 0 to 24 SVGs found."></video>
             </div>
             <figcaption class="shot-cap">The panel drops in and the counter settles on <code>24 SVGs found</code>.</figcaption>
           </figure>
@@ -333,9 +351,7 @@
           <figure class="shot">
             <div class="shot-mount">
               <span class="shot-tag">02 · preview</span>
-              <video src="motion/clip-page.mp4" poster="motion/hero.jpg"
-                muted loop playsinline preload="none"
-                aria-label="Next is pressed and the isolated preview steps from the search icon to a heart to a star, the counter tracking each one."></video>
+              <video src="motion/clip-page.mp4" data-poster="motion/hero.webp" width="1280" height="800" muted loop playsinline preload="none" aria-label="Next is pressed and the isolated preview steps from the search icon to a heart to a star, the counter tracking each one."></video>
             </div>
             <figcaption class="shot-cap">Paging the previews — the filename tracks along: <code>search-24</code>, <code>heart-24</code>, <code>star-24</code>.</figcaption>
           </figure>
@@ -362,9 +378,7 @@
           <figure class="shot">
             <div class="shot-mount">
               <span class="shot-tag">03 · download</span>
-              <video src="motion/clip-download.mp4" poster="motion/poster-430.jpg"
-                muted loop playsinline preload="none"
-                aria-label="The Download Current SVG button is pressed and a Saved star.svg confirmation appears."></video>
+              <video src="motion/clip-download.mp4" data-poster="motion/poster-430.webp" width="1280" height="800" muted loop playsinline preload="none" aria-label="The Download Current SVG button is pressed and a Saved star.svg confirmation appears."></video>
             </div>
             <figcaption class="shot-cap">One click, and <code>Saved&nbsp;star.svg</code> — the original vector, not a screenshot.</figcaption>
           </figure>
@@ -392,9 +406,7 @@
           <figure class="shot">
             <div class="shot-mount">
               <span class="shot-tag">04 · bundle</span>
-              <video src="motion/clip-zip.mp4" poster="motion/poster-520.jpg"
-                muted loop playsinline preload="none"
-                aria-label="Download All as ZIP is pressed and a 24 SVGs saved confirmation appears."></video>
+              <video src="motion/clip-zip.mp4" data-poster="motion/poster-520.webp" width="1280" height="800" muted loop playsinline preload="none" aria-label="Download All as ZIP is pressed and a 24 SVGs saved confirmation appears."></video>
             </div>
             <figcaption class="shot-cap">Every vector on the page, bundled: <code>24&nbsp;SVGs&nbsp;saved</code>.</figcaption>
           </figure>
@@ -542,6 +554,15 @@
         <li><a href="/features/css-background-svg">CSS background SVG</a></li>
         <li><a href="/features/svg-sprite-extractor">Sprite / &lt;use&gt; SVG</a></li>
         <li><a href="/features/bulk-zip-download">Whole page as ZIP</a></li>
+      </ul>
+    </div>
+    <div class="col">
+      <p>Tutorials</p>
+      <ul>
+        <li><a href="/tutorials">All 15 tutorials</a></li>
+        <li><a href="/tutorials/how-to-download-svg-files">How to download SVG files</a></li>
+        <li><a href="/tutorials/copy-svg-from-website">Copy an SVG from a website</a></li>
+        <li><a href="/tutorials/grab-svg-from-website">Grab one in a right-click</a></li>
       </ul>
     </div>
     <div class="col">

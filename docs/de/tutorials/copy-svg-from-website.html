@@ -1,0 +1,380 @@
+<!DOCTYPE html><html lang="de"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ein SVG von einer Website kopieren (Code oder Bild)</title>
+<meta name="description" content="Kopiere ein SVG direkt in die Zwischenablage — das Markup zum Einfügen in eine Komponente oder ein PNG zum Einfügen in Dokumente und Chats. Keine Datei, keine DevTools.">
+<link rel="canonical" href="https://svg.clasicwebtools.com/de/tutorials/copy-svg-from-website"><!--i18n:alternates-->
+<link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/copy-svg-from-website">
+<link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/copy-svg-from-website">
+<link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/copy-svg-from-website">
+<link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/copy-svg-from-website">
+<link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/copy-svg-from-website">
+<link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/copy-svg-from-website">
+<!--/i18n:alternates-->
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="Flozad">
+<meta name="theme-color" content="#ece4d3">
+<meta property="og:site_name" content="SVG Downloader">
+<meta property="og:title" content="Ein SVG von einer Website kopieren (Code oder Bild)">
+<meta property="og:description" content="Kopiere ein SVG direkt in die Zwischenablage — das Markup zum Einfügen in eine Komponente oder ein PNG zum Einfügen in Dokumente und Chats. Keine Datei, keine DevTools.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://svg.clasicwebtools.com/de/tutorials/copy-svg-from-website">
+<meta property="og:image" content="https://svg.clasicwebtools.com/motion/tutorials/copy-svg-from-website.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="Das SVG-Downloader-Popup mit den Buttons Code kopieren und Bild kopieren unter der Vorschau.">
+<meta property="og:locale" content="de_DE">
+<meta property="og:video" content="https://svg.clasicwebtools.com/motion/tutorials/copy-svg-from-website.mp4">
+<meta property="og:video:secure_url" content="https://svg.clasicwebtools.com/motion/tutorials/copy-svg-from-website.mp4">
+<meta property="og:video:type" content="video/mp4">
+<meta property="og:video:width" content="1280">
+<meta property="og:video:height" content="800">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@lozards">
+<meta name="twitter:title" content="Ein SVG von einer Website kopieren (Code oder Bild)">
+<meta name="twitter:description" content="Kopiere ein SVG direkt in die Zwischenablage — das Markup zum Einfügen in eine Komponente oder ein PNG zum Einfügen in Dokumente und Chats. Keine Datei, keine DevTools.">
+<meta name="twitter:image" content="https://svg.clasicwebtools.com/motion/tutorials/copy-svg-from-website.jpg">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/fonts/bricolage-var.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/pages.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Start",
+          "item": "https://svg.clasicwebtools.com/de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tutorials",
+          "item": "https://svg.clasicwebtools.com/de/tutorials"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Von einer Website kopieren",
+          "item": "https://svg.clasicwebtools.com/de/tutorials/copy-svg-from-website"
+        }
+      ]
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Ein SVG von einer Website als Code oder als Bild kopieren",
+      "description": "Das SVG-Downloader-Popup blättert zu einem Sternsymbol, drückt Code kopieren und meldet „SVG-Code in die Zwischenablage kopiert“, drückt dann Bild kopieren und meldet „PNG-Bild in die Zwischenablage kopiert“.",
+      "thumbnailUrl": [
+        "https://svg.clasicwebtools.com/motion/tutorials/copy-svg-from-website.jpg"
+      ],
+      "uploadDate": "2026-08-22",
+      "duration": "PT19S",
+      "contentUrl": "https://svg.clasicwebtools.com/motion/tutorials/copy-svg-from-website.mp4",
+      "embedUrl": "https://svg.clasicwebtools.com/tutorials/copy-svg-from-website",
+      "isFamilyFriendly": true,
+      "publisher": {
+        "@type": "Organization",
+        "name": "SVG Downloader",
+        "url": "https://svg.clasicwebtools.com/de/"
+      }
+    },
+    {
+      "@type": "HowTo",
+      "name": "So kopierst du ein SVG von einer Website",
+      "description": "Kopiere ein SVG direkt in die Zwischenablage — das Markup zum Einfügen in eine Komponente oder ein PNG zum Einfügen in Dokumente und Chats. Keine Datei, keine DevTools.",
+      "image": "https://svg.clasicwebtools.com/motion/tutorials/copy-svg-from-website.jpg",
+      "totalTime": "PT2M",
+      "tool": {
+        "@type": "HowToTool",
+        "name": "Browser-Erweiterung SVG Downloader"
+      },
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Popup öffnen und das Icon finden",
+          "text": "Klick auf den Button in der Symbolleiste und blättere mit Zurück und Weiter, bis die Vorschau das gewünschte zeigt.",
+          "url": "https://svg.clasicwebtools.com/de/tutorials/copy-svg-from-website#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Für Code: Code kopieren drücken",
+          "text": "Die Statuszeile meldet „SVG-Code in die Zwischenablage kopiert“. Du hast nun bereinigtes Markup samt Namensraum, bereit zum Einfügen in eine Komponente.",
+          "url": "https://svg.clasicwebtools.com/de/tutorials/copy-svg-from-website#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Für ein Bild: Bild kopieren drücken",
+          "text": "Die Statuszeile meldet „PNG-Bild in die Zwischenablage kopiert“. Der Vektor wird auf deinem Rechner in 2× oder besser gerendert und als Bild in die Zwischenablage gelegt.",
+          "url": "https://svg.clasicwebtools.com/de/tutorials/copy-svg-from-website#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Füg es dort ein, wo es hin soll",
+          "text": "Markup in deinen Editor; das PNG in dein Dokument, Deck oder deinen Chat. In beiden Fällen wurde nichts auf die Platte geschrieben.",
+          "url": "https://svg.clasicwebtools.com/de/tutorials/copy-svg-from-website#steps"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Was ist der Unterschied zwischen Code kopieren und Bild kopieren?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Code kopieren legt das SVG-Markup als Text in deine Zwischenablage, zum Einfügen in einen Editor oder eine Komponente. Bild kopieren rastert es zu einem PNG und legt das als Bild in die Zwischenablage, zum Einfügen in Dokumente, Decks und Chats."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ich habe in Slack eingefügt und eine Wand aus Code bekommen.",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Du hast Code kopieren benutzt, und das ist Text. Nimm stattdessen Bild kopieren — es legt ein PNG in die Zwischenablage, das Slack als Bild einfügt."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ist das kopierte Markup sicher genug für meine Codebasis?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Es wird zuerst bereinigt: Script-Elemente, Event-Handler-Attribute und externe Referenzen werden entfernt, und der xmlns-Namensraum wird ergänzt. Du fügst Formen ein, nicht fremdes Seitenverhalten."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Warum ist das eingefügte Icon in meiner App schwarz?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Weil es currentColor nutzt und die Farbe also aus dem CSS erbt, statt eine eigene zu tragen. Setz eine Farbe auf das Element oder sein Elternelement, und das Icon folgt ihr."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Muss ich eine Zwischenablage-Berechtigung erteilen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nein. Beide Buttons schreiben aus einem Nutzerklick in einer fokussierten Erweiterungsseite, was Browser ohne zusätzliche Berechtigung erlauben — es wird also keine angefordert."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Zum Inhalt springen</a>
+
+<nav class="nav">
+  <a class="brand" href="/de/">
+    <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+      <rect width="48" height="48" rx="10" fill="var(--plot)"></rect>
+      <path d="M24 13v15m0 0l-6.5-6.5M24 28l6.5-6.5" fill="none" stroke="var(--surface-hi)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+      <rect x="16.5" y="33.5" width="15" height="2.4" rx="1.2" fill="var(--surface-hi)"></rect>
+    </svg>
+    <strong>SVG&nbsp;Downloader</strong>
+  </a>
+  <span class="spacer"></span>
+  <span class="nav-links">
+    <a href="/de/features">Funktionen</a>
+    <a href="/de/tutorials" aria-current="page">Tutorials</a>
+    <a href="/de/guides">Anleitungen</a>
+    <a href="/de/docs">Doku</a>
+    <a href="/de/use-cases">Praxis</a>
+  </span><!--i18n:switch-->
+  <details class="lang-switch">
+    <summary aria-label="Sprache"><span>DE</span></summary>
+    <ul>
+      <li><a href="/tutorials/copy-svg-from-website" hreflang="en" lang="en">English</a></li>
+      <li><a href="/es/tutorials/copy-svg-from-website" hreflang="es" lang="es">Español</a></li>
+      <li><a href="/fr/tutorials/copy-svg-from-website" hreflang="fr" lang="fr">Français</a></li>
+      <li><a href="/de/tutorials/copy-svg-from-website" hreflang="de" lang="de" aria-current="true">Deutsch</a></li>
+      <li><a href="/pt-br/tutorials/copy-svg-from-website" hreflang="pt-BR" lang="pt-BR">Português</a></li>
+    </ul>
+  </details>
+  <!--/i18n:switch-->
+  <a class="nav-cta" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Erweiterung installieren</a>
+</nav>
+
+<main id="main">
+<header class="page-hero"><div class="wrap">
+  <ol class="crumbs">
+    <li><a href="/de/">Start</a></li>
+    <li><a href="/de/tutorials">Tutorials</a></li>
+    <li><span aria-current="page">Von einer Website kopieren</span></li>
+  </ol>
+  <p class="eyebrow">Tutorial — direkt in die Zwischenablage</p>
+  <h1>So <span class="plot">kopierst du ein SVG</span> von einer Website</h1>
+  <p class="lede">Manchmal willst du gar keine Datei — du willst das Markup im Editor oder das Bild in einer Slack-Nachricht. Beides ist ein Klick, und es sind verschiedene Klicks.</p>
+  <div class="cta">
+    <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 12v16m0 0l-7-7m7 7l7-7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"></path><rect x="16" y="34" width="16" height="2.6" rx="1.3" fill="currentColor"></rect></svg>
+      Erweiterung installieren</a>
+    <a class="btn quiet" href="#steps">Zu den Schritten ↓</a>
+  </div>
+</div></header>
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Ansehen — 19 Sekunden</p>
+  <h2>Beide Zwischenablagen, in einem Durchlauf</h2>
+  <figure class="shot">
+    <div class="shot-mount">
+      <span class="shot-tag">Tutorial · Zwischenablage</span>
+      <video src="/motion/tutorials/copy-svg-from-website.mp4" poster="/motion/tutorials/copy-svg-from-website.jpg" muted="" loop="" playsinline="" preload="none" aria-label="Das SVG-Downloader-Popup blättert zu einem Sternsymbol, drückt Code kopieren und meldet „SVG-Code in die Zwischenablage kopiert“, drückt dann Bild kopieren und meldet „PNG-Bild in die Zwischenablage kopiert“."></video>
+    </div>
+    <figcaption class="shot-cap"><em>Code kopieren</em> gibt dir Markup. <em>Bild kopieren</em> gibt dir ein PNG. Die Statuszeile bestätigt beides.</figcaption>
+  </figure>
+
+  <p class="lead-in">Achte darauf, wie sich die Statuszeile zwischen den beiden Klicks ändert — das Popup sagt dir genau, welche der beiden Zwischenablagen du gerade gefüllt hast.</p>
+  <p class="eyebrow">Was die Aufnahme zeigt</p>
+  <ol class="beats">
+    <li>Öffne das Popup auf der Seite, die du liest</li>
+    <li>Lande beim gewünschten Icon</li>
+    <li>Code kopieren — das Markup, direkt in deine Zwischenablage</li>
+    <li>Füg es in eine Komponente ein, und es funktioniert einfach</li>
+    <li>Oder Bild kopieren — ein PNG, für Dokumente und Chats</li>
+    <li>Zwei Zwischenablagen, ein Icon. In beiden Fällen keine Datei auf der Platte.</li>
+  </ol>
+</div></section>
+
+<hr class="section-rule">
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Wähle die richtige</p>
+  <h2>Code kopieren und Bild kopieren sind keine Alternativen — es sind verschiedene Dinge</h2>
+  
+  <p class="lead-in">Sie sitzen nebeneinander im Popup, und es lohnt sich zu wissen, was jeder in deine Zwischenablage legt, denn das Falsche einzufügen kostet fünf verwirrte Minuten.</p>
+  <ul>
+    <li><strong>Code kopieren</strong> legt das <em>Markup</em> als Text in deine Zwischenablage: <code>&lt;svg viewBox="0 0 24 24"&gt;…&lt;/svg&gt;</code>, bereinigt, mit bereits ergänztem <code>xmlns</code>-Namensraum. Füg es in eine React-Komponente, ein Vue-Template, eine HTML-Datei oder einen Texteditor ein. Füg es in Slack ein, und du bekommst eine Wand spitzer Klammern, denn es ist Text.</li>
+    <li><strong>Bild kopieren</strong> rastert den Vektor zu einem <em>PNG</em> und legt das als Bild in deine Zwischenablage. Füg es in Google Docs, Notion, Figma, Slack, eine E-Mail ein — überall, wo ein eingefügtes Bild angenommen wird. Es wird mindestens in 2× gerendert, damit es nicht als unscharfes Vorschaubild ankommt.</li>
+  </ul>
+  <p>Faustregel: Ist das Ziel Code, nimm <em>Code kopieren</em>. Ist das Ziel ein Dokument, nimm <em>Bild kopieren</em>.</p>
+
+  <h2 id="steps">Ein Icon kopieren</h2>
+  <p>Beide Wege teilen die ersten zwei Schritte.</p>
+  <ol>
+    <li><strong>Popup öffnen und das Icon finden.</strong> Klick auf den Button in der Symbolleiste und blättere mit <em>Zurück</em> und <em>Weiter</em>, bis die Vorschau das gewünschte zeigt.</li>
+    <li><strong>Für Code: Code kopieren drücken.</strong> Die Statuszeile meldet <em>SVG-Code in die Zwischenablage kopiert.</em> Du hast nun bereinigtes Markup samt Namensraum, bereit zum Einfügen in eine Komponente.</li>
+    <li><strong>Für ein Bild: Bild kopieren drücken.</strong> Die Statuszeile meldet <em>PNG-Bild in die Zwischenablage kopiert.</em> Der Vektor wird auf deinem Rechner in 2× oder besser gerendert und als Bild in die Zwischenablage gelegt.</li>
+    <li><strong>Füg es dort ein, wo es hin soll.</strong> Markup in deinen Editor; das PNG in dein Dokument, Deck oder deinen Chat. In beiden Fällen wurde nichts auf die Platte geschrieben.</li>
+  </ol>
+
+  
+  <h2>Was mit dem kopierten Markup schon geschehen ist</h2>
+  <p>Das ist der Teil, der es besser macht als das Kopieren aus den DevTools. Bevor es deine Zwischenablage erreicht, läuft das Markup durch denselben Bereiniger wie jeder Download: Der <code>xmlns</code>-Namensraum wird ergänzt, falls er fehlte, damit das Fragment als gültiges Dokument für sich steht; und Script-Elemente, Event-Handler-Attribute und externe Referenzen werden entfernt, damit du nicht fremdes Seitenverhalten in deine Codebasis einfügst. Was du einfügst, sind die Formen, und nur die Formen.</p>
+
+  <h2>In eine Komponente einfügen</h2>
+  <p>Zwei Kleinigkeiten beißen dich in JSX. Attribute wie <code>stroke-width</code> und <code>fill-rule</code> müssen zu <code>strokeWidth</code> und <code>fillRule</code> werden; die meisten Editoren und Codemods erledigen das für dich. Und wenn das Icon <code>currentColor</code> nutzt — die meisten tun das —, nimmt es die gerade gültige Textfarbe an, was meist genau das ist, was du willst. Wird es schwarz gezeichnet, obwohl du Farbe erwartet hast: Genau deshalb — die Farbe lag im CSS der Seite, nicht in der Form.</p>
+
+  <h2>Warum die Zwischenablage keine zusätzliche Berechtigung braucht</h2>
+  <p>Beide Buttons schreiben aus einem Klick heraus, den du gemacht hast, in einer fokussierten Erweiterungsseite. Genau unter dieser Bedingung erlauben Browser Schreibzugriffe auf die Zwischenablage, die Erweiterung fordert also gar keine Zwischenablage-Berechtigung an — sie nutzt einfach die Geste, die du ihr schon gegeben hast.</p>
+
+  <dl class="facts">
+    <div><dt>Code kopieren</dt><dd>Bereinigtes <strong>Markup</strong>, <code>xmlns</code> inklusive — für Editoren und Komponenten.</dd></div>
+    <div><dt>Bild kopieren</dt><dd>Ein <strong>PNG</strong> in 2× oder besser — für Dokumente, Decks, Chats und E-Mails.</dd></div>
+    <div><dt>Bereinigung</dt><dd>Skripte, Handler und externe Referenzen werden vor beiden Kopien entfernt.</dd></div>
+    <div><dt>Berechtigungen</dt><dd>Keine Zwischenablage-Berechtigung angefordert — sie reitet auf deinem Klick mit.</dd></div>
+  </dl>
+</div></section>
+
+<hr class="section-rule">
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Gut zu wissen</p>
+  <h2>Häufig gefragt</h2>
+  <div class="faq">
+    <details>
+      <summary>Was ist der Unterschied zwischen Code kopieren und Bild kopieren?</summary>
+      <div class="faq-body"><p>Code kopieren legt das SVG-Markup als Text in deine Zwischenablage, zum Einfügen in einen Editor oder eine Komponente. Bild kopieren rastert es zu einem PNG und legt das als Bild in die Zwischenablage, zum Einfügen in Dokumente, Decks und Chats.</p></div>
+    </details>
+    <details>
+      <summary>Ich habe in Slack eingefügt und eine Wand aus Code bekommen.</summary>
+      <div class="faq-body"><p>Du hast Code kopieren benutzt, und das ist Text. Nimm stattdessen Bild kopieren — es legt ein PNG in die Zwischenablage, das Slack als Bild einfügt.</p></div>
+    </details>
+    <details>
+      <summary>Ist das kopierte Markup sicher genug für meine Codebasis?</summary>
+      <div class="faq-body"><p>Es wird zuerst bereinigt: Script-Elemente, Event-Handler-Attribute und externe Referenzen werden entfernt, und der xmlns-Namensraum wird ergänzt. Du fügst Formen ein, nicht fremdes Seitenverhalten.</p></div>
+    </details>
+    <details>
+      <summary>Warum ist das eingefügte Icon in meiner App schwarz?</summary>
+      <div class="faq-body"><p>Weil es currentColor nutzt und die Farbe also aus dem CSS erbt, statt eine eigene zu tragen. Setz eine Farbe auf das Element oder sein Elternelement, und das Icon folgt ihr.</p></div>
+    </details>
+    <details>
+      <summary>Muss ich eine Zwischenablage-Berechtigung erteilen?</summary>
+      <div class="faq-body"><p>Nein. Beide Buttons schreiben aus einem Nutzerklick in einer fokussierten Erweiterungsseite, was Browser ohne zusätzliche Berechtigung erlauben — es wird also keine angefordert.</p></div>
+    </details>
+  </div>
+</div></section>
+
+<hr class="section-rule">
+
+<section><div class="wrap">
+  <div class="cta-band">
+    <div>
+      <h2>Zwei Zwischenablagen, keine Dateien</h2>
+      <p>Markup für den Editor, ein PNG fürs Dokument. Wähl einen Button.</p>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Erweiterung installieren</a>
+      <a class="btn quiet" href="/de/tutorials">Alle 15 Tutorials →</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="related"><div class="wrap">
+  <p class="eyebrow">Weiter geht's</p>
+  <ul>
+    <li><a href="/de/tutorials/download-svg-from-html">Aus dem HTML<span>Ohne DevTools</span></a></li>
+    <li><a href="/de/tutorials/download-svg-image-from-website">In PNG umwandeln<span>Wenn du ein Raster brauchst</span></a></li>
+    <li><a href="/de/tutorials/how-to-download-svg-files">Stattdessen als Datei speichern<span>Die Grundlagen</span></a></li>
+  </ul>
+</div></section>
+</main>
+
+<footer>
+  <nav class="bleed foot-map" aria-label="Sitemap">
+    <div class="col"><p>Produkt</p><ul>
+      <li><a href="/de/">Überblick</a></li>
+      <li><a href="/de/features">Funktionen</a></li>
+      <li><a href="/de/compare/svg-downloader-vs-screenshotting-icons">Vs. Screenshot</a></li>
+      <li><a href="/de/privacy">Datenschutz</a></li>
+      <li><a href="/de/use-cases">Anwendungsfälle</a></li>
+    </ul></div>
+    <div class="col"><p>Erkennt</p><ul>
+      <li><a href="/de/features/inline-svg">Inline-SVG</a></li>
+      <li><a href="/de/features/css-background-svg">SVG im CSS-Hintergrund</a></li>
+      <li><a href="/de/features/svg-sprite-extractor">Sprite- / &lt;use&gt;-SVG</a></li>
+      <li><a href="/de/features/bulk-zip-download">Ganze Seite als ZIP</a></li>
+    </ul></div>
+    <div class="col"><p>Tutorials</p><ul>
+      <li><a href="/de/tutorials">Alle 15 Tutorials</a></li>
+      <li><a href="/de/tutorials/how-to-download-svg-files">SVG-Dateien herunterladen</a></li>
+      <li><a href="/de/tutorials/copy-svg-from-website">Ein SVG kopieren</a></li>
+      <li><a href="/de/tutorials/extract-svg-from-website">Jedes SVG extrahieren</a></li>
+    </ul></div>
+    <div class="col"><p>Doku</p><ul>
+      <li><a href="/de/docs/installation">Installation</a></li>
+      <li><a href="/de/docs/usage">Bedienung</a></li>
+      <li><a href="/de/docs/faq">FAQ</a></li>
+      <li><a href="/de/docs/changelog">Changelog</a></li>
+    </ul></div>
+  </nav>
+  <div class="bleed colophon-foot">
+    <a href="https://github.com/Flozad/svg-downloader">GitHub</a>
+    <a href="https://github.com/Flozad/svg-downloader/issues">Issues</a>
+    <a href="https://clasicwebtools.com">clasicwebtools.com</a>
+    <span class="grow"></span>
+    <span>Knochenpapier, Graphit, ein einziges Plotter&nbsp;grün</span>
+  </div>
+</footer>
+<script src="/player.js" defer=""></script>
+
+
+</body></html>

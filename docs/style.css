@@ -234,6 +234,56 @@ section { padding-block: clamp(72px, 11vw, 128px); position: relative; }
 }
 .nav-links .at-only { display: none; }
 
+/* ── Language switcher ────────────────────────────────────────────────────
+   A disclosure, not a script: <details> opens with JavaScript off, and every
+   language is a real link to the same page, which is also how a crawler walks
+   from one translation to the next. */
+.lang-switch { position: relative; font-family: var(--mono); font-size: 12px; }
+.lang-switch > summary {
+  list-style: none;
+  cursor: pointer;
+  display: inline-flex; align-items: center; gap: 5px;
+  color: var(--dim);
+  letter-spacing: 0.04em;
+  padding: 7px 10px;
+  border-radius: var(--r-node);
+  transition: color 0.18s ease, background-color 0.18s ease;
+}
+.lang-switch > summary::-webkit-details-marker { display: none; }
+.lang-switch > summary::after {
+  content: '';
+  width: 0; height: 0;
+  border-left: 3.5px solid transparent;
+  border-right: 3.5px solid transparent;
+  border-top: 4px solid currentColor;
+  opacity: 0.7;
+}
+.lang-switch[open] > summary { color: var(--ink); background: var(--plot-wash); }
+@media (hover: hover) and (pointer: fine) {
+  .lang-switch > summary:hover { color: var(--ink); background: var(--plot-wash); }
+}
+.lang-switch > ul {
+  position: absolute; right: 0; top: calc(100% + 7px); z-index: 50;
+  min-width: 150px;
+  margin: 0; padding: 5px;
+  list-style: none;
+  background: var(--surface-hi);
+  border: 1px solid var(--line);
+  border-radius: var(--r-panel);
+  box-shadow: 0 10px 30px rgba(27, 26, 21, 0.14);
+}
+.lang-switch > ul a {
+  display: block;
+  padding: 8px 10px;
+  color: var(--dim);
+  text-decoration: none;
+  border-radius: var(--r-node);
+}
+.lang-switch > ul a[aria-current] { color: var(--ink); background: var(--plot-wash); }
+@media (hover: hover) and (pointer: fine) {
+  .lang-switch > ul a:hover { color: var(--ink); background: var(--plot-wash); }
+}
+
 /* ═══════════════════════════════════════════════════════════════════════════
    HERO
    ═════════════════════════════════════════════════════════════════════════ */
@@ -270,7 +320,9 @@ section { padding-block: clamp(72px, 11vw, 128px); position: relative; }
   letter-spacing: -0.045em;
   line-height: 0.96;
   margin-bottom: 26px;
-  animation: rise 0.8s var(--ease-out) both;
+  /* Transform only: an opacity fade would keep the largest paint off the
+     timeline until it cleared, pushing LCP out by the length of the fade. */
+  animation: rise-plain 0.8s var(--ease-out) both;
 }
 .hero h1 .plot { color: var(--plot); }
 .hero .lede {
@@ -282,6 +334,7 @@ section { padding-block: clamp(72px, 11vw, 128px); position: relative; }
   animation: rise 0.8s var(--ease-out) 0.08s both;
 }
 @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@keyframes rise-plain { from { transform: translateY(14px); } to { transform: none; } }
 
 .cta { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; animation: rise 0.8s var(--ease-out) 0.16s both; }
 .btn {
@@ -331,6 +384,7 @@ section { padding-block: clamp(72px, 11vw, 128px); position: relative; }
 }
 .shot-mount video, .shot-mount img {
   width: 100%; height: auto; display: block;
+  aspect-ratio: 1280 / 800;   /* the plate's real shape — held before it loads */
   border-radius: 5px;
   background: #f4f4f5;   /* the product's own paper, so a poster never flashes bone */
 }

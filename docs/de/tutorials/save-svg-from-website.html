@@ -1,0 +1,380 @@
+<!DOCTYPE html><html lang="de"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ein SVG von einer Website speichern, wenn der Rechtsklick nicht will</title>
+<meta name="description" content="„Bild speichern unter…“ fehlt oder ist ausgegraut beim gewünschten Icon? Hier steht genau, warum, welche vier Verstecke es gibt und wie du den echten Vektor trotzdem speicherst.">
+<link rel="canonical" href="https://svg.clasicwebtools.com/de/tutorials/save-svg-from-website"><!--i18n:alternates-->
+<link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/save-svg-from-website">
+<link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/save-svg-from-website">
+<link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/save-svg-from-website">
+<link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/save-svg-from-website">
+<link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/save-svg-from-website">
+<link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/save-svg-from-website">
+<!--/i18n:alternates-->
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="Flozad">
+<meta name="theme-color" content="#ece4d3">
+<meta property="og:site_name" content="SVG Downloader">
+<meta property="og:title" content="Ein SVG von einer Website speichern, wenn der Rechtsklick nicht will">
+<meta property="og:description" content="„Bild speichern unter…“ fehlt oder ist ausgegraut beim gewünschten Icon? Hier steht genau, warum, welche vier Verstecke es gibt und wie du den echten Vektor trotzdem speicherst.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://svg.clasicwebtools.com/de/tutorials/save-svg-from-website">
+<meta property="og:image" content="https://svg.clasicwebtools.com/motion/tutorials/save-svg-from-website.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="Das SVG-Downloader-Popup zeigt die Vorschau eines Herz-Icons auf einer Seite, deren Rechtsklick-Menü keine Speicheroption anbietet.">
+<meta property="og:locale" content="de_DE">
+<meta property="og:video" content="https://svg.clasicwebtools.com/motion/tutorials/save-svg-from-website.mp4">
+<meta property="og:video:secure_url" content="https://svg.clasicwebtools.com/motion/tutorials/save-svg-from-website.mp4">
+<meta property="og:video:type" content="video/mp4">
+<meta property="og:video:width" content="1280">
+<meta property="og:video:height" content="800">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@lozards">
+<meta name="twitter:title" content="Ein SVG von einer Website speichern, wenn der Rechtsklick nicht will">
+<meta name="twitter:description" content="„Bild speichern unter…“ fehlt oder ist ausgegraut beim gewünschten Icon? Hier steht genau, warum, welche vier Verstecke es gibt und wie du den echten Vektor trotzdem speicherst.">
+<meta name="twitter:image" content="https://svg.clasicwebtools.com/motion/tutorials/save-svg-from-website.jpg">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/fonts/bricolage-var.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/pages.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Start",
+          "item": "https://svg.clasicwebtools.com/de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tutorials",
+          "item": "https://svg.clasicwebtools.com/de/tutorials"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Wenn der Rechtsklick versagt",
+          "item": "https://svg.clasicwebtools.com/de/tutorials/save-svg-from-website"
+        }
+      ]
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Ein SVG speichern, wenn der Rechtsklick nichts zu bieten hat",
+      "description": "Eine Seite, deren Icons kein „Bild speichern unter…“ anbieten. Das SVG-Downloader-Popup öffnet sich, scannt das DOM, findet jeden Vektor, blättert zu einem Herz, benennt es und speichert es.",
+      "thumbnailUrl": [
+        "https://svg.clasicwebtools.com/motion/tutorials/save-svg-from-website.jpg"
+      ],
+      "uploadDate": "2026-08-22",
+      "duration": "PT19S",
+      "contentUrl": "https://svg.clasicwebtools.com/motion/tutorials/save-svg-from-website.mp4",
+      "embedUrl": "https://svg.clasicwebtools.com/tutorials/save-svg-from-website",
+      "isFamilyFriendly": true,
+      "publisher": {
+        "@type": "Organization",
+        "name": "SVG Downloader",
+        "url": "https://svg.clasicwebtools.com/de/"
+      }
+    },
+    {
+      "@type": "HowTo",
+      "name": "So speicherst du ein SVG, wenn der Rechtsklick dich nicht lässt",
+      "description": "„Bild speichern unter…“ fehlt oder ist ausgegraut beim gewünschten Icon? Hier steht genau, warum, welche vier Verstecke es gibt und wie du den echten Vektor trotzdem speicherst.",
+      "image": "https://svg.clasicwebtools.com/motion/tutorials/save-svg-from-website.jpg",
+      "totalTime": "PT2M",
+      "tool": {
+        "@type": "HowToTool",
+        "name": "Browser-Erweiterung SVG Downloader"
+      },
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Lass das Rechtsklick-Menü in Ruhe",
+          "text": "Fehlt „Bild speichern unter…“ oder ist es ausgegraut, wird es auch durch Wiederholen nicht erscheinen. Das Fehlen ist eine Information, kein Fehler.",
+          "url": "https://svg.clasicwebtools.com/de/tutorials/save-svg-from-website#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Öffne das Popup",
+          "text": "Klick auf der Seite auf den Button in der Symbolleiste. Der Scan löst alle vier Quellen in eigenständiges Markup auf — Inline, CSS-Hintergrund, Sprite-Referenz und Bildquelle gleichermaßen.",
+          "url": "https://svg.clasicwebtools.com/de/tutorials/save-svg-from-website#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Vorschau, um das Richtige zu erkennen",
+          "text": "Die isolierte Vorschau ist der schnellste Weg, zwei ähnliche Icons zu unterscheiden, besonders in einem Satz, den die Seite mit 16 px zeigt.",
+          "url": "https://svg.clasicwebtools.com/de/tutorials/save-svg-from-website#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Benenne es und speichere",
+          "text": "Tipp einen Dateinamen und drück Aktuelles laden. Der Namensraum wird beim Speichern repariert, die Datei öffnet also in Figma, Illustrator und jedem Browser.",
+          "url": "https://svg.clasicwebtools.com/de/tutorials/save-svg-from-website#steps"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Warum ist „Bild speichern unter…“ bei einem SVG ausgegraut?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Weil der Browser dieses Element nicht als abrufbares Bild einstuft. Inline-SVG-Markup, CSS-Hintergrundbilder und Sprite-Referenzen haben keine Adresse dahinter, der Menüpunkt hat also nichts, worauf er wirken könnte."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Gibt es eine Browsereinstellung, die das aktiviert?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nein. Es ist weder eine Berechtigung noch eine Einstellung — der Menüpunkt fehlt, weil das Zugrundeliegende wirklich keine speicherbare Bildressource ist. Die Seite zu lesen ist der Weg drumherum."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kann ich nicht einfach einen Screenshot machen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kannst du, aber dann verlierst du den ganzen Sinn eines Vektors. Ein Screenshot ist ein festes Pixelraster, das beim Skalieren verschwimmt und nicht umgefärbt werden kann. Das gespeicherte SVG bleibt in jeder Größe scharf und lässt sich umgestalten."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Und das Markup aus den DevTools kopieren?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Das funktioniert, aber dem kopierten Markup fehlt meist der xmlns-Namensraum, sodass die Datei erst öffnet, wenn du ihn von Hand ergänzt. Die Erweiterung repariert das automatisch."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Funktioniert das auf jeder Website?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Auf jeder Seite, die du in Chrome 88+, Edge oder Brave öffnen kannst. Sie kommt nicht an browserinterne Seiten, Erweiterungsgalerien oder Inhalte hinter einem Login, das du nicht hast."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Zum Inhalt springen</a>
+
+<nav class="nav">
+  <a class="brand" href="/de/">
+    <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+      <rect width="48" height="48" rx="10" fill="var(--plot)"></rect>
+      <path d="M24 13v15m0 0l-6.5-6.5M24 28l6.5-6.5" fill="none" stroke="var(--surface-hi)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+      <rect x="16.5" y="33.5" width="15" height="2.4" rx="1.2" fill="var(--surface-hi)"></rect>
+    </svg>
+    <strong>SVG&nbsp;Downloader</strong>
+  </a>
+  <span class="spacer"></span>
+  <span class="nav-links">
+    <a href="/de/features">Funktionen</a>
+    <a href="/de/tutorials" aria-current="page">Tutorials</a>
+    <a href="/de/guides">Anleitungen</a>
+    <a href="/de/docs">Doku</a>
+    <a href="/de/use-cases">Praxis</a>
+  </span><!--i18n:switch-->
+  <details class="lang-switch">
+    <summary aria-label="Sprache"><span>DE</span></summary>
+    <ul>
+      <li><a href="/tutorials/save-svg-from-website" hreflang="en" lang="en">English</a></li>
+      <li><a href="/es/tutorials/save-svg-from-website" hreflang="es" lang="es">Español</a></li>
+      <li><a href="/fr/tutorials/save-svg-from-website" hreflang="fr" lang="fr">Français</a></li>
+      <li><a href="/de/tutorials/save-svg-from-website" hreflang="de" lang="de" aria-current="true">Deutsch</a></li>
+      <li><a href="/pt-br/tutorials/save-svg-from-website" hreflang="pt-BR" lang="pt-BR">Português</a></li>
+    </ul>
+  </details>
+  <!--/i18n:switch-->
+  <a class="nav-cta" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Erweiterung installieren</a>
+</nav>
+
+<main id="main">
+<header class="page-hero"><div class="wrap">
+  <ol class="crumbs">
+    <li><a href="/de/">Start</a></li>
+    <li><a href="/de/tutorials">Tutorials</a></li>
+    <li><span aria-current="page">Wenn der Rechtsklick versagt</span></li>
+  </ol>
+  <p class="eyebrow">Tutorial — das ausgegraute Menü</p>
+  <h1>So <span class="plot">speicherst du ein SVG</span>, wenn der Rechtsklick dich nicht lässt</h1>
+  <p class="lede">Du klickst mit rechts auf das Icon, und es gibt überhaupt kein <em>Bild speichern unter…</em>. Nichts ist kaputt, und du hast keine Einstellung übersehen — der Browser hält dieses Ding wirklich nicht für ein Bild.</p>
+  <div class="cta">
+    <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 12v16m0 0l-7-7m7 7l7-7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"></path><rect x="16" y="34" width="16" height="2.6" rx="1.3" fill="currentColor"></rect></svg>
+      Erweiterung installieren</a>
+    <a class="btn quiet" href="#steps">Zu den Schritten ↓</a>
+  </div>
+</div></header>
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Ansehen — 19 Sekunden</p>
+  <h2>Speichern, was das Menü nicht anbietet</h2>
+  <figure class="shot">
+    <div class="shot-mount">
+      <span class="shot-tag">Tutorial · kein Rechtsklick</span>
+      <video src="/motion/tutorials/save-svg-from-website.mp4" poster="/motion/tutorials/save-svg-from-website.jpg" muted="" loop="" playsinline="" preload="none" aria-label="Eine Seite, deren Icons kein „Bild speichern unter…“ anbieten. Das SVG-Downloader-Popup öffnet sich, scannt das DOM, findet jeden Vektor, blättert zu einem Herz, benennt es und speichert es."></video>
+    </div>
+    <figcaption class="shot-cap">Jedes Icon auf dieser Seite verweigert das Speichern-Menü. Alle 24 kommen trotzdem heraus.</figcaption>
+  </figure>
+
+  <p class="lead-in">Die Aufnahme öffnet auf einer Seite, auf der kein einziges Icon eine Speicheroption anbietet. Das ist keine ungewöhnliche Seite — so werden die meisten Icon-Systeme ausgeliefert.</p>
+  <p class="eyebrow">Was die Aufnahme zeigt</p>
+  <ol class="beats">
+    <li>„Bild speichern unter…“ fehlt hier bei jedem Icon</li>
+    <li>Die Erweiterung liest das DOM statt des Menüs</li>
+    <li>Inline, CSS-Hintergrund, Sprite, img — alle gefunden</li>
+    <li>Wähl das, das du wirklich willst</li>
+    <li>Benenne es</li>
+    <li>Gespeichert — ein echter Vektor, kein Screenshot</li>
+  </ol>
+</div></section>
+
+<hr class="section-rule">
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Der eigentliche Grund</p>
+  <h2>Der Browser bietet nur an zu speichern, was er abrufen kann</h2>
+  
+  <p class="lead-in"><em>Bild speichern unter…</em> erscheint, wenn der Browser ein Bild mit einer Adresse hat, die er anfordern kann. Diese Kategorie ist enger, als sie aussieht, und moderne Icon-Systeme fallen fast vollständig heraus. Ein SVG versteckt sich an vier Stellen einer Seite, und nur eine davon spielt mit.</p>
+  <ul>
+    <li><strong>Inline-<code>&lt;svg&gt;</code>.</strong> Das Markup steht direkt im HTML. Kein <code>src</code>, keine URL, nichts abzurufen — das Menü bietet also nichts. So werden heute die allermeisten Icons ausgeliefert. <a href="/de/features/inline-svg">Wie es gelesen wird →</a></li>
+    <li><strong>CSS-<code>background-image</code>.</strong> Der Vektor steht in einem Stylesheet, oft als eingebetteter <code>data:</code>-URI. Der Browser legt ihn unter Dekoration ab statt unter Inhalt. <a href="/de/features/css-background-svg">Wie es gelesen wird →</a></li>
+    <li><strong><code>&lt;use&gt;</code>-Sprite-Referenzen.</strong> Ein verstecktes Sprite enthält jedes Icon; jede Stelle, an der eines erscheint, ist nur ein Zeiger hinein. Den Zeiger zu speichern liefert eine leere Datei. <a href="/de/features/svg-sprite-extractor">Wie es gelesen wird →</a></li>
+    <li><strong><code>&lt;img&gt;</code>- und <code>&lt;object&gt;</code>-Quellen.</strong> Der freundliche Fall — und selbst hier kann die Quelle ein <code>data:</code>-URI sein, den der Speichern-Dialog verstümmelt, oder eine Cross-Origin-URL, die unter einem nichtssagenden Namen landet.</li>
+  </ul>
+  <p>Drei der vier lassen sich also nicht einmal im Prinzip so speichern. Das DOM zu lesen funktioniert bei allen vieren, denn zu diesem Zeitpunkt hat der Browser selbst jede einzelne in echtes Markup aufgelöst.</p>
+
+  <h2 id="steps">Es trotzdem speichern</h2>
+  <p>Du musst nicht wissen, welche der vier du vor dir hast. Genau das ist der Punkt.</p>
+  <ol>
+    <li><strong>Lass das Rechtsklick-Menü in Ruhe.</strong> Fehlt <em>Bild speichern unter…</em> oder ist es ausgegraut, wird es auch durch Wiederholen nicht erscheinen. Das Fehlen ist eine Information, kein Fehler.</li>
+    <li><strong>Öffne das Popup.</strong> Klick auf der Seite auf den Button in der Symbolleiste. Der Scan löst alle vier Quellen in eigenständiges Markup auf — Inline, CSS-Hintergrund, Sprite-Referenz und Bildquelle gleichermaßen.</li>
+    <li><strong>Vorschau, um das Richtige zu erkennen.</strong> Die isolierte Vorschau ist der schnellste Weg, zwei ähnliche Icons zu unterscheiden, besonders in einem Satz, den die Seite mit 16 px zeigt.</li>
+    <li><strong>Benenne es und speichere.</strong> Tipp einen Dateinamen und drück <em>Aktuelles laden</em>. Der Namensraum wird beim Speichern repariert, die Datei öffnet also in Figma, Illustrator und jedem Browser.</li>
+  </ol>
+
+  
+  <h2>Dinge, die nach Lösungen aussehen, aber keine sind</h2>
+  <ul>
+    <li><strong>Einen Screenshot machen.</strong> Das verwandelt einen auflösungsunabhängigen Vektor dauerhaft in ein festes Pixelraster. Es verschwimmt, sobald jemand es skaliert, und es lässt sich nicht umfärben. <a href="/de/compare/svg-downloader-vs-screenshotting-icons">Der vollständige Vergleich →</a></li>
+    <li><strong>Markup aus den DevTools kopieren.</strong> Das funktioniert, ist aber mühsam, und dem kopierten Markup fehlt der <code>xmlns</code>-Namensraum, sodass die entstehende Datei erst öffnet, wenn du ihn von Hand ergänzt. Willst du das Markup statt einer Datei, erledigt <a href="/de/tutorials/copy-svg-from-website">Code kopieren</a> dasselbe mit bereits behobenem Namensraum.</li>
+    <li><strong>Die Datei im Netzwerk-Tab suchen.</strong> Gut für <code>&lt;img&gt;</code>-Quellen. Nutzlos für die anderen drei, weil nie eine Anfrage gestellt wurde — das Markup kam im HTML-Dokument mit.</li>
+  </ul>
+
+  <dl class="facts">
+    <div><dt>Warum es scheitert</dt><dd>Drei der vier SVG-Quellen haben <strong>keine abrufbare Adresse</strong>.</dd></div>
+    <div><dt>Was funktioniert</dt><dd>Das gerenderte DOM zu lesen, wo alle vier zu echtem Markup aufgelöst sind.</dd></div>
+    <div><dt>Obendrein</dt><dd>Das fehlende <code>xmlns</code> wird repariert, die Datei öffnet also wirklich.</dd></div>
+    <div><dt>Siehe auch</dt><dd><a href="/de/tutorials/grab-svg-from-website">Ein schnellerer Ein-Icon-Weg</a> · <a href="/de/features/inline-svg">Inline-SVG</a></dd></div>
+  </dl>
+</div></section>
+
+<hr class="section-rule">
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Gut zu wissen</p>
+  <h2>Häufig gefragt</h2>
+  <div class="faq">
+    <details>
+      <summary>Warum ist „Bild speichern unter…“ bei einem SVG ausgegraut?</summary>
+      <div class="faq-body"><p>Weil der Browser dieses Element nicht als abrufbares Bild einstuft. Inline-SVG-Markup, CSS-Hintergrundbilder und Sprite-Referenzen haben keine Adresse dahinter, der Menüpunkt hat also nichts, worauf er wirken könnte.</p></div>
+    </details>
+    <details>
+      <summary>Gibt es eine Browsereinstellung, die das aktiviert?</summary>
+      <div class="faq-body"><p>Nein. Es ist weder eine Berechtigung noch eine Einstellung — der Menüpunkt fehlt, weil das Zugrundeliegende wirklich keine speicherbare Bildressource ist. Die Seite zu lesen ist der Weg drumherum.</p></div>
+    </details>
+    <details>
+      <summary>Kann ich nicht einfach einen Screenshot machen?</summary>
+      <div class="faq-body"><p>Kannst du, aber dann verlierst du den ganzen Sinn eines Vektors. Ein Screenshot ist ein festes Pixelraster, das beim Skalieren verschwimmt und nicht umgefärbt werden kann. Das gespeicherte SVG bleibt in jeder Größe scharf und lässt sich umgestalten.</p></div>
+    </details>
+    <details>
+      <summary>Und das Markup aus den DevTools kopieren?</summary>
+      <div class="faq-body"><p>Das funktioniert, aber dem kopierten Markup fehlt meist der xmlns-Namensraum, sodass die Datei erst öffnet, wenn du ihn von Hand ergänzt. Die Erweiterung repariert das automatisch.</p></div>
+    </details>
+    <details>
+      <summary>Funktioniert das auf jeder Website?</summary>
+      <div class="faq-body"><p>Auf jeder Seite, die du in Chrome 88+, Edge oder Brave öffnen kannst. Sie kommt nicht an browserinterne Seiten, Erweiterungsgalerien oder Inhalte hinter einem Login, das du nicht hast.</p></div>
+    </details>
+  </div>
+</div></section>
+
+<hr class="section-rule">
+
+<section><div class="wrap">
+  <div class="cta-band">
+    <div>
+      <h2>Das Menü sagte nein. Nimm es trotzdem.</h2>
+      <p>Vier Verstecke, ein Scan und eine Datei, die tatsächlich öffnet.</p>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Erweiterung installieren</a>
+      <a class="btn quiet" href="/de/tutorials">Alle 15 Tutorials →</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="related"><div class="wrap">
+  <p class="eyebrow">Weiter geht's</p>
+  <ul>
+    <li><a href="/de/tutorials/grab-svg-from-website">Griff per Rechtsklick<span>Der Menüpunkt, der funktioniert</span></a></li>
+    <li><a href="/de/compare/svg-downloader-vs-screenshotting-icons">Vs. Screenshot<span>Warum der Vektor gewinnt</span></a></li>
+    <li><a href="/de/tutorials/copy-svg-from-website">Den Code kopieren<span>Keine Datei nötig</span></a></li>
+  </ul>
+</div></section>
+</main>
+
+<footer>
+  <nav class="bleed foot-map" aria-label="Sitemap">
+    <div class="col"><p>Produkt</p><ul>
+      <li><a href="/de/">Überblick</a></li>
+      <li><a href="/de/features">Funktionen</a></li>
+      <li><a href="/de/compare/svg-downloader-vs-screenshotting-icons">Vs. Screenshot</a></li>
+      <li><a href="/de/privacy">Datenschutz</a></li>
+      <li><a href="/de/use-cases">Anwendungsfälle</a></li>
+    </ul></div>
+    <div class="col"><p>Erkennt</p><ul>
+      <li><a href="/de/features/inline-svg">Inline-SVG</a></li>
+      <li><a href="/de/features/css-background-svg">SVG im CSS-Hintergrund</a></li>
+      <li><a href="/de/features/svg-sprite-extractor">Sprite- / &lt;use&gt;-SVG</a></li>
+      <li><a href="/de/features/bulk-zip-download">Ganze Seite als ZIP</a></li>
+    </ul></div>
+    <div class="col"><p>Tutorials</p><ul>
+      <li><a href="/de/tutorials">Alle 15 Tutorials</a></li>
+      <li><a href="/de/tutorials/how-to-download-svg-files">SVG-Dateien herunterladen</a></li>
+      <li><a href="/de/tutorials/copy-svg-from-website">Ein SVG kopieren</a></li>
+      <li><a href="/de/tutorials/extract-svg-from-website">Jedes SVG extrahieren</a></li>
+    </ul></div>
+    <div class="col"><p>Doku</p><ul>
+      <li><a href="/de/docs/installation">Installation</a></li>
+      <li><a href="/de/docs/usage">Bedienung</a></li>
+      <li><a href="/de/docs/faq">FAQ</a></li>
+      <li><a href="/de/docs/changelog">Changelog</a></li>
+    </ul></div>
+  </nav>
+  <div class="bleed colophon-foot">
+    <a href="https://github.com/Flozad/svg-downloader">GitHub</a>
+    <a href="https://github.com/Flozad/svg-downloader/issues">Issues</a>
+    <a href="https://clasicwebtools.com">clasicwebtools.com</a>
+    <span class="grow"></span>
+    <span>Knochenpapier, Graphit, ein einziges Plotter&nbsp;grün</span>
+  </div>
+</footer>
+<script src="/player.js" defer=""></script>
+
+
+</body></html>

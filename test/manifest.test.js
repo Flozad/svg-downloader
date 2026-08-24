@@ -17,17 +17,36 @@ describe('manifest.json', () => {
     // regression — Chrome shows the user a scarier install prompt. Adding one
     // deliberately should mean updating this list and the privacy copy.
     expect(new Set(manifest.permissions)).toEqual(
-      new Set(['activeTab', 'downloads', 'scripting', 'storage'])
+      new Set(['activeTab', 'contextMenus', 'downloads', 'scripting', 'storage'])
     );
   });
 
   it('requests no host permissions', () => {
     // The README, the store listing and the popup footer all claim the
     // extension reads a page only when invoked. host_permissions would make
-    // that claim false.
+    // that claim false. web_accessible_resources uses http/https match
+    // patterns (never <all_urls>) so the sanitizer module can be imported by
+    // the content script without granting any page-reading permission.
     expect(manifest.host_permissions).toBeUndefined();
     expect(manifest.optional_host_permissions).toBeUndefined();
     expect(JSON.stringify(manifest)).not.toContain('<all_urls>');
+  });
+
+  it('exposes only the sanitizer module as a web-accessible resource', () => {
+    // The right-click save path dynamically imports svg-utils.js into the
+    // content script. Exposing anything more — or with a broader match — widens
+    // the fingerprinting surface, so pin exactly what is shared and to whom.
+    const war = manifest.web_accessible_resources ?? [];
+    expect(war).toHaveLength(1);
+    expect(war[0].resources).toEqual(['svg-utils.js']);
+    expect(war[0].matches).toEqual(['http://*/*', 'https://*/*']);
+    expect(war[0].use_dynamic_url).toBe(true);
+  });
+
+  it('registers a module service worker for the context menu', () => {
+    expect(manifest.background?.service_worker).toBe('background.js');
+    expect(manifest.background?.type).toBe('module');
+    expect(fs.existsSync(path.join(extensionDir, 'background.js'))).toBe(true);
   });
 
   it('keeps a CSP that forbids remote and inline script', () => {

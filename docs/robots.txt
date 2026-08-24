@@ -4,20 +4,76 @@
 User-agent: *
 Allow: /
 
-# Well-behaved AI answer engines are welcome to read and cite these pages.
+# ── AI answer engines and agents ────────────────────────────────────────────
+# All of these are already covered by the wildcard above; naming them is a
+# standing, explicit yes, so a crawler looking for its own token finds one.
+# Two roles are distinguished by convention: training/indexing crawlers, and
+# user-triggered agents fetching a page on someone's behalf. Both are welcome.
+
+# Anthropic
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+# OpenAI
 User-agent: GPTBot
 Allow: /
 
 User-agent: OAI-SearchBot
 Allow: /
 
-User-agent: ClaudeBot
+User-agent: ChatGPT-User
 Allow: /
 
+# Google
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Google-CloudVertexBot
+Allow: /
+
+# Perplexity
 User-agent: PerplexityBot
 Allow: /
 
-User-agent: Google-Extended
+User-agent: Perplexity-User
 Allow: /
+
+# Others
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: MistralAI-User
+Allow: /
+
+# ── Machine-readable summaries ──────────────────────────────────────────────
+# https://svg.clasicwebtools.com/llms.txt       — index, one screen
+# https://svg.clasicwebtools.com/llms-full.txt  — the site's substance in full
 
 Sitemap: https://svg.clasicwebtools.com/sitemap.xml

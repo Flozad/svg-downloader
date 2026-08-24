@@ -82,10 +82,30 @@ describe('collectSVGs', () => {
     expect(its[0].content).toContain('M0 0');
   });
 
-  it('skips an external sprite reference and counts it', async () => {
+  // External sprite references are no longer dropped: the <use> is rewritten to
+  // a local synthetic id and the {url, id, localId} recorded, so the popup (or
+  // the offscreen sanitizer) can fetch the sprite file and inline the symbol.
+  it('records an external sprite reference for deferred resolution', async () => {
     const result = await loadAndCollect('<svg><use href="/sprite.svg#i"/></svg>');
-    expect(count(result)).toBe(0);
-    expect(skipped(result)).toBe(1);
+    expect(count(result)).toBe(1);
+    expect(skipped(result)).toBe(0);
+
+    const [item] = items(result);
+    expect(item.externalUses).toEqual([
+      { url: 'http://localhost/sprite.svg', id: 'i', localId: 'svgdl-ext-0' },
+    ]);
+    // The href now points at the synthetic local id it will resolve to.
+    expect(item.content).toContain('href="#svgdl-ext-0"');
+  });
+
+  it('leaves a same-document <use> without recording an external reference', async () => {
+    const result = await loadAndCollect(
+      '<svg style="display:none"><symbol id="i"><path d="M0 0"/></symbol></svg>' +
+        '<svg><use href="#i"/></svg>'
+    );
+    for (const item of items(result)) {
+      expect(item.externalUses).toBeUndefined();
+    }
   });
 
   it('deduplicates identical inline SVGs', async () => {

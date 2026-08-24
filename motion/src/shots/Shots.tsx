@@ -7,9 +7,9 @@ import {GROUP_H, GROUP_W, MockGroup} from '../kit/MockGroup'
 // store's preferred size. A caption band up top, the product frozen in one
 // telling state below it. Rendered as stills, so any frame is the final frame.
 
-const SCALE = 0.84
+const SCALE = 0.72
 const GROUP_LEFT = (1280 - GROUP_W * SCALE) / 2
-const GROUP_TOP = 196
+const GROUP_TOP = 186
 
 const ShotFrame: React.FC<{
   eyebrow: string
@@ -47,7 +47,7 @@ export const Shot01: React.FC = () => (
     eyebrow="Step 1"
     title="Find every SVG on any page"
     sub="Inline icons, image SVGs, CSS backgrounds and sprites — all detected."
-    popup={{count: 24, index: 0, filename: 'search-24', preview: 1}}
+    popup={{count: 24, index: 0, filename: 'search', preview: 1}}
   />
 )
 
@@ -57,7 +57,7 @@ export const Shot02: React.FC = () => (
     eyebrow="Step 2"
     title="Preview each icon, logo & vector"
     sub="A clean, isolated look at the exact SVG you're about to save."
-    popup={{count: 24, index: 2, filename: 'star-24', preview: 1}}
+    popup={{count: 24, index: 2, filename: 'star', preview: 1}}
   />
 )
 
@@ -66,8 +66,8 @@ export const Shot03: React.FC = () => (
   <ShotFrame
     eyebrow="Step 3"
     title="Page through them one by one"
-    sub="Previous and Next walk every SVG the page has to offer."
-    popup={{count: 24, index: 1, filename: 'heart-24', hot: 'next'}}
+    sub="Prev and Next walk every SVG the page has to offer."
+    popup={{count: 24, index: 1, filename: 'heart', hot: 'next'}}
   />
 )
 
@@ -77,7 +77,7 @@ export const Shot04: React.FC = () => (
     eyebrow="Step 4"
     title="Download the original SVG in one click"
     sub="Name it, hit download, and get the real vector — not a screenshot."
-    popup={{count: 24, index: 2, filename: 'star-24', hot: 'download', toast: 'Saved star.svg'}}
+    popup={{count: 24, index: 2, filename: 'star', hot: 'download', downloadTray: 1}}
   />
 )
 
@@ -87,7 +87,7 @@ export const Shot05: React.FC = () => (
     eyebrow="Step 5"
     title="Or grab them all as a ZIP"
     sub="Every SVG on the page, bundled and saved in a single click."
-    popup={{count: 24, index: 2, filename: 'star-24', hot: 'zip', toast: '24 SVGs saved'}}
+    popup={{count: 24, index: 2, filename: 'star', hot: 'zip', status: 'Downloaded 24 SVGs as ZIP.'}}
   />
 )
 

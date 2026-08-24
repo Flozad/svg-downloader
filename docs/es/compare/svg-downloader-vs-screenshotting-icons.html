@@ -1,0 +1,322 @@
+<!DOCTYPE html><html lang="es"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SVG Downloader frente a la captura de pantalla — ¿cuál gana?</title>
+<meta name="description" content="SVG Downloader frente a capturar iconos: una captura es un PNG borroso atado a un solo tamaño. Compara capturas, DevTools y el SVG real, y cuándo usar cada uno.">
+<link rel="canonical" href="https://svg.clasicwebtools.com/es/compare/svg-downloader-vs-screenshotting-icons"><!--i18n:alternates-->
+<link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/compare/svg-downloader-vs-screenshotting-icons">
+<link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/compare/svg-downloader-vs-screenshotting-icons">
+<link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/compare/svg-downloader-vs-screenshotting-icons">
+<link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/compare/svg-downloader-vs-screenshotting-icons">
+<link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/compare/svg-downloader-vs-screenshotting-icons">
+<link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/compare/svg-downloader-vs-screenshotting-icons">
+<!--/i18n:alternates-->
+<link rel="alternate" type="text/plain" href="https://svg.clasicwebtools.com/llms.txt" title="llms.txt — machine-readable site summary">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="author" content="Flozad">
+<meta name="theme-color" content="#ece4d3">
+<meta property="og:site_name" content="SVG Downloader">
+<meta property="og:title" content="SVG Downloader frente a la captura de iconos">
+<meta property="og:description" content="SVG Downloader frente a capturar iconos: una captura es un PNG borroso atado a un solo tamaño. Compara capturas, DevTools y el SVG real, y cuándo usar cada uno.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://svg.clasicwebtools.com/es/compare/svg-downloader-vs-screenshotting-icons">
+<meta property="og:image" content="https://svg.clasicwebtools.com/motion/06-brand.png">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="Un SVG nítido junto a una captura borrosa del mismo icono.">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@lozards">
+<meta name="twitter:title" content="SVG Downloader frente a la captura de iconos">
+<meta name="twitter:description" content="SVG Downloader frente a capturar iconos: una captura es un PNG borroso atado a un solo tamaño. Compara capturas, DevTools y el SVG real, y cuándo usar cada uno.">
+<meta name="twitter:image" content="https://svg.clasicwebtools.com/motion/06-brand.png">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/fonts/bricolage-var.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/pages.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://svg.clasicwebtools.com/es/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Funciones",
+          "item": "https://svg.clasicwebtools.com/es/features"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Frente a la captura",
+          "item": "https://svg.clasicwebtools.com/es/compare/svg-downloader-vs-screenshotting-icons"
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://svg.clasicwebtools.com/es/compare/svg-downloader-vs-screenshotting-icons",
+      "url": "https://svg.clasicwebtools.com/es/compare/svg-downloader-vs-screenshotting-icons",
+      "name": "SVG Downloader frente a la captura de iconos",
+      "description": "Una comparación entre la captura de pantalla, la copia desde DevTools y SVG Downloader para sacar un icono de una página web.",
+      "inLanguage": "es",
+      "isPartOf": {
+        "@id": "https://svg.clasicwebtools.com/es/#website"
+      },
+      "about": {
+        "@id": "https://svg.clasicwebtools.com/es/#app"
+      },
+      "primaryImageOfPage": "https://svg.clasicwebtools.com/motion/06-brand.png"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Una captura de un icono basta alguna vez?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí, como referencia visual rápida. Si solo necesitas pegar la imagen de un icono en un documento o un chat para señalarlo, una captura vale. Deja de valer en cuanto necesitas redimensionar, recolorear o publicar el icono, porque una captura es un mapa de bits de tamaño fijo, no el archivo."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Por qué es mejor un SVG que un PNG para un icono?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Un SVG es texto vectorial: se mantiene perfectamente nítido a cualquier tamaño, suele ocupar una fracción de lo que ocupa un mapa de bits y puedes recolorear o editar sus trazados. Un PNG salido de una captura está atado a los píxeles que capturaste y se emborrona en cuanto lo amplías."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Saltar al contenido</a>
+
+<nav class="nav">
+  <a class="brand" href="/es/">
+    <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+      <rect width="48" height="48" rx="10" fill="var(--plot)"></rect>
+      <path d="M24 13v15m0 0l-6.5-6.5M24 28l6.5-6.5" fill="none" stroke="var(--surface-hi)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+      <rect x="16.5" y="33.5" width="15" height="2.4" rx="1.2" fill="var(--surface-hi)"></rect>
+    </svg>
+    <strong>SVG&nbsp;Downloader</strong>
+  </a>
+  <span class="spacer"></span>
+  <span class="nav-links">
+    <a href="/es/features" aria-current="page">Funciones</a>
+    <a href="/es/tutorials">Tutoriales</a>
+    <a href="/es/guides">Guías</a>
+    <a href="/es/docs">Docs</a>
+    <a href="/es/privacy">Privacidad</a>
+    <a href="/es/use-cases">Historias</a>
+  </span><!--i18n:switch-->
+  <details class="lang-switch">
+    <summary aria-label="Idioma"><span>ES</span></summary>
+    <ul>
+      <li><a href="/compare/svg-downloader-vs-screenshotting-icons" hreflang="en" lang="en">English</a></li>
+      <li><a href="/es/compare/svg-downloader-vs-screenshotting-icons" hreflang="es" lang="es" aria-current="true">Español</a></li>
+      <li><a href="/fr/compare/svg-downloader-vs-screenshotting-icons" hreflang="fr" lang="fr">Français</a></li>
+      <li><a href="/de/compare/svg-downloader-vs-screenshotting-icons" hreflang="de" lang="de">Deutsch</a></li>
+      <li><a href="/pt-br/compare/svg-downloader-vs-screenshotting-icons" hreflang="pt-BR" lang="pt-BR">Português</a></li>
+    </ul>
+  </details>
+  <!--/i18n:switch-->
+  <a class="nav-cta" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Instalar la extensión</a>
+</nav>
+
+<main id="main">
+<header class="page-hero"><div class="wrap">
+  <ol class="crumbs">
+    <li><a href="/es/">Inicio</a></li>
+    <li><a href="/es/features">Funciones</a></li>
+    <li><span aria-current="page">Frente a la captura</span></li>
+  </ol>
+  <p class="eyebrow">Comparativa — SVG frente a captura</p>
+  <h1>SVG Downloader frente a <span class="plot">capturar</span> iconos</h1>
+  <p class="lede">Cuando ves un icono que quieres, el reflejo es hacer una captura. Es la herramienta equivocada en cuanto necesitas el archivo de verdad. Aquí tienes la comparación honesta entre una captura, una copia desde DevTools y extraer el SVG real.</p>
+  <div class="cta">
+    <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 12v16m0 0l-7-7m7 7l7-7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"></path><rect x="16" y="34" width="16" height="2.6" rx="1.3" fill="currentColor"></rect></svg>
+      Instalar la extensión</a>
+    <a class="btn quiet" href="/es/features">Todas las funciones →</a>
+  </div>
+</div></header>
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">El compromiso</p>
+  <h2>La foto de un icono no es el icono</h2>
+  <p class="lead-in">Una captura es un mapa de bits: una rejilla fija de píxeles tomada a un solo tamaño. Sirve de verdad cuando solo quieres una referencia visual rápida, algo que pegar en un documento o en un mensaje para decir «este, el de aquí». Sin instalar nada, sin pensar, listo.</p>
+  <p>Se desmorona en cuanto necesitas <em>usar</em> el icono. Amplíalo y se emborrona, porque no hay más píxeles que los que capturaste. Intenta recolorearlo y estarás pintando encima de una foto. Mételo en un proyecto y habrás publicado un PNG pesado donde tocaba un vector de 400 bytes. La captura respondía a «qué aspecto tiene»; nunca respondió a «dame el archivo».</p>
+  <p>Copiar desde DevTools es el camino intermedio honesto —sí obtienes el marcado real—, pero es engorroso. Buscas el nodo <code>&lt;svg&gt;</code> correcto, copias su HTML externo, lo pegas en un archivo y descubres que no abre porque falta el espacio de nombres. Además no hace nada por los fondos CSS, por las referencias <code>&lt;use&gt;</code> de un sprite ni por los otros veinte iconos de la página.</p>
+
+  <div class="cmp-wrap">
+    <table class="cmp">
+      <thead>
+        <tr>
+          <th scope="col">&nbsp;</th>
+          <th scope="col">Captura / PNG</th>
+          <th scope="col">Copiar desde DevTools</th>
+          <th scope="col">SVG Downloader</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Formato de salida</th>
+          <td>PNG de mapa de bits</td>
+          <td>Marcado SVG (a mano)</td>
+          <td><span class="yes">Archivo .svg real</span></td>
+        </tr>
+        <tr>
+          <th scope="row">Sigue nítido al redimensionar</th>
+          <td><span class="no">No — se emborrona</span></td>
+          <td><span class="yes">Sí</span></td>
+          <td><span class="yes">Sí</span></td>
+        </tr>
+        <tr>
+          <th scope="row">Editable / recoloreable</th>
+          <td><span class="no">No</span></td>
+          <td><span class="yes">Sí</span></td>
+          <td><span class="yes">Sí</span></td>
+        </tr>
+        <tr>
+          <th scope="row">Tamaño de archivo</th>
+          <td><span class="no">Pesado</span></td>
+          <td><span class="yes">Diminuto</span></td>
+          <td><span class="yes">Diminuto</span></td>
+        </tr>
+        <tr>
+          <th scope="row">Funciona con SVG en línea</th>
+          <td><span class="no">Solo como imagen</span></td>
+          <td><span class="yes">Sí</span></td>
+          <td><span class="yes">Sí</span></td>
+        </tr>
+        <tr>
+          <th scope="row">Funciona con fondos CSS</th>
+          <td><span class="no">Solo como imagen</span></td>
+          <td><span class="no">No</span></td>
+          <td><span class="yes">Sí</span></td>
+        </tr>
+        <tr>
+          <th scope="row">Funciona con sprites (&lt;use&gt;)</th>
+          <td><span class="no">Solo como imagen</span></td>
+          <td><span class="no">Rara vez</span></td>
+          <td><span class="yes">Sí — del mismo documento</span></td>
+        </tr>
+        <tr>
+          <th scope="row">En lote / página entera</th>
+          <td><span class="no">No</span></td>
+          <td><span class="no">No</span></td>
+          <td><span class="yes">Sí — en ZIP</span></td>
+        </tr>
+        <tr>
+          <th scope="row">Esfuerzo</th>
+          <td>Bajo</td>
+          <td><span class="no">Alto y engorroso</span></td>
+          <td><span class="yes">Dos clics</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Cuándo conviene cada uno</h2>
+  <ul>
+    <li><strong>Captura</strong> — quieres una referencia visual que señalar, no el archivo. Perfectamente válido, y más rápido que nada para eso.</li>
+    <li><strong>Copiar desde DevTools</strong> — necesitas exactamente un icono en línea, ya estás en el inspector y no te importa reparar tú mismo el espacio de nombres.</li>
+    <li><strong>SVG Downloader</strong> — quieres el vector real: nítido, editable, diminuto. Lee <a href="/es/features/inline-svg">SVG en línea</a>, <a href="/es/features/css-background-svg">fondos CSS</a> y <a href="/es/features/svg-sprite-extractor">referencias de sprite</a>, repara el <code>xmlns</code> que falta, nombra el archivo con sentido y puede empaquetar <a href="/es/features/bulk-zip-download">la página entera en un ZIP</a>. Todo en tu dispositivo: no se sube nada.</li>
+  </ul>
+  <p>Si ya has decidido que quieres el archivo y no una foto de él, la <a href="/es/guides/how-to-download-svg-from-any-website">guía para descargar desde cualquier sitio</a> recorre el proceso completo.</p>
+</div></section>
+
+<hr class="section-rule">
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Conviene saber</p>
+  <h2>¿Captura o SVG?</h2>
+  <div class="faq">
+    <details>
+      <summary>¿Una captura de un icono basta alguna vez?</summary>
+      <div class="faq-body"><p>Sí, como referencia visual rápida. Si solo necesitas pegar la imagen de un icono en un documento o un chat para señalarlo, una captura vale. Deja de valer en cuanto necesitas redimensionar, recolorear o publicar el icono, porque una captura es un mapa de bits de tamaño fijo, no el archivo.</p></div>
+    </details>
+    <details>
+      <summary>¿Por qué es mejor un SVG que un PNG para un icono?</summary>
+      <div class="faq-body"><p>Un SVG es texto vectorial: se mantiene perfectamente nítido a cualquier tamaño, suele ocupar una fracción de lo que ocupa un mapa de bits y puedes recolorear o editar sus trazados. Un PNG salido de una captura está atado a los píxeles que capturaste y se emborrona en cuanto lo amplías.</p></div>
+    </details>
+  </div>
+</div></section>
+
+<hr class="section-rule">
+
+<section><div class="wrap">
+  <div class="cta-band">
+    <div>
+      <h2>Llévate el icono, no una foto del icono</h2>
+      <p>Gratis, privado y guarda el vector real en dos clics.</p>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Instalar la extensión</a>
+      <a class="btn quiet" href="/es/guides">Leer las guías →</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="related"><div class="wrap">
+  <p class="eyebrow">Seguir leyendo</p>
+  <ul>
+    <li><a href="/es/features/inline-svg">SVG en línea<span>Lo que DevTools complica</span></a></li>
+    <li><a href="/es/guides/how-to-download-svg-from-any-website">Descargar desde cualquier sitio<span>Guía paso a paso</span></a></li>
+    <li><a href="/es/guides/download-all-svgs-as-zip">Descargar todo en ZIP<span>La página entera de una vez</span></a></li>
+  </ul>
+</div></section>
+</main>
+
+<footer>
+  <nav class="bleed foot-map" aria-label="Mapa del sitio">
+    <div class="col"><p>Producto</p><ul>
+      <li><a href="/es/">Visión general</a></li>
+      <li><a href="/es/features">Funciones</a></li>
+      <li><a href="/es/compare/svg-downloader-vs-screenshotting-icons">Frente a la captura</a></li>
+      <li><a href="/es/privacy">Privacidad</a></li>
+      <li><a href="/es/use-cases">Casos de uso</a></li>
+    </ul></div>
+    <div class="col"><p>Detecta</p><ul>
+      <li><a href="/es/features/inline-svg">SVG en línea</a></li>
+      <li><a href="/es/features/css-background-svg">SVG en fondo CSS</a></li>
+      <li><a href="/es/features/svg-sprite-extractor">SVG de sprite / &lt;use&gt;</a></li>
+      <li><a href="/es/features/bulk-zip-download">Página entera en ZIP</a></li>
+    </ul></div>
+    <div class="col"><p>Tutoriales</p><ul>
+      <li><a href="/es/tutorials">Los 15 tutoriales</a></li>
+      <li><a href="/es/tutorials/how-to-download-svg-files">Cómo descargar archivos SVG</a></li>
+      <li><a href="/es/tutorials/copy-svg-from-website">Copiar un SVG</a></li>
+      <li><a href="/es/guides">Guías extensas</a></li>
+    </ul></div>
+    <div class="col"><p>Docs</p><ul>
+      <li><a href="/es/docs/installation">Instalación</a></li>
+      <li><a href="/es/docs/usage">Uso</a></li>
+      <li><a href="/es/docs/faq">Preguntas frecuentes</a></li>
+      <li><a href="/es/docs/changelog">Cambios</a></li>
+    </ul></div>
+  </nav>
+  <div class="bleed colophon-foot">
+    <a href="https://github.com/Flozad/svg-downloader">GitHub</a>
+    <a href="https://github.com/Flozad/svg-downloader/issues">Incidencias</a>
+    <a href="https://clasicwebtools.com">clasicwebtools.com</a>
+    <span class="grow"></span>
+    <span>Papel hueso, grafito y un solo verde&nbsp;plóter</span>
+  </div>
+</footer>
+
+
+</body></html>

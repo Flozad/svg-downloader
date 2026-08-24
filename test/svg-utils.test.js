@@ -1,5 +1,10 @@
-import { describe, expect, it } from 'vitest';
-import { formatSVGContent, sanitizeFilename, sanitizeNamePart } from '../extension/svg-utils.js';
+import { describe, expect, it, vi } from 'vitest';
+import {
+  formatSVGContent,
+  inlineExternalUses,
+  sanitizeFilename,
+  sanitizeNamePart,
+} from '../extension/svg-utils.js';
 
 describe('formatSVGContent', () => {
   it('prepends an XML declaration when absent', async () => {
@@ -169,5 +174,69 @@ describe('sanitizeNamePart truncation', () => {
     const name = sanitizeFilename('a'.repeat(99) + '..bb', 'fallback');
     expect(name).not.toContain('..');
     expect(name.endsWith('.svg')).toBe(true);
+  });
+});
+
+describe('inlineExternalUses', () => {
+  const SPRITE =
+    '<svg xmlns="http://www.w3.org/2000/svg"><symbol id="cart"><path d="M1 1"/></symbol><symbol id="bell"><path d="M2 2"/></symbol></svg>';
+
+  it('returns the markup untouched when there is nothing to resolve', async () => {
+    const markup = '<svg><use href="#x"/></svg>';
+    expect(await inlineExternalUses(markup, [], vi.fn())).toBe(markup);
+    expect(await inlineExternalUses(markup, undefined, vi.fn())).toBe(markup);
+  });
+
+  it('fetches the sprite and inlines the referenced symbol under a <defs>', async () => {
+    const fetchFn = vi.fn(async () => SPRITE);
+    const out = await inlineExternalUses(
+      '<svg xmlns="http://www.w3.org/2000/svg"><use href="#svgdl-ext-0"/></svg>',
+      [{ url: 'https://s/sprite.svg', id: 'cart', localId: 'svgdl-ext-0' }],
+      fetchFn
+    );
+    expect(out).toContain('id="svgdl-ext-0"');
+    expect(out).toContain('M1 1');
+    expect(out).toContain('<defs');
+  });
+
+  it('fetches each sprite file only once across multiple uses', async () => {
+    const fetchFn = vi.fn(async () => SPRITE);
+    await inlineExternalUses(
+      '<svg xmlns="http://www.w3.org/2000/svg"><use href="#svgdl-ext-0"/><use href="#svgdl-ext-1"/></svg>',
+      [
+        { url: 'https://s/sprite.svg', id: 'cart', localId: 'svgdl-ext-0' },
+        { url: 'https://s/sprite.svg', id: 'bell', localId: 'svgdl-ext-1' },
+      ],
+      fetchFn
+    );
+    expect(fetchFn).toHaveBeenCalledTimes(1);
+  });
+
+  it('leaves the icon blank (no throw) when the sprite fetch fails', async () => {
+    const fetchFn = vi.fn(async () => {
+      throw new Error('CORS');
+    });
+    const out = await inlineExternalUses(
+      '<svg xmlns="http://www.w3.org/2000/svg"><use href="#svgdl-ext-0"/></svg>',
+      [{ url: 'https://s/sprite.svg', id: 'cart', localId: 'svgdl-ext-0' }],
+      fetchFn
+    );
+    expect(out).not.toContain('<defs');
+  });
+
+  it('skips a reference whose id is missing from the sprite', async () => {
+    const fetchFn = vi.fn(async () => SPRITE);
+    const out = await inlineExternalUses(
+      '<svg xmlns="http://www.w3.org/2000/svg"><use href="#svgdl-ext-0"/></svg>',
+      [{ url: 'https://s/sprite.svg', id: 'nope', localId: 'svgdl-ext-0' }],
+      fetchFn
+    );
+    expect(out).not.toContain('<defs');
+  });
+
+  it('throws on an unparseable husk', async () => {
+    await expect(
+      inlineExternalUses('<not-svg', [{ url: 'u', id: 'i', localId: 'l' }], vi.fn())
+    ).rejects.toThrow(/Invalid SVG markup/);
   });
 });

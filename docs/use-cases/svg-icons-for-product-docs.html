@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Getting Crisp Icons Into Product Docs — A Technical Writing Story</title>
+<meta name="description" content="A technical writer stops cropping blurry glyphs out of screenshots. By pulling the exact toolbar icon as inline SVG, the docs match the product pixel-for-pixel and stay sharp at any zoom.">
+<link rel="canonical" href="https://svg.clasicwebtools.com/use-cases/svg-icons-for-product-docs"><!--i18n:alternates-->
+<link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/use-cases/svg-icons-for-product-docs">
+<link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/use-cases/svg-icons-for-product-docs">
+<link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/use-cases/svg-icons-for-product-docs">
+<link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/use-cases/svg-icons-for-product-docs">
+<link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/use-cases/svg-icons-for-product-docs">
+<link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/use-cases/svg-icons-for-product-docs">
+<!--/i18n:alternates-->
+<link rel="alternate" type="text/plain" href="https://svg.clasicwebtools.com/llms.txt" title="llms.txt — machine-readable site summary">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="Flozad">
+<meta name="theme-color" content="#ece4d3">
+<meta property="og:site_name" content="SVG Downloader">
+<meta property="og:title" content="Getting Crisp Icons Into Product Docs — A Technical Writing Story">
+<meta property="og:description" content="Stop cropping blurry glyphs out of screenshots. Pull the exact toolbar icon as inline SVG so the docs match the product and stay sharp at any zoom.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://svg.clasicwebtools.com/use-cases/svg-icons-for-product-docs">
+<meta property="og:image" content="https://svg.clasicwebtools.com/motion/02-preview.png">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="SVG Downloader showing an isolated preview of a single icon.">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@lozards">
+<meta name="twitter:title" content="Getting Crisp Icons Into Product Docs — A Technical Writing Story">
+<meta name="twitter:description" content="Pull the exact toolbar icon as inline SVG so the docs match the product and stay sharp at any zoom.">
+<meta name="twitter:image" content="https://svg.clasicwebtools.com/motion/02-preview.png">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/fonts/bricolage-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/pages.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://svg.clasicwebtools.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Stories", "item": "https://svg.clasicwebtools.com/use-cases" },
+        { "@type": "ListItem", "position": 3, "name": "Getting crisp icons into product docs", "item": "https://svg.clasicwebtools.com/use-cases/svg-icons-for-product-docs" }
+      ]
+    },
+    {
+      "@type": "Article",
+      "headline": "Getting crisp icons into product docs",
+      "description": "How a technical writer used SVG Downloader to pull exact product icons as inline SVG, replacing blurry cropped screenshots in the documentation.",
+      "image": "https://svg.clasicwebtools.com/motion/02-preview.png",
+      "inLanguage": "en",
+      "isPartOf": { "@id": "https://svg.clasicwebtools.com/#website" },
+      "about": { "@id": "https://svg.clasicwebtools.com/#app" },
+      "author": {
+        "@type": "Organization",
+        "name": "SVG Downloader",
+        "url": "https://svg.clasicwebtools.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "SVG Downloader",
+        "url": "https://svg.clasicwebtools.com/"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<nav class="nav">
+  <a class="brand" href="/">
+    <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+      <rect width="48" height="48" rx="10" fill="var(--plot)"/>
+      <path d="M24 13v15m0 0l-6.5-6.5M24 28l6.5-6.5" fill="none" stroke="var(--surface-hi)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="16.5" y="33.5" width="15" height="2.4" rx="1.2" fill="var(--surface-hi)"/>
+    </svg>
+    <strong>SVG&nbsp;Downloader</strong>
+  </a>
+  <span class="spacer"></span>
+  <span class="nav-links">
+    <a href="/features">Features</a>
+    <a href="/tutorials">Tutorials</a>
+    <a href="/guides">Guides</a>
+    <a href="/docs">Docs</a>
+    <a href="/use-cases" aria-current="page">Stories</a>
+    <a href="/privacy">Privacy</a>
+  </span><!--i18n:switch-->
+  <details class="lang-switch">
+    <summary aria-label="Language"><span>EN</span></summary>
+    <ul>
+      <li><a href="/use-cases/svg-icons-for-product-docs" hreflang="en" lang="en" aria-current="true">English</a></li>
+      <li><a href="/es/use-cases/svg-icons-for-product-docs" hreflang="es" lang="es">Español</a></li>
+      <li><a href="/fr/use-cases/svg-icons-for-product-docs" hreflang="fr" lang="fr">Français</a></li>
+      <li><a href="/de/use-cases/svg-icons-for-product-docs" hreflang="de" lang="de">Deutsch</a></li>
+      <li><a href="/pt-br/use-cases/svg-icons-for-product-docs" hreflang="pt-BR" lang="pt-BR">Português</a></li>
+    </ul>
+  </details>
+  <!--/i18n:switch-->
+  <a class="nav-cta" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Get the extension</a>
+</nav>
+
+<main id="main">
+<header class="page-hero"><div class="wrap">
+  <ol class="crumbs">
+    <li><a href="/">Home</a></li>
+    <li><a href="/use-cases">Stories</a></li>
+    <li><span aria-current="page">Crisp icons in docs</span></li>
+  </ol>
+  <p class="eyebrow">Story — documentation</p>
+  <h1>Getting the <span class="plot">exact product icon</span> into the docs, sharp</h1>
+  <div class="byline">
+    <span class="mono-badge" aria-hidden="true">TH</span>
+    <span><b>Tomás Herrera</b><span>Technical writer · developer documentation</span></span>
+  </div>
+  <p class="lede">“My docs kept telling people to ‘click the export icon,’ and the icon I'd pasted next to that sentence was a fuzzy 18-pixel crop out of a screenshot. On a retina display it looked like a mistake. I wanted the real glyph — the exact one in the product — sitting inline in the page.”</p>
+</div></header>
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">The setup</p>
+  <h2>Instructions are only as clear as the icon next to them</h2>
+  <dl class="facts case-meta">
+    <div><dt>Who</dt><dd>Tomás, a <strong>technical writer</strong> maintaining developer docs for a SaaS product.</dd></div>
+    <div><dt>Stack</dt><dd><span class="stack">Markdown docs, a static-site generator, MDX for inline components.</span> Icons render best as inline SVG.</dd></div>
+    <div><dt>The job</dt><dd>Put the <strong>real UI glyphs</strong> — export, filter, sync, the kebab menu — directly into step-by-step instructions so they match what the reader sees.</dd></div>
+    <div><dt>The wall</dt><dd>The product's icons are inline <code>&lt;svg&gt;</code>; the design team's export queue was a week out. Screenshots looked terrible when zoomed.</dd></div>
+  </dl>
+
+  <h2>What wasn't working</h2>
+  <p>“Cropping icons out of screenshots is a losing game. They're raster, so they blur the moment someone zooms or reads on a hi-DPI screen. They carry a background tint from wherever I cropped them. And they drift out of date — the product ships a new icon, my docs still show last quarter's. I could file a request with design for exports, but that's a queue, and I'm writing today.”</p>
+  <p>Right-click didn't help either: the glyphs were inline markup with no image URL behind them. Nothing to save.</p>
+
+  <h2>The switch</h2>
+  <p>Tomás opened the product, clicked <a href="/features/inline-svg">SVG Downloader</a>, and paged through the isolated previews to the exact toolbar glyph he needed. Each icon shows on its own, off the busy chrome, so there's no ambiguity about which one you're grabbing. A filename — <code>export.svg</code> — one click, done.</p>
+
+  <figure class="shot">
+    <div class="shot-mount">
+      <span class="shot-tag">preview</span>
+      <video src="/motion/clip-page.mp4" poster="/motion/hero.jpg" muted loop playsinline preload="none" aria-label="Next is pressed and the isolated preview steps from a search icon to a heart to a star, the counter tracking each one."></video>
+    </div>
+    <figcaption class="shot-cap">Paging the isolated previews to the exact glyph — the filename tracks along, so you save the right one under the right name.</figcaption>
+  </figure>
+
+  <p>“Inline in MDX, the icon is sharp at every zoom, it inherits the docs' text colour through <code>currentColor</code> so it sits in a sentence like a word, and it's the <em>actual</em> product glyph — not my approximation of it. When the product's export icon changes, I re-grab it in ten seconds. The file came down with its <code>xmlns</code> repaired, so it just worked in the build.”</p>
+
+  <div class="pull">
+    <p>“The docs finally look like the product instead of a photocopy of it. And I stopped waiting on an export queue to write a sentence.”</p>
+    <cite>— <b>Tomás Herrera</b>, technical writer</cite>
+  </div>
+
+  <p class="eyebrow">The result</p>
+  <ul class="outcomes">
+    <li><b>Sharp</b><span>inline SVG stays crisp at any zoom and on any display</span></li>
+    <li><b>10 sec</b><span>to re-grab an icon when the product updates it</span></li>
+    <li><b>currentColor</b><span>glyphs inherit the docs' text colour, inline in a sentence</span></li>
+  </ul>
+
+  <dl class="facts">
+    <div><dt>What did the work</dt><dd><a href="/features/inline-svg">Inline SVG detection</a> plus the isolated preview to pick the exact glyph, saved under a named file. See <a href="/guides/how-to-download-svg-from-any-website">the universal method</a>.</dd></div>
+    <div><dt>Why the icon looked black</dt><dd>Many UI glyphs use <code>currentColor</code> and save with no baked colour — which is exactly what you want inline in text. In docs it takes the paragraph's colour automatically.</dd></div>
+    <div><dt>A note on rights</dt><dd>Documenting a product you're authorised to write about is fine; check licensing before reusing another company's icons outside that context.</dd></div>
+  </dl>
+
+  <p class="disclosure">Composite story — an illustrative but representative workflow. The person and product are fictional; the extension's behaviour described here is real. <a href="/use-cases">More stories →</a></p>
+</div></section>
+
+<hr class="section-rule">
+
+<section><div class="wrap">
+  <div class="cta-band">
+    <div>
+      <h2>Docs that match the product</h2>
+      <p>Grab the exact glyph as inline SVG — sharp at any zoom, colour-aware, always current.</p>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Get the extension</a>
+      <a class="btn quiet" href="/features/inline-svg">How inline detection works →</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="related"><div class="wrap">
+  <p class="eyebrow">Keep reading</p>
+  <ul>
+    <li><a href="/use-cases/recover-brand-assets-redesign">Rescue brand assets<span>The freelance story</span></a></li>
+    <li><a href="/features/inline-svg">Inline SVG<span>How the DOM read works</span></a></li>
+    <li><a href="/guides/how-to-download-svg-from-any-website">Download from any site<span>The universal method</span></a></li>
+  </ul>
+</div></section>
+</main>
+
+<footer>
+  <nav class="bleed foot-map" aria-label="Site map">
+    <div class="col"><p>Product</p><ul>
+      <li><a href="/">Overview</a></li>
+      <li><a href="/features">Features</a></li>
+      <li><a href="/compare/svg-downloader-vs-screenshotting-icons">Vs. screenshotting</a></li>
+      <li><a href="/privacy">Privacy</a></li>
+      <li><a href="/use-cases">Use cases</a></li>
+    </ul></div>
+    <div class="col"><p>Catches</p><ul>
+      <li><a href="/features/inline-svg">Inline SVG</a></li>
+      <li><a href="/features/css-background-svg">CSS background SVG</a></li>
+      <li><a href="/features/svg-sprite-extractor">Sprite / &lt;use&gt; SVG</a></li>
+      <li><a href="/features/bulk-zip-download">Whole page as ZIP</a></li>
+    </ul></div>
+    <div class="col"><p>Stories</p><ul>
+      <li><a href="/use-cases/design-system-icon-audit">Icon library audit</a></li>
+      <li><a href="/use-cases/recover-brand-assets-redesign">Rescue brand assets</a></li>
+      <li><a href="/use-cases/migrate-sprite-sheet-to-components">Migrate a sprite sheet</a></li>
+      <li><a href="/use-cases/icon-set-for-pitch-deck">Icon set for a deck</a></li>
+    </ul></div>
+    <div class="col"><p>Tutorials</p><ul>
+      <li><a href="/tutorials">All 15 tutorials</a></li>
+      <li><a href="/tutorials/extract-svg-logo-from-website">Extract a logo</a></li>
+      <li><a href="/tutorials/extract-svg-from-website">Extract every SVG</a></li>
+      <li><a href="/guides">Long-form guides</a></li>
+    </ul></div>
+    <div class="col"><p>Docs</p><ul>
+      <li><a href="/docs/installation">Installation</a></li>
+      <li><a href="/docs/usage">Usage</a></li>
+      <li><a href="/docs/faq">FAQ</a></li>
+      <li><a href="/docs/changelog">Changelog</a></li>
+    </ul></div>
+  </nav>
+  <div class="bleed colophon-foot">
+    <a href="https://github.com/Flozad/svg-downloader">GitHub</a>
+    <a href="https://github.com/Flozad/svg-downloader/issues">Issues</a>
+    <a href="https://clasicwebtools.com">clasicwebtools.com</a>
+    <span class="grow"></span>
+    <span>Bone stock, graphite, one plotter&nbsp;green</span>
+  </div>
+</footer>
+<script src="/player.js" defer></script>
+</body>
+</html>

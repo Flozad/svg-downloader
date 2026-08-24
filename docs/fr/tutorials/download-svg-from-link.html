@@ -1,0 +1,367 @@
+<!DOCTYPE html><html lang="fr"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Télécharger un SVG depuis un lien — pas le HTML derrière</title>
+<meta name="description" content="« Enregistrer la cible du lien sous… » enregistre souvent la page, pas le vecteur. Voici pourquoi, et comment obtenir le vrai SVG derrière un lien, y compris les liens qui ouvrent une page de visualisation.">
+<link rel="canonical" href="https://svg.clasicwebtools.com/fr/tutorials/download-svg-from-link"><!--i18n:alternates-->
+<link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/download-svg-from-link">
+<link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/download-svg-from-link">
+<link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/download-svg-from-link">
+<link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/download-svg-from-link">
+<link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/download-svg-from-link">
+<link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/download-svg-from-link">
+<!--/i18n:alternates-->
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="Flozad">
+<meta name="theme-color" content="#ece4d3">
+<meta property="og:site_name" content="SVG Downloader">
+<meta property="og:title" content="Télécharger un SVG depuis un lien — pas le HTML derrière">
+<meta property="og:description" content="« Enregistrer la cible du lien sous… » enregistre souvent la page, pas le vecteur. Voici pourquoi, et comment obtenir le vrai SVG derrière un lien, y compris les liens qui ouvrent une page de visualisation.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://svg.clasicwebtools.com/fr/tutorials/download-svg-from-link">
+<meta property="og:image" content="https://svg.clasicwebtools.com/motion/tutorials/download-svg-from-link.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="Le popup SVG Downloader montrant une icône cloche trouvée sur une page d'icônes liées.">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:video" content="https://svg.clasicwebtools.com/motion/tutorials/download-svg-from-link.mp4">
+<meta property="og:video:secure_url" content="https://svg.clasicwebtools.com/motion/tutorials/download-svg-from-link.mp4">
+<meta property="og:video:type" content="video/mp4">
+<meta property="og:video:width" content="1280">
+<meta property="og:video:height" content="800">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@lozards">
+<meta name="twitter:title" content="Télécharger un SVG depuis un lien — pas le HTML derrière">
+<meta name="twitter:description" content="« Enregistrer la cible du lien sous… » enregistre souvent la page, pas le vecteur. Voici pourquoi, et comment obtenir le vrai SVG derrière un lien, y compris les liens qui ouvrent une page de visualisation.">
+<meta name="twitter:image" content="https://svg.clasicwebtools.com/motion/tutorials/download-svg-from-link.jpg">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/fonts/bricolage-var.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/pages.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://svg.clasicwebtools.com/fr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tutoriels",
+          "item": "https://svg.clasicwebtools.com/fr/tutorials"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Télécharger depuis un lien",
+          "item": "https://svg.clasicwebtools.com/fr/tutorials/download-svg-from-link"
+        }
+      ]
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Enregistrer un SVG depuis un lien plutôt qu'une page HTML",
+      "description": "Une page avec des liens vers des vecteurs. Plutôt que d'utiliser « Enregistrer la cible du lien sous… », le popup SVG Downloader s'ouvre, trouve le vecteur dans sa liste, reprend le nom de fichier bell et enregistre le vrai fichier.",
+      "thumbnailUrl": [
+        "https://svg.clasicwebtools.com/motion/tutorials/download-svg-from-link.jpg"
+      ],
+      "uploadDate": "2026-08-22",
+      "duration": "PT19S",
+      "contentUrl": "https://svg.clasicwebtools.com/motion/tutorials/download-svg-from-link.mp4",
+      "embedUrl": "https://svg.clasicwebtools.com/tutorials/download-svg-from-link",
+      "isFamilyFriendly": true,
+      "publisher": {
+        "@type": "Organization",
+        "name": "SVG Downloader",
+        "url": "https://svg.clasicwebtools.com/fr/"
+      }
+    },
+    {
+      "@type": "HowTo",
+      "name": "Comment télécharger un SVG depuis un lien",
+      "description": "« Enregistrer la cible du lien sous… » enregistre souvent la page, pas le vecteur. Voici pourquoi, et comment obtenir le vrai SVG derrière un lien, y compris les liens qui ouvrent une page de visualisation.",
+      "image": "https://svg.clasicwebtools.com/motion/tutorials/download-svg-from-link.jpg",
+      "totalTime": "PT2M",
+      "tool": {
+        "@type": "HowToTool",
+        "name": "Extension de navigateur SVG Downloader"
+      },
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Suivez le lien s'il mène quelque part",
+          "text": "S'il ouvre une page de visualisation ou de détail, laissez-le faire. C'est là que vit vraiment le vecteur, et c'est ce qu'il faut analyser.",
+          "url": "https://svg.clasicwebtools.com/fr/tutorials/download-svg-from-link#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Ouvrez le popup sur la page où vous atterrissez",
+          "text": "Cliquez sur le bouton de la barre d'outils. L'analyse se moque de savoir si vous êtes arrivé par un lien, par une recherche ou en tapant l'adresse.",
+          "url": "https://svg.clasicwebtools.com/fr/tutorials/download-svg-from-link#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Trouvez-le dans la liste",
+          "text": "Feuilletez avec Préc. et Suiv. Sur une page de détail, le vecteur voulu est en général grand et évident dans l'aperçu.",
+          "url": "https://svg.clasicwebtools.com/fr/tutorials/download-svg-from-link#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Nommez-le et téléchargez",
+          "text": "Tapez un nom de fichier et appuyez sur Télécharger le courant. Vous obtenez un vrai fichier vectoriel, pas un document HTML déguisé en .svg.",
+          "url": "https://svg.clasicwebtools.com/fr/tutorials/download-svg-from-link#steps"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Pourquoi Enregistrer la cible du lien sous… m'a-t-il donné un fichier HTML ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Parce que le lien visait une page web plutôt qu'un fichier vectoriel. Enregistrer la cible du lien sous… récupère l'URL et écrit ce qui revient, sans vérifier ce que c'est — un lien vers une page de visualisation produit donc une page, enregistrée sous le nom .svg que le lien suggérait."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Le href du lien est juste # — où est le fichier ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Il n'y en a pas. Un gestionnaire de clic construit le fichier en JavaScript au moment du clic. Rien n'existe à cette adresse à enregistrer : analyser la page pour y trouver le vecteur affiché est la seule voie."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Comment vérifier que mon fichier est un vrai SVG ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ouvrez-le dans un éditeur de texte. Un vrai SVG commence ainsi et pèse en général bien plus."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Le lien est lui-même une icône et le clic droit n'offre rien d'utile.",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cette icône est du balisage SVG en ligne, que le navigateur ne traite pas comme une image : aucune option d'image n'apparaît donc. Soit vous ouvrez le popup et analysez la page, soit vous utilisez l'entrée « Enregistrer ceci en SVG » que l'extension ajoute au menu contextuel."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Aller au contenu</a>
+
+<nav class="nav">
+  <a class="brand" href="/fr/">
+    <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+      <rect width="48" height="48" rx="10" fill="var(--plot)"></rect>
+      <path d="M24 13v15m0 0l-6.5-6.5M24 28l6.5-6.5" fill="none" stroke="var(--surface-hi)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+      <rect x="16.5" y="33.5" width="15" height="2.4" rx="1.2" fill="var(--surface-hi)"></rect>
+    </svg>
+    <strong>SVG&nbsp;Downloader</strong>
+  </a>
+  <span class="spacer"></span>
+  <span class="nav-links">
+    <a href="/fr/features">Fonctions</a>
+    <a href="/fr/tutorials" aria-current="page">Tutoriels</a>
+    <a href="/fr/guides">Guides</a>
+    <a href="/fr/docs">Docs</a>
+    <a href="/fr/use-cases">Histoires</a>
+  </span><!--i18n:switch-->
+  <details class="lang-switch">
+    <summary aria-label="Langue"><span>FR</span></summary>
+    <ul>
+      <li><a href="/tutorials/download-svg-from-link" hreflang="en" lang="en">English</a></li>
+      <li><a href="/es/tutorials/download-svg-from-link" hreflang="es" lang="es">Español</a></li>
+      <li><a href="/fr/tutorials/download-svg-from-link" hreflang="fr" lang="fr" aria-current="true">Français</a></li>
+      <li><a href="/de/tutorials/download-svg-from-link" hreflang="de" lang="de">Deutsch</a></li>
+      <li><a href="/pt-br/tutorials/download-svg-from-link" hreflang="pt-BR" lang="pt-BR">Português</a></li>
+    </ul>
+  </details>
+  <!--/i18n:switch-->
+  <a class="nav-cta" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Installer l'extension</a>
+</nav>
+
+<main id="main">
+<header class="page-hero"><div class="wrap">
+  <ol class="crumbs">
+    <li><a href="/fr/">Accueil</a></li>
+    <li><a href="/fr/tutorials">Tutoriels</a></li>
+    <li><span aria-current="page">Télécharger depuis un lien</span></li>
+  </ol>
+  <p class="eyebrow">Tutoriel — le piège du lien</p>
+  <h1>Comment <span class="plot">télécharger un SVG depuis un lien</span></h1>
+  <p class="lede">Vous faites un clic droit sur le lien, choisissez <em>Enregistrer la cible du lien sous…</em>, et récupérez un fichier HTML de 40 Ko. C'est la façon la plus courante de repartir avec la mauvaise chose, et l'explication est simple.</p>
+  <div class="cta">
+    <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 12v16m0 0l-7-7m7 7l7-7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"></path><rect x="16" y="34" width="16" height="2.6" rx="1.3" fill="currentColor"></rect></svg>
+      Installer l'extension</a>
+    <a class="btn quiet" href="#steps">Aller aux étapes ↓</a>
+  </div>
+</div></header>
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">À regarder — 19 secondes</p>
+  <h2>Obtenir ce que le lien vise réellement</h2>
+  <figure class="shot">
+    <div class="shot-mount">
+      <span class="shot-tag">tutoriel · depuis un lien</span>
+      <video src="/motion/tutorials/download-svg-from-link.mp4" poster="/motion/tutorials/download-svg-from-link.jpg" muted="" loop="" playsinline="" preload="none" aria-label="Une page avec des liens vers des vecteurs. Plutôt que d'utiliser « Enregistrer la cible du lien sous… », le popup SVG Downloader s'ouvre, trouve le vecteur dans sa liste, reprend le nom de fichier bell et enregistre le vrai fichier."></video>
+    </div>
+    <figcaption class="shot-cap">Le lien reste intact. Le vecteur sort de la page où se trouve le lien.</figcaption>
+  </figure>
+
+  <p class="lead-in">L'enregistrement n'utilise volontairement jamais <em>Enregistrer la cible du lien sous…</em> — parce que sur un lien pareil, cette entrée de menu est le piège plutôt que l'outil.</p>
+  <p class="eyebrow">Ce que montre l'enregistrement</p>
+  <ol class="beats">
+    <li>Un lien qui pointe vers un vecteur, pas vers une page</li>
+    <li>« Enregistrer la cible du lien sous… » vous donnerait l'enveloppe HTML</li>
+    <li>Ouvrez le popup sur la page où se trouve le lien</li>
+    <li>Le vecteur lié est dans la liste</li>
+    <li>Donnez-lui un nom qui veut dire quelque chose</li>
+    <li>Télécharger le courant — le fichier derrière le lien</li>
+  </ol>
+</div></section>
+
+<hr class="section-rule">
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Pourquoi la solution évidente échoue</p>
+  <h2>Enregistrer la cible du lien sous… enregistre la réponse, quelle qu'elle soit</h2>
+  
+  <p class="lead-in">Votre navigateur n'a aucune idée de ce qu'il y a au bout d'un lien avant de demander. <em>Enregistrer la cible du lien sous…</em> n'inspecte rien — il récupère l'URL et écrit sur le disque ce qui revient, sous le nom que le lien suggère.</p>
+  <p>Alors quand le lien mène à une <em>page de visualisation</em> — une page de détail d'icône, une page « télécharger » avec un aperçu et un bouton — ce qui revient est du HTML. Vous obtenez un fichier nommé <code>star.svg</code> qui est en réalité une page web, d'où le mur de texte à l'ouverture, ou le refus d'ouvrir. L'extension n'a jamais eu tort ; c'est le lien qui n'a jamais visé un vecteur.</p>
+  <p>Trois formes de liens causent presque tout cela :</p>
+  <ul>
+    <li><strong>Un lien vers une page de visualisation.</strong> Le vecteur est à destination, pas au lien. Suivez-le, puis analysez cette page.</li>
+    <li><strong>Un lien qui déclenche un téléchargement par script.</strong> Le <code>href</code> vaut <code>#</code> ou <code>javascript:</code>, et un gestionnaire de clic construit le fichier. Il n'y a rien à cette adresse à enregistrer.</li>
+    <li><strong>Un lien qui enveloppe une icône en ligne.</strong> Ce sur quoi vous cliquez <em>est</em> le graphique, dessiné en balisage. Un clic droit vous donne le menu de la page — aucune option d'image, parce que le navigateur ne considère pas cela comme une image.</li>
+  </ul>
+
+  <h2 id="steps">La méthode qui marche pour les trois</h2>
+  <p>Arrêtez d'essayer d'enregistrer le lien. Enregistrez le vecteur depuis la page qui l'affiche — la réponse est la même, quelle que soit la forme devant vous.</p>
+  <ol>
+    <li><strong>Suivez le lien s'il mène quelque part.</strong> S'il ouvre une page de visualisation ou de détail, laissez-le faire. C'est là que vit vraiment le vecteur, et c'est ce qu'il faut analyser.</li>
+    <li><strong>Ouvrez le popup sur la page où vous atterrissez.</strong> Cliquez sur le bouton de la barre d'outils. L'analyse se moque de savoir si vous êtes arrivé par un lien, par une recherche ou en tapant l'adresse.</li>
+    <li><strong>Trouvez-le dans la liste.</strong> Feuilletez avec <em>Préc.</em> et <em>Suiv.</em>. Sur une page de détail, le vecteur voulu est en général grand et évident dans l'aperçu.</li>
+    <li><strong>Nommez-le et téléchargez.</strong> Tapez un nom de fichier et appuyez sur <em>Télécharger le courant</em>. Vous obtenez un vrai fichier vectoriel, pas un document HTML déguisé en .svg.</li>
+  </ol>
+
+  
+  <h2>Comment savoir ce que vous avez vraiment téléchargé</h2>
+  <p>Si vous avez déjà un fichier suspect, cela prend dix secondes : ouvrez-le dans un éditeur de texte. Un vrai SVG commence par <code>&lt;svg</code> ou une déclaration XML et pèse en général quelques kilo-octets. Une page HTML déguisée commence par <code>&lt;!doctype html&gt;</code> et est nettement plus grosse. Si c'est le second cas, le lien menait à une page, et analyser cette page vous donnera la vraie chose.</p>
+
+  <h2>Quand le lien est l'icône</h2>
+  <p>C'est la troisième forme, la plus courante sur les sites modernes — une icône cliquable qui est du balisage <code>&lt;svg&gt;</code> en ligne. Il n'y a réellement rien à enregistrer : pas d'adresse, pas de fichier, pas d'image que le navigateur reconnaisse. Soit vous analysez la page, soit vous faites un clic droit et prenez <strong>Enregistrer ceci en SVG</strong> dans le menu, ce que couvre <a href="/fr/tutorials/grab-svg-from-website">le tutoriel de prise rapide</a>.</p>
+
+  <dl class="facts">
+    <div><dt>Le piège</dt><dd><em>Enregistrer la cible du lien sous…</em> écrit <strong>ce que l'URL renvoie</strong> — souvent du HTML.</dd></div>
+    <div><dt>La vérification</dt><dd>Ouvrez le fichier dans un éditeur de texte. <code>&lt;!doctype html&gt;</code> signifie que vous avez récupéré une page.</dd></div>
+    <div><dt>Le remède</dt><dd>Analysez la page qui affiche le vecteur, au lieu d'enregistrer le lien.</dd></div>
+    <div><dt>À voir aussi</dt><dd><a href="/fr/tutorials/grab-svg-from-website">Prise au clic droit</a> · <a href="/fr/tutorials/download-svg-from-url">Depuis une URL</a></dd></div>
+  </dl>
+</div></section>
+
+<hr class="section-rule">
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Bon à savoir</p>
+  <h2>Questions fréquentes</h2>
+  <div class="faq">
+    <details>
+      <summary>Pourquoi Enregistrer la cible du lien sous… m'a-t-il donné un fichier HTML ?</summary>
+      <div class="faq-body"><p>Parce que le lien visait une page web plutôt qu'un fichier vectoriel. Enregistrer la cible du lien sous… récupère l'URL et écrit ce qui revient, sans vérifier ce que c'est — un lien vers une page de visualisation produit donc une page, enregistrée sous le nom .svg que le lien suggérait.</p></div>
+    </details>
+    <details>
+      <summary>Le href du lien est juste # — où est le fichier ?</summary>
+      <div class="faq-body"><p>Il n'y en a pas. Un gestionnaire de clic construit le fichier en JavaScript au moment du clic. Rien n'existe à cette adresse à enregistrer : analyser la page pour y trouver le vecteur affiché est la seule voie.</p></div>
+    </details>
+    <details>
+      <summary>Comment vérifier que mon fichier est un vrai SVG ?</summary>
+      <div class="faq-body"><p>Ouvrez-le dans un éditeur de texte. Un vrai SVG commence par <svg or="" an="" xml="" declaration.="" html="" page="" starts="" with="" <!doctype=""> and is usually much bigger.</svg></p></div>
+    </details>
+    <details>
+      <summary>Le lien est lui-même une icône et le clic droit n'offre rien d'utile.</summary>
+      <div class="faq-body"><p>Cette icône est du balisage SVG en ligne, que le navigateur ne traite pas comme une image : aucune option d'image n'apparaît donc. Soit vous ouvrez le popup et analysez la page, soit vous utilisez l'entrée « Enregistrer ceci en SVG » que l'extension ajoute au menu contextuel.</p></div>
+    </details>
+  </div>
+</div></section>
+
+<hr class="section-rule">
+
+<section><div class="wrap">
+  <div class="cta-band">
+    <div>
+      <h2>Arrêtez d'enregistrer des pages nommées .svg</h2>
+      <p>Sortez plutôt le vecteur de la page — cela marche pour les trois sortes de liens.</p>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Installer l'extension</a>
+      <a class="btn quiet" href="/fr/tutorials">Les 15 tutoriels →</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="related"><div class="wrap">
+  <p class="eyebrow">Continuez</p>
+  <ul>
+    <li><a href="/fr/tutorials/grab-svg-from-website">Prise au clic droit<span>Une icône, une entrée de menu</span></a></li>
+    <li><a href="/fr/tutorials/download-svg-from-url">Depuis une URL<span>Adresse, pas fichier</span></a></li>
+    <li><a href="/fr/tutorials/save-svg-from-website">Quand le clic droit échoue<span>Le menu grisé</span></a></li>
+  </ul>
+</div></section>
+</main>
+
+<footer>
+  <nav class="bleed foot-map" aria-label="Plan du site">
+    <div class="col"><p>Produit</p><ul>
+      <li><a href="/fr/">Vue d'ensemble</a></li>
+      <li><a href="/fr/features">Fonctions</a></li>
+      <li><a href="/fr/compare/svg-downloader-vs-screenshotting-icons">Face à la capture</a></li>
+      <li><a href="/fr/privacy">Confidentialité</a></li>
+      <li><a href="/fr/use-cases">Cas d'usage</a></li>
+    </ul></div>
+    <div class="col"><p>Ce qu'il attrape</p><ul>
+      <li><a href="/fr/features/inline-svg">SVG en ligne</a></li>
+      <li><a href="/fr/features/css-background-svg">SVG en fond CSS</a></li>
+      <li><a href="/fr/features/svg-sprite-extractor">SVG de sprite / &lt;use&gt;</a></li>
+      <li><a href="/fr/features/bulk-zip-download">Page entière en ZIP</a></li>
+    </ul></div>
+    <div class="col"><p>Tutoriels</p><ul>
+      <li><a href="/fr/tutorials">Les 15 tutoriels</a></li>
+      <li><a href="/fr/tutorials/how-to-download-svg-files">Comment télécharger des fichiers SVG</a></li>
+      <li><a href="/fr/tutorials/copy-svg-from-website">Copier un SVG</a></li>
+      <li><a href="/fr/tutorials/extract-svg-from-website">Extraire chaque SVG</a></li>
+    </ul></div>
+    <div class="col"><p>Docs</p><ul>
+      <li><a href="/fr/docs/installation">Installation</a></li>
+      <li><a href="/fr/docs/usage">Utilisation</a></li>
+      <li><a href="/fr/docs/faq">FAQ</a></li>
+      <li><a href="/fr/docs/changelog">Journal des versions</a></li>
+    </ul></div>
+  </nav>
+  <div class="bleed colophon-foot">
+    <a href="https://github.com/Flozad/svg-downloader">GitHub</a>
+    <a href="https://github.com/Flozad/svg-downloader/issues">Tickets</a>
+    <a href="https://clasicwebtools.com">clasicwebtools.com</a>
+    <span class="grow"></span>
+    <span>Papier os, graphite, un seul vert&nbsp;traceur</span>
+  </div>
+</footer>
+<script src="/player.js" defer=""></script>
+
+
+</body></html>

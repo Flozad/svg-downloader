@@ -1,0 +1,319 @@
+<!DOCTYPE html><html lang="fr"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comment télécharger tous les SVG d'une page en ZIP — SVG Downloader</title>
+<meta name="description" content="Téléchargez tous les SVG d'une page en ZIP — analysez le site, cliquez sur Tout télécharger, et recevez des fichiers numérotés et dédoublonnés, avec les ignorés nommés dans le popup.">
+<link rel="canonical" href="https://svg.clasicwebtools.com/fr/guides/download-all-svgs-as-zip"><!--i18n:alternates-->
+<link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/guides/download-all-svgs-as-zip">
+<link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/guides/download-all-svgs-as-zip">
+<link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/guides/download-all-svgs-as-zip">
+<link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/guides/download-all-svgs-as-zip">
+<link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/guides/download-all-svgs-as-zip">
+<link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/guides/download-all-svgs-as-zip">
+<!--/i18n:alternates-->
+<link rel="alternate" type="text/plain" href="https://svg.clasicwebtools.com/llms.txt" title="llms.txt — machine-readable site summary">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="author" content="Flozad">
+<meta name="theme-color" content="#ece4d3">
+<meta property="og:site_name" content="SVG Downloader">
+<meta property="og:title" content="Comment télécharger tous les SVG d'une page en ZIP">
+<meta property="og:description" content="Téléchargez tous les SVG d'une page en ZIP — analysez le site, cliquez sur Tout télécharger, et recevez des fichiers numérotés et dédoublonnés, avec les ignorés nommés dans le popup.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://svg.clasicwebtools.com/fr/guides/download-all-svgs-as-zip">
+<meta property="og:image" content="https://svg.clasicwebtools.com/motion/06-brand.png">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="SVG Downloader empaquetant tous les SVG d'une page dans une archive ZIP.">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@lozards">
+<meta name="twitter:title" content="Comment télécharger tous les SVG d'une page en ZIP">
+<meta name="twitter:description" content="Téléchargez tous les SVG d'une page en ZIP — analysez le site, cliquez sur Tout télécharger, et recevez des fichiers numérotés et dédoublonnés, avec les ignorés nommés dans le popup.">
+<meta name="twitter:image" content="https://svg.clasicwebtools.com/motion/06-brand.png">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/fonts/bricolage-var.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/pages.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://svg.clasicwebtools.com/fr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://svg.clasicwebtools.com/fr/guides"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Télécharger tous les SVG en ZIP",
+          "item": "https://svg.clasicwebtools.com/fr/guides/download-all-svgs-as-zip"
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "name": "Comment télécharger tous les SVG d'une page en ZIP",
+      "description": "Téléchargez en masse les SVG d'un site dans un unique ZIP de fichiers numérotés et dédoublonnés grâce à l'extension Chrome SVG Downloader.",
+      "totalTime": "PT2M",
+      "tool": {
+        "@type": "HowToTool",
+        "name": "SVG Downloader (extension Chrome)"
+      },
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Installez SVG Downloader",
+          "text": "Ajoutez l'extension gratuite SVG Downloader à Chrome, Edge ou Brave. Elle tourne entièrement sur votre appareil — pas de compte, pas d'envoi.",
+          "url": "https://svg.clasicwebtools.com/fr/guides/download-all-svgs-as-zip#install"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Ouvrez le popup sur la page visée",
+          "text": "Allez sur la page dont vous voulez les SVG, puis cliquez sur l'icône SVG Downloader dans la barre d'outils pour ouvrir le popup.",
+          "url": "https://svg.clasicwebtools.com/fr/guides/download-all-svgs-as-zip#open"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Analysez la page",
+          "text": "L'extension parcourt tout le DOM et rassemble les SVG trouvés — éléments en ligne, vecteurs img et object, URI data:, images de fond CSS et références de sprite du même document.",
+          "url": "https://svg.clasicwebtools.com/fr/guides/download-all-svgs-as-zip#scan"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Cliquez sur Tout télécharger en ZIP",
+          "text": "Appuyez sur Tout télécharger en ZIP. Chaque SVG collecté est empaqueté dans une archive, dédoublonné pour que les icônes identiques n'apparaissent qu'une fois, et numéroté à partir de svg-1.svg.",
+          "url": "https://svg.clasicwebtools.com/fr/guides/download-all-svgs-as-zip#zip"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 5,
+          "name": "Ouvrez l'archive et lisez la ligne d'état du popup",
+          "text": "Décompressez le fichier pour trouver des .svg numérotés aux espaces de noms réparés. La ligne d'état du popup nomme ce qui n'a pas pu être résolu ; rien d'autre n'est ajouté à l'archive.",
+          "url": "https://svg.clasicwebtools.com/fr/guides/download-all-svgs-as-zip#inside"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Le ZIP contient-il des icônes en double ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Non. SVG Downloader dédoublonne avant d'empaqueter : un logo ou une icône qui se répète dans la page est enregistré une fois, pas cinquante. Vous obtenez un jeu propre, pas le décompte brut de la page."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qu'advient-il des SVG qui n'ont pas pu être enregistrés ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La ligne d'état du popup les nomme par leur position dans la liste d'aperçus — par exemple « Téléchargés 8 SVG sur 10. Ignorés : 3, 7. » Les causes courantes sont un fichier cross-origin bloqué, ou une référence use pointant vers un fichier de sprite externe, qui n'est pas résolu. Les fichiers réussis se téléchargent quand même ; l'archive ne contient qu'eux, et la ligne d'état vous dit ce qui manque."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Faut-il utiliser le ZIP ou télécharger un seul SVG ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Prenez Tout télécharger en ZIP quand vous voulez tout le jeu d'icônes ou que vous auditez un site. Prenez Télécharger le SVG courant quand vous avez feuilleté jusqu'à une icône précise et qu'il ne vous faut que ce fichier."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Aller au contenu</a>
+
+<nav class="nav">
+  <a class="brand" href="/fr/">
+    <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+      <rect width="48" height="48" rx="10" fill="var(--plot)"></rect>
+      <path d="M24 13v15m0 0l-6.5-6.5M24 28l6.5-6.5" fill="none" stroke="var(--surface-hi)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+      <rect x="16.5" y="33.5" width="15" height="2.4" rx="1.2" fill="var(--surface-hi)"></rect>
+    </svg>
+    <strong>SVG&nbsp;Downloader</strong>
+  </a>
+  <span class="spacer"></span>
+  <span class="nav-links">
+    <a href="/fr/features">Fonctions</a>
+    <a href="/fr/tutorials">Tutoriels</a>
+    <a href="/fr/guides" aria-current="page">Guides</a>
+    <a href="/fr/docs">Docs</a>
+    <a href="/fr/privacy">Confidentialité</a>
+    <a href="/fr/use-cases">Histoires</a>
+  </span><!--i18n:switch-->
+  <details class="lang-switch">
+    <summary aria-label="Langue"><span>FR</span></summary>
+    <ul>
+      <li><a href="/guides/download-all-svgs-as-zip" hreflang="en" lang="en">English</a></li>
+      <li><a href="/es/guides/download-all-svgs-as-zip" hreflang="es" lang="es">Español</a></li>
+      <li><a href="/fr/guides/download-all-svgs-as-zip" hreflang="fr" lang="fr" aria-current="true">Français</a></li>
+      <li><a href="/de/guides/download-all-svgs-as-zip" hreflang="de" lang="de">Deutsch</a></li>
+      <li><a href="/pt-br/guides/download-all-svgs-as-zip" hreflang="pt-BR" lang="pt-BR">Português</a></li>
+    </ul>
+  </details>
+  <!--/i18n:switch-->
+  <a class="nav-cta" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Installer l'extension</a>
+</nav>
+
+<main id="main">
+<header class="page-hero"><div class="wrap">
+  <ol class="crumbs">
+    <li><a href="/fr/">Accueil</a></li>
+    <li><a href="/fr/guides">Guides</a></li>
+    <li><span aria-current="page">Télécharger tous les SVG en ZIP</span></li>
+  </ol>
+  <p class="eyebrow">Guide — flux en masse</p>
+  <h1>Téléchargez <span class="plot">tous les SVG</span> d'une page en ZIP</h1>
+  <p class="lede">Prendre les icônes une par une va très bien pour une icône. Quand vous voulez tout le jeu — chaque logo, glyphe et illustration d'une page — SVG Downloader analyse le DOM et vous remet un seul ZIP de fichiers numérotés et dédoublonnés.</p>
+  <div class="cta">
+    <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 12v16m0 0l-7-7m7 7l7-7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"></path><rect x="16" y="34" width="16" height="2.6" rx="1.3" fill="currentColor"></rect></svg>
+      Installer l'extension</a>
+    <a class="btn quiet" href="/fr/features/bulk-zip-download">Voir la fonction →</a>
+  </div>
+</div></header>
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">La tâche</p>
+  <h2>Enregistrer d'un coup tous les SVG d'un site</h2>
+  <p class="lead-in">Une seule page peut contenir des dizaines de SVG — un logo d'en-tête, une navigation pleine d'icônes, des glyphes de rubriques, des boutons sociaux, une marque de pied de page. Les enregistrer à la main, c'est trouver chacun, contourner le balisage en ligne et les fonds CSS, réparer les espaces de noms et inventer des noms de fichiers. Faites-le trente fois et vous avez perdu un après-midi.</p>
+  <p>Le flux en masse ramène tout à un clic. Vous pointez SVG Downloader sur la page, il récolte tout ce qui est vectoriel dessus, et il écrit le lot dans un ZIP. Les étapes ci-dessous sont toute la procédure.</p>
+
+  <h2 id="install">Pas à pas : de la page au ZIP</h2>
+  <ol>
+    <li><strong id="open">Installez et ouvrez le popup.</strong> Ajoutez l'extension gratuite à Chrome, Edge ou Brave, ouvrez la page voulue et cliquez sur l'icône SVG Downloader dans la barre d'outils. Tout tourne en local — rien de la page n'est envoyé.</li>
+    <li><strong id="scan">Laissez-le analyser.</strong> L'extension parcourt tout le DOM et rassemble les quatre sources de SVG : éléments <code>&lt;svg&gt;</code> en ligne, vecteurs en <code>&lt;img&gt;</code> et <code>&lt;object&gt;</code> y compris les URI <code>data:</code>, SVG en <code>background-image</code> CSS, et références <code>&lt;use&gt;</code> vers un sprite du même document. Vous pouvez les parcourir avec Précédent/Suivant pour confirmer la prise.</li>
+    <li><strong id="zip">Cliquez sur « Tout télécharger en ZIP ».</strong> Au lieu d'enregistrer un fichier, cela empaquette toute la collection dans une seule archive. Les icônes en double sont ramenées à un exemplaire en chemin : l'archive reflète le jeu, pas le nombre brut d'éléments de la page.</li>
+    <li><strong id="inside">Ouvrez l'archive.</strong> À l'intérieur, de vrais fichiers <code>.svg</code>, numérotés à partir de <code>svg-1.svg</code> dans l'ordre de découverte, chacun avec un <code>xmlns</code> réparé s'il manquait, prêt pour Figma, Illustrator ou VS Code sans retouche. Vous préférez un autre préfixe ? Réglez-le une fois dans les options de l'extension et toutes les archives suivent.</li>
+  </ol>
+
+  <figure class="shot"><div class="shot-mount"><span class="shot-tag">Tout télécharger en ZIP</span><img src="/motion/05-zip.png" alt="SVG Downloader empaquetant tous les SVG d'une page en un seul téléchargement ZIP" width="1280" height="800" loading="lazy"></div><figcaption class="shot-cap">Un clic sur <code>Tout télécharger en ZIP</code> récolte les SVG de la page et dédoublonne le jeu avant de l'empaqueter.</figcaption></figure>
+
+  <h2 id="whats-inside">Ce qu'il y a dans le ZIP</h2>
+  <dl class="facts">
+    <div><dt>Fichiers numérotés</dt><dd><code>svg-1.svg</code>, <code>svg-2.svg</code> dans l'ordre de la page — avec un <strong>préfixe que vous choisissez</strong> dans les options, pour recevoir le jeu en <code>acme-1.svg</code> si vous préférez.</dd></div>
+    <div><dt>Dédoublonné</dt><dd>Les icônes qui se répètent dans la page sont enregistrées <strong>une fois</strong>. L'archive est le jeu d'icônes, nettoyé de ses copies.</dd></div>
+    <div><dt>Balisage d'origine</dt><dd>Chaque fichier est le vecteur qui était dans la page — tracés et <code>viewBox</code> préservés, espace de noms réparé. <strong>Pas un rendu recalculé.</strong></dd></div>
+    <div><dt>Manques affichés</dt><dd>Le popup nomme tout ce qui n'a pas pu être résolu — d'ordinaire un fichier <strong>cross-origin bloqué</strong> ou un sprite externe — pour que rien ne disparaisse en silence.</dd></div>
+  </dl>
+</div></section>
+
+<hr class="section-rule">
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Quel bouton</p>
+  <h2>ZIP ou téléchargement unitaire</h2>
+  <p>Les deux boutons vivent dans le même popup. Prenez celui qui correspond au travail.</p>
+  <ul>
+    <li><strong>Tout télécharger en ZIP</strong> — quand vous voulez tout le jeu, reconstruisez une bibliothèque d'icônes ou auditez ce qu'un site livre réellement. Un clic, une archive, aucune répétition.</li>
+    <li><strong>Télécharger le SVG courant</strong> — quand vous avez feuilleté jusqu'à une icône précise avec Précédent/Suivant et qu'il ne vous faut que ce fichier. Pas d'archive, juste le <code>.svg</code>.</li>
+  </ul>
+  <p>La voie en masse est documentée en entier sur la page de la <a href="/fr/features/bulk-zip-download">fonction ZIP de page entière</a>. Si vous poursuivez plutôt une icône récalcitrante, le guide <a href="/fr/guides/how-to-extract-svg-icons-from-a-website">extraire des icônes SVG</a> déroule la voie fichier par fichier.</p>
+</div></section>
+
+<hr class="section-rule">
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Bon à savoir</p>
+  <h2>Questions sur le téléchargement ZIP en masse</h2>
+  <div class="faq">
+    <details>
+      <summary>Le ZIP contient-il des icônes en double ?</summary>
+      <div class="faq-body"><p>Non. SVG Downloader dédoublonne avant d'empaqueter : un logo ou une icône qui se répète dans la page est enregistré une fois, pas cinquante. Vous obtenez un jeu propre, pas le décompte brut de la page.</p></div>
+    </details>
+    <details>
+      <summary>Qu'advient-il des SVG qui n'ont pas pu être enregistrés ?</summary>
+      <div class="faq-body"><p>La ligne d'état du popup les nomme par leur position dans la liste d'aperçus — <code>Téléchargés 8 SVG sur 10. Ignorés : 3, 7.</code> Les causes courantes sont un fichier cross-origin bloqué, ou une référence <code>&lt;use&gt;</code> pointant vers un fichier de sprite externe, non résolu. Les fichiers réussis se téléchargent quand même ; l'archive ne contient qu'eux, et la ligne d'état vous dit ce qui manque.</p></div>
+    </details>
+    <details>
+      <summary>Faut-il utiliser le ZIP ou télécharger un seul SVG ?</summary>
+      <div class="faq-body"><p>Prenez <em>Tout télécharger en ZIP</em> quand vous voulez tout le jeu d'icônes ou que vous auditez un site. Prenez <em>Télécharger le SVG courant</em> quand vous avez feuilleté jusqu'à une icône précise et qu'il ne vous faut que ce fichier.</p></div>
+    </details>
+  </div>
+</div></section>
+
+<hr class="section-rule">
+
+<section><div class="wrap">
+  <div class="cta-band">
+    <div>
+      <h2>Prenez la page entière en un clic</h2>
+      <p>Gratuit, privé, et il ramène une page d'icônes à un ZIP bien rangé.</p>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Installer l'extension</a>
+      <a class="btn quiet" href="/fr/guides">Tous les guides →</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="related"><div class="wrap">
+  <p class="eyebrow">À lire ensuite</p>
+  <ul>
+    <li><a href="/fr/features/bulk-zip-download">Page entière en ZIP<span>La fonction en détail</span></a></li>
+    <li><a href="/fr/guides/how-to-download-svg-from-any-website">Télécharger depuis n'importe quel site<span>Le guide de départ</span></a></li>
+    <li><a href="/fr/guides/extract-svg-from-css-background">SVG en fond CSS<span>Attraper les cachés</span></a></li>
+  </ul>
+</div></section>
+</main>
+
+<footer>
+  <nav class="bleed foot-map" aria-label="Plan du site">
+    <div class="col"><p>Produit</p><ul>
+      <li><a href="/fr/">Vue d'ensemble</a></li>
+      <li><a href="/fr/features">Fonctions</a></li>
+      <li><a href="/fr/compare/svg-downloader-vs-screenshotting-icons">Face à la capture</a></li>
+      <li><a href="/fr/privacy">Confidentialité</a></li>
+      <li><a href="/fr/use-cases">Cas d'usage</a></li>
+    </ul></div>
+    <div class="col"><p>Ce qu'il attrape</p><ul>
+      <li><a href="/fr/features/inline-svg">SVG en ligne</a></li>
+      <li><a href="/fr/features/css-background-svg">SVG en fond CSS</a></li>
+      <li><a href="/fr/features/svg-sprite-extractor">SVG de sprite / &lt;use&gt;</a></li>
+      <li><a href="/fr/features/bulk-zip-download">Page entière en ZIP</a></li>
+    </ul></div>
+    <div class="col"><p>Tutoriels</p><ul>
+      <li><a href="/fr/tutorials">Les 15 tutoriels</a></li>
+      <li><a href="/fr/tutorials/how-to-download-svg-files">Comment télécharger des fichiers SVG</a></li>
+      <li><a href="/fr/tutorials/copy-svg-from-website">Copier un SVG</a></li>
+      <li><a href="/fr/guides">Guides détaillés</a></li>
+    </ul></div>
+    <div class="col"><p>Docs</p><ul>
+      <li><a href="/fr/docs/installation">Installation</a></li>
+      <li><a href="/fr/docs/usage">Utilisation</a></li>
+      <li><a href="/fr/docs/faq">FAQ</a></li>
+      <li><a href="/fr/docs/changelog">Journal des versions</a></li>
+    </ul></div>
+  </nav>
+  <div class="bleed colophon-foot">
+    <a href="https://github.com/Flozad/svg-downloader">GitHub</a>
+    <a href="https://github.com/Flozad/svg-downloader/issues">Tickets</a>
+    <a href="https://clasicwebtools.com">clasicwebtools.com</a>
+    <span class="grow"></span>
+    <span>Papier os, graphite, un seul vert&nbsp;traceur</span>
+  </div>
+</footer>
+
+
+</body></html>

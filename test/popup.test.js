@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { beforeAll, beforeEach, describe, expect, it, vi } from 'vitest';
+import { afterEach, beforeAll, beforeEach, describe, expect, it, vi } from 'vitest';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const flush = () => new Promise((resolve) => setTimeout(resolve, 0));
@@ -779,5 +779,144 @@ describe('popup.js — single download failures', () => {
 describe('popup.js — default settings applied at startup', () => {
   it('shows the colour-changer hand-off when showColorLink is on', () => {
     expect(document.getElementById('colorLink').classList.contains('hidden')).toBe(false);
+  });
+});
+
+// Format selector, copy actions, and PNG/JPG rasterization. jsdom has no canvas
+// or blob-loading <img>, so both are mocked at this block's scope.
+describe('popup.js — format, copy & raster (new)', () => {
+  let ctx;
+  let toBlobImpl;
+  let createElementSpy;
+
+  beforeEach(() => {
+    // Reset format to SVG between tests by clicking the SVG segment.
+    document.querySelector('.seg-btn[data-format="svg"]').click();
+
+    ctx = { fillStyle: null, fillRect: vi.fn(), drawImage: vi.fn() };
+    toBlobImpl = (cb, type) => cb(new Blob(['png'], { type }));
+    createElementSpy = vi.spyOn(document, 'createElement').mockImplementation((tag) => {
+      if (tag === 'canvas') {
+        return {
+          width: 0,
+          height: 0,
+          getContext: () => ctx,
+          toBlob: (cb, type) => toBlobImpl(cb, type),
+        };
+      }
+      return document.createElementNS('http://www.w3.org/1999/xhtml', tag);
+    });
+    globalThis.Image = class {
+      set src(_v) {
+        setTimeout(() => this.onload?.(), 0);
+      }
+    };
+  });
+
+  afterEach(() => {
+    createElementSpy.mockRestore();
+  });
+
+  it('switches to PNG: updates the extension hint and reveals the size selector', () => {
+    document.querySelector('.seg-btn[data-format="png"]').click();
+    expect(document.getElementById('fileExt').textContent).toBe('.png');
+    expect(document.getElementById('scaleField').classList.contains('hidden')).toBe(false);
+    expect(document.querySelector('.seg-btn[data-format="png"]').getAttribute('aria-pressed')).toBe(
+      'true'
+    );
+  });
+
+  it('hides the size selector for the SVG format', () => {
+    document.querySelector('.seg-btn[data-format="png"]').click();
+    document.querySelector('.seg-btn[data-format="svg"]').click();
+    expect(document.getElementById('fileExt').textContent).toBe('.svg');
+    expect(document.getElementById('scaleField').classList.contains('hidden')).toBe(true);
+  });
+
+  it('downloads the current SVG as a PNG when PNG is selected', async () => {
+    selectFirst(2);
+    document.querySelector('.seg-btn[data-format="png"]').click();
+    document.getElementById('filenameInput').value = 'icon';
+    document.getElementById('downloadBtn').click();
+    await settle();
+    expect(chrome.downloads.download).toHaveBeenCalledWith(
+      expect.objectContaining({ filename: 'icon.png' })
+    );
+  });
+
+  it('surfaces a rasterization failure without downloading', async () => {
+    selectFirst(2);
+    toBlobImpl = (cb) => cb(null); // tainted-canvas shape
+    document.querySelector('.seg-btn[data-format="png"]').click();
+    document.getElementById('downloadBtn').click();
+    await settle();
+    expect(chrome.downloads.download).not.toHaveBeenCalled();
+    expect(document.getElementById('empty-state').querySelector('p').textContent).toMatch(
+      /could not be converted/
+    );
+  });
+
+  it('copies the SVG code to the clipboard', async () => {
+    const writeText = vi.fn(async () => {});
+    Object.defineProperty(navigator, 'clipboard', { value: { writeText }, configurable: true });
+    selectFirst(2);
+    document.getElementById('copyCodeBtn').click();
+    await settle();
+    expect(writeText).toHaveBeenCalledWith(expect.stringContaining('<circle'));
+    expect(document.getElementById('status').textContent).toMatch(/code copied/i);
+  });
+
+  it('copies a PNG image to the clipboard', async () => {
+    const write = vi.fn(async () => {});
+    Object.defineProperty(navigator, 'clipboard', { value: { write }, configurable: true });
+    globalThis.ClipboardItem = class {
+      constructor(items) {
+        this.items = items;
+      }
+    };
+    selectFirst(2);
+    document.getElementById('copyImageBtn').click();
+    await settle();
+    expect(write).toHaveBeenCalledTimes(1);
+    expect(document.getElementById('status').textContent).toMatch(/image copied/i);
+  });
+
+  it('reports a copy failure on the status line, leaving the preview intact', async () => {
+    Object.defineProperty(navigator, 'clipboard', { value: undefined, configurable: true });
+    selectFirst(2);
+    document.getElementById('copyCodeBtn').click();
+    await settle();
+    expect(document.getElementById('status').textContent).toMatch(/unavailable|could not copy/i);
+    expect(document.getElementById('preview').classList.contains('hidden')).toBe(false);
+  });
+
+  it('resolves an external sprite before downloading an inline SVG that uses one', async () => {
+    send('svgsCollected', { count: 1, skipped: 0 });
+    send('elementSelected', {
+      type: 'svg',
+      content: '<svg xmlns="http://www.w3.org/2000/svg"><use href="#svgdl-ext-0"/></svg>',
+      externalUses: [{ url: 'https://cdn.example/sprite.svg', id: 'i', localId: 'svgdl-ext-0' }],
+      currentIndex: 0,
+      total: 1,
+    });
+    await settle();
+
+    const fetched = [];
+    sendMessageImpl = async (_tabId, msg) => {
+      if (msg.action === 'fetchSVG') {
+        fetched.push(msg.url);
+        return {
+          success: true,
+          content:
+            '<svg xmlns="http://www.w3.org/2000/svg"><symbol id="i"><path d="M4 4"/></symbol></svg>',
+        };
+      }
+      return { success: true };
+    };
+    document.getElementById('downloadBtn').click();
+    await settle();
+
+    expect(fetched).toContain('https://cdn.example/sprite.svg');
+    expect(chrome.downloads.download).toHaveBeenCalled();
   });
 });

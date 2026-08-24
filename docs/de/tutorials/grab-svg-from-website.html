@@ -1,0 +1,364 @@
+<!DOCTYPE html><html lang="de"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SVG Grabber — ein SVG mit einem einzigen Rechtsklick greifen</title>
+<meta name="description" content="Überspring das Popup komplett. Klick mit rechts auf eine beliebige Grafik und nimm „Als SVG speichern“, um genau die geklickte zu bekommen, bereinigt und bereit zum Öffnen.">
+<link rel="canonical" href="https://svg.clasicwebtools.com/de/tutorials/grab-svg-from-website"><!--i18n:alternates-->
+<link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/grab-svg-from-website">
+<link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/grab-svg-from-website">
+<link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/grab-svg-from-website">
+<link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/grab-svg-from-website">
+<link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/grab-svg-from-website">
+<link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/grab-svg-from-website">
+<!--/i18n:alternates-->
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="Flozad">
+<meta name="theme-color" content="#ece4d3">
+<meta property="og:site_name" content="SVG Downloader">
+<meta property="og:title" content="SVG Grabber — ein SVG mit einem einzigen Rechtsklick greifen">
+<meta property="og:description" content="Überspring das Popup komplett. Klick mit rechts auf eine beliebige Grafik und nimm „Als SVG speichern“, um genau die geklickte zu bekommen, bereinigt und bereit zum Öffnen.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://svg.clasicwebtools.com/de/tutorials/grab-svg-from-website">
+<meta property="og:image" content="https://svg.clasicwebtools.com/motion/tutorials/grab-svg-from-website.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="Chromes Rechtsklick-Menü über einem Icon geöffnet, mit dem Eintrag „Als SVG speichern“.">
+<meta property="og:locale" content="de_DE">
+<meta property="og:video" content="https://svg.clasicwebtools.com/motion/tutorials/grab-svg-from-website.mp4">
+<meta property="og:video:secure_url" content="https://svg.clasicwebtools.com/motion/tutorials/grab-svg-from-website.mp4">
+<meta property="og:video:type" content="video/mp4">
+<meta property="og:video:width" content="1280">
+<meta property="og:video:height" content="800">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@lozards">
+<meta name="twitter:title" content="SVG Grabber — ein SVG mit einem einzigen Rechtsklick greifen">
+<meta name="twitter:description" content="Überspring das Popup komplett. Klick mit rechts auf eine beliebige Grafik und nimm „Als SVG speichern“, um genau die geklickte zu bekommen, bereinigt und bereit zum Öffnen.">
+<meta name="twitter:image" content="https://svg.clasicwebtools.com/motion/tutorials/grab-svg-from-website.jpg">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/fonts/bricolage-var.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/pages.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Start",
+          "item": "https://svg.clasicwebtools.com/de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tutorials",
+          "item": "https://svg.clasicwebtools.com/de/tutorials"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Schnell eines greifen",
+          "item": "https://svg.clasicwebtools.com/de/tutorials/grab-svg-from-website"
+        }
+      ]
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Ein SVG schnell über das Rechtsklick-Menü greifen",
+      "description": "Auf ein Icon einer Seite wird mit rechts geklickt. Chromes Seitenmenü öffnet sich mit einem von der Erweiterung beigesteuerten Eintrag „Als SVG speichern“. Er wird gewählt, und die Datei wird gespeichert.",
+      "thumbnailUrl": [
+        "https://svg.clasicwebtools.com/motion/tutorials/grab-svg-from-website.jpg"
+      ],
+      "uploadDate": "2026-08-22",
+      "duration": "PT15S",
+      "contentUrl": "https://svg.clasicwebtools.com/motion/tutorials/grab-svg-from-website.mp4",
+      "embedUrl": "https://svg.clasicwebtools.com/tutorials/grab-svg-from-website",
+      "isFamilyFriendly": true,
+      "publisher": {
+        "@type": "Organization",
+        "name": "SVG Downloader",
+        "url": "https://svg.clasicwebtools.com/de/"
+      }
+    },
+    {
+      "@type": "HowTo",
+      "name": "So greifst du ein SVG mit einem Rechtsklick",
+      "description": "Überspring das Popup komplett. Klick mit rechts auf eine beliebige Grafik und nimm „Als SVG speichern“, um genau die geklickte zu bekommen, bereinigt und bereit zum Öffnen.",
+      "image": "https://svg.clasicwebtools.com/motion/tutorials/grab-svg-from-website.jpg",
+      "totalTime": "PT2M",
+      "tool": {
+        "@type": "HowToTool",
+        "name": "Browser-Erweiterung SVG Downloader"
+      },
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Klick mit rechts auf die Grafik",
+          "text": "Zeig auf das Icon, Logo oder die Illustration, die du willst, und klick mit rechts. Es funktioniert bei Inline-Vektoren, bei Bildern und bei Grafiken, die als CSS-Hintergrund gemalt sind.",
+          "url": "https://svg.clasicwebtools.com/de/tutorials/grab-svg-from-website#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Wähl „Als SVG speichern“",
+          "text": "Der Eintrag der Erweiterung sitzt in einer eigenen Gruppe unter Chromes eigenen Einträgen. Ihn zu wählen findet die Grafik unter deinem Cursor, löst sie auf, bereinigt sie und speichert sie — zu keinem Zeitpunkt öffnet sich ein Popup.",
+          "url": "https://svg.clasicwebtools.com/de/tutorials/grab-svg-from-website#steps"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Wo ist der Menüpunkt „Als SVG speichern“?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Im Rechtsklick-Menü jeder gewöhnlichen Webseite, in einer eigenen Gruppe unter Chromes eigenen Einträgen. Von Erweiterungen beigesteuerte Einträge sitzen immer unter den eingebauten."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Unterscheidet sich die Datei von einem Popup-Download?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nein. Beide durchlaufen denselben Bereiniger und dieselbe Namensraum-Reparatur — der Rechtsklick-Weg überspringt lediglich Scan und Vorschau."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Der Menüpunkt fehlt auf dieser Seite.",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Er ist nur für http- und https-Seiten registriert. Browserinterne Seiten, der Chrome Web Store, andere Erweiterungsgalerien und PDFs sind für Erweiterungen von Haus aus tabu."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kann ich mit rechts auf ein CSS-Hintergrundbild klicken?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. Der Eintrag wird sowohl bei Bild- als auch bei allgemeinen Seitenzielen angeboten, Inline-Vektoren und CSS-Hintergründe sind also beide erreichbar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Beim Klick wurde nichts geladen.",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Meist war die Grafik unter dem Cursor eine Sprite-Referenz auf eine separate Datei, die die Seite nie geladen hat — es gab also nichts aufzulösen. Öffne stattdessen das Popup und nimm sie aus dem Scan."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Zum Inhalt springen</a>
+
+<nav class="nav">
+  <a class="brand" href="/de/">
+    <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+      <rect width="48" height="48" rx="10" fill="var(--plot)"></rect>
+      <path d="M24 13v15m0 0l-6.5-6.5M24 28l6.5-6.5" fill="none" stroke="var(--surface-hi)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+      <rect x="16.5" y="33.5" width="15" height="2.4" rx="1.2" fill="var(--surface-hi)"></rect>
+    </svg>
+    <strong>SVG&nbsp;Downloader</strong>
+  </a>
+  <span class="spacer"></span>
+  <span class="nav-links">
+    <a href="/de/features">Funktionen</a>
+    <a href="/de/tutorials" aria-current="page">Tutorials</a>
+    <a href="/de/guides">Anleitungen</a>
+    <a href="/de/docs">Doku</a>
+    <a href="/de/use-cases">Praxis</a>
+  </span><!--i18n:switch-->
+  <details class="lang-switch">
+    <summary aria-label="Sprache"><span>DE</span></summary>
+    <ul>
+      <li><a href="/tutorials/grab-svg-from-website" hreflang="en" lang="en">English</a></li>
+      <li><a href="/es/tutorials/grab-svg-from-website" hreflang="es" lang="es">Español</a></li>
+      <li><a href="/fr/tutorials/grab-svg-from-website" hreflang="fr" lang="fr">Français</a></li>
+      <li><a href="/de/tutorials/grab-svg-from-website" hreflang="de" lang="de" aria-current="true">Deutsch</a></li>
+      <li><a href="/pt-br/tutorials/grab-svg-from-website" hreflang="pt-BR" lang="pt-BR">Português</a></li>
+    </ul>
+  </details>
+  <!--/i18n:switch-->
+  <a class="nav-cta" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Erweiterung installieren</a>
+</nav>
+
+<main id="main">
+<header class="page-hero"><div class="wrap">
+  <ol class="crumbs">
+    <li><a href="/de/">Start</a></li>
+    <li><a href="/de/tutorials">Tutorials</a></li>
+    <li><span aria-current="page">Schnell eines greifen</span></li>
+  </ol>
+  <p class="eyebrow">Tutorial — der schnellste Weg</p>
+  <h1>So <span class="plot">greifst du ein SVG</span> mit einem Rechtsklick</h1>
+  <p class="lede">Wenn du ein bestimmtes Icon willst und zwar jetzt, sind ein Popup zu öffnen und dorthin zu blättern drei Schritte zu viel. Es gibt einen Ein-Schritt-Weg.</p>
+  <div class="cta">
+    <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 12v16m0 0l-7-7m7 7l7-7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"></path><rect x="16" y="34" width="16" height="2.6" rx="1.3" fill="currentColor"></rect></svg>
+      Erweiterung installieren</a>
+    <a class="btn quiet" href="#steps">Zu den Schritten ↓</a>
+  </div>
+</div></header>
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Ansehen — 15 Sekunden</p>
+  <h2>Ein Menüpunkt, eine Datei</h2>
+  <figure class="shot">
+    <div class="shot-mount">
+      <span class="shot-tag">Tutorial · Rechtsklick</span>
+      <video src="/motion/tutorials/grab-svg-from-website.mp4" poster="/motion/tutorials/grab-svg-from-website.jpg" muted="" loop="" playsinline="" preload="none" aria-label="Auf ein Icon einer Seite wird mit rechts geklickt. Chromes Seitenmenü öffnet sich mit einem von der Erweiterung beigesteuerten Eintrag „Als SVG speichern“. Er wird gewählt, und die Datei wird gespeichert."></video>
+    </div>
+    <figcaption class="shot-cap">Das Menü ist Chromes. Der letzte Eintrag ist der der Erweiterung. Das ist die ganze Interaktion.</figcaption>
+  </figure>
+
+  <p class="lead-in">Sieh dir das Menü in der Aufnahme an: Es gibt kein <em>Bild speichern unter…</em> darin, weil ein Inline-<code>&lt;svg&gt;</code> kein Bild ist. Die Zeile der Erweiterung ist das Einzige dort, was den Vektor speichern kann.</p>
+  <p class="eyebrow">Was die Aufnahme zeigt</p>
+  <ol class="beats">
+    <li>Du willst ein Icon, und zwar jetzt</li>
+    <li>Klick mit rechts darauf und nimm „Als SVG speichern“</li>
+    <li>Kein Popup, kein Scan — ein Menüpunkt, eine Datei</li>
+    <li>Derselbe Bereiniger läuft, die Datei öffnet also weiterhin überall</li>
+  </ol>
+</div></section>
+
+<hr class="section-rule">
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Wann was</p>
+  <h2>Rechtsklick für eines, das Popup für eine Entscheidung</h2>
+  
+  <p class="lead-in">Beide Wege enden bei derselben Datei, erzeugt vom selben Code. Sie unterscheiden sich darin, was du vorher wissen musst.</p>
+  <ul>
+    <li><strong>Rechtsklick</strong>, wenn du schon genau weißt, welche Grafik du willst, und sie direkt vor dir hast. Du zeigst darauf; keine Liste, kein Blättern, keine Mehrdeutigkeit. Das ist der schnellstmögliche Weg zu einer einzelnen Datei.</li>
+    <li><strong>Das Popup</strong>, wenn du es noch nicht weißt — wenn du die isolierte Vorschau sehen, zwei ähnliche Icons vergleichen, einen Dateinamen wählen, in PNG umwandeln, das Markup kopieren oder die ganze Seite auf einmal nehmen willst. Das ist der Weg mit Optionen.</li>
+  </ul>
+  <p>Bemerkenswert: Der Rechtsklick braucht überhaupt keinen Scan. Nichts läuft durch die Seite, nichts wird gezählt, und es gibt keine Liste zu bauen — der Erweiterung wird das angeklickte Element übergeben, und sie arbeitet nur an diesem einen Ding.</p>
+
+  <h2 id="steps">Eines greifen</h2>
+  <p>Es gibt zwei Schritte, und einer davon ist „Rechtsklick“.</p>
+  <ol>
+    <li><strong>Klick mit rechts auf die Grafik.</strong> Zeig auf das Icon, Logo oder die Illustration, die du willst, und klick mit rechts. Es funktioniert bei Inline-Vektoren, bei Bildern und bei Grafiken, die als CSS-Hintergrund gemalt sind.</li>
+    <li><strong>Wähl „Als SVG speichern“.</strong> Der Eintrag der Erweiterung sitzt in einer eigenen Gruppe unter Chromes eigenen Einträgen. Ihn zu wählen findet die Grafik unter deinem Cursor, löst sie auf, bereinigt sie und speichert sie — zu keinem Zeitpunkt öffnet sich ein Popup.</li>
+  </ol>
+
+  
+  <h2>Es ist dieselbe Datei, keine Abkürzungsversion</h2>
+  <p>Die schwere Arbeit passiert in beiden Fällen an derselben Stelle. Der Service Worker hinter dem Menüpunkt hat kein eigenes DOM, also fragt er das Content-Skript der Seite nach einer fertigen, bereinigten Datei und übergibt sie der Download-Maschinerie des Browsers. Das ist genau derselbe Pfad wie bei einem Popup-Download — dieselbe Namensraum-Reparatur, dasselbe Entfernen von Skripten und Event-Handlern. Du tauschst keine Qualität gegen Tempo.</p>
+
+  <h2>Wo der Menüpunkt nicht erscheint</h2>
+  <p>Er ist nur für gewöhnliche Webseiten registriert — <code>http</code> und <code>https</code>. Auf <code>chrome://</code>-Seiten, im Chrome Web Store oder anderen Erweiterungsgalerien, auf PDFs und anderen Nicht-HTML-Dokumenten wirst du ihn nicht sehen. Browser blockieren Erweiterungen auf ihren eigenen Galerieseiten bewusst, und keine Erweiterung kann das umgehen.</p>
+
+  <h2>Wenn das Icon aus einem Sprite kommt</h2>
+  <p><code>&lt;use&gt;</code>-Sprite-Referenzen, die ins selbe Dokument zeigen, lösen sofort auf. Eine, die auf eine separate Sprite-Datei zeigt, die die Seite nicht geladen hat, muss erst geholt werden — das dauert einen Moment länger oder scheitert, wenn diese Datei unerreichbar ist. Öffne in dem Fall das Popup und nimm sie aus dem Scan, der mehr Spielraum hat, sie aufzulösen.</p>
+
+  <dl class="facts">
+    <div><dt>Schritte</dt><dd><strong>Zwei.</strong> Rechtsklick, dann den Eintrag wählen. Kein Popup, kein Scan.</dd></div>
+    <div><dt>Qualität</dt><dd>Identisch mit einem Popup-Download — derselbe Bereiniger, dieselbe Namensraum-Reparatur.</dd></div>
+    <div><dt>Läuft auf</dt><dd>Inline-Vektoren, Bilder und CSS-Hintergrundgrafiken auf jeder <code>http(s)</code>-Seite.</dd></div>
+    <div><dt>Nimm das Popup für</dt><dd>Vorschau, Umbenennen, PNG-Umwandlung, Kopieren oder die ganze Seite auf einmal.</dd></div>
+  </dl>
+</div></section>
+
+<hr class="section-rule">
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Gut zu wissen</p>
+  <h2>Häufig gefragt</h2>
+  <div class="faq">
+    <details>
+      <summary>Wo ist der Menüpunkt „Als SVG speichern“?</summary>
+      <div class="faq-body"><p>Im Rechtsklick-Menü jeder gewöhnlichen Webseite, in einer eigenen Gruppe unter Chromes eigenen Einträgen. Von Erweiterungen beigesteuerte Einträge sitzen immer unter den eingebauten.</p></div>
+    </details>
+    <details>
+      <summary>Unterscheidet sich die Datei von einem Popup-Download?</summary>
+      <div class="faq-body"><p>Nein. Beide durchlaufen denselben Bereiniger und dieselbe Namensraum-Reparatur — der Rechtsklick-Weg überspringt lediglich Scan und Vorschau.</p></div>
+    </details>
+    <details>
+      <summary>Der Menüpunkt fehlt auf dieser Seite.</summary>
+      <div class="faq-body"><p>Er ist nur für http- und https-Seiten registriert. Browserinterne Seiten, der Chrome Web Store, andere Erweiterungsgalerien und PDFs sind für Erweiterungen von Haus aus tabu.</p></div>
+    </details>
+    <details>
+      <summary>Kann ich mit rechts auf ein CSS-Hintergrundbild klicken?</summary>
+      <div class="faq-body"><p>Ja. Der Eintrag wird sowohl bei Bild- als auch bei allgemeinen Seitenzielen angeboten, Inline-Vektoren und CSS-Hintergründe sind also beide erreichbar.</p></div>
+    </details>
+    <details>
+      <summary>Beim Klick wurde nichts geladen.</summary>
+      <div class="faq-body"><p>Meist war die Grafik unter dem Cursor eine Sprite-Referenz auf eine separate Datei, die die Seite nie geladen hat — es gab also nichts aufzulösen. Öffne stattdessen das Popup und nimm sie aus dem Scan.</p></div>
+    </details>
+  </div>
+</div></section>
+
+<hr class="section-rule">
+
+<section><div class="wrap">
+  <div class="cta-band">
+    <div>
+      <h2>Ein Icon, ein Rechtsklick</h2>
+      <p>Der schnellste Weg, den es gibt — und die Datei ist exakt dieselbe.</p>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Erweiterung installieren</a>
+      <a class="btn quiet" href="/de/tutorials">Alle 15 Tutorials →</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="related"><div class="wrap">
+  <p class="eyebrow">Weiter geht's</p>
+  <ul>
+    <li><a href="/de/tutorials/save-svg-from-website">Wenn der Rechtsklick versagt<span>Das ausgegraute Menü</span></a></li>
+    <li><a href="/de/tutorials/how-to-download-svg-files">Der Popup-Weg<span>Mit Vorschauen und Optionen</span></a></li>
+    <li><a href="/de/tutorials/download-svg-from-link">Von einem Link<span>„Link speichern unter…“ lügt</span></a></li>
+  </ul>
+</div></section>
+</main>
+
+<footer>
+  <nav class="bleed foot-map" aria-label="Sitemap">
+    <div class="col"><p>Produkt</p><ul>
+      <li><a href="/de/">Überblick</a></li>
+      <li><a href="/de/features">Funktionen</a></li>
+      <li><a href="/de/compare/svg-downloader-vs-screenshotting-icons">Vs. Screenshot</a></li>
+      <li><a href="/de/privacy">Datenschutz</a></li>
+      <li><a href="/de/use-cases">Anwendungsfälle</a></li>
+    </ul></div>
+    <div class="col"><p>Erkennt</p><ul>
+      <li><a href="/de/features/inline-svg">Inline-SVG</a></li>
+      <li><a href="/de/features/css-background-svg">SVG im CSS-Hintergrund</a></li>
+      <li><a href="/de/features/svg-sprite-extractor">Sprite- / &lt;use&gt;-SVG</a></li>
+      <li><a href="/de/features/bulk-zip-download">Ganze Seite als ZIP</a></li>
+    </ul></div>
+    <div class="col"><p>Tutorials</p><ul>
+      <li><a href="/de/tutorials">Alle 15 Tutorials</a></li>
+      <li><a href="/de/tutorials/how-to-download-svg-files">SVG-Dateien herunterladen</a></li>
+      <li><a href="/de/tutorials/copy-svg-from-website">Ein SVG kopieren</a></li>
+      <li><a href="/de/tutorials/extract-svg-from-website">Jedes SVG extrahieren</a></li>
+    </ul></div>
+    <div class="col"><p>Doku</p><ul>
+      <li><a href="/de/docs/installation">Installation</a></li>
+      <li><a href="/de/docs/usage">Bedienung</a></li>
+      <li><a href="/de/docs/faq">FAQ</a></li>
+      <li><a href="/de/docs/changelog">Changelog</a></li>
+    </ul></div>
+  </nav>
+  <div class="bleed colophon-foot">
+    <a href="https://github.com/Flozad/svg-downloader">GitHub</a>
+    <a href="https://github.com/Flozad/svg-downloader/issues">Issues</a>
+    <a href="https://clasicwebtools.com">clasicwebtools.com</a>
+    <span class="grow"></span>
+    <span>Knochenpapier, Graphit, ein einziges Plotter&nbsp;grün</span>
+  </div>
+</footer>
+<script src="/player.js" defer=""></script>
+
+
+</body></html>

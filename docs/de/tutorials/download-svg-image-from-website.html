@@ -1,0 +1,394 @@
+<!DOCTYPE html><html lang="de"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ein SVG-Bild von einer Website laden (oder in PNG umwandeln)</title>
+<meta name="description" content="Speichere ein SVG-Bild als Vektor oder wandle es beim Laden in PNG oder JPG in 1×, 2× oder 4× um. Gerendert auf deinem Rechner — zum Umwandeln wird nichts hochgeladen.">
+<link rel="canonical" href="https://svg.clasicwebtools.com/de/tutorials/download-svg-image-from-website"><!--i18n:alternates-->
+<link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/download-svg-image-from-website">
+<link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/download-svg-image-from-website">
+<link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/download-svg-image-from-website">
+<link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/download-svg-image-from-website">
+<link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/download-svg-image-from-website">
+<link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/download-svg-image-from-website">
+<!--/i18n:alternates-->
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="Flozad">
+<meta name="theme-color" content="#ece4d3">
+<meta property="og:site_name" content="SVG Downloader">
+<meta property="og:title" content="Ein SVG-Bild von einer Website laden (oder in PNG umwandeln)">
+<meta property="og:description" content="Speichere ein SVG-Bild als Vektor oder wandle es beim Laden in PNG oder JPG in 1×, 2× oder 4× um. Gerendert auf deinem Rechner — zum Umwandeln wird nichts hochgeladen.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://svg.clasicwebtools.com/de/tutorials/download-svg-image-from-website">
+<meta property="og:image" content="https://svg.clasicwebtools.com/motion/tutorials/download-svg-image-from-website.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="Das SVG-Downloader-Popup mit PNG im Formatsegment ausgewählt und sichtbarer 2×-Größenauswahl.">
+<meta property="og:locale" content="de_DE">
+<meta property="og:video" content="https://svg.clasicwebtools.com/motion/tutorials/download-svg-image-from-website.mp4">
+<meta property="og:video:secure_url" content="https://svg.clasicwebtools.com/motion/tutorials/download-svg-image-from-website.mp4">
+<meta property="og:video:type" content="video/mp4">
+<meta property="og:video:width" content="1280">
+<meta property="og:video:height" content="800">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@lozards">
+<meta name="twitter:title" content="Ein SVG-Bild von einer Website laden (oder in PNG umwandeln)">
+<meta name="twitter:description" content="Speichere ein SVG-Bild als Vektor oder wandle es beim Laden in PNG oder JPG in 1×, 2× oder 4× um. Gerendert auf deinem Rechner — zum Umwandeln wird nichts hochgeladen.">
+<meta name="twitter:image" content="https://svg.clasicwebtools.com/motion/tutorials/download-svg-image-from-website.jpg">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/fonts/bricolage-var.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/pages.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Start",
+          "item": "https://svg.clasicwebtools.com/de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tutorials",
+          "item": "https://svg.clasicwebtools.com/de/tutorials"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Laden oder umwandeln",
+          "item": "https://svg.clasicwebtools.com/de/tutorials/download-svg-image-from-website"
+        }
+      ]
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Ein SVG-Bild laden oder es beim Speichern in PNG umwandeln",
+      "description": "Das SVG-Downloader-Popup lädt ein Icon als Vektor, schaltet dann das Formatsegment auf PNG, wodurch die Größenauswahl erscheint, und lädt dasselbe Icon als PNG.",
+      "thumbnailUrl": [
+        "https://svg.clasicwebtools.com/motion/tutorials/download-svg-image-from-website.jpg"
+      ],
+      "uploadDate": "2026-08-22",
+      "duration": "PT19S",
+      "contentUrl": "https://svg.clasicwebtools.com/motion/tutorials/download-svg-image-from-website.mp4",
+      "embedUrl": "https://svg.clasicwebtools.com/tutorials/download-svg-image-from-website",
+      "isFamilyFriendly": true,
+      "publisher": {
+        "@type": "Organization",
+        "name": "SVG Downloader",
+        "url": "https://svg.clasicwebtools.com/de/"
+      }
+    },
+    {
+      "@type": "HowTo",
+      "name": "So lädst du ein SVG-Bild — oder wandelst es um",
+      "description": "Speichere ein SVG-Bild als Vektor oder wandle es beim Laden in PNG oder JPG in 1×, 2× oder 4× um. Gerendert auf deinem Rechner — zum Umwandeln wird nichts hochgeladen.",
+      "image": "https://svg.clasicwebtools.com/motion/tutorials/download-svg-image-from-website.jpg",
+      "totalTime": "PT2M",
+      "tool": {
+        "@type": "HowToTool",
+        "name": "Browser-Erweiterung SVG Downloader"
+      },
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Popup öffnen und das Bild finden",
+          "text": "Klick auf den Button in der Symbolleiste und blättere zur gewünschten Grafik. Es klappt, egal ob das Bild eine <img>-Quelle, Inline-Markup oder ein CSS-Hintergrund ist.",
+          "url": "https://svg.clasicwebtools.com/de/tutorials/download-svg-image-from-website#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Für den Vektor einfach laden",
+          "text": "Lass das Format auf SVG, tipp einen Dateinamen und drück Aktuelles laden. Du bekommst das Original-Markup mit repariertem Namensraum.",
+          "url": "https://svg.clasicwebtools.com/de/tutorials/download-svg-image-from-website#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Für ein Raster erst das Format wechseln",
+          "text": "Drück PNG oder JPG im Segment. Daneben erscheint eine Größenauswahl, und die Endung im Dateinamenfeld passt sich an.",
+          "url": "https://svg.clasicwebtools.com/de/tutorials/download-svg-image-from-website#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Größe wählen, dann laden",
+          "text": "1×, 2× oder 4× der intrinsischen Größe des Vektors. Die Umwandlung läuft auf deinem Rechner, auf einem Canvas, und das Ergebnis lädt wie alles andere.",
+          "url": "https://svg.clasicwebtools.com/de/tutorials/download-svg-image-from-website#steps"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Soll ich das SVG laden oder in PNG umwandeln?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Behalte das SVG für Web, Apps, Designtools und Druck, wo es in jeder Größe scharf bleibt. Wandle in PNG um, wenn das Ziel kein SVG annimmt — die meisten E-Mail-Programme, viele CMS-Uploader und der Großteil der Präsentationssoftware."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Was bedeutet die Größeneinstellung 2×?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sie vervielfacht die intrinsische Größe des Vektors — sein angegebenes width und height oder die Ausdehnung seines viewBox. Ein 24×24-Icon in 4× ergibt ein 96×96-PNG. 2× ist die vernünftige Voreinstellung für Retina-Bildschirme."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Warum hat mein JPG einen weißen Kasten hinter dem Icon?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "JPG kennt keine Transparenz, der transparente Hintergrund wird also gefüllt. Nimm PNG für alles mit transparentem Hintergrund — und das ist fast jedes Icon."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wird meine Datei zum Umwandeln hochgeladen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nein. Der Vektor wird in ein Canvas im Popup gezeichnet und als Bild zurückgelesen, vollständig auf deinem Rechner. Es funktioniert auch ohne Netzverbindung."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Die Umwandlung scheiterte mit einem Cross-Origin-Fehler.",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dieses SVG bettet ein Rasterbild von einer anderen Domain ein. Es zu zeichnen vergiftet das Canvas, und der Browser verweigert das Zurücklesen der Pixel — eine Sicherheitsregel, die keine Erweiterung umgeht. Der Vektor selbst lädt weiterhin normal."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kann ich ein PNG zurück in ein SVG verwandeln?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nein. Die Kurvendaten existieren in einem Raster nicht. Nachzeichnen liefert eine Annäherung, nicht die ursprünglichen Formen."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Zum Inhalt springen</a>
+
+<nav class="nav">
+  <a class="brand" href="/de/">
+    <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+      <rect width="48" height="48" rx="10" fill="var(--plot)"></rect>
+      <path d="M24 13v15m0 0l-6.5-6.5M24 28l6.5-6.5" fill="none" stroke="var(--surface-hi)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+      <rect x="16.5" y="33.5" width="15" height="2.4" rx="1.2" fill="var(--surface-hi)"></rect>
+    </svg>
+    <strong>SVG&nbsp;Downloader</strong>
+  </a>
+  <span class="spacer"></span>
+  <span class="nav-links">
+    <a href="/de/features">Funktionen</a>
+    <a href="/de/tutorials" aria-current="page">Tutorials</a>
+    <a href="/de/guides">Anleitungen</a>
+    <a href="/de/docs">Doku</a>
+    <a href="/de/use-cases">Praxis</a>
+  </span><!--i18n:switch-->
+  <details class="lang-switch">
+    <summary aria-label="Sprache"><span>DE</span></summary>
+    <ul>
+      <li><a href="/tutorials/download-svg-image-from-website" hreflang="en" lang="en">English</a></li>
+      <li><a href="/es/tutorials/download-svg-image-from-website" hreflang="es" lang="es">Español</a></li>
+      <li><a href="/fr/tutorials/download-svg-image-from-website" hreflang="fr" lang="fr">Français</a></li>
+      <li><a href="/de/tutorials/download-svg-image-from-website" hreflang="de" lang="de" aria-current="true">Deutsch</a></li>
+      <li><a href="/pt-br/tutorials/download-svg-image-from-website" hreflang="pt-BR" lang="pt-BR">Português</a></li>
+    </ul>
+  </details>
+  <!--/i18n:switch-->
+  <a class="nav-cta" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Erweiterung installieren</a>
+</nav>
+
+<main id="main">
+<header class="page-hero"><div class="wrap">
+  <ol class="crumbs">
+    <li><a href="/de/">Start</a></li>
+    <li><a href="/de/tutorials">Tutorials</a></li>
+    <li><span aria-current="page">Laden oder umwandeln</span></li>
+  </ol>
+  <p class="eyebrow">Tutorial — Vektor oder Raster</p>
+  <h1>So <span class="plot">lädst du ein SVG-Bild</span> — oder wandelst es um</h1>
+  <p class="lede">Die Hälfte derer, die danach suchen, will den Vektor. Die andere Hälfte will eigentlich ein PNG und weiß es nicht. Beides liegt einen Klick auseinander.</p>
+  <div class="cta">
+    <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 12v16m0 0l-7-7m7 7l7-7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"></path><rect x="16" y="34" width="16" height="2.6" rx="1.3" fill="currentColor"></rect></svg>
+      Erweiterung installieren</a>
+    <a class="btn quiet" href="#steps">Zu den Schritten ↓</a>
+  </div>
+</div></header>
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Ansehen — 19 Sekunden</p>
+  <h2>Vektor raus oder Raster raus</h2>
+  <figure class="shot">
+    <div class="shot-mount">
+      <span class="shot-tag">Tutorial · umwandeln</span>
+      <video src="/motion/tutorials/download-svg-image-from-website.mp4" poster="/motion/tutorials/download-svg-image-from-website.jpg" muted="" loop="" playsinline="" preload="none" aria-label="Das SVG-Downloader-Popup lädt ein Icon als Vektor, schaltet dann das Formatsegment auf PNG, wodurch die Größenauswahl erscheint, und lädt dasselbe Icon als PNG."></video>
+    </div>
+    <figcaption class="shot-cap">Dasselbe Icon, zweimal: einmal als <code>.svg</code>, einmal als <code>.png</code>. Beachte, wie sich die Endung im Dateinamen mit dem Format ändert.</figcaption>
+  </figure>
+
+  <p class="lead-in">Beobachte, wie die Endung im Dateinamenfeld von <code>.svg</code> auf <code>.png</code> wechselt und die Größenauswahl neben dem Segment erscheint — das Popup bietet nur dann eine Größe an, wenn eine Größe Sinn ergibt.</p>
+  <p class="eyebrow">Was die Aufnahme zeigt</p>
+  <ol class="beats">
+    <li>Das Bild ist ein SVG, hat also keine feste Größe</li>
+    <li>Wähl das gewünschte Bild</li>
+    <li>Nimm den Vektor, wenn du ihn bearbeiten wirst</li>
+    <li>Oder schalte auf PNG, wenn du ein Raster brauchst</li>
+    <li>Auf deinem Rechner gerendert, in 1×, 2× oder 4×</li>
+    <li>Dasselbe Icon, jetzt als pixelgenaues PNG</li>
+  </ol>
+</div></section>
+
+<hr class="section-rule">
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Wähle bewusst</p>
+  <h2>Was brauchst du eigentlich?</h2>
+  
+  <p class="lead-in">Diese Entscheidung lohnt sich bewusst zu treffen, denn Umwandeln ist eine Einbahnstraße. Ein Vektor kann später immer ein Raster werden; ein Raster wird nie wieder ein Vektor.</p>
+  <p><strong>Behalte das SVG</strong>, wenn das Ziel eine Website oder App ist, ein Designtool, in dem du die Formen bearbeitest, ein Druck jeder Art oder irgendwo, wo die Größe noch nicht feststeht. Es bleibt in jeder Größe scharf, die Datei ist meist kleiner als ein gleichwertiges PNG, und du kannst es per CSS umgestalten.</p>
+  <p><strong>Wandle in PNG um</strong>, wenn das Ziel kein SVG annimmt — und ziemlich viele tun das nicht. Die meisten E-Mail-Programme, viele ältere CMS-Uploader, manche Chat- und Social-Plattformen und reichlich Foliendesigns lehnen SVG entweder ab oder stellen es unzuverlässig dar. PowerPoint und Keynote sind damit notorisch wechselhaft. Wenn du in ein Dokument einfügst, das auf dem Rechner einer anderen Person identisch aussehen muss, ist PNG die sichere Antwort.</p>
+  <p><strong>Wandle selten in JPG um</strong>, und nur für eine fotografisch anmutende Illustration. JPG kennt keine Transparenz, ein Icon kommt also auf einem vollen Hintergrund heraus, und seine Kompression setzt sichtbare Artefakte an genau die harten Kanten, aus denen Icons bestehen. Für alles mit flacher Farbe und scharfen Kanten ist PNG kleiner und sauberer zugleich.</p>
+
+  <h2 id="steps">Auf beiden Wegen laden</h2>
+  <p>Die ersten zwei Schritte sind gemeinsam; am Formatsegment trennen sie sich.</p>
+  <ol>
+    <li><strong>Popup öffnen und das Bild finden.</strong> Klick auf den Button in der Symbolleiste und blättere zur gewünschten Grafik. Es klappt, egal ob das Bild eine <code>&lt;img&gt;</code>-Quelle, Inline-Markup oder ein CSS-Hintergrund ist.</li>
+    <li><strong>Für den Vektor einfach laden.</strong> Lass das Format auf <em>SVG</em>, tipp einen Dateinamen und drück <em>Aktuelles laden</em>. Du bekommst das Original-Markup mit repariertem Namensraum.</li>
+    <li><strong>Für ein Raster erst das Format wechseln.</strong> Drück <em>PNG</em> oder <em>JPG</em> im Segment. Daneben erscheint eine Größenauswahl, und die Endung im Dateinamenfeld passt sich an.</li>
+    <li><strong>Größe wählen, dann laden.</strong> 1×, 2× oder 4× der intrinsischen Größe des Vektors. Die Umwandlung läuft auf deinem Rechner, auf einem Canvas, und das Ergebnis lädt wie alles andere.</li>
+  </ol>
+
+  
+  <h2>Wovon der Größenfaktor ein Vielfaches ist</h2>
+  <p>Er skaliert die eigene intrinsische Größe des Vektors — sein <code>width</code> und <code>height</code>, falls angegeben, sonst die Ausdehnung seiner <code>viewBox</code>. Ein 24×24-Icon in 4× ergibt also ein 96×96-PNG. Gibt der Vektor gar keine Größe an, was bei Sprite-Symbolen häufig ist, greift ein sinnvolles Quadrat statt der 300×150, auf die ein nacktes Canvas zurückfiele.</p>
+  <p>In der Praxis: <strong>2×</strong> ist die richtige Voreinstellung für alles, was auf einem Bildschirm erscheint, denn es deckt Retina-Displays ab. <strong>4×</strong> ist für Druck oder eine groß dargestellte Grafik. <strong>1×</strong> ist dafür, wenn du eine exakte Pixelgröße treffen musst und weißt, was du tust.</p>
+
+  <h2>Transparenz</h2>
+  <p>PNG behält den transparenten Hintergrund; JPG kann das nicht und füllt ihn. Wenn du ein Icon in JPG umwandelst und dahinter einen unerwarteten weißen oder schwarzen Kasten bekommst, ist das kein Fehler — das Format kann Transparenz nicht ausdrücken. Nimm PNG.</p>
+
+  <h2>Die Umwandlung passiert hier, nicht anderswo</h2>
+  <p>Das sei klar gesagt, denn „SVG-zu-PNG-Konverter“ ist sonst eine Kategorie von Websites, die verlangt, dass du deine Datei hochlädst. Hier wird der Vektor in ein Canvas im Popup gezeichnet und als Bild zurückgelesen. Es ist dasselbe bereinigte Markup, das auch ein Download erzeugen würde, gerendert über ein abgeschottetes Bildelement, damit nichts darin ausgeführt wird. Nichts wird hochgeladen, und die Umwandlung funktioniert auch ohne Netzverbindung.</p>
+
+  <h2>Wenn die Umwandlung scheitert</h2>
+  <p>Ein Fall bricht sie zuverlässig: ein SVG, das in sich ein Rasterbild von anderer Herkunft einbettet. Das auf ein Canvas zu zeichnen „vergiftet“ es, und der Browser verweigert danach das Zurücklesen der Pixel — eine Sicherheitsregel, keine Grenze der Erweiterung. Du bekommst eine entsprechende Meldung. Der Vektor selbst lädt weiterhin einwandfrei; nur die Rasterumwandlung kann nicht fortfahren.</p>
+
+  <dl class="facts">
+    <div><dt>SVG behalten für</dt><dd>Web, Apps, Designtools, Druck — überall, wo die Endgröße nicht feststeht.</dd></div>
+    <div><dt>Umwandeln für</dt><dd>E-Mail, Foliensätze, ältere CMS-Uploader und überall, wo SVG abgelehnt wird.</dd></div>
+    <div><dt>Größen</dt><dd><strong>1×, 2× oder 4×</strong> der intrinsischen Größe des Vektors. 2× passt zu den meisten Bildschirmen.</dd></div>
+    <div><dt>Wo</dt><dd>Auf deinem Rechner, auf einem Canvas. <strong>Zum Umwandeln wird nichts hochgeladen.</strong></dd></div>
+  </dl>
+</div></section>
+
+<hr class="section-rule">
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Gut zu wissen</p>
+  <h2>Häufig gefragt</h2>
+  <div class="faq">
+    <details>
+      <summary>Soll ich das SVG laden oder in PNG umwandeln?</summary>
+      <div class="faq-body"><p>Behalte das SVG für Web, Apps, Designtools und Druck, wo es in jeder Größe scharf bleibt. Wandle in PNG um, wenn das Ziel kein SVG annimmt — die meisten E-Mail-Programme, viele CMS-Uploader und der Großteil der Präsentationssoftware.</p></div>
+    </details>
+    <details>
+      <summary>Was bedeutet die Größeneinstellung 2×?</summary>
+      <div class="faq-body"><p>Sie vervielfacht die intrinsische Größe des Vektors — sein angegebenes width und height oder die Ausdehnung seines viewBox. Ein 24×24-Icon in 4× ergibt ein 96×96-PNG. 2× ist die vernünftige Voreinstellung für Retina-Bildschirme.</p></div>
+    </details>
+    <details>
+      <summary>Warum hat mein JPG einen weißen Kasten hinter dem Icon?</summary>
+      <div class="faq-body"><p>JPG kennt keine Transparenz, der transparente Hintergrund wird also gefüllt. Nimm PNG für alles mit transparentem Hintergrund — und das ist fast jedes Icon.</p></div>
+    </details>
+    <details>
+      <summary>Wird meine Datei zum Umwandeln hochgeladen?</summary>
+      <div class="faq-body"><p>Nein. Der Vektor wird in ein Canvas im Popup gezeichnet und als Bild zurückgelesen, vollständig auf deinem Rechner. Es funktioniert auch ohne Netzverbindung.</p></div>
+    </details>
+    <details>
+      <summary>Die Umwandlung scheiterte mit einem Cross-Origin-Fehler.</summary>
+      <div class="faq-body"><p>Dieses SVG bettet ein Rasterbild von einer anderen Domain ein. Es zu zeichnen vergiftet das Canvas, und der Browser verweigert das Zurücklesen der Pixel — eine Sicherheitsregel, die keine Erweiterung umgeht. Der Vektor selbst lädt weiterhin normal.</p></div>
+    </details>
+    <details>
+      <summary>Kann ich ein PNG zurück in ein SVG verwandeln?</summary>
+      <div class="faq-body"><p>Nein. Die Kurvendaten existieren in einem Raster nicht. Nachzeichnen liefert eine Annäherung, nicht die ursprünglichen Formen.</p></div>
+    </details>
+  </div>
+</div></section>
+
+<hr class="section-rule">
+
+<section><div class="wrap">
+  <div class="cta-band">
+    <div>
+      <h2>Vektor oder Raster, einen Klick auseinander</h2>
+      <p>Auf deinem Rechner umgewandelt, in der Größe, die du wirklich brauchst.</p>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Erweiterung installieren</a>
+      <a class="btn quiet" href="/de/tutorials">Alle 15 Tutorials →</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="related"><div class="wrap">
+  <p class="eyebrow">Weiter geht's</p>
+  <ul>
+    <li><a href="/de/tutorials/copy-svg-from-website">Als Bild kopieren<span>Direkt in die Zwischenablage</span></a></li>
+    <li><a href="/de/tutorials/how-to-download-svg-files">Die Grundlagen<span>Dein erster Download</span></a></li>
+    <li><a href="/de/tutorials/save-svg-from-website">Wenn der Rechtsklick versagt<span>Das ausgegraute Menü</span></a></li>
+  </ul>
+</div></section>
+</main>
+
+<footer>
+  <nav class="bleed foot-map" aria-label="Sitemap">
+    <div class="col"><p>Produkt</p><ul>
+      <li><a href="/de/">Überblick</a></li>
+      <li><a href="/de/features">Funktionen</a></li>
+      <li><a href="/de/compare/svg-downloader-vs-screenshotting-icons">Vs. Screenshot</a></li>
+      <li><a href="/de/privacy">Datenschutz</a></li>
+      <li><a href="/de/use-cases">Anwendungsfälle</a></li>
+    </ul></div>
+    <div class="col"><p>Erkennt</p><ul>
+      <li><a href="/de/features/inline-svg">Inline-SVG</a></li>
+      <li><a href="/de/features/css-background-svg">SVG im CSS-Hintergrund</a></li>
+      <li><a href="/de/features/svg-sprite-extractor">Sprite- / &lt;use&gt;-SVG</a></li>
+      <li><a href="/de/features/bulk-zip-download">Ganze Seite als ZIP</a></li>
+    </ul></div>
+    <div class="col"><p>Tutorials</p><ul>
+      <li><a href="/de/tutorials">Alle 15 Tutorials</a></li>
+      <li><a href="/de/tutorials/how-to-download-svg-files">SVG-Dateien herunterladen</a></li>
+      <li><a href="/de/tutorials/copy-svg-from-website">Ein SVG kopieren</a></li>
+      <li><a href="/de/tutorials/extract-svg-from-website">Jedes SVG extrahieren</a></li>
+    </ul></div>
+    <div class="col"><p>Doku</p><ul>
+      <li><a href="/de/docs/installation">Installation</a></li>
+      <li><a href="/de/docs/usage">Bedienung</a></li>
+      <li><a href="/de/docs/faq">FAQ</a></li>
+      <li><a href="/de/docs/changelog">Changelog</a></li>
+    </ul></div>
+  </nav>
+  <div class="bleed colophon-foot">
+    <a href="https://github.com/Flozad/svg-downloader">GitHub</a>
+    <a href="https://github.com/Flozad/svg-downloader/issues">Issues</a>
+    <a href="https://clasicwebtools.com">clasicwebtools.com</a>
+    <span class="grow"></span>
+    <span>Knochenpapier, Graphit, ein einziges Plotter&nbsp;grün</span>
+  </div>
+</footer>
+<script src="/player.js" defer=""></script>
+
+
+</body></html>

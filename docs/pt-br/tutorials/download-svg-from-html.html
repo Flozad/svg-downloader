@@ -1,0 +1,380 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Baixar um SVG do HTML sem abrir o DevTools</title>
+<meta name="description" content="Tire o markup de um SVG inline do HTML de uma página como arquivo funcional ou como código pronto para a área de transferência, com o namespace xmlns consertado e os scripts removidos.">
+<link rel="canonical" href="https://svg.clasicwebtools.com/pt-br/tutorials/download-svg-from-html"><!--i18n:alternates-->
+<link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/download-svg-from-html">
+<link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/download-svg-from-html">
+<link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/download-svg-from-html">
+<link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/download-svg-from-html">
+<link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/download-svg-from-html">
+<link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/download-svg-from-html">
+<!--/i18n:alternates-->
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="Flozad">
+<meta name="theme-color" content="#ece4d3">
+<meta property="og:site_name" content="SVG Downloader">
+<meta property="og:title" content="Baixar um SVG do HTML sem abrir o DevTools">
+<meta property="og:description" content="Tire o markup de um SVG inline do HTML de uma página como arquivo funcional ou como código pronto para a área de transferência, com o namespace xmlns consertado e os scripts removidos.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://svg.clasicwebtools.com/pt-br/tutorials/download-svg-from-html">
+<meta property="og:image" content="https://svg.clasicwebtools.com/motion/tutorials/download-svg-from-html.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="O popup do SVG Downloader com Copiar código pronto para tirar markup inline do HTML de uma página.">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:video" content="https://svg.clasicwebtools.com/motion/tutorials/download-svg-from-html.mp4">
+<meta property="og:video:secure_url" content="https://svg.clasicwebtools.com/motion/tutorials/download-svg-from-html.mp4">
+<meta property="og:video:type" content="video/mp4">
+<meta property="og:video:width" content="1280">
+<meta property="og:video:height" content="800">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@lozards">
+<meta name="twitter:title" content="Baixar um SVG do HTML sem abrir o DevTools">
+<meta name="twitter:description" content="Tire o markup de um SVG inline do HTML de uma página como arquivo funcional ou como código pronto para a área de transferência, com o namespace xmlns consertado e os scripts removidos.">
+<meta name="twitter:image" content="https://svg.clasicwebtools.com/motion/tutorials/download-svg-from-html.jpg">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/fonts/bricolage-var.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/pages.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Início",
+          "item": "https://svg.clasicwebtools.com/pt-br/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tutoriais",
+          "item": "https://svg.clasicwebtools.com/pt-br/tutorials"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Direto do HTML",
+          "item": "https://svg.clasicwebtools.com/pt-br/tutorials/download-svg-from-html"
+        }
+      ]
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Tirar um SVG do HTML sem abrir o DevTools",
+      "description": "O popup do SVG Downloader encontra um SVG inline no HTML de uma página, aperta Copiar código para pôr o markup sanitizado na área de transferência, e então salva o mesmo vetor como arquivo.",
+      "thumbnailUrl": [
+        "https://svg.clasicwebtools.com/motion/tutorials/download-svg-from-html.jpg"
+      ],
+      "uploadDate": "2026-08-22",
+      "duration": "PT17S",
+      "contentUrl": "https://svg.clasicwebtools.com/motion/tutorials/download-svg-from-html.mp4",
+      "embedUrl": "https://svg.clasicwebtools.com/tutorials/download-svg-from-html",
+      "isFamilyFriendly": true,
+      "publisher": {
+        "@type": "Organization",
+        "name": "SVG Downloader",
+        "url": "https://svg.clasicwebtools.com/pt-br/"
+      }
+    },
+    {
+      "@type": "HowTo",
+      "name": "Como baixar um SVG do HTML",
+      "description": "Tire o markup de um SVG inline do HTML de uma página como arquivo funcional ou como código pronto para a área de transferência, com o namespace xmlns consertado e os scripts removidos.",
+      "image": "https://svg.clasicwebtools.com/motion/tutorials/download-svg-from-html.jpg",
+      "totalTime": "PT2M",
+      "tool": {
+        "@type": "HowToTool",
+        "name": "Extensão de navegador SVG Downloader"
+      },
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Abra o popup na página",
+          "text": "Clique no botão da barra de ferramentas. Todo <svg> inline do documento é coletado, junto com vetores de fundo CSS, referências de sprite e origens de imagem.",
+          "url": "https://svg.clasicwebtools.com/pt-br/tutorials/download-svg-from-html#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Ache o elemento que você quer",
+          "text": "Percorra com Ant. e Próx. A prévia isolada é bem mais fácil de reconhecer do que um nó destacado na árvore do Elements.",
+          "url": "https://svg.clasicwebtools.com/pt-br/tutorials/download-svg-from-html#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Leve como markup, ou como arquivo",
+          "text": "Copiar código põe o markup sanitizado na área de transferência, com namespace incluído, pronto para colar num componente. Baixar o atual grava a mesma coisa num arquivo .svg.",
+          "url": "https://svg.clasicwebtools.com/pt-br/tutorials/download-svg-from-html#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Cole ou abra",
+          "text": "De qualquer jeito o resultado é um documento isolado válido — abre no Figma, no Illustrator, no VS Code e em todo navegador sem edição.",
+          "url": "https://svg.clasicwebtools.com/pt-br/tutorials/download-svg-from-html#steps"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Por que o SVG que copiei do DevTools não abre?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Está faltando o atributo xmlns=\"http://www.w3.org/2000/svg\". O SVG inline não precisa dele porque o parser de HTML fornece o namespace, mas um documento .svg isolado precisa. Adicione na tag raiz, ou deixe a extensão consertar por você."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Dá para pegar o SVG do código-fonte?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Só se o servidor tiver mandado. Tudo que React, Vue ou Svelte renderizam no cliente nunca aparece no código-fonte. O DOM é o que realmente foi desenhado, e é o que a varredura lê."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Copiei um ícone de sprite e o arquivo está em branco.",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Você copiou um ponteiro <use> em vez da forma para a qual ele aponta. O símbolo mora em outro lugar do documento. A varredura resolve essa referência de volta ao símbolo real para você receber um arquivo autossuficiente."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "O markup extraído é modificado?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Só de maneiras que o tornam um arquivo isolado válido: o namespace xmlns é adicionado, e elementos script, atributos de manipulador de evento e referências externas são removidos. As formas ficam intactas."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Dá para automatizar isso num build?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Com a extensão não — use um navegador headless para isso. Isto é para o caso interativo, em que você está olhando uma página e quer o ícone agora."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Pular para o conteúdo</a>
+
+<nav class="nav">
+  <a class="brand" href="/pt-br/">
+    <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+      <rect width="48" height="48" rx="10" fill="var(--plot)"></rect>
+      <path d="M24 13v15m0 0l-6.5-6.5M24 28l6.5-6.5" fill="none" stroke="var(--surface-hi)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+      <rect x="16.5" y="33.5" width="15" height="2.4" rx="1.2" fill="var(--surface-hi)"></rect>
+    </svg>
+    <strong>SVG&nbsp;Downloader</strong>
+  </a>
+  <span class="spacer"></span>
+  <span class="nav-links">
+    <a href="/pt-br/features">Recursos</a>
+    <a href="/pt-br/tutorials" aria-current="page">Tutoriais</a>
+    <a href="/pt-br/guides">Guias</a>
+    <a href="/pt-br/docs">Docs</a>
+    <a href="/pt-br/use-cases">Histórias</a>
+  </span><!--i18n:switch-->
+  <details class="lang-switch">
+    <summary aria-label="Idioma"><span>PT</span></summary>
+    <ul>
+      <li><a href="/tutorials/download-svg-from-html" hreflang="en" lang="en">English</a></li>
+      <li><a href="/es/tutorials/download-svg-from-html" hreflang="es" lang="es">Español</a></li>
+      <li><a href="/fr/tutorials/download-svg-from-html" hreflang="fr" lang="fr">Français</a></li>
+      <li><a href="/de/tutorials/download-svg-from-html" hreflang="de" lang="de">Deutsch</a></li>
+      <li><a href="/pt-br/tutorials/download-svg-from-html" hreflang="pt-BR" lang="pt-BR" aria-current="true">Português</a></li>
+    </ul>
+  </details>
+  <!--/i18n:switch-->
+  <a class="nav-cta" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Instalar a extensão</a>
+</nav>
+
+<main id="main">
+<header class="page-hero"><div class="wrap">
+  <ol class="crumbs">
+    <li><a href="/pt-br/">Início</a></li>
+    <li><a href="/pt-br/tutorials">Tutoriais</a></li>
+    <li><span aria-current="page">Direto do HTML</span></li>
+  </ol>
+  <p class="eyebrow">Tutorial — para quem lê o código-fonte</p>
+  <h1>Como <span class="plot">baixar um SVG do HTML</span></h1>
+  <p class="lede">Você pode perfeitamente fazer isso na mão no DevTools. Também vai passar dez minutos descobrindo por que o arquivo que salvou se recusa a abrir — então aqui vai tanto a rota manual quanto o motivo de ela morder.</p>
+  <div class="cta">
+    <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 12v16m0 0l-7-7m7 7l7-7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"></path><rect x="16" y="34" width="16" height="2.6" rx="1.3" fill="currentColor"></rect></svg>
+      Instalar a extensão</a>
+    <a class="btn quiet" href="#steps">Ir para os passos ↓</a>
+  </div>
+</div></header>
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Assista — 17 segundos</p>
+  <h2>O markup para fora, sem o painel Elements</h2>
+  <figure class="shot">
+    <div class="shot-mount">
+      <span class="shot-tag">tutorial · código html</span>
+      <video src="/motion/tutorials/download-svg-from-html.mp4" poster="/motion/tutorials/download-svg-from-html.jpg" muted="" loop="" playsinline="" preload="none" aria-label="O popup do SVG Downloader encontra um SVG inline no HTML de uma página, aperta Copiar código para pôr o markup sanitizado na área de transferência, e então salva o mesmo vetor como arquivo."></video>
+    </div>
+    <figcaption class="shot-cap">O mesmo markup que o DevTools te mostraria — com o namespace adicionado e os scripts removidos.</figcaption>
+  </figure>
+
+  <p class="lead-in">As duas saídas aparecem aqui: o markup para a área de transferência e o mesmo vetor como arquivo. A diferença entre elas é só onde ele termina.</p>
+  <p class="eyebrow">O que a gravação mostra</p>
+  <ol class="beats">
+    <li>O markup está inline no HTML — não há arquivo para buscar</li>
+    <li>Ache o elemento que você quer</li>
+    <li>Copiar código levanta o markup em si</li>
+    <li>Ver o código-fonte daria a mesma tag, menos o xmlns</li>
+    <li>Ou salve como arquivo, com o namespace consertado</li>
+  </ol>
+</div></section>
+
+<hr class="section-rule">
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">A rota manual e sua única armadilha</p>
+  <h2>Copiar e colar do Elements dá um arquivo que não abre</h2>
+  
+  <p class="lead-in">O método na mão é direto: abra o DevTools, ache o elemento <code>&lt;svg&gt;</code> no painel Elements, clique com o botão direito, escolha <em>Copy → Copy outerHTML</em>, cole num arquivo novo e salve como <code>.svg</code>. Depois dê dois cliques e o navegador te mostra um erro ou uma página em branco.</p>
+  <p>O motivo é um namespace. Um documento SVG isolado precisa declarar <code>xmlns="http://www.w3.org/2000/svg"</code> no elemento raiz. O SVG inline quase nunca tem esse atributo, porque o parser de HTML coloca os elementos no namespace SVG automaticamente com base em onde aparecem — o atributo é genuinamente desnecessário <em>dentro</em> do HTML. Tire o markup desse contexto e ele passa a ser necessário, e não está lá.</p>
+  <p>Então o conserto manual é real, mas fácil de esquecer: adicione você mesmo o atributo <code>xmlns</code> à tag <code>&lt;svg&gt;</code> raiz, toda vez. Há outras duas coisas que vale fazer já que você está aí, e elas são menos óbvias.</p>
+  <ul>
+    <li><strong>Remova qualquer coisa executável.</strong> Markup de página pode carregar elementos <code>&lt;script&gt;</code>, atributos de manipulador <code>on*</code> e referências externas. Você não quer isso num arquivo que vai versionar num repositório ou abrir numa ferramenta de design.</li>
+    <li><strong>Cheque se há <code>currentColor</code>.</strong> Se o ícone herda a cor do CSS, o arquivo extraído não tem cor própria e vai renderizar preto. Isso é comportamento correto, não corrupção.</li>
+  </ul>
+
+  <h2 id="steps">A rota que faz as três coisas por você</h2>
+  <p>Conserto de namespace, sanitização e duas saídas à escolha — sem sair da página nem abrir painel.</p>
+  <ol>
+    <li><strong>Abra o popup na página.</strong> Clique no botão da barra de ferramentas. Todo <code>&lt;svg&gt;</code> inline do documento é coletado, junto com vetores de fundo CSS, referências de sprite e origens de imagem.</li>
+    <li><strong>Ache o elemento que você quer.</strong> Percorra com <em>Ant.</em> e <em>Próx.</em>. A prévia isolada é bem mais fácil de reconhecer do que um nó destacado na árvore do Elements.</li>
+    <li><strong>Leve como markup, ou como arquivo.</strong> <em>Copiar código</em> põe o markup sanitizado na área de transferência, com namespace incluído, pronto para colar num componente. <em>Baixar o atual</em> grava a mesma coisa num arquivo <code>.svg</code>.</li>
+    <li><strong>Cole ou abra.</strong> De qualquer jeito o resultado é um documento isolado válido — abre no Figma, no Illustrator, no VS Code e em todo navegador sem edição.</li>
+  </ol>
+
+  
+  <h2>O que o código-fonte mostra e o que não mostra</h2>
+  <p>Ver o código-fonte mostra o HTML que o servidor mandou. Esse não é o mesmo documento que está na sua tela. Tudo que um framework renderizou no cliente — o que, num site React, Vue ou Svelte, é a maioria dos ícones — nunca aparece no código-fonte. O DOM é o registro honesto do que a página é, e é o que tanto o DevTools quanto esta extensão leem.</p>
+
+  <h2>Sprites são o outro motivo de copiar na mão decepcionar</h2>
+  <p>Copie o outerHTML de um ícone baseado em sprite e você recebe algo como <code>&lt;svg&gt;&lt;use href="#star"/&gt;&lt;/svg&gt;</code> — um ponteiro, não uma forma. Salvo como arquivo ele não desenha nada, porque o símbolo apontado morava em outra parte do documento que você não copiou. Resolver essa referência de volta ao símbolo é uma das coisas que a varredura faz por você. <a href="/pt-br/features/svg-sprite-extractor">Mais sobre sprites →</a></p>
+
+  <h2>Se você quer um pipeline em tempo de build</h2>
+  <p>Para extrair ícones como parte de um build, esta é a ferramenta errada e um navegador headless é a certa — dirija a página, leia o DOM, escreva os arquivos. A extensão é para o caso interativo: você está olhando uma página e quer aquele ícone agora.</p>
+
+  <dl class="facts">
+    <div><dt>A armadilha</dt><dd>SVG inline omite o <code>xmlns</code>, então markup copiado na mão <strong>não vai abrir</strong>.</dd></div>
+    <div><dt>Consertado</dt><dd>O namespace é adicionado e scripts, manipuladores e referências externas são removidos.</dd></div>
+    <div><dt>Sprites</dt><dd>Ponteiros <code>&lt;use&gt;</code> são resolvidos de volta ao símbolo — não salvos como ponteiros.</dd></div>
+    <div><dt>Código-fonte</dt><dd>Mostra o HTML do servidor, <strong>não</strong> o que um framework renderizou no cliente.</dd></div>
+  </dl>
+</div></section>
+
+<hr class="section-rule">
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Vale saber</p>
+  <h2>Perguntas frequentes</h2>
+  <div class="faq">
+    <details>
+      <summary>Por que o SVG que copiei do DevTools não abre?</summary>
+      <div class="faq-body"><p>Está faltando o atributo xmlns="http://www.w3.org/2000/svg". O SVG inline não precisa dele porque o parser de HTML fornece o namespace, mas um documento .svg isolado precisa. Adicione na tag raiz, ou deixe a extensão consertar por você.</p></div>
+    </details>
+    <details>
+      <summary>Dá para pegar o SVG do código-fonte?</summary>
+      <div class="faq-body"><p>Só se o servidor tiver mandado. Tudo que React, Vue ou Svelte renderizam no cliente nunca aparece no código-fonte. O DOM é o que realmente foi desenhado, e é o que a varredura lê.</p></div>
+    </details>
+    <details>
+      <summary>Copiei um ícone de sprite e o arquivo está em branco.</summary>
+      <div class="faq-body"><p>Você copiou um ponteiro <code>&lt;use&gt;</code> em vez da forma para a qual ele aponta. O símbolo mora em outro lugar do documento. A varredura resolve essa referência de volta ao símbolo real para você receber um arquivo autossuficiente.</p></div>
+    </details>
+    <details>
+      <summary>O markup extraído é modificado?</summary>
+      <div class="faq-body"><p>Só de maneiras que o tornam um arquivo isolado válido: o namespace xmlns é adicionado, e elementos script, atributos de manipulador de evento e referências externas são removidos. As formas ficam intactas.</p></div>
+    </details>
+    <details>
+      <summary>Dá para automatizar isso num build?</summary>
+      <div class="faq-body"><p>Com a extensão não — use um navegador headless para isso. Isto é para o caso interativo, em que você está olhando uma página e quer o ícone agora.</p></div>
+    </details>
+  </div>
+</div></section>
+
+<hr class="section-rule">
+
+<section><div class="wrap">
+  <div class="cta-band">
+    <div>
+      <h2>Pule o painel, fique com o markup</h2>
+      <p>Namespace consertado, scripts removidos, sprites resolvidos.</p>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Instalar a extensão</a>
+      <a class="btn quiet" href="/pt-br/tutorials">Todos os 15 tutoriais →</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="related"><div class="wrap">
+  <p class="eyebrow">Continue</p>
+  <ul>
+    <li><a href="/pt-br/tutorials/copy-svg-from-website">Copiar o código<span>Área de transferência, não disco</span></a></li>
+    <li><a href="/pt-br/features/svg-sprite-extractor">Extração de sprites<span>Resolvendo &lt;use&gt;</span></a></li>
+    <li><a href="/pt-br/features/inline-svg">SVG inline<span>Como funciona a leitura do DOM</span></a></li>
+  </ul>
+</div></section>
+</main>
+
+<footer>
+  <nav class="bleed foot-map" aria-label="Mapa do site">
+    <div class="col"><p>Produto</p><ul>
+      <li><a href="/pt-br/">Visão geral</a></li>
+      <li><a href="/pt-br/features">Recursos</a></li>
+      <li><a href="/pt-br/compare/svg-downloader-vs-screenshotting-icons">Vs. print de tela</a></li>
+      <li><a href="/pt-br/privacy">Privacidade</a></li>
+      <li><a href="/pt-br/use-cases">Casos de uso</a></li>
+    </ul></div>
+    <div class="col"><p>O que ele encontra</p><ul>
+      <li><a href="/pt-br/features/inline-svg">SVG inline</a></li>
+      <li><a href="/pt-br/features/css-background-svg">SVG em fundo CSS</a></li>
+      <li><a href="/pt-br/features/svg-sprite-extractor">SVG de sprite / &lt;use&gt;</a></li>
+      <li><a href="/pt-br/features/bulk-zip-download">Página inteira em ZIP</a></li>
+    </ul></div>
+    <div class="col"><p>Tutoriais</p><ul>
+      <li><a href="/pt-br/tutorials">Todos os 15 tutoriais</a></li>
+      <li><a href="/pt-br/tutorials/how-to-download-svg-files">Como baixar arquivos SVG</a></li>
+      <li><a href="/pt-br/tutorials/copy-svg-from-website">Copiar um SVG</a></li>
+      <li><a href="/pt-br/tutorials/extract-svg-from-website">Extrair todo SVG</a></li>
+    </ul></div>
+    <div class="col"><p>Docs</p><ul>
+      <li><a href="/pt-br/docs/installation">Instalação</a></li>
+      <li><a href="/pt-br/docs/usage">Uso</a></li>
+      <li><a href="/pt-br/docs/faq">Perguntas frequentes</a></li>
+      <li><a href="/pt-br/docs/changelog">Mudanças</a></li>
+    </ul></div>
+  </nav>
+  <div class="bleed colophon-foot">
+    <a href="https://github.com/Flozad/svg-downloader">GitHub</a>
+    <a href="https://github.com/Flozad/svg-downloader/issues">Issues</a>
+    <a href="https://clasicwebtools.com">clasicwebtools.com</a>
+    <span class="grow"></span>
+    <span>Papel osso, grafite e um único verde&nbsp;plotter</span>
+  </div>
+</footer>
+<script src="/player.js" defer=""></script>
+
+
+</body></html>

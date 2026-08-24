@@ -1,0 +1,380 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Como copiar um SVG de um site (código ou imagem)</title>
+<meta name="description" content="Copie um SVG direto para a área de transferência — o markup para colar num componente, ou um PNG para colar em documentos e chats. Sem salvar arquivo, sem precisar de DevTools.">
+<link rel="canonical" href="https://svg.clasicwebtools.com/pt-br/tutorials/copy-svg-from-website"><!--i18n:alternates-->
+<link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/copy-svg-from-website">
+<link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/copy-svg-from-website">
+<link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/copy-svg-from-website">
+<link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/copy-svg-from-website">
+<link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/copy-svg-from-website">
+<link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/copy-svg-from-website">
+<!--/i18n:alternates-->
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="Flozad">
+<meta name="theme-color" content="#ece4d3">
+<meta property="og:site_name" content="SVG Downloader">
+<meta property="og:title" content="Como copiar um SVG de um site (código ou imagem)">
+<meta property="og:description" content="Copie um SVG direto para a área de transferência — o markup para colar num componente, ou um PNG para colar em documentos e chats. Sem salvar arquivo, sem precisar de DevTools.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://svg.clasicwebtools.com/pt-br/tutorials/copy-svg-from-website">
+<meta property="og:image" content="https://svg.clasicwebtools.com/motion/tutorials/copy-svg-from-website.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="O popup do SVG Downloader com os botões Copiar código e Copiar imagem abaixo da prévia.">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:video" content="https://svg.clasicwebtools.com/motion/tutorials/copy-svg-from-website.mp4">
+<meta property="og:video:secure_url" content="https://svg.clasicwebtools.com/motion/tutorials/copy-svg-from-website.mp4">
+<meta property="og:video:type" content="video/mp4">
+<meta property="og:video:width" content="1280">
+<meta property="og:video:height" content="800">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@lozards">
+<meta name="twitter:title" content="Como copiar um SVG de um site (código ou imagem)">
+<meta name="twitter:description" content="Copie um SVG direto para a área de transferência — o markup para colar num componente, ou um PNG para colar em documentos e chats. Sem salvar arquivo, sem precisar de DevTools.">
+<meta name="twitter:image" content="https://svg.clasicwebtools.com/motion/tutorials/copy-svg-from-website.jpg">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/fonts/bricolage-var.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/pages.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Início",
+          "item": "https://svg.clasicwebtools.com/pt-br/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tutoriais",
+          "item": "https://svg.clasicwebtools.com/pt-br/tutorials"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Copiar de um site",
+          "item": "https://svg.clasicwebtools.com/pt-br/tutorials/copy-svg-from-website"
+        }
+      ]
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Copiar um SVG de um site como código ou como figura",
+      "description": "O popup do SVG Downloader chega num ícone de estrela, aperta Copiar código e informa “código SVG copiado para a área de transferência”, depois aperta Copiar imagem e informa “imagem PNG copiada para a área de transferência”.",
+      "thumbnailUrl": [
+        "https://svg.clasicwebtools.com/motion/tutorials/copy-svg-from-website.jpg"
+      ],
+      "uploadDate": "2026-08-22",
+      "duration": "PT19S",
+      "contentUrl": "https://svg.clasicwebtools.com/motion/tutorials/copy-svg-from-website.mp4",
+      "embedUrl": "https://svg.clasicwebtools.com/tutorials/copy-svg-from-website",
+      "isFamilyFriendly": true,
+      "publisher": {
+        "@type": "Organization",
+        "name": "SVG Downloader",
+        "url": "https://svg.clasicwebtools.com/pt-br/"
+      }
+    },
+    {
+      "@type": "HowTo",
+      "name": "Como copiar um SVG de um site",
+      "description": "Copie um SVG direto para a área de transferência — o markup para colar num componente, ou um PNG para colar em documentos e chats. Sem salvar arquivo, sem precisar de DevTools.",
+      "image": "https://svg.clasicwebtools.com/motion/tutorials/copy-svg-from-website.jpg",
+      "totalTime": "PT2M",
+      "tool": {
+        "@type": "HowToTool",
+        "name": "Extensão de navegador SVG Downloader"
+      },
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Abra o popup e ache o ícone",
+          "text": "Clique no botão da barra de ferramentas e percorra com Ant. e Próx. até a prévia mostrar o que você quer.",
+          "url": "https://svg.clasicwebtools.com/pt-br/tutorials/copy-svg-from-website#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Para código, aperte Copiar código",
+          "text": "A linha de status diz “Código SVG copiado para a área de transferência”. Você agora tem markup sanitizado, com namespace incluído, pronto para colar num componente.",
+          "url": "https://svg.clasicwebtools.com/pt-br/tutorials/copy-svg-from-website#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Para uma figura, aperte Copiar imagem",
+          "text": "A linha de status diz “Imagem PNG copiada para a área de transferência”. O vetor é renderizado na sua máquina em 2× ou melhor e posto na área de transferência como imagem.",
+          "url": "https://svg.clasicwebtools.com/pt-br/tutorials/copy-svg-from-website#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Cole onde ele vai",
+          "text": "Markup no seu editor; o PNG no seu documento, apresentação ou chat. Nada foi escrito em disco em nenhum dos casos.",
+          "url": "https://svg.clasicwebtools.com/pt-br/tutorials/copy-svg-from-website#steps"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Qual a diferença entre Copiar código e Copiar imagem?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Copiar código põe o markup SVG na área de transferência como texto, para colar num editor ou componente. Copiar imagem rasteriza para PNG e põe isso na área de transferência como figura, para colar em documentos, apresentações e chats."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Colei no Slack e veio uma parede de código.",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Você usou Copiar código, que é texto. Use Copiar imagem — ela põe um PNG na área de transferência, e o Slack cola como figura."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "É seguro colar o markup copiado no meu código?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ele é sanitizado antes: elementos script, atributos de manipulador de evento e referências externas são removidos, e o namespace xmlns é adicionado. Você está colando formas, não o comportamento da página de outra pessoa."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Por que o ícone colado está preto no meu app?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Porque ele usa currentColor, então herda a cor do CSS em vez de carregar a própria. Defina uma cor no elemento ou no pai dele e o ícone acompanha."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Preciso conceder permissão de área de transferência?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Não. Os dois botões escrevem a partir de um clique seu numa página de extensão em foco, algo que os navegadores permitem sem permissão extra, então nenhuma é pedida."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Pular para o conteúdo</a>
+
+<nav class="nav">
+  <a class="brand" href="/pt-br/">
+    <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+      <rect width="48" height="48" rx="10" fill="var(--plot)"></rect>
+      <path d="M24 13v15m0 0l-6.5-6.5M24 28l6.5-6.5" fill="none" stroke="var(--surface-hi)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+      <rect x="16.5" y="33.5" width="15" height="2.4" rx="1.2" fill="var(--surface-hi)"></rect>
+    </svg>
+    <strong>SVG&nbsp;Downloader</strong>
+  </a>
+  <span class="spacer"></span>
+  <span class="nav-links">
+    <a href="/pt-br/features">Recursos</a>
+    <a href="/pt-br/tutorials" aria-current="page">Tutoriais</a>
+    <a href="/pt-br/guides">Guias</a>
+    <a href="/pt-br/docs">Docs</a>
+    <a href="/pt-br/use-cases">Histórias</a>
+  </span><!--i18n:switch-->
+  <details class="lang-switch">
+    <summary aria-label="Idioma"><span>PT</span></summary>
+    <ul>
+      <li><a href="/tutorials/copy-svg-from-website" hreflang="en" lang="en">English</a></li>
+      <li><a href="/es/tutorials/copy-svg-from-website" hreflang="es" lang="es">Español</a></li>
+      <li><a href="/fr/tutorials/copy-svg-from-website" hreflang="fr" lang="fr">Français</a></li>
+      <li><a href="/de/tutorials/copy-svg-from-website" hreflang="de" lang="de">Deutsch</a></li>
+      <li><a href="/pt-br/tutorials/copy-svg-from-website" hreflang="pt-BR" lang="pt-BR" aria-current="true">Português</a></li>
+    </ul>
+  </details>
+  <!--/i18n:switch-->
+  <a class="nav-cta" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Instalar a extensão</a>
+</nav>
+
+<main id="main">
+<header class="page-hero"><div class="wrap">
+  <ol class="crumbs">
+    <li><a href="/pt-br/">Início</a></li>
+    <li><a href="/pt-br/tutorials">Tutoriais</a></li>
+    <li><span aria-current="page">Copiar de um site</span></li>
+  </ol>
+  <p class="eyebrow">Tutorial — direto para a área de transferência</p>
+  <h1>Como <span class="plot">copiar um SVG</span> de um site</h1>
+  <p class="lede">Às vezes você não quer arquivo nenhum — quer o markup no editor, ou a figura numa mensagem do Slack. Os dois são um clique, e são cliques diferentes.</p>
+  <div class="cta">
+    <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 12v16m0 0l-7-7m7 7l7-7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"></path><rect x="16" y="34" width="16" height="2.6" rx="1.3" fill="currentColor"></rect></svg>
+      Instalar a extensão</a>
+    <a class="btn quiet" href="#steps">Ir para os passos ↓</a>
+  </div>
+</div></header>
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Assista — 19 segundos</p>
+  <h2>As duas áreas de transferência, numa rodada</h2>
+  <figure class="shot">
+    <div class="shot-mount">
+      <span class="shot-tag">tutorial · área de transferência</span>
+      <video src="/motion/tutorials/copy-svg-from-website.mp4" poster="/motion/tutorials/copy-svg-from-website.jpg" muted="" loop="" playsinline="" preload="none" aria-label="O popup do SVG Downloader chega num ícone de estrela, aperta Copiar código e informa “código SVG copiado para a área de transferência”, depois aperta Copiar imagem e informa “imagem PNG copiada para a área de transferência”."></video>
+    </div>
+    <figcaption class="shot-cap"><em>Copiar código</em> te dá markup. <em>Copiar imagem</em> te dá um PNG. A linha de status confirma cada um.</figcaption>
+  </figure>
+
+  <p class="lead-in">Repare na linha de status mudando entre os dois cliques — o popup diz exatamente qual das duas áreas de transferência você acabou de preencher.</p>
+  <p class="eyebrow">O que a gravação mostra</p>
+  <ol class="beats">
+    <li>Abra o popup na página que você está lendo</li>
+    <li>Chegue no ícone que você quer</li>
+    <li>Copiar código — o markup, direto para a área de transferência</li>
+    <li>Cole num componente e simplesmente funciona</li>
+    <li>Ou Copiar imagem — um PNG, para documentos e chats</li>
+    <li>Duas áreas de transferência, um ícone. Sem arquivo em disco em nenhum dos casos.</li>
+  </ol>
+</div></section>
+
+<hr class="section-rule">
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Escolha o certo</p>
+  <h2>Copiar código e Copiar imagem não são alternativas — são coisas diferentes</h2>
+  
+  <p class="lead-in">Eles ficam um ao lado do outro no popup e vale deixar claro o que cada um põe na sua área de transferência, porque colar o errado são cinco minutos de confusão.</p>
+  <ul>
+    <li><strong>Copiar código</strong> põe o <em>markup</em> na área de transferência como texto: <code>&lt;svg viewBox="0 0 24 24"&gt;…&lt;/svg&gt;</code>, sanitizado, com o namespace <code>xmlns</code> já adicionado. Cole num componente React, num template Vue, num arquivo HTML ou num editor de texto. Cole no Slack e você verá uma parede de sinais de menor e maior, porque é texto.</li>
+    <li><strong>Copiar imagem</strong> rasteriza o vetor para um <em>PNG</em> e põe isso na área de transferência como figura. Cole no Google Docs, Notion, Figma, Slack, num e-mail — em qualquer lugar que aceite imagem colada. Ele é renderizado em 2× no mínimo para não chegar como uma miniatura borrada.</li>
+  </ul>
+  <p>Regra prática: se o destino é código, use <em>Copiar código</em>. Se o destino é um documento, use <em>Copiar imagem</em>.</p>
+
+  <h2 id="steps">Copiando um ícone</h2>
+  <p>Os dois caminhos compartilham os dois primeiros passos.</p>
+  <ol>
+    <li><strong>Abra o popup e ache o ícone.</strong> Clique no botão da barra de ferramentas e percorra com <em>Ant.</em> e <em>Próx.</em> até a prévia mostrar o que você quer.</li>
+    <li><strong>Para código, aperte Copiar código.</strong> A linha de status diz <em>Código SVG copiado para a área de transferência.</em> Você agora tem markup sanitizado, com namespace incluído, pronto para colar num componente.</li>
+    <li><strong>Para uma figura, aperte Copiar imagem.</strong> A linha de status diz <em>Imagem PNG copiada para a área de transferência.</em> O vetor é renderizado na sua máquina em 2× ou melhor e posto na área de transferência como imagem.</li>
+    <li><strong>Cole onde ele vai.</strong> Markup no seu editor; o PNG no seu documento, apresentação ou chat. Nada foi escrito em disco em nenhum dos casos.</li>
+  </ol>
+
+  
+  <h2>O que já foi feito com o markup copiado</h2>
+  <p>Essa é a parte que torna isso melhor do que copiar do DevTools. Antes de chegar à sua área de transferência, o markup passa pelo mesmo sanitizador que todo download usa: o namespace <code>xmlns</code> é adicionado se estava faltando, para o fragmento se sustentar como documento válido; e elementos script, atributos de manipulador de evento e referências externas são removidos, para você não colar o comportamento da página de outra pessoa no seu código. O que você cola são as formas, e só as formas.</p>
+
+  <h2>Colando num componente</h2>
+  <p>Duas coisinhas vão te morder no JSX. Atributos como <code>stroke-width</code> e <code>fill-rule</code> precisam virar <code>strokeWidth</code> e <code>fillRule</code>; a maioria dos editores e codemods faz isso por você. E se o ícone usa <code>currentColor</code> — a maioria usa — ele vai pegar a cor do texto que estiver em escopo, que normalmente é exatamente o que você quer. Se renderizar preto e você esperava cor, é por isso: a cor morava no CSS da página, não na forma.</p>
+
+  <h2>Por que a área de transferência não precisa de permissão extra</h2>
+  <p>Os dois botões escrevem na área de transferência de dentro de um clique que você deu, numa página de extensão em foco. É exatamente a condição em que os navegadores permitem escrita na área de transferência, então a extensão não pede permissão nenhuma — ela só usa o gesto que você já deu.</p>
+
+  <dl class="facts">
+    <div><dt>Copiar código</dt><dd><strong>Markup</strong> sanitizado, com <code>xmlns</code> incluído — para editores e componentes.</dd></div>
+    <div><dt>Copiar imagem</dt><dd>Um <strong>PNG</strong> em 2× ou melhor — para documentos, apresentações, chats e e-mail.</dd></div>
+    <div><dt>Sanitização</dt><dd>Scripts, manipuladores e referências externas são removidos antes de qualquer uma das cópias.</dd></div>
+    <div><dt>Permissões</dt><dd>Nenhuma permissão de área de transferência é pedida — ela pega carona no clique que você deu.</dd></div>
+  </dl>
+</div></section>
+
+<hr class="section-rule">
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Vale saber</p>
+  <h2>Perguntas frequentes</h2>
+  <div class="faq">
+    <details>
+      <summary>Qual a diferença entre Copiar código e Copiar imagem?</summary>
+      <div class="faq-body"><p>Copiar código põe o markup SVG na área de transferência como texto, para colar num editor ou componente. Copiar imagem rasteriza para PNG e põe isso na área de transferência como figura, para colar em documentos, apresentações e chats.</p></div>
+    </details>
+    <details>
+      <summary>Colei no Slack e veio uma parede de código.</summary>
+      <div class="faq-body"><p>Você usou Copiar código, que é texto. Use Copiar imagem — ela põe um PNG na área de transferência, e o Slack cola como figura.</p></div>
+    </details>
+    <details>
+      <summary>É seguro colar o markup copiado no meu código?</summary>
+      <div class="faq-body"><p>Ele é sanitizado antes: elementos script, atributos de manipulador de evento e referências externas são removidos, e o namespace xmlns é adicionado. Você está colando formas, não o comportamento da página de outra pessoa.</p></div>
+    </details>
+    <details>
+      <summary>Por que o ícone colado está preto no meu app?</summary>
+      <div class="faq-body"><p>Porque ele usa currentColor, então herda a cor do CSS em vez de carregar a própria. Defina uma cor no elemento ou no pai dele e o ícone acompanha.</p></div>
+    </details>
+    <details>
+      <summary>Preciso conceder permissão de área de transferência?</summary>
+      <div class="faq-body"><p>Não. Os dois botões escrevem a partir de um clique seu numa página de extensão em foco, algo que os navegadores permitem sem permissão extra, então nenhuma é pedida.</p></div>
+    </details>
+  </div>
+</div></section>
+
+<hr class="section-rule">
+
+<section><div class="wrap">
+  <div class="cta-band">
+    <div>
+      <h2>Duas áreas de transferência, nenhum arquivo</h2>
+      <p>Markup para o editor, um PNG para o documento. Escolha um botão.</p>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Instalar a extensão</a>
+      <a class="btn quiet" href="/pt-br/tutorials">Todos os 15 tutoriais →</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="related"><div class="wrap">
+  <p class="eyebrow">Continue</p>
+  <ul>
+    <li><a href="/pt-br/tutorials/download-svg-from-html">Direto do HTML<span>Sem DevTools</span></a></li>
+    <li><a href="/pt-br/tutorials/download-svg-image-from-website">Converter para PNG<span>Quando você precisa de raster</span></a></li>
+    <li><a href="/pt-br/tutorials/how-to-download-svg-files">Salvar um arquivo<span>O básico</span></a></li>
+  </ul>
+</div></section>
+</main>
+
+<footer>
+  <nav class="bleed foot-map" aria-label="Mapa do site">
+    <div class="col"><p>Produto</p><ul>
+      <li><a href="/pt-br/">Visão geral</a></li>
+      <li><a href="/pt-br/features">Recursos</a></li>
+      <li><a href="/pt-br/compare/svg-downloader-vs-screenshotting-icons">Vs. print de tela</a></li>
+      <li><a href="/pt-br/privacy">Privacidade</a></li>
+      <li><a href="/pt-br/use-cases">Casos de uso</a></li>
+    </ul></div>
+    <div class="col"><p>O que ele encontra</p><ul>
+      <li><a href="/pt-br/features/inline-svg">SVG inline</a></li>
+      <li><a href="/pt-br/features/css-background-svg">SVG em fundo CSS</a></li>
+      <li><a href="/pt-br/features/svg-sprite-extractor">SVG de sprite / &lt;use&gt;</a></li>
+      <li><a href="/pt-br/features/bulk-zip-download">Página inteira em ZIP</a></li>
+    </ul></div>
+    <div class="col"><p>Tutoriais</p><ul>
+      <li><a href="/pt-br/tutorials">Todos os 15 tutoriais</a></li>
+      <li><a href="/pt-br/tutorials/how-to-download-svg-files">Como baixar arquivos SVG</a></li>
+      <li><a href="/pt-br/tutorials/copy-svg-from-website">Copiar um SVG</a></li>
+      <li><a href="/pt-br/tutorials/extract-svg-from-website">Extrair todo SVG</a></li>
+    </ul></div>
+    <div class="col"><p>Docs</p><ul>
+      <li><a href="/pt-br/docs/installation">Instalação</a></li>
+      <li><a href="/pt-br/docs/usage">Uso</a></li>
+      <li><a href="/pt-br/docs/faq">Perguntas frequentes</a></li>
+      <li><a href="/pt-br/docs/changelog">Mudanças</a></li>
+    </ul></div>
+  </nav>
+  <div class="bleed colophon-foot">
+    <a href="https://github.com/Flozad/svg-downloader">GitHub</a>
+    <a href="https://github.com/Flozad/svg-downloader/issues">Issues</a>
+    <a href="https://clasicwebtools.com">clasicwebtools.com</a>
+    <span class="grow"></span>
+    <span>Papel osso, grafite e um único verde&nbsp;plotter</span>
+  </div>
+</footer>
+<script src="/player.js" defer=""></script>
+
+
+</body></html>

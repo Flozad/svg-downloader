@@ -1,0 +1,377 @@
+<!DOCTYPE html><html lang="fr"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Extraire un logo SVG d'un site en pleine qualité</title>
+<meta name="description" content="Récupérez le logo d'une entreprise sur une page en vrai vecteur — net à toute taille, recolorable, prêt pour l'impression. Avec les cachettes des logos et ce que vous pouvez légalement en faire.">
+<link rel="canonical" href="https://svg.clasicwebtools.com/fr/tutorials/extract-svg-logo-from-website"><!--i18n:alternates-->
+<link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/extract-svg-logo-from-website">
+<link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/extract-svg-logo-from-website">
+<link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/extract-svg-logo-from-website">
+<link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/extract-svg-logo-from-website">
+<link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/extract-svg-logo-from-website">
+<link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/extract-svg-logo-from-website">
+<!--/i18n:alternates-->
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="Flozad">
+<meta name="theme-color" content="#ece4d3">
+<meta property="og:site_name" content="SVG Downloader">
+<meta property="og:title" content="Extraire un logo SVG d'un site en pleine qualité">
+<meta property="og:description" content="Récupérez le logo d'une entreprise sur une page en vrai vecteur — net à toute taille, recolorable, prêt pour l'impression. Avec les cachettes des logos et ce que vous pouvez légalement en faire.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://svg.clasicwebtools.com/fr/tutorials/extract-svg-logo-from-website">
+<meta property="og:image" content="https://svg.clasicwebtools.com/motion/tutorials/extract-svg-logo-from-website.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="Le popup SVG Downloader affichant l'aperçu d'un logotype d'entreprise extrait de l'en-tête d'un site.">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:video" content="https://svg.clasicwebtools.com/motion/tutorials/extract-svg-logo-from-website.mp4">
+<meta property="og:video:secure_url" content="https://svg.clasicwebtools.com/motion/tutorials/extract-svg-logo-from-website.mp4">
+<meta property="og:video:type" content="video/mp4">
+<meta property="og:video:width" content="1280">
+<meta property="og:video:height" content="800">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@lozards">
+<meta name="twitter:title" content="Extraire un logo SVG d'un site en pleine qualité">
+<meta name="twitter:description" content="Récupérez le logo d'une entreprise sur une page en vrai vecteur — net à toute taille, recolorable, prêt pour l'impression. Avec les cachettes des logos et ce que vous pouvez légalement en faire.">
+<meta name="twitter:image" content="https://svg.clasicwebtools.com/motion/tutorials/extract-svg-logo-from-website.jpg">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/fonts/bricolage-var.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/pages.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://svg.clasicwebtools.com/fr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tutoriels",
+          "item": "https://svg.clasicwebtools.com/fr/tutorials"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Extraire un logo",
+          "item": "https://svg.clasicwebtools.com/fr/tutorials/extract-svg-logo-from-website"
+        }
+      ]
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Extraire le logo d'une entreprise d'un site en vrai vecteur",
+      "description": "Le popup SVG Downloader analyse un site, feuillette jusqu'au logotype de l'entreprise, reprend le nom de fichier vectorly-logo et télécharge le logo en fichier vectoriel.",
+      "thumbnailUrl": [
+        "https://svg.clasicwebtools.com/motion/tutorials/extract-svg-logo-from-website.jpg"
+      ],
+      "uploadDate": "2026-08-22",
+      "duration": "PT19S",
+      "contentUrl": "https://svg.clasicwebtools.com/motion/tutorials/extract-svg-logo-from-website.mp4",
+      "embedUrl": "https://svg.clasicwebtools.com/tutorials/extract-svg-logo-from-website",
+      "isFamilyFriendly": true,
+      "publisher": {
+        "@type": "Organization",
+        "name": "SVG Downloader",
+        "url": "https://svg.clasicwebtools.com/fr/"
+      }
+    },
+    {
+      "@type": "HowTo",
+      "name": "Comment extraire un logo SVG d'un site",
+      "description": "Récupérez le logo d'une entreprise sur une page en vrai vecteur — net à toute taille, recolorable, prêt pour l'impression. Avec les cachettes des logos et ce que vous pouvez légalement en faire.",
+      "image": "https://svg.clasicwebtools.com/motion/tutorials/extract-svg-logo-from-website.jpg",
+      "totalTime": "PT2M",
+      "tool": {
+        "@type": "HowToTool",
+        "name": "Extension de navigateur SVG Downloader"
+      },
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Allez sur la page d'accueil",
+          "text": "Le logo d'en-tête est presque toujours un <svg> en ligne — les sites font ainsi pour que la marque reste nette sur tous les écrans et puisse être recolorée en mode sombre.",
+          "url": "https://svg.clasicwebtools.com/fr/tutorials/extract-svg-logo-from-website#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Ouvrez le popup et analysez",
+          "text": "Le logo figure généralement parmi les premiers vecteurs trouvés, car il se situe en haut du document.",
+          "url": "https://svg.clasicwebtools.com/fr/tutorials/extract-svg-logo-from-website#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Feuilletez jusqu'à lui et confirmez dans l'aperçu",
+          "text": "L'aperçu isolé compte ici : il vous montre si vous avez le bloc complet, le logotype seul ou seulement le symbole. Les pages contiennent souvent les trois.",
+          "url": "https://svg.clasicwebtools.com/fr/tutorials/extract-svg-logo-from-website#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Nommez-le et téléchargez",
+          "text": "Prenez un nom que vous reconnaîtrez plus tard — acme-logo-complet, acme-symbole. Puis Télécharger le courant.",
+          "url": "https://svg.clasicwebtools.com/fr/tutorials/extract-svg-logo-from-website#steps"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Est-il légal de télécharger le logo d'une entreprise ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Le télécharger n'est pas la question — l'utiliser si. Désigner une entreprise par sa marque est généralement acceptable et la plupart publient des chartes qui le disent, mais laisser entendre une caution ou un partenariat ne l'est pas. Consultez d'abord la page marque ou presse de l'entreprise ; ceci n'est pas un conseil juridique."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Pourquoi le logo est-il noir au lieu de la couleur de marque ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Il utilise currentColor pour s'adapter au mode sombre, ce qui veut dire que la couleur vit dans le CSS et non dans le fichier. Recolorez-le dans un outil de design, et prenez la valeur officielle dans la charte plutôt que sur une capture."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Le logo du site est un PNG. Puis-je obtenir un vecteur ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pas depuis le PNG — les données de courbe n'existent pas dans un raster. Cherchez le kit de marque de l'entreprise, qui inclut presque toujours le vecteur. Le vectorisation donne une approximation aux courbes visiblement fausses."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "J'ai eu le symbole mais je voulais le bloc complet.",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Les sites portent souvent plusieurs variantes. Regardez le pied de page pour une version monochrome, rétrécissez la fenêtre pour voir la mise en page mobile, et essayez tout basculement en mode sombre — chaque variante apparaît comme un vecteur distinct dans l'analyse."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Le logo extrait s'imprimera-t-il correctement ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. C'est un vrai vecteur, il reste donc net à toute taille. Vérifiez les valeurs de couleur avec la charte avant d'envoyer quoi que ce soit à l'impression."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Aller au contenu</a>
+
+<nav class="nav">
+  <a class="brand" href="/fr/">
+    <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+      <rect width="48" height="48" rx="10" fill="var(--plot)"></rect>
+      <path d="M24 13v15m0 0l-6.5-6.5M24 28l6.5-6.5" fill="none" stroke="var(--surface-hi)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+      <rect x="16.5" y="33.5" width="15" height="2.4" rx="1.2" fill="var(--surface-hi)"></rect>
+    </svg>
+    <strong>SVG&nbsp;Downloader</strong>
+  </a>
+  <span class="spacer"></span>
+  <span class="nav-links">
+    <a href="/fr/features">Fonctions</a>
+    <a href="/fr/tutorials" aria-current="page">Tutoriels</a>
+    <a href="/fr/guides">Guides</a>
+    <a href="/fr/docs">Docs</a>
+    <a href="/fr/use-cases">Histoires</a>
+  </span><!--i18n:switch-->
+  <details class="lang-switch">
+    <summary aria-label="Langue"><span>FR</span></summary>
+    <ul>
+      <li><a href="/tutorials/extract-svg-logo-from-website" hreflang="en" lang="en">English</a></li>
+      <li><a href="/es/tutorials/extract-svg-logo-from-website" hreflang="es" lang="es">Español</a></li>
+      <li><a href="/fr/tutorials/extract-svg-logo-from-website" hreflang="fr" lang="fr" aria-current="true">Français</a></li>
+      <li><a href="/de/tutorials/extract-svg-logo-from-website" hreflang="de" lang="de">Deutsch</a></li>
+      <li><a href="/pt-br/tutorials/extract-svg-logo-from-website" hreflang="pt-BR" lang="pt-BR">Português</a></li>
+    </ul>
+  </details>
+  <!--/i18n:switch-->
+  <a class="nav-cta" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Installer l'extension</a>
+</nav>
+
+<main id="main">
+<header class="page-hero"><div class="wrap">
+  <ol class="crumbs">
+    <li><a href="/fr/">Accueil</a></li>
+    <li><a href="/fr/tutorials">Tutoriels</a></li>
+    <li><span aria-current="page">Extraire un logo</span></li>
+  </ol>
+  <p class="eyebrow">Tutoriel — marques</p>
+  <h1>Comment <span class="plot">extraire un logo SVG</span> d'un site</h1>
+  <p class="lede">Un logo capturé depuis un en-tête fait 180 pixels de large pour toujours. Le même logo en vecteur est net sur une carte de visite comme sur la façade d'un immeuble.</p>
+  <div class="cta">
+    <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 12v16m0 0l-7-7m7 7l7-7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"></path><rect x="16" y="34" width="16" height="2.6" rx="1.3" fill="currentColor"></rect></svg>
+      Installer l'extension</a>
+    <a class="btn quiet" href="#steps">Aller aux étapes ↓</a>
+  </div>
+</div></header>
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">À regarder — 19 secondes</p>
+  <h2>La marque, en pleine fidélité</h2>
+  <figure class="shot">
+    <div class="shot-mount">
+      <span class="shot-tag">tutoriel · logos</span>
+      <video src="/motion/tutorials/extract-svg-logo-from-website.mp4" poster="/motion/tutorials/extract-svg-logo-from-website.jpg" muted="" loop="" playsinline="" preload="none" aria-label="Le popup SVG Downloader analyse un site, feuillette jusqu'au logotype de l'entreprise, reprend le nom de fichier vectorly-logo et télécharge le logo en fichier vectoriel."></video>
+    </div>
+    <figcaption class="shot-cap">Correctement nommé à la sortie, parce que <code>svg-7.svg</code> n'aidera personne dans six mois.</figcaption>
+  </figure>
+
+  <p class="lead-in">L'étape du nommage compte plus pour les logos que pour tout le reste — un dossier de marque plein de fichiers numérotés est un dossier que personne n'utilise.</p>
+  <p class="eyebrow">Ce que montre l'enregistrement</p>
+  <ol class="beats">
+    <li>Le logo de l'en-tête est un &lt;svg&gt; en ligne</li>
+    <li>Analysez la page et il revient avec les autres</li>
+    <li>Feuilletez jusqu'à la marque elle-même</li>
+    <li>Nommez-le correctement pour votre dossier de marque</li>
+    <li>Enregistré en pleine fidélité — il monte jusqu'au panneau publicitaire</li>
+    <li>Vérifiez la licence avant de réutiliser la marque de quelqu'un</li>
+  </ol>
+</div></section>
+
+<hr class="section-rule">
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Avant le comment</p>
+  <h2>Un logo est la marque déposée de quelqu'un, et l'extraire n'est pas une permission</h2>
+  
+  <p class="lead-in">Cela vaut deux minutes, car se tromper coûte cher. Pouvoir enregistrer une marque et avoir le droit de l'utiliser sont deux questions distinctes, et la seconde n'a rien à voir avec cet outil.</p>
+  <p>En gros, et ceci n'est pas un conseil juridique : utiliser le logo d'une entreprise pour <strong>désigner cette entreprise</strong> — une liste de clients, une rangée « compatible avec », un article de presse, un tableau comparatif — est généralement acceptable, et la plupart des sociétés publient des chartes qui le disent. L'utiliser d'une façon qui laisse entendre une <strong>caution, un partenariat ou une paternité</strong> ne l'est pas, pas plus que modifier une marque et la faire passer pour la vôtre.</p>
+  <p>Le geste pratique : avant de l'utiliser, cherchez la page marque ou presse de l'entreprise. La plupart des grandes organisations publient un kit officiel avec le logo en plusieurs formats, des règles de zone de protection, des déclinaisons de couleurs approuvées et une courte licence. Ce kit est à la fois plus sûr et généralement mieux préparé que tout ce que vous extrairez — l'extraction, c'est pour quand il n'y a pas de kit, ou quand il vous faut la marque tout de suite pour une maquette.</p>
+
+  <h2 id="steps">Extraire la marque</h2>
+  <p>Les logos sont en général le vecteur le plus facile à trouver sur une page, pour une raison structurelle.</p>
+  <ol>
+    <li><strong>Allez sur la page d'accueil.</strong> Le logo d'en-tête est presque toujours un <code>&lt;svg&gt;</code> en ligne — les sites font ainsi pour que la marque reste nette sur tous les écrans et puisse être recolorée en mode sombre.</li>
+    <li><strong>Ouvrez le popup et analysez.</strong> Le logo figure généralement parmi les premiers vecteurs trouvés, car il se situe en haut du document.</li>
+    <li><strong>Feuilletez jusqu'à lui et confirmez dans l'aperçu.</strong> L'aperçu isolé compte ici : il vous montre si vous avez le bloc complet, le logotype seul ou seulement le symbole. Les pages contiennent souvent les trois.</li>
+    <li><strong>Nommez-le et téléchargez.</strong> Prenez un nom que vous reconnaîtrez plus tard — <code>acme-logo-complet</code>, <code>acme-symbole</code>. Puis <em>Télécharger le courant</em>.</li>
+  </ol>
+
+  
+  <h2>Où se cachent les variantes</h2>
+  <p>Un site porte souvent plus d'une version de sa propre marque, et celle de l'en-tête n'est pas forcément celle que vous voulez. Regardez le <strong>pied de page</strong>, qui a souvent une variante monochrome ou inversée. Regardez la <strong>mise en page mobile</strong> en fenêtre étroite, qui remplace fréquemment le bloc complet par le symbole seul. Et testez tout basculement en <strong>mode sombre</strong>, qui peut substituer une version claire sur fond sombre. Chacune est un vecteur distinct et chacune apparaîtra dans l'analyse.</p>
+
+  <h2>Pourquoi le logo est ressorti noir</h2>
+  <p>Si la marque utilise <code>currentColor</code> pour s'adapter au mode sombre, le fichier extrait n'a pas de couleur propre et s'affiche en noir. C'est le balisage source véritable. Recolorez-le dans Figma ou Illustrator, ou passez par le <a href="https://clasicwebtools.com">SVG Color Changer</a>. Pour une marque en particulier, prenez la valeur officielle dans la charte plutôt qu'à la pipette sur une capture — les écrans mentent sur la couleur.</p>
+
+  <h2>Si le logo est un PNG</h2>
+  <p>Certains sites livrent encore un logo raster, et aucun outil ne peut le retransformer en vecteur — les données de courbe ont disparu. Vos options : le kit de marque de l'entreprise, qui contiendra généralement le vecteur, ou le vectoriser, ce qui donne une approximation aux courbes légèrement fausses qu'un designer remarquera. Demandez le kit.</p>
+
+  <dl class="facts">
+    <div><dt>En général</dt><dd>Le logo d'en-tête est un <strong><code>&lt;svg&gt;</code> en ligne</strong>, il est donc parmi les premiers trouvés.</dd></div>
+    <div><dt>Variantes</dt><dd>Regardez le pied de page, la mise en page mobile et le mode sombre — souvent trois fichiers différents.</dd></div>
+    <div><dt>Juridiquement</dt><dd>L'extraction n'est pas une permission. Cherchez d'abord le <strong>kit de marque</strong> de l'entreprise.</dd></div>
+    <div><dt>Si c'est un PNG</dt><dd>Il ne peut pas être reconverti en vecteur. Demandez le fichier officiel.</dd></div>
+  </dl>
+</div></section>
+
+<hr class="section-rule">
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Bon à savoir</p>
+  <h2>Questions fréquentes</h2>
+  <div class="faq">
+    <details>
+      <summary>Est-il légal de télécharger le logo d'une entreprise ?</summary>
+      <div class="faq-body"><p>Le télécharger n'est pas la question — l'utiliser si. Désigner une entreprise par sa marque est généralement acceptable et la plupart publient des chartes qui le disent, mais laisser entendre une caution ou un partenariat ne l'est pas. Consultez d'abord la page marque ou presse de l'entreprise ; ceci n'est pas un conseil juridique.</p></div>
+    </details>
+    <details>
+      <summary>Pourquoi le logo est-il noir au lieu de la couleur de marque ?</summary>
+      <div class="faq-body"><p>Il utilise currentColor pour s'adapter au mode sombre, ce qui veut dire que la couleur vit dans le CSS et non dans le fichier. Recolorez-le dans un outil de design, et prenez la valeur officielle dans la charte plutôt que sur une capture.</p></div>
+    </details>
+    <details>
+      <summary>Le logo du site est un PNG. Puis-je obtenir un vecteur ?</summary>
+      <div class="faq-body"><p>Pas depuis le PNG — les données de courbe n'existent pas dans un raster. Cherchez le kit de marque de l'entreprise, qui inclut presque toujours le vecteur. Le vectorisation donne une approximation aux courbes visiblement fausses.</p></div>
+    </details>
+    <details>
+      <summary>J'ai eu le symbole mais je voulais le bloc complet.</summary>
+      <div class="faq-body"><p>Les sites portent souvent plusieurs variantes. Regardez le pied de page pour une version monochrome, rétrécissez la fenêtre pour voir la mise en page mobile, et essayez tout basculement en mode sombre — chaque variante apparaît comme un vecteur distinct dans l'analyse.</p></div>
+    </details>
+    <details>
+      <summary>Le logo extrait s'imprimera-t-il correctement ?</summary>
+      <div class="faq-body"><p>Oui. C'est un vrai vecteur, il reste donc net à toute taille. Vérifiez les valeurs de couleur avec la charte avant d'envoyer quoi que ce soit à l'impression.</p></div>
+    </details>
+  </div>
+</div></section>
+
+<hr class="section-rule">
+
+<section><div class="wrap">
+  <div class="cta-band">
+    <div>
+      <h2>Prenez la marque, pas une capture d'écran de celle-ci</h2>
+      <p>Nette à toute taille, recolorable, et prête pour l'impression.</p>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Installer l'extension</a>
+      <a class="btn quiet" href="/fr/tutorials">Les 15 tutoriels →</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="related"><div class="wrap">
+  <p class="eyebrow">Continuez</p>
+  <ul>
+    <li><a href="/fr/use-cases/recover-brand-assets-redesign">Récupérer des actifs de marque<span>Une histoire vraie</span></a></li>
+    <li><a href="/fr/tutorials/download-svg-from-webpage">Trouver les variantes<span>Inventaire de la page</span></a></li>
+    <li><a href="/fr/compare/svg-downloader-vs-screenshotting-icons">Face à la capture<span>Pourquoi le vecteur gagne</span></a></li>
+  </ul>
+</div></section>
+</main>
+
+<footer>
+  <nav class="bleed foot-map" aria-label="Plan du site">
+    <div class="col"><p>Produit</p><ul>
+      <li><a href="/fr/">Vue d'ensemble</a></li>
+      <li><a href="/fr/features">Fonctions</a></li>
+      <li><a href="/fr/compare/svg-downloader-vs-screenshotting-icons">Face à la capture</a></li>
+      <li><a href="/fr/privacy">Confidentialité</a></li>
+      <li><a href="/fr/use-cases">Cas d'usage</a></li>
+    </ul></div>
+    <div class="col"><p>Ce qu'il attrape</p><ul>
+      <li><a href="/fr/features/inline-svg">SVG en ligne</a></li>
+      <li><a href="/fr/features/css-background-svg">SVG en fond CSS</a></li>
+      <li><a href="/fr/features/svg-sprite-extractor">SVG de sprite / &lt;use&gt;</a></li>
+      <li><a href="/fr/features/bulk-zip-download">Page entière en ZIP</a></li>
+    </ul></div>
+    <div class="col"><p>Tutoriels</p><ul>
+      <li><a href="/fr/tutorials">Les 15 tutoriels</a></li>
+      <li><a href="/fr/tutorials/how-to-download-svg-files">Comment télécharger des fichiers SVG</a></li>
+      <li><a href="/fr/tutorials/copy-svg-from-website">Copier un SVG</a></li>
+      <li><a href="/fr/tutorials/extract-svg-from-website">Extraire chaque SVG</a></li>
+    </ul></div>
+    <div class="col"><p>Docs</p><ul>
+      <li><a href="/fr/docs/installation">Installation</a></li>
+      <li><a href="/fr/docs/usage">Utilisation</a></li>
+      <li><a href="/fr/docs/faq">FAQ</a></li>
+      <li><a href="/fr/docs/changelog">Journal des versions</a></li>
+    </ul></div>
+  </nav>
+  <div class="bleed colophon-foot">
+    <a href="https://github.com/Flozad/svg-downloader">GitHub</a>
+    <a href="https://github.com/Flozad/svg-downloader/issues">Tickets</a>
+    <a href="https://clasicwebtools.com">clasicwebtools.com</a>
+    <span class="grow"></span>
+    <span>Papier os, graphite, un seul vert&nbsp;traceur</span>
+  </div>
+</footer>
+<script src="/player.js" defer=""></script>
+
+
+</body></html>

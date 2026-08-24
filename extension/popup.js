@@ -1,6 +1,8 @@
+import { copyImage, copyText } from './clipboard.js';
 import { renderPreview } from './preview.js';
+import { rasterizeSvg } from './raster.js';
 import { getSettings } from './settings.js';
-import { formatSVGContent, sanitizeFilename } from './svg-utils.js';
+import { formatSVGContent, inlineExternalUses, sanitizeNamePart } from './svg-utils.js';
 
 let currentSVG = null;
 let settings = null;
@@ -21,6 +23,16 @@ document.addEventListener('DOMContentLoaded', async () => {
   const colorLink = document.getElementById('colorLink');
   const pagerPos = document.getElementById('pagerPos');
   const mountTag = document.getElementById('mountTag');
+  const formatSeg = document.getElementById('formatSeg');
+  const scaleField = document.getElementById('scaleField');
+  const scaleSelect = document.getElementById('scaleSelect');
+  const fileExt = document.getElementById('fileExt');
+  const copyCodeBtn = document.getElementById('copyCodeBtn');
+  const copyImageBtn = document.getElementById('copyImageBtn');
+
+  // Selected output format and, for the raster formats, the pixel multiplier.
+  let format = 'svg';
+  let scale = 2;
 
   settings = await getSettings();
 
@@ -46,7 +58,18 @@ document.addEventListener('DOMContentLoaded', async () => {
       nextBtn.disabled = true;
       downloadBtn.disabled = true;
       downloadAllBtn.disabled = true;
+      copyCodeBtn.disabled = true;
+      copyImageBtn.disabled = true;
     }
+  }
+
+  // Enable or disable every action that operates on the selected SVG, in one
+  // place so the loading, empty, error and selected states stay in sync.
+  function setActionsEnabled(enabled) {
+    downloadBtn.disabled = !enabled;
+    downloadAllBtn.disabled = !enabled;
+    copyCodeBtn.disabled = !enabled;
+    copyImageBtn.disabled = !enabled;
   }
 
   function showError(message) {
@@ -84,9 +107,29 @@ document.addEventListener('DOMContentLoaded', async () => {
     pagerPos.textContent = '—';
     prevBtn.disabled = true;
     nextBtn.disabled = true;
-    downloadBtn.disabled = true;
-    downloadAllBtn.disabled = true;
+    setActionsEnabled(false);
   }
+
+  // Format selector: pick the output type, keep the filename extension hint and
+  // the size selector (raster only) in step. Never blocks — the buttons act on
+  // whatever is selected the moment they are clicked.
+  function setFormat(next) {
+    format = next;
+    for (const btn of formatSeg.querySelectorAll('.seg-btn')) {
+      const on = btn.dataset.format === next;
+      btn.classList.toggle('is-on', on);
+      btn.setAttribute('aria-pressed', String(on));
+    }
+    fileExt.textContent = `.${next}`;
+    scaleField.classList.toggle('hidden', next === 'svg');
+  }
+  formatSeg.addEventListener('click', (event) => {
+    const btn = event.target.closest('.seg-btn');
+    if (btn?.dataset.format) setFormat(btn.dataset.format);
+  });
+  scaleSelect.addEventListener('change', () => {
+    scale = Number(scaleSelect.value) || 1;
+  });
 
   // Pages the browser refuses to let extensions script, even over https. The
   // Web Store and other browsers' add-on galleries throw "cannot be scripted"
@@ -250,21 +293,35 @@ document.addEventListener('DOMContentLoaded', async () => {
     return response.content;
   }
 
-  // Render the current item into the preview plate. Inline markup goes straight
-  // to a blob; a remote SVG is fetched to markup first so the popup never loads
-  // a page-controlled URL from the extension origin (see preview.js). Previews
-  // race — Prev/Next can outrun a slow fetch — so a stale response is dropped.
+  // Resolve the selected item to standalone SVG markup. Inline markup is used
+  // as-is; a remote/<img> SVG is fetched to markup first (through the content
+  // script, at page origin) so the popup never loads a page-controlled URL from
+  // the extension origin; and any external sprite <use> is inlined by fetching
+  // the sprite file. Every consumer — preview, download, copy, ZIP — routes
+  // through here so they all agree on what the file is.
+  async function getMarkup(svg) {
+    let markup = svg.type === 'svg' ? svg.content : await fetchSVGContent(svg.content);
+    if (svg.externalUses?.length) {
+      markup = await inlineExternalUses(markup, svg.externalUses, fetchSVGContent);
+    }
+    return markup;
+  }
+
+  // Render the current item into the preview plate. Previews race — Prev/Next
+  // can outrun a slow fetch — so a stale response is dropped.
   let previewToken = 0;
   async function showPreview(svg) {
     const token = ++previewToken;
 
-    if (svg.type === 'svg') {
+    // Inline markup with nothing to fetch renders synchronously — Prev/Next
+    // feels instant and no stale-response race window opens.
+    if (svg.type === 'svg' && !svg.externalUses?.length) {
       previewObjectUrl = renderPreview(preview, svg.content, previewObjectUrl);
       return;
     }
 
     try {
-      const markup = await fetchSVGContent(svg.content);
+      const markup = await getMarkup(svg);
       if (token !== previewToken) return;
       previewObjectUrl = renderPreview(preview, markup, previewObjectUrl);
     } catch (error) {
@@ -372,15 +429,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       async function addToZip(svg, index) {
         const filename = `${settings.filenamePrefix}-${index + 1}.svg`;
         try {
-          let formattedContent;
-
-          if (svg.type === 'svg') {
-            formattedContent = await formatSVGContent(svg.content);
-          } else {
-            const svgContent = await fetchSVGContent(svg.content);
-            formattedContent = await formatSVGContent(svgContent);
-          }
-
+          const formattedContent = await formatSVGContent(await getMarkup(svg));
           zip.file(filename, formattedContent);
         } catch (error) {
           console.error(`Error processing SVG ${index + 1}:`, error);
@@ -424,30 +473,33 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   }
 
-  async function downloadSVG(svg) {
-    const filenameInput = document.getElementById('filenameInput');
-    const filename = sanitizeFilename(
-      filenameInput.value,
-      `${settings.filenamePrefix}-${svg.currentIndex + 1}`
-    );
+  // The base filename (no extension): the user's typed name, else the prefixed
+  // fallback, both sanitized so they are safe for chrome.downloads.
+  function baseFilename(svg) {
+    const typed = document.getElementById('filenameInput').value;
+    const fallback = `${settings.filenamePrefix}-${svg.currentIndex + 1}`;
+    return sanitizeNamePart(typed) || sanitizeNamePart(fallback) || settings.filenamePrefix;
+  }
 
-    let formattedContent;
+  async function downloadSVG(svg) {
+    const base = baseFilename(svg);
+
+    // Resolve to markup first, so a cross-origin fetch failure gets the specific
+    // "hosted on another domain" hint rather than a generic error.
+    let markup;
     try {
-      if (svg.type === 'svg') {
-        formattedContent = await formatSVGContent(svg.content);
-      } else {
-        let svgContent;
-        try {
-          svgContent = await fetchSVGContent(svg.content);
-        } catch (error) {
-          console.error('Error fetching SVG:', error);
-          showError(
-            'This SVG is hosted on another domain and could not be downloaded. Try opening the image in a new tab and saving it directly.'
-          );
-          return;
-        }
-        formattedContent = await formatSVGContent(svgContent);
-      }
+      markup = await getMarkup(svg);
+    } catch (error) {
+      console.error('Error fetching SVG:', error);
+      showError(
+        'This SVG is hosted on another domain and could not be downloaded. Try opening the image in a new tab and saving it directly.'
+      );
+      return;
+    }
+
+    let cleanMarkup;
+    try {
+      cleanMarkup = await formatSVGContent(markup);
     } catch (error) {
       console.error('Error preparing SVG:', error);
       if (error.message === 'Invalid SVG markup') {
@@ -458,14 +510,53 @@ document.addEventListener('DOMContentLoaded', async () => {
       return;
     }
 
-    const blob = new Blob([formattedContent], { type: 'image/svg+xml;charset=utf-8' });
+    let blob;
+    if (format === 'svg') {
+      blob = new Blob([cleanMarkup], { type: 'image/svg+xml;charset=utf-8' });
+    } else {
+      // Rasterize the *sanitized* markup — the canvas never sees active content.
+      // Its errors ("embeds a cross-origin image", …) are specific and useful,
+      // so surface them rather than the generic download failure below.
+      try {
+        blob = await rasterizeSvg(cleanMarkup, { format, scale });
+      } catch (error) {
+        console.error('Error rasterizing SVG:', error);
+        showError(error.message || 'This SVG could not be converted.');
+        return;
+      }
+    }
+
     try {
-      await downloadBlob(blob, filename);
+      await downloadBlob(blob, `${base}.${format}`);
     } catch (error) {
       console.error('Error downloading SVG:', error);
       showError('Error downloading SVG. Please try again.');
     }
   }
+
+  // Copy the current SVG to the clipboard, as markup ("code") or as a PNG
+  // ("image"). Failures use the non-destructive status line rather than
+  // showError, which would tear down the preview the user is looking at.
+  async function copyCurrent(kind) {
+    if (!currentSVG) return;
+    try {
+      const cleanMarkup = await formatSVGContent(await getMarkup(currentSVG));
+      if (kind === 'code') {
+        await copyText(cleanMarkup);
+        showStatus('SVG code copied to clipboard.');
+      } else {
+        // Copy at 2× minimum so the pasted picture is not a blurry 1× thumbnail.
+        const blob = await rasterizeSvg(cleanMarkup, { format: 'png', scale: Math.max(scale, 2) });
+        await copyImage(blob);
+        showStatus('PNG image copied to clipboard.');
+      }
+    } catch (error) {
+      console.error('Copy failed:', error);
+      showStatus(error.message || 'Could not copy to clipboard.');
+    }
+  }
+  copyCodeBtn.addEventListener('click', () => copyCurrent('code'));
+  copyImageBtn.addEventListener('click', () => copyCurrent('image'));
 
   // Handle messages from content script. The popup receives broadcasts from
   // every content script in every tab, so ignore anything that isn't the tab
@@ -501,8 +592,7 @@ document.addEventListener('DOMContentLoaded', async () => {
           mountTag.textContent = 'preview';
           prevBtn.disabled = true;
           nextBtn.disabled = true;
-          downloadBtn.disabled = true;
-          downloadAllBtn.disabled = true;
+          setActionsEnabled(false);
         }
         break;
       }
@@ -526,8 +616,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         // Update navigation buttons
         prevBtn.disabled = currentSVG.currentIndex === 0;
         nextBtn.disabled = currentSVG.currentIndex === currentSVG.total - 1;
-        downloadBtn.disabled = false;
-        downloadAllBtn.disabled = false;
+        setActionsEnabled(true);
         break;
       }
     }

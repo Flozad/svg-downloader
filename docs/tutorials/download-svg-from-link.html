@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Download SVG From a Link — Not the HTML Behind It</title>
+<meta name="description" content="Save link as… often saves the page, not the vector. Here is why that happens and how to get the real SVG behind a link, including links that open a viewer page.">
+<link rel="canonical" href="https://svg.clasicwebtools.com/tutorials/download-svg-from-link"><!--i18n:alternates-->
+<link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/download-svg-from-link">
+<link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/download-svg-from-link">
+<link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/download-svg-from-link">
+<link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/download-svg-from-link">
+<link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/download-svg-from-link">
+<link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/download-svg-from-link">
+<!--/i18n:alternates-->
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="Flozad">
+<meta name="theme-color" content="#ece4d3">
+<meta property="og:site_name" content="SVG Downloader">
+<meta property="og:title" content="Download SVG From a Link — Not the HTML Behind It">
+<meta property="og:description" content="Save link as… often saves the page, not the vector. Here is why that happens and how to get the real SVG behind a link, including links that open a viewer page.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://svg.clasicwebtools.com/tutorials/download-svg-from-link">
+<meta property="og:image" content="https://svg.clasicwebtools.com/motion/tutorials/download-svg-from-link.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="The SVG Downloader popup showing a bell icon found on a page of linked icons.">
+<meta property="og:locale" content="en_US">
+<meta property="og:video" content="https://svg.clasicwebtools.com/motion/tutorials/download-svg-from-link.mp4">
+<meta property="og:video:secure_url" content="https://svg.clasicwebtools.com/motion/tutorials/download-svg-from-link.mp4">
+<meta property="og:video:type" content="video/mp4">
+<meta property="og:video:width" content="1280">
+<meta property="og:video:height" content="800">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@lozards">
+<meta name="twitter:title" content="Download SVG From a Link — Not the HTML Behind It">
+<meta name="twitter:description" content="Save link as… often saves the page, not the vector. Here is why that happens and how to get the real SVG behind a link, including links that open a viewer page.">
+<meta name="twitter:image" content="https://svg.clasicwebtools.com/motion/tutorials/download-svg-from-link.jpg">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/fonts/bricolage-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/pages.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://svg.clasicwebtools.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tutorials",
+          "item": "https://svg.clasicwebtools.com/tutorials"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Download from a link",
+          "item": "https://svg.clasicwebtools.com/tutorials/download-svg-from-link"
+        }
+      ]
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Save an SVG from a link instead of an HTML page",
+      "description": "A page with links to vectors. Rather than using Save link as…, the SVG Downloader popup opens, finds the vector in its list, takes the filename bell, and saves the real file.",
+      "thumbnailUrl": [
+        "https://svg.clasicwebtools.com/motion/tutorials/download-svg-from-link.jpg"
+      ],
+      "uploadDate": "2026-08-22",
+      "duration": "PT19S",
+      "contentUrl": "https://svg.clasicwebtools.com/motion/tutorials/download-svg-from-link.mp4",
+      "embedUrl": "https://svg.clasicwebtools.com/tutorials/download-svg-from-link",
+      "isFamilyFriendly": true,
+      "publisher": {
+        "@type": "Organization",
+        "name": "SVG Downloader",
+        "url": "https://svg.clasicwebtools.com"
+      }
+    },
+    {
+      "@type": "HowTo",
+      "name": "How to download an SVG from a link",
+      "description": "Save link as… often saves the page, not the vector. Here is why that happens and how to get the real SVG behind a link, including links that open a viewer page.",
+      "image": "https://svg.clasicwebtools.com/motion/tutorials/download-svg-from-link.jpg",
+      "totalTime": "PT2M",
+      "tool": {
+        "@type": "HowToTool",
+        "name": "SVG Downloader browser extension"
+      },
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Follow the link if it goes somewhere",
+          "text": "If it opens a viewer or detail page, let it. That destination is where the vector actually lives, and it is what you want to scan.",
+          "url": "https://svg.clasicwebtools.com/tutorials/download-svg-from-link#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Open the popup on whatever page you land on",
+          "text": "Click the toolbar button. The scan does not care whether you arrived by link, by search or by typing the address.",
+          "url": "https://svg.clasicwebtools.com/tutorials/download-svg-from-link#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Find it in the list",
+          "text": "Page through with Prev and Next. On a detail page the vector you want is usually large and obvious in the preview.",
+          "url": "https://svg.clasicwebtools.com/tutorials/download-svg-from-link#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Name it and download",
+          "text": "Type a filename and press Download current. What you get is a real vector file, not an HTML document wearing an .svg extension.",
+          "url": "https://svg.clasicwebtools.com/tutorials/download-svg-from-link#steps"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why did Save link as… give me an HTML file?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Because the link pointed at a web page rather than a vector file. Save link as… fetches the URL and writes whatever comes back, without checking what it is — so a link to a viewer page produces a page, saved under the .svg name the link suggested."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "The link href is just # — where is the file?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "There is not one. A click handler builds the file in JavaScript when you click. Nothing exists at that address to save, so scanning the page for the rendered vector is the only route."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I check whether my file is a real SVG?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Open it in a text editor. A real SVG starts with and is usually much bigger."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "The link is an icon itself and right-click offers nothing useful.",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "That icon is inline SVG markup, which the browser does not treat as an image, so no image options appear. Either open the popup and scan the page, or use the extension’s own \"Save this as SVG\" item in the right-click menu."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<nav class="nav">
+  <a class="brand" href="/">
+    <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+      <rect width="48" height="48" rx="10" fill="var(--plot)"/>
+      <path d="M24 13v15m0 0l-6.5-6.5M24 28l6.5-6.5" fill="none" stroke="var(--surface-hi)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="16.5" y="33.5" width="15" height="2.4" rx="1.2" fill="var(--surface-hi)"/>
+    </svg>
+    <strong>SVG&nbsp;Downloader</strong>
+  </a>
+  <span class="spacer"></span>
+  <span class="nav-links">
+    <a href="/features">Features</a>
+    <a href="/tutorials" aria-current="page">Tutorials</a>
+    <a href="/guides">Guides</a>
+    <a href="/docs">Docs</a>
+    <a href="/use-cases">Stories</a>
+  </span><!--i18n:switch-->
+  <details class="lang-switch">
+    <summary aria-label="Language"><span>EN</span></summary>
+    <ul>
+      <li><a href="/tutorials/download-svg-from-link" hreflang="en" lang="en" aria-current="true">English</a></li>
+      <li><a href="/es/tutorials/download-svg-from-link" hreflang="es" lang="es">Español</a></li>
+      <li><a href="/fr/tutorials/download-svg-from-link" hreflang="fr" lang="fr">Français</a></li>
+      <li><a href="/de/tutorials/download-svg-from-link" hreflang="de" lang="de">Deutsch</a></li>
+      <li><a href="/pt-br/tutorials/download-svg-from-link" hreflang="pt-BR" lang="pt-BR">Português</a></li>
+    </ul>
+  </details>
+  <!--/i18n:switch-->
+  <a class="nav-cta" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Get the extension</a>
+</nav>
+
+<main id="main">
+<header class="page-hero"><div class="wrap">
+  <ol class="crumbs">
+    <li><a href="/">Home</a></li>
+    <li><a href="/tutorials">Tutorials</a></li>
+    <li><span aria-current="page">Download from a link</span></li>
+  </ol>
+  <p class="eyebrow">Tutorial — the link trap</p>
+  <h1>How to <span class="plot">download an SVG from a link</span></h1>
+  <p class="lede">You right-click the link, choose <em>Save link as…</em>, and get a 40KB HTML file. This is the most common way to end up with the wrong thing, and it has a simple explanation.</p>
+  <div class="cta">
+    <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 12v16m0 0l-7-7m7 7l7-7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><rect x="16" y="34" width="16" height="2.6" rx="1.3" fill="currentColor"/></svg>
+      Get the extension
+    </a>
+    <a class="btn quiet" href="#steps">Jump to the steps ↓</a>
+  </div>
+</div></header>
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Watch it — 19 seconds</p>
+  <h2>Getting what the link actually points at</h2>
+  <figure class="shot">
+    <div class="shot-mount">
+      <span class="shot-tag">tutorial · from a link</span>
+      <video src="/motion/tutorials/download-svg-from-link.mp4" poster="/motion/tutorials/download-svg-from-link.jpg"
+        muted loop playsinline preload="none"
+        aria-label="A page with links to vectors. Rather than using Save link as…, the SVG Downloader popup opens, finds the vector in its list, takes the filename bell, and saves the real file."></video>
+    </div>
+    <figcaption class="shot-cap">The link stays untouched. The vector comes out of the page the link is on.</figcaption>
+  </figure>
+
+  <p class="lead-in">The recording deliberately never uses <em>Save link as…</em> — because on a link like this, that menu item is the trap rather than the tool.</p>
+  <p class="eyebrow">What the recording shows</p>
+  <ol class="beats">
+    <li>A link that points at a vector, not a page</li>
+    <li>Save link as… would hand you the HTML wrapper</li>
+    <li>Open the popup on the page the link is on</li>
+    <li>The linked vector is in the list</li>
+    <li>Give it a name that means something</li>
+    <li>Download current — the file behind the link</li>
+  </ol>
+</div></section>
+
+<hr class="section-rule">
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Why the obvious thing fails</p>
+  <h2>Save link as… saves the response, whatever it turns out to be</h2>
+  
+  <p class="lead-in">Your browser has no idea what is at the other end of a link until it asks. <em>Save link as…</em> does not inspect anything — it fetches the URL and writes whatever comes back to disk, under whatever name the link suggests.</p>
+  <p>So when the link goes to a <em>viewer page</em> — an icon detail page, a "download" page with a preview and a button — what comes back is HTML. You get a file called <code>star.svg</code> that is actually a web page, which is why it opens as a wall of text or refuses to open at all. The extension was never wrong; the link just never pointed at a vector in the first place.</p>
+  <p>Three link shapes cause almost all of this:</p>
+  <ul>
+    <li><strong>A link to a viewer page.</strong> The vector is on the destination, not at the link. Follow it, then scan that page.</li>
+    <li><strong>A link that triggers a download by script.</strong> The <code>href</code> is <code>#</code> or <code>javascript:</code>, and a click handler builds the file. There is nothing at the address to save.</li>
+    <li><strong>A link wrapping an inline icon.</strong> The clickable thing <em>is</em> the graphic, drawn as markup. Right-clicking it gives you the page menu — no image options at all, because the browser does not consider it an image.</li>
+  </ul>
+
+  <h2 id="steps">The method that works on all three</h2>
+  <p>Stop trying to save the link. Save the vector from the page that renders it — the answer is the same regardless of which of the three shapes you are looking at.</p>
+  <ol>
+    <li><strong>Follow the link if it goes somewhere.</strong> If it opens a viewer or detail page, let it. That destination is where the vector actually lives, and it is what you want to scan.</li>
+    <li><strong>Open the popup on whatever page you land on.</strong> Click the toolbar button. The scan does not care whether you arrived by link, by search or by typing the address.</li>
+    <li><strong>Find it in the list.</strong> Page through with <em>Prev</em> and <em>Next</em>. On a detail page the vector you want is usually large and obvious in the preview.</li>
+    <li><strong>Name it and download.</strong> Type a filename and press <em>Download current</em>. What you get is a real vector file, not an HTML document wearing an .svg extension.</li>
+  </ol>
+
+  
+  <h2>How to tell what you actually downloaded</h2>
+  <p>If you already have a suspect file, this takes ten seconds: open it in any text editor. A real SVG starts with <code>&lt;svg</code> or an XML declaration and is usually a few kilobytes. An HTML page in disguise starts with <code>&lt;!doctype html&gt;</code> and is typically much larger. If it is the second one, the link went to a page, and scanning that page will get you the real thing.</p>
+
+  <h2>When the link is the icon</h2>
+  <p>This is the third shape, and the most common on modern sites — a clickable icon that is inline <code>&lt;svg&gt;</code> markup. There is genuinely nothing to save: no address, no file, no image the browser recognises. Either scan the page, or right-click it and take <strong>Save this as SVG</strong> from the menu, which is covered in <a href="/tutorials/grab-svg-from-website">the quick-grab tutorial</a>.</p>
+
+  <dl class="facts">
+    <div><dt>The trap</dt><dd><em>Save link as…</em> writes <strong>whatever the URL returns</strong> — often HTML.</dd></div>
+    <div><dt>The check</dt><dd>Open the file in a text editor. <code>&lt;!doctype html&gt;</code> means you got a page.</dd></div>
+    <div><dt>The fix</dt><dd>Scan the page that renders the vector, rather than saving the link.</dd></div>
+    <div><dt>Also see</dt><dd><a href="/tutorials/grab-svg-from-website">Right-click grab</a> · <a href="/tutorials/download-svg-from-url">From a URL</a></dd></div>
+  </dl>
+</div></section>
+
+<hr class="section-rule">
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Good to know</p>
+  <h2>Frequently asked</h2>
+  <div class="faq">
+    <details>
+      <summary>Why did Save link as… give me an HTML file?</summary>
+      <div class="faq-body"><p>Because the link pointed at a web page rather than a vector file. Save link as… fetches the URL and writes whatever comes back, without checking what it is — so a link to a viewer page produces a page, saved under the .svg name the link suggested.</p></div>
+    </details>
+    <details>
+      <summary>The link href is just # — where is the file?</summary>
+      <div class="faq-body"><p>There is not one. A click handler builds the file in JavaScript when you click. Nothing exists at that address to save, so scanning the page for the rendered vector is the only route.</p></div>
+    </details>
+    <details>
+      <summary>How can I check whether my file is a real SVG?</summary>
+      <div class="faq-body"><p>Open it in a text editor. A real SVG starts with <svg or an XML declaration. An HTML page starts with <!doctype html> and is usually much bigger.</p></div>
+    </details>
+    <details>
+      <summary>The link is an icon itself and right-click offers nothing useful.</summary>
+      <div class="faq-body"><p>That icon is inline SVG markup, which the browser does not treat as an image, so no image options appear. Either open the popup and scan the page, or use the extension’s own "Save this as SVG" item in the right-click menu.</p></div>
+    </details>
+  </div>
+</div></section>
+
+<hr class="section-rule">
+
+<section><div class="wrap">
+  <div class="cta-band">
+    <div>
+      <h2>Stop saving pages named .svg</h2>
+      <p>Take the vector out of the page instead — it works on all three kinds of link.</p>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Get the extension</a>
+      <a class="btn quiet" href="/tutorials">All 15 tutorials →</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="related"><div class="wrap">
+  <p class="eyebrow">Keep going</p>
+  <ul>
+    <li><a href="/tutorials/grab-svg-from-website">Right-click grab<span>One icon, one menu item</span></a></li>
+    <li><a href="/tutorials/download-svg-from-url">From a URL<span>Address, not file</span></a></li>
+    <li><a href="/tutorials/save-svg-from-website">When right-click fails<span>The greyed-out menu</span></a></li>
+  </ul>
+</div></section>
+</main>
+
+<footer>
+  <nav class="bleed foot-map" aria-label="Site map">
+    <div class="col"><p>Product</p><ul>
+      <li><a href="/">Overview</a></li>
+      <li><a href="/features">Features</a></li>
+      <li><a href="/compare/svg-downloader-vs-screenshotting-icons">Vs. screenshotting</a></li>
+      <li><a href="/privacy">Privacy</a></li>
+      <li><a href="/use-cases">Use cases</a></li>
+    </ul></div>
+    <div class="col"><p>Catches</p><ul>
+      <li><a href="/features/inline-svg">Inline SVG</a></li>
+      <li><a href="/features/css-background-svg">CSS background SVG</a></li>
+      <li><a href="/features/svg-sprite-extractor">Sprite / &lt;use&gt; SVG</a></li>
+      <li><a href="/features/bulk-zip-download">Whole page as ZIP</a></li>
+    </ul></div>
+    <div class="col"><p>Tutorials</p><ul>
+      <li><a href="/tutorials">All 15 tutorials</a></li>
+      <li><a href="/tutorials/how-to-download-svg-files">How to download SVG files</a></li>
+      <li><a href="/tutorials/copy-svg-from-website">Copy an SVG</a></li>
+      <li><a href="/tutorials/extract-svg-from-website">Extract every SVG</a></li>
+    </ul></div>
+    <div class="col"><p>Docs</p><ul>
+      <li><a href="/docs/installation">Installation</a></li>
+      <li><a href="/docs/usage">Usage</a></li>
+      <li><a href="/docs/faq">FAQ</a></li>
+      <li><a href="/docs/changelog">Changelog</a></li>
+    </ul></div>
+  </nav>
+  <div class="bleed colophon-foot">
+    <a href="https://github.com/Flozad/svg-downloader">GitHub</a>
+    <a href="https://github.com/Flozad/svg-downloader/issues">Issues</a>
+    <a href="https://clasicwebtools.com">clasicwebtools.com</a>
+    <span class="grow"></span>
+    <span>Bone stock, graphite, one plotter&nbsp;green</span>
+  </div>
+</footer>
+<script src="/player.js" defer></script>
+</body>
+</html>

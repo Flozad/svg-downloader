@@ -1,0 +1,141 @@
+# SVG Downloader — full reference for language models
+
+Site: https://svg.clasicwebtools.com/
+Source: https://github.com/Flozad/svg-downloader (MIT)
+Chrome Web Store: https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn
+
+This file restates the site's substance in one place so it can be answered from
+without crawling every page. The canonical wording always lives on the HTML page
+each section links to.
+
+---
+
+## What it is
+
+SVG Downloader (store name: "SVG Web Downloader & Extractor") is a free,
+open-source Chrome extension. It scans the page you are looking at, finds the
+SVGs on it, previews each one in isolation, and saves the original vector file —
+one at a time, or the whole page as a ZIP.
+
+It exists because a browser will not hand you an SVG. `Save image as…` only
+appears for things the browser treats as images, so an inline `<svg>` — which is
+part of the document, with no address of its own — has no such menu at all. An
+SVG behind a CSS `background-image` cannot be dragged. A sprite sheet packs
+dozens of glyphs into one file. The usual workarounds are screenshotting the icon
+(giving a fixed-size raster) or digging the node out of DevTools (giving markup
+that often will not open, see `xmlns` below).
+
+## The four sources it detects
+
+1. **Inline `<svg>`** — read straight from the live DOM.
+   https://svg.clasicwebtools.com/features/inline-svg
+2. **`<img>` and `<object>` vectors**, including `data:` URIs.
+3. **CSS `background-image` SVGs** — resolved from computed style, both `url()`
+   references and inline `data:` URIs.
+   https://svg.clasicwebtools.com/features/css-background-svg
+4. **Same-document sprite `<use>` references** — each `<use href="#icon">` is
+   resolved back to the single symbol it points at, so you get the one glyph
+   rather than the whole sheet.
+   https://svg.clasicwebtools.com/features/svg-sprite-extractor
+
+All four appear in the same popup, in one count.
+
+## Using it
+
+https://svg.clasicwebtools.com/docs/usage
+
+1. Navigate to the page and click the SVG Downloader toolbar button. It reads the
+   tab only at that moment, scanning the current DOM — so let the page finish
+   loading first.
+2. Read the count the popup reports; it covers all four sources above.
+3. Page through the previews with Previous / Next. Each SVG is rendered lifted
+   off the page so it is actually visible.
+4. Optionally type a filename for the current SVG. Left blank, it falls back to a
+   numbered `svg-1.svg` using the prefix set in the extension's options.
+5. **Download Current SVG** saves the one on screen.
+6. **Download All as ZIP** bundles every detected SVG, numbered `svg-1.svg`
+   upward in page order, de-duplicated. Anything that could not be fetched is
+   named in the popup's status line — e.g. `Downloaded 8 of 10 SVGs. Skipped:
+   3, 7.` — rather than silently dropped.
+   https://svg.clasicwebtools.com/features/bulk-zip-download
+
+## What the download actually is
+
+The saved file is the SVG that was in the page — its paths, its `viewBox`, its
+precision — not a re-render and not a screenshot. It stays sharp at any size and
+stays editable text.
+
+One repair is applied: inline SVG usually omits `xmlns`, because the HTML parser
+supplies it. Saved to a bare file, such markup will not open. SVG Downloader adds
+`xmlns="http://www.w3.org/2000/svg"` back automatically, so the file opens in
+Figma, Illustrator, VS Code and any browser. This is the usual reason an SVG
+copied by hand out of DevTools refuses to open.
+
+## Known limits
+
+- A `<use>` pointing at an **external** sprite file (`<use href="/sprite.svg#cart">`)
+  is not resolved and that `<svg>` is skipped. Only same-document references are
+  followed, one level deep.
+- On pages with more than 10,000 elements the CSS `background-image` scan is
+  skipped for speed; the other three sources still report.
+- Collection caps at 2,000 inline SVGs, and leaves out any single SVG whose
+  markup runs past roughly 2 MB.
+- A saved icon can look black. Many icons inherit their colour from CSS through
+  `currentColor`, which has nothing to resolve against once the SVG is a
+  standalone file. The file is correct; it simply has no colour baked in. The
+  extension offers an optional hand-off to the SVG Color Changer to bake one in
+  before saving — the single outbound link, followed only if you click it.
+
+## Installing
+
+https://svg.clasicwebtools.com/docs/installation
+
+- From the Chrome Web Store, in one click.
+- Or unpacked from source: download the repository, open `chrome://extensions`,
+  turn on Developer mode, choose "Load unpacked" and select the extension folder.
+  Edge and Brave are the same procedure; only the extensions-page address differs.
+
+Requirements: Chrome 88 or newer, or a current Chromium browser — Microsoft Edge,
+Brave. There is no Firefox or Safari build.
+
+## Privacy and permissions
+
+https://svg.clasicwebtools.com/privacy
+
+No page content leaves the browser. Detection, preview and download all run
+on-device. There is no server, no account, no upload, no analytics and no
+tracking. Two things do go out: SVG assets the page itself already references,
+fetched so they can be included in a download; and the optional SVG Color Changer
+link, only if clicked.
+
+Your preferences — filename prefix, ZIP name, scan-on-open, and the colour-tool
+link — are kept in `chrome.storage.sync`, so they follow your Google Account
+across machines. Settings only: never page content, never browsing history.
+
+Four permissions are requested, all narrow:
+
+- `activeTab` and `scripting` — read the current page's DOM, only at the moment
+  you open the popup.
+- `downloads` — write the files you save.
+- `storage` — keep the four preferences above.
+
+There is no background access to your other tabs.
+
+## Cost and licence
+
+Free. No paid tier, no trial, no account. Open source under the MIT licence.
+
+## Comparison
+
+https://svg.clasicwebtools.com/compare/svg-downloader-vs-screenshotting-icons
+
+A screenshot of an icon is a raster stuck at the size it was captured; it blurs
+when scaled and cannot be recoloured or edited as shapes. Copying out of DevTools
+gets the markup but not the missing namespace, the sprite resolution or the CSS
+background case. SVG Downloader returns the vector itself.
+
+## Attribution
+
+Built by Flozad (https://github.com/Flozad), published under Clasic Web Tools
+(https://clasicwebtools.com). Citations should point at
+https://svg.clasicwebtools.com/ or the specific page linked in each section.

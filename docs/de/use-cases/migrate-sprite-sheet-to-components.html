@@ -1,0 +1,261 @@
+<!DOCTYPE html><html lang="de"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ein altes Sprite-Sheet zu Komponenten migrieren — eine Frontend-Geschichte</title>
+<meta name="description" content="Dreißig Icons hinter <use>-Referenzen versteckt und kein Build-Artefakt mehr übrig. Eine Frontend-Entwicklerin löste jede Sprite-Referenz zurück in eigenständiges SVG auf und lieferte sie als einzelne Komponenten aus.">
+<link rel="canonical" href="https://svg.clasicwebtools.com/de/use-cases/migrate-sprite-sheet-to-components"><!--i18n:alternates-->
+<link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/use-cases/migrate-sprite-sheet-to-components">
+<link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/use-cases/migrate-sprite-sheet-to-components">
+<link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/use-cases/migrate-sprite-sheet-to-components">
+<link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/use-cases/migrate-sprite-sheet-to-components">
+<link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/use-cases/migrate-sprite-sheet-to-components">
+<link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/use-cases/migrate-sprite-sheet-to-components">
+<!--/i18n:alternates-->
+<link rel="alternate" type="text/plain" href="https://svg.clasicwebtools.com/llms.txt" title="llms.txt — machine-readable site summary">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="Flozad">
+<meta name="theme-color" content="#ece4d3">
+<meta property="og:site_name" content="SVG Downloader">
+<meta property="og:title" content="Ein altes Sprite-Sheet zu Komponenten migrieren — eine Frontend-Geschichte">
+<meta property="og:description" content="Dreißig Icons hinter <use>-Referenzen versteckt und kein Build-Artefakt mehr übrig. Jede Sprite-Referenz zurück in eigenständiges SVG aufgelöst und als Komponenten ausgeliefert.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://svg.clasicwebtools.com/de/use-cases/migrate-sprite-sheet-to-components">
+<meta property="og:image" content="https://svg.clasicwebtools.com/motion/05-zip.png">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="SVG Downloader speichert einen ganzen Satz Vektoren als ZIP.">
+<meta property="og:locale" content="de_DE">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@lozards">
+<meta name="twitter:title" content="Ein altes Sprite-Sheet zu Komponenten migrieren — eine Frontend-Geschichte">
+<meta name="twitter:description" content="Dreißig Icons hinter <use>-Referenzen, zurück in eigenständiges SVG aufgelöst und als Komponenten ausgeliefert.">
+<meta name="twitter:image" content="https://svg.clasicwebtools.com/motion/05-zip.png">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/fonts/bricolage-var.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/pages.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Start",
+          "item": "https://svg.clasicwebtools.com/de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Praxis",
+          "item": "https://svg.clasicwebtools.com/de/use-cases"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Ein altes Sprite-Sheet zu Komponenten migrieren",
+          "item": "https://svg.clasicwebtools.com/de/use-cases/migrate-sprite-sheet-to-components"
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "headline": "Ein altes Sprite-Sheet zu Komponenten migrieren",
+      "description": "Wie eine Frontend-Entwicklerin mit SVG Downloader ein altes <use>-Sprite-Sheet zurück in eigenständige SVG-Dateien auflöste und sie zu einzelnen Komponenten migrierte.",
+      "image": "https://svg.clasicwebtools.com/motion/05-zip.png",
+      "inLanguage": "de",
+      "isPartOf": {
+        "@id": "https://svg.clasicwebtools.com/de/#website"
+      },
+      "about": {
+        "@id": "https://svg.clasicwebtools.com/de/#app"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "SVG Downloader",
+        "url": "https://svg.clasicwebtools.com/de/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "SVG Downloader",
+        "url": "https://svg.clasicwebtools.com/de/"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Zum Inhalt springen</a>
+
+<nav class="nav">
+  <a class="brand" href="/de/">
+    <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+      <rect width="48" height="48" rx="10" fill="var(--plot)"></rect>
+      <path d="M24 13v15m0 0l-6.5-6.5M24 28l6.5-6.5" fill="none" stroke="var(--surface-hi)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+      <rect x="16.5" y="33.5" width="15" height="2.4" rx="1.2" fill="var(--surface-hi)"></rect>
+    </svg>
+    <strong>SVG&nbsp;Downloader</strong>
+  </a>
+  <span class="spacer"></span>
+  <span class="nav-links">
+    <a href="/de/features">Funktionen</a>
+    <a href="/de/tutorials">Tutorials</a>
+    <a href="/de/guides">Anleitungen</a>
+    <a href="/de/docs">Doku</a>
+    <a href="/de/use-cases" aria-current="page">Praxis</a>
+    <a href="/de/privacy">Datenschutz</a>
+  </span><!--i18n:switch-->
+  <details class="lang-switch">
+    <summary aria-label="Sprache"><span>DE</span></summary>
+    <ul>
+      <li><a href="/use-cases/migrate-sprite-sheet-to-components" hreflang="en" lang="en">English</a></li>
+      <li><a href="/es/use-cases/migrate-sprite-sheet-to-components" hreflang="es" lang="es">Español</a></li>
+      <li><a href="/fr/use-cases/migrate-sprite-sheet-to-components" hreflang="fr" lang="fr">Français</a></li>
+      <li><a href="/de/use-cases/migrate-sprite-sheet-to-components" hreflang="de" lang="de" aria-current="true">Deutsch</a></li>
+      <li><a href="/pt-br/use-cases/migrate-sprite-sheet-to-components" hreflang="pt-BR" lang="pt-BR">Português</a></li>
+    </ul>
+  </details>
+  <!--/i18n:switch-->
+  <a class="nav-cta" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Erweiterung installieren</a>
+</nav>
+
+<main id="main">
+<header class="page-hero"><div class="wrap">
+  <ol class="crumbs">
+    <li><a href="/de/">Start</a></li>
+    <li><a href="/de/use-cases">Praxis</a></li>
+    <li><span aria-current="page">Ein Sprite-Sheet migrieren</span></li>
+  </ol>
+  <p class="eyebrow">Geschichte — Frontend-Entwicklung</p>
+  <h1>Ein <span class="plot">altes Sprite-Sheet</span> migrieren, das niemand neu bauen konnte</h1>
+  <div class="byline">
+    <span class="mono-badge" aria-hidden="true">PN</span>
+    <span><b>Priya Nandakumar</b><span>Frontend-Entwicklerin · Design-System-Migration</span></span>
+  </div>
+  <p class="lede">„Wir stiegen auf einzelne Icon-Komponenten um. Der Haken: Die bisherigen Icons waren ein einziges SVG-Sprite, überall per <code>&lt;use&gt;</code> referenziert, und der Build-Schritt, der es erzeugte, war zwei Refactorings zuvor gelöscht worden. Wir hatten das Sprite in Produktion und nichts, was es herstellte.“</p>
+</div></header>
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Der Ausgangspunkt</p>
+  <h2>Das Sprite lief einwandfrei — es ließ sich nur nicht zerlegen</h2>
+  <dl class="facts case-meta">
+    <div><dt>Wer</dt><dd>Priya, <strong>Frontend-Entwicklerin</strong>, die eine Komponentenmigration in einer langlebigen Webanwendung leitet.</dd></div>
+    <div><dt>Stack</dt><dd><span class="stack">React + TypeScript, Vite, eine SVGR-Pipeline für neue Icons.</span> Die alten Icons lagen in einer einzigen <code>sprite.svg</code> mit <code>&lt;symbol&gt;</code>-Definitionen.</dd></div>
+    <div><dt>Die Aufgabe</dt><dd><strong>Rund 30 Sprite-Symbole</strong> in einzelne <code>.svg</code>-Dateien verwandeln, um sie durch SVGR zu schicken und als typisierte Komponenten auszuliefern.</dd></div>
+    <div><dt>Die Wand</dt><dd>Jedes Icon auf dem Bildschirm war ein <code>&lt;use href="#icon-x"&gt;</code>-Zeiger. Den Zeiger zu speichern bringt nichts. Der Generator war weg.</dd></div>
+  </dl>
+
+  <h2>Was nicht funktionierte</h2>
+  <p>„Die Sprite-Datei selbst herunterzuladen gibt dir ein großes Dokument voller <code>&lt;symbol&gt;</code>-Elemente, außen ohne viewBox und ohne Möglichkeit, eines davon allein zu zeichnen. Ich habe angefangen, es im Editor von Hand zu teilen — ein Symbol kopieren, in ein frisches <code>&lt;svg&gt;</code> wickeln, den viewBox vom <code>symbol</code> übertragen, hoffen, das richtige erwischt zu haben. Das ist mühsam und genau die Art Sache, bei der man einen stillen Fehler macht.“</p>
+  <p>Die <code>&lt;use&gt;</code>-Indirektion ist genau das, was Sprites im Browser effizient und beim Extrahieren schmerzhaft macht. Das gezeichnete Icon ist echt; was du greifen kannst, ist eine Referenz auf ein Fragment.</p>
+
+  <h2>Der Wechsel</h2>
+  <p>Priya ließ <a href="/de/features/svg-sprite-extractor">SVG Downloader</a> auf einer Seite laufen, die die Icons nutzte. Statt die <code>&lt;use&gt;</code>-Zeiger zu übergeben, löste es jede Sprite-Referenz im selben Dokument zurück zur Geometrie des zugrunde liegenden <code>&lt;symbol&gt;</code> auf und baute daraus ein eigenständiges, zeichenbares SVG — viewBox intakt, Namensraum repariert.</p>
+
+  <figure class="shot">
+    <div class="shot-mount">
+      <span class="shot-tag">erkennen → ZIP</span>
+      <video src="/motion/hero.mp4" poster="/motion/hero.jpg" muted="" loop="" playsinline="" preload="none" aria-label="Die Erweiterung öffnet sich auf einer Seite voller Icons, scannt und meldet 24 gefundene SVGs, blättert durch die Vorschauen, lädt eines und speichert dann alle als ZIP."></video>
+    </div>
+    <figcaption class="shot-cap">Der komplette Durchlauf: den Satz erkennen, durchblättern, um zu bestätigen, dass jedes Symbol korrekt aufgelöst wurde, dann <em>Alle als ZIP laden</em> — dublettenfrei und nummeriert.</figcaption>
+  </figure>
+
+  <p>„Die Vorschauen waren die Vertrauensprobe. Ich blätterte durch, und jedes Symbol war da und zeichnete für sich — keine kaputte Referenz, das echte Icon. Dann gab mir <em>Alle als ZIP laden</em> den ganzen Satz, dublettenfrei, sodass Icons, die fünfmal auf der Seite vorkamen, nicht fünfmal herunterkamen. Ich habe direkt nach <code>src/icons/</code> entpackt und SVGR über den Ordner laufen lassen.“</p>
+
+  <div class="pull">
+    <p>„Das Sprite war das eine Asset der ganzen Migration, von dem wir dachten, es bräuchte einen manuellen Neubau. Es wurde ein Import-Schritt. Der Rest des Tages ging in die eigentliche React-Arbeit.“</p>
+    <cite>— <b>Priya Nandakumar</b>, Frontend-Entwicklerin</cite>
+  </div>
+
+  <p class="eyebrow">Das Ergebnis</p>
+  <ul class="outcomes">
+    <li><b>~30 Symbole</b><span>von <code>&lt;use&gt;</code> in eigenständiges SVG aufgelöst, in einem ZIP</span></li>
+    <li><b>Dublettenfrei</b><span>Icons, die vielfach auf der Seite vorkamen, kamen einmal herunter</span></li>
+    <li><b>SVGR-bereit</b><span>korrekter viewBox und <code>xmlns</code>, direkt in die Pipeline</span></li>
+  </ul>
+
+  <dl class="facts">
+    <div><dt>Was die Arbeit gemacht hat</dt><dd>Der <a href="/de/features/svg-sprite-extractor">Sprite-/<code>&lt;use&gt;</code>-Extraktor</a>, um die Referenzen aufzulösen, dann <a href="/de/features/bulk-zip-download">Alle als ZIP laden</a> für den ganzen Satz auf einmal.</dd></div>
+    <div><dt>Warum das rohe Sprite versagt</dt><dd>Eine heruntergeladene <code>sprite.svg</code> ist ein Sack voller <code>&lt;symbol&gt;</code>-Definitionen ohne eigenständige Darstellung — sie von Hand zu teilen verliert viewBoxes und lädt zu Abschreibfehlern ein. Siehe <a href="/de/guides/download-all-svgs-as-zip">alle als ZIP laden</a>.</dd></div>
+    <div><dt>Reichweite</dt><dd>Löst Sprite-Referenzen im <strong>selben Dokument</strong> auf. Externe Sprite-Dateien, die die Seite nie ins DOM lädt, sind nicht erreichbar — öffne eine Seite, die die Icons tatsächlich nutzt.</dd></div>
+  </dl>
+
+  <p class="disclosure">Zusammengesetzte Geschichte — ein illustrativer, aber typischer Ablauf. Person und Team sind fiktiv; das hier beschriebene Verhalten der Erweiterung ist echt. <a href="/de/use-cases">Mehr Geschichten →</a></p>
+</div></section>
+
+<hr class="section-rule">
+
+<section><div class="wrap">
+  <div class="cta-band">
+    <div>
+      <h2>Löse das Sprite auf, spar dir den Neubau</h2>
+      <p>Verwandle <code>&lt;use&gt;</code>-Referenzen zurück in eigenständiges, zeichenbares SVG — den ganzen Satz als ZIP.</p>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Erweiterung installieren</a>
+      <a class="btn quiet" href="/de/features/svg-sprite-extractor">So funktioniert der Sprite-Extraktor →</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="related"><div class="wrap">
+  <p class="eyebrow">Weiterlesen</p>
+  <ul>
+    <li><a href="/de/use-cases/design-system-icon-audit">Prüfung der Icon-Bibliothek<span>Die Design-Systems-Geschichte</span></a></li>
+    <li><a href="/de/features/bulk-zip-download">Ganze Seite als ZIP<span>Die Massenfunktion</span></a></li>
+    <li><a href="/de/guides/download-all-svgs-as-zip">Alle als ZIP laden<span>Die vollständige Methode</span></a></li>
+  </ul>
+</div></section>
+</main>
+
+<footer>
+  <nav class="bleed foot-map" aria-label="Sitemap">
+    <div class="col"><p>Produkt</p><ul>
+      <li><a href="/de/">Überblick</a></li>
+      <li><a href="/de/features">Funktionen</a></li>
+      <li><a href="/de/compare/svg-downloader-vs-screenshotting-icons">Vs. Screenshot</a></li>
+      <li><a href="/de/privacy">Datenschutz</a></li>
+      <li><a href="/de/use-cases">Anwendungsfälle</a></li>
+    </ul></div>
+    <div class="col"><p>Erkennt</p><ul>
+      <li><a href="/de/features/inline-svg">Inline-SVG</a></li>
+      <li><a href="/de/features/css-background-svg">SVG im CSS-Hintergrund</a></li>
+      <li><a href="/de/features/svg-sprite-extractor">Sprite- / &lt;use&gt;-SVG</a></li>
+      <li><a href="/de/features/bulk-zip-download">Ganze Seite als ZIP</a></li>
+    </ul></div>
+    <div class="col"><p>Praxis</p><ul>
+      <li><a href="/de/use-cases/design-system-icon-audit">Prüfung der Icon-Bibliothek</a></li>
+      <li><a href="/de/use-cases/recover-brand-assets-redesign">Markenmaterial retten</a></li>
+      <li><a href="/de/use-cases/migrate-sprite-sheet-to-components">Ein Sprite-Sheet migrieren</a></li>
+      <li><a href="/de/use-cases/icon-set-for-pitch-deck">Icon-Satz für ein Deck</a></li>
+    </ul></div>
+    <div class="col"><p>Tutorials</p><ul>
+      <li><a href="/de/tutorials">Alle 15 Tutorials</a></li>
+      <li><a href="/de/tutorials/extract-svg-logo-from-website">Ein Logo extrahieren</a></li>
+      <li><a href="/de/tutorials/extract-svg-from-website">Jedes SVG extrahieren</a></li>
+      <li><a href="/de/guides">Ausführliche Anleitungen</a></li>
+    </ul></div>
+    <div class="col"><p>Doku</p><ul>
+      <li><a href="/de/docs/installation">Installation</a></li>
+      <li><a href="/de/docs/usage">Bedienung</a></li>
+      <li><a href="/de/docs/faq">FAQ</a></li>
+      <li><a href="/de/docs/changelog">Changelog</a></li>
+    </ul></div>
+  </nav>
+  <div class="bleed colophon-foot">
+    <a href="https://github.com/Flozad/svg-downloader">GitHub</a>
+    <a href="https://github.com/Flozad/svg-downloader/issues">Issues</a>
+    <a href="https://clasicwebtools.com">clasicwebtools.com</a>
+    <span class="grow"></span>
+    <span>Knochenpapier, Graphit, ein einziges Plotter&nbsp;grün</span>
+  </div>
+</footer>
+<script src="/player.js" defer=""></script>
+
+
+</body></html>

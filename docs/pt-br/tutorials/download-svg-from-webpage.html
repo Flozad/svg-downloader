@@ -1,0 +1,379 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Baixar os SVGs de uma página web — faça um inventário antes</title>
+<meta name="description" content="Conte todo vetor que uma página web renderiza, percorra para ver o que são, e então leve os que quiser ou o conjunto inteiro. Nada é descartado em silêncio.">
+<link rel="canonical" href="https://svg.clasicwebtools.com/pt-br/tutorials/download-svg-from-webpage"><!--i18n:alternates-->
+<link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/download-svg-from-webpage">
+<link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/download-svg-from-webpage">
+<link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/download-svg-from-webpage">
+<link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/download-svg-from-webpage">
+<link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/download-svg-from-webpage">
+<link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/download-svg-from-webpage">
+<!--/i18n:alternates-->
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="Flozad">
+<meta name="theme-color" content="#ece4d3">
+<meta property="og:site_name" content="SVG Downloader">
+<meta property="og:title" content="Baixar os SVGs de uma página web — faça um inventário antes">
+<meta property="og:description" content="Conte todo vetor que uma página web renderiza, percorra para ver o que são, e então leve os que quiser ou o conjunto inteiro. Nada é descartado em silêncio.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://svg.clasicwebtools.com/pt-br/tutorials/download-svg-from-webpage">
+<meta property="og:image" content="https://svg.clasicwebtools.com/motion/tutorials/download-svg-from-webpage.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="O contador do popup do SVG Downloader marcando 24 encontrados numa página web de ícones.">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:video" content="https://svg.clasicwebtools.com/motion/tutorials/download-svg-from-webpage.mp4">
+<meta property="og:video:secure_url" content="https://svg.clasicwebtools.com/motion/tutorials/download-svg-from-webpage.mp4">
+<meta property="og:video:type" content="video/mp4">
+<meta property="og:video:width" content="1280">
+<meta property="og:video:height" content="800">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@lozards">
+<meta name="twitter:title" content="Baixar os SVGs de uma página web — faça um inventário antes">
+<meta name="twitter:description" content="Conte todo vetor que uma página web renderiza, percorra para ver o que são, e então leve os que quiser ou o conjunto inteiro. Nada é descartado em silêncio.">
+<meta name="twitter:image" content="https://svg.clasicwebtools.com/motion/tutorials/download-svg-from-webpage.jpg">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/fonts/bricolage-var.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/pages.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Início",
+          "item": "https://svg.clasicwebtools.com/pt-br/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tutoriais",
+          "item": "https://svg.clasicwebtools.com/pt-br/tutorials"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Inventário da página",
+          "item": "https://svg.clasicwebtools.com/pt-br/tutorials/download-svg-from-webpage"
+        }
+      ]
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Faça um inventário de todo SVG de uma página web",
+      "description": "O popup do SVG Downloader escaneia uma página web, o contador sobe até 24 encontrados, as prévias são percorridas para revisar o conjunto, e então a página inteira é salva como ZIP.",
+      "thumbnailUrl": [
+        "https://svg.clasicwebtools.com/motion/tutorials/download-svg-from-webpage.jpg"
+      ],
+      "uploadDate": "2026-08-22",
+      "duration": "PT17S",
+      "contentUrl": "https://svg.clasicwebtools.com/motion/tutorials/download-svg-from-webpage.mp4",
+      "embedUrl": "https://svg.clasicwebtools.com/tutorials/download-svg-from-webpage",
+      "isFamilyFriendly": true,
+      "publisher": {
+        "@type": "Organization",
+        "name": "SVG Downloader",
+        "url": "https://svg.clasicwebtools.com/pt-br/"
+      }
+    },
+    {
+      "@type": "HowTo",
+      "name": "Como baixar os SVGs de uma página web",
+      "description": "Conte todo vetor que uma página web renderiza, percorra para ver o que são, e então leve os que quiser ou o conjunto inteiro. Nada é descartado em silêncio.",
+      "image": "https://svg.clasicwebtools.com/motion/tutorials/download-svg-from-webpage.jpg",
+      "totalTime": "PT2M",
+      "tool": {
+        "@type": "HowToTool",
+        "name": "Extensão de navegador SVG Downloader"
+      },
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Deixe a página no estado que você quer capturar",
+          "text": "Role as seções com carregamento preguiçoso até aparecerem; abra o menu se os ícones que você quer moram dentro dele. A varredura lê o DOM como ele está, então o que ainda não foi renderizado ainda não está lá.",
+          "url": "https://svg.clasicwebtools.com/pt-br/tutorials/download-svg-from-webpage#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Abra o popup e leia o contador",
+          "text": "O contador informa o número de vetores distintos encontrados, depois de as duplicatas terem sido reduzidas. Esse é o seu inventário.",
+          "url": "https://svg.clasicwebtools.com/pt-br/tutorials/download-svg-from-webpage#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Percorra as prévias",
+          "text": "Ant. e Próx., com o paginador mostrando sua posição no conjunto. É aqui que você descobre que oito dos vinte e quatro são marcas de pagamento do rodapé.",
+          "url": "https://svg.clasicwebtools.com/pt-br/tutorials/download-svg-from-webpage#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Leve o que você quiser",
+          "text": "Ou você nomeia e baixa vetores individuais conforme os encontra, ou aperta Baixar tudo em ZIP para o lote. A linha de status informa o que foi salvo e nomeia o que não conseguiu resolver.",
+          "url": "https://svg.clasicwebtools.com/pt-br/tutorials/download-svg-from-webpage#steps"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Por que ele acha mais SVGs do que eu consigo ver?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Porque uma página desenha vetores em lugares que você não contaria: o logo, cada chevron e xis de fechar, marcas sociais e de pagamento no rodapé, divisores decorativos, e ícones dentro de componentes que estão no DOM mas não estão visíveis agora."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Um ícone que eu vejo não está na lista.",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ele provavelmente renderizou depois da varredura — conteúdo com carregamento preguiçoso, um modal que você abriu, uma aba que você trocou. Aperte o botão de reescanear no cabeçalho do popup para reler a página como ela está agora."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ele lê SVGs dentro de um iframe?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Os de outra origem não. A política de mesma origem significa que a própria página não consegue ler dentro de um mapa incorporado ou widget de pagamento, e nada que rode na página consegue também."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "E gráficos desenhados num canvas?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Esses já são pixels no momento em que são desenhados, então não sobra vetor para extrair. Um gráfico de canvas só pode ser capturado como raster."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Posso baixar só alguns deles?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim — percorra até cada um e use Baixar o atual, nomeando conforme avança. Baixar tudo em ZIP está lá para quando você quiser o lote."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Pular para o conteúdo</a>
+
+<nav class="nav">
+  <a class="brand" href="/pt-br/">
+    <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+      <rect width="48" height="48" rx="10" fill="var(--plot)"></rect>
+      <path d="M24 13v15m0 0l-6.5-6.5M24 28l6.5-6.5" fill="none" stroke="var(--surface-hi)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+      <rect x="16.5" y="33.5" width="15" height="2.4" rx="1.2" fill="var(--surface-hi)"></rect>
+    </svg>
+    <strong>SVG&nbsp;Downloader</strong>
+  </a>
+  <span class="spacer"></span>
+  <span class="nav-links">
+    <a href="/pt-br/features">Recursos</a>
+    <a href="/pt-br/tutorials" aria-current="page">Tutoriais</a>
+    <a href="/pt-br/guides">Guias</a>
+    <a href="/pt-br/docs">Docs</a>
+    <a href="/pt-br/use-cases">Histórias</a>
+  </span><!--i18n:switch-->
+  <details class="lang-switch">
+    <summary aria-label="Idioma"><span>PT</span></summary>
+    <ul>
+      <li><a href="/tutorials/download-svg-from-webpage" hreflang="en" lang="en">English</a></li>
+      <li><a href="/es/tutorials/download-svg-from-webpage" hreflang="es" lang="es">Español</a></li>
+      <li><a href="/fr/tutorials/download-svg-from-webpage" hreflang="fr" lang="fr">Français</a></li>
+      <li><a href="/de/tutorials/download-svg-from-webpage" hreflang="de" lang="de">Deutsch</a></li>
+      <li><a href="/pt-br/tutorials/download-svg-from-webpage" hreflang="pt-BR" lang="pt-BR" aria-current="true">Português</a></li>
+    </ul>
+  </details>
+  <!--/i18n:switch-->
+  <a class="nav-cta" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Instalar a extensão</a>
+</nav>
+
+<main id="main">
+<header class="page-hero"><div class="wrap">
+  <ol class="crumbs">
+    <li><a href="/pt-br/">Início</a></li>
+    <li><a href="/pt-br/tutorials">Tutoriais</a></li>
+    <li><span aria-current="page">Inventário da página</span></li>
+  </ol>
+  <p class="eyebrow">Tutorial — conte primeiro, leve depois</p>
+  <h1>Como <span class="plot">baixar os SVGs de uma página web</span></h1>
+  <p class="lede">A maioria das páginas carrega duas ou três vezes mais gráficos vetoriais do que você adivinharia olhando. Contar primeiro é como você evita uma pasta de downloads cheia de firulas decorativas.</p>
+  <div class="cta">
+    <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 12v16m0 0l-7-7m7 7l7-7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"></path><rect x="16" y="34" width="16" height="2.6" rx="1.3" fill="currentColor"></rect></svg>
+      Instalar a extensão</a>
+    <a class="btn quiet" href="#steps">Ir para os passos ↓</a>
+  </div>
+</div></header>
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Assista — 17 segundos</p>
+  <h2>Conte, confira, então leve</h2>
+  <figure class="shot">
+    <div class="shot-mount">
+      <span class="shot-tag">tutorial · inventário</span>
+      <video src="/motion/tutorials/download-svg-from-webpage.mp4" poster="/motion/tutorials/download-svg-from-webpage.jpg" muted="" loop="" playsinline="" preload="none" aria-label="O popup do SVG Downloader escaneia uma página web, o contador sobe até 24 encontrados, as prévias são percorridas para revisar o conjunto, e então a página inteira é salva como ZIP."></video>
+    </div>
+    <figcaption class="shot-cap">O contador é o inventário. A prévia é a auditoria. O ZIP é a colheita.</figcaption>
+  </figure>
+
+  <p class="lead-in">O contador subindo do zero é a página te contando do que ela é realmente feita — e raramente é o número que as pessoas chutam.</p>
+  <p class="eyebrow">O que a gravação mostra</p>
+  <ol class="beats">
+    <li>Quantos vetores esta página realmente tem?</li>
+    <li>O contador responde — 24 encontrados</li>
+    <li>Percorra para ver o que você está levando</li>
+    <li>E então leve tudo num clique</li>
+    <li>O que não pôde ser resolvido é nomeado, não descartado em silêncio</li>
+  </ol>
+</div></section>
+
+<hr class="section-rule">
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Por que o número surpreende</p>
+  <h2>Uma página renderiza muito mais vetores do que aparenta</h2>
+  
+  <p class="lead-in">Quando você olha uma página, vê o conteúdo. A varredura vê tudo que o navegador desenhou, e uma página moderna desenha vetores o tempo todo em lugares que você nunca contaria.</p>
+  <ul>
+    <li><strong>O logo</strong>, hoje quase sempre <code>&lt;svg&gt;</code> inline em vez de um arquivo de imagem.</li>
+    <li><strong>A interface</strong> — a lupa de busca, as barras de menu, os xis de fechar, cada chevron de cada dropdown.</li>
+    <li><strong>Marcas sociais e de pagamento</strong> no rodapé, normalmente uma dúzia delas.</li>
+    <li><strong>Formas decorativas</strong> — divisores de seção, fundos em bolhas, fragmentos de ilustração, desenhados como vetores de fundo CSS.</li>
+    <li><strong>Ícones em componentes que não estão visíveis agora</strong>, como um menu fechado que já está no DOM.</li>
+  </ul>
+  <p>É por isso que contar antes de levar vale trinta segundos: uma página que parece ter seis ícones muitas vezes informa vinte e quatro, e saber qual é qual antes de montar um ZIP te poupa de organizar depois.</p>
+
+  <h2 id="steps">Fazendo um inventário</h2>
+  <p>A ordem importa aqui — a ideia é saber o que você tem antes de se comprometer.</p>
+  <ol>
+    <li><strong>Deixe a página no estado que você quer capturar.</strong> Role as seções com carregamento preguiçoso até aparecerem; abra o menu se os ícones que você quer moram dentro dele. A varredura lê o DOM como ele está, então o que ainda não foi renderizado ainda não está lá.</li>
+    <li><strong>Abra o popup e leia o contador.</strong> O contador informa o número de vetores distintos encontrados, depois de as duplicatas terem sido reduzidas. Esse é o seu inventário.</li>
+    <li><strong>Percorra as prévias.</strong> <em>Ant.</em> e <em>Próx.</em>, com o paginador mostrando sua posição no conjunto. É aqui que você descobre que oito dos vinte e quatro são marcas de pagamento do rodapé.</li>
+    <li><strong>Leve o que você quiser.</strong> Ou você nomeia e baixa vetores individuais conforme os encontra, ou aperta <em>Baixar tudo em ZIP</em> para o lote. A linha de status informa o que foi salvo e nomeia o que não conseguiu resolver.</li>
+  </ol>
+
+  
+  <h2>Escaneie de novo depois de mudar a página</h2>
+  <p>A varredura é um instantâneo, não uma transmissão ao vivo. Se você abrir um modal, trocar de aba, expandir um acordeão ou rolar uma grade preguiçosa até aparecer depois de escanear, esses vetores novos ainda não estão na lista. O botão de reescanear no cabeçalho do popup relê a página como ela está agora. Esse é de longe o motivo mais comum de alguém relatar que um ícone está “faltando” — ele genuinamente não estava no DOM quando a varredura rodou.</p>
+
+  <h2>O que o contador não inclui</h2>
+  <p>Vetores dentro de <code>&lt;iframe&gt;</code>s de outra origem não são contados, porque a política de mesma origem do navegador significa que a própria página também não consegue lê-los — um mapa incorporado ou um widget de pagamento é outro documento sob outras regras. O que é renderizado num <code>&lt;canvas&gt;</code> também não conta, já que a essa altura virou pixels e não sobra vetor para extrair.</p>
+
+  <dl class="facts">
+    <div><dt>O contador</dt><dd>Vetores distintos <strong>depois da desduplicação</strong> — não a contagem bruta de elementos.</dd></div>
+    <div><dt>Instantâneo</dt><dd>Lê o DOM como ele está. <strong>Reescaneie</strong> depois de mudar a página.</dd></div>
+    <div><dt>Não contados</dt><dd>Iframes de outra origem e tudo que já foi rasterizado num <code>&lt;canvas&gt;</code>.</dd></div>
+    <div><dt>Veja também</dt><dd><a href="/pt-br/tutorials/extract-svg-from-website">Levar o conjunto todo</a> · <a href="/pt-br/features/bulk-zip-download">O recurso de ZIP</a></dd></div>
+  </dl>
+</div></section>
+
+<hr class="section-rule">
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Vale saber</p>
+  <h2>Perguntas frequentes</h2>
+  <div class="faq">
+    <details>
+      <summary>Por que ele acha mais SVGs do que eu consigo ver?</summary>
+      <div class="faq-body"><p>Porque uma página desenha vetores em lugares que você não contaria: o logo, cada chevron e xis de fechar, marcas sociais e de pagamento no rodapé, divisores decorativos, e ícones dentro de componentes que estão no DOM mas não estão visíveis agora.</p></div>
+    </details>
+    <details>
+      <summary>Um ícone que eu vejo não está na lista.</summary>
+      <div class="faq-body"><p>Ele provavelmente renderizou depois da varredura — conteúdo com carregamento preguiçoso, um modal que você abriu, uma aba que você trocou. Aperte o botão de reescanear no cabeçalho do popup para reler a página como ela está agora.</p></div>
+    </details>
+    <details>
+      <summary>Ele lê SVGs dentro de um iframe?</summary>
+      <div class="faq-body"><p>Os de outra origem não. A política de mesma origem significa que a própria página não consegue ler dentro de um mapa incorporado ou widget de pagamento, e nada que rode na página consegue também.</p></div>
+    </details>
+    <details>
+      <summary>E gráficos desenhados num canvas?</summary>
+      <div class="faq-body"><p>Esses já são pixels no momento em que são desenhados, então não sobra vetor para extrair. Um gráfico de canvas só pode ser capturado como raster.</p></div>
+    </details>
+    <details>
+      <summary>Posso baixar só alguns deles?</summary>
+      <div class="faq-body"><p>Sim — percorra até cada um e use Baixar o atual, nomeando conforme avança. Baixar tudo em ZIP está lá para quando você quiser o lote.</p></div>
+    </details>
+  </div>
+</div></section>
+
+<hr class="section-rule">
+
+<section><div class="wrap">
+  <div class="cta-band">
+    <div>
+      <h2>Descubra do que a página é realmente feita</h2>
+      <p>Conte primeiro, confira as prévias, e então leve exatamente o que quiser.</p>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Instalar a extensão</a>
+      <a class="btn quiet" href="/pt-br/tutorials">Todos os 15 tutoriais →</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="related"><div class="wrap">
+  <p class="eyebrow">Continue</p>
+  <ul>
+    <li><a href="/pt-br/tutorials/extract-svg-from-website">Levar o conjunto todo<span>Um ZIP</span></a></li>
+    <li><a href="/pt-br/tutorials/extract-svg-logo-from-website">Só o logo<span>Um vetor</span></a></li>
+    <li><a href="/pt-br/features/bulk-zip-download">O recurso de ZIP<span>Como ele empacota</span></a></li>
+  </ul>
+</div></section>
+</main>
+
+<footer>
+  <nav class="bleed foot-map" aria-label="Mapa do site">
+    <div class="col"><p>Produto</p><ul>
+      <li><a href="/pt-br/">Visão geral</a></li>
+      <li><a href="/pt-br/features">Recursos</a></li>
+      <li><a href="/pt-br/compare/svg-downloader-vs-screenshotting-icons">Vs. print de tela</a></li>
+      <li><a href="/pt-br/privacy">Privacidade</a></li>
+      <li><a href="/pt-br/use-cases">Casos de uso</a></li>
+    </ul></div>
+    <div class="col"><p>O que ele encontra</p><ul>
+      <li><a href="/pt-br/features/inline-svg">SVG inline</a></li>
+      <li><a href="/pt-br/features/css-background-svg">SVG em fundo CSS</a></li>
+      <li><a href="/pt-br/features/svg-sprite-extractor">SVG de sprite / &lt;use&gt;</a></li>
+      <li><a href="/pt-br/features/bulk-zip-download">Página inteira em ZIP</a></li>
+    </ul></div>
+    <div class="col"><p>Tutoriais</p><ul>
+      <li><a href="/pt-br/tutorials">Todos os 15 tutoriais</a></li>
+      <li><a href="/pt-br/tutorials/how-to-download-svg-files">Como baixar arquivos SVG</a></li>
+      <li><a href="/pt-br/tutorials/copy-svg-from-website">Copiar um SVG</a></li>
+      <li><a href="/pt-br/tutorials/extract-svg-from-website">Extrair todo SVG</a></li>
+    </ul></div>
+    <div class="col"><p>Docs</p><ul>
+      <li><a href="/pt-br/docs/installation">Instalação</a></li>
+      <li><a href="/pt-br/docs/usage">Uso</a></li>
+      <li><a href="/pt-br/docs/faq">Perguntas frequentes</a></li>
+      <li><a href="/pt-br/docs/changelog">Mudanças</a></li>
+    </ul></div>
+  </nav>
+  <div class="bleed colophon-foot">
+    <a href="https://github.com/Flozad/svg-downloader">GitHub</a>
+    <a href="https://github.com/Flozad/svg-downloader/issues">Issues</a>
+    <a href="https://clasicwebtools.com">clasicwebtools.com</a>
+    <span class="grow"></span>
+    <span>Papel osso, grafite e um único verde&nbsp;plotter</span>
+  </div>
+</footer>
+<script src="/player.js" defer=""></script>
+
+
+</body></html>

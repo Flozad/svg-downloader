@@ -176,8 +176,65 @@
 /* ── Steps figure block for guides (reuses .shot from style.css) ────────────*/
 .figrow { margin: 26px 0; }
 
+/* ── Case studies (use-case stories) ────────────────────────────────────────*/
+/* Byline chip: initials monogram + persona name and role. No avatar images —
+   the monogram is drawn from CSS, so nothing loads and nobody is impersonated. */
+.byline { display: flex; align-items: center; gap: 14px; margin: 0 0 4px; }
+.byline .mono-badge {
+  width: 46px; height: 46px; flex: none; border-radius: 50%;
+  display: grid; place-items: center; background: var(--plot-wash);
+  border: 1px solid var(--plot-line); color: var(--plot);
+  font-family: var(--mono); font-size: 15px; font-weight: 700; letter-spacing: 0.02em;
+}
+.byline b { display: block; font-family: var(--display); font-variation-settings: 'opsz' 20, 'wght' 620; font-size: 17px; color: var(--ink); }
+.byline span { font-family: var(--mono); font-size: 12px; letter-spacing: 0.02em; color: var(--dim); }
+
+/* Case-study meta strip — who, stack, the job, the result. Reuses .facts grid. */
+.case-meta dd .stack { color: var(--ink); }
+
+/* Pull quote — the persona's own words, set large and plotter-green ruled. */
+.pull {
+  margin: 34px 0; padding: 4px 0 4px 26px; border-left: 3px solid var(--plot);
+}
+.pull p {
+  font-family: var(--display); font-variation-settings: 'opsz' 32, 'wght' 520;
+  font-size: clamp(20px, 2.6vw, 26px); line-height: 1.34; letter-spacing: -0.02em;
+  color: var(--ink); margin: 0 0 12px;
+}
+.pull cite {
+  font-style: normal; font-family: var(--mono); font-size: 12px;
+  letter-spacing: 0.04em; color: var(--dim);
+}
+.pull cite b { color: var(--plot); font-weight: 700; }
+
+/* Outcome tiles — the concrete "after" numbers, mono-keyed. */
+.outcomes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 30px 0 4px; padding: 0; list-style: none; }
+.outcomes li {
+  padding: 22px 20px; background: var(--surface);
+  border: 1px solid var(--line-2); border-radius: var(--r-panel); padding-left: 20px;
+}
+.outcomes li::before { display: none; }
+.outcomes b {
+  display: block; font-family: var(--display); font-variation-settings: 'opsz' 40, 'wght' 640;
+  font-size: clamp(26px, 4vw, 34px); letter-spacing: -0.03em; color: var(--plot); line-height: 1;
+}
+.outcomes span { display: block; margin-top: 8px; font-size: 14px; color: var(--ink-2); }
+
+/* Illustrative-content disclosure — small, honest, unobtrusive. */
+.disclosure {
+  font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.02em; color: var(--dim);
+  border-top: 1px solid var(--line); margin-top: 40px; padding-top: 16px;
+}
+
+@media (max-width: 720px) {
+  .outcomes { grid-template-columns: 1fr; }
+}
+
 /* ── Footer sitemap (homepage + interior) ───────────────────────────────────*/
-.foot-map { display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; padding-block: 48px 8px; }
+/* Auto-fit rather than a fixed count: the sitemap runs four columns on most
+   pages and five where Tutorials joins Guides, and a hard repeat(4) pushed the
+   fifth onto its own orphaned row. */
+.foot-map { display: grid; grid-template-columns: repeat(auto-fit, minmax(158px, 1fr)); gap: 26px; padding-block: 48px 8px; }
 .foot-map .col p { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dim); margin: 0 0 14px; }
 .foot-map .col ul { list-style: none; margin: 0; padding: 0; }
 .foot-map .col li { margin: 0 0 9px; }
@@ -196,4 +253,39 @@
   .facts > div { grid-template-columns: 1fr; gap: 8px; }
   .foot-map { grid-template-columns: 1fr 1fr; gap: 22px; }
   .cta-band { flex-direction: column; align-items: flex-start; }
+}
+
+/* ── Tutorial beat list ─────────────────────────────────────────────────────*/
+/* The caption track of the recording, written out. It is a real transcript, so
+   a reader who cannot or will not play the video still gets every step — and
+   the page carries the words the video says rather than hiding them in a file. */
+.beats {
+  counter-reset: beat;
+  list-style: none;
+  margin: 18px 0 0;
+  padding: 0;
+  border-top: 1px solid var(--line-2);
+}
+.beats > li {
+  counter-increment: beat;
+  position: relative;
+  margin: 0;
+  padding: 13px 4px 13px 46px;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink-2);
+  font-size: 15.5px;
+  line-height: 1.6;
+}
+/* The counter shares the first line box of the text (same top, same computed
+   line-height) so the number sits ON the line rather than a few px above it. */
+.beats > li::before {
+  content: counter(beat, decimal-leading-zero);
+  position: absolute;
+  left: 4px;
+  top: 13px;
+  font-family: var(--mono);
+  font-size: 11px;
+  line-height: calc(15.5px * 1.6);
+  letter-spacing: 0.06em;
+  color: var(--plot);
 }

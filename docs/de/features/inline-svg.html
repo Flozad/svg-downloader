@@ -1,0 +1,243 @@
+<!DOCTYPE html><html lang="de"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inline-SVG von jeder Webseite laden — SVG Downloader</title>
+<meta name="description" content="Inline-SVG hat kein Rechtsklick-Menü, der Browser speichert es also nicht. SVG Downloader liest es aus dem DOM, repariert das xmlns und speichert den Originalvektor.">
+<link rel="canonical" href="https://svg.clasicwebtools.com/de/features/inline-svg"><!--i18n:alternates-->
+<link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/features/inline-svg">
+<link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/features/inline-svg">
+<link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/features/inline-svg">
+<link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/features/inline-svg">
+<link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/features/inline-svg">
+<link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/features/inline-svg">
+<!--/i18n:alternates-->
+<link rel="alternate" type="text/plain" href="https://svg.clasicwebtools.com/llms.txt" title="llms.txt — machine-readable site summary">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="author" content="Flozad">
+<meta name="theme-color" content="#ece4d3">
+<meta property="og:site_name" content="SVG Downloader">
+<meta property="og:title" content="Inline-SVG von jeder Webseite laden">
+<meta property="og:description" content="Inline-SVG hat kein Rechtsklick-Menü, der Browser speichert es also nicht. SVG Downloader liest es aus dem DOM, repariert das xmlns und speichert den Originalvektor.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://svg.clasicwebtools.com/de/features/inline-svg">
+<meta property="og:image" content="https://svg.clasicwebtools.com/motion/06-brand.png">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="SVG Downloader speichert einen Inline-Vektor von einer Seite.">
+<meta property="og:locale" content="de_DE">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@lozards">
+<meta name="twitter:title" content="Inline-SVG von jeder Webseite laden">
+<meta name="twitter:description" content="Inline-SVG hat kein Rechtsklick-Menü, der Browser speichert es also nicht. SVG Downloader liest es aus dem DOM, repariert das xmlns und speichert den Originalvektor.">
+<meta name="twitter:image" content="https://svg.clasicwebtools.com/motion/06-brand.png">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/fonts/bricolage-var.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/pages.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Start",
+          "item": "https://svg.clasicwebtools.com/de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Funktionen",
+          "item": "https://svg.clasicwebtools.com/de/features"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Inline-SVG",
+          "item": "https://svg.clasicwebtools.com/de/features/inline-svg"
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://svg.clasicwebtools.com/de/features/inline-svg",
+      "url": "https://svg.clasicwebtools.com/de/features/inline-svg",
+      "name": "Inline-SVG von jeder Webseite laden",
+      "description": "Wie SVG Downloader Inline-<svg>-Elemente aus dem DOM zieht und den Originalvektor speichert.",
+      "inLanguage": "de",
+      "isPartOf": {
+        "@id": "https://svg.clasicwebtools.com/de/#website"
+      },
+      "about": {
+        "@id": "https://svg.clasicwebtools.com/de/#app"
+      },
+      "primaryImageOfPage": "https://svg.clasicwebtools.com/motion/06-brand.png"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Zum Inhalt springen</a>
+
+<nav class="nav">
+  <a class="brand" href="/de/">
+    <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+      <rect width="48" height="48" rx="10" fill="var(--plot)"></rect>
+      <path d="M24 13v15m0 0l-6.5-6.5M24 28l6.5-6.5" fill="none" stroke="var(--surface-hi)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+      <rect x="16.5" y="33.5" width="15" height="2.4" rx="1.2" fill="var(--surface-hi)"></rect>
+    </svg>
+    <strong>SVG&nbsp;Downloader</strong>
+  </a>
+  <span class="spacer"></span>
+  <span class="nav-links">
+    <a href="/de/features" aria-current="page">Funktionen</a>
+    <a href="/de/tutorials">Tutorials</a>
+    <a href="/de/guides">Anleitungen</a>
+    <a href="/de/docs">Doku</a>
+    <a href="/de/privacy">Datenschutz</a>
+    <a href="/de/use-cases">Praxis</a>
+  </span><!--i18n:switch-->
+  <details class="lang-switch">
+    <summary aria-label="Sprache"><span>DE</span></summary>
+    <ul>
+      <li><a href="/features/inline-svg" hreflang="en" lang="en">English</a></li>
+      <li><a href="/es/features/inline-svg" hreflang="es" lang="es">Español</a></li>
+      <li><a href="/fr/features/inline-svg" hreflang="fr" lang="fr">Français</a></li>
+      <li><a href="/de/features/inline-svg" hreflang="de" lang="de" aria-current="true">Deutsch</a></li>
+      <li><a href="/pt-br/features/inline-svg" hreflang="pt-BR" lang="pt-BR">Português</a></li>
+    </ul>
+  </details>
+  <!--/i18n:switch-->
+  <a class="nav-cta" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Erweiterung installieren</a>
+</nav>
+
+<main id="main">
+<header class="page-hero"><div class="wrap">
+  <ol class="crumbs">
+    <li><a href="/de/">Start</a></li>
+    <li><a href="/de/features">Funktionen</a></li>
+    <li><span aria-current="page">Inline-SVG</span></li>
+  </ol>
+  <p class="eyebrow">Funktion — jede Quelle · 1 von 4</p>
+  <h1>Lade <span class="plot">Inline-SVG</span> von jeder Seite</h1>
+  <p class="lede">Ein Inline-<code>&lt;svg&gt;</code> ist direkt ins HTML gezeichnet, hat also keine Bild-URL und kein Rechtsklick-Menü. SVG Downloader liest es direkt aus dem DOM, repariert es und gibt dir die Originaldatei.</p>
+  <div class="cta">
+    <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 12v16m0 0l-7-7m7 7l7-7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"></path><rect x="16" y="34" width="16" height="2.6" rx="1.3" fill="currentColor"></rect></svg>
+      Erweiterung installieren</a>
+    <a class="btn quiet" href="/de/guides/how-to-download-svg-from-any-website">Anleitung lesen →</a>
+  </div>
+</div></header>
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Das Problem</p>
+  <h2>Warum der Browser Inline-SVG nicht speichert</h2>
+  <p class="lead-in">Die meisten Icons einer modernen Website sind Inline-SVG — das Markup steht direkt im HTML der Seite statt in einer eigenen Datei. Großartig für Tempo und Gestaltung, furchtbar fürs Speichern. Es gibt kein <code>src</code>, das man in einem Tab öffnen könnte, keinen Eintrag im Kontextmenü, und <em>Bild speichern unter…</em> ist ausgegraut oder fehlt ganz.</p>
+  <p>Die üblichen Umwege taugen nichts. Ein Screenshot des Icons liefert ein unscharfes Raster in genau einer Größe. In den DevTools zu wühlen heißt, den richtigen <code>&lt;svg&gt;</code>-Knoten zu jagen, sein äußeres HTML zu kopieren, es in eine Datei zu setzen und dann festzustellen, dass sie nicht öffnet, weil der Namensraum fehlt. Du wolltest eine 400-Byte-Datei; bekommen hast du eine Pflichtaufgabe.</p>
+
+  <h2>Was SVG Downloader stattdessen tut</h2>
+  <p>Öffne das Popup auf einer beliebigen Seite, und es durchläuft das DOM nach jedem <code>&lt;svg&gt;</code>-Element, auch nach denen tief in Komponenten, in shadow-nahem Markup und in wiederholten Icon-Sätzen. Jedes bekommt eine isolierte Vorschau, damit du genau siehst, was du gleich speicherst, fern der überladenen Seite. Wähle eins, und es schreibt das Original-Markup in eine echte <code>.svg</code>-Datei.</p>
+  <ul>
+    <li><strong>Die echten Pfade, kein neues Rendering.</strong> Gespeichert wird das SVG, das in der Seite stand — seine exakten <code>d</code>-Attribute, sein <code>viewBox</code>, seine eigene Präzision. Es bleibt bei 16 px wie bei 1600 px scharf und bleibt editierbarer Text zum Umfärben.</li>
+    <li><strong>Ein repariertes <code>xmlns</code>.</strong> Inline-SVG lässt den Namensraum <code>xmlns="http://www.w3.org/2000/svg"</code> meist weg, weil der Browser ihn liefert. In eine nackte Datei kopiert, öffnet dieses SVG nicht. SVG Downloader ergänzt ihn, damit die Datei in Figma, Illustrator, VS Code und jedem Browser funktioniert.</li>
+    <li><strong>Der Dateiname gehört dir.</strong> Tipp vor dem Speichern einen Namen ins Popup, und die Datei heißt genau so — <code>star.svg</code>, nicht <code>download (3).svg</code>. Lass es leer, greift ein nummeriertes <code>svg-1.svg</code> mit dem Präfix aus den Optionen der Erweiterung.</li>
+  </ul>
+
+  <h2>Was du zurückbekommst</h2>
+  <dl class="facts">
+    <div><dt>Format</dt><dd>Eine standardkonforme <strong>.svg</strong>-Datei — das originale Vektor-Markup mit repariertem Namensraum.</dd></div>
+    <div><dt>Treue</dt><dd>Jeder Pfad und jedes <code>viewBox</code> erhalten. <strong>Auflösungsunabhängig</strong> und weiterhin umfärbbar.</dd></div>
+    <div><dt>Wo es läuft</dt><dd>Vollständig <strong>in deinem Browser</strong>. Das Inline-SVG verlässt die Seite nie — kein Upload, kein Server.</dd></div>
+    <div><dt>Kann außerdem</dt><dd><a href="/de/features/css-background-svg">CSS-Hintergründe</a>, <a href="/de/features/svg-sprite-extractor">Sprite-Referenzen</a> und <a href="/de/features/bulk-zip-download">ZIP der ganzen Seite</a>.</dd></div>
+  </dl>
+</div></section>
+
+<hr class="section-rule">
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Gut zu wissen</p>
+  <h2>Fragen zu Inline-SVG</h2>
+  <div class="faq">
+    <details>
+      <summary>Warum kann ich ein Inline-SVG nicht per Rechtsklick speichern?</summary>
+      <div class="faq-body"><p>Weil ein Inline-<code>&lt;svg&gt;</code> Teil des Dokuments ist, kein Bild mit eigener Adresse. Der Browser bietet <em>Bild speichern unter…</em> nur für das an, was er als Bild behandelt — <code>&lt;img&gt;</code>, CSS-Hintergründe, Canvas. Inline-SVG hat keine URL zum Speichern, also erscheint die Option nie.</p></div>
+    </details>
+    <details>
+      <summary>Das aus den DevTools kopierte SVG öffnet nicht. Warum?</summary>
+      <div class="faq-body"><p>Fast immer ein fehlender Namensraum. Inline-SVG verlässt sich auf den HTML-Parser, um als SVG erkannt zu werden; eine eigenständige Datei braucht ein ausdrückliches <code>xmlns="http://www.w3.org/2000/svg"</code>. SVG Downloader ergänzt es automatisch, damit seine Dateien überall ohne Nacharbeit öffnen.</p></div>
+    </details>
+    <details>
+      <summary>Behält das geladene Icon seine Farbe?</summary>
+      <div class="faq-body"><p>Es behält die Farbe, die im Markup steckt. Viele Inline-Icons erben ihre Farbe aus dem CSS (<code>currentColor</code>), die gespeicherte Datei kann also schwarz sein. Willst du vorher eine bestimmte Farbe festlegen, nimm den Sprung zum SVG Color Changer und speichere danach.</p></div>
+    </details>
+  </div>
+</div></section>
+
+<hr class="section-rule">
+
+<section><div class="wrap">
+  <div class="cta-band">
+    <div>
+      <h2>Schnapp dir das Icon mit zwei Klicks</h2>
+      <p>Kostenlos, privat, und es liest das Inline-SVG, das der Browser ignoriert.</p>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Erweiterung installieren</a>
+      <a class="btn quiet" href="/de/features">Alle Funktionen →</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="related"><div class="wrap">
+  <p class="eyebrow">Weiterlesen</p>
+  <ul>
+    <li><a href="/de/features/css-background-svg">SVG im CSS-Hintergrund<span>Die andere unsichtbare Quelle</span></a></li>
+    <li><a href="/de/features/svg-sprite-extractor">Sprite- &amp; &lt;use&gt;-SVG<span>Ein Sprite-Sheet aufteilen</span></a></li>
+    <li><a href="/de/guides/how-to-extract-svg-icons-from-a-website">SVG-Icons extrahieren<span>Schritt für Schritt</span></a></li>
+  </ul>
+</div></section>
+</main>
+
+<footer>
+  <nav class="bleed foot-map" aria-label="Sitemap">
+    <div class="col"><p>Produkt</p><ul>
+      <li><a href="/de/">Überblick</a></li>
+      <li><a href="/de/features">Funktionen</a></li>
+      <li><a href="/de/compare/svg-downloader-vs-screenshotting-icons">Vs. Screenshot</a></li>
+      <li><a href="/de/privacy">Datenschutz</a></li>
+      <li><a href="/de/use-cases">Anwendungsfälle</a></li>
+    </ul></div>
+    <div class="col"><p>Erkennt</p><ul>
+      <li><a href="/de/features/inline-svg">Inline-SVG</a></li>
+      <li><a href="/de/features/css-background-svg">SVG im CSS-Hintergrund</a></li>
+      <li><a href="/de/features/svg-sprite-extractor">Sprite- / &lt;use&gt;-SVG</a></li>
+      <li><a href="/de/features/bulk-zip-download">Ganze Seite als ZIP</a></li>
+    </ul></div>
+    <div class="col"><p>Tutorials</p><ul>
+      <li><a href="/de/tutorials">Alle 15 Tutorials</a></li>
+      <li><a href="/de/tutorials/how-to-download-svg-files">SVG-Dateien herunterladen</a></li>
+      <li><a href="/de/tutorials/copy-svg-from-website">Ein SVG kopieren</a></li>
+      <li><a href="/de/guides">Ausführliche Anleitungen</a></li>
+    </ul></div>
+    <div class="col"><p>Doku</p><ul>
+      <li><a href="/de/docs/installation">Installation</a></li>
+      <li><a href="/de/docs/usage">Bedienung</a></li>
+      <li><a href="/de/docs/faq">FAQ</a></li>
+      <li><a href="/de/docs/changelog">Changelog</a></li>
+    </ul></div>
+  </nav>
+  <div class="bleed colophon-foot">
+    <a href="https://github.com/Flozad/svg-downloader">GitHub</a>
+    <a href="https://github.com/Flozad/svg-downloader/issues">Issues</a>
+    <a href="https://clasicwebtools.com">clasicwebtools.com</a>
+    <span class="grow"></span>
+    <span>Knochenpapier, Graphit, ein einziges Plotter&nbsp;grün</span>
+  </div>
+</footer>
+
+
+</body></html>

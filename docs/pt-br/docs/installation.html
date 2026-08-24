@@ -1,0 +1,256 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Instalar o SVG Downloader — carregar sem compactação no Chrome, Edge, Brave</title>
+<meta name="description" content="Instale o SVG Downloader sem compactação — baixe o repositório, abra chrome://extensions, ative o Modo do desenvolvedor e selecione a pasta. Funciona no Chrome, Edge e Brave.">
+<link rel="canonical" href="https://svg.clasicwebtools.com/pt-br/docs/installation"><!--i18n:alternates-->
+<link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/docs/installation">
+<link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/docs/installation">
+<link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/docs/installation">
+<link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/docs/installation">
+<link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/docs/installation">
+<link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/docs/installation">
+<!--/i18n:alternates-->
+<link rel="alternate" type="text/plain" href="https://svg.clasicwebtools.com/llms.txt" title="llms.txt — machine-readable site summary">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="author" content="Flozad">
+<meta name="theme-color" content="#ece4d3">
+<meta property="og:site_name" content="SVG Downloader">
+<meta property="og:title" content="Instalar o SVG Downloader — carregar sem compactação no Chrome, Edge, Brave">
+<meta property="og:description" content="Instale o SVG Downloader sem compactação — baixe o repositório, abra chrome://extensions, ative o Modo do desenvolvedor e selecione a pasta. Funciona no Chrome, Edge e Brave.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://svg.clasicwebtools.com/pt-br/docs/installation">
+<meta property="og:image" content="https://svg.clasicwebtools.com/motion/06-brand.png">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="SVG Downloader salvando um vetor inline de uma página.">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@lozards">
+<meta name="twitter:title" content="Instalar o SVG Downloader — carregar sem compactação">
+<meta name="twitter:description" content="Instale o SVG Downloader sem compactação — baixe o repositório, abra chrome://extensions, ative o Modo do desenvolvedor e selecione a pasta. Funciona no Chrome, Edge e Brave.">
+<meta name="twitter:image" content="https://svg.clasicwebtools.com/motion/06-brand.png">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/fonts/bricolage-var.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/pages.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Início",
+          "item": "https://svg.clasicwebtools.com/pt-br/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Docs",
+          "item": "https://svg.clasicwebtools.com/pt-br/docs"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Instalação",
+          "item": "https://svg.clasicwebtools.com/pt-br/docs/installation"
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "name": "Instalar o SVG Downloader carregando sem compactação",
+      "description": "Carregue a extensão SVG Downloader sem compactação num navegador Chromium — Chrome, Edge ou Brave.",
+      "inLanguage": "pt-BR",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Baixe o repositório",
+          "text": "Baixe ou clone github.com/Flozad/svg-downloader e descompacte se precisar.",
+          "url": "https://svg.clasicwebtools.com/pt-br/docs/installation#download"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Abra a página de extensões",
+          "text": "Abra chrome://extensions no Chrome, edge://extensions no Edge ou brave://extensions no Brave.",
+          "url": "https://svg.clasicwebtools.com/pt-br/docs/installation#extensions"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Ative o Modo do desenvolvedor",
+          "text": "Ligue o botão de Modo do desenvolvedor no canto superior direito.",
+          "url": "https://svg.clasicwebtools.com/pt-br/docs/installation#developer"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Carregar sem compactação",
+          "text": "Clique em Carregar sem compactação e selecione a pasta extension dentro do repositório.",
+          "url": "https://svg.clasicwebtools.com/pt-br/docs/installation#load"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 5,
+          "name": "Fixe e teste",
+          "text": "Fixe a extensão, abra qualquer página com ícones, clique no botão e salve um SVG.",
+          "url": "https://svg.clasicwebtools.com/pt-br/docs/installation#test"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Pular para o conteúdo</a>
+
+<nav class="nav">
+  <a class="brand" href="/pt-br/">
+    <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+      <rect width="48" height="48" rx="10" fill="var(--plot)"></rect>
+      <path d="M24 13v15m0 0l-6.5-6.5M24 28l6.5-6.5" fill="none" stroke="var(--surface-hi)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+      <rect x="16.5" y="33.5" width="15" height="2.4" rx="1.2" fill="var(--surface-hi)"></rect>
+    </svg>
+    <strong>SVG&nbsp;Downloader</strong>
+  </a>
+  <span class="spacer"></span>
+  <span class="nav-links">
+    <a href="/pt-br/features">Recursos</a>
+    <a href="/pt-br/tutorials">Tutoriais</a>
+    <a href="/pt-br/guides">Guias</a>
+    <a href="/pt-br/docs" aria-current="page">Docs</a>
+    <a href="/pt-br/privacy">Privacidade</a>
+    <a href="/pt-br/use-cases">Histórias</a>
+  </span><!--i18n:switch-->
+  <details class="lang-switch">
+    <summary aria-label="Idioma"><span>PT</span></summary>
+    <ul>
+      <li><a href="/docs/installation" hreflang="en" lang="en">English</a></li>
+      <li><a href="/es/docs/installation" hreflang="es" lang="es">Español</a></li>
+      <li><a href="/fr/docs/installation" hreflang="fr" lang="fr">Français</a></li>
+      <li><a href="/de/docs/installation" hreflang="de" lang="de">Deutsch</a></li>
+      <li><a href="/pt-br/docs/installation" hreflang="pt-BR" lang="pt-BR" aria-current="true">Português</a></li>
+    </ul>
+  </details>
+  <!--/i18n:switch-->
+  <a class="nav-cta" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Instalar a extensão</a>
+</nav>
+
+<main id="main">
+<header class="page-hero"><div class="wrap">
+  <ol class="crumbs">
+    <li><a href="/pt-br/">Início</a></li>
+    <li><a href="/pt-br/docs">Docs</a></li>
+    <li><span aria-current="page">Instalação</span></li>
+  </ol>
+  <p class="eyebrow">Docs — instalação</p>
+  <h1>Instalar <span class="plot">carregando&nbsp;sem&nbsp;compactação</span></h1>
+  <p class="lede">Ainda não há ficha na Chrome Web Store. Quando houver, instalar será um clique; até lá, carregue sem compactação — um trabalho de dois minutos, igual no Chrome, Edge e Brave.</p>
+  <div class="cta">
+    <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 12v16m0 0l-7-7m7 7l7-7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"></path><rect x="16" y="34" width="16" height="2.6" rx="1.3" fill="currentColor"></rect></svg>
+      Instalar a extensão</a>
+    <a class="btn quiet" href="/pt-br/docs/usage">Depois leia Uso →</a>
+  </div>
+</div></header>
+
+<section><div class="bleed"><div class="doc-shell">
+  <aside class="doc-nav" aria-label="Navegação da documentação">
+    <p>Documentação</p>
+    <ul>
+      <li><a href="/pt-br/docs">Visão geral</a></li>
+      <li><a href="/pt-br/docs/installation" aria-current="page">Instalação</a></li>
+      <li><a href="/pt-br/docs/usage">Uso</a></li>
+      <li><a href="/pt-br/docs/faq">Perguntas frequentes</a></li>
+      <li><a href="/pt-br/docs/changelog">Mudanças</a></li>
+    </ul>
+  </aside>
+  <div class="prose">
+    <p class="eyebrow">Antes de começar</p>
+    <h2>O que você precisa</h2>
+    <p class="lead-in">Um navegador baseado em Chromium — Chrome 88 ou mais novo, ou um Edge ou Brave atual — e o código da extensão. A extensão é código de desenvolvimento sem compactação, não um <code>.crx</code> empacotado, então você aponta o navegador direto para a pasta.</p>
+
+    <h2 id="download">Carregue sem compactação</h2>
+    <ol>
+      <li id="download">Baixe ou clone <a href="https://github.com/Flozad/svg-downloader">github.com/Flozad/svg-downloader</a>. Se você baixou um ZIP, descompacte num lugar que não vá apagar — o navegador lê os arquivos daquela pasta toda vez que carrega a extensão.</li>
+      <li id="extensions">Abra a página de extensões: <code>chrome://extensions</code> no Chrome, <code>edge://extensions</code> no Edge ou <code>brave://extensions</code> no Brave.</li>
+      <li id="developer">Ative o <strong>Modo do desenvolvedor</strong> no botão do canto superior direito. Sem ele, <em>Carregar sem compactação</em> continua escondido.</li>
+      <li id="load">Clique em <strong>Carregar sem compactação</strong> e selecione a pasta <code>extension</code> dentro do repositório — a que tem o <code>manifest.json</code>, não a raiz do repositório.</li>
+      <li id="test">Fixe a extensão pelo menu da peça de quebra-cabeça, abra qualquer página com ícones, clique no botão do SVG Downloader e salve um arquivo para confirmar que funciona.</li>
+    </ol>
+
+    <h2>Edge e Brave</h2>
+    <p>Ambos são navegadores Chromium, então a extensão roda sem mudanças. A única diferença é o endereço que você abre no passo dois — <code>edge://extensions</code> ou <code>brave://extensions</code> — e os dois mantêm o mesmo botão de <strong>Modo do desenvolvedor</strong> e o <strong>Carregar sem compactação</strong>. Todo o resto destes docs se aplica igual.</p>
+
+    <h2>Mantendo ela por perto</h2>
+    <p>Uma extensão sem compactação continua instalada enquanto a pasta dela ficar no lugar. Se você mover ou apagar a pasta, o navegador descarta a extensão na próxima abertura — basta recarregar com os mesmos passos. Para atualizar, puxe o repositório mais recente e clique no ícone de recarregar no cartão da extensão.</p>
+
+    <h2>O que ela pode tocar</h2>
+    <p>São quatro permissões, todas estreitas por projeto. <code>activeTab</code> e <code>scripting</code> leem o DOM da página atual, e só quando você abre o popup. <code>downloads</code> grava arquivos na sua pasta de downloads quando você salva. <code>storage</code> guarda suas preferências. Ela não tem acesso em segundo plano a outras abas e não faz chamadas de rede próprias além de buscar os SVGs que a página já referencia. O detalhamento completo está nas <a href="/pt-br/docs/faq">perguntas frequentes</a> e na <a href="/pt-br/privacy">política de privacidade</a>.</p>
+
+    <p>Instalou? Vá para <a href="/pt-br/docs/usage">Uso</a> e aprenda o popup, ou pule direto para uma tarefa nos <a href="/pt-br/guides">guias</a>.</p>
+  </div>
+</div></div></section>
+
+<hr class="section-rule">
+
+<section><div class="wrap">
+  <div class="cta-band">
+    <div>
+      <h2>Dois minutos até o seu primeiro SVG</h2>
+      <p>Grátis, licença MIT, no dispositivo. Chrome 88+, Edge e Brave.</p>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Instalar a extensão</a>
+      <a class="btn quiet" href="/pt-br/docs/usage">Como usar →</a>
+    </div>
+  </div>
+</div></section>
+</main>
+
+<footer>
+  <nav class="bleed foot-map" aria-label="Mapa do site">
+    <div class="col"><p>Produto</p><ul>
+      <li><a href="/pt-br/">Visão geral</a></li>
+      <li><a href="/pt-br/features">Recursos</a></li>
+      <li><a href="/pt-br/compare/svg-downloader-vs-screenshotting-icons">Vs. print de tela</a></li>
+      <li><a href="/pt-br/privacy">Privacidade</a></li>
+      <li><a href="/pt-br/use-cases">Casos de uso</a></li>
+    </ul></div>
+    <div class="col"><p>O que ele encontra</p><ul>
+      <li><a href="/pt-br/features/inline-svg">SVG inline</a></li>
+      <li><a href="/pt-br/features/css-background-svg">SVG em fundo CSS</a></li>
+      <li><a href="/pt-br/features/svg-sprite-extractor">SVG de sprite / &lt;use&gt;</a></li>
+      <li><a href="/pt-br/features/bulk-zip-download">Página inteira em ZIP</a></li>
+    </ul></div>
+    <div class="col"><p>Tutoriais</p><ul>
+      <li><a href="/pt-br/tutorials">Todos os 15 tutoriais</a></li>
+      <li><a href="/pt-br/tutorials/how-to-download-svg-files">Como baixar arquivos SVG</a></li>
+      <li><a href="/pt-br/tutorials/copy-svg-from-website">Copiar um SVG</a></li>
+      <li><a href="/pt-br/guides">Guias completos</a></li>
+    </ul></div>
+    <div class="col"><p>Docs</p><ul>
+      <li><a href="/pt-br/docs/installation">Instalação</a></li>
+      <li><a href="/pt-br/docs/usage">Uso</a></li>
+      <li><a href="/pt-br/docs/faq">Perguntas frequentes</a></li>
+      <li><a href="/pt-br/docs/changelog">Mudanças</a></li>
+    </ul></div>
+  </nav>
+  <div class="bleed colophon-foot">
+    <a href="https://github.com/Flozad/svg-downloader">GitHub</a>
+    <a href="https://github.com/Flozad/svg-downloader/issues">Issues</a>
+    <a href="https://clasicwebtools.com">clasicwebtools.com</a>
+    <span class="grow"></span>
+    <span>Papel osso, grafite e um único verde&nbsp;plotter</span>
+  </div>
+</footer>
+
+
+</body></html>

@@ -24,10 +24,10 @@ export default defineConfig({
       // dark-plate heuristic is untested), which is what holds the global
       // numbers down from the ~95% the other files reach.
       thresholds: {
-        statements: 90,
+        statements: 92,
         branches: 83,
-        functions: 92,
-        lines: 93,
+        functions: 93,
+        lines: 95,
       },
     },
   },

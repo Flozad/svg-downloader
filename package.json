@@ -20,6 +20,9 @@
     "lint": "biome check extension test scripts",
     "format": "biome check --write extension test scripts",
     "package": "bash scripts/package.sh",
+    "i18n:extract": "node scripts/i18n/extract.mjs",
+    "i18n:build": "node scripts/i18n/build.mjs",
+    "i18n:check": "node scripts/i18n/build.mjs --check",
     "fixtures:serve": "node scripts/fixture-capture/serve.mjs"
   },
   "devDependencies": {

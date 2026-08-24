@@ -20,6 +20,21 @@
   let currentIndex = -1;
 
   const SVG_NS = 'http://www.w3.org/2000/svg';
+  const XLINK_NS = 'http://www.w3.org/1999/xlink';
+
+  // The element under the pointer when the user last opened the context menu.
+  // contextmenu fires before the menu item is clicked, so this is how the
+  // background's "Save this as SVG" learns *which* graphic was targeted.
+  // composedPath()[0] pierces shadow DOM — the real target inside a web
+  // component, not the host — falling back to event.target where unavailable.
+  let lastContextTarget = null;
+  document.addEventListener(
+    'contextmenu',
+    (event) => {
+      lastContextTarget = event.composedPath?.()[0] || event.target;
+    },
+    true
+  );
 
   function isSvgUrl(url) {
     if (!url) return false;
@@ -202,9 +217,81 @@
     return shadowIdIndex.get(id) || null;
   }
 
-  // Inline <svg>. For sprite icons (<use href="#id">) whose target is a
-  // same-document symbol, inline the referenced node into a clone so the
-  // extracted file is not an empty husk. Never mutate the live page DOM.
+  // Split `sprite.svg#cart` into an absolute file URL and the fragment id. A
+  // bare `#cart` (same-document) is handled elsewhere; this is only for the
+  // external form, so both halves must be present.
+  function parseExternalRef(ref) {
+    const hash = ref.indexOf('#');
+    if (hash <= 0) return null;
+    const url = toAbsolute(ref.slice(0, hash));
+    const id = ref.slice(hash + 1);
+    if (!url || !id) return null;
+    return { url, id };
+  }
+
+  // Turn one live <svg> into standalone markup. Same-document <use> targets are
+  // inlined into a <defs> so the geometry survives; external sprite references
+  // (`<use href="icons.svg#id">`) are rewritten to a local synthetic id and
+  // reported as `externalUses`, for the popup (or the offscreen sanitizer) to
+  // resolve by fetching the sprite file. Never mutates the live page DOM — all
+  // edits happen on the clone.
+  function buildStandaloneClone(svg) {
+    const clone = svg.cloneNode(true);
+    resolveColors(svg, clone);
+    const externalUses = [];
+
+    const uses = clone.querySelectorAll('use');
+    if (uses.length > 0) {
+      let defs = null;
+      const inlined = new Set();
+      let extIndex = 0;
+      uses.forEach((use) => {
+        const ref = use.getAttribute('href') || use.getAttribute('xlink:href');
+        if (!ref) return;
+        if (ref.startsWith('#')) {
+          const id = ref.slice(1);
+          if (inlined.has(id)) return;
+          const target = resolveRef(svg, id);
+          if (target) {
+            if (!defs) {
+              defs = document.createElementNS(SVG_NS, 'defs');
+              clone.insertBefore(defs, clone.firstChild);
+            }
+            // Resolve one level only; a symbol may itself contain a <use>
+            // pointing at another symbol, which is left unresolved.
+            const targetClone = target.cloneNode(true);
+            resolveColors(target, targetClone);
+            defs.appendChild(targetClone);
+            inlined.add(id);
+          }
+        } else {
+          const parsed = parseExternalRef(ref);
+          if (parsed) {
+            const localId = `svgdl-ext-${extIndex++}`;
+            use.setAttribute('href', `#${localId}`);
+            use.removeAttribute('xlink:href');
+            externalUses.push({ url: parsed.url, id: parsed.id, localId });
+          }
+        }
+      });
+    }
+
+    // Inline HTML <svg> may omit the SVG namespace (and xmlns:xlink even when it
+    // uses xlink:href) — legal in HTML, but a standalone image/svg+xml file
+    // without them won't render, breaking the popup preview. Declare them on the
+    // clone so the content is a valid standalone file everywhere.
+    if (!clone.getAttribute('xmlns')) {
+      clone.setAttribute('xmlns', SVG_NS);
+    }
+    if (!clone.getAttribute('xmlns:xlink') && /xlink:/.test(clone.outerHTML)) {
+      clone.setAttribute('xmlns:xlink', XLINK_NS);
+    }
+
+    return { content: clone.outerHTML, externalUses };
+  }
+
+  // Inline <svg>. Sprite icons are inlined (same-document) or reported for
+  // deferred resolution (external), so neither downloads as an empty husk.
   function collectInlineSVGs(counters) {
     const items = [];
     deepQueryAll('svg').forEach((svg) => {
@@ -214,64 +301,17 @@
         return;
       }
 
-      const uses = svg.querySelectorAll('use');
-      const clone = svg.cloneNode(true);
-      resolveColors(svg, clone);
-      let hasExternalUse = false;
-
-      if (uses.length > 0) {
-        let defs = null;
-        const inlined = new Set();
-        clone.querySelectorAll('use').forEach((use) => {
-          const ref = use.getAttribute('href') || use.getAttribute('xlink:href');
-          if (!ref) return;
-          if (ref.startsWith('#')) {
-            const id = ref.slice(1);
-            if (inlined.has(id)) return;
-            const target = resolveRef(svg, id);
-            if (target) {
-              if (!defs) {
-                defs = document.createElementNS(SVG_NS, 'defs');
-                clone.insertBefore(defs, clone.firstChild);
-              }
-              // Resolve one level only; a symbol may itself contain a <use>
-              // pointing at another symbol, which is left unresolved.
-              const targetClone = target.cloneNode(true);
-              resolveColors(target, targetClone);
-              defs.appendChild(targetClone);
-              inlined.add(id);
-            }
-          } else {
-            // External sprite file (e.g. /sprite.svg#cart) — cannot be inlined
-            // here; the file would download blank, so skip and count it.
-            hasExternalUse = true;
-          }
-        });
-      }
-
-      if (hasExternalUse) {
-        counters.skipped++;
-        return;
-      }
-
-      // Inline HTML <svg> may omit the SVG namespace (and xmlns:xlink even when
-      // it uses xlink:href) — legal in HTML, but a standalone image/svg+xml file
-      // without them won't render, breaking the popup preview. Declare them on
-      // the clone so svg.content is a valid standalone file everywhere.
-      if (!clone.getAttribute('xmlns')) {
-        clone.setAttribute('xmlns', SVG_NS);
-      }
-      if (!clone.getAttribute('xmlns:xlink') && /xlink:/.test(clone.outerHTML)) {
-        clone.setAttribute('xmlns:xlink', 'http://www.w3.org/1999/xlink');
-      }
-
-      const content = clone.outerHTML;
+      const { content, externalUses } = buildStandaloneClone(svg);
       if (content.length > MAX_SVG_BYTES) {
         counters.skipped++;
         return;
       }
 
-      items.push({ type: 'svg', content });
+      const item = { type: 'svg', content };
+      if (externalUses.length > 0) {
+        item.externalUses = externalUses;
+      }
+      items.push(item);
     });
     return items;
   }
@@ -352,6 +392,136 @@
       }
     });
     return items;
+  }
+
+  // Fetch a page-derived (untrusted) URL and return its text, bounded in both
+  // size and time. Only http/https/data are allowed — never file: or extension
+  // resources. Shared by the popup's fetchSVG message and the context-menu save
+  // path, and injected into inlineExternalUses so sprite fetches run at page
+  // origin. `credentials: 'omit'` keeps an authenticated, user-specific response
+  // from being silently baked into a saved file.
+  function fetchSvgText(url) {
+    let scheme = '';
+    try {
+      scheme = new URL(url, document.baseURI).protocol;
+    } catch {
+      scheme = '';
+    }
+    if (scheme !== 'http:' && scheme !== 'https:' && scheme !== 'data:') {
+      return Promise.reject(new Error('Unsupported URL scheme'));
+    }
+
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
+    return fetch(url, { signal: controller.signal, credentials: 'omit' })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}`);
+        }
+        const declared = Number(response.headers.get('content-length'));
+        if (declared > MAX_FETCH_BYTES) {
+          throw new Error('SVG too large');
+        }
+        return readCapped(response);
+      })
+      .catch((error) => {
+        throw new Error(error.name === 'AbortError' ? 'Timed out' : error.message);
+      })
+      .finally(() => clearTimeout(timer));
+  }
+
+  // Best-effort human name for a right-clicked graphic: an accessible label, a
+  // <title>, or an id/filename, so the saved file isn't just "svg.svg".
+  function guessName(el) {
+    const svg = el?.closest?.('svg');
+    if (svg) {
+      const label = svg.getAttribute('aria-label') || svg.querySelector('title')?.textContent;
+      if (label) return label;
+      if (svg.id) return svg.id;
+    }
+    const img = el?.closest?.('img');
+    if (img?.alt) return img.alt;
+    const url = svgUrlFromElement(el);
+    if (url) {
+      try {
+        const path = new URL(url, document.baseURI).pathname;
+        const base = path
+          .split('/')
+          .pop()
+          ?.replace(/\.svg$/i, '');
+        if (base) return decodeURIComponent(base);
+      } catch {
+        // fall through to the default
+      }
+    }
+    return '';
+  }
+
+  // The SVG URL a non-inline element points at: an <img>/<object>/<embed>/
+  // <iframe> host, or a CSS background on the element or any ancestor. Mirrors
+  // the collectors, but resolves a single clicked element rather than scanning.
+  function svgUrlFromElement(el) {
+    const host = el?.closest?.('img,object,embed,iframe');
+    if (host) {
+      if (host.tagName === 'IMG' && isSvgUrl(host.src)) return host.src;
+      if (host.tagName === 'OBJECT') {
+        const data = host.getAttribute('data');
+        if (host.getAttribute('type') === 'image/svg+xml' || isSvgUrl(data)) return data;
+      }
+      if (host.tagName === 'EMBED') {
+        const src = host.getAttribute('src');
+        if (host.getAttribute('type') === 'image/svg+xml' || isSvgUrl(src)) return src;
+      }
+      if (host.tagName === 'IFRAME') {
+        const src = host.getAttribute('src');
+        if (isSvgUrl(src)) return src;
+      }
+    }
+
+    for (let cur = el; cur && cur.nodeType === 1; cur = cur.parentElement) {
+      const bg = getComputedStyle(cur).backgroundImage;
+      if (!bg || bg === 'none') continue;
+      URL_RE.lastIndex = 0;
+      let match;
+      while ((match = URL_RE.exec(bg)) !== null) {
+        if (isSvgUrl(match[2])) return match[2];
+      }
+    }
+    return null;
+  }
+
+  // Resolve the last right-clicked element to a standalone, sanitized SVG file.
+  // Runs at page origin so it can fetch same-origin sprites and remote images
+  // the popup's activeTab grant already covers. Sanitizing here — through the
+  // extension's single formatSVGContent choke point, loaded as a module — keeps
+  // the context-menu download exactly as safe as every other download path.
+  async function extractRightClickedSvg() {
+    const el = lastContextTarget;
+    let markup = null;
+    let externalUses = [];
+
+    const svg = el?.closest?.('svg');
+    if (svg && paintsSomething(svg)) {
+      const built = buildStandaloneClone(svg);
+      markup = built.content;
+      externalUses = built.externalUses;
+    } else {
+      const url = svgUrlFromElement(el);
+      const abs = url && toAbsolute(url);
+      if (abs) markup = await fetchSvgText(abs);
+    }
+
+    if (markup === null) {
+      return { success: false, error: 'No SVG found here' };
+    }
+
+    const utils = await import(chrome.runtime.getURL('svg-utils.js'));
+    if (externalUses.length > 0) {
+      markup = await utils.inlineExternalUses(markup, externalUses, fetchSvgText);
+    }
+    const content = await utils.formatSVGContent(markup);
+    const filename = utils.sanitizeFilename(guessName(el), 'svg');
+    return { success: true, content, filename };
   }
 
   function dedupe(items) {
@@ -458,44 +628,15 @@
           sendResponse({ success: true, svgs: svgElements });
           break;
         case 'fetchSVG': {
-          // The URL originates from page content — untrusted. Only fetch web and
-          // data URLs; never let it read file: or extension resources.
-          let scheme = '';
-          try {
-            scheme = new URL(request.url, document.baseURI).protocol;
-          } catch {
-            scheme = '';
-          }
-          if (scheme !== 'http:' && scheme !== 'https:' && scheme !== 'data:') {
-            sendResponse({ success: false, error: 'Unsupported URL scheme' });
-            break;
-          }
-          // The inline collector has MAX_SVG_BYTES / MAX_INLINE_SVGS caps; the
-          // remote path had none, so a single huge or never-closing response
-          // could hang the popup with no recoverable error. Bound it in both
-          // directions. `credentials: 'omit'` keeps an authenticated,
-          // user-specific response from being silently baked into a saved file.
-          {
-            const controller = new AbortController();
-            const timer = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
-            fetch(request.url, { signal: controller.signal, credentials: 'omit' })
-              .then((response) => {
-                if (!response.ok) {
-                  throw new Error(`HTTP ${response.status}`);
-                }
-                const declared = Number(response.headers.get('content-length'));
-                if (declared > MAX_FETCH_BYTES) {
-                  throw new Error('SVG too large');
-                }
-                return readCapped(response);
-              })
-              .then((text) => sendResponse({ success: true, content: text }))
-              .catch((error) => {
-                const message = error.name === 'AbortError' ? 'Timed out' : error.message;
-                sendResponse({ success: false, error: message });
-              })
-              .finally(() => clearTimeout(timer));
-          }
+          fetchSvgText(request.url)
+            .then((content) => sendResponse({ success: true, content }))
+            .catch((error) => sendResponse({ success: false, error: error.message }));
+          return true; // async response
+        }
+        case 'saveRightClicked': {
+          extractRightClickedSvg()
+            .then(sendResponse)
+            .catch((error) => sendResponse({ success: false, error: error.message }));
           return true; // async response
         }
       }

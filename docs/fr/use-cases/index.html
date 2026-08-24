@@ -1,0 +1,274 @@
+<!DOCTYPE html><html lang="fr"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Histoires SVG Downloader — comment on l'utilise vraiment</title>
+<meta name="description" content="Cinq déroulés du monde réel : un audit de design system, un sauvetage d'actifs de marque, une migration de planche de sprites, une doc produit et un pitch deck. Comment on enregistre des SVG depuis des pages vivantes — et ce que ça a changé.">
+<link rel="canonical" href="https://svg.clasicwebtools.com/fr/use-cases"><!--i18n:alternates-->
+<link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/use-cases">
+<link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/use-cases">
+<link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/use-cases">
+<link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/use-cases">
+<link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/use-cases">
+<link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/use-cases">
+<!--/i18n:alternates-->
+<link rel="alternate" type="text/plain" href="https://svg.clasicwebtools.com/llms.txt" title="llms.txt — machine-readable site summary">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="Flozad">
+<meta name="theme-color" content="#ece4d3">
+<meta property="og:site_name" content="SVG Downloader">
+<meta property="og:title" content="Histoires SVG Downloader — comment on l'utilise vraiment">
+<meta property="og:description" content="Cinq déroulés du monde réel : un audit de design system, un sauvetage d'actifs de marque, une migration de planche de sprites, une doc produit et un pitch deck. Comment on enregistre des SVG depuis des pages vivantes.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://svg.clasicwebtools.com/fr/use-cases">
+<meta property="og:image" content="https://svg.clasicwebtools.com/motion/06-brand.png">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="SVG Downloader enregistrant un vecteur en ligne depuis une page.">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@lozards">
+<meta name="twitter:title" content="Histoires SVG Downloader — comment on l'utilise vraiment">
+<meta name="twitter:description" content="Cinq déroulés du monde réel : un audit de design system, un sauvetage d'actifs de marque, une migration de planche de sprites, une doc produit et un pitch deck.">
+<meta name="twitter:image" content="https://svg.clasicwebtools.com/motion/06-brand.png">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/fonts/bricolage-var.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/pages.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://svg.clasicwebtools.com/fr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Histoires",
+          "item": "https://svg.clasicwebtools.com/fr/use-cases"
+        }
+      ]
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://svg.clasicwebtools.com/fr/use-cases",
+      "url": "https://svg.clasicwebtools.com/fr/use-cases",
+      "name": "Histoires SVG Downloader",
+      "description": "Des déroulés à la première personne, illustratifs, montrant comment designers, ingénieurs, rédacteurs et fondateurs utilisent SVG Downloader pour extraire des vecteurs de pages vivantes.",
+      "inLanguage": "fr",
+      "isPartOf": {
+        "@id": "https://svg.clasicwebtools.com/fr/#website"
+      },
+      "about": {
+        "@id": "https://svg.clasicwebtools.com/fr/#app"
+      },
+      "primaryImageOfPage": "https://svg.clasicwebtools.com/motion/06-brand.png"
+    },
+    {
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Auditer une bibliothèque d'icônes à la dérive",
+          "url": "https://svg.clasicwebtools.com/fr/use-cases/design-system-icon-audit"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Sauver des actifs de marque pour une refonte",
+          "url": "https://svg.clasicwebtools.com/fr/use-cases/recover-brand-assets-redesign"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Migrer une vieille planche de sprites vers des composants",
+          "url": "https://svg.clasicwebtools.com/fr/use-cases/migrate-sprite-sheet-to-components"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Obtenir des icônes nettes dans la doc produit",
+          "url": "https://svg.clasicwebtools.com/fr/use-cases/svg-icons-for-product-docs"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Sortir un jeu d'icônes pour un pitch deck",
+          "url": "https://svg.clasicwebtools.com/fr/use-cases/icon-set-for-pitch-deck"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Aller au contenu</a>
+
+<nav class="nav">
+  <a class="brand" href="/fr/">
+    <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+      <rect width="48" height="48" rx="10" fill="var(--plot)"></rect>
+      <path d="M24 13v15m0 0l-6.5-6.5M24 28l6.5-6.5" fill="none" stroke="var(--surface-hi)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+      <rect x="16.5" y="33.5" width="15" height="2.4" rx="1.2" fill="var(--surface-hi)"></rect>
+    </svg>
+    <strong>SVG&nbsp;Downloader</strong>
+  </a>
+  <span class="spacer"></span>
+  <span class="nav-links">
+    <a href="/fr/features">Fonctions</a>
+    <a href="/fr/tutorials">Tutoriels</a>
+    <a href="/fr/guides">Guides</a>
+    <a href="/fr/docs">Docs</a>
+    <a href="/fr/use-cases" aria-current="page">Histoires</a>
+    <a href="/fr/privacy">Confidentialité</a>
+  </span><!--i18n:switch-->
+  <details class="lang-switch">
+    <summary aria-label="Langue"><span>FR</span></summary>
+    <ul>
+      <li><a href="/use-cases" hreflang="en" lang="en">English</a></li>
+      <li><a href="/es/use-cases" hreflang="es" lang="es">Español</a></li>
+      <li><a href="/fr/use-cases" hreflang="fr" lang="fr" aria-current="true">Français</a></li>
+      <li><a href="/de/use-cases" hreflang="de" lang="de">Deutsch</a></li>
+      <li><a href="/pt-br/use-cases" hreflang="pt-BR" lang="pt-BR">Português</a></li>
+    </ul>
+  </details>
+  <!--/i18n:switch-->
+  <a class="nav-cta" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Installer l'extension</a>
+</nav>
+
+<main id="main">
+<header class="page-hero"><div class="wrap">
+  <ol class="crumbs">
+    <li><a href="/fr/">Accueil</a></li>
+    <li><span aria-current="page">Histoires</span></li>
+  </ol>
+  <p class="eyebrow">Histoires — l'outil entre de vraies mains</p>
+  <h1>Comment les gens utilisent vraiment <span class="plot">SVG Downloader</span></h1>
+  <p class="lede">Les pages de fonctions vous disent ce qu'il détecte. Celles-ci vous disent pourquoi cela comptait — cinq personnes, cinq travaux différents, chacun bloqué par le même mur : un vecteur sur une page que le navigateur refusait de remettre. Voici ce qu'ils faisaient, ce qu'ils ont essayé d'abord, et ce qui a changé quand le fichier a simplement été… là.</p>
+  <div class="cta">
+    <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 12v16m0 0l-7-7m7 7l7-7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"></path><rect x="16" y="34" width="16" height="2.6" rx="1.3" fill="currentColor"></rect></svg>
+      Installer l'extension</a>
+    <a class="btn quiet" href="/fr/guides">Voir les guides pratiques →</a>
+  </div>
+</div></header>
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Cinq déroulés</p>
+  <h2>Prenez celui qui ressemble à votre semaine</h2>
+  <p class="lead-in">Des rôles différents, la même fin en deux clics. Chaque histoire est écrite du point de vue de la personne — l'échéance, le fichier source manquant, l'icône qui refusait de s'enregistrer — et renvoie à la fonction ou au guide exact qui a fait le travail.</p>
+
+  <ul class="cards">
+    <li><a class="card" href="/fr/use-cases/design-system-icon-audit">
+      <span class="card-tag">Design systems</span>
+      <h3>Auditer une bibliothèque d'icônes à la dérive</h3>
+      <p>Une ingénieure systèmes hérite d'une app aux icônes éparpillées sur quatre époques. Sortir le vrai balisage de la page a transformé une devinette en diff.</p>
+      <span class="card-go">Lire l'histoire →</span>
+    </a></li>
+    <li><a class="card" href="/fr/use-cases/recover-brand-assets-redesign">
+      <span class="card-tag">Freelance / agence</span>
+      <h3>Sauver des actifs de marque pour une refonte</h3>
+      <p>Un client remet un accès et un logo dont il ne retrouve plus la source. Le site en ligne l'avait encore — en vecteur net, pas en capture.</p>
+      <span class="card-go">Lire l'histoire →</span>
+    </a></li>
+    <li><a class="card" href="/fr/use-cases/migrate-sprite-sheet-to-components">
+      <span class="card-tag">Frontend</span>
+      <h3>Migrer une vieille planche de sprites</h3>
+      <p>Trente icônes cachées derrière des références <code>&lt;use&gt;</code>, plus aucun artefact de build. L'extension a résolu chacune d'elles en balisage autonome.</p>
+      <span class="card-go">Lire l'histoire →</span>
+    </a></li>
+    <li><a class="card" href="/fr/use-cases/svg-icons-for-product-docs">
+      <span class="card-tag">Documentation</span>
+      <h3>Des icônes nettes dans la doc produit</h3>
+      <p>Un rédacteur technique découpait des icônes floues dans des captures. Désormais le glyphe exact de la barre d'outils est en ligne dans la page, net à tout zoom.</p>
+      <span class="card-go">Lire l'histoire →</span>
+    </a></li>
+    <li><a class="card" href="/fr/use-cases/icon-set-for-pitch-deck">
+      <span class="card-tag">Fondatrice</span>
+      <h3>Un jeu d'icônes pour un pitch deck</h3>
+      <p>Une fondatrice avait besoin d'un jeu cohérent pour ses slides et sa landing page la veille d'une levée. Un ZIP, dédoublonné, réglé le temps d'un café.</p>
+      <span class="card-go">Lire l'histoire →</span>
+    </a></li>
+  </ul>
+
+  <p class="disclosure">Une note d'honnêteté : ces histoires sont des composites. Les déroulés, les outils et les résultats reflètent l'usage réel de SVG Downloader, mais les noms et les entreprises précises sont illustratifs — nous ne publions pas les détails privés des projets de vrais clients. L'extension, son comportement et les chiffres sur ce qu'elle fait sont réels.</p>
+</div></section>
+
+<hr class="section-rule">
+
+<section><div class="wrap">
+  <div class="cta-band">
+    <div>
+      <h2>Votre déroulé finit probablement pareil</h2>
+      <p>Prévisualisez le vecteur, nommez-le, enregistrez-le — ou prenez tout le jeu en ZIP. Gratuit, sur l'appareil, sans compte.</p>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Installer l'extension</a>
+      <a class="btn quiet" href="/fr/features">Voir toutes les fonctions →</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="related"><div class="wrap">
+  <p class="eyebrow">À voir aussi</p>
+  <ul>
+    <li><a href="/fr/guides/how-to-download-svg-from-any-website">La méthode universelle<span>Toutes les sources, un popup</span></a></li>
+    <li><a href="/fr/features/svg-sprite-extractor">Extracteur de sprites<span>Résoudre les références &lt;use&gt;</span></a></li>
+    <li><a href="/fr/compare/svg-downloader-vs-screenshotting-icons">Face à la capture<span>Pourquoi le vecteur gagne</span></a></li>
+  </ul>
+</div></section>
+</main>
+
+<footer>
+  <nav class="bleed foot-map" aria-label="Plan du site">
+    <div class="col"><p>Produit</p><ul>
+      <li><a href="/fr/">Vue d'ensemble</a></li>
+      <li><a href="/fr/features">Fonctions</a></li>
+      <li><a href="/fr/compare/svg-downloader-vs-screenshotting-icons">Face à la capture</a></li>
+      <li><a href="/fr/privacy">Confidentialité</a></li>
+      <li><a href="/fr/use-cases">Cas d'usage</a></li>
+    </ul></div>
+    <div class="col"><p>Ce qu'il attrape</p><ul>
+      <li><a href="/fr/features/inline-svg">SVG en ligne</a></li>
+      <li><a href="/fr/features/css-background-svg">SVG en fond CSS</a></li>
+      <li><a href="/fr/features/svg-sprite-extractor">SVG de sprite / &lt;use&gt;</a></li>
+      <li><a href="/fr/features/bulk-zip-download">Page entière en ZIP</a></li>
+    </ul></div>
+    <div class="col"><p>Histoires</p><ul>
+      <li><a href="/fr/use-cases/design-system-icon-audit">Audit de bibliothèque d'icônes</a></li>
+      <li><a href="/fr/use-cases/recover-brand-assets-redesign">Sauver des actifs de marque</a></li>
+      <li><a href="/fr/use-cases/migrate-sprite-sheet-to-components">Migrer une planche de sprites</a></li>
+      <li><a href="/fr/use-cases/icon-set-for-pitch-deck">Jeu d'icônes pour un deck</a></li>
+    </ul></div>
+    <div class="col"><p>Tutoriels</p><ul>
+      <li><a href="/fr/tutorials">Les 15 tutoriels</a></li>
+      <li><a href="/fr/tutorials/extract-svg-logo-from-website">Extraire un logo</a></li>
+      <li><a href="/fr/tutorials/extract-svg-from-website">Extraire chaque SVG</a></li>
+      <li><a href="/fr/guides">Guides détaillés</a></li>
+    </ul></div>
+    <div class="col"><p>Docs</p><ul>
+      <li><a href="/fr/docs/installation">Installation</a></li>
+      <li><a href="/fr/docs/usage">Utilisation</a></li>
+      <li><a href="/fr/docs/faq">FAQ</a></li>
+      <li><a href="/fr/docs/changelog">Journal des versions</a></li>
+    </ul></div>
+  </nav>
+  <div class="bleed colophon-foot">
+    <a href="https://github.com/Flozad/svg-downloader">GitHub</a>
+    <a href="https://github.com/Flozad/svg-downloader/issues">Tickets</a>
+    <a href="https://clasicwebtools.com">clasicwebtools.com</a>
+    <span class="grow"></span>
+    <span>Papier os, graphite, un seul vert&nbsp;traceur</span>
+  </div>
+</footer>
+
+
+</body></html>

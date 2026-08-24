@@ -1,111 +1,2403 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://svg.clasicwebtools.com/</loc>
-    <lastmod>2026-07-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://svg.clasicwebtools.com/features</loc>
-    <lastmod>2026-07-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://svg.clasicwebtools.com/features/inline-svg</loc>
-    <lastmod>2026-07-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://svg.clasicwebtools.com/features/css-background-svg</loc>
-    <lastmod>2026-07-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://svg.clasicwebtools.com/features/svg-sprite-extractor</loc>
-    <lastmod>2026-07-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://svg.clasicwebtools.com/features/bulk-zip-download</loc>
-    <lastmod>2026-07-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://svg.clasicwebtools.com/guides</loc>
-    <lastmod>2026-07-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://svg.clasicwebtools.com/guides/how-to-download-svg-from-any-website</loc>
-    <lastmod>2026-07-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://svg.clasicwebtools.com/guides/how-to-extract-svg-icons-from-a-website</loc>
-    <lastmod>2026-07-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://svg.clasicwebtools.com/guides/download-all-svgs-as-zip</loc>
-    <lastmod>2026-07-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://svg.clasicwebtools.com/guides/extract-svg-from-css-background</loc>
-    <lastmod>2026-07-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://svg.clasicwebtools.com/compare/svg-downloader-vs-screenshotting-icons</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/compare/svg-downloader-vs-screenshotting-icons"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/compare/svg-downloader-vs-screenshotting-icons"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/compare/svg-downloader-vs-screenshotting-icons"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/compare/svg-downloader-vs-screenshotting-icons"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/compare/svg-downloader-vs-screenshotting-icons"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/compare/svg-downloader-vs-screenshotting-icons"/>
     <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://svg.clasicwebtools.com/docs</loc>
-    <lastmod>2026-07-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://svg.clasicwebtools.com/docs/installation</loc>
-    <lastmod>2026-07-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://svg.clasicwebtools.com/docs/usage</loc>
+    <loc>https://svg.clasicwebtools.com/es/compare/svg-downloader-vs-screenshotting-icons</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/compare/svg-downloader-vs-screenshotting-icons"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/compare/svg-downloader-vs-screenshotting-icons"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/compare/svg-downloader-vs-screenshotting-icons"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/compare/svg-downloader-vs-screenshotting-icons"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/compare/svg-downloader-vs-screenshotting-icons"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/compare/svg-downloader-vs-screenshotting-icons"/>
     <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://svg.clasicwebtools.com/docs/faq</loc>
+    <loc>https://svg.clasicwebtools.com/fr/compare/svg-downloader-vs-screenshotting-icons</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/compare/svg-downloader-vs-screenshotting-icons"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/compare/svg-downloader-vs-screenshotting-icons"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/compare/svg-downloader-vs-screenshotting-icons"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/compare/svg-downloader-vs-screenshotting-icons"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/compare/svg-downloader-vs-screenshotting-icons"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/compare/svg-downloader-vs-screenshotting-icons"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/de/compare/svg-downloader-vs-screenshotting-icons</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/compare/svg-downloader-vs-screenshotting-icons"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/compare/svg-downloader-vs-screenshotting-icons"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/compare/svg-downloader-vs-screenshotting-icons"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/compare/svg-downloader-vs-screenshotting-icons"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/compare/svg-downloader-vs-screenshotting-icons"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/compare/svg-downloader-vs-screenshotting-icons"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/pt-br/compare/svg-downloader-vs-screenshotting-icons</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/compare/svg-downloader-vs-screenshotting-icons"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/compare/svg-downloader-vs-screenshotting-icons"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/compare/svg-downloader-vs-screenshotting-icons"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/compare/svg-downloader-vs-screenshotting-icons"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/compare/svg-downloader-vs-screenshotting-icons"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/compare/svg-downloader-vs-screenshotting-icons"/>
     <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://svg.clasicwebtools.com/docs/changelog</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/docs/changelog"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/docs/changelog"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/docs/changelog"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/docs/changelog"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/docs/changelog"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/docs/changelog"/>
     <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://svg.clasicwebtools.com/es/docs/changelog</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/docs/changelog"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/docs/changelog"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/docs/changelog"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/docs/changelog"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/docs/changelog"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/docs/changelog"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/fr/docs/changelog</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/docs/changelog"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/docs/changelog"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/docs/changelog"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/docs/changelog"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/docs/changelog"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/docs/changelog"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/de/docs/changelog</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/docs/changelog"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/docs/changelog"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/docs/changelog"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/docs/changelog"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/docs/changelog"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/docs/changelog"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/pt-br/docs/changelog</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/docs/changelog"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/docs/changelog"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/docs/changelog"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/docs/changelog"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/docs/changelog"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/docs/changelog"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/docs/faq</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/docs/faq"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/docs/faq"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/docs/faq"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/docs/faq"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/docs/faq"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/docs/faq"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/es/docs/faq</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/docs/faq"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/docs/faq"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/docs/faq"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/docs/faq"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/docs/faq"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/docs/faq"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/fr/docs/faq</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/docs/faq"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/docs/faq"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/docs/faq"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/docs/faq"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/docs/faq"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/docs/faq"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/de/docs/faq</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/docs/faq"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/docs/faq"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/docs/faq"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/docs/faq"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/docs/faq"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/docs/faq"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/pt-br/docs/faq</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/docs/faq"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/docs/faq"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/docs/faq"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/docs/faq"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/docs/faq"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/docs/faq"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/docs</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/docs"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/docs"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/docs"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/docs"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/docs"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/docs"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/es/docs</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/docs"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/docs"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/docs"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/docs"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/docs"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/docs"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/fr/docs</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/docs"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/docs"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/docs"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/docs"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/docs"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/docs"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/de/docs</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/docs"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/docs"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/docs"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/docs"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/docs"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/docs"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/pt-br/docs</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/docs"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/docs"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/docs"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/docs"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/docs"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/docs"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/docs/installation</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/docs/installation"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/docs/installation"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/docs/installation"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/docs/installation"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/docs/installation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/docs/installation"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/es/docs/installation</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/docs/installation"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/docs/installation"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/docs/installation"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/docs/installation"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/docs/installation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/docs/installation"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/fr/docs/installation</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/docs/installation"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/docs/installation"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/docs/installation"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/docs/installation"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/docs/installation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/docs/installation"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/de/docs/installation</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/docs/installation"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/docs/installation"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/docs/installation"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/docs/installation"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/docs/installation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/docs/installation"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/pt-br/docs/installation</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/docs/installation"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/docs/installation"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/docs/installation"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/docs/installation"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/docs/installation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/docs/installation"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/docs/usage</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/docs/usage"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/docs/usage"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/docs/usage"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/docs/usage"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/docs/usage"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/docs/usage"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/es/docs/usage</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/docs/usage"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/docs/usage"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/docs/usage"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/docs/usage"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/docs/usage"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/docs/usage"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/fr/docs/usage</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/docs/usage"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/docs/usage"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/docs/usage"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/docs/usage"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/docs/usage"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/docs/usage"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/de/docs/usage</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/docs/usage"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/docs/usage"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/docs/usage"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/docs/usage"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/docs/usage"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/docs/usage"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/pt-br/docs/usage</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/docs/usage"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/docs/usage"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/docs/usage"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/docs/usage"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/docs/usage"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/docs/usage"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/features/bulk-zip-download</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/features/bulk-zip-download"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/features/bulk-zip-download"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/features/bulk-zip-download"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/features/bulk-zip-download"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/features/bulk-zip-download"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/features/bulk-zip-download"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/es/features/bulk-zip-download</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/features/bulk-zip-download"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/features/bulk-zip-download"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/features/bulk-zip-download"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/features/bulk-zip-download"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/features/bulk-zip-download"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/features/bulk-zip-download"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/fr/features/bulk-zip-download</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/features/bulk-zip-download"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/features/bulk-zip-download"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/features/bulk-zip-download"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/features/bulk-zip-download"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/features/bulk-zip-download"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/features/bulk-zip-download"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/de/features/bulk-zip-download</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/features/bulk-zip-download"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/features/bulk-zip-download"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/features/bulk-zip-download"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/features/bulk-zip-download"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/features/bulk-zip-download"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/features/bulk-zip-download"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/pt-br/features/bulk-zip-download</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/features/bulk-zip-download"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/features/bulk-zip-download"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/features/bulk-zip-download"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/features/bulk-zip-download"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/features/bulk-zip-download"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/features/bulk-zip-download"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/features/css-background-svg</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/features/css-background-svg"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/features/css-background-svg"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/features/css-background-svg"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/features/css-background-svg"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/features/css-background-svg"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/features/css-background-svg"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/es/features/css-background-svg</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/features/css-background-svg"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/features/css-background-svg"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/features/css-background-svg"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/features/css-background-svg"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/features/css-background-svg"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/features/css-background-svg"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/fr/features/css-background-svg</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/features/css-background-svg"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/features/css-background-svg"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/features/css-background-svg"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/features/css-background-svg"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/features/css-background-svg"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/features/css-background-svg"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/de/features/css-background-svg</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/features/css-background-svg"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/features/css-background-svg"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/features/css-background-svg"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/features/css-background-svg"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/features/css-background-svg"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/features/css-background-svg"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/pt-br/features/css-background-svg</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/features/css-background-svg"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/features/css-background-svg"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/features/css-background-svg"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/features/css-background-svg"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/features/css-background-svg"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/features/css-background-svg"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/features</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/features"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/features"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/features"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/features"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/features"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/features"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/es/features</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/features"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/features"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/features"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/features"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/features"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/features"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/fr/features</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/features"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/features"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/features"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/features"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/features"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/features"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/de/features</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/features"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/features"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/features"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/features"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/features"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/features"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/pt-br/features</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/features"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/features"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/features"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/features"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/features"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/features"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/features/inline-svg</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/features/inline-svg"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/features/inline-svg"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/features/inline-svg"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/features/inline-svg"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/features/inline-svg"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/features/inline-svg"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/es/features/inline-svg</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/features/inline-svg"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/features/inline-svg"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/features/inline-svg"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/features/inline-svg"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/features/inline-svg"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/features/inline-svg"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/fr/features/inline-svg</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/features/inline-svg"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/features/inline-svg"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/features/inline-svg"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/features/inline-svg"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/features/inline-svg"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/features/inline-svg"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/de/features/inline-svg</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/features/inline-svg"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/features/inline-svg"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/features/inline-svg"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/features/inline-svg"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/features/inline-svg"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/features/inline-svg"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/pt-br/features/inline-svg</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/features/inline-svg"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/features/inline-svg"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/features/inline-svg"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/features/inline-svg"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/features/inline-svg"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/features/inline-svg"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/features/svg-sprite-extractor</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/features/svg-sprite-extractor"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/features/svg-sprite-extractor"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/features/svg-sprite-extractor"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/features/svg-sprite-extractor"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/features/svg-sprite-extractor"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/features/svg-sprite-extractor"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/es/features/svg-sprite-extractor</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/features/svg-sprite-extractor"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/features/svg-sprite-extractor"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/features/svg-sprite-extractor"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/features/svg-sprite-extractor"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/features/svg-sprite-extractor"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/features/svg-sprite-extractor"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/fr/features/svg-sprite-extractor</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/features/svg-sprite-extractor"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/features/svg-sprite-extractor"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/features/svg-sprite-extractor"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/features/svg-sprite-extractor"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/features/svg-sprite-extractor"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/features/svg-sprite-extractor"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/de/features/svg-sprite-extractor</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/features/svg-sprite-extractor"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/features/svg-sprite-extractor"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/features/svg-sprite-extractor"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/features/svg-sprite-extractor"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/features/svg-sprite-extractor"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/features/svg-sprite-extractor"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/pt-br/features/svg-sprite-extractor</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/features/svg-sprite-extractor"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/features/svg-sprite-extractor"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/features/svg-sprite-extractor"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/features/svg-sprite-extractor"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/features/svg-sprite-extractor"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/features/svg-sprite-extractor"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/guides/download-all-svgs-as-zip</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/guides/download-all-svgs-as-zip"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/guides/download-all-svgs-as-zip"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/guides/download-all-svgs-as-zip"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/guides/download-all-svgs-as-zip"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/guides/download-all-svgs-as-zip"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/guides/download-all-svgs-as-zip"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/es/guides/download-all-svgs-as-zip</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/guides/download-all-svgs-as-zip"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/guides/download-all-svgs-as-zip"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/guides/download-all-svgs-as-zip"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/guides/download-all-svgs-as-zip"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/guides/download-all-svgs-as-zip"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/guides/download-all-svgs-as-zip"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/fr/guides/download-all-svgs-as-zip</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/guides/download-all-svgs-as-zip"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/guides/download-all-svgs-as-zip"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/guides/download-all-svgs-as-zip"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/guides/download-all-svgs-as-zip"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/guides/download-all-svgs-as-zip"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/guides/download-all-svgs-as-zip"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/de/guides/download-all-svgs-as-zip</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/guides/download-all-svgs-as-zip"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/guides/download-all-svgs-as-zip"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/guides/download-all-svgs-as-zip"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/guides/download-all-svgs-as-zip"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/guides/download-all-svgs-as-zip"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/guides/download-all-svgs-as-zip"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/pt-br/guides/download-all-svgs-as-zip</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/guides/download-all-svgs-as-zip"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/guides/download-all-svgs-as-zip"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/guides/download-all-svgs-as-zip"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/guides/download-all-svgs-as-zip"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/guides/download-all-svgs-as-zip"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/guides/download-all-svgs-as-zip"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/guides/extract-svg-from-css-background</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/guides/extract-svg-from-css-background"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/guides/extract-svg-from-css-background"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/guides/extract-svg-from-css-background"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/guides/extract-svg-from-css-background"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/guides/extract-svg-from-css-background"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/guides/extract-svg-from-css-background"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/es/guides/extract-svg-from-css-background</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/guides/extract-svg-from-css-background"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/guides/extract-svg-from-css-background"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/guides/extract-svg-from-css-background"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/guides/extract-svg-from-css-background"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/guides/extract-svg-from-css-background"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/guides/extract-svg-from-css-background"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/fr/guides/extract-svg-from-css-background</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/guides/extract-svg-from-css-background"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/guides/extract-svg-from-css-background"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/guides/extract-svg-from-css-background"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/guides/extract-svg-from-css-background"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/guides/extract-svg-from-css-background"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/guides/extract-svg-from-css-background"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/de/guides/extract-svg-from-css-background</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/guides/extract-svg-from-css-background"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/guides/extract-svg-from-css-background"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/guides/extract-svg-from-css-background"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/guides/extract-svg-from-css-background"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/guides/extract-svg-from-css-background"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/guides/extract-svg-from-css-background"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/pt-br/guides/extract-svg-from-css-background</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/guides/extract-svg-from-css-background"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/guides/extract-svg-from-css-background"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/guides/extract-svg-from-css-background"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/guides/extract-svg-from-css-background"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/guides/extract-svg-from-css-background"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/guides/extract-svg-from-css-background"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/guides/how-to-download-svg-from-any-website</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/guides/how-to-download-svg-from-any-website"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/guides/how-to-download-svg-from-any-website"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/guides/how-to-download-svg-from-any-website"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/guides/how-to-download-svg-from-any-website"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/guides/how-to-download-svg-from-any-website"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/guides/how-to-download-svg-from-any-website"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/es/guides/how-to-download-svg-from-any-website</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/guides/how-to-download-svg-from-any-website"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/guides/how-to-download-svg-from-any-website"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/guides/how-to-download-svg-from-any-website"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/guides/how-to-download-svg-from-any-website"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/guides/how-to-download-svg-from-any-website"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/guides/how-to-download-svg-from-any-website"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/fr/guides/how-to-download-svg-from-any-website</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/guides/how-to-download-svg-from-any-website"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/guides/how-to-download-svg-from-any-website"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/guides/how-to-download-svg-from-any-website"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/guides/how-to-download-svg-from-any-website"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/guides/how-to-download-svg-from-any-website"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/guides/how-to-download-svg-from-any-website"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/de/guides/how-to-download-svg-from-any-website</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/guides/how-to-download-svg-from-any-website"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/guides/how-to-download-svg-from-any-website"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/guides/how-to-download-svg-from-any-website"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/guides/how-to-download-svg-from-any-website"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/guides/how-to-download-svg-from-any-website"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/guides/how-to-download-svg-from-any-website"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/pt-br/guides/how-to-download-svg-from-any-website</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/guides/how-to-download-svg-from-any-website"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/guides/how-to-download-svg-from-any-website"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/guides/how-to-download-svg-from-any-website"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/guides/how-to-download-svg-from-any-website"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/guides/how-to-download-svg-from-any-website"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/guides/how-to-download-svg-from-any-website"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/guides/how-to-extract-svg-icons-from-a-website</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/guides/how-to-extract-svg-icons-from-a-website"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/guides/how-to-extract-svg-icons-from-a-website"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/guides/how-to-extract-svg-icons-from-a-website"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/guides/how-to-extract-svg-icons-from-a-website"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/guides/how-to-extract-svg-icons-from-a-website"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/guides/how-to-extract-svg-icons-from-a-website"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/es/guides/how-to-extract-svg-icons-from-a-website</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/guides/how-to-extract-svg-icons-from-a-website"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/guides/how-to-extract-svg-icons-from-a-website"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/guides/how-to-extract-svg-icons-from-a-website"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/guides/how-to-extract-svg-icons-from-a-website"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/guides/how-to-extract-svg-icons-from-a-website"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/guides/how-to-extract-svg-icons-from-a-website"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/fr/guides/how-to-extract-svg-icons-from-a-website</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/guides/how-to-extract-svg-icons-from-a-website"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/guides/how-to-extract-svg-icons-from-a-website"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/guides/how-to-extract-svg-icons-from-a-website"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/guides/how-to-extract-svg-icons-from-a-website"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/guides/how-to-extract-svg-icons-from-a-website"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/guides/how-to-extract-svg-icons-from-a-website"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/de/guides/how-to-extract-svg-icons-from-a-website</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/guides/how-to-extract-svg-icons-from-a-website"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/guides/how-to-extract-svg-icons-from-a-website"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/guides/how-to-extract-svg-icons-from-a-website"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/guides/how-to-extract-svg-icons-from-a-website"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/guides/how-to-extract-svg-icons-from-a-website"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/guides/how-to-extract-svg-icons-from-a-website"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/pt-br/guides/how-to-extract-svg-icons-from-a-website</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/guides/how-to-extract-svg-icons-from-a-website"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/guides/how-to-extract-svg-icons-from-a-website"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/guides/how-to-extract-svg-icons-from-a-website"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/guides/how-to-extract-svg-icons-from-a-website"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/guides/how-to-extract-svg-icons-from-a-website"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/guides/how-to-extract-svg-icons-from-a-website"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/guides</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/guides"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/guides"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/guides"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/guides"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/guides"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/guides"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/es/guides</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/guides"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/guides"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/guides"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/guides"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/guides"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/guides"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/fr/guides</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/guides"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/guides"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/guides"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/guides"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/guides"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/guides"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/de/guides</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/guides"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/guides"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/guides"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/guides"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/guides"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/guides"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/pt-br/guides</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/guides"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/guides"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/guides"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/guides"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/guides"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/guides"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/es/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/fr/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/de/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/pt-br/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
     <loc>https://svg.clasicwebtools.com/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/privacy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/privacy"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/privacy"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/privacy"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/privacy"/>
     <lastmod>2026-07-19</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/es/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/privacy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/privacy"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/privacy"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/privacy"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/privacy"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/fr/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/privacy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/privacy"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/privacy"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/privacy"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/privacy"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/de/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/privacy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/privacy"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/privacy"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/privacy"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/privacy"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/pt-br/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/privacy"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/privacy"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/privacy"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/privacy"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/privacy"/>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/tutorials/copy-svg-from-website</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/copy-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/copy-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/copy-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/copy-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/copy-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/copy-svg-from-website"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/es/tutorials/copy-svg-from-website</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/copy-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/copy-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/copy-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/copy-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/copy-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/copy-svg-from-website"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/fr/tutorials/copy-svg-from-website</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/copy-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/copy-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/copy-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/copy-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/copy-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/copy-svg-from-website"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/de/tutorials/copy-svg-from-website</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/copy-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/copy-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/copy-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/copy-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/copy-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/copy-svg-from-website"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/pt-br/tutorials/copy-svg-from-website</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/copy-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/copy-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/copy-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/copy-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/copy-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/copy-svg-from-website"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/tutorials/download-svg-from-html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/download-svg-from-html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/download-svg-from-html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/download-svg-from-html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/download-svg-from-html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/download-svg-from-html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/download-svg-from-html"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/es/tutorials/download-svg-from-html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/download-svg-from-html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/download-svg-from-html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/download-svg-from-html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/download-svg-from-html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/download-svg-from-html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/download-svg-from-html"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/fr/tutorials/download-svg-from-html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/download-svg-from-html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/download-svg-from-html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/download-svg-from-html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/download-svg-from-html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/download-svg-from-html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/download-svg-from-html"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/de/tutorials/download-svg-from-html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/download-svg-from-html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/download-svg-from-html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/download-svg-from-html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/download-svg-from-html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/download-svg-from-html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/download-svg-from-html"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/pt-br/tutorials/download-svg-from-html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/download-svg-from-html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/download-svg-from-html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/download-svg-from-html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/download-svg-from-html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/download-svg-from-html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/download-svg-from-html"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/tutorials/download-svg-from-link</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/download-svg-from-link"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/download-svg-from-link"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/download-svg-from-link"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/download-svg-from-link"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/download-svg-from-link"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/download-svg-from-link"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/es/tutorials/download-svg-from-link</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/download-svg-from-link"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/download-svg-from-link"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/download-svg-from-link"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/download-svg-from-link"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/download-svg-from-link"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/download-svg-from-link"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/fr/tutorials/download-svg-from-link</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/download-svg-from-link"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/download-svg-from-link"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/download-svg-from-link"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/download-svg-from-link"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/download-svg-from-link"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/download-svg-from-link"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/de/tutorials/download-svg-from-link</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/download-svg-from-link"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/download-svg-from-link"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/download-svg-from-link"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/download-svg-from-link"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/download-svg-from-link"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/download-svg-from-link"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/pt-br/tutorials/download-svg-from-link</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/download-svg-from-link"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/download-svg-from-link"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/download-svg-from-link"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/download-svg-from-link"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/download-svg-from-link"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/download-svg-from-link"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/tutorials/download-svg-from-url</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/download-svg-from-url"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/download-svg-from-url"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/download-svg-from-url"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/download-svg-from-url"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/download-svg-from-url"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/download-svg-from-url"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/es/tutorials/download-svg-from-url</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/download-svg-from-url"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/download-svg-from-url"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/download-svg-from-url"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/download-svg-from-url"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/download-svg-from-url"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/download-svg-from-url"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/fr/tutorials/download-svg-from-url</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/download-svg-from-url"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/download-svg-from-url"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/download-svg-from-url"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/download-svg-from-url"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/download-svg-from-url"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/download-svg-from-url"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/de/tutorials/download-svg-from-url</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/download-svg-from-url"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/download-svg-from-url"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/download-svg-from-url"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/download-svg-from-url"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/download-svg-from-url"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/download-svg-from-url"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/pt-br/tutorials/download-svg-from-url</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/download-svg-from-url"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/download-svg-from-url"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/download-svg-from-url"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/download-svg-from-url"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/download-svg-from-url"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/download-svg-from-url"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/tutorials/download-svg-from-webpage</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/download-svg-from-webpage"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/download-svg-from-webpage"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/download-svg-from-webpage"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/download-svg-from-webpage"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/download-svg-from-webpage"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/download-svg-from-webpage"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/es/tutorials/download-svg-from-webpage</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/download-svg-from-webpage"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/download-svg-from-webpage"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/download-svg-from-webpage"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/download-svg-from-webpage"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/download-svg-from-webpage"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/download-svg-from-webpage"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/fr/tutorials/download-svg-from-webpage</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/download-svg-from-webpage"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/download-svg-from-webpage"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/download-svg-from-webpage"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/download-svg-from-webpage"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/download-svg-from-webpage"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/download-svg-from-webpage"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/de/tutorials/download-svg-from-webpage</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/download-svg-from-webpage"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/download-svg-from-webpage"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/download-svg-from-webpage"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/download-svg-from-webpage"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/download-svg-from-webpage"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/download-svg-from-webpage"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/pt-br/tutorials/download-svg-from-webpage</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/download-svg-from-webpage"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/download-svg-from-webpage"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/download-svg-from-webpage"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/download-svg-from-webpage"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/download-svg-from-webpage"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/download-svg-from-webpage"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/tutorials/download-svg-image-from-website</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/download-svg-image-from-website"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/download-svg-image-from-website"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/download-svg-image-from-website"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/download-svg-image-from-website"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/download-svg-image-from-website"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/download-svg-image-from-website"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/es/tutorials/download-svg-image-from-website</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/download-svg-image-from-website"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/download-svg-image-from-website"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/download-svg-image-from-website"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/download-svg-image-from-website"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/download-svg-image-from-website"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/download-svg-image-from-website"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/fr/tutorials/download-svg-image-from-website</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/download-svg-image-from-website"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/download-svg-image-from-website"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/download-svg-image-from-website"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/download-svg-image-from-website"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/download-svg-image-from-website"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/download-svg-image-from-website"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/de/tutorials/download-svg-image-from-website</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/download-svg-image-from-website"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/download-svg-image-from-website"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/download-svg-image-from-website"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/download-svg-image-from-website"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/download-svg-image-from-website"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/download-svg-image-from-website"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/pt-br/tutorials/download-svg-image-from-website</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/download-svg-image-from-website"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/download-svg-image-from-website"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/download-svg-image-from-website"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/download-svg-image-from-website"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/download-svg-image-from-website"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/download-svg-image-from-website"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/tutorials/extract-svg-from-website</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/extract-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/extract-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/extract-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/extract-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/extract-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/extract-svg-from-website"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/es/tutorials/extract-svg-from-website</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/extract-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/extract-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/extract-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/extract-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/extract-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/extract-svg-from-website"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/fr/tutorials/extract-svg-from-website</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/extract-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/extract-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/extract-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/extract-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/extract-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/extract-svg-from-website"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/de/tutorials/extract-svg-from-website</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/extract-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/extract-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/extract-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/extract-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/extract-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/extract-svg-from-website"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/pt-br/tutorials/extract-svg-from-website</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/extract-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/extract-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/extract-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/extract-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/extract-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/extract-svg-from-website"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/tutorials/extract-svg-logo-from-website</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/extract-svg-logo-from-website"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/extract-svg-logo-from-website"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/extract-svg-logo-from-website"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/extract-svg-logo-from-website"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/extract-svg-logo-from-website"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/extract-svg-logo-from-website"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/es/tutorials/extract-svg-logo-from-website</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/extract-svg-logo-from-website"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/extract-svg-logo-from-website"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/extract-svg-logo-from-website"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/extract-svg-logo-from-website"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/extract-svg-logo-from-website"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/extract-svg-logo-from-website"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/fr/tutorials/extract-svg-logo-from-website</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/extract-svg-logo-from-website"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/extract-svg-logo-from-website"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/extract-svg-logo-from-website"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/extract-svg-logo-from-website"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/extract-svg-logo-from-website"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/extract-svg-logo-from-website"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/de/tutorials/extract-svg-logo-from-website</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/extract-svg-logo-from-website"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/extract-svg-logo-from-website"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/extract-svg-logo-from-website"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/extract-svg-logo-from-website"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/extract-svg-logo-from-website"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/extract-svg-logo-from-website"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/pt-br/tutorials/extract-svg-logo-from-website</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/extract-svg-logo-from-website"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/extract-svg-logo-from-website"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/extract-svg-logo-from-website"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/extract-svg-logo-from-website"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/extract-svg-logo-from-website"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/extract-svg-logo-from-website"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/tutorials/free-svg-downloader</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/free-svg-downloader"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/free-svg-downloader"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/free-svg-downloader"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/free-svg-downloader"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/free-svg-downloader"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/free-svg-downloader"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/es/tutorials/free-svg-downloader</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/free-svg-downloader"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/free-svg-downloader"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/free-svg-downloader"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/free-svg-downloader"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/free-svg-downloader"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/free-svg-downloader"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/fr/tutorials/free-svg-downloader</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/free-svg-downloader"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/free-svg-downloader"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/free-svg-downloader"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/free-svg-downloader"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/free-svg-downloader"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/free-svg-downloader"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/de/tutorials/free-svg-downloader</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/free-svg-downloader"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/free-svg-downloader"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/free-svg-downloader"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/free-svg-downloader"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/free-svg-downloader"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/free-svg-downloader"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/pt-br/tutorials/free-svg-downloader</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/free-svg-downloader"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/free-svg-downloader"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/free-svg-downloader"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/free-svg-downloader"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/free-svg-downloader"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/free-svg-downloader"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/tutorials/grab-svg-from-website</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/grab-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/grab-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/grab-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/grab-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/grab-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/grab-svg-from-website"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/es/tutorials/grab-svg-from-website</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/grab-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/grab-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/grab-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/grab-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/grab-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/grab-svg-from-website"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/fr/tutorials/grab-svg-from-website</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/grab-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/grab-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/grab-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/grab-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/grab-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/grab-svg-from-website"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/de/tutorials/grab-svg-from-website</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/grab-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/grab-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/grab-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/grab-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/grab-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/grab-svg-from-website"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/pt-br/tutorials/grab-svg-from-website</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/grab-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/grab-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/grab-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/grab-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/grab-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/grab-svg-from-website"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/tutorials/how-to-download-svg-files</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/how-to-download-svg-files"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/how-to-download-svg-files"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/how-to-download-svg-files"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/how-to-download-svg-files"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/how-to-download-svg-files"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/how-to-download-svg-files"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/es/tutorials/how-to-download-svg-files</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/how-to-download-svg-files"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/how-to-download-svg-files"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/how-to-download-svg-files"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/how-to-download-svg-files"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/how-to-download-svg-files"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/how-to-download-svg-files"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/fr/tutorials/how-to-download-svg-files</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/how-to-download-svg-files"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/how-to-download-svg-files"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/how-to-download-svg-files"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/how-to-download-svg-files"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/how-to-download-svg-files"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/how-to-download-svg-files"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/de/tutorials/how-to-download-svg-files</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/how-to-download-svg-files"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/how-to-download-svg-files"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/how-to-download-svg-files"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/how-to-download-svg-files"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/how-to-download-svg-files"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/how-to-download-svg-files"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/pt-br/tutorials/how-to-download-svg-files</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/how-to-download-svg-files"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/how-to-download-svg-files"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/how-to-download-svg-files"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/how-to-download-svg-files"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/how-to-download-svg-files"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/how-to-download-svg-files"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/tutorials</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/es/tutorials</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/fr/tutorials</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/de/tutorials</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/pt-br/tutorials</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/tutorials/save-svg-from-website</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/save-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/save-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/save-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/save-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/save-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/save-svg-from-website"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/es/tutorials/save-svg-from-website</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/save-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/save-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/save-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/save-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/save-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/save-svg-from-website"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/fr/tutorials/save-svg-from-website</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/save-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/save-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/save-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/save-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/save-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/save-svg-from-website"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/de/tutorials/save-svg-from-website</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/save-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/save-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/save-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/save-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/save-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/save-svg-from-website"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/pt-br/tutorials/save-svg-from-website</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/save-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/save-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/save-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/save-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/save-svg-from-website"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/save-svg-from-website"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/tutorials/svg-downloader-extension</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/svg-downloader-extension"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/svg-downloader-extension"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/svg-downloader-extension"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/svg-downloader-extension"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/svg-downloader-extension"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/svg-downloader-extension"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/es/tutorials/svg-downloader-extension</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/svg-downloader-extension"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/svg-downloader-extension"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/svg-downloader-extension"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/svg-downloader-extension"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/svg-downloader-extension"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/svg-downloader-extension"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/fr/tutorials/svg-downloader-extension</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/svg-downloader-extension"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/svg-downloader-extension"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/svg-downloader-extension"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/svg-downloader-extension"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/svg-downloader-extension"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/svg-downloader-extension"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/de/tutorials/svg-downloader-extension</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/svg-downloader-extension"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/svg-downloader-extension"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/svg-downloader-extension"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/svg-downloader-extension"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/svg-downloader-extension"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/svg-downloader-extension"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/pt-br/tutorials/svg-downloader-extension</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/svg-downloader-extension"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/svg-downloader-extension"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/svg-downloader-extension"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/svg-downloader-extension"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/svg-downloader-extension"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/svg-downloader-extension"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/tutorials/svg-extractor-online</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/svg-extractor-online"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/svg-extractor-online"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/svg-extractor-online"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/svg-extractor-online"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/svg-extractor-online"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/svg-extractor-online"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/es/tutorials/svg-extractor-online</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/svg-extractor-online"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/svg-extractor-online"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/svg-extractor-online"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/svg-extractor-online"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/svg-extractor-online"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/svg-extractor-online"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/fr/tutorials/svg-extractor-online</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/svg-extractor-online"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/svg-extractor-online"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/svg-extractor-online"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/svg-extractor-online"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/svg-extractor-online"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/svg-extractor-online"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/de/tutorials/svg-extractor-online</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/svg-extractor-online"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/svg-extractor-online"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/svg-extractor-online"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/svg-extractor-online"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/svg-extractor-online"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/svg-extractor-online"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/pt-br/tutorials/svg-extractor-online</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/svg-extractor-online"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/svg-extractor-online"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/svg-extractor-online"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/svg-extractor-online"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/svg-extractor-online"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/svg-extractor-online"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/tutorials/website-svg-downloader</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/website-svg-downloader"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/website-svg-downloader"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/website-svg-downloader"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/website-svg-downloader"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/website-svg-downloader"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/website-svg-downloader"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/es/tutorials/website-svg-downloader</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/website-svg-downloader"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/website-svg-downloader"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/website-svg-downloader"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/website-svg-downloader"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/website-svg-downloader"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/website-svg-downloader"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/fr/tutorials/website-svg-downloader</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/website-svg-downloader"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/website-svg-downloader"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/website-svg-downloader"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/website-svg-downloader"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/website-svg-downloader"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/website-svg-downloader"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/de/tutorials/website-svg-downloader</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/website-svg-downloader"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/website-svg-downloader"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/website-svg-downloader"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/website-svg-downloader"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/website-svg-downloader"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/website-svg-downloader"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/pt-br/tutorials/website-svg-downloader</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/website-svg-downloader"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/website-svg-downloader"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/website-svg-downloader"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/website-svg-downloader"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/website-svg-downloader"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/website-svg-downloader"/>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/use-cases/design-system-icon-audit</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/use-cases/design-system-icon-audit"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/use-cases/design-system-icon-audit"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/use-cases/design-system-icon-audit"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/use-cases/design-system-icon-audit"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/use-cases/design-system-icon-audit"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/use-cases/design-system-icon-audit"/>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/es/use-cases/design-system-icon-audit</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/use-cases/design-system-icon-audit"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/use-cases/design-system-icon-audit"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/use-cases/design-system-icon-audit"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/use-cases/design-system-icon-audit"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/use-cases/design-system-icon-audit"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/use-cases/design-system-icon-audit"/>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/fr/use-cases/design-system-icon-audit</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/use-cases/design-system-icon-audit"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/use-cases/design-system-icon-audit"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/use-cases/design-system-icon-audit"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/use-cases/design-system-icon-audit"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/use-cases/design-system-icon-audit"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/use-cases/design-system-icon-audit"/>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/de/use-cases/design-system-icon-audit</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/use-cases/design-system-icon-audit"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/use-cases/design-system-icon-audit"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/use-cases/design-system-icon-audit"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/use-cases/design-system-icon-audit"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/use-cases/design-system-icon-audit"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/use-cases/design-system-icon-audit"/>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/pt-br/use-cases/design-system-icon-audit</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/use-cases/design-system-icon-audit"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/use-cases/design-system-icon-audit"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/use-cases/design-system-icon-audit"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/use-cases/design-system-icon-audit"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/use-cases/design-system-icon-audit"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/use-cases/design-system-icon-audit"/>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/use-cases/icon-set-for-pitch-deck</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/use-cases/icon-set-for-pitch-deck"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/use-cases/icon-set-for-pitch-deck"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/use-cases/icon-set-for-pitch-deck"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/use-cases/icon-set-for-pitch-deck"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/use-cases/icon-set-for-pitch-deck"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/use-cases/icon-set-for-pitch-deck"/>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/es/use-cases/icon-set-for-pitch-deck</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/use-cases/icon-set-for-pitch-deck"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/use-cases/icon-set-for-pitch-deck"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/use-cases/icon-set-for-pitch-deck"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/use-cases/icon-set-for-pitch-deck"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/use-cases/icon-set-for-pitch-deck"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/use-cases/icon-set-for-pitch-deck"/>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/fr/use-cases/icon-set-for-pitch-deck</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/use-cases/icon-set-for-pitch-deck"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/use-cases/icon-set-for-pitch-deck"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/use-cases/icon-set-for-pitch-deck"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/use-cases/icon-set-for-pitch-deck"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/use-cases/icon-set-for-pitch-deck"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/use-cases/icon-set-for-pitch-deck"/>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/de/use-cases/icon-set-for-pitch-deck</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/use-cases/icon-set-for-pitch-deck"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/use-cases/icon-set-for-pitch-deck"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/use-cases/icon-set-for-pitch-deck"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/use-cases/icon-set-for-pitch-deck"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/use-cases/icon-set-for-pitch-deck"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/use-cases/icon-set-for-pitch-deck"/>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/pt-br/use-cases/icon-set-for-pitch-deck</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/use-cases/icon-set-for-pitch-deck"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/use-cases/icon-set-for-pitch-deck"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/use-cases/icon-set-for-pitch-deck"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/use-cases/icon-set-for-pitch-deck"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/use-cases/icon-set-for-pitch-deck"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/use-cases/icon-set-for-pitch-deck"/>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/use-cases</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/use-cases"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/use-cases"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/use-cases"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/use-cases"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/use-cases"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/use-cases"/>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/es/use-cases</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/use-cases"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/use-cases"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/use-cases"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/use-cases"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/use-cases"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/use-cases"/>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/fr/use-cases</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/use-cases"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/use-cases"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/use-cases"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/use-cases"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/use-cases"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/use-cases"/>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/de/use-cases</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/use-cases"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/use-cases"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/use-cases"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/use-cases"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/use-cases"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/use-cases"/>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/pt-br/use-cases</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/use-cases"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/use-cases"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/use-cases"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/use-cases"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/use-cases"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/use-cases"/>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/use-cases/migrate-sprite-sheet-to-components</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/use-cases/migrate-sprite-sheet-to-components"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/use-cases/migrate-sprite-sheet-to-components"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/use-cases/migrate-sprite-sheet-to-components"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/use-cases/migrate-sprite-sheet-to-components"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/use-cases/migrate-sprite-sheet-to-components"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/use-cases/migrate-sprite-sheet-to-components"/>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/es/use-cases/migrate-sprite-sheet-to-components</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/use-cases/migrate-sprite-sheet-to-components"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/use-cases/migrate-sprite-sheet-to-components"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/use-cases/migrate-sprite-sheet-to-components"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/use-cases/migrate-sprite-sheet-to-components"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/use-cases/migrate-sprite-sheet-to-components"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/use-cases/migrate-sprite-sheet-to-components"/>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/fr/use-cases/migrate-sprite-sheet-to-components</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/use-cases/migrate-sprite-sheet-to-components"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/use-cases/migrate-sprite-sheet-to-components"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/use-cases/migrate-sprite-sheet-to-components"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/use-cases/migrate-sprite-sheet-to-components"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/use-cases/migrate-sprite-sheet-to-components"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/use-cases/migrate-sprite-sheet-to-components"/>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/de/use-cases/migrate-sprite-sheet-to-components</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/use-cases/migrate-sprite-sheet-to-components"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/use-cases/migrate-sprite-sheet-to-components"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/use-cases/migrate-sprite-sheet-to-components"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/use-cases/migrate-sprite-sheet-to-components"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/use-cases/migrate-sprite-sheet-to-components"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/use-cases/migrate-sprite-sheet-to-components"/>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/pt-br/use-cases/migrate-sprite-sheet-to-components</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/use-cases/migrate-sprite-sheet-to-components"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/use-cases/migrate-sprite-sheet-to-components"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/use-cases/migrate-sprite-sheet-to-components"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/use-cases/migrate-sprite-sheet-to-components"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/use-cases/migrate-sprite-sheet-to-components"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/use-cases/migrate-sprite-sheet-to-components"/>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/use-cases/recover-brand-assets-redesign</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/use-cases/recover-brand-assets-redesign"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/use-cases/recover-brand-assets-redesign"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/use-cases/recover-brand-assets-redesign"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/use-cases/recover-brand-assets-redesign"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/use-cases/recover-brand-assets-redesign"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/use-cases/recover-brand-assets-redesign"/>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/es/use-cases/recover-brand-assets-redesign</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/use-cases/recover-brand-assets-redesign"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/use-cases/recover-brand-assets-redesign"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/use-cases/recover-brand-assets-redesign"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/use-cases/recover-brand-assets-redesign"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/use-cases/recover-brand-assets-redesign"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/use-cases/recover-brand-assets-redesign"/>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/fr/use-cases/recover-brand-assets-redesign</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/use-cases/recover-brand-assets-redesign"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/use-cases/recover-brand-assets-redesign"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/use-cases/recover-brand-assets-redesign"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/use-cases/recover-brand-assets-redesign"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/use-cases/recover-brand-assets-redesign"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/use-cases/recover-brand-assets-redesign"/>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/de/use-cases/recover-brand-assets-redesign</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/use-cases/recover-brand-assets-redesign"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/use-cases/recover-brand-assets-redesign"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/use-cases/recover-brand-assets-redesign"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/use-cases/recover-brand-assets-redesign"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/use-cases/recover-brand-assets-redesign"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/use-cases/recover-brand-assets-redesign"/>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/pt-br/use-cases/recover-brand-assets-redesign</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/use-cases/recover-brand-assets-redesign"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/use-cases/recover-brand-assets-redesign"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/use-cases/recover-brand-assets-redesign"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/use-cases/recover-brand-assets-redesign"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/use-cases/recover-brand-assets-redesign"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/use-cases/recover-brand-assets-redesign"/>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/use-cases/svg-icons-for-product-docs</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/use-cases/svg-icons-for-product-docs"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/use-cases/svg-icons-for-product-docs"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/use-cases/svg-icons-for-product-docs"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/use-cases/svg-icons-for-product-docs"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/use-cases/svg-icons-for-product-docs"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/use-cases/svg-icons-for-product-docs"/>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/es/use-cases/svg-icons-for-product-docs</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/use-cases/svg-icons-for-product-docs"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/use-cases/svg-icons-for-product-docs"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/use-cases/svg-icons-for-product-docs"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/use-cases/svg-icons-for-product-docs"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/use-cases/svg-icons-for-product-docs"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/use-cases/svg-icons-for-product-docs"/>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/fr/use-cases/svg-icons-for-product-docs</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/use-cases/svg-icons-for-product-docs"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/use-cases/svg-icons-for-product-docs"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/use-cases/svg-icons-for-product-docs"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/use-cases/svg-icons-for-product-docs"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/use-cases/svg-icons-for-product-docs"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/use-cases/svg-icons-for-product-docs"/>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/de/use-cases/svg-icons-for-product-docs</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/use-cases/svg-icons-for-product-docs"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/use-cases/svg-icons-for-product-docs"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/use-cases/svg-icons-for-product-docs"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/use-cases/svg-icons-for-product-docs"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/use-cases/svg-icons-for-product-docs"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/use-cases/svg-icons-for-product-docs"/>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://svg.clasicwebtools.com/pt-br/use-cases/svg-icons-for-product-docs</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/use-cases/svg-icons-for-product-docs"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/use-cases/svg-icons-for-product-docs"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/use-cases/svg-icons-for-product-docs"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/use-cases/svg-icons-for-product-docs"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/use-cases/svg-icons-for-product-docs"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/use-cases/svg-icons-for-product-docs"/>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>

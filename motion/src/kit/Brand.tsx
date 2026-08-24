@@ -1,11 +1,12 @@
 import React from 'react'
 import {ExtMark, ICONS} from './icons'
-import {theme} from './theme'
+import {SHEET, theme} from './theme'
 
 /**
  * The closing brand card, and the same block the store tiles are built from: the
- * extension mark, the full name, and the one-line promise. Monochrome, centred,
- * quiet — the product's own voice.
+ * extension mark, the full name, and the one-line promise — set on ruled bone
+ * stock in the display face, with the plotter green as the only colour. Centred
+ * and quiet: the product's own voice.
  */
 export const BrandCard: React.FC<{
   progress?: number
@@ -24,7 +25,8 @@ export const BrandCard: React.FC<{
       alignItems: 'center',
       justifyContent: 'center',
       gap: 22,
-      background: theme.bg,
+      background: theme.paper,
+      ...SHEET,
       overflow: 'hidden',
       fontFamily: theme.font.sans,
       textAlign: 'center',
@@ -35,7 +37,7 @@ export const BrandCard: React.FC<{
     <div
       style={{
         borderRadius: markSize * 0.22,
-        boxShadow: '0 24px 60px -24px rgba(10,10,10,0.5)',
+        boxShadow: '0 24px 60px -24px rgba(27,26,21,0.5)',
         transform: `scale(${0.85 + Math.min(1, progress) * 0.15})`,
         opacity: Math.min(1, progress * 1.5),
         zIndex: 1,
@@ -45,10 +47,26 @@ export const BrandCard: React.FC<{
     </div>
 
     <div style={{zIndex: 1, transform: `translateY(${(1 - Math.min(1, progress)) * 10}px)`, opacity: Math.min(1, progress * 1.6)}}>
-      <div style={{fontSize: titleSize, fontWeight: 700, letterSpacing: '-0.03em', color: theme.text}}>
-        SVG Downloader <span style={{color: theme.dim}}>&amp;</span> Extractor
+      <div
+        style={{
+          fontFamily: theme.font.display,
+          fontVariationSettings: '"opsz" 44, "wght" 700',
+          fontSize: titleSize,
+          letterSpacing: '-0.035em',
+          color: theme.ink,
+        }}
+      >
+        SVG Downloader <span style={{color: theme.plot}}>&amp;</span> Extractor
       </div>
-      <div style={{fontSize: tagSize, color: theme.dim, marginTop: 12, fontWeight: 500}}>
+      <div
+        style={{
+          fontFamily: theme.font.mono,
+          fontSize: tagSize * 0.78,
+          letterSpacing: '0.04em',
+          color: theme.dim,
+          marginTop: 14,
+        }}
+      >
         Extract &amp; download any SVG from any website.
       </div>
     </div>
@@ -63,7 +81,7 @@ const FaintIconField: React.FC = () => {
     [88, 62], [82, 14], [36, 84], [64, 46], [12, 80], [92, 40],
   ]
   return (
-    <div style={{position: 'absolute', inset: 0, opacity: 0.06, pointerEvents: 'none'}}>
+    <div style={{position: 'absolute', inset: 0, opacity: 0.07, pointerEvents: 'none'}}>
       {spots.map(([left, top], i) => (
         <div
           key={i}
@@ -74,10 +92,10 @@ const FaintIconField: React.FC = () => {
             width: 44,
             height: 44,
             transform: 'translate(-50%, -50%)',
-            color: '#0a0a0a',
+            color: theme.ink,
           }}
         >
-          {ICONS[picks[i % picks.length]].node('#0a0a0a')}
+          {ICONS[picks[i % picks.length]].node(theme.ink)}
         </div>
       ))}
     </div>
@@ -98,22 +116,33 @@ export const Caption: React.FC<{
     {eyebrow ? (
       <div
         style={{
+          fontFamily: theme.font.mono,
           fontSize: 13,
-          fontWeight: 700,
-          letterSpacing: '0.14em',
+          letterSpacing: '0.18em',
           textTransform: 'uppercase',
-          color: theme.dim2,
+          color: theme.plot,
           marginBottom: 12,
         }}
       >
         {eyebrow}
       </div>
     ) : null}
-    <div style={{fontSize: 38, fontWeight: 700, letterSpacing: '-0.03em', color: theme.text, lineHeight: 1.1}}>
+    <div
+      style={{
+        fontFamily: theme.font.display,
+        fontVariationSettings: '"opsz" 40, "wght" 700',
+        fontSize: 38,
+        letterSpacing: '-0.035em',
+        color: theme.ink,
+        lineHeight: 1.1,
+      }}
+    >
       {title}
     </div>
     {sub ? (
-      <div style={{fontSize: 18, color: theme.dim, marginTop: 10, fontWeight: 500}}>{sub}</div>
+      <div style={{fontFamily: theme.font.mono, fontSize: 14.5, letterSpacing: '0.02em', color: theme.dim, marginTop: 12}}>
+        {sub}
+      </div>
     ) : null}
   </div>
 )

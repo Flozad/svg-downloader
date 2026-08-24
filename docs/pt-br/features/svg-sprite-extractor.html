@@ -1,0 +1,247 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Extrair SVG de uma folha de sprites — SVG Downloader</title>
+<meta name="description" content="Um sprite empilha muitos ícones atrás de referências <use>, então salvar do jeito comum entrega a folha inteira. O SVG Downloader resolve cada símbolo do mesmo documento e salva o glifo que você quer.">
+<link rel="canonical" href="https://svg.clasicwebtools.com/pt-br/features/svg-sprite-extractor"><!--i18n:alternates-->
+<link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/features/svg-sprite-extractor">
+<link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/features/svg-sprite-extractor">
+<link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/features/svg-sprite-extractor">
+<link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/features/svg-sprite-extractor">
+<link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/features/svg-sprite-extractor">
+<link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/features/svg-sprite-extractor">
+<!--/i18n:alternates-->
+<link rel="alternate" type="text/plain" href="https://svg.clasicwebtools.com/llms.txt" title="llms.txt — machine-readable site summary">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="author" content="Flozad">
+<meta name="theme-color" content="#ece4d3">
+<meta property="og:site_name" content="SVG Downloader">
+<meta property="og:title" content="Extrair SVG de uma folha de sprites">
+<meta property="og:description" content="Um sprite empilha muitos ícones atrás de referências <use>, então salvar do jeito comum entrega a folha inteira. O SVG Downloader resolve cada símbolo do mesmo documento e salva o glifo que você quer.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://svg.clasicwebtools.com/pt-br/features/svg-sprite-extractor">
+<meta property="og:image" content="https://svg.clasicwebtools.com/motion/06-brand.png">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="SVG Downloader salvando um vetor inline de uma página.">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@lozards">
+<meta name="twitter:title" content="Extrair SVG de uma folha de sprites">
+<meta name="twitter:description" content="Um sprite empilha muitos ícones atrás de referências <use>, então salvar do jeito comum entrega a folha inteira. O SVG Downloader resolve cada símbolo do mesmo documento e salva o glifo que você quer.">
+<meta name="twitter:image" content="https://svg.clasicwebtools.com/motion/06-brand.png">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/fonts/bricolage-var.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/pages.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Início",
+          "item": "https://svg.clasicwebtools.com/pt-br/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Recursos",
+          "item": "https://svg.clasicwebtools.com/pt-br/features"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Extrator de sprites SVG",
+          "item": "https://svg.clasicwebtools.com/pt-br/features/svg-sprite-extractor"
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://svg.clasicwebtools.com/pt-br/features/svg-sprite-extractor",
+      "url": "https://svg.clasicwebtools.com/pt-br/features/svg-sprite-extractor",
+      "name": "Extrair SVG de uma folha de sprites",
+      "description": "Como o SVG Downloader resolve referências <use> do mesmo documento num sprite SVG e salva glifos individuais.",
+      "inLanguage": "pt-BR",
+      "isPartOf": {
+        "@id": "https://svg.clasicwebtools.com/pt-br/#website"
+      },
+      "about": {
+        "@id": "https://svg.clasicwebtools.com/pt-br/#app"
+      },
+      "primaryImageOfPage": "https://svg.clasicwebtools.com/motion/06-brand.png"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Pular para o conteúdo</a>
+
+<nav class="nav">
+  <a class="brand" href="/pt-br/">
+    <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+      <rect width="48" height="48" rx="10" fill="var(--plot)"></rect>
+      <path d="M24 13v15m0 0l-6.5-6.5M24 28l6.5-6.5" fill="none" stroke="var(--surface-hi)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+      <rect x="16.5" y="33.5" width="15" height="2.4" rx="1.2" fill="var(--surface-hi)"></rect>
+    </svg>
+    <strong>SVG&nbsp;Downloader</strong>
+  </a>
+  <span class="spacer"></span>
+  <span class="nav-links">
+    <a href="/pt-br/features" aria-current="page">Recursos</a>
+    <a href="/pt-br/tutorials">Tutoriais</a>
+    <a href="/pt-br/guides">Guias</a>
+    <a href="/pt-br/docs">Docs</a>
+    <a href="/pt-br/privacy">Privacidade</a>
+    <a href="/pt-br/use-cases">Histórias</a>
+  </span><!--i18n:switch-->
+  <details class="lang-switch">
+    <summary aria-label="Idioma"><span>PT</span></summary>
+    <ul>
+      <li><a href="/features/svg-sprite-extractor" hreflang="en" lang="en">English</a></li>
+      <li><a href="/es/features/svg-sprite-extractor" hreflang="es" lang="es">Español</a></li>
+      <li><a href="/fr/features/svg-sprite-extractor" hreflang="fr" lang="fr">Français</a></li>
+      <li><a href="/de/features/svg-sprite-extractor" hreflang="de" lang="de">Deutsch</a></li>
+      <li><a href="/pt-br/features/svg-sprite-extractor" hreflang="pt-BR" lang="pt-BR" aria-current="true">Português</a></li>
+    </ul>
+  </details>
+  <!--/i18n:switch-->
+  <a class="nav-cta" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Instalar a extensão</a>
+</nav>
+
+<main id="main">
+<header class="page-hero"><div class="wrap">
+  <ol class="crumbs">
+    <li><a href="/pt-br/">Início</a></li>
+    <li><a href="/pt-br/features">Recursos</a></li>
+    <li><span aria-current="page">Extrator de sprites SVG</span></li>
+  </ol>
+  <p class="eyebrow">Recurso — todas as origens · 3 de 4</p>
+  <h1>Extraia um ícone de um <span class="plot">sprite&nbsp;SVG</span></h1>
+  <p class="lede">Uma folha de sprites empilha dezenas de ícones num arquivo só e pinta cada um com <code>&lt;use href="#id"&gt;</code>. Salve do jeito óbvio e você recebe a folha inteira — ou nada. O SVG Downloader resolve a referência e entrega aquele único glifo.</p>
+  <div class="cta">
+    <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 12v16m0 0l-7-7m7 7l7-7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"></path><rect x="16" y="34" width="16" height="2.6" rx="1.3" fill="currentColor"></rect></svg>
+      Instalar a extensão</a>
+    <a class="btn quiet" href="/pt-br/guides/how-to-extract-svg-icons-from-a-website">Ler o passo a passo →</a>
+  </div>
+</div></header>
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">O problema</p>
+  <h2>Por que um sprite entrega a folha inteira ou nada</h2>
+  <p class="lead-in">Sprites SVG são o jeito de conjuntos grandes de ícones continuarem rápidos. Cada ícone é definido uma vez — normalmente como um <code>&lt;symbol&gt;</code> com um <code>id</code>, guardado dentro de um único <code>&lt;svg&gt;</code> escondido — e cada lugar que mostra um ícone escreve só <code>&lt;use href="#chevron"&gt;</code>. O navegador carimba uma cópia daquele símbolo onde a referência está. Rápido de carregar, e uma armadilha para extrair.</p>
+  <p>A armadilha é que um elemento <code>&lt;use&gt;</code> não guarda desenho nenhum. Ele é um ponteiro. Tente salvar o ícone que você vê e estará salvando uma referência vazia — um arquivo que não desenha nada sozinho porque o símbolo apontado não está nele. Vá pelo outro caminho e salve a origem do sprite, e você recebe os quarenta ícones soldados num arquivo só, a maioria definida em coordenadas bem fora de qualquer viewBox. Nenhum dos dois é o ícone que você queria.</p>
+
+  <h2>O que o SVG Downloader faz no lugar</h2>
+  <p>Abra o popup e ele segue os ponteiros. Para cada <code>&lt;use&gt;</code> que aponta para algum lugar do mesmo documento — o clássico <code>&lt;use href="#chevron"&gt;</code> para um sprite inline escondido — ele busca o <code>&lt;symbol&gt;</code> ou <code>&lt;g&gt;</code> referenciado e reconstrói um SVG completo e independente para aquele único glifo. Cada um ganha sua prévia isolada, então uma folha de quarenta ícones vira quarenta prévias que você percorre e salva uma a uma.</p>
+  <ul>
+    <li><strong>A referência resolvida.</strong> O <code>href</code> (ou o antigo <code>xlink:href</code>) é seguido até seu símbolo, e esse símbolo é clonado num <code>&lt;defs&gt;</code> novo no topo do arquivo salvo. O <code>&lt;use&gt;</code> fica onde estava e agora resolve contra markup que o próprio arquivo carrega — então ele renderiza certo em qualquer lugar, sem sprite ao lado.</li>
+    <li><strong>Um glifo, não a folha.</strong> Você salva o chevron, não o chevron mais trinta e nove vizinhos. Cada referência é extraída em separado, e você pode digitar o nome que quiser antes de salvar — ou levar tudo como um conjunto numerado com <a href="/pt-br/features/bulk-zip-download">Baixar tudo em ZIP</a>.</li>
+    <li><strong>Ou leve todos.</strong> Quando você quer o conjunto completo, <a href="/pt-br/features/bulk-zip-download">Baixar tudo em ZIP</a> extrai todo símbolo referenciado de uma vez, sem duplicatas, num arquivo só.</li>
+  </ul>
+
+  <h2>O que você recebe de volta</h2>
+  <dl class="facts">
+    <div><dt>Formato</dt><dd>Um <strong>.svg</strong> limpo e dentro do padrão por glifo — o símbolo embutido num arquivo autossuficiente, com namespace consertado.</dd></div>
+    <div><dt>Referências lidas</dt><dd><code>&lt;use&gt;</code> apontando <strong>dentro do mesmo documento</strong>, via <code>href</code> e o antigo <code>xlink:href</code>. Arquivos de sprite externos não são resolvidos.</dd></div>
+    <div><dt>Onde ele roda</dt><dd>Inteiramente <strong>no seu navegador</strong>. As referências são resolvidas localmente — sem upload, sem servidor, sem conta.</dd></div>
+    <div><dt>Também dá conta de</dt><dd><a href="/pt-br/features/inline-svg">SVG inline</a>, <a href="/pt-br/features/css-background-svg">fundos CSS</a> e <a href="/pt-br/features/bulk-zip-download">ZIP da página inteira</a>.</dd></div>
+  </dl>
+</div></section>
+
+<hr class="section-rule">
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Vale saber</p>
+  <h2>Perguntas sobre sprites SVG</h2>
+  <div class="faq">
+    <details>
+      <summary>O que é um sprite SVG, exatamente?</summary>
+      <div class="faq-body"><p>Um arquivo SVG que define muitos ícones como elementos <code>&lt;symbol&gt;</code> separados, cada um com seu <code>id</code>. As páginas referenciam um ícone com <code>&lt;use href="#id"&gt;</code> em vez de repetir o markup. É o equivalente, para conjuntos de ícones, de uma folha de sprites CSS — um download, muitos glifos.</p></div>
+    </details>
+    <details>
+      <summary>Por que salvar o ícone me dá um arquivo vazio?</summary>
+      <div class="faq-body"><p>Porque um elemento <code>&lt;use&gt;</code> não contém desenho — ele aponta para um símbolo definido em outro lugar. Copiada sozinha, aquela referência não tem o que renderizar. O SVG Downloader resolve o ponteiro até o símbolo de verdade primeiro, então o arquivo que você salva desenha o ícone.</p></div>
+    </details>
+    <details>
+      <summary>Funciona com um arquivo de sprite externo, não só com um inline?</summary>
+      <div class="faq-body"><p>Não — sprites externos não são suportados. Se a referência aponta para fora do documento atual, como em <code>&lt;use href="/sprite.svg#cart"&gt;</code>, aquele <code>&lt;svg&gt;</code> é ignorado e contado como ignorado, em vez de ser entregue quebrado. Só referências do mesmo documento — <code>&lt;use href="#cart"&gt;</code> para um sprite inline escondido, que é como a maioria dos sites publica — são resolvidas. Se um site usa um sprite externo, abrir <code>sprite.svg</code> direto entrega a folha de origem.</p></div>
+    </details>
+    <details>
+      <summary>E um símbolo que referencia outro símbolo?</summary>
+      <div class="faq-body"><p>A resolução vai um nível de profundidade. Um <code>&lt;symbol&gt;</code> cujo conteúdo inclui outro <code>&lt;use&gt;</code> apontando para um segundo símbolo fica sem resolver, então essa peça aninhada não desenha no arquivo salvo. É incomum — a maioria dos sprites define cada glifo de forma plana — mas vale conferir a prévia se um ícone parecer meio vazio.</p></div>
+    </details>
+  </div>
+</div></section>
+
+<hr class="section-rule">
+
+<section><div class="wrap">
+  <div class="cta-band">
+    <div>
+      <h2>Tire um ícone limpo da folha</h2>
+      <p>Grátis, privado, e segue a referência que o navegador esconde.</p>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Instalar a extensão</a>
+      <a class="btn quiet" href="/pt-br/features">Todos os recursos →</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="related"><div class="wrap">
+  <p class="eyebrow">Continue lendo</p>
+  <ul>
+    <li><a href="/pt-br/features/inline-svg">SVG inline<span>A origem mais simples</span></a></li>
+    <li><a href="/pt-br/features/bulk-zip-download">Página inteira em ZIP<span>Pegar o conjunto todo</span></a></li>
+    <li><a href="/pt-br/guides/how-to-extract-svg-icons-from-a-website">Extrair ícones SVG<span>Guia passo a passo</span></a></li>
+  </ul>
+</div></section>
+</main>
+
+<footer>
+  <nav class="bleed foot-map" aria-label="Mapa do site">
+    <div class="col"><p>Produto</p><ul>
+      <li><a href="/pt-br/">Visão geral</a></li>
+      <li><a href="/pt-br/features">Recursos</a></li>
+      <li><a href="/pt-br/compare/svg-downloader-vs-screenshotting-icons">Vs. print de tela</a></li>
+      <li><a href="/pt-br/privacy">Privacidade</a></li>
+      <li><a href="/pt-br/use-cases">Casos de uso</a></li>
+    </ul></div>
+    <div class="col"><p>O que ele encontra</p><ul>
+      <li><a href="/pt-br/features/inline-svg">SVG inline</a></li>
+      <li><a href="/pt-br/features/css-background-svg">SVG em fundo CSS</a></li>
+      <li><a href="/pt-br/features/svg-sprite-extractor">SVG de sprite / &lt;use&gt;</a></li>
+      <li><a href="/pt-br/features/bulk-zip-download">Página inteira em ZIP</a></li>
+    </ul></div>
+    <div class="col"><p>Tutoriais</p><ul>
+      <li><a href="/pt-br/tutorials">Todos os 15 tutoriais</a></li>
+      <li><a href="/pt-br/tutorials/how-to-download-svg-files">Como baixar arquivos SVG</a></li>
+      <li><a href="/pt-br/tutorials/copy-svg-from-website">Copiar um SVG</a></li>
+      <li><a href="/pt-br/guides">Guias completos</a></li>
+    </ul></div>
+    <div class="col"><p>Docs</p><ul>
+      <li><a href="/pt-br/docs/installation">Instalação</a></li>
+      <li><a href="/pt-br/docs/usage">Uso</a></li>
+      <li><a href="/pt-br/docs/faq">Perguntas frequentes</a></li>
+      <li><a href="/pt-br/docs/changelog">Mudanças</a></li>
+    </ul></div>
+  </nav>
+  <div class="bleed colophon-foot">
+    <a href="https://github.com/Flozad/svg-downloader">GitHub</a>
+    <a href="https://github.com/Flozad/svg-downloader/issues">Issues</a>
+    <a href="https://clasicwebtools.com">clasicwebtools.com</a>
+    <span class="grow"></span>
+    <span>Papel osso, grafite e um único verde&nbsp;plotter</span>
+  </div>
+</footer>
+
+
+</body></html>

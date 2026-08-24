@@ -1,0 +1,250 @@
+[
+  {
+    "id": "download-svg-from-url",
+    "title": "Download an SVG when all you have is a URL",
+    "eyebrow": "download svg from url",
+    "seconds": 21.6,
+    "duration": "PT22S",
+    "video": "/motion/tutorials/download-svg-from-url.mp4",
+    "poster": "/motion/tutorials/download-svg-from-url.jpg",
+    "captions": [
+      "Open the URL that holds the vector",
+      "Click the toolbar button — it reads the live page",
+      "The address bar has no .svg in it. It does not need one.",
+      "Page to the vector you came for",
+      "Name the file before you save it",
+      "Download current — the real markup, from that URL",
+      "Saved as star.svg. Sharp at any size."
+    ]
+  },
+  {
+    "id": "download-svg-from-link",
+    "title": "Save an SVG from a link instead of an HTML page",
+    "eyebrow": "download svg from link",
+    "seconds": 19.4,
+    "duration": "PT19S",
+    "video": "/motion/tutorials/download-svg-from-link.mp4",
+    "poster": "/motion/tutorials/download-svg-from-link.jpg",
+    "captions": [
+      "A link that points at a vector, not a page",
+      "Save link as… would hand you the HTML wrapper",
+      "Open the popup on the page the link is on",
+      "The linked vector is in the list",
+      "Give it a name that means something",
+      "Download current — the file behind the link"
+    ]
+  },
+  {
+    "id": "copy-svg-from-website",
+    "title": "Copy an SVG from a website — as code or as a picture",
+    "eyebrow": "copy svg from website",
+    "seconds": 19,
+    "duration": "PT19S",
+    "video": "/motion/tutorials/copy-svg-from-website.mp4",
+    "poster": "/motion/tutorials/copy-svg-from-website.jpg",
+    "captions": [
+      "Open the popup on the page you are reading",
+      "Land on the icon you want",
+      "Copy code — the markup, straight to your clipboard",
+      "Paste it into a component and it just works",
+      "Or Copy image — a PNG, for docs and chat",
+      "Two clipboards, one icon. No file on disk either way."
+    ]
+  },
+  {
+    "id": "save-svg-from-website",
+    "title": "Save an SVG when right-click has nothing to offer",
+    "eyebrow": "save svg from website",
+    "seconds": 19.4,
+    "duration": "PT19S",
+    "video": "/motion/tutorials/save-svg-from-website.mp4",
+    "poster": "/motion/tutorials/save-svg-from-website.jpg",
+    "captions": [
+      "Save image as… is missing on every icon here",
+      "The extension reads the DOM instead of the menu",
+      "Inline, CSS background, sprite, img — all found",
+      "Pick the one you actually want",
+      "Name it",
+      "Saved — a real vector, not a screenshot"
+    ]
+  },
+  {
+    "id": "extract-svg-from-website",
+    "title": "Extract every SVG on a website in one pass",
+    "eyebrow": "extract svg from website",
+    "seconds": 16.6,
+    "duration": "PT17S",
+    "video": "/motion/tutorials/extract-svg-from-website.mp4",
+    "poster": "/motion/tutorials/extract-svg-from-website.jpg",
+    "captions": [
+      "One scan finds every vector the page renders",
+      "Check the set before you take it",
+      "Prev and Next walk the whole list",
+      "Download all as ZIP — the entire set at once",
+      "De-duplicated, numbered, and named in the status line"
+    ]
+  },
+  {
+    "id": "grab-svg-from-website",
+    "title": "Grab one SVG fast, without opening anything",
+    "eyebrow": "svg grabber",
+    "seconds": 15.2,
+    "duration": "PT15S",
+    "video": "/motion/tutorials/grab-svg-from-website.mp4",
+    "poster": "/motion/tutorials/grab-svg-from-website.jpg",
+    "captions": [
+      "You want one icon, and you want it now",
+      "Right-click it and take Save this as SVG",
+      "No popup, no scan — one menu item, one file",
+      "The same sanitiser runs, so the file still opens anywhere"
+    ]
+  },
+  {
+    "id": "download-svg-from-webpage",
+    "title": "Take an inventory of every SVG on a webpage",
+    "eyebrow": "download svg from webpage",
+    "seconds": 17,
+    "duration": "PT17S",
+    "video": "/motion/tutorials/download-svg-from-webpage.mp4",
+    "poster": "/motion/tutorials/download-svg-from-webpage.jpg",
+    "captions": [
+      "How many vectors does this page actually have?",
+      "The counter answers it — 24 found",
+      "Page through to see what you are getting",
+      "Then take the lot in one click",
+      "Anything that could not be resolved is named, not silently dropped"
+    ]
+  },
+  {
+    "id": "download-svg-from-html",
+    "title": "Pull an SVG out of the HTML without opening DevTools",
+    "eyebrow": "download svg from html",
+    "seconds": 16.8,
+    "duration": "PT17S",
+    "video": "/motion/tutorials/download-svg-from-html.mp4",
+    "poster": "/motion/tutorials/download-svg-from-html.jpg",
+    "captions": [
+      "The markup is inline in the HTML — no file to fetch",
+      "Find the element you want",
+      "Copy code lifts the markup itself",
+      "View-source would give you the same tag, minus the xmlns",
+      "Or save it as a file, namespace repaired"
+    ]
+  },
+  {
+    "id": "how-to-download-svg-files",
+    "title": "How to download SVG files, start to finish",
+    "eyebrow": "how to download svg files",
+    "seconds": 19.4,
+    "duration": "PT19S",
+    "video": "/motion/tutorials/how-to-download-svg-files.mp4",
+    "poster": "/motion/tutorials/how-to-download-svg-files.jpg",
+    "captions": [
+      "An SVG is vector text, not a picture of one",
+      "Step one — open the popup on the page",
+      "Step two — let it scan. It reads the page, not the network.",
+      "Step three — preview and pick",
+      "Step four — name the file",
+      "Step five — download. That is the whole job."
+    ]
+  },
+  {
+    "id": "extract-svg-logo-from-website",
+    "title": "Extract a company logo as a real vector",
+    "eyebrow": "extract svg logo from website",
+    "seconds": 19.4,
+    "duration": "PT19S",
+    "video": "/motion/tutorials/extract-svg-logo-from-website.mp4",
+    "poster": "/motion/tutorials/extract-svg-logo-from-website.jpg",
+    "captions": [
+      "The logo in the header is one inline <svg>",
+      "Scan the page and it comes back with the rest",
+      "Page to the mark itself",
+      "Name it properly for your brand folder",
+      "Saved at full fidelity — scales to a billboard",
+      "Check the licence before you reuse somebody’s mark"
+    ]
+  },
+  {
+    "id": "free-svg-downloader",
+    "title": "A free SVG downloader with nothing held back",
+    "eyebrow": "free svg downloader",
+    "seconds": 17,
+    "duration": "PT17S",
+    "video": "/motion/tutorials/free-svg-downloader.mp4",
+    "poster": "/motion/tutorials/free-svg-downloader.jpg",
+    "captions": [
+      "No account, no trial, no watermark",
+      "Every icon on the page, free to preview",
+      "Single downloads — free",
+      "Bulk ZIP — also free",
+      "MIT-licensed and on-device. Nothing is uploaded anywhere."
+    ]
+  },
+  {
+    "id": "svg-downloader-extension",
+    "title": "The extension, installed and working in a minute",
+    "eyebrow": "svg downloader extension",
+    "seconds": 16.8,
+    "duration": "PT17S",
+    "video": "/motion/tutorials/svg-downloader-extension.mp4",
+    "poster": "/motion/tutorials/svg-downloader-extension.jpg",
+    "captions": [
+      "Install once from the Chrome Web Store",
+      "Pin it, then click it on any page",
+      "It asks for activeTab — this page, this click, nothing else",
+      "Chrome, Edge and Brave all run it",
+      "And it works the same in all three"
+    ]
+  },
+  {
+    "id": "download-svg-image-from-website",
+    "title": "Download an SVG image — or convert it on the way out",
+    "eyebrow": "download svg image from website",
+    "seconds": 18.6,
+    "duration": "PT19S",
+    "video": "/motion/tutorials/download-svg-image-from-website.mp4",
+    "poster": "/motion/tutorials/download-svg-image-from-website.jpg",
+    "captions": [
+      "The image is an SVG, so it has no fixed size",
+      "Pick the image you want",
+      "Take the vector if you will edit it",
+      "Or switch to PNG if you need a raster",
+      "Rendered on your machine at 1×, 2× or 4×",
+      "Same icon, now a pixel-perfect PNG"
+    ]
+  },
+  {
+    "id": "svg-extractor-online",
+    "title": "Why an online SVG extractor cannot see this page",
+    "eyebrow": "svg extractor online",
+    "seconds": 17.2,
+    "duration": "PT17S",
+    "video": "/motion/tutorials/svg-extractor-online.mp4",
+    "poster": "/motion/tutorials/svg-extractor-online.jpg",
+    "captions": [
+      "An online tool only gets the URL you paste",
+      "It never runs the page, so inline icons stay invisible",
+      "An extension runs inside the page you are already on",
+      "Logged-in pages and private dashboards included",
+      "And nothing leaves your machine to make it work"
+    ]
+  },
+  {
+    "id": "website-svg-downloader",
+    "title": "One icon, a whole set, or the markup — pick your exit",
+    "eyebrow": "website svg downloader",
+    "seconds": 19.4,
+    "duration": "PT19S",
+    "video": "/motion/tutorials/website-svg-downloader.mp4",
+    "poster": "/motion/tutorials/website-svg-downloader.jpg",
+    "captions": [
+      "One scan, then three ways out",
+      "Preview until you find it",
+      "One file — Download current",
+      "The whole page — Download all as ZIP",
+      "Or no file at all — Copy code",
+      "Same scan, same page, whichever one you need"
+    ]
+  }
+]

@@ -1,0 +1,309 @@
+<!DOCTYPE html><html lang="fr"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comment extraire un SVG d'un fond CSS — SVG Downloader</title>
+<meta name="description" content="Extrayez un SVG d'un fond CSS que le navigateur cache au menu contextuel — URI de données comme références url() — et enregistrez le fichier vectoriel d'origine.">
+<link rel="canonical" href="https://svg.clasicwebtools.com/fr/guides/extract-svg-from-css-background"><!--i18n:alternates-->
+<link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/guides/extract-svg-from-css-background">
+<link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/guides/extract-svg-from-css-background">
+<link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/guides/extract-svg-from-css-background">
+<link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/guides/extract-svg-from-css-background">
+<link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/guides/extract-svg-from-css-background">
+<link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/guides/extract-svg-from-css-background">
+<!--/i18n:alternates-->
+<link rel="alternate" type="text/plain" href="https://svg.clasicwebtools.com/llms.txt" title="llms.txt — machine-readable site summary">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="author" content="Flozad">
+<meta name="theme-color" content="#ece4d3">
+<meta property="og:site_name" content="SVG Downloader">
+<meta property="og:title" content="Comment extraire un SVG d'un fond CSS">
+<meta property="og:description" content="Extrayez un SVG d'un fond CSS que le navigateur cache au menu contextuel — URI de données comme références url() — et enregistrez le fichier vectoriel d'origine.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://svg.clasicwebtools.com/fr/guides/extract-svg-from-css-background">
+<meta property="og:image" content="https://svg.clasicwebtools.com/motion/06-brand.png">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="SVG Downloader lisant un SVG en background-image CSS depuis les styles calculés.">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@lozards">
+<meta name="twitter:title" content="Comment extraire un SVG d'un fond CSS">
+<meta name="twitter:description" content="Extrayez un SVG d'un fond CSS que le navigateur cache au menu contextuel — URI de données comme références url() — et enregistrez le fichier vectoriel d'origine.">
+<meta name="twitter:image" content="https://svg.clasicwebtools.com/motion/06-brand.png">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/fonts/bricolage-var.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/pages.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://svg.clasicwebtools.com/fr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://svg.clasicwebtools.com/fr/guides"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Extraire un SVG d'un fond CSS",
+          "item": "https://svg.clasicwebtools.com/fr/guides/extract-svg-from-css-background"
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "name": "Comment extraire un SVG d'un fond CSS",
+      "description": "Enregistrez un SVG en background-image CSS — URI data: ou référence url() vers un fichier .svg — comme le vecteur d'origine grâce à l'extension Chrome SVG Downloader.",
+      "totalTime": "PT1M",
+      "tool": {
+        "@type": "HowToTool",
+        "name": "SVG Downloader (extension Chrome)"
+      },
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Installez SVG Downloader",
+          "text": "Ajoutez l'extension gratuite SVG Downloader à Chrome, Edge ou Brave. Elle fonctionne entièrement sur votre appareil.",
+          "url": "https://svg.clasicwebtools.com/fr/guides/extract-svg-from-css-background#install"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Ouvrez le popup sur la page",
+          "text": "Allez sur la page qui contient le SVG de fond et cliquez sur l'icône SVG Downloader dans la barre d'outils.",
+          "url": "https://svg.clasicwebtools.com/fr/guides/extract-svg-from-css-background#open"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Laissez-le lire les styles calculés",
+          "text": "L'extension inspecte les styles calculés de toute la page, trouve les déclarations background-image qui contiennent des SVG, et résout aussi bien les URI data: encastrés que les références url() vers des fichiers .svg.",
+          "url": "https://svg.clasicwebtools.com/fr/guides/extract-svg-from-css-background#read"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Prévisualisez et choisissez le SVG de fond",
+          "text": "Chaque SVG de fond apparaît dans un aperçu isolé. Parcourez avec Précédent/Suivant jusqu'à trouver celui que vous voulez.",
+          "url": "https://svg.clasicwebtools.com/fr/guides/extract-svg-from-css-background#preview"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 5,
+          "name": "Téléchargez le vecteur d'origine",
+          "text": "Cliquez sur Télécharger le SVG courant pour enregistrer le balisage d'origine dans un fichier .svg avec l'espace de noms réparé.",
+          "url": "https://svg.clasicwebtools.com/fr/guides/extract-svg-from-css-background#download"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Pourquoi ne puis-je pas enregistrer un SVG de fond CSS au clic droit ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Parce qu'un fond CSS est peint par la feuille de style, pas posé comme élément image. Le navigateur ne propose Enregistrer l'image sous… que pour ce qu'il traite comme des images — un <img>, un canvas. Un background-image vit dans le style calculé d'un élément : il n'y a donc rien à enregistrer dans le menu contextuel."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Gère-t-il à la fois les URI data: et les références url() ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. SVG Downloader résout un background-image encastré en URI data: en le décodant, et un url() pointant vers un fichier .svg en lisant ce fichier. Dans les deux cas vous récupérez le vecteur d'origine."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Le fichier enregistré est-il le vrai SVG ou une capture ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Le vrai SVG. L'extension enregistre le balisage d'origine — tracés et viewBox intacts, espace de noms réparé — pas un rendu matriciel. Il reste net à toute taille et reste modifiable."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Aller au contenu</a>
+
+<nav class="nav">
+  <a class="brand" href="/fr/">
+    <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+      <rect width="48" height="48" rx="10" fill="var(--plot)"></rect>
+      <path d="M24 13v15m0 0l-6.5-6.5M24 28l6.5-6.5" fill="none" stroke="var(--surface-hi)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+      <rect x="16.5" y="33.5" width="15" height="2.4" rx="1.2" fill="var(--surface-hi)"></rect>
+    </svg>
+    <strong>SVG&nbsp;Downloader</strong>
+  </a>
+  <span class="spacer"></span>
+  <span class="nav-links">
+    <a href="/fr/features">Fonctions</a>
+    <a href="/fr/tutorials">Tutoriels</a>
+    <a href="/fr/guides" aria-current="page">Guides</a>
+    <a href="/fr/docs">Docs</a>
+    <a href="/fr/privacy">Confidentialité</a>
+    <a href="/fr/use-cases">Histoires</a>
+  </span><!--i18n:switch-->
+  <details class="lang-switch">
+    <summary aria-label="Langue"><span>FR</span></summary>
+    <ul>
+      <li><a href="/guides/extract-svg-from-css-background" hreflang="en" lang="en">English</a></li>
+      <li><a href="/es/guides/extract-svg-from-css-background" hreflang="es" lang="es">Español</a></li>
+      <li><a href="/fr/guides/extract-svg-from-css-background" hreflang="fr" lang="fr" aria-current="true">Français</a></li>
+      <li><a href="/de/guides/extract-svg-from-css-background" hreflang="de" lang="de">Deutsch</a></li>
+      <li><a href="/pt-br/guides/extract-svg-from-css-background" hreflang="pt-BR" lang="pt-BR">Português</a></li>
+    </ul>
+  </details>
+  <!--/i18n:switch-->
+  <a class="nav-cta" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Installer l'extension</a>
+</nav>
+
+<main id="main">
+<header class="page-hero"><div class="wrap">
+  <ol class="crumbs">
+    <li><a href="/fr/">Accueil</a></li>
+    <li><a href="/fr/guides">Guides</a></li>
+    <li><span aria-current="page">Extraire un SVG d'un fond CSS</span></li>
+  </ol>
+  <p class="eyebrow">Guide — source cachée</p>
+  <h1>Extraire un <span class="plot">SVG</span> d'un fond CSS</h1>
+  <p class="lede">Un SVG en background-image est peint sur un élément directement depuis la feuille de style. Aucune image à faire clic droit, aucun fichier posé dans la page. SVG Downloader lit les styles calculés, résout la référence et enregistre le vecteur d'origine.</p>
+  <div class="cta">
+    <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 12v16m0 0l-7-7m7 7l7-7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"></path><rect x="16" y="34" width="16" height="2.6" rx="1.3" fill="currentColor"></rect></svg>
+      Installer l'extension</a>
+    <a class="btn quiet" href="/fr/features/css-background-svg">Voir la fonction →</a>
+  </div>
+</div></header>
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Le problème</p>
+  <h2>Pourquoi les SVG de fond résistent au clic droit</h2>
+  <p class="lead-in">Quantité de marques décoratives, de motifs et d'icônes sont appliqués en <code>background-image</code> CSS plutôt que posés en <code>&lt;img&gt;</code>. C'est une façon courante et propre de styler un bouton ou une bannière. Cela veut aussi dire que le SVG est dessiné par la feuille de style sur le fond d'un élément, et que le navigateur ne traite pas cet élément comme une image. Clic droit : pas d'<em>Enregistrer l'image sous…</em> — rien que le menu reconnaisse comme enregistrable.</p>
+  <p>Pire, le SVG peut se cacher sous deux formes. Ce peut être un URI <code>data:</code> fourré directement dans le CSS, encodé URL et illisible. Ou un <code>url()</code> pointant vers un fichier <code>.svg</code> distinct quelque part sur le serveur. Poursuivre l'un ou l'autre via DevTools, c'est lire les styles calculés à la main, décoder ou récupérer, puis réparer un fichier qui refuse de s'ouvrir.</p>
+
+  <h2 id="how">Comment SVG Downloader le lit</h2>
+  <p>L'extension fait ce travail de jambes pour vous. Elle parcourt les styles calculés de la page, repère les déclarations <code>background-image</code> qui portent un SVG et résout la forme trouvée — en décodant un URI <code>data:</code> sur place, ou en lisant le fichier visé par un <code>url()</code>. Ce qu'elle enregistre est le balisage d'origine, pas une image de celui-ci.</p>
+
+  <h2 id="install">Pas à pas : du fond au fichier</h2>
+  <ol>
+    <li><strong id="open">Installez et ouvrez le popup.</strong> Ajoutez l'extension gratuite à Chrome, Edge ou Brave, ouvrez la page et cliquez sur l'icône de la barre d'outils. Tout se passe en local.</li>
+    <li><strong id="read">Laissez-le lire les styles calculés.</strong> SVG Downloader inspecte les styles de la page et rassemble les SVG de fond aux côtés des sources en ligne, <code>&lt;img&gt;</code> et sprites du même document qu'il détecte aussi. Au-delà de 10 000 éléments, cette analyse est sautée pour la vitesse, et le popup le dit.</li>
+    <li><strong id="preview">Prévisualisez et choisissez.</strong> Chaque SVG de fond s'affiche dans un aperçu isolé, hors de la page chargée. Utilisez Précédent/Suivant pour tomber sur celui que vous voulez.</li>
+    <li><strong id="download">Téléchargez le vecteur d'origine.</strong> Cliquez sur <strong>Télécharger le SVG courant</strong>. Vous obtenez un vrai fichier <code>.svg</code> avec son <code>viewBox</code> et ses tracés intacts et un <code>xmlns</code> réparé, prêt pour Figma, Illustrator ou VS Code.</li>
+  </ol>
+
+  <figure class="shot"><div class="shot-mount"><span class="shot-tag">Aperçu isolé</span><img src="/motion/02-preview.png" alt="SVG Downloader affichant l'aperçu d'un SVG en background-image CSS résolu depuis les styles calculés" width="1280" height="800" loading="lazy"></div><figcaption class="shot-cap">Chaque SVG de fond est résolu depuis le style calculé et montré dans un aperçu isolé avant que vous ne cliquiez sur <code>Télécharger le SVG courant</code>.</figcaption></figure>
+
+  <h2 id="what-you-get">Ce que vous récupérez</h2>
+  <dl class="facts">
+    <div><dt>Les deux formes</dt><dd>Les <strong>URI data:</strong> encastrés et les références <code>url()</code> vers des fichiers <code>.svg</code> sont résolus de la même façon.</dd></div>
+    <div><dt>Balisage d'origine</dt><dd>Le vecteur qui stylait l'élément — tracés et <code>viewBox</code> préservés, espace de noms réparé. <strong>Pas une capture.</strong></dd></div>
+    <div><dt>Sur l'appareil</dt><dd>Lit les styles calculés <strong>dans votre navigateur</strong>. Le SVG ne quitte jamais la page ; rien n'est envoyé.</dd></div>
+    <div><dt>Gère aussi</dt><dd>Le <a href="/fr/features/inline-svg">SVG en ligne</a>, les <a href="/fr/features/svg-sprite-extractor">références de sprite</a> et le <a href="/fr/features/bulk-zip-download">ZIP de page entière</a>.</dd></div>
+  </dl>
+</div></section>
+
+<hr class="section-rule">
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Bon à savoir</p>
+  <h2>Questions sur les SVG en fond CSS</h2>
+  <div class="faq">
+    <details>
+      <summary>Pourquoi ne puis-je pas enregistrer un SVG de fond CSS au clic droit ?</summary>
+      <div class="faq-body"><p>Parce qu'un fond CSS est peint par la feuille de style, pas posé comme élément image. Le navigateur ne propose <em>Enregistrer l'image sous…</em> que pour ce qu'il traite comme des images — un <code>&lt;img&gt;</code>, un canvas. Un <code>background-image</code> vit dans le style calculé d'un élément : il n'y a donc rien à enregistrer dans le menu contextuel.</p></div>
+    </details>
+    <details>
+      <summary>Gère-t-il à la fois les URI data: et les références url() ?</summary>
+      <div class="faq-body"><p>Oui. SVG Downloader résout un <code>background-image</code> encastré en URI <code>data:</code> en le décodant, et un <code>url()</code> pointant vers un fichier <code>.svg</code> en lisant ce fichier. Dans les deux cas vous récupérez le vecteur d'origine.</p></div>
+    </details>
+    <details>
+      <summary>Le fichier enregistré est-il le vrai SVG ou une capture ?</summary>
+      <div class="faq-body"><p>Le vrai SVG. L'extension enregistre le balisage d'origine — tracés et <code>viewBox</code> intacts, espace de noms réparé — pas un rendu matriciel. Il reste net à toute taille et reste modifiable.</p></div>
+    </details>
+  </div>
+</div></section>
+
+<hr class="section-rule">
+
+<section><div class="wrap">
+  <div class="cta-band">
+    <div>
+      <h2>Sortez la marque de la feuille de style</h2>
+      <p>Gratuit, privé, et il lit le SVG de fond que le navigateur refuse de donner.</p>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Installer l'extension</a>
+      <a class="btn quiet" href="/fr/guides">Tous les guides →</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="related"><div class="wrap">
+  <p class="eyebrow">À lire ensuite</p>
+  <ul>
+    <li><a href="/fr/features/css-background-svg">SVG en fond CSS<span>La fonction en détail</span></a></li>
+    <li><a href="/fr/guides/how-to-download-svg-from-any-website">Télécharger depuis n'importe quel site<span>Le guide de départ</span></a></li>
+    <li><a href="/fr/guides/download-all-svgs-as-zip">Tout télécharger en ZIP<span>Prendre tout le jeu</span></a></li>
+  </ul>
+</div></section>
+</main>
+
+<footer>
+  <nav class="bleed foot-map" aria-label="Plan du site">
+    <div class="col"><p>Produit</p><ul>
+      <li><a href="/fr/">Vue d'ensemble</a></li>
+      <li><a href="/fr/features">Fonctions</a></li>
+      <li><a href="/fr/compare/svg-downloader-vs-screenshotting-icons">Face à la capture</a></li>
+      <li><a href="/fr/privacy">Confidentialité</a></li>
+      <li><a href="/fr/use-cases">Cas d'usage</a></li>
+    </ul></div>
+    <div class="col"><p>Ce qu'il attrape</p><ul>
+      <li><a href="/fr/features/inline-svg">SVG en ligne</a></li>
+      <li><a href="/fr/features/css-background-svg">SVG en fond CSS</a></li>
+      <li><a href="/fr/features/svg-sprite-extractor">SVG de sprite / &lt;use&gt;</a></li>
+      <li><a href="/fr/features/bulk-zip-download">Page entière en ZIP</a></li>
+    </ul></div>
+    <div class="col"><p>Tutoriels</p><ul>
+      <li><a href="/fr/tutorials">Les 15 tutoriels</a></li>
+      <li><a href="/fr/tutorials/how-to-download-svg-files">Comment télécharger des fichiers SVG</a></li>
+      <li><a href="/fr/tutorials/copy-svg-from-website">Copier un SVG</a></li>
+      <li><a href="/fr/guides">Guides détaillés</a></li>
+    </ul></div>
+    <div class="col"><p>Docs</p><ul>
+      <li><a href="/fr/docs/installation">Installation</a></li>
+      <li><a href="/fr/docs/usage">Utilisation</a></li>
+      <li><a href="/fr/docs/faq">FAQ</a></li>
+      <li><a href="/fr/docs/changelog">Journal des versions</a></li>
+    </ul></div>
+  </nav>
+  <div class="bleed colophon-foot">
+    <a href="https://github.com/Flozad/svg-downloader">GitHub</a>
+    <a href="https://github.com/Flozad/svg-downloader/issues">Tickets</a>
+    <a href="https://clasicwebtools.com">clasicwebtools.com</a>
+    <span class="grow"></span>
+    <span>Papier os, graphite, un seul vert&nbsp;traceur</span>
+  </div>
+</footer>
+
+
+</body></html>

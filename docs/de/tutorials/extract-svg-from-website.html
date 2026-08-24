@@ -1,0 +1,381 @@
+<!DOCTYPE html><html lang="de"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jedes SVG einer Website in einem Durchgang extrahieren</title>
+<meta name="description" content="Scanne eine Seite einmal und nimm jeden Vektor, den sie zeichnet, als dublettenfreies, nummeriertes ZIP — Inline-Icons, CSS-Hintergründe, Sprites und Bildquellen zusammen.">
+<link rel="canonical" href="https://svg.clasicwebtools.com/de/tutorials/extract-svg-from-website"><!--i18n:alternates-->
+<link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/extract-svg-from-website">
+<link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/extract-svg-from-website">
+<link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/extract-svg-from-website">
+<link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/extract-svg-from-website">
+<link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/extract-svg-from-website">
+<link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/extract-svg-from-website">
+<!--/i18n:alternates-->
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="Flozad">
+<meta name="theme-color" content="#ece4d3">
+<meta property="og:site_name" content="SVG Downloader">
+<meta property="og:title" content="Jedes SVG einer Website in einem Durchgang extrahieren">
+<meta property="og:description" content="Scanne eine Seite einmal und nimm jeden Vektor, den sie zeichnet, als dublettenfreies, nummeriertes ZIP — Inline-Icons, CSS-Hintergründe, Sprites und Bildquellen zusammen.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://svg.clasicwebtools.com/de/tutorials/extract-svg-from-website">
+<meta property="og:image" content="https://svg.clasicwebtools.com/motion/tutorials/extract-svg-from-website.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="Das SVG-Downloader-Popup mitten im Scan, der Zähler steht auf 24 gefunden.">
+<meta property="og:locale" content="de_DE">
+<meta property="og:video" content="https://svg.clasicwebtools.com/motion/tutorials/extract-svg-from-website.mp4">
+<meta property="og:video:secure_url" content="https://svg.clasicwebtools.com/motion/tutorials/extract-svg-from-website.mp4">
+<meta property="og:video:type" content="video/mp4">
+<meta property="og:video:width" content="1280">
+<meta property="og:video:height" content="800">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@lozards">
+<meta name="twitter:title" content="Jedes SVG einer Website in einem Durchgang extrahieren">
+<meta name="twitter:description" content="Scanne eine Seite einmal und nimm jeden Vektor, den sie zeichnet, als dublettenfreies, nummeriertes ZIP — Inline-Icons, CSS-Hintergründe, Sprites und Bildquellen zusammen.">
+<meta name="twitter:image" content="https://svg.clasicwebtools.com/motion/tutorials/extract-svg-from-website.jpg">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/fonts/bricolage-var.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/pages.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Start",
+          "item": "https://svg.clasicwebtools.com/de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tutorials",
+          "item": "https://svg.clasicwebtools.com/de/tutorials"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Jedes SVG extrahieren",
+          "item": "https://svg.clasicwebtools.com/de/tutorials/extract-svg-from-website"
+        }
+      ]
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Jedes SVG einer Website in einem Durchgang extrahieren",
+      "description": "Das SVG-Downloader-Popup scannt eine Seite und meldet 24 gefunden, blättert durch mehrere Vorschauen, um den Satz zu prüfen, drückt dann Alle als ZIP laden und meldet „24 SVGs als ZIP geladen“.",
+      "thumbnailUrl": [
+        "https://svg.clasicwebtools.com/motion/tutorials/extract-svg-from-website.jpg"
+      ],
+      "uploadDate": "2026-08-22",
+      "duration": "PT17S",
+      "contentUrl": "https://svg.clasicwebtools.com/motion/tutorials/extract-svg-from-website.mp4",
+      "embedUrl": "https://svg.clasicwebtools.com/tutorials/extract-svg-from-website",
+      "isFamilyFriendly": true,
+      "publisher": {
+        "@type": "Organization",
+        "name": "SVG Downloader",
+        "url": "https://svg.clasicwebtools.com/de/"
+      }
+    },
+    {
+      "@type": "HowTo",
+      "name": "So extrahierst du jedes SVG einer Website",
+      "description": "Scanne eine Seite einmal und nimm jeden Vektor, den sie zeichnet, als dublettenfreies, nummeriertes ZIP — Inline-Icons, CSS-Hintergründe, Sprites und Bildquellen zusammen.",
+      "image": "https://svg.clasicwebtools.com/motion/tutorials/extract-svg-from-website.jpg",
+      "totalTime": "PT2M",
+      "tool": {
+        "@type": "HowToTool",
+        "name": "Browser-Erweiterung SVG Downloader"
+      },
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Popup auf der Seite öffnen",
+          "text": "Klick auf den Button in der Symbolleiste. Der Zähler meldet, wie viele verschiedene Vektoren die Seite zeichnet.",
+          "url": "https://svg.clasicwebtools.com/de/tutorials/extract-svg-from-website#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Neu scannen, wenn sich die Seite geändert hat",
+          "text": "Hast du inzwischen ein Menü geöffnet, einen Tab gewechselt oder ein lazy geladenes Raster ins Bild gescrollt, drück den Rescan-Button in der Kopfzeile, damit die neuen Icons dabei sind.",
+          "url": "https://svg.clasicwebtools.com/de/tutorials/extract-svg-from-website#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Blättere durch, um den Satz zu prüfen",
+          "text": "Geh ihn mit Zurück und Weiter durch. Dreißig Sekunden hier sagen dir, ob du gleich den gewünschten Icon-Satz bekommst oder den Satz plus jeden dekorativen Schnörkel der Seite.",
+          "url": "https://svg.clasicwebtools.com/de/tutorials/extract-svg-from-website#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Drück Alle als ZIP laden",
+          "text": "Der ganze Satz wird gebündelt, dublettenfrei und nummeriert. Die Statuszeile meldet, wie viele gespeichert wurden — und benennt, was sich nicht eigenständig extrahieren ließ, statt es still fallen zu lassen.",
+          "url": "https://svg.clasicwebtools.com/de/tutorials/extract-svg-from-website#steps"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Bekommt es jedes SVG der Seite?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Jedes, das es in eine eigenständige Datei auflösen kann: Inline-Elemente, CSS-Hintergrundbilder, Sprite-Referenzen im selben Dokument sowie img- oder object-Quellen. Was es nicht auflösen kann, wird in der Statuszeile benannt statt still fallen gelassen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bekomme ich dasselbe Icon zwanzigmal?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nein. Dubletten werden vor dem Bau des ZIP zusammengefasst, ein an neunzehn Stellen gezeichneter Chevron kommt also einmal an."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Manche Icons tauchten erst nach dem Scrollen auf.",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Lazy geladener Inhalt ist erst im DOM, wenn er gerendert wird. Scroll ihn ins Bild und drück dann den Rescan-Button in der Kopfzeile des Popups, um ihn mitzunehmen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Was heißt „zu groß für einen CSS-Hintergrund-Scan“?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Die Seite hat so viel CSS, dass ein vollständiger Scan den Tab hängen ließe, also wurde diese eine Quelle ausgelassen. Inline-Elemente, Sprites und Bildquellen wurden trotzdem gesammelt."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kann ich die Dateinamen im ZIP ändern?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja — das Nummerierungspräfix und der Name des ZIP werden beide in den Einstellungen der Erweiterung gesetzt."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Zum Inhalt springen</a>
+
+<nav class="nav">
+  <a class="brand" href="/de/">
+    <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+      <rect width="48" height="48" rx="10" fill="var(--plot)"></rect>
+      <path d="M24 13v15m0 0l-6.5-6.5M24 28l6.5-6.5" fill="none" stroke="var(--surface-hi)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+      <rect x="16.5" y="33.5" width="15" height="2.4" rx="1.2" fill="var(--surface-hi)"></rect>
+    </svg>
+    <strong>SVG&nbsp;Downloader</strong>
+  </a>
+  <span class="spacer"></span>
+  <span class="nav-links">
+    <a href="/de/features">Funktionen</a>
+    <a href="/de/tutorials" aria-current="page">Tutorials</a>
+    <a href="/de/guides">Anleitungen</a>
+    <a href="/de/docs">Doku</a>
+    <a href="/de/use-cases">Praxis</a>
+  </span><!--i18n:switch-->
+  <details class="lang-switch">
+    <summary aria-label="Sprache"><span>DE</span></summary>
+    <ul>
+      <li><a href="/tutorials/extract-svg-from-website" hreflang="en" lang="en">English</a></li>
+      <li><a href="/es/tutorials/extract-svg-from-website" hreflang="es" lang="es">Español</a></li>
+      <li><a href="/fr/tutorials/extract-svg-from-website" hreflang="fr" lang="fr">Français</a></li>
+      <li><a href="/de/tutorials/extract-svg-from-website" hreflang="de" lang="de" aria-current="true">Deutsch</a></li>
+      <li><a href="/pt-br/tutorials/extract-svg-from-website" hreflang="pt-BR" lang="pt-BR">Português</a></li>
+    </ul>
+  </details>
+  <!--/i18n:switch-->
+  <a class="nav-cta" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Erweiterung installieren</a>
+</nav>
+
+<main id="main">
+<header class="page-hero"><div class="wrap">
+  <ol class="crumbs">
+    <li><a href="/de/">Start</a></li>
+    <li><a href="/de/tutorials">Tutorials</a></li>
+    <li><span aria-current="page">Jedes SVG extrahieren</span></li>
+  </ol>
+  <p class="eyebrow">Tutorial — der ganze Satz auf einmal</p>
+  <h1>So <span class="plot">extrahierst du jedes SVG</span> von einer Website</h1>
+  <p class="lede">Vierzig Icons einzeln durchzublättern ist niemandes Nachmittag. Ein Scan findet alle; ein Klick nimmt alle.</p>
+  <div class="cta">
+    <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 12v16m0 0l-7-7m7 7l7-7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"></path><rect x="16" y="34" width="16" height="2.6" rx="1.3" fill="currentColor"></rect></svg>
+      Erweiterung installieren</a>
+    <a class="btn quiet" href="#steps">Zu den Schritten ↓</a>
+  </div>
+</div></header>
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Ansehen — 17 Sekunden</p>
+  <h2>Ein Scan, ein ZIP</h2>
+  <figure class="shot">
+    <div class="shot-mount">
+      <span class="shot-tag">Tutorial · Massenweise</span>
+      <video src="/motion/tutorials/extract-svg-from-website.mp4" poster="/motion/tutorials/extract-svg-from-website.jpg" muted="" loop="" playsinline="" preload="none" aria-label="Das SVG-Downloader-Popup scannt eine Seite und meldet 24 gefunden, blättert durch mehrere Vorschauen, um den Satz zu prüfen, drückt dann Alle als ZIP laden und meldet „24 SVGs als ZIP geladen“."></video>
+    </div>
+    <figcaption class="shot-cap">Prüf den Satz zuerst in der Vorschau, dann nimm alle vierundzwanzig mit einem einzigen Klick.</figcaption>
+  </figure>
+
+  <p class="lead-in">Das Blättern in der Mitte ist kein Füllwerk — es ist der Schritt, den die meisten überspringen und dann bereuen, denn es ist deine einzige Chance zu sehen, was du gleich mitnimmst.</p>
+  <p class="eyebrow">Was die Aufnahme zeigt</p>
+  <ol class="beats">
+    <li>Ein Scan findet jeden Vektor, den die Seite zeichnet</li>
+    <li>Prüf den Satz, bevor du ihn nimmst</li>
+    <li>Zurück und Weiter gehen die ganze Liste durch</li>
+    <li>Alle als ZIP laden — der ganze Satz auf einmal</li>
+    <li>Dublettenfrei, nummeriert und in der Statuszeile benannt</li>
+  </ol>
+</div></section>
+
+<hr class="section-rule">
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Was ein Durchgang tatsächlich sammelt</p>
+  <h2>Vier Quellen, aufgelöst in einen Ordner</h2>
+  
+  <p class="lead-in">Der Scan sucht keine <code>.svg</code>-Dateien. Er liest die gerenderte Seite und löst jeden erreichbaren Vektor in eigenständiges Markup auf — deshalb ist die Zahl meist höher als die Zahl der offensichtlichen Icons auf dem Bildschirm.</p>
+  <ul>
+    <li><strong>Inline-<code>&lt;svg&gt;</code>-Elemente</strong> — der Großteil jedes modernen Icon-Satzes, dazu das Logo und der Großteil der Oberfläche.</li>
+    <li><strong>Vektoren in CSS-<code>background-image</code></strong>, samt eingebetteter <code>data:</code>-URIs aus dem Stylesheet.</li>
+    <li><strong><code>&lt;use&gt;</code>-Sprite-Referenzen im selben Dokument</strong>, zurück zum gemeinten Symbol aufgelöst, sodass jede zu einer echten, eigenständigen Datei wird.</li>
+    <li><strong><code>&lt;img&gt;</code>- und <code>&lt;object&gt;</code>-Quellen</strong>, geholt und eingebettet.</li>
+  </ul>
+  <p>Dubletten werden vor dem Bau des ZIP zusammengefasst. Eine Seite, die denselben Chevron an neunzehn Stellen zeichnet, gibt dir einen Chevron, nicht neunzehn — das ist der Unterschied zwischen einem brauchbaren Ordner und einem Durcheinander.</p>
+
+  <h2 id="steps">Den Satz mitnehmen</h2>
+  <p>Vier Schritte, und der dritte ist der, den man besser nicht überspringt.</p>
+  <ol>
+    <li><strong>Popup auf der Seite öffnen.</strong> Klick auf den Button in der Symbolleiste. Der Zähler meldet, wie viele verschiedene Vektoren die Seite zeichnet.</li>
+    <li><strong>Neu scannen, wenn sich die Seite geändert hat.</strong> Hast du inzwischen ein Menü geöffnet, einen Tab gewechselt oder ein lazy geladenes Raster ins Bild gescrollt, drück den Rescan-Button in der Kopfzeile, damit die neuen Icons dabei sind.</li>
+    <li><strong>Blättere durch, um den Satz zu prüfen.</strong> Geh ihn mit <em>Zurück</em> und <em>Weiter</em> durch. Dreißig Sekunden hier sagen dir, ob du gleich den gewünschten Icon-Satz bekommst oder den Satz plus jeden dekorativen Schnörkel der Seite.</li>
+    <li><strong>Drück Alle als ZIP laden.</strong> Der ganze Satz wird gebündelt, dublettenfrei und nummeriert. Die Statuszeile meldet, wie viele gespeichert wurden — und benennt, was sich nicht eigenständig extrahieren ließ, statt es still fallen zu lassen.</li>
+  </ol>
+
+  
+  <h2>Lies die Statuszeile</h2>
+  <p>Wenn alles auflöst, bekommst du ein schlichtes <em>24 SVGs als ZIP geladen.</em> Wenn nicht, bekommst du die Zahl der Erfolge <em>und die Namen der Fehlschläge</em> — denn ein Massenwerkzeug, das still Dateien fallen lässt, ist schlimmer als eines, das laut scheitert. Die üblichen Gründe, warum ein Vektor sich nicht eigenständig extrahieren lässt: eine Sprite-Referenz auf ein anderes Dokument, das die Seite nie geladen hat, oder eine Bildquelle auf einer Domain, die Cross-Origin-Lesezugriffe verweigert.</p>
+
+  <h2>Sehr große Seiten</h2>
+  <p>Jedes Stylesheet einer Seite mit tausenden Regeln zu scannen ist teuer, deshalb ist der CSS-Hintergrund-Scan begrenzt. Wird die Grenze erreicht, siehst du <em>Diese Seite ist zu groß für einen CSS-Hintergrund-Scan — andere SVGs wurden trotzdem gefunden</em>, was heißt, dass Inline-Elemente, Sprites und Bildquellen weiterhin gesammelt wurden. In der Praxis sind CSS-Hintergrundvektoren die seltensten der vier, also ein kleiner Verlust auf einer Seite, wo die Alternative ein hängender Tab wäre.</p>
+
+  <h2>Benennen, was herauskommt</h2>
+  <p>Die Dateien im ZIP sind ab einem Präfix nummeriert, das du in den Einstellungen der Erweiterung ändern kannst, ebenso wie den Namen des ZIP selbst. Wenn du regelmäßig Sätze von verschiedenen Sites ziehst, ist ein Präfix pro Projekt schneller als das nachträgliche Umbenennen von zwanzig Dateien.</p>
+
+  <dl class="facts">
+    <div><dt>Ein Durchgang</dt><dd>Inline, CSS-Hintergrund, Sprite-<code>&lt;use&gt;</code> und Bildquellen — <strong>zusammen</strong>.</dd></div>
+    <div><dt>Dublettenfrei</dt><dd>Dasselbe Icon, neunzehnmal gezeichnet, kommt <strong>einmal</strong> an.</dd></div>
+    <div><dt>Ehrlich</dt><dd>Was sich nicht auflösen ließ, wird <strong>in der Statuszeile benannt</strong>.</dd></div>
+    <div><dt>Siehe auch</dt><dd><a href="/de/features/bulk-zip-download">Die Massenfunktion</a> · <a href="/de/tutorials/download-svg-from-webpage">Seiteninventur</a></dd></div>
+  </dl>
+</div></section>
+
+<hr class="section-rule">
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Gut zu wissen</p>
+  <h2>Häufig gefragt</h2>
+  <div class="faq">
+    <details>
+      <summary>Bekommt es jedes SVG der Seite?</summary>
+      <div class="faq-body"><p>Jedes, das es in eine eigenständige Datei auflösen kann: Inline-Elemente, CSS-Hintergrundbilder, Sprite-Referenzen im selben Dokument sowie img- oder object-Quellen. Was es nicht auflösen kann, wird in der Statuszeile benannt statt still fallen gelassen.</p></div>
+    </details>
+    <details>
+      <summary>Bekomme ich dasselbe Icon zwanzigmal?</summary>
+      <div class="faq-body"><p>Nein. Dubletten werden vor dem Bau des ZIP zusammengefasst, ein an neunzehn Stellen gezeichneter Chevron kommt also einmal an.</p></div>
+    </details>
+    <details>
+      <summary>Manche Icons tauchten erst nach dem Scrollen auf.</summary>
+      <div class="faq-body"><p>Lazy geladener Inhalt ist erst im DOM, wenn er gerendert wird. Scroll ihn ins Bild und drück dann den Rescan-Button in der Kopfzeile des Popups, um ihn mitzunehmen.</p></div>
+    </details>
+    <details>
+      <summary>Was heißt „zu groß für einen CSS-Hintergrund-Scan“?</summary>
+      <div class="faq-body"><p>Die Seite hat so viel CSS, dass ein vollständiger Scan den Tab hängen ließe, also wurde diese eine Quelle ausgelassen. Inline-Elemente, Sprites und Bildquellen wurden trotzdem gesammelt.</p></div>
+    </details>
+    <details>
+      <summary>Kann ich die Dateinamen im ZIP ändern?</summary>
+      <div class="faq-body"><p>Ja — das Nummerierungspräfix und der Name des ZIP werden beide in den Einstellungen der Erweiterung gesetzt.</p></div>
+    </details>
+  </div>
+</div></section>
+
+<hr class="section-rule">
+
+<section><div class="wrap">
+  <div class="cta-band">
+    <div>
+      <h2>Nimm den ganzen Satz mit einem Klick</h2>
+      <p>Dublettenfrei, nummeriert und ehrlich über alles, was es nicht erreichen konnte.</p>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Erweiterung installieren</a>
+      <a class="btn quiet" href="/de/tutorials">Alle 15 Tutorials →</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="related"><div class="wrap">
+  <p class="eyebrow">Weiter geht's</p>
+  <ul>
+    <li><a href="/de/features/bulk-zip-download">Die ZIP-Funktion<span>Wie sie bündelt</span></a></li>
+    <li><a href="/de/tutorials/download-svg-from-webpage">Seiteninventur<span>Zählen, bevor du nimmst</span></a></li>
+    <li><a href="/de/tutorials/extract-svg-logo-from-website">Nur das Logo<span>Ein Vektor, volle Größe</span></a></li>
+  </ul>
+</div></section>
+</main>
+
+<footer>
+  <nav class="bleed foot-map" aria-label="Sitemap">
+    <div class="col"><p>Produkt</p><ul>
+      <li><a href="/de/">Überblick</a></li>
+      <li><a href="/de/features">Funktionen</a></li>
+      <li><a href="/de/compare/svg-downloader-vs-screenshotting-icons">Vs. Screenshot</a></li>
+      <li><a href="/de/privacy">Datenschutz</a></li>
+      <li><a href="/de/use-cases">Anwendungsfälle</a></li>
+    </ul></div>
+    <div class="col"><p>Erkennt</p><ul>
+      <li><a href="/de/features/inline-svg">Inline-SVG</a></li>
+      <li><a href="/de/features/css-background-svg">SVG im CSS-Hintergrund</a></li>
+      <li><a href="/de/features/svg-sprite-extractor">Sprite- / &lt;use&gt;-SVG</a></li>
+      <li><a href="/de/features/bulk-zip-download">Ganze Seite als ZIP</a></li>
+    </ul></div>
+    <div class="col"><p>Tutorials</p><ul>
+      <li><a href="/de/tutorials">Alle 15 Tutorials</a></li>
+      <li><a href="/de/tutorials/how-to-download-svg-files">SVG-Dateien herunterladen</a></li>
+      <li><a href="/de/tutorials/copy-svg-from-website">Ein SVG kopieren</a></li>
+      <li><a href="/de/tutorials/extract-svg-from-website">Jedes SVG extrahieren</a></li>
+    </ul></div>
+    <div class="col"><p>Doku</p><ul>
+      <li><a href="/de/docs/installation">Installation</a></li>
+      <li><a href="/de/docs/usage">Bedienung</a></li>
+      <li><a href="/de/docs/faq">FAQ</a></li>
+      <li><a href="/de/docs/changelog">Changelog</a></li>
+    </ul></div>
+  </nav>
+  <div class="bleed colophon-foot">
+    <a href="https://github.com/Flozad/svg-downloader">GitHub</a>
+    <a href="https://github.com/Flozad/svg-downloader/issues">Issues</a>
+    <a href="https://clasicwebtools.com">clasicwebtools.com</a>
+    <span class="grow"></span>
+    <span>Knochenpapier, Graphit, ein einziges Plotter&nbsp;grün</span>
+  </div>
+</footer>
+<script src="/player.js" defer=""></script>
+
+
+</body></html>

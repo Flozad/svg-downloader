@@ -1,0 +1,236 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mudanças do SVG Downloader — histórico de versões, da mais recente à primeira</title>
+<meta name="description" content="Registro de mudanças do SVG Downloader, da mais recente à mais antiga — renomeação e correções da v1.3 para a loja, v1.2, ZIP sem duplicatas, um ajuste de layout no popup e a versão inicial.">
+<link rel="canonical" href="https://svg.clasicwebtools.com/pt-br/docs/changelog"><!--i18n:alternates-->
+<link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/docs/changelog">
+<link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/docs/changelog">
+<link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/docs/changelog">
+<link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/docs/changelog">
+<link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/docs/changelog">
+<link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/docs/changelog">
+<!--/i18n:alternates-->
+<link rel="alternate" type="text/plain" href="https://svg.clasicwebtools.com/llms.txt" title="llms.txt — machine-readable site summary">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="author" content="Flozad">
+<meta name="theme-color" content="#ece4d3">
+<meta property="og:site_name" content="SVG Downloader">
+<meta property="og:title" content="Mudanças do SVG Downloader — histórico de versões, da mais recente à primeira">
+<meta property="og:description" content="Registro de mudanças do SVG Downloader, da mais recente à mais antiga — renomeação e correções da v1.3 para a loja, v1.2, ZIP sem duplicatas, um ajuste de layout no popup e a versão inicial.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://svg.clasicwebtools.com/pt-br/docs/changelog">
+<meta property="og:image" content="https://svg.clasicwebtools.com/motion/06-brand.png">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="SVG Downloader salvando um vetor inline de uma página.">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@lozards">
+<meta name="twitter:title" content="Mudanças do SVG Downloader">
+<meta name="twitter:description" content="Registro de mudanças do SVG Downloader, da mais recente à mais antiga — renomeação e correções da v1.3 para a loja, v1.2, ZIP sem duplicatas, um ajuste de layout no popup e a versão inicial.">
+<meta name="twitter:image" content="https://svg.clasicwebtools.com/motion/06-brand.png">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/fonts/bricolage-var.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/pages.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Início",
+          "item": "https://svg.clasicwebtools.com/pt-br/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Docs",
+          "item": "https://svg.clasicwebtools.com/pt-br/docs"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Mudanças",
+          "item": "https://svg.clasicwebtools.com/pt-br/docs/changelog"
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://svg.clasicwebtools.com/pt-br/docs/changelog",
+      "url": "https://svg.clasicwebtools.com/pt-br/docs/changelog",
+      "name": "Mudanças do SVG Downloader",
+      "description": "Histórico de versões da extensão SVG Downloader, da mais recente à mais antiga, da versão inicial até a v1.3.",
+      "inLanguage": "pt-BR",
+      "isPartOf": {
+        "@id": "https://svg.clasicwebtools.com/pt-br/#website"
+      },
+      "about": {
+        "@id": "https://svg.clasicwebtools.com/pt-br/#app"
+      },
+      "primaryImageOfPage": "https://svg.clasicwebtools.com/motion/06-brand.png"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Pular para o conteúdo</a>
+
+<nav class="nav">
+  <a class="brand" href="/pt-br/">
+    <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+      <rect width="48" height="48" rx="10" fill="var(--plot)"></rect>
+      <path d="M24 13v15m0 0l-6.5-6.5M24 28l6.5-6.5" fill="none" stroke="var(--surface-hi)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+      <rect x="16.5" y="33.5" width="15" height="2.4" rx="1.2" fill="var(--surface-hi)"></rect>
+    </svg>
+    <strong>SVG&nbsp;Downloader</strong>
+  </a>
+  <span class="spacer"></span>
+  <span class="nav-links">
+    <a href="/pt-br/features">Recursos</a>
+    <a href="/pt-br/tutorials">Tutoriais</a>
+    <a href="/pt-br/guides">Guias</a>
+    <a href="/pt-br/docs" aria-current="page">Docs</a>
+    <a href="/pt-br/privacy">Privacidade</a>
+    <a href="/pt-br/use-cases">Histórias</a>
+  </span><!--i18n:switch-->
+  <details class="lang-switch">
+    <summary aria-label="Idioma"><span>PT</span></summary>
+    <ul>
+      <li><a href="/docs/changelog" hreflang="en" lang="en">English</a></li>
+      <li><a href="/es/docs/changelog" hreflang="es" lang="es">Español</a></li>
+      <li><a href="/fr/docs/changelog" hreflang="fr" lang="fr">Français</a></li>
+      <li><a href="/de/docs/changelog" hreflang="de" lang="de">Deutsch</a></li>
+      <li><a href="/pt-br/docs/changelog" hreflang="pt-BR" lang="pt-BR" aria-current="true">Português</a></li>
+    </ul>
+  </details>
+  <!--/i18n:switch-->
+  <a class="nav-cta" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Instalar a extensão</a>
+</nav>
+
+<main id="main">
+<header class="page-hero"><div class="wrap">
+  <ol class="crumbs">
+    <li><a href="/pt-br/">Início</a></li>
+    <li><a href="/pt-br/docs">Docs</a></li>
+    <li><span aria-current="page">Mudanças</span></li>
+  </ol>
+  <p class="eyebrow">Docs — mudanças</p>
+  <h1><span class="plot">Histórico</span> de versões</h1>
+  <p class="lede">Da mais recente à mais antiga. Só versões e ordem — nenhuma data inventada. A versão atual é a v1.3.</p>
+  <div class="cta">
+    <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 12v16m0 0l-7-7m7 7l7-7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"></path><rect x="16" y="34" width="16" height="2.6" rx="1.3" fill="currentColor"></rect></svg>
+      Instalar a extensão</a>
+    <a class="btn quiet" href="https://github.com/Flozad/svg-downloader">Código no GitHub →</a>
+  </div>
+</div></header>
+
+<section><div class="bleed"><div class="doc-shell">
+  <aside class="doc-nav" aria-label="Navegação da documentação">
+    <p>Documentação</p>
+    <ul>
+      <li><a href="/pt-br/docs">Visão geral</a></li>
+      <li><a href="/pt-br/docs/installation">Instalação</a></li>
+      <li><a href="/pt-br/docs/usage">Uso</a></li>
+      <li><a href="/pt-br/docs/faq">Perguntas frequentes</a></li>
+      <li><a href="/pt-br/docs/changelog" aria-current="page">Mudanças</a></li>
+    </ul>
+  </aside>
+  <div class="prose">
+    <p class="eyebrow">O que mudou</p>
+    <h2>Versões</h2>
+    <p class="lead-in">Toda mudança relevante, agrupada por versão e listada da mais recente à mais antiga. A extensão segue uma linha de versões simples — nenhuma data é reivindicada, porque o registro honesto é a ordem, não um calendário.</p>
+
+    <h3>v1.3 — atual</h3>
+    <dl class="facts">
+      <div><dt>Renomeação para a loja</dt><dd>Renomeada para <strong>“SVG Web Downloader &amp; Extractor”</strong> na ficha da Chrome Web Store, sem mudar como a extensão funciona.</dd></div>
+      <div><dt>Console mais silencioso</dt><dd>Saída de console enxugada para que a extensão não tagarele mais no DevTools durante o uso normal.</dd></div>
+      <div><dt>Script de empacotamento</dt><dd>Adicionado um script de empacotamento que gera um pacote limpo e pronto para envio à loja.</dd></div>
+      <div><dt>Preparo para destaque</dt><dd>Correções rumo ao destaque na Web Store — metadados e manifesto arrumados antes da publicação da ficha.</dd></div>
+    </dl>
+
+    <h3>v1.2</h3>
+    <dl class="facts">
+      <div><dt>Aumento de versão</dt><dd>Versão de manutenção que subiu o número da extensão, levando adiante as correções anteriores.</dd></div>
+    </dl>
+
+    <h3>Melhorias anteriores</h3>
+    <dl class="facts">
+      <div><dt>ZIP sem duplicatas</dt><dd>A saída de <strong>Baixar tudo em ZIP</strong> agora remove SVGs idênticos, então o mesmo glifo não cai duas vezes no arquivo.</dd></div>
+      <div><dt>Ajuste de layout</dt><dd>Corrigido um deslocamento de layout no popup para que a interface não pule mais enquanto as prévias e os controles se acomodam.</dd></div>
+    </dl>
+
+    <h3>Versão inicial</h3>
+    <dl class="facts">
+      <div><dt>Detecção de várias origens</dt><dd>Detecta <strong>SVG inline</strong>, vetores em <code>&lt;img&gt;</code> e <code>&lt;object&gt;</code>, SVGs em <code>background-image</code> do CSS e referências <code>&lt;use&gt;</code> a sprites do mesmo documento.</dd></div>
+      <div><dt>Prévia e paginação</dt><dd>Prévia isolada de cada SVG com navegação Anterior / Próximo e um nome de arquivo personalizado opcional.</dd></div>
+      <div><dt>Download individual e em ZIP</dt><dd><strong>Baixar o SVG atual</strong> para um arquivo, <strong>Baixar tudo em ZIP</strong> para a página inteira — com o namespace consertado e o markup original preservado.</dd></div>
+    </dl>
+
+    <p>O histórico completo de commits e os lançamentos ficam no <a href="https://github.com/Flozad/svg-downloader">GitHub</a>. Encontrou uma regressão? Registre no <a href="https://github.com/Flozad/svg-downloader/issues">rastreador de issues</a>.</p>
+  </div>
+</div></div></section>
+
+<hr class="section-rule">
+
+<section><div class="wrap">
+  <div class="cta-band">
+    <div>
+      <h2>Usando a versão mais recente</h2>
+      <p>v1.3 — grátis, licença MIT, no dispositivo. Chrome 88+, Edge e Brave.</p>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Instalar a extensão</a>
+      <a class="btn quiet" href="/pt-br/docs/installation">Guia de instalação →</a>
+    </div>
+  </div>
+</div></section>
+</main>
+
+<footer>
+  <nav class="bleed foot-map" aria-label="Mapa do site">
+    <div class="col"><p>Produto</p><ul>
+      <li><a href="/pt-br/">Visão geral</a></li>
+      <li><a href="/pt-br/features">Recursos</a></li>
+      <li><a href="/pt-br/compare/svg-downloader-vs-screenshotting-icons">Vs. print de tela</a></li>
+      <li><a href="/pt-br/privacy">Privacidade</a></li>
+      <li><a href="/pt-br/use-cases">Casos de uso</a></li>
+    </ul></div>
+    <div class="col"><p>O que ele encontra</p><ul>
+      <li><a href="/pt-br/features/inline-svg">SVG inline</a></li>
+      <li><a href="/pt-br/features/css-background-svg">SVG em fundo CSS</a></li>
+      <li><a href="/pt-br/features/svg-sprite-extractor">SVG de sprite / &lt;use&gt;</a></li>
+      <li><a href="/pt-br/features/bulk-zip-download">Página inteira em ZIP</a></li>
+    </ul></div>
+    <div class="col"><p>Tutoriais</p><ul>
+      <li><a href="/pt-br/tutorials">Todos os 15 tutoriais</a></li>
+      <li><a href="/pt-br/tutorials/how-to-download-svg-files">Como baixar arquivos SVG</a></li>
+      <li><a href="/pt-br/tutorials/copy-svg-from-website">Copiar um SVG</a></li>
+      <li><a href="/pt-br/guides">Guias completos</a></li>
+    </ul></div>
+    <div class="col"><p>Docs</p><ul>
+      <li><a href="/pt-br/docs/installation">Instalação</a></li>
+      <li><a href="/pt-br/docs/usage">Uso</a></li>
+      <li><a href="/pt-br/docs/faq">Perguntas frequentes</a></li>
+      <li><a href="/pt-br/docs/changelog">Mudanças</a></li>
+    </ul></div>
+  </nav>
+  <div class="bleed colophon-foot">
+    <a href="https://github.com/Flozad/svg-downloader">GitHub</a>
+    <a href="https://github.com/Flozad/svg-downloader/issues">Issues</a>
+    <a href="https://clasicwebtools.com">clasicwebtools.com</a>
+    <span class="grow"></span>
+    <span>Papel osso, grafite e um único verde&nbsp;plotter</span>
+  </div>
+</footer>
+
+
+</body></html>

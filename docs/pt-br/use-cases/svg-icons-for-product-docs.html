@@ -1,0 +1,261 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Colocando ícones nítidos na documentação de produto — uma história de redação técnica</title>
+<meta name="description" content="Um redator técnico para de recortar glifos borrados de prints. Ao puxar o ícone exato da barra de ferramentas como SVG inline, a documentação bate com o produto pixel a pixel e continua nítida em qualquer zoom.">
+<link rel="canonical" href="https://svg.clasicwebtools.com/pt-br/use-cases/svg-icons-for-product-docs"><!--i18n:alternates-->
+<link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/use-cases/svg-icons-for-product-docs">
+<link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/use-cases/svg-icons-for-product-docs">
+<link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/use-cases/svg-icons-for-product-docs">
+<link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/use-cases/svg-icons-for-product-docs">
+<link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/use-cases/svg-icons-for-product-docs">
+<link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/use-cases/svg-icons-for-product-docs">
+<!--/i18n:alternates-->
+<link rel="alternate" type="text/plain" href="https://svg.clasicwebtools.com/llms.txt" title="llms.txt — machine-readable site summary">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="Flozad">
+<meta name="theme-color" content="#ece4d3">
+<meta property="og:site_name" content="SVG Downloader">
+<meta property="og:title" content="Colocando ícones nítidos na documentação de produto — uma história de redação técnica">
+<meta property="og:description" content="Pare de recortar glifos borrados de prints. Puxe o ícone exato da barra de ferramentas como SVG inline para a documentação bater com o produto e continuar nítida em qualquer zoom.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://svg.clasicwebtools.com/pt-br/use-cases/svg-icons-for-product-docs">
+<meta property="og:image" content="https://svg.clasicwebtools.com/motion/02-preview.png">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="SVG Downloader mostrando a prévia isolada de um único ícone.">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@lozards">
+<meta name="twitter:title" content="Colocando ícones nítidos na documentação de produto — uma história de redação técnica">
+<meta name="twitter:description" content="Puxe o ícone exato da barra de ferramentas como SVG inline para a documentação bater com o produto e continuar nítida em qualquer zoom.">
+<meta name="twitter:image" content="https://svg.clasicwebtools.com/motion/02-preview.png">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/fonts/bricolage-var.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/pages.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Início",
+          "item": "https://svg.clasicwebtools.com/pt-br/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Histórias",
+          "item": "https://svg.clasicwebtools.com/pt-br/use-cases"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Colocando ícones nítidos na documentação de produto",
+          "item": "https://svg.clasicwebtools.com/pt-br/use-cases/svg-icons-for-product-docs"
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "headline": "Colocando ícones nítidos na documentação de produto",
+      "description": "Como um redator técnico usou o SVG Downloader para puxar ícones exatos do produto como SVG inline, substituindo recortes borrados de prints na documentação.",
+      "image": "https://svg.clasicwebtools.com/motion/02-preview.png",
+      "inLanguage": "pt-BR",
+      "isPartOf": {
+        "@id": "https://svg.clasicwebtools.com/pt-br/#website"
+      },
+      "about": {
+        "@id": "https://svg.clasicwebtools.com/pt-br/#app"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "SVG Downloader",
+        "url": "https://svg.clasicwebtools.com/pt-br/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "SVG Downloader",
+        "url": "https://svg.clasicwebtools.com/pt-br/"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Pular para o conteúdo</a>
+
+<nav class="nav">
+  <a class="brand" href="/pt-br/">
+    <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+      <rect width="48" height="48" rx="10" fill="var(--plot)"></rect>
+      <path d="M24 13v15m0 0l-6.5-6.5M24 28l6.5-6.5" fill="none" stroke="var(--surface-hi)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+      <rect x="16.5" y="33.5" width="15" height="2.4" rx="1.2" fill="var(--surface-hi)"></rect>
+    </svg>
+    <strong>SVG&nbsp;Downloader</strong>
+  </a>
+  <span class="spacer"></span>
+  <span class="nav-links">
+    <a href="/pt-br/features">Recursos</a>
+    <a href="/pt-br/tutorials">Tutoriais</a>
+    <a href="/pt-br/guides">Guias</a>
+    <a href="/pt-br/docs">Docs</a>
+    <a href="/pt-br/use-cases" aria-current="page">Histórias</a>
+    <a href="/pt-br/privacy">Privacidade</a>
+  </span><!--i18n:switch-->
+  <details class="lang-switch">
+    <summary aria-label="Idioma"><span>PT</span></summary>
+    <ul>
+      <li><a href="/use-cases/svg-icons-for-product-docs" hreflang="en" lang="en">English</a></li>
+      <li><a href="/es/use-cases/svg-icons-for-product-docs" hreflang="es" lang="es">Español</a></li>
+      <li><a href="/fr/use-cases/svg-icons-for-product-docs" hreflang="fr" lang="fr">Français</a></li>
+      <li><a href="/de/use-cases/svg-icons-for-product-docs" hreflang="de" lang="de">Deutsch</a></li>
+      <li><a href="/pt-br/use-cases/svg-icons-for-product-docs" hreflang="pt-BR" lang="pt-BR" aria-current="true">Português</a></li>
+    </ul>
+  </details>
+  <!--/i18n:switch-->
+  <a class="nav-cta" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Instalar a extensão</a>
+</nav>
+
+<main id="main">
+<header class="page-hero"><div class="wrap">
+  <ol class="crumbs">
+    <li><a href="/pt-br/">Início</a></li>
+    <li><a href="/pt-br/use-cases">Histórias</a></li>
+    <li><span aria-current="page">Ícones nítidos na documentação</span></li>
+  </ol>
+  <p class="eyebrow">História — documentação</p>
+  <h1>Colocando o <span class="plot">ícone exato do produto</span> na documentação, nítido</h1>
+  <div class="byline">
+    <span class="mono-badge" aria-hidden="true">TH</span>
+    <span><b>Tomás Herrera</b><span>Redator técnico · documentação para desenvolvedores</span></span>
+  </div>
+  <p class="lede">“Minha documentação vivia dizendo para as pessoas ‘clicar no ícone de exportar’, e o ícone que eu tinha colado ao lado dessa frase era um recorte borrado de 18 pixels tirado de um print. Numa tela retina parecia um erro. Eu queria o glifo de verdade — exatamente o do produto — inline na página.”</p>
+</div></header>
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">O cenário</p>
+  <h2>Instruções só são tão claras quanto o ícone ao lado delas</h2>
+  <dl class="facts case-meta">
+    <div><dt>Quem</dt><dd>Tomás, <strong>redator técnico</strong> que mantém a documentação para desenvolvedores de um produto SaaS.</dd></div>
+    <div><dt>Stack</dt><dd><span class="stack">Documentação em Markdown, um gerador de sites estáticos, MDX para componentes inline.</span> Ícones renderizam melhor como SVG inline.</dd></div>
+    <div><dt>O trabalho</dt><dd>Colocar os <strong>glifos reais da interface</strong> — exportar, filtrar, sincronizar, o menu de três pontinhos — direto nas instruções passo a passo, para baterem com o que o leitor vê.</dd></div>
+    <div><dt>A parede</dt><dd>Os ícones do produto são <code>&lt;svg&gt;</code> inline; a fila de exportação do time de design estava a uma semana. Os prints ficavam horríveis com zoom.</dd></div>
+  </dl>
+
+  <h2>O que não estava funcionando</h2>
+  <p>“Recortar ícones de prints é uma batalha perdida. São raster, então borram no instante em que alguém dá zoom ou lê numa tela de alta densidade. Carregam um tom de fundo de onde eu recortei. E ficam desatualizados: o produto lança um ícone novo e minha documentação ainda mostra o do trimestre passado. Eu podia abrir um pedido de exportação com o design, mas isso é uma fila, e eu estava escrevendo hoje.”</p>
+  <p>O botão direito também não ajudava: os glifos eram markup inline sem URL de imagem por trás. Nada para salvar.</p>
+
+  <h2>A virada</h2>
+  <p>Tomás abriu o produto, clicou no <a href="/pt-br/features/inline-svg">SVG Downloader</a> e percorreu as prévias isoladas até o glifo exato da barra de ferramentas de que precisava. Cada ícone aparece sozinho, longe da interface cheia, então não há dúvida sobre qual você está pegando. Um nome de arquivo — <code>export.svg</code> — um clique, pronto.</p>
+
+  <figure class="shot">
+    <div class="shot-mount">
+      <span class="shot-tag">prévia</span>
+      <video src="/motion/clip-page.mp4" poster="/motion/hero.jpg" muted="" loop="" playsinline="" preload="none" aria-label="Próximo é pressionado e a prévia isolada passa de um ícone de lupa a um coração e a uma estrela, com o contador acompanhando cada um."></video>
+    </div>
+    <figcaption class="shot-cap">Percorrendo as prévias isoladas até o glifo exato — o nome do arquivo acompanha, então você salva o certo com o nome certo.</figcaption>
+  </figure>
+
+  <p>“Inline no MDX, o ícone fica nítido em qualquer zoom, herda a cor do texto da documentação via <code>currentColor</code> e assim se senta numa frase como uma palavra, e é o glifo <em>de verdade</em> do produto — não a minha aproximação dele. Quando o ícone de exportar do produto muda, eu pego de novo em dez segundos. O arquivo veio com o <code>xmlns</code> consertado, então simplesmente funcionou no build.”</p>
+
+  <div class="pull">
+    <p>“A documentação finalmente parece o produto em vez de uma fotocópia dele. E parei de esperar uma fila de exportação para escrever uma frase.”</p>
+    <cite>— <b>Tomás Herrera</b>, redator técnico</cite>
+  </div>
+
+  <p class="eyebrow">O resultado</p>
+  <ul class="outcomes">
+    <li><b>Nítido</b><span>SVG inline continua nítido em qualquer zoom e em qualquer tela</span></li>
+    <li><b>10 s</b><span>para pegar de novo um ícone quando o produto o atualiza</span></li>
+    <li><b>currentColor</b><span>glifos herdam a cor do texto da documentação, inline numa frase</span></li>
+  </ul>
+
+  <dl class="facts">
+    <div><dt>O que fez o trabalho</dt><dd>A <a href="/pt-br/features/inline-svg">detecção de SVG inline</a> mais a prévia isolada para escolher o glifo exato, salvo com um nome próprio. Veja <a href="/pt-br/guides/how-to-download-svg-from-any-website">o método universal</a>.</dd></div>
+    <div><dt>Por que o ícone parecia preto</dt><dd>Muitos glifos de interface usam <code>currentColor</code> e salvam sem cor gravada — que é exatamente o que você quer inline em texto. Na documentação ele pega automaticamente a cor do parágrafo.</dd></div>
+    <div><dt>Uma nota sobre direitos</dt><dd>Documentar um produto sobre o qual você está autorizado a escrever é tranquilo; cheque o licenciamento antes de reutilizar os ícones de outra empresa fora desse contexto.</dd></div>
+  </dl>
+
+  <p class="disclosure">História composta — um fluxo ilustrativo, mas representativo. A pessoa e o produto são fictícios; o comportamento da extensão descrito aqui é real. <a href="/pt-br/use-cases">Mais histórias →</a></p>
+</div></section>
+
+<hr class="section-rule">
+
+<section><div class="wrap">
+  <div class="cta-band">
+    <div>
+      <h2>Documentação que bate com o produto</h2>
+      <p>Pegue o glifo exato como SVG inline — nítido em qualquer zoom, ciente de cor, sempre atual.</p>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Instalar a extensão</a>
+      <a class="btn quiet" href="/pt-br/features/inline-svg">Como funciona a detecção inline →</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="related"><div class="wrap">
+  <p class="eyebrow">Continue lendo</p>
+  <ul>
+    <li><a href="/pt-br/use-cases/recover-brand-assets-redesign">Resgatar ativos de marca<span>A história freelance</span></a></li>
+    <li><a href="/pt-br/features/inline-svg">SVG inline<span>Como funciona a leitura do DOM</span></a></li>
+    <li><a href="/pt-br/guides/how-to-download-svg-from-any-website">Baixar de qualquer site<span>O método universal</span></a></li>
+  </ul>
+</div></section>
+</main>
+
+<footer>
+  <nav class="bleed foot-map" aria-label="Mapa do site">
+    <div class="col"><p>Produto</p><ul>
+      <li><a href="/pt-br/">Visão geral</a></li>
+      <li><a href="/pt-br/features">Recursos</a></li>
+      <li><a href="/pt-br/compare/svg-downloader-vs-screenshotting-icons">Vs. print de tela</a></li>
+      <li><a href="/pt-br/privacy">Privacidade</a></li>
+      <li><a href="/pt-br/use-cases">Casos de uso</a></li>
+    </ul></div>
+    <div class="col"><p>O que ele encontra</p><ul>
+      <li><a href="/pt-br/features/inline-svg">SVG inline</a></li>
+      <li><a href="/pt-br/features/css-background-svg">SVG em fundo CSS</a></li>
+      <li><a href="/pt-br/features/svg-sprite-extractor">SVG de sprite / &lt;use&gt;</a></li>
+      <li><a href="/pt-br/features/bulk-zip-download">Página inteira em ZIP</a></li>
+    </ul></div>
+    <div class="col"><p>Histórias</p><ul>
+      <li><a href="/pt-br/use-cases/design-system-icon-audit">Auditoria de biblioteca de ícones</a></li>
+      <li><a href="/pt-br/use-cases/recover-brand-assets-redesign">Resgatar ativos de marca</a></li>
+      <li><a href="/pt-br/use-cases/migrate-sprite-sheet-to-components">Migrar uma folha de sprites</a></li>
+      <li><a href="/pt-br/use-cases/icon-set-for-pitch-deck">Conjunto de ícones para uma apresentação</a></li>
+    </ul></div>
+    <div class="col"><p>Tutoriais</p><ul>
+      <li><a href="/pt-br/tutorials">Todos os 15 tutoriais</a></li>
+      <li><a href="/pt-br/tutorials/extract-svg-logo-from-website">Extrair um logo</a></li>
+      <li><a href="/pt-br/tutorials/extract-svg-from-website">Extrair todo SVG</a></li>
+      <li><a href="/pt-br/guides">Guias completos</a></li>
+    </ul></div>
+    <div class="col"><p>Docs</p><ul>
+      <li><a href="/pt-br/docs/installation">Instalação</a></li>
+      <li><a href="/pt-br/docs/usage">Uso</a></li>
+      <li><a href="/pt-br/docs/faq">Perguntas frequentes</a></li>
+      <li><a href="/pt-br/docs/changelog">Mudanças</a></li>
+    </ul></div>
+  </nav>
+  <div class="bleed colophon-foot">
+    <a href="https://github.com/Flozad/svg-downloader">GitHub</a>
+    <a href="https://github.com/Flozad/svg-downloader/issues">Issues</a>
+    <a href="https://clasicwebtools.com">clasicwebtools.com</a>
+    <span class="grow"></span>
+    <span>Papel osso, grafite e um único verde&nbsp;plotter</span>
+  </div>
+</footer>
+<script src="/player.js" defer=""></script>
+
+
+</body></html>

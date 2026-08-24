@@ -1,0 +1,325 @@
+<!DOCTYPE html><html lang="fr"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FAQ SVG Downloader — gratuit, privé, navigateurs et correctifs</title>
+<meta name="description" content="FAQ SVG Downloader — est-ce gratuit, vos données quittent-elles le navigateur, quels navigateurs, pourquoi le clic droit ne marche pas sur le SVG en ligne, pourquoi une icône s'enregistre en noir, et les quatre permissions.">
+<link rel="canonical" href="https://svg.clasicwebtools.com/fr/docs/faq"><!--i18n:alternates-->
+<link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/docs/faq">
+<link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/docs/faq">
+<link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/docs/faq">
+<link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/docs/faq">
+<link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/docs/faq">
+<link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/docs/faq">
+<!--/i18n:alternates-->
+<link rel="alternate" type="text/plain" href="https://svg.clasicwebtools.com/llms.txt" title="llms.txt — machine-readable site summary">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="author" content="Flozad">
+<meta name="theme-color" content="#ece4d3">
+<meta property="og:site_name" content="SVG Downloader">
+<meta property="og:title" content="FAQ SVG Downloader — gratuit, privé, navigateurs et correctifs">
+<meta property="og:description" content="FAQ SVG Downloader — est-ce gratuit, vos données quittent-elles le navigateur, quels navigateurs, pourquoi le clic droit ne marche pas sur le SVG en ligne, pourquoi une icône s'enregistre en noir, et les quatre permissions.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://svg.clasicwebtools.com/fr/docs/faq">
+<meta property="og:image" content="https://svg.clasicwebtools.com/motion/06-brand.png">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="SVG Downloader enregistrant un vecteur en ligne depuis une page.">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@lozards">
+<meta name="twitter:title" content="FAQ SVG Downloader">
+<meta name="twitter:description" content="FAQ SVG Downloader — est-ce gratuit, vos données quittent-elles le navigateur, quels navigateurs, pourquoi le clic droit ne marche pas sur le SVG en ligne, pourquoi une icône s'enregistre en noir, et les quatre permissions.">
+<meta name="twitter:image" content="https://svg.clasicwebtools.com/motion/06-brand.png">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/fonts/bricolage-var.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/pages.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://svg.clasicwebtools.com/fr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Docs",
+          "item": "https://svg.clasicwebtools.com/fr/docs"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "FAQ",
+          "item": "https://svg.clasicwebtools.com/fr/docs/faq"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://svg.clasicwebtools.com/fr/docs/faq",
+      "inLanguage": "fr",
+      "isPartOf": {
+        "@id": "https://svg.clasicwebtools.com/fr/#website"
+      },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "SVG Downloader est-il gratuit ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. C'est gratuit et open source sous licence MIT. Pas d'offre payante, pas d'essai, pas de compte — tout tient dans l'extension que vous chargez dans votre navigateur."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Est-ce que mes données quittent mon navigateur ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Aucun contenu de page ne sort. Détection, aperçu et téléchargement se font sur l'appareil. Pas de serveur, pas de compte, pas d'envoi, pas d'analytique ni de pistage. Deux choses sortent tout de même : les fichiers SVG que la page référence déjà, récupérés pour pouvoir être inclus dans un téléchargement, et le lien facultatif vers SVG Color Changer si vous choisissez de cliquer. Vos quatre préférences sont aussi conservées dans chrome.storage.sync et vous suivent d'une machine à l'autre via votre compte Google — des réglages uniquement, jamais du contenu de page ni un historique de navigation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Dans quels navigateurs fonctionne-t-il ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Chrome 88 ou plus récent, et les navigateurs Chromium actuels bâtis sur le même moteur — Microsoft Edge et Brave. Il se charge décompressé de la même manière partout ; seule l'adresse de la page des extensions change."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Pourquoi le clic droit ne permet-il pas d'enregistrer un SVG en ligne ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Un <svg> en ligne fait partie du document, ce n'est pas une image avec sa propre adresse. Le navigateur ne propose Enregistrer l'image sous… que pour ce qu'il traite comme des images ; un SVG en ligne n'a donc aucune URL à enregistrer et l'option n'apparaît jamais. SVG Downloader le lit directement dans le DOM."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Le SVG copié depuis DevTools ne s'ouvre pas. Pourquoi ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Presque toujours un espace de noms manquant. Le SVG en ligne compte sur l'analyseur HTML pour savoir que c'est du SVG, mais un fichier autonome exige un xmlns=\"http://www.w3.org/2000/svg\" explicite. SVG Downloader le remet automatiquement : ses fichiers s'ouvrent partout, sans retouche."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Pourquoi l'icône téléchargée est-elle noire ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Beaucoup d'icônes héritent leur couleur du CSS via currentColor, qui n'existe plus une fois le SVG isolé : il retombe donc sur le noir. Le fichier est correct — il n'a simplement aucune couleur figée. Pour verrouiller une couleur d'abord, passez par SVG Color Changer, puis enregistrez."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Puis-je télécharger un jeu d'icônes entier d'un coup ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. Cliquez sur Tout télécharger en ZIP : tous les SVG détectés sur la page sont réunis dans une archive, dédoublonnés pour éviter deux fois le même glyphe et numérotés à partir de svg-1.svg. Ce qui n'a pas pu être récupéré est signalé dans la ligne d'état du popup."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Fonctionne-t-il avec les sprites et les SVG en fond CSS ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. Au-delà du balisage en ligne, il résout les références <use> d'un sprite jusqu'au glyphe visé, et lit les SVG posés en background-image CSS, y compris les URI data: et les vecteurs en <img> ou <object>. Les quatre sources apparaissent dans le même popup."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Existe-t-il une version sur le Chrome Web Store ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. Elle est sur le Chrome Web Store sous le nom SVG Web Downloader &amp; Extractor : l'installation tient en un clic. Vous pouvez toujours la charger décompressée depuis le dépôt si vous préférez exécuter les sources ; la page Installation détaille les deux voies."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "De quelles permissions a-t-il besoin ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Quatre, toutes étroites. activeTab et scripting lui permettent de lire le DOM de la page courante, mais seulement au moment où vous ouvrez le popup. downloads lui permet d'écrire les fichiers que vous enregistrez. storage conserve vos quatre préférences — préfixe de nom de fichier, nom du ZIP, analyse à l'ouverture et lien vers l'outil de couleur — synchronisées via votre compte Google. Il n'a aucun accès en arrière-plan à vos autres onglets, et aucun contenu de page ni historique de navigation n'est stocké où que ce soit."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Aller au contenu</a>
+
+<nav class="nav">
+  <a class="brand" href="/fr/">
+    <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+      <rect width="48" height="48" rx="10" fill="var(--plot)"></rect>
+      <path d="M24 13v15m0 0l-6.5-6.5M24 28l6.5-6.5" fill="none" stroke="var(--surface-hi)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+      <rect x="16.5" y="33.5" width="15" height="2.4" rx="1.2" fill="var(--surface-hi)"></rect>
+    </svg>
+    <strong>SVG&nbsp;Downloader</strong>
+  </a>
+  <span class="spacer"></span>
+  <span class="nav-links">
+    <a href="/fr/features">Fonctions</a>
+    <a href="/fr/tutorials">Tutoriels</a>
+    <a href="/fr/guides">Guides</a>
+    <a href="/fr/docs" aria-current="page">Docs</a>
+    <a href="/fr/privacy">Confidentialité</a>
+    <a href="/fr/use-cases">Histoires</a>
+  </span><!--i18n:switch-->
+  <details class="lang-switch">
+    <summary aria-label="Langue"><span>FR</span></summary>
+    <ul>
+      <li><a href="/docs/faq" hreflang="en" lang="en">English</a></li>
+      <li><a href="/es/docs/faq" hreflang="es" lang="es">Español</a></li>
+      <li><a href="/fr/docs/faq" hreflang="fr" lang="fr" aria-current="true">Français</a></li>
+      <li><a href="/de/docs/faq" hreflang="de" lang="de">Deutsch</a></li>
+      <li><a href="/pt-br/docs/faq" hreflang="pt-BR" lang="pt-BR">Português</a></li>
+    </ul>
+  </details>
+  <!--/i18n:switch-->
+  <a class="nav-cta" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Installer l'extension</a>
+</nav>
+
+<main id="main">
+<header class="page-hero"><div class="wrap">
+  <ol class="crumbs">
+    <li><a href="/fr/">Accueil</a></li>
+    <li><a href="/fr/docs">Docs</a></li>
+    <li><span aria-current="page">FAQ</span></li>
+  </ol>
+  <p class="eyebrow">Docs — FAQ</p>
+  <h1><span class="plot">Questions</span> fréquentes</h1>
+  <p class="lede">Les dix qui reviennent le plus — ce que ça coûte, où vont vos données, quels navigateurs, et les trois ou quatre petites bizarreries du SVG sur lesquelles tout le monde bute au moins une fois.</p>
+  <div class="cta">
+    <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 12v16m0 0l-7-7m7 7l7-7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"></path><rect x="16" y="34" width="16" height="2.6" rx="1.3" fill="currentColor"></rect></svg>
+      Installer l'extension</a>
+    <a class="btn quiet" href="https://github.com/Flozad/svg-downloader/issues">Poser la question sur GitHub →</a>
+  </div>
+</div></header>
+
+<section><div class="bleed"><div class="doc-shell">
+  <aside class="doc-nav" aria-label="Navigation de la documentation">
+    <p>Documentation</p>
+    <ul>
+      <li><a href="/fr/docs">Vue d'ensemble</a></li>
+      <li><a href="/fr/docs/installation">Installation</a></li>
+      <li><a href="/fr/docs/usage">Utilisation</a></li>
+      <li><a href="/fr/docs/faq" aria-current="page">FAQ</a></li>
+      <li><a href="/fr/docs/changelog">Journal des versions</a></li>
+    </ul>
+  </aside>
+  <div class="prose">
+    <p class="eyebrow">Bon à savoir</p>
+    <h2>Questions fréquentes</h2>
+    <div class="faq">
+      <details>
+        <summary>SVG Downloader est-il gratuit ?</summary>
+        <div class="faq-body"><p>Oui. C'est gratuit et open source sous licence MIT. Pas d'offre payante, pas d'essai, pas de compte — tout tient dans l'extension que vous chargez dans votre navigateur.</p></div>
+      </details>
+      <details>
+        <summary>Est-ce que mes données quittent mon navigateur ?</summary>
+        <div class="faq-body"><p>Aucun contenu de page ne sort. Détection, aperçu et téléchargement se font sur l'appareil. Pas de serveur, pas de compte, pas d'envoi, pas d'analytique ni de pistage. Deux choses sortent tout de même : les fichiers SVG que la page référence déjà, récupérés pour pouvoir être inclus dans un téléchargement, et le lien facultatif vers SVG Color Changer si vous choisissez de cliquer. Vos quatre préférences sont aussi conservées dans <code>chrome.storage.sync</code> et vous suivent d'une machine à l'autre via votre compte Google — des réglages uniquement, jamais du contenu de page ni un historique de navigation.</p></div>
+      </details>
+      <details>
+        <summary>Dans quels navigateurs fonctionne-t-il ?</summary>
+        <div class="faq-body"><p>Chrome 88 ou plus récent, et les navigateurs Chromium actuels bâtis sur le même moteur — Microsoft Edge et Brave. Il se charge décompressé de la même manière partout ; seule l'adresse de la page des extensions change.</p></div>
+      </details>
+      <details>
+        <summary>Pourquoi le clic droit ne permet-il pas d'enregistrer un SVG en ligne ?</summary>
+        <div class="faq-body"><p>Un <code>&lt;svg&gt;</code> en ligne fait partie du document, ce n'est pas une image avec sa propre adresse. Le navigateur ne propose <em>Enregistrer l'image sous…</em> que pour ce qu'il traite comme des images ; un SVG en ligne n'a donc aucune URL à enregistrer et l'option n'apparaît jamais. SVG Downloader le lit directement dans le DOM.</p></div>
+      </details>
+      <details>
+        <summary>Le SVG copié depuis DevTools ne s'ouvre pas. Pourquoi ?</summary>
+        <div class="faq-body"><p>Presque toujours un espace de noms manquant. Le SVG en ligne compte sur l'analyseur HTML pour savoir que c'est du SVG, mais un fichier autonome exige un <code>xmlns="http://www.w3.org/2000/svg"</code> explicite. SVG Downloader le remet automatiquement : ses fichiers s'ouvrent partout, sans retouche.</p></div>
+      </details>
+      <details>
+        <summary>Pourquoi l'icône téléchargée est-elle noire ?</summary>
+        <div class="faq-body"><p>Beaucoup d'icônes héritent leur couleur du CSS via <code>currentColor</code>, qui n'existe plus une fois le SVG isolé : il retombe donc sur le noir. Le fichier est correct — il n'a simplement aucune couleur figée. Pour verrouiller une couleur d'abord, passez par SVG Color Changer, puis enregistrez.</p></div>
+      </details>
+      <details>
+        <summary>Puis-je télécharger un jeu d'icônes entier d'un coup ?</summary>
+        <div class="faq-body"><p>Oui. Cliquez sur <strong>Tout télécharger en ZIP</strong> : tous les SVG détectés sur la page sont réunis dans une archive, dédoublonnés pour éviter deux fois le même glyphe et numérotés à partir de <code>svg-1.svg</code>. Ce qui n'a pas pu être récupéré est signalé dans la ligne d'état du popup.</p></div>
+      </details>
+      <details>
+        <summary>Fonctionne-t-il avec les sprites et les SVG en fond CSS ?</summary>
+        <div class="faq-body"><p>Oui. Au-delà du balisage en ligne, il résout les références <code>&lt;use&gt;</code> d'un sprite jusqu'au glyphe visé, et lit les SVG posés en <code>background-image</code> CSS, y compris les URI <code>data:</code> et les vecteurs en <code>&lt;img&gt;</code> ou <code>&lt;object&gt;</code>. Les quatre sources apparaissent dans le même popup.</p></div>
+      </details>
+      <details>
+        <summary>Existe-t-il une version sur le Chrome Web Store ?</summary>
+        <div class="faq-body"><p>Oui. Elle est sur le Chrome Web Store sous le nom <a href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">SVG Web Downloader &amp; Extractor</a> : l'installation tient en un clic. Vous pouvez toujours la charger décompressée depuis le dépôt si vous préférez exécuter les sources — la page <a href="/fr/docs/installation">Installation</a> détaille les deux voies.</p></div>
+      </details>
+      <details>
+        <summary>De quelles permissions a-t-il besoin ?</summary>
+        <div class="faq-body"><p>Quatre, toutes étroites. <code>activeTab</code> et <code>scripting</code> lui permettent de lire le DOM de la page courante, mais seulement au moment où vous ouvrez le popup. <code>downloads</code> lui permet d'écrire les fichiers que vous enregistrez. <code>storage</code> conserve vos quatre préférences — préfixe de nom de fichier, nom du ZIP, analyse à l'ouverture et lien vers l'outil de couleur — synchronisées via votre compte Google. Il n'a aucun accès en arrière-plan à vos autres onglets, et aucun contenu de page ni historique de navigation n'est stocké où que ce soit. Le détail complet est dans la <a href="/fr/privacy">politique de confidentialité</a>.</p></div>
+      </details>
+    </div>
+    <p>Toujours bloqué ? Ouvrez un ticket sur <a href="https://github.com/Flozad/svg-downloader/issues">github.com/Flozad/svg-downloader/issues</a>, ou lisez la <a href="/fr/privacy">politique de confidentialité</a> pour toute l'histoire des données.</p>
+  </div>
+</div></div></section>
+
+<hr class="section-rule">
+
+<section><div class="wrap">
+  <div class="cta-band">
+    <div>
+      <h2>Pas de compte, pas d'envoi, pas de piège</h2>
+      <p>Gratuit, sous licence MIT, sur l'appareil. Chrome 88+, Edge et Brave.</p>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Installer l'extension</a>
+      <a class="btn quiet" href="/fr/docs/usage">Comment l'utiliser →</a>
+    </div>
+  </div>
+</div></section>
+</main>
+
+<footer>
+  <nav class="bleed foot-map" aria-label="Plan du site">
+    <div class="col"><p>Produit</p><ul>
+      <li><a href="/fr/">Vue d'ensemble</a></li>
+      <li><a href="/fr/features">Fonctions</a></li>
+      <li><a href="/fr/compare/svg-downloader-vs-screenshotting-icons">Face à la capture</a></li>
+      <li><a href="/fr/privacy">Confidentialité</a></li>
+      <li><a href="/fr/use-cases">Cas d'usage</a></li>
+    </ul></div>
+    <div class="col"><p>Ce qu'il attrape</p><ul>
+      <li><a href="/fr/features/inline-svg">SVG en ligne</a></li>
+      <li><a href="/fr/features/css-background-svg">SVG en fond CSS</a></li>
+      <li><a href="/fr/features/svg-sprite-extractor">SVG de sprite / &lt;use&gt;</a></li>
+      <li><a href="/fr/features/bulk-zip-download">Page entière en ZIP</a></li>
+    </ul></div>
+    <div class="col"><p>Tutoriels</p><ul>
+      <li><a href="/fr/tutorials">Les 15 tutoriels</a></li>
+      <li><a href="/fr/tutorials/how-to-download-svg-files">Comment télécharger des fichiers SVG</a></li>
+      <li><a href="/fr/tutorials/copy-svg-from-website">Copier un SVG</a></li>
+      <li><a href="/fr/guides">Guides détaillés</a></li>
+    </ul></div>
+    <div class="col"><p>Docs</p><ul>
+      <li><a href="/fr/docs/installation">Installation</a></li>
+      <li><a href="/fr/docs/usage">Utilisation</a></li>
+      <li><a href="/fr/docs/faq">FAQ</a></li>
+      <li><a href="/fr/docs/changelog">Journal des versions</a></li>
+    </ul></div>
+  </nav>
+  <div class="bleed colophon-foot">
+    <a href="https://github.com/Flozad/svg-downloader">GitHub</a>
+    <a href="https://github.com/Flozad/svg-downloader/issues">Tickets</a>
+    <a href="https://clasicwebtools.com">clasicwebtools.com</a>
+    <span class="grow"></span>
+    <span>Papier os, graphite, un seul vert&nbsp;traceur</span>
+  </div>
+</footer>
+
+
+</body></html>

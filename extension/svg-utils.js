@@ -206,6 +206,71 @@ export async function formatSVGContent(content) {
   return output;
 }
 
+// Some inline SVGs paint nothing on their own: their artwork lives in a separate
+// sprite file, pulled in with `<use href="icons.svg#cart">`. Extracted naively
+// that icon downloads as a blank husk. The content collector rewrites each such
+// `<use>` to a local synthetic id and records `{ url, id, localId }`; this then
+// fetches every referenced sprite once, pulls out the target node, and inlines
+// it under a `<defs>` so the standalone file renders on its own.
+//
+// `fetchFn(url)` resolves to the sprite file's text. It is injected rather than
+// called directly so the fetch happens at *page* origin (through the content
+// script) — a same-origin sprite then needs no host permission, and a cross-
+// origin sprite with no CORS simply fails, leaving that one icon blank instead
+// of breaking the whole download.
+export async function inlineExternalUses(markup, externalUses, fetchFn) {
+  if (!externalUses?.length) return markup;
+
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(markup, 'image/svg+xml');
+  if (doc.querySelector('parsererror') || doc.documentElement.nodeName === 'parsererror') {
+    throw new Error('Invalid SVG markup');
+  }
+  const root = doc.documentElement;
+
+  // Fetch and index each sprite file at most once. A page that draws every icon
+  // from one shared sprite would otherwise refetch and reparse it per `<use>`.
+  // `getElementById` is unreliable on a parsed XML document (it needs a DTD to
+  // know which attribute is the id), so build the id→node map by hand from
+  // `[id]` — which every engine, and jsdom, resolves the same way.
+  const spriteCache = new Map(); // url -> Map(id -> element) | null on failure
+  async function indexFor(url) {
+    if (spriteCache.has(url)) return spriteCache.get(url);
+    let index = null;
+    try {
+      const text = await fetchFn(url);
+      const spriteDoc = parser.parseFromString(text, 'image/svg+xml');
+      if (!spriteDoc.querySelector('parsererror')) {
+        index = new Map();
+        for (const el of spriteDoc.querySelectorAll('[id]')) {
+          if (!index.has(el.id)) index.set(el.id, el);
+        }
+      }
+    } catch {
+      index = null;
+    }
+    spriteCache.set(url, index);
+    return index;
+  }
+
+  let defs = null;
+  for (const { url, id, localId } of externalUses) {
+    const index = await indexFor(url);
+    const target = index?.get(id);
+    if (!target) continue;
+    if (!defs) {
+      defs = doc.createElementNS(SVG_NS, 'defs');
+      root.insertBefore(defs, root.firstChild);
+    }
+    // importNode: the node comes from a different document (the sprite file).
+    const copy = doc.importNode(target, true);
+    copy.setAttribute('id', localId);
+    defs.appendChild(copy);
+  }
+
+  return new XMLSerializer().serializeToString(doc);
+}
+
 // Chrome's downloads.download rejects filenames that are absolute, contain
 // `..`, or end in a separator; Windows additionally forbids <>:"/\|?* and a set
 // of reserved device names. Return a safe, non-empty name (falling back when

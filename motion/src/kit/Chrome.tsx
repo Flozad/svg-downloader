@@ -1,25 +1,30 @@
 import React from 'react'
 import {interpolate, useCurrentFrame, useVideoConfig} from 'remotion'
+import {useBrandFonts} from './fonts'
 import {ExtMark} from './icons'
-import {theme} from './theme'
+import {SHEET, theme} from './theme'
 
 /**
- * The bed every scene sits on. Two jobs: put the clip on the porcelain the whole
- * set shares so the video doesn't read as a foreign rectangle, and fade the
- * first/last few frames so a loop or a cut has no hard seam.
+ * The bed every scene sits on. Three jobs: hold the frame until the brand faces
+ * have loaded, put the clip on the ruled bone stock the whole product shares so
+ * the video doesn't read as a foreign rectangle, and fade the first/last few
+ * frames so a loop or a cut has no hard seam.
  *
  * The fade goes on the CONTENT over an opaque bed — never the whole frame. A
  * video has no alpha, so fading the root fades toward black; the bed stays solid
  * and only what sits on it dissolves.
  */
-export const Stage: React.FC<{children: React.ReactNode; pad?: number; bg?: string; fade?: boolean}> = ({
-  children,
-  pad = 0,
-  bg = theme.bg,
-  fade: doFade = true,
-}) => {
+export const Stage: React.FC<{
+  children: React.ReactNode
+  pad?: number
+  bg?: string
+  fade?: boolean
+  /** Rule the ground with the 22px drafting grid. On by default. */
+  sheet?: boolean
+}> = ({children, pad = 0, bg = theme.paper, fade: doFade = true, sheet = true}) => {
   const frame = useCurrentFrame()
   const {fps, durationInFrames} = useVideoConfig()
+  const fontsReady = useBrandFonts()
   const fade = 0.3 * fps
 
   const opacity = doFade
@@ -32,15 +37,26 @@ export const Stage: React.FC<{children: React.ReactNode; pad?: number; bg?: stri
     : 1
 
   return (
-    <div style={{width: '100%', height: '100%', background: bg, position: 'relative', overflow: 'hidden'}}>
+    <div
+      style={{
+        width: '100%',
+        height: '100%',
+        background: bg,
+        position: 'relative',
+        overflow: 'hidden',
+        ...(sheet ? SHEET : null),
+      }}
+    >
       <div
         style={{
           width: '100%',
           height: '100%',
           padding: pad,
-          opacity,
+          // Nothing paints until the faces are in — one frame of Helvetica in a
+          // set otherwise typeset in Bricolage is more jarring than a beat of black.
+          opacity: fontsReady ? opacity : 0,
           fontFamily: theme.font.sans,
-          color: theme.text,
+          color: theme.ink,
           position: 'relative',
           overflow: 'hidden',
           boxSizing: 'border-box',
@@ -59,6 +75,10 @@ export const CHROME_TOP = 86 // 42 tab strip + 43 nav row + 1 rule
  * tab, a nav row with back/forward/reload, an omnibox with a padlock, and the
  * extension row on the right where Chrome really puts it. The whole point of the
  * clips is that this is happening on a REAL website in a REAL browser.
+ *
+ * Everything here is drawn from `theme.chrome` — true neutral grey. The browser
+ * is Chrome's design, not ours; warming it to the product palette would read as
+ * a themed mock-up rather than as somebody's actual window.
  */
 export const BrowserFrame: React.FC<{
   url: string
@@ -69,7 +89,15 @@ export const BrowserFrame: React.FC<{
   /** Pulse ring around the extension button, 0..1 — drive it from the frame. */
   pulse?: number
   title?: string
-}> = ({url, children, style, active, pulse = 0, title}) => {
+  /**
+   * Chrome's own downloads tray, 0..1. A single download writes nothing into the
+   * popup — popup.js only fills its status line for ZIPs and copies — so THIS is
+   * the honest confirmation that a file landed. Drive it from the frame and it
+   * drops in and settles, the way the real tray button does.
+   */
+  downloadTray?: number
+}> = ({url, children, style, active, pulse = 0, title, downloadTray = 0}) => {
+  const c = theme.chrome
   const tabTitle = title ?? url.replace(/^https?:\/\//, '').split('/')[0]
 
   return (
@@ -77,7 +105,7 @@ export const BrowserFrame: React.FC<{
       style={{
         display: 'flex',
         flexDirection: 'column',
-        background: '#fff',
+        background: c.surface,
         borderRadius: theme.radius.lg,
         overflow: 'hidden',
         boxShadow: theme.shadow.lift,
@@ -92,15 +120,15 @@ export const BrowserFrame: React.FC<{
           alignItems: 'flex-end',
           gap: 8,
           padding: '9px 12px 0',
-          background: '#dee1e6',
+          background: c.tabStrip,
           flexShrink: 0,
           height: 42,
           boxSizing: 'border-box',
         }}
       >
         <div style={{display: 'flex', gap: 7, alignItems: 'center', paddingBottom: 10}}>
-          {['#ff5f57', '#febc2e', '#28c840'].map((c) => (
-            <div key={c} style={{width: 11, height: 11, borderRadius: 999, background: c}} />
+          {['#ff5f57', '#febc2e', '#28c840'].map((dot) => (
+            <div key={dot} style={{width: 11, height: 11, borderRadius: 999, background: dot}} />
           ))}
         </div>
 
@@ -113,20 +141,20 @@ export const BrowserFrame: React.FC<{
             padding: '0 12px',
             height: 33,
             minWidth: 210,
-            background: theme.panel,
+            background: c.surface,
             borderRadius: '9px 9px 0 0',
             fontSize: 12.5,
-            color: theme.text,
+            color: c.text,
           }}
         >
-          <div style={{width: 13, height: 13, borderRadius: 3, background: '#0a0a0a', flexShrink: 0}} />
+          <div style={{width: 13, height: 13, borderRadius: 3, background: theme.ink, flexShrink: 0}} />
           <span style={{flex: 1, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis'}}>
             {tabTitle}
           </span>
-          <span style={{color: theme.dim2, fontSize: 14, lineHeight: 1}}>×</span>
+          <span style={{color: c.dim2, fontSize: 14, lineHeight: 1}}>×</span>
         </div>
 
-        <span style={{color: theme.dim2, fontSize: 16, paddingBottom: 8}}>+</span>
+        <span style={{color: c.dim2, fontSize: 16, paddingBottom: 8}}>+</span>
       </div>
 
       {/* Nav row */}
@@ -137,8 +165,8 @@ export const BrowserFrame: React.FC<{
           gap: 10,
           padding: '0 12px',
           height: 43,
-          background: theme.panel,
-          borderBottom: `1px solid ${theme.line}`,
+          background: c.surface,
+          borderBottom: `1px solid ${c.line}`,
           flexShrink: 0,
         }}
       >
@@ -152,31 +180,57 @@ export const BrowserFrame: React.FC<{
             height: 30,
             maxWidth: 640,
             borderRadius: 999,
-            background: '#f1f3f4',
+            background: c.omnibox,
             display: 'flex',
             alignItems: 'center',
             gap: 8,
             padding: '0 14px',
             fontSize: 13,
-            color: theme.dim,
+            color: c.dim,
             fontFamily: theme.font.sans,
           }}
         >
           <svg width={11} height={13} viewBox="0 0 11 13" fill="none" style={{flexShrink: 0}}>
-            <rect x="1" y="5.5" width="9" height="7" rx="1.6" fill={theme.dim} />
-            <path d="M3 5.5 V3.6 a2.5 2.5 0 0 1 5 0 V5.5" stroke={theme.dim} strokeWidth="1.4" fill="none" />
+            <rect x="1" y="5.5" width="9" height="7" rx="1.6" fill={c.dim} />
+            <path d="M3 5.5 V3.6 a2.5 2.5 0 0 1 5 0 V5.5" stroke={c.dim} strokeWidth="1.4" fill="none" />
           </svg>
           {url}
         </div>
 
         <div style={{flex: 1}} />
 
+        {/* The downloads tray. Chrome shows this the instant a file is saved. */}
+        {downloadTray > 0 ? (
+          <div
+            style={{
+              width: 28,
+              height: 28,
+              borderRadius: 999,
+              display: 'grid',
+              placeItems: 'center',
+              flexShrink: 0,
+              background: theme.plotWash,
+              opacity: Math.min(1, downloadTray * 2),
+              transform: `translateY(${(1 - Math.min(1, downloadTray)) * -8}px)`,
+            }}
+          >
+            <svg width={15} height={15} viewBox="0 0 24 24" fill="none" stroke={theme.plot}>
+              <path
+                d="M12 4v10m0 0l-4-4m4 4l4-4M5 19h14"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </div>
+        ) : null}
+
         {/* The extensions row — a puzzle piece, then the SVG Downloader mark. */}
         <svg width={18} height={18} viewBox="0 0 24 24" style={{flexShrink: 0}}>
           <path
             d="M10 3a2 2 0 0 1 4 0v1h3a1 1 0 0 1 1 1v3h1a2 2 0 0 1 0 4h-1v3a1 1 0 0 1-1 1h-3v1a2 2 0 0 1-4 0v-1H7a1 1 0 0 1-1-1v-3H5a2 2 0 0 1 0-4h1V5a1 1 0 0 1 1-1h3z"
             fill="none"
-            stroke={theme.dim2}
+            stroke={c.dim2}
             strokeWidth="1.6"
           />
         </svg>
@@ -189,8 +243,8 @@ export const BrowserFrame: React.FC<{
             borderRadius: 8,
             display: 'grid',
             placeItems: 'center',
-            background: active ? 'rgba(10,10,10,0.06)' : 'transparent',
-            boxShadow: active ? `0 0 0 1.5px ${theme.text}` : 'none',
+            background: active ? theme.plotWash : 'transparent',
+            boxShadow: active ? `0 0 0 1.5px ${theme.plot}` : 'none',
             flexShrink: 0,
           }}
         >
@@ -200,7 +254,7 @@ export const BrowserFrame: React.FC<{
                 position: 'absolute',
                 inset: 0,
                 borderRadius: 8,
-                boxShadow: `0 0 0 ${pulse * 8}px rgba(10,10,10,${0.28 * (1 - pulse)})`,
+                boxShadow: `0 0 0 ${pulse * 8}px rgba(31, 90, 58, ${0.3 * (1 - pulse)})`,
               }}
             />
           ) : null}
@@ -219,7 +273,7 @@ const NavGlyph: React.FC<{d: string; dim?: boolean}> = ({d, dim}) => (
     <path
       d={d}
       fill="none"
-      stroke={dim ? theme.dim2 : theme.dim}
+      stroke={dim ? theme.chrome.dim2 : theme.chrome.dim}
       strokeWidth="1.9"
       strokeLinecap="round"
       strokeLinejoin="round"

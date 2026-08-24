@@ -1,0 +1,380 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Salvar um SVG de um site quando o botão direito não deixa</title>
+<meta name="description" content="“Salvar imagem como…” sumido ou esmaecido no ícone que você quer? Aqui está exatamente por quê, quais são os quatro esconderijos, e como salvar o vetor de verdade mesmo assim.">
+<link rel="canonical" href="https://svg.clasicwebtools.com/pt-br/tutorials/save-svg-from-website"><!--i18n:alternates-->
+<link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/save-svg-from-website">
+<link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/save-svg-from-website">
+<link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/save-svg-from-website">
+<link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/save-svg-from-website">
+<link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/save-svg-from-website">
+<link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/save-svg-from-website">
+<!--/i18n:alternates-->
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="Flozad">
+<meta name="theme-color" content="#ece4d3">
+<meta property="og:site_name" content="SVG Downloader">
+<meta property="og:title" content="Salvar um SVG de um site quando o botão direito não deixa">
+<meta property="og:description" content="“Salvar imagem como…” sumido ou esmaecido no ícone que você quer? Aqui está exatamente por quê, quais são os quatro esconderijos, e como salvar o vetor de verdade mesmo assim.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://svg.clasicwebtools.com/pt-br/tutorials/save-svg-from-website">
+<meta property="og:image" content="https://svg.clasicwebtools.com/motion/tutorials/save-svg-from-website.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="O popup do SVG Downloader mostrando a prévia de um ícone de coração numa página cujo menu do botão direito não oferece opção de salvar.">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:video" content="https://svg.clasicwebtools.com/motion/tutorials/save-svg-from-website.mp4">
+<meta property="og:video:secure_url" content="https://svg.clasicwebtools.com/motion/tutorials/save-svg-from-website.mp4">
+<meta property="og:video:type" content="video/mp4">
+<meta property="og:video:width" content="1280">
+<meta property="og:video:height" content="800">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@lozards">
+<meta name="twitter:title" content="Salvar um SVG de um site quando o botão direito não deixa">
+<meta name="twitter:description" content="“Salvar imagem como…” sumido ou esmaecido no ícone que você quer? Aqui está exatamente por quê, quais são os quatro esconderijos, e como salvar o vetor de verdade mesmo assim.">
+<meta name="twitter:image" content="https://svg.clasicwebtools.com/motion/tutorials/save-svg-from-website.jpg">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/fonts/bricolage-var.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/pages.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Início",
+          "item": "https://svg.clasicwebtools.com/pt-br/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tutoriais",
+          "item": "https://svg.clasicwebtools.com/pt-br/tutorials"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Quando o botão direito falha",
+          "item": "https://svg.clasicwebtools.com/pt-br/tutorials/save-svg-from-website"
+        }
+      ]
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Salvar um SVG quando o botão direito não tem nada a oferecer",
+      "description": "Uma página cujos ícones não oferecem a opção Salvar imagem como…. O popup do SVG Downloader abre, escaneia o DOM, encontra todo vetor, percorre até um coração, nomeia e salva.",
+      "thumbnailUrl": [
+        "https://svg.clasicwebtools.com/motion/tutorials/save-svg-from-website.jpg"
+      ],
+      "uploadDate": "2026-08-22",
+      "duration": "PT19S",
+      "contentUrl": "https://svg.clasicwebtools.com/motion/tutorials/save-svg-from-website.mp4",
+      "embedUrl": "https://svg.clasicwebtools.com/tutorials/save-svg-from-website",
+      "isFamilyFriendly": true,
+      "publisher": {
+        "@type": "Organization",
+        "name": "SVG Downloader",
+        "url": "https://svg.clasicwebtools.com/pt-br/"
+      }
+    },
+    {
+      "@type": "HowTo",
+      "name": "Como salvar um SVG quando o botão direito não deixa",
+      "description": "“Salvar imagem como…” sumido ou esmaecido no ícone que você quer? Aqui está exatamente por quê, quais são os quatro esconderijos, e como salvar o vetor de verdade mesmo assim.",
+      "image": "https://svg.clasicwebtools.com/motion/tutorials/save-svg-from-website.jpg",
+      "totalTime": "PT2M",
+      "tool": {
+        "@type": "HowToTool",
+        "name": "Extensão de navegador SVG Downloader"
+      },
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Deixe o menu do botão direito em paz",
+          "text": "Se Salvar imagem como… sumiu ou está esmaecido, nenhuma quantidade de tentativas vai invocá-lo. A ausência é informação, não defeito.",
+          "url": "https://svg.clasicwebtools.com/pt-br/tutorials/save-svg-from-website#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Abra o popup",
+          "text": "Clique no botão da barra de ferramentas na página. A varredura resolve as quatro origens em markup independente — inline, fundo CSS, referência de sprite e origem de imagem igualmente.",
+          "url": "https://svg.clasicwebtools.com/pt-br/tutorials/save-svg-from-website#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Veja a prévia para identificar o certo",
+          "text": "A prévia isolada é o jeito mais rápido de distinguir dois ícones parecidos, principalmente num conjunto em que a página os mostra a 16 px.",
+          "url": "https://svg.clasicwebtools.com/pt-br/tutorials/save-svg-from-website#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Nomeie e salve",
+          "text": "Digite um nome de arquivo e aperte Baixar o atual. O namespace é consertado na saída, então o arquivo abre no Figma, no Illustrator e em todo navegador.",
+          "url": "https://svg.clasicwebtools.com/pt-br/tutorials/save-svg-from-website#steps"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Por que Salvar imagem como… está esmaecido num SVG?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Porque o navegador não classifica aquele elemento como imagem buscável. Markup SVG inline, imagens de fundo CSS e referências de sprite não têm endereço por trás, então o item de menu não tem sobre o que agir."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Existe alguma configuração do navegador que liga isso?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Não. Não é permissão nem preferência — o item de menu está ausente porque a coisa por baixo genuinamente não é um recurso de imagem salvável. Ler a página é o caminho para contornar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Não posso só tirar um print?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pode, mas você perde o ponto inteiro de um vetor. Um print é uma grade fixa de pixels que borra quando escalada e não dá para recolorir. O SVG salvo continua nítido em qualquer tamanho e pode ser reestilizado."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "E copiar o markup do DevTools?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Funciona, mas o markup que você copia normalmente não tem o namespace xmlns, então o arquivo não vai abrir até você adicionar na mão. A extensão conserta isso automaticamente."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Isso funciona em todo site?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Em qualquer página que você consiga abrir no Chrome 88+, Edge ou Brave. Ele não alcança páginas internas do navegador, galerias de extensões, nem conteúdo atrás de um login que você não tem."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Pular para o conteúdo</a>
+
+<nav class="nav">
+  <a class="brand" href="/pt-br/">
+    <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+      <rect width="48" height="48" rx="10" fill="var(--plot)"></rect>
+      <path d="M24 13v15m0 0l-6.5-6.5M24 28l6.5-6.5" fill="none" stroke="var(--surface-hi)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+      <rect x="16.5" y="33.5" width="15" height="2.4" rx="1.2" fill="var(--surface-hi)"></rect>
+    </svg>
+    <strong>SVG&nbsp;Downloader</strong>
+  </a>
+  <span class="spacer"></span>
+  <span class="nav-links">
+    <a href="/pt-br/features">Recursos</a>
+    <a href="/pt-br/tutorials" aria-current="page">Tutoriais</a>
+    <a href="/pt-br/guides">Guias</a>
+    <a href="/pt-br/docs">Docs</a>
+    <a href="/pt-br/use-cases">Histórias</a>
+  </span><!--i18n:switch-->
+  <details class="lang-switch">
+    <summary aria-label="Idioma"><span>PT</span></summary>
+    <ul>
+      <li><a href="/tutorials/save-svg-from-website" hreflang="en" lang="en">English</a></li>
+      <li><a href="/es/tutorials/save-svg-from-website" hreflang="es" lang="es">Español</a></li>
+      <li><a href="/fr/tutorials/save-svg-from-website" hreflang="fr" lang="fr">Français</a></li>
+      <li><a href="/de/tutorials/save-svg-from-website" hreflang="de" lang="de">Deutsch</a></li>
+      <li><a href="/pt-br/tutorials/save-svg-from-website" hreflang="pt-BR" lang="pt-BR" aria-current="true">Português</a></li>
+    </ul>
+  </details>
+  <!--/i18n:switch-->
+  <a class="nav-cta" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Instalar a extensão</a>
+</nav>
+
+<main id="main">
+<header class="page-hero"><div class="wrap">
+  <ol class="crumbs">
+    <li><a href="/pt-br/">Início</a></li>
+    <li><a href="/pt-br/tutorials">Tutoriais</a></li>
+    <li><span aria-current="page">Quando o botão direito falha</span></li>
+  </ol>
+  <p class="eyebrow">Tutorial — o menu esmaecido</p>
+  <h1>Como <span class="plot">salvar um SVG</span> quando o botão direito não deixa</h1>
+  <p class="lede">Você clica com o botão direito no ícone e não há <em>Salvar imagem como…</em> nenhum. Nada está quebrado e você não perdeu nenhuma configuração — o navegador genuinamente não acha que aquilo é uma imagem.</p>
+  <div class="cta">
+    <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 12v16m0 0l-7-7m7 7l7-7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"></path><rect x="16" y="34" width="16" height="2.6" rx="1.3" fill="currentColor"></rect></svg>
+      Instalar a extensão</a>
+    <a class="btn quiet" href="#steps">Ir para os passos ↓</a>
+  </div>
+</div></header>
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Assista — 19 segundos</p>
+  <h2>Salvando o que o menu não oferece</h2>
+  <figure class="shot">
+    <div class="shot-mount">
+      <span class="shot-tag">tutorial · sem botão direito</span>
+      <video src="/motion/tutorials/save-svg-from-website.mp4" poster="/motion/tutorials/save-svg-from-website.jpg" muted="" loop="" playsinline="" preload="none" aria-label="Uma página cujos ícones não oferecem a opção Salvar imagem como…. O popup do SVG Downloader abre, escaneia o DOM, encontra todo vetor, percorre até um coração, nomeia e salva."></video>
+    </div>
+    <figcaption class="shot-cap">Todo ícone desta página recusa o menu de salvar. Os 24 saem do mesmo jeito.</figcaption>
+  </figure>
+
+  <p class="lead-in">A gravação abre numa página em que nenhum ícone oferece opção de salvar. Não é uma página incomum — é assim que a maioria dos sistemas de ícones é publicada.</p>
+  <p class="eyebrow">O que a gravação mostra</p>
+  <ol class="beats">
+    <li>Salvar imagem como… sumiu em todo ícone daqui</li>
+    <li>A extensão lê o DOM em vez do menu</li>
+    <li>Inline, fundo CSS, sprite, img — todos encontrados</li>
+    <li>Escolha o que você realmente quer</li>
+    <li>Nomeie</li>
+    <li>Salvo — um vetor de verdade, não um print</li>
+  </ol>
+</div></section>
+
+<hr class="section-rule">
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">O motivo de verdade</p>
+  <h2>O navegador só oferece salvar o que ele consegue buscar</h2>
+  
+  <p class="lead-in"><em>Salvar imagem como…</em> aparece quando o navegador tem uma imagem com um endereço que ele pode requisitar. Essa categoria é mais estreita do que parece, e os sistemas de ícones modernos ficam quase inteiramente fora dela. Há quatro lugares onde um SVG se esconde numa página, e só um deles se comporta bem.</p>
+  <ul>
+    <li><strong><code>&lt;svg&gt;</code> inline.</strong> O markup está escrito direto no HTML. Sem <code>src</code>, sem URL, nada para buscar — então o menu não oferece nada. É assim que a grande maioria dos ícones é publicada hoje. <a href="/pt-br/features/inline-svg">Como é lido →</a></li>
+    <li><strong><code>background-image</code> do CSS.</strong> O vetor é definido numa folha de estilo, muitas vezes como URI <code>data:</code> embutido. O navegador arquiva como decoração em vez de conteúdo. <a href="/pt-br/features/css-background-svg">Como é lido →</a></li>
+    <li><strong>Referências <code>&lt;use&gt;</code> de sprite.</strong> Um sprite escondido guarda todo ícone; cada lugar em que um ícone aparece é só um ponteiro para ele. Salvar o ponteiro te dá um arquivo vazio. <a href="/pt-br/features/svg-sprite-extractor">Como é lido →</a></li>
+    <li><strong>Origens <code>&lt;img&gt;</code> e <code>&lt;object&gt;</code>.</strong> O caso amigável — e mesmo aqui a origem pode ser um URI <code>data:</code> que o diálogo de salvar estraga, ou uma URL de outra origem que salva com um nome sem sentido.</li>
+  </ul>
+  <p>Então três das quatro não podem ser salvas desse jeito nem em princípio. Ler o DOM funciona nas quatro, porque a essa altura cada uma delas já foi resolvida em markup real pelo próprio navegador.</p>
+
+  <h2 id="steps">Salvando mesmo assim</h2>
+  <p>Você não precisa saber qual das quatro está olhando. É esse o ponto.</p>
+  <ol>
+    <li><strong>Deixe o menu do botão direito em paz.</strong> Se <em>Salvar imagem como…</em> sumiu ou está esmaecido, nenhuma quantidade de tentativas vai invocá-lo. A ausência é informação, não defeito.</li>
+    <li><strong>Abra o popup.</strong> Clique no botão da barra de ferramentas na página. A varredura resolve as quatro origens em markup independente — inline, fundo CSS, referência de sprite e origem de imagem igualmente.</li>
+    <li><strong>Veja a prévia para identificar o certo.</strong> A prévia isolada é o jeito mais rápido de distinguir dois ícones parecidos, principalmente num conjunto em que a página os mostra a 16 px.</li>
+    <li><strong>Nomeie e salve.</strong> Digite um nome de arquivo e aperte <em>Baixar o atual</em>. O namespace é consertado na saída, então o arquivo abre no Figma, no Illustrator e em todo navegador.</li>
+  </ol>
+
+  
+  <h2>Coisas que parecem solução mas não são</h2>
+  <ul>
+    <li><strong>Tirar um print.</strong> Isso converte um vetor independente de resolução numa grade fixa de pixels, para sempre. Ele vai borrar assim que alguém escalar, e não dá para recolorir. <a href="/pt-br/compare/svg-downloader-vs-screenshotting-icons">A comparação completa →</a></li>
+    <li><strong>Copiar markup do DevTools.</strong> Isso funciona, mas é trabalhoso, e o markup que você copia está sem o namespace <code>xmlns</code>, então o arquivo resultante não vai abrir até você adicionar na mão. Se você quer o markup em vez de um arquivo, <a href="/pt-br/tutorials/copy-svg-from-website">Copiar código</a> faz o mesmo trabalho com o namespace já consertado.</li>
+    <li><strong>Caçar o arquivo na aba Network.</strong> Ótimo para origens <code>&lt;img&gt;</code>. Inútil para as outras três, porque nenhuma requisição foi feita — o markup chegou dentro do documento HTML.</li>
+  </ul>
+
+  <dl class="facts">
+    <div><dt>Por que falha</dt><dd>Três das quatro origens de SVG <strong>não têm endereço buscável</strong>.</dd></div>
+    <div><dt>O que funciona</dt><dd>Ler o DOM renderizado, onde as quatro já viraram markup real.</dd></div>
+    <div><dt>De bônus</dt><dd>O <code>xmlns</code> faltante é consertado, então o arquivo realmente abre.</dd></div>
+    <div><dt>Veja também</dt><dd><a href="/pt-br/tutorials/grab-svg-from-website">Uma rota mais rápida para um ícone</a> · <a href="/pt-br/features/inline-svg">SVG inline</a></dd></div>
+  </dl>
+</div></section>
+
+<hr class="section-rule">
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Vale saber</p>
+  <h2>Perguntas frequentes</h2>
+  <div class="faq">
+    <details>
+      <summary>Por que Salvar imagem como… está esmaecido num SVG?</summary>
+      <div class="faq-body"><p>Porque o navegador não classifica aquele elemento como imagem buscável. Markup SVG inline, imagens de fundo CSS e referências de sprite não têm endereço por trás, então o item de menu não tem sobre o que agir.</p></div>
+    </details>
+    <details>
+      <summary>Existe alguma configuração do navegador que liga isso?</summary>
+      <div class="faq-body"><p>Não. Não é permissão nem preferência — o item de menu está ausente porque a coisa por baixo genuinamente não é um recurso de imagem salvável. Ler a página é o caminho para contornar.</p></div>
+    </details>
+    <details>
+      <summary>Não posso só tirar um print?</summary>
+      <div class="faq-body"><p>Pode, mas você perde o ponto inteiro de um vetor. Um print é uma grade fixa de pixels que borra quando escalada e não dá para recolorir. O SVG salvo continua nítido em qualquer tamanho e pode ser reestilizado.</p></div>
+    </details>
+    <details>
+      <summary>E copiar o markup do DevTools?</summary>
+      <div class="faq-body"><p>Funciona, mas o markup que você copia normalmente não tem o namespace xmlns, então o arquivo não vai abrir até você adicionar na mão. A extensão conserta isso automaticamente.</p></div>
+    </details>
+    <details>
+      <summary>Isso funciona em todo site?</summary>
+      <div class="faq-body"><p>Em qualquer página que você consiga abrir no Chrome 88+, Edge ou Brave. Ele não alcança páginas internas do navegador, galerias de extensões, nem conteúdo atrás de um login que você não tem.</p></div>
+    </details>
+  </div>
+</div></section>
+
+<hr class="section-rule">
+
+<section><div class="wrap">
+  <div class="cta-band">
+    <div>
+      <h2>O menu disse não. Leve mesmo assim.</h2>
+      <p>Quatro esconderijos, uma varredura, e um arquivo que abre de verdade.</p>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Instalar a extensão</a>
+      <a class="btn quiet" href="/pt-br/tutorials">Todos os 15 tutoriais →</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="related"><div class="wrap">
+  <p class="eyebrow">Continue</p>
+  <ul>
+    <li><a href="/pt-br/tutorials/grab-svg-from-website">Captura pelo botão direito<span>O item de menu que funciona</span></a></li>
+    <li><a href="/pt-br/compare/svg-downloader-vs-screenshotting-icons">Vs. print de tela<span>Por que o vetor vence</span></a></li>
+    <li><a href="/pt-br/tutorials/copy-svg-from-website">Copiar o código<span>Sem precisar de arquivo</span></a></li>
+  </ul>
+</div></section>
+</main>
+
+<footer>
+  <nav class="bleed foot-map" aria-label="Mapa do site">
+    <div class="col"><p>Produto</p><ul>
+      <li><a href="/pt-br/">Visão geral</a></li>
+      <li><a href="/pt-br/features">Recursos</a></li>
+      <li><a href="/pt-br/compare/svg-downloader-vs-screenshotting-icons">Vs. print de tela</a></li>
+      <li><a href="/pt-br/privacy">Privacidade</a></li>
+      <li><a href="/pt-br/use-cases">Casos de uso</a></li>
+    </ul></div>
+    <div class="col"><p>O que ele encontra</p><ul>
+      <li><a href="/pt-br/features/inline-svg">SVG inline</a></li>
+      <li><a href="/pt-br/features/css-background-svg">SVG em fundo CSS</a></li>
+      <li><a href="/pt-br/features/svg-sprite-extractor">SVG de sprite / &lt;use&gt;</a></li>
+      <li><a href="/pt-br/features/bulk-zip-download">Página inteira em ZIP</a></li>
+    </ul></div>
+    <div class="col"><p>Tutoriais</p><ul>
+      <li><a href="/pt-br/tutorials">Todos os 15 tutoriais</a></li>
+      <li><a href="/pt-br/tutorials/how-to-download-svg-files">Como baixar arquivos SVG</a></li>
+      <li><a href="/pt-br/tutorials/copy-svg-from-website">Copiar um SVG</a></li>
+      <li><a href="/pt-br/tutorials/extract-svg-from-website">Extrair todo SVG</a></li>
+    </ul></div>
+    <div class="col"><p>Docs</p><ul>
+      <li><a href="/pt-br/docs/installation">Instalação</a></li>
+      <li><a href="/pt-br/docs/usage">Uso</a></li>
+      <li><a href="/pt-br/docs/faq">Perguntas frequentes</a></li>
+      <li><a href="/pt-br/docs/changelog">Mudanças</a></li>
+    </ul></div>
+  </nav>
+  <div class="bleed colophon-foot">
+    <a href="https://github.com/Flozad/svg-downloader">GitHub</a>
+    <a href="https://github.com/Flozad/svg-downloader/issues">Issues</a>
+    <a href="https://clasicwebtools.com">clasicwebtools.com</a>
+    <span class="grow"></span>
+    <span>Papel osso, grafite e um único verde&nbsp;plotter</span>
+  </div>
+</footer>
+<script src="/player.js" defer=""></script>
+
+
+</body></html>

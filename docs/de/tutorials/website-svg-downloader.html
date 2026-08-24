@@ -1,0 +1,386 @@
+<!DOCTYPE html><html lang="de"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SVG-Downloader für Websites — welche Methode solltest du nehmen?</title>
+<meta name="description" content="Ein Scan, vier Ausgänge: eine einzelne Datei, die ganze Seite als ZIP, das Markup in deiner Zwischenablage oder ein Ein-Schritt-Rechtsklick. Ein Wegweiser zur richtigen Wahl.">
+<link rel="canonical" href="https://svg.clasicwebtools.com/de/tutorials/website-svg-downloader"><!--i18n:alternates-->
+<link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/website-svg-downloader">
+<link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/website-svg-downloader">
+<link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/website-svg-downloader">
+<link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/website-svg-downloader">
+<link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/website-svg-downloader">
+<link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/website-svg-downloader">
+<!--/i18n:alternates-->
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="Flozad">
+<meta name="theme-color" content="#ece4d3">
+<meta property="og:site_name" content="SVG Downloader">
+<meta property="og:title" content="SVG-Downloader für Websites — welche Methode solltest du nehmen?">
+<meta property="og:description" content="Ein Scan, vier Ausgänge: eine einzelne Datei, die ganze Seite als ZIP, das Markup in deiner Zwischenablage oder ein Ein-Schritt-Rechtsklick. Ein Wegweiser zur richtigen Wahl.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://svg.clasicwebtools.com/de/tutorials/website-svg-downloader">
+<meta property="og:image" content="https://svg.clasicwebtools.com/motion/tutorials/website-svg-downloader.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="Das SVG-Downloader-Popup zeigt nach einem einzigen Scan seine Aktionen für Download, ZIP und Kopieren.">
+<meta property="og:locale" content="de_DE">
+<meta property="og:video" content="https://svg.clasicwebtools.com/motion/tutorials/website-svg-downloader.mp4">
+<meta property="og:video:secure_url" content="https://svg.clasicwebtools.com/motion/tutorials/website-svg-downloader.mp4">
+<meta property="og:video:type" content="video/mp4">
+<meta property="og:video:width" content="1280">
+<meta property="og:video:height" content="800">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@lozards">
+<meta name="twitter:title" content="SVG-Downloader für Websites — welche Methode solltest du nehmen?">
+<meta name="twitter:description" content="Ein Scan, vier Ausgänge: eine einzelne Datei, die ganze Seite als ZIP, das Markup in deiner Zwischenablage oder ein Ein-Schritt-Rechtsklick. Ein Wegweiser zur richtigen Wahl.">
+<meta name="twitter:image" content="https://svg.clasicwebtools.com/motion/tutorials/website-svg-downloader.jpg">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/fonts/bricolage-var.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/pages.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Start",
+          "item": "https://svg.clasicwebtools.com/de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tutorials",
+          "item": "https://svg.clasicwebtools.com/de/tutorials"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Welche Methode?",
+          "item": "https://svg.clasicwebtools.com/de/tutorials/website-svg-downloader"
+        }
+      ]
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Ein Icon, ein ganzer Satz oder das Markup — wähl deinen Ausgang",
+      "description": "Ein einzelner Scan einer Seite, gefolgt von drei verschiedenen Ausgängen: Aktuelles laden speichert eine Datei, Alle als ZIP laden speichert den Satz, und Code kopieren legt das Markup in die Zwischenablage.",
+      "thumbnailUrl": [
+        "https://svg.clasicwebtools.com/motion/tutorials/website-svg-downloader.jpg"
+      ],
+      "uploadDate": "2026-08-22",
+      "duration": "PT19S",
+      "contentUrl": "https://svg.clasicwebtools.com/motion/tutorials/website-svg-downloader.mp4",
+      "embedUrl": "https://svg.clasicwebtools.com/tutorials/website-svg-downloader",
+      "isFamilyFriendly": true,
+      "publisher": {
+        "@type": "Organization",
+        "name": "SVG Downloader",
+        "url": "https://svg.clasicwebtools.com/de/"
+      }
+    },
+    {
+      "@type": "HowTo",
+      "name": "Der SVG-Downloader für Websites und welchen Weg du nimmst",
+      "description": "Ein Scan, vier Ausgänge: eine einzelne Datei, die ganze Seite als ZIP, das Markup in deiner Zwischenablage oder ein Ein-Schritt-Rechtsklick. Ein Wegweiser zur richtigen Wahl.",
+      "image": "https://svg.clasicwebtools.com/motion/tutorials/website-svg-downloader.jpg",
+      "totalTime": "PT2M",
+      "tool": {
+        "@type": "HowToTool",
+        "name": "Browser-Erweiterung SVG Downloader"
+      },
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Bring die Seite in den Zustand, den du erfassen willst",
+          "text": "Melde dich an, scroll, öffne das Menü — was auch immer die gewünschten Vektoren auf den Bildschirm bringt. Der Scan liest das DOM, wie es dasteht.",
+          "url": "https://svg.clasicwebtools.com/de/tutorials/website-svg-downloader#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Popup öffnen und scannen",
+          "text": "Ein Klick. Der Zähler meldet, was die Seite zeichnet, dublettenfrei.",
+          "url": "https://svg.clasicwebtools.com/de/tutorials/website-svg-downloader#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Vorschau ansehen und wählen",
+          "text": "Zurück und Weiter gehen den Satz durch, isoliert und fern der überladenen Seite.",
+          "url": "https://svg.clasicwebtools.com/de/tutorials/website-svg-downloader#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Wähl deinen Ausgang",
+          "text": "Aktuelles laden für eine Datei, Alle als ZIP laden für den Satz, oder Code kopieren / Bild kopieren für die Zwischenablage. Schalte vorher das Formatsegment um, wenn du ein PNG oder JPG brauchst.",
+          "url": "https://svg.clasicwebtools.com/de/tutorials/website-svg-downloader#steps"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Welche Methode liefert die beste Qualität?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sie sind identisch. Jeder Weg durchläuft denselben Bereiniger und dieselbe Namensraum-Reparatur — sie unterscheiden sich nur darin, wo das Ergebnis landet und wie viel du unterwegs wählst."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kann ich nur einige der SVGs laden statt aller?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. Blättere zu jedem und nimm Aktuelles laden, wobei du unterwegs jedes benennst. Alle als ZIP laden ist dafür da, wenn du den ganzen Satz willst."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Was wird aus dem Markup entfernt?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Script-Elemente, on*-Handler-Attribute und externe Referenzen. Die Formen bleiben unangetastet, und der xmlns-Namensraum wird ergänzt, damit die Datei eigenständig öffnet."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Muss ich zwischen Downloads neu scannen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nein. Ein Scan baut die Liste, und jeder Ausgang greift darauf zu. Scanne nur neu, wenn du die Seite änderst — ein Modal öffnen, einen Tab wechseln, ein lazy geladenes Raster ins Bild scrollen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Was, wenn die Site das geladene SVG nicht annimmt?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Schalte das Formatsegment auf PNG und lade erneut. E-Mail-Programme, Präsentationssoftware und ältere CMS-Uploader lehnen SVG häufig ab."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Zum Inhalt springen</a>
+
+<nav class="nav">
+  <a class="brand" href="/de/">
+    <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+      <rect width="48" height="48" rx="10" fill="var(--plot)"></rect>
+      <path d="M24 13v15m0 0l-6.5-6.5M24 28l6.5-6.5" fill="none" stroke="var(--surface-hi)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+      <rect x="16.5" y="33.5" width="15" height="2.4" rx="1.2" fill="var(--surface-hi)"></rect>
+    </svg>
+    <strong>SVG&nbsp;Downloader</strong>
+  </a>
+  <span class="spacer"></span>
+  <span class="nav-links">
+    <a href="/de/features">Funktionen</a>
+    <a href="/de/tutorials" aria-current="page">Tutorials</a>
+    <a href="/de/guides">Anleitungen</a>
+    <a href="/de/docs">Doku</a>
+    <a href="/de/use-cases">Praxis</a>
+  </span><!--i18n:switch-->
+  <details class="lang-switch">
+    <summary aria-label="Sprache"><span>DE</span></summary>
+    <ul>
+      <li><a href="/tutorials/website-svg-downloader" hreflang="en" lang="en">English</a></li>
+      <li><a href="/es/tutorials/website-svg-downloader" hreflang="es" lang="es">Español</a></li>
+      <li><a href="/fr/tutorials/website-svg-downloader" hreflang="fr" lang="fr">Français</a></li>
+      <li><a href="/de/tutorials/website-svg-downloader" hreflang="de" lang="de" aria-current="true">Deutsch</a></li>
+      <li><a href="/pt-br/tutorials/website-svg-downloader" hreflang="pt-BR" lang="pt-BR">Português</a></li>
+    </ul>
+  </details>
+  <!--/i18n:switch-->
+  <a class="nav-cta" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Erweiterung installieren</a>
+</nav>
+
+<main id="main">
+<header class="page-hero"><div class="wrap">
+  <ol class="crumbs">
+    <li><a href="/de/">Start</a></li>
+    <li><a href="/de/tutorials">Tutorials</a></li>
+    <li><span aria-current="page">Welche Methode?</span></li>
+  </ol>
+  <p class="eyebrow">Tutorial — wähl deinen Ausgang</p>
+  <h1>Der <span class="plot">SVG-Downloader für Websites</span> und welchen Weg du nimmst</h1>
+  <p class="lede">Jede Methode hier endet mit demselben bereinigten Vektor. Sie unterscheiden sich nur darin, wo er landet und wie viel du unterwegs entscheiden musst — wähle also nach Ziel.</p>
+  <div class="cta">
+    <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 12v16m0 0l-7-7m7 7l7-7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"></path><rect x="16" y="34" width="16" height="2.6" rx="1.3" fill="currentColor"></rect></svg>
+      Erweiterung installieren</a>
+    <a class="btn quiet" href="#steps">Zu den Schritten ↓</a>
+  </div>
+</div></header>
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Ansehen — 19 Sekunden</p>
+  <h2>Drei Ausgänge aus einem Scan</h2>
+  <figure class="shot">
+    <div class="shot-mount">
+      <span class="shot-tag">Tutorial · Überblick</span>
+      <video src="/motion/tutorials/website-svg-downloader.mp4" poster="/motion/tutorials/website-svg-downloader.jpg" muted="" loop="" playsinline="" preload="none" aria-label="Ein einzelner Scan einer Seite, gefolgt von drei verschiedenen Ausgängen: Aktuelles laden speichert eine Datei, Alle als ZIP laden speichert den Satz, und Code kopieren legt das Markup in die Zwischenablage."></video>
+    </div>
+    <figcaption class="shot-cap">Ein Scan am Anfang. Alles danach ist eine Entscheidung darüber, wohin der Vektor geht.</figcaption>
+  </figure>
+
+  <p class="lead-in">Der Scan passiert in dieser Aufnahme nur einmal. Alle drei Ausgänge greifen auf dieselbe Liste zu — deshalb kostet das Wechseln zwischen ihnen nichts.</p>
+  <p class="eyebrow">Was die Aufnahme zeigt</p>
+  <ol class="beats">
+    <li>Ein Scan, dann drei Auswege</li>
+    <li>Blättere in der Vorschau, bis du es findest</li>
+    <li>Eine Datei — Aktuelles laden</li>
+    <li>Die ganze Seite — Alle als ZIP laden</li>
+    <li>Oder gar keine Datei — Code kopieren</li>
+    <li>Derselbe Scan, dieselbe Seite, welchen du auch brauchst</li>
+  </ol>
+</div></section>
+
+<hr class="section-rule">
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Entscheide nach Ziel</p>
+  <h2>Vier Wege, und wann welcher richtig ist</h2>
+  
+  <p class="lead-in">Die Frage ist nicht, welche Methode die beste ist — sondern was du mit dem Vektor vorhast, wenn du ihn hast.</p>
+  <ul>
+    <li><strong>Aktuelles laden</strong> — du willst einen bestimmten Vektor als Datei, und der Name ist dir wichtig. Der Standardweg. <a href="/de/tutorials/how-to-download-svg-files">Wie →</a></li>
+    <li><strong>Alle als ZIP laden</strong> — du willst den Satz, oder du weißt noch nicht, welchen du brauchst, und sortierst lieber auf der Platte. Dublettenfrei und nummeriert. <a href="/de/tutorials/extract-svg-from-website">Wie →</a></li>
+    <li><strong>Code kopieren / Bild kopieren</strong> — das Ziel ist ein Editor oder ein Dokument, und eine Datei auf der Platte wäre nur ein Schritt, den du danach löschst. <a href="/de/tutorials/copy-svg-from-website">Wie →</a></li>
+    <li><strong>Rechtsklick → Als SVG speichern</strong> — du schaust direkt auf das, was du willst, und brauchst weder Vorschau noch Namen noch Auswahl. Der schnellste Weg. <a href="/de/tutorials/grab-svg-from-website">Wie →</a></li>
+  </ul>
+  <p>Und eine Entscheidung, die quer über alle vier liegt: Wenn das Ziel kein SVG annimmt — E-Mail, die meiste Präsentationssoftware, ältere CMS-Uploader —, schalte vor dem Laden das Formatsegment auf PNG. <a href="/de/tutorials/download-svg-image-from-website">Wie →</a></p>
+
+  <h2 id="steps">Der gemeinsame Teil</h2>
+  <p>Drei der vier Wege beginnen identisch. Nur der letzte Schritt unterscheidet sich, und er ist der einzige, über den du nachdenken musst.</p>
+  <ol>
+    <li><strong>Bring die Seite in den Zustand, den du erfassen willst.</strong> Melde dich an, scroll, öffne das Menü — was auch immer die gewünschten Vektoren auf den Bildschirm bringt. Der Scan liest das DOM, wie es dasteht.</li>
+    <li><strong>Popup öffnen und scannen.</strong> Ein Klick. Der Zähler meldet, was die Seite zeichnet, dublettenfrei.</li>
+    <li><strong>Vorschau ansehen und wählen.</strong> <em>Zurück</em> und <em>Weiter</em> gehen den Satz durch, isoliert und fern der überladenen Seite.</li>
+    <li><strong>Wähl deinen Ausgang.</strong> <em>Aktuelles laden</em> für eine Datei, <em>Alle als ZIP laden</em> für den Satz, oder <em>Code kopieren</em> / <em>Bild kopieren</em> für die Zwischenablage. Schalte vorher das Formatsegment um, wenn du ein PNG oder JPG brauchst.</li>
+  </ol>
+
+  
+  <h2>Was alle Wege gemeinsam haben</h2>
+  <p>Welchen Ausgang du auch nimmst, dem Markup passieren unterwegs dieselben zwei Dinge, und sie sind der Grund, warum das Ergebnis brauchbar ist. Der <code>xmlns</code>-Namensraum wird ergänzt, falls er fehlte — das ist es, was eine aus einer Seite gehobene Datei als eigenständiges Dokument öffnen lässt. Und alles Ausführbare — <code>&lt;script&gt;</code>-Elemente, <code>on*</code>-Handler, externe Referenzen — wird entfernt, damit du fremdes Seitenverhalten nicht in deine Codebasis oder dein Designtool trägst.</p>
+
+  <h2>Die Fünf-Sekunden-Fassung</h2>
+  <ul>
+    <li>Brauchst du <strong>ein Icon, sofort</strong>? Rechtsklick.</li>
+    <li>Brauchst du <strong>ein Icon, ordentlich benannt</strong>? Popup, dann <em>Aktuelles laden</em>.</li>
+    <li>Brauchst du <strong>den ganzen Satz</strong>? Popup, dann <em>Alle als ZIP laden</em>.</li>
+    <li>Einfügen in <strong>Code</strong>? <em>Code kopieren</em>.</li>
+    <li>Einfügen in ein <strong>Dokument oder einen Chat</strong>? <em>Bild kopieren</em>.</li>
+    <li>Das Ziel <strong>lehnt SVG ab</strong>? Vorher auf PNG umschalten.</li>
+  </ul>
+
+  <dl class="facts">
+    <div><dt>Eine Datei</dt><dd><em>Aktuelles laden</em> — mit einem Dateinamen deiner Wahl.</dd></div>
+    <div><dt>Der Satz</dt><dd><em>Alle als ZIP laden</em> — dublettenfrei und nummeriert.</dd></div>
+    <div><dt>Keine Datei</dt><dd><em>Code kopieren</em> für Editoren, <em>Bild kopieren</em> für Dokumente.</dd></div>
+    <div><dt>Am schnellsten</dt><dd>Rechtsklick → <em>Als SVG speichern</em>. Ganz ohne Popup.</dd></div>
+  </dl>
+</div></section>
+
+<hr class="section-rule">
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Gut zu wissen</p>
+  <h2>Häufig gefragt</h2>
+  <div class="faq">
+    <details>
+      <summary>Welche Methode liefert die beste Qualität?</summary>
+      <div class="faq-body"><p>Sie sind identisch. Jeder Weg durchläuft denselben Bereiniger und dieselbe Namensraum-Reparatur — sie unterscheiden sich nur darin, wo das Ergebnis landet und wie viel du unterwegs wählst.</p></div>
+    </details>
+    <details>
+      <summary>Kann ich nur einige der SVGs laden statt aller?</summary>
+      <div class="faq-body"><p>Ja. Blättere zu jedem und nimm Aktuelles laden, wobei du unterwegs jedes benennst. Alle als ZIP laden ist dafür da, wenn du den ganzen Satz willst.</p></div>
+    </details>
+    <details>
+      <summary>Was wird aus dem Markup entfernt?</summary>
+      <div class="faq-body"><p>Script-Elemente, on*-Handler-Attribute und externe Referenzen. Die Formen bleiben unangetastet, und der xmlns-Namensraum wird ergänzt, damit die Datei eigenständig öffnet.</p></div>
+    </details>
+    <details>
+      <summary>Muss ich zwischen Downloads neu scannen?</summary>
+      <div class="faq-body"><p>Nein. Ein Scan baut die Liste, und jeder Ausgang greift darauf zu. Scanne nur neu, wenn du die Seite änderst — ein Modal öffnen, einen Tab wechseln, ein lazy geladenes Raster ins Bild scrollen.</p></div>
+    </details>
+    <details>
+      <summary>Was, wenn die Site das geladene SVG nicht annimmt?</summary>
+      <div class="faq-body"><p>Schalte das Formatsegment auf PNG und lade erneut. E-Mail-Programme, Präsentationssoftware und ältere CMS-Uploader lehnen SVG häufig ab.</p></div>
+    </details>
+  </div>
+</div></section>
+
+<hr class="section-rule">
+
+<section><div class="wrap">
+  <div class="cta-band">
+    <div>
+      <h2>Ein Scan, welcher Ausgang auch nötig ist</h2>
+      <p>Eine Datei, ein ZIP, die Zwischenablage oder ein einzelner Rechtsklick.</p>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Erweiterung installieren</a>
+      <a class="btn quiet" href="/de/tutorials">Alle 15 Tutorials →</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="related"><div class="wrap">
+  <p class="eyebrow">Weiter geht's</p>
+  <ul>
+    <li><a href="/de/tutorials/how-to-download-svg-files">Mit den Grundlagen beginnen<span>Deine erste Datei</span></a></li>
+    <li><a href="/de/tutorials/extract-svg-from-website">Der ganze Satz<span>Ein ZIP</span></a></li>
+    <li><a href="/de/tutorials/grab-svg-from-website">Der schnellste Weg<span>Ein Rechtsklick</span></a></li>
+  </ul>
+</div></section>
+</main>
+
+<footer>
+  <nav class="bleed foot-map" aria-label="Sitemap">
+    <div class="col"><p>Produkt</p><ul>
+      <li><a href="/de/">Überblick</a></li>
+      <li><a href="/de/features">Funktionen</a></li>
+      <li><a href="/de/compare/svg-downloader-vs-screenshotting-icons">Vs. Screenshot</a></li>
+      <li><a href="/de/privacy">Datenschutz</a></li>
+      <li><a href="/de/use-cases">Anwendungsfälle</a></li>
+    </ul></div>
+    <div class="col"><p>Erkennt</p><ul>
+      <li><a href="/de/features/inline-svg">Inline-SVG</a></li>
+      <li><a href="/de/features/css-background-svg">SVG im CSS-Hintergrund</a></li>
+      <li><a href="/de/features/svg-sprite-extractor">Sprite- / &lt;use&gt;-SVG</a></li>
+      <li><a href="/de/features/bulk-zip-download">Ganze Seite als ZIP</a></li>
+    </ul></div>
+    <div class="col"><p>Tutorials</p><ul>
+      <li><a href="/de/tutorials">Alle 15 Tutorials</a></li>
+      <li><a href="/de/tutorials/how-to-download-svg-files">SVG-Dateien herunterladen</a></li>
+      <li><a href="/de/tutorials/copy-svg-from-website">Ein SVG kopieren</a></li>
+      <li><a href="/de/tutorials/extract-svg-from-website">Jedes SVG extrahieren</a></li>
+    </ul></div>
+    <div class="col"><p>Doku</p><ul>
+      <li><a href="/de/docs/installation">Installation</a></li>
+      <li><a href="/de/docs/usage">Bedienung</a></li>
+      <li><a href="/de/docs/faq">FAQ</a></li>
+      <li><a href="/de/docs/changelog">Changelog</a></li>
+    </ul></div>
+  </nav>
+  <div class="bleed colophon-foot">
+    <a href="https://github.com/Flozad/svg-downloader">GitHub</a>
+    <a href="https://github.com/Flozad/svg-downloader/issues">Issues</a>
+    <a href="https://clasicwebtools.com">clasicwebtools.com</a>
+    <span class="grow"></span>
+    <span>Knochenpapier, Graphit, ein einziges Plotter&nbsp;grün</span>
+  </div>
+</footer>
+<script src="/player.js" defer=""></script>
+
+
+</body></html>

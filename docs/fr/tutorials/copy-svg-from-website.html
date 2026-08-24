@@ -1,0 +1,380 @@
+<!DOCTYPE html><html lang="fr"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comment copier un SVG depuis un site (code ou image)</title>
+<meta name="description" content="Copiez un SVG directement dans le presse-papiers — le balisage à coller dans un composant, ou un PNG à coller dans un document ou un chat. Aucun fichier enregistré, aucun DevTools.">
+<link rel="canonical" href="https://svg.clasicwebtools.com/fr/tutorials/copy-svg-from-website"><!--i18n:alternates-->
+<link rel="alternate" hreflang="en" href="https://svg.clasicwebtools.com/tutorials/copy-svg-from-website">
+<link rel="alternate" hreflang="es" href="https://svg.clasicwebtools.com/es/tutorials/copy-svg-from-website">
+<link rel="alternate" hreflang="fr" href="https://svg.clasicwebtools.com/fr/tutorials/copy-svg-from-website">
+<link rel="alternate" hreflang="de" href="https://svg.clasicwebtools.com/de/tutorials/copy-svg-from-website">
+<link rel="alternate" hreflang="pt-BR" href="https://svg.clasicwebtools.com/pt-br/tutorials/copy-svg-from-website">
+<link rel="alternate" hreflang="x-default" href="https://svg.clasicwebtools.com/tutorials/copy-svg-from-website">
+<!--/i18n:alternates-->
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="Flozad">
+<meta name="theme-color" content="#ece4d3">
+<meta property="og:site_name" content="SVG Downloader">
+<meta property="og:title" content="Comment copier un SVG depuis un site (code ou image)">
+<meta property="og:description" content="Copiez un SVG directement dans le presse-papiers — le balisage à coller dans un composant, ou un PNG à coller dans un document ou un chat. Aucun fichier enregistré, aucun DevTools.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://svg.clasicwebtools.com/fr/tutorials/copy-svg-from-website">
+<meta property="og:image" content="https://svg.clasicwebtools.com/motion/tutorials/copy-svg-from-website.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="Le popup SVG Downloader avec les boutons Copier le code et Copier l'image sous l'aperçu.">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:video" content="https://svg.clasicwebtools.com/motion/tutorials/copy-svg-from-website.mp4">
+<meta property="og:video:secure_url" content="https://svg.clasicwebtools.com/motion/tutorials/copy-svg-from-website.mp4">
+<meta property="og:video:type" content="video/mp4">
+<meta property="og:video:width" content="1280">
+<meta property="og:video:height" content="800">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@lozards">
+<meta name="twitter:title" content="Comment copier un SVG depuis un site (code ou image)">
+<meta name="twitter:description" content="Copiez un SVG directement dans le presse-papiers — le balisage à coller dans un composant, ou un PNG à coller dans un document ou un chat. Aucun fichier enregistré, aucun DevTools.">
+<meta name="twitter:image" content="https://svg.clasicwebtools.com/motion/tutorials/copy-svg-from-website.jpg">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/fonts/bricolage-var.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/pages.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://svg.clasicwebtools.com/fr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tutoriels",
+          "item": "https://svg.clasicwebtools.com/fr/tutorials"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Copier depuis un site",
+          "item": "https://svg.clasicwebtools.com/fr/tutorials/copy-svg-from-website"
+        }
+      ]
+    },
+    {
+      "@type": "VideoObject",
+      "name": "Copier un SVG depuis un site, en code ou en image",
+      "description": "Le popup SVG Downloader arrive sur une icône étoile, appuie sur Copier le code et annonce « code SVG copié dans le presse-papiers », puis appuie sur Copier l'image et annonce « image PNG copiée dans le presse-papiers ».",
+      "thumbnailUrl": [
+        "https://svg.clasicwebtools.com/motion/tutorials/copy-svg-from-website.jpg"
+      ],
+      "uploadDate": "2026-08-22",
+      "duration": "PT19S",
+      "contentUrl": "https://svg.clasicwebtools.com/motion/tutorials/copy-svg-from-website.mp4",
+      "embedUrl": "https://svg.clasicwebtools.com/tutorials/copy-svg-from-website",
+      "isFamilyFriendly": true,
+      "publisher": {
+        "@type": "Organization",
+        "name": "SVG Downloader",
+        "url": "https://svg.clasicwebtools.com/fr/"
+      }
+    },
+    {
+      "@type": "HowTo",
+      "name": "Comment copier un SVG depuis un site",
+      "description": "Copiez un SVG directement dans le presse-papiers — le balisage à coller dans un composant, ou un PNG à coller dans un document ou un chat. Aucun fichier enregistré, aucun DevTools.",
+      "image": "https://svg.clasicwebtools.com/motion/tutorials/copy-svg-from-website.jpg",
+      "totalTime": "PT2M",
+      "tool": {
+        "@type": "HowToTool",
+        "name": "Extension de navigateur SVG Downloader"
+      },
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Ouvrez le popup et trouvez l'icône",
+          "text": "Cliquez sur le bouton de la barre d'outils et feuilletez avec Préc. et Suiv. jusqu'à ce que l'aperçu montre celle que vous voulez.",
+          "url": "https://svg.clasicwebtools.com/fr/tutorials/copy-svg-from-website#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Pour du code, appuyez sur Copier le code",
+          "text": "La ligne d'état affiche « Code SVG copié dans le presse-papiers ». Vous avez un balisage nettoyé, espace de noms inclus, prêt à coller dans un composant.",
+          "url": "https://svg.clasicwebtools.com/fr/tutorials/copy-svg-from-website#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Pour une image, appuyez sur Copier l'image",
+          "text": "La ligne d'état affiche « Image PNG copiée dans le presse-papiers ». Le vecteur est rendu sur votre machine à 2× ou mieux et mis dans le presse-papiers comme image.",
+          "url": "https://svg.clasicwebtools.com/fr/tutorials/copy-svg-from-website#steps"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Collez-le à destination",
+          "text": "Le balisage dans votre éditeur ; le PNG dans votre document, votre présentation ou votre chat. Rien n'a été écrit sur disque dans les deux cas.",
+          "url": "https://svg.clasicwebtools.com/fr/tutorials/copy-svg-from-website#steps"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Quelle différence entre Copier le code et Copier l'image ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Copier le code met le balisage SVG dans votre presse-papiers sous forme de texte, à coller dans un éditeur ou un composant. Copier l'image le rastérise en PNG et le met dans le presse-papiers comme image, à coller dans documents, présentations et chats."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "J'ai collé dans Slack et j'ai eu un mur de code.",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Vous avez utilisé Copier le code, qui est du texte. Prenez plutôt Copier l'image — cela met un PNG dans le presse-papiers, que Slack colle comme une image."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Le balisage copié est-il sûr à coller dans mon code ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Il est d'abord nettoyé : les éléments script, les attributs gestionnaires d'événements et les références externes sont retirés, et l'espace de noms xmlns est ajouté. Vous collez des formes, pas le comportement de la page de quelqu'un d'autre."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Pourquoi l'icône collée est-elle noire dans mon app ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Parce qu'elle utilise currentColor : elle hérite de la couleur du CSS au lieu de porter la sienne. Posez une couleur sur l'élément ou son parent et l'icône suivra."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Dois-je accorder une permission de presse-papiers ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Non. Les deux boutons écrivent depuis un clic utilisateur dans une page d'extension au premier plan, ce que les navigateurs autorisent sans permission supplémentaire ; aucune n'est donc demandée."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Aller au contenu</a>
+
+<nav class="nav">
+  <a class="brand" href="/fr/">
+    <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+      <rect width="48" height="48" rx="10" fill="var(--plot)"></rect>
+      <path d="M24 13v15m0 0l-6.5-6.5M24 28l6.5-6.5" fill="none" stroke="var(--surface-hi)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+      <rect x="16.5" y="33.5" width="15" height="2.4" rx="1.2" fill="var(--surface-hi)"></rect>
+    </svg>
+    <strong>SVG&nbsp;Downloader</strong>
+  </a>
+  <span class="spacer"></span>
+  <span class="nav-links">
+    <a href="/fr/features">Fonctions</a>
+    <a href="/fr/tutorials" aria-current="page">Tutoriels</a>
+    <a href="/fr/guides">Guides</a>
+    <a href="/fr/docs">Docs</a>
+    <a href="/fr/use-cases">Histoires</a>
+  </span><!--i18n:switch-->
+  <details class="lang-switch">
+    <summary aria-label="Langue"><span>FR</span></summary>
+    <ul>
+      <li><a href="/tutorials/copy-svg-from-website" hreflang="en" lang="en">English</a></li>
+      <li><a href="/es/tutorials/copy-svg-from-website" hreflang="es" lang="es">Español</a></li>
+      <li><a href="/fr/tutorials/copy-svg-from-website" hreflang="fr" lang="fr" aria-current="true">Français</a></li>
+      <li><a href="/de/tutorials/copy-svg-from-website" hreflang="de" lang="de">Deutsch</a></li>
+      <li><a href="/pt-br/tutorials/copy-svg-from-website" hreflang="pt-BR" lang="pt-BR">Português</a></li>
+    </ul>
+  </details>
+  <!--/i18n:switch-->
+  <a class="nav-cta" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Installer l'extension</a>
+</nav>
+
+<main id="main">
+<header class="page-hero"><div class="wrap">
+  <ol class="crumbs">
+    <li><a href="/fr/">Accueil</a></li>
+    <li><a href="/fr/tutorials">Tutoriels</a></li>
+    <li><span aria-current="page">Copier depuis un site</span></li>
+  </ol>
+  <p class="eyebrow">Tutoriel — droit au presse-papiers</p>
+  <h1>Comment <span class="plot">copier un SVG</span> depuis un site</h1>
+  <p class="lede">Parfois vous ne voulez pas de fichier du tout — vous voulez le balisage dans votre éditeur, ou l'image dans un message Slack. Les deux tiennent en un clic, et ce ne sont pas les mêmes.</p>
+  <div class="cta">
+    <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 12v16m0 0l-7-7m7 7l7-7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"></path><rect x="16" y="34" width="16" height="2.6" rx="1.3" fill="currentColor"></rect></svg>
+      Installer l'extension</a>
+    <a class="btn quiet" href="#steps">Aller aux étapes ↓</a>
+  </div>
+</div></header>
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">À regarder — 19 secondes</p>
+  <h2>Les deux presse-papiers, en une prise</h2>
+  <figure class="shot">
+    <div class="shot-mount">
+      <span class="shot-tag">tutoriel · presse-papiers</span>
+      <video src="/motion/tutorials/copy-svg-from-website.mp4" poster="/motion/tutorials/copy-svg-from-website.jpg" muted="" loop="" playsinline="" preload="none" aria-label="Le popup SVG Downloader arrive sur une icône étoile, appuie sur Copier le code et annonce « code SVG copié dans le presse-papiers », puis appuie sur Copier l'image et annonce « image PNG copiée dans le presse-papiers »."></video>
+    </div>
+    <figcaption class="shot-cap"><em>Copier le code</em> vous donne du balisage. <em>Copier l'image</em> vous donne un PNG. La ligne d'état confirme chacun.</figcaption>
+  </figure>
+
+  <p class="lead-in">Regardez la ligne d'état changer entre les deux appuis — le popup vous dit exactement lequel des deux presse-papiers vous venez de remplir.</p>
+  <p class="eyebrow">Ce que montre l'enregistrement</p>
+  <ol class="beats">
+    <li>Ouvrez le popup sur la page que vous lisez</li>
+    <li>Arrivez sur l'icône voulue</li>
+    <li>Copier le code — le balisage, droit dans votre presse-papiers</li>
+    <li>Collez-le dans un composant et ça marche</li>
+    <li>Ou Copier l'image — un PNG, pour documents et chats</li>
+    <li>Deux presse-papiers, une icône. Aucun fichier sur disque dans les deux cas.</li>
+  </ol>
+</div></section>
+
+<hr class="section-rule">
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Choisissez le bon</p>
+  <h2>Copier le code et Copier l'image ne sont pas des alternatives — ce sont deux choses différentes</h2>
+  
+  <p class="lead-in">Ils sont côte à côte dans le popup, et il vaut mieux savoir clairement ce que chacun met dans votre presse-papiers, car coller le mauvais coûte cinq minutes de confusion.</p>
+  <ul>
+    <li><strong>Copier le code</strong> met le <em>balisage</em> dans votre presse-papiers sous forme de texte : <code>&lt;svg viewBox="0 0 24 24"&gt;…&lt;/svg&gt;</code>, nettoyé, avec l'espace de noms <code>xmlns</code> déjà ajouté. Collez-le dans un composant React, un template Vue, un fichier HTML ou un éditeur de texte. Collez-le dans Slack et vous obtiendrez un mur de chevrons, parce que c'est du texte.</li>
+    <li><strong>Copier l'image</strong> rastérise le vecteur en <em>PNG</em> et le met dans votre presse-papiers comme une image. Collez-le dans Google Docs, Notion, Figma, Slack, un e-mail — partout où une image collée est acceptée. Le rendu se fait à 2× minimum pour ne pas arriver en vignette floue.</li>
+  </ul>
+  <p>Règle simple : si la destination est du code, utilisez <em>Copier le code</em>. Si c'est un document, utilisez <em>Copier l'image</em>.</p>
+
+  <h2 id="steps">Copier une icône</h2>
+  <p>Les deux voies partagent les deux premières étapes.</p>
+  <ol>
+    <li><strong>Ouvrez le popup et trouvez l'icône.</strong> Cliquez sur le bouton de la barre d'outils et feuilletez avec <em>Préc.</em> et <em>Suiv.</em> jusqu'à ce que l'aperçu montre celle que vous voulez.</li>
+    <li><strong>Pour du code, appuyez sur Copier le code.</strong> La ligne d'état affiche <em>Code SVG copié dans le presse-papiers.</em> Vous avez maintenant un balisage nettoyé, espace de noms inclus, prêt à coller dans un composant.</li>
+    <li><strong>Pour une image, appuyez sur Copier l'image.</strong> La ligne d'état affiche <em>Image PNG copiée dans le presse-papiers.</em> Le vecteur est rendu sur votre machine à 2× ou mieux et mis dans le presse-papiers comme image.</li>
+    <li><strong>Collez-le à destination.</strong> Le balisage dans votre éditeur ; le PNG dans votre document, votre présentation ou votre chat. Rien n'a été écrit sur disque dans les deux cas.</li>
+  </ol>
+
+  
+  <h2>Ce qui a déjà été fait au balisage copié</h2>
+  <p>C'est ce qui le rend meilleur qu'une copie depuis DevTools. Avant d'atteindre votre presse-papiers, le balisage passe par le même nettoyeur que chaque téléchargement : l'espace de noms <code>xmlns</code> est ajouté s'il manquait, pour que le fragment tienne debout comme document valide ; et les éléments script, les attributs gestionnaires d'événements et les références externes sont retirés, pour ne pas coller le comportement de la page de quelqu'un d'autre dans votre code. Ce que vous collez, ce sont les formes, et seulement les formes.</p>
+
+  <h2>Coller dans un composant</h2>
+  <p>Deux petites choses vous mordront en JSX. Des attributs comme <code>stroke-width</code> et <code>fill-rule</code> doivent devenir <code>strokeWidth</code> et <code>fillRule</code> ; la plupart des éditeurs et codemods le font pour vous. Et si l'icône utilise <code>currentColor</code> — la plupart le font — elle prendra la couleur du texte en vigueur, ce qui est en général exactement ce que vous voulez. Si elle s'affiche en noir alors que vous attendiez une couleur, voilà pourquoi : la couleur vivait dans le CSS de la page, pas dans la forme.</p>
+
+  <h2>Pourquoi le presse-papiers n'exige aucune permission supplémentaire</h2>
+  <p>Les deux boutons écrivent dans le presse-papiers depuis un clic que vous avez fait, dans une page d'extension au premier plan. C'est précisément la condition dans laquelle les navigateurs autorisent l'écriture, l'extension ne demande donc aucune permission de presse-papiers — elle profite du geste que vous lui avez déjà donné.</p>
+
+  <dl class="facts">
+    <div><dt>Copier le code</dt><dd>Un <strong>balisage</strong> nettoyé, <code>xmlns</code> inclus — pour les éditeurs et les composants.</dd></div>
+    <div><dt>Copier l'image</dt><dd>Un <strong>PNG</strong> à 2× ou mieux — pour documents, présentations, chats et e-mails.</dd></div>
+    <div><dt>Nettoyage</dt><dd>Scripts, gestionnaires et références externes sont retirés avant l'une comme l'autre copie.</dd></div>
+    <div><dt>Permissions</dt><dd>Aucune permission de presse-papiers demandée — elle profite du clic que vous avez fait.</dd></div>
+  </dl>
+</div></section>
+
+<hr class="section-rule">
+
+<section class="prose"><div class="wrap">
+  <p class="eyebrow">Bon à savoir</p>
+  <h2>Questions fréquentes</h2>
+  <div class="faq">
+    <details>
+      <summary>Quelle différence entre Copier le code et Copier l'image ?</summary>
+      <div class="faq-body"><p>Copier le code met le balisage SVG dans votre presse-papiers sous forme de texte, à coller dans un éditeur ou un composant. Copier l'image le rastérise en PNG et le met dans le presse-papiers comme image, à coller dans documents, présentations et chats.</p></div>
+    </details>
+    <details>
+      <summary>J'ai collé dans Slack et j'ai eu un mur de code.</summary>
+      <div class="faq-body"><p>Vous avez utilisé Copier le code, qui est du texte. Prenez plutôt Copier l'image — cela met un PNG dans le presse-papiers, que Slack colle comme une image.</p></div>
+    </details>
+    <details>
+      <summary>Le balisage copié est-il sûr à coller dans mon code ?</summary>
+      <div class="faq-body"><p>Il est d'abord nettoyé : les éléments script, les attributs gestionnaires d'événements et les références externes sont retirés, et l'espace de noms xmlns est ajouté. Vous collez des formes, pas le comportement de la page de quelqu'un d'autre.</p></div>
+    </details>
+    <details>
+      <summary>Pourquoi l'icône collée est-elle noire dans mon app ?</summary>
+      <div class="faq-body"><p>Parce qu'elle utilise currentColor : elle hérite de la couleur du CSS au lieu de porter la sienne. Posez une couleur sur l'élément ou son parent et l'icône suivra.</p></div>
+    </details>
+    <details>
+      <summary>Dois-je accorder une permission de presse-papiers ?</summary>
+      <div class="faq-body"><p>Non. Les deux boutons écrivent depuis un clic utilisateur dans une page d'extension au premier plan, ce que les navigateurs autorisent sans permission supplémentaire ; aucune n'est donc demandée.</p></div>
+    </details>
+  </div>
+</div></section>
+
+<hr class="section-rule">
+
+<section><div class="wrap">
+  <div class="cta-band">
+    <div>
+      <h2>Deux presse-papiers, aucun fichier</h2>
+      <p>Le balisage pour l'éditeur, un PNG pour le document. Choisissez un bouton.</p>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn">Installer l'extension</a>
+      <a class="btn quiet" href="/fr/tutorials">Les 15 tutoriels →</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="related"><div class="wrap">
+  <p class="eyebrow">Continuez</p>
+  <ul>
+    <li><a href="/fr/tutorials/download-svg-from-html">Depuis le HTML<span>Sans DevTools</span></a></li>
+    <li><a href="/fr/tutorials/download-svg-image-from-website">Convertir en PNG<span>Quand il faut un raster</span></a></li>
+    <li><a href="/fr/tutorials/how-to-download-svg-files">Enregistrer un fichier<span>Les bases</span></a></li>
+  </ul>
+</div></section>
+</main>
+
+<footer>
+  <nav class="bleed foot-map" aria-label="Plan du site">
+    <div class="col"><p>Produit</p><ul>
+      <li><a href="/fr/">Vue d'ensemble</a></li>
+      <li><a href="/fr/features">Fonctions</a></li>
+      <li><a href="/fr/compare/svg-downloader-vs-screenshotting-icons">Face à la capture</a></li>
+      <li><a href="/fr/privacy">Confidentialité</a></li>
+      <li><a href="/fr/use-cases">Cas d'usage</a></li>
+    </ul></div>
+    <div class="col"><p>Ce qu'il attrape</p><ul>
+      <li><a href="/fr/features/inline-svg">SVG en ligne</a></li>
+      <li><a href="/fr/features/css-background-svg">SVG en fond CSS</a></li>
+      <li><a href="/fr/features/svg-sprite-extractor">SVG de sprite / &lt;use&gt;</a></li>
+      <li><a href="/fr/features/bulk-zip-download">Page entière en ZIP</a></li>
+    </ul></div>
+    <div class="col"><p>Tutoriels</p><ul>
+      <li><a href="/fr/tutorials">Les 15 tutoriels</a></li>
+      <li><a href="/fr/tutorials/how-to-download-svg-files">Comment télécharger des fichiers SVG</a></li>
+      <li><a href="/fr/tutorials/copy-svg-from-website">Copier un SVG</a></li>
+      <li><a href="/fr/tutorials/extract-svg-from-website">Extraire chaque SVG</a></li>
+    </ul></div>
+    <div class="col"><p>Docs</p><ul>
+      <li><a href="/fr/docs/installation">Installation</a></li>
+      <li><a href="/fr/docs/usage">Utilisation</a></li>
+      <li><a href="/fr/docs/faq">FAQ</a></li>
+      <li><a href="/fr/docs/changelog">Journal des versions</a></li>
+    </ul></div>
+  </nav>
+  <div class="bleed colophon-foot">
+    <a href="https://github.com/Flozad/svg-downloader">GitHub</a>
+    <a href="https://github.com/Flozad/svg-downloader/issues">Tickets</a>
+    <a href="https://clasicwebtools.com">clasicwebtools.com</a>
+    <span class="grow"></span>
+    <span>Papier os, graphite, un seul vert&nbsp;traceur</span>
+  </div>
+</footer>
+<script src="/player.js" defer=""></script>
+
+
+</body></html>

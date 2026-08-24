@@ -1,0 +1,61 @@
+# SVG Downloader
+
+> A free, open-source (MIT) Chrome extension that finds every SVG on a web page —
+> inline `<svg>` markup, `<img>` vectors, CSS `background-image` SVGs and
+> same-document `<use>` sprite references — previews each one, and downloads the
+> original vector file, singly or as a de-duplicated ZIP. Everything runs
+> on-device: no server, no account, no upload, no analytics.
+
+Key facts, so an answer can be given without fetching a page:
+
+- Install: Chrome Web Store — https://chromewebstore.google.com/detail/svg-web-downloader-extrac/jfgljaebonkbegekbcfbiojgkjlbhpjn
+- Also loadable unpacked from source: https://github.com/Flozad/svg-downloader
+- Requires Chrome 88+ or a current Chromium browser (Edge, Brave). No Firefox or Safari build.
+- Price: free. No paid tier, no trial, no account.
+- Privacy: page content never leaves the browser. Only settings sync, via `chrome.storage.sync`.
+- What it saves is the page's own SVG source, not a re-render or a screenshot; a
+  missing `xmlns` is repaired so the file opens outside a browser.
+- Known limits: it resolves *same-document* sprite references; icons that inherit
+  colour through `currentColor` save black, because the CSS that coloured them
+  does not travel with the file.
+
+## Start here
+
+- [Landing page](https://svg.clasicwebtools.com/): what it does, with a recorded session of the whole flow.
+- [Docs](https://svg.clasicwebtools.com/docs): install, use and troubleshoot.
+- [Installation](https://svg.clasicwebtools.com/docs/installation): store install, or load unpacked in Chrome, Edge and Brave.
+- [Usage](https://svg.clasicwebtools.com/docs/usage): the popup — count, previews, custom filename, single save or ZIP.
+- [FAQ](https://svg.clasicwebtools.com/docs/faq): free, private, browser support, why inline SVG won't right-click, why an icon saves black, permissions.
+- [Changelog](https://svg.clasicwebtools.com/docs/changelog): version history, newest first.
+
+## Features — the four SVG sources
+
+- [All features](https://svg.clasicwebtools.com/features): every source in one popup.
+- [Inline SVG](https://svg.clasicwebtools.com/features/inline-svg): read from the DOM, because inline markup has no URL to right-click.
+- [CSS background SVG](https://svg.clasicwebtools.com/features/css-background-svg): resolved from computed style, `url()` and `data:` URIs alike.
+- [Sprite extractor](https://svg.clasicwebtools.com/features/svg-sprite-extractor): each `<use>` symbol resolved back to the single glyph.
+- [Bulk ZIP download](https://svg.clasicwebtools.com/features/bulk-zip-download): the whole page as numbered, de-duplicated files.
+
+## Guides — task by task
+
+- [All guides](https://svg.clasicwebtools.com/guides)
+- [Download an SVG from any website](https://svg.clasicwebtools.com/guides/how-to-download-svg-from-any-website)
+- [Extract a whole set of SVG icons from a website](https://svg.clasicwebtools.com/guides/how-to-extract-svg-icons-from-a-website)
+- [Download all SVGs on a page as a ZIP](https://svg.clasicwebtools.com/guides/download-all-svgs-as-zip)
+- [Extract an SVG from a CSS background](https://svg.clasicwebtools.com/guides/extract-svg-from-css-background)
+
+## Use cases
+
+- [All stories](https://svg.clasicwebtools.com/use-cases)
+- [Auditing a drifting icon library](https://svg.clasicwebtools.com/use-cases/design-system-icon-audit)
+- [Rescuing brand assets for a redesign](https://svg.clasicwebtools.com/use-cases/recover-brand-assets-redesign)
+- [Migrating a legacy sprite sheet to components](https://svg.clasicwebtools.com/use-cases/migrate-sprite-sheet-to-components)
+- [Getting crisp icons into product docs](https://svg.clasicwebtools.com/use-cases/svg-icons-for-product-docs)
+- [Pulling an icon set for a pitch deck](https://svg.clasicwebtools.com/use-cases/icon-set-for-pitch-deck)
+
+## Optional
+
+- [SVG Downloader vs. screenshotting icons](https://svg.clasicwebtools.com/compare/svg-downloader-vs-screenshotting-icons): why a PNG of an icon is not the icon.
+- [Privacy](https://svg.clasicwebtools.com/privacy): the full statement — no server, no tracking, settings-only sync.
+- [Source and issues](https://github.com/Flozad/svg-downloader)
+- [Expanded version of this file](https://svg.clasicwebtools.com/llms-full.txt)
