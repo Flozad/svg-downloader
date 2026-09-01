@@ -28,7 +28,7 @@
   "devDependencies": {
     "@biomejs/biome": "^2.5.4",
     "@vitest/coverage-v8": "^4.1.10",
-    "jsdom": "^25.0.1",
+    "jsdom": "^30.0.1",
     "sharp": "^0.35.3",
     "vitest": "^4.1.10"
   }
