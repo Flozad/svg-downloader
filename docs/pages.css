@@ -15,11 +15,15 @@
 .skip:focus { left: 12px; top: 12px; }
 
 /* ── Nav CTA (real pages need a persistent install button) ──────────────────*/
+/* The auto margin is what keeps the pill at the right edge when a medium-width
+   viewport pushes it onto a second row of its own. */
 .nav .nav-cta {
   font-family: var(--mono); font-size: 12px; letter-spacing: 0.02em;
   text-decoration: none; color: var(--surface-hi); background: var(--plot);
   padding: 8px 14px; border-radius: var(--r-node);
   box-shadow: 0 1px 0 var(--plot-deep);
+  margin-left: auto;
+  white-space: nowrap;
   transition: background-color 0.2s ease;
 }
 .nav .nav-cta:hover { background: var(--plot-deep); }
