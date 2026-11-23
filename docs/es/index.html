@@ -36,12 +36,12 @@
 <meta name="twitter:description" content="Extensión de Chrome gratuita que encuentra los SVG de cualquier página —en línea, de fondo CSS, de sprite del mismo documento—, previsualiza cada uno y guarda el vector original, uno o todos en un ZIP.">
 <meta name="twitter:image" content="https://svg.clasicwebtools.com/motion/06-brand.png">
 
-<link rel="icon" href="icon.svg" type="image/svg+xml">
-<link rel="manifest" href="site.webmanifest">
-<link rel="preload" href="fonts/bricolage-var.woff2" as="font" type="font/woff2" crossorigin="">
-<link rel="preload" href="fonts/space-mono-400.woff2" as="font" type="font/woff2" crossorigin="">
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="pages.css">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/fonts/bricolage-var.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="preload" href="/fonts/space-mono-400.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/pages.css">
 
 <script type="application/ld+json">
 {
@@ -229,7 +229,7 @@
     <figure class="shot">
       <div class="shot-mount">
         <span class="shot-tag">grabando · vectorly.io/icons</span>
-        <video src="motion/hero.mp4" poster="motion/hero.webp" width="1280" height="800" muted="" loop="" playsinline="" preload="none" aria-label="Una página llena de iconos: la extensión se abre, escanea e informa de 24 SVG encontrados. La vista previa recorre la lupa, el corazón y la estrella. Se descarga uno como star.svg y luego los 24 se guardan en un ZIP."></video>
+        <video src="/motion/hero.mp4" poster="/motion/hero.webp" width="1280" height="800" muted="" loop="" playsinline="" preload="none" aria-label="Una página llena de iconos: la extensión se abre, escanea e informa de 24 SVG encontrados. La vista previa recorre la lupa, el corazón y la estrella. Se descarga uno como star.svg y luego los 24 se guardan en un ZIP."></video>
       </div>
       <figcaption class="shot-cap">Una sesión en una página real: abrir, escanear, <code>24 SVG encontrados</code>, recorrer
         las vistas previas, descargar <code>star.svg</code> y luego llevarse los
@@ -312,7 +312,7 @@
           <figure class="shot">
             <div class="shot-mount">
               <span class="shot-tag">01 · detectar</span>
-              <video src="motion/clip-detect.mp4" data-poster="motion/poster-150.webp" width="1280" height="800" muted="" loop="" playsinline="" preload="none" aria-label="Se pulsa el icono de la extensión, el panel del selector de SVG baja de la barra de herramientas y el contador sube de 0 a 24 SVG encontrados."></video>
+              <video src="/motion/clip-detect.mp4" data-poster="/motion/poster-150.webp" width="1280" height="800" muted="" loop="" playsinline="" preload="none" aria-label="Se pulsa el icono de la extensión, el panel del selector de SVG baja de la barra de herramientas y el contador sube de 0 a 24 SVG encontrados."></video>
             </div>
             <figcaption class="shot-cap">El panel entra y el contador se asienta en <code>24 SVG encontrados</code>.</figcaption>
           </figure>
@@ -337,7 +337,7 @@
           <figure class="shot">
             <div class="shot-mount">
               <span class="shot-tag">02 · vista previa</span>
-              <video src="motion/clip-page.mp4" data-poster="motion/hero.webp" width="1280" height="800" muted="" loop="" playsinline="" preload="none" aria-label="Se pulsa Siguiente y la vista previa aislada pasa del icono de la lupa a un corazón y a una estrella, con el contador siguiendo cada uno."></video>
+              <video src="/motion/clip-page.mp4" data-poster="/motion/hero.webp" width="1280" height="800" muted="" loop="" playsinline="" preload="none" aria-label="Se pulsa Siguiente y la vista previa aislada pasa del icono de la lupa a un corazón y a una estrella, con el contador siguiendo cada uno."></video>
             </div>
             <figcaption class="shot-cap">Recorriendo las vistas previas: el nombre de archivo va detrás: <code>search-24</code>, <code>heart-24</code>, <code>star-24</code>.</figcaption>
           </figure>
@@ -362,7 +362,7 @@
           <figure class="shot">
             <div class="shot-mount">
               <span class="shot-tag">03 · descarga</span>
-              <video src="motion/clip-download.mp4" data-poster="motion/poster-430.webp" width="1280" height="800" muted="" loop="" playsinline="" preload="none" aria-label="Se pulsa el botón Descargar el SVG actual y aparece la confirmación «Guardado star.svg»."></video>
+              <video src="/motion/clip-download.mp4" data-poster="/motion/poster-430.webp" width="1280" height="800" muted="" loop="" playsinline="" preload="none" aria-label="Se pulsa el botón Descargar el SVG actual y aparece la confirmación «Guardado star.svg»."></video>
             </div>
             <figcaption class="shot-cap">Un clic, y <code>Guardado&nbsp;star.svg</code>: el vector original, no una captura.</figcaption>
           </figure>
@@ -388,7 +388,7 @@
           <figure class="shot">
             <div class="shot-mount">
               <span class="shot-tag">04 · empaquetar</span>
-              <video src="motion/clip-zip.mp4" data-poster="motion/poster-520.webp" width="1280" height="800" muted="" loop="" playsinline="" preload="none" aria-label="Se pulsa Descargar todo en ZIP y aparece la confirmación «24 SVG guardados»."></video>
+              <video src="/motion/clip-zip.mp4" data-poster="/motion/poster-520.webp" width="1280" height="800" muted="" loop="" playsinline="" preload="none" aria-label="Se pulsa Descargar todo en ZIP y aparece la confirmación «24 SVG guardados»."></video>
             </div>
             <figcaption class="shot-cap">Todos los vectores de la página, empaquetados: <code>24&nbsp;SVG&nbsp;guardados</code>.</figcaption>
           </figure>
@@ -573,7 +573,7 @@
 
 <!-- Plays each clip only while it's on screen, and reveals sections as they
      enter. Deferred + external so a strict CSP needs no 'unsafe-inline'. -->
-<script src="player.js" defer=""></script>
+<script src="/player.js" defer=""></script>
 
 
 </body></html>

@@ -132,6 +132,20 @@ export async function loadPage(page) {
 const isSharedPath = (p) =>
   SHARED_PATH_PREFIXES.some((prefix) => p === prefix || p.startsWith(prefix));
 
+const isRelativeRef = (ref) => !/^(?:[a-z][a-z0-9+.-]*:|\/\/|\/|#|\?)/i.test(ref);
+
+/** Root-absolute form of a relative ref that names a shared asset, else the
+ *  ref unchanged. Shared assets live at the site root, but a locale page is
+ *  generated below its prefix directory, so a relative ref copied from the
+ *  English source would name a file under the locale directory that only
+ *  exists at the root. Root-absolute refs give the link check (which resolves
+ *  against the file path) and the browser the same answer. */
+export function absolutizeSharedRef(ref) {
+  if (!ref || !isRelativeRef(ref)) return ref;
+  const root = path.posix.normalize(`/${ref}`);
+  return isSharedPath(root) ? root : ref;
+}
+
 /** Rewrite one site-internal path or absolute URL into `locale`. */
 export function localizeHref(href, locale) {
   if (!href) return href;
@@ -198,9 +212,10 @@ export function localizeDocument(doc, { locale, pageId: id }) {
   const html = doc.documentElement;
   html.setAttribute('lang', locale.htmlLang);
 
-  for (const el of doc.querySelectorAll('a[href], link[href], form[action]')) {
-    const attr = el.tagName === 'FORM' ? 'action' : 'href';
-    el.setAttribute(attr, localizeHref(el.getAttribute(attr), locale));
+  for (const attr of ['href', 'src', 'action', 'poster', 'data-poster']) {
+    for (const el of doc.querySelectorAll(`[${attr}]`)) {
+      el.setAttribute(attr, localizeHref(absolutizeSharedRef(el.getAttribute(attr)), locale));
+    }
   }
   for (const meta of doc.querySelectorAll('meta[property="og:url"], meta[name="twitter:url"]')) {
     meta.setAttribute('content', localizeHref(meta.getAttribute('content'), locale));
