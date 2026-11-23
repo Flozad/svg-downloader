@@ -201,14 +201,14 @@ section { padding-block: clamp(72px, 11vw, 128px); position: relative; }
    ═════════════════════════════════════════════════════════════════════════ */
 .nav {
   position: sticky; top: 0; z-index: 40;
-  display: flex; align-items: center; gap: 14px;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 14px;
   padding: 13px 24px;
   background: color-mix(in srgb, var(--paper) 82%, transparent);
   -webkit-backdrop-filter: saturate(140%) blur(14px);
   backdrop-filter: saturate(140%) blur(14px);
   border-bottom: 1px solid var(--line);
 }
-.brand { display: inline-flex; align-items: center; gap: 11px; text-decoration: none; color: var(--ink); }
+.brand { display: inline-flex; align-items: center; gap: 11px; min-width: 0; text-decoration: none; color: var(--ink); }
 .mark { width: 26px; height: 26px; flex: none; }
 .brand strong {
   font-family: var(--display);
@@ -216,6 +216,9 @@ section { padding-block: clamp(72px, 11vw, 128px); position: relative; }
   font-weight: 600;
   font-variation-settings: 'opsz' 18, 'wght' 640;
   letter-spacing: -0.02em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .nav .spacer { flex: 1; }
 .nav-links { display: flex; align-items: center; gap: 2px; }
@@ -227,6 +230,8 @@ section { padding-block: clamp(72px, 11vw, 128px); position: relative; }
   text-decoration: none;
   padding: 7px 11px;
   border-radius: var(--r-node);
+  flex: none;
+  white-space: nowrap;
   transition: color 0.18s ease, background-color 0.18s ease;
 }
 @media (hover: hover) and (pointer: fine) {
@@ -571,9 +576,26 @@ footer { background: var(--paper-2); border-top: 1px solid var(--line-2); }
 /* ═══════════════════════════════════════════════════════════════════════════
    RESPONSIVE
    ═════════════════════════════════════════════════════════════════════════ */
+@media (max-width: 1050px) {
+  /* A single row holds the brand, seven links, the language switcher and the
+     install pill at about 1050px, and shrinking the links below that broke every
+     label mid-word while the row still pushed the document past the viewport. So
+     the first row keeps brand, language and CTA and the links get a row of their
+     own, which pans sideways when it is short of room: the document never gets
+     wider than the viewport and every link stays reachable by touch or Tab. */
+  .nav .spacer { display: none; }
+  .brand { position: relative; flex: 1 1 auto; }
+  .nav-links {
+    order: 1; flex: 1 1 100%; min-width: 0;
+    overflow-x: auto; scrollbar-width: none;
+  }
+  .nav-links::-webkit-scrollbar { display: none; }
+  .lang-switch { flex: none; }
+  .nav .nav-cta { flex: none; }
+}
 @media (max-width: 720px) {
   body { font-size: 16px; }
-  .nav { flex-wrap: wrap; }
+  .nav { flex-wrap: wrap; gap: 8px 12px; padding: 10px 12px; }
   .nav-links { min-width: 0; max-width: 100%; overflow-x: auto; }
   .nav-links .at-only { display: none; }
   .step { grid-template-columns: 1fr; gap: 14px; }
@@ -586,4 +608,16 @@ footer { background: var(--paper-2); border-top: 1px solid var(--line-2); }
 }
 @media (max-width: 480px) {
   .nav-links a { padding: 7px 8px; }
+  /* With the language switcher this far left, a 150px-wide menu would hang off
+     the edge of a 320px screen: let it size to the longest language instead. */
+  .lang-switch > ul { min-width: 0; }
+  /* The wordmark is what does not fit next to the language switcher and the
+     install pill at 320-430px, so the mark carries the brand and the name goes
+     where only assistive tech reads it. */
+  .brand strong {
+    position: absolute;
+    width: 1px; height: 1px;
+    margin: -1px; padding: 0; border: 0;
+    overflow: hidden; clip-path: inset(50%);
+  }
 }
