@@ -1,6 +1,13 @@
 import { describe, expect, it } from 'vitest';
 import { LOCALES, localePath } from '../scripts/i18n/config.mjs';
-import { injectIntoSource, localizeHref, pageId, stripInjected } from '../scripts/i18n/page.mjs';
+import {
+  absolutizeSharedRef,
+  injectIntoSource,
+  localizeDocument,
+  localizeHref,
+  pageId,
+  stripInjected,
+} from '../scripts/i18n/page.mjs';
 import { collectSegments, keyOf } from '../scripts/i18n/segments.mjs';
 
 const parse = (body) =>
@@ -84,6 +91,55 @@ describe('locale paths', () => {
     expect(localizeHref('/features', en)).toBe('/features');
     expect(localePath('features', en)).toBe('/features');
     expect(localePath('', en)).toBe('/');
+  });
+});
+
+describe('shared assets on localized pages', () => {
+  it('rewrites relative asset refs to root-absolute', () => {
+    const doc = parse(
+      [
+        '<link rel="icon" href="icon.svg">',
+        '<link rel="manifest" href="site.webmanifest">',
+        '<link rel="preload" href="fonts/bricolage-var.woff2">',
+        '<link rel="stylesheet" href="style.css">',
+        '<script src="player.js"></script>',
+        '<video src="motion/hero.mp4" poster="motion/hero.webp" data-poster="motion/poster-150.webp"></video>',
+      ].join('')
+    );
+    localizeDocument(doc, { locale: es, pageId: '' });
+    expect(doc.querySelector('link[rel="icon"]').getAttribute('href')).toBe('/icon.svg');
+    expect(doc.querySelector('link[rel="manifest"]').getAttribute('href')).toBe(
+      '/site.webmanifest'
+    );
+    expect(doc.querySelector('link[rel="preload"]').getAttribute('href')).toBe(
+      '/fonts/bricolage-var.woff2'
+    );
+    expect(doc.querySelector('link[rel="stylesheet"]').getAttribute('href')).toBe('/style.css');
+    expect(doc.querySelector('script').getAttribute('src')).toBe('/player.js');
+    const video = doc.querySelector('video');
+    expect(video.getAttribute('src')).toBe('/motion/hero.mp4');
+    expect(video.getAttribute('poster')).toBe('/motion/hero.webp');
+    expect(video.getAttribute('data-poster')).toBe('/motion/poster-150.webp');
+  });
+
+  it('resolves ../ in a shared ref from a nested page to the root', () => {
+    expect(absolutizeSharedRef('../style.css')).toBe('/style.css');
+    expect(absolutizeSharedRef('fonts/bricolage-var.woff2')).toBe('/fonts/bricolage-var.woff2');
+  });
+
+  it('leaves refs that are not shared assets untouched', () => {
+    expect(absolutizeSharedRef('features/x')).toBe('features/x');
+    expect(absolutizeSharedRef('#top')).toBe('#top');
+    expect(absolutizeSharedRef('https://example.com/a.svg')).toBe('https://example.com/a.svg');
+    expect(absolutizeSharedRef('/icon.svg')).toBe('/icon.svg');
+    expect(absolutizeSharedRef('')).toBe('');
+  });
+
+  it('still localizes page links while it rebases assets', () => {
+    const doc = parse('<a href="/features">F</a><link rel="icon" href="icon.svg">');
+    localizeDocument(doc, { locale: es, pageId: '' });
+    expect(doc.querySelector('a').getAttribute('href')).toBe('/es/features');
+    expect(doc.querySelector('link[rel="icon"]').getAttribute('href')).toBe('/icon.svg');
   });
 });
 
