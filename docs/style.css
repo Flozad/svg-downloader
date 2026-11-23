@@ -573,6 +573,8 @@ footer { background: var(--paper-2); border-top: 1px solid var(--line-2); }
    ═════════════════════════════════════════════════════════════════════════ */
 @media (max-width: 720px) {
   body { font-size: 16px; }
+  .nav { flex-wrap: wrap; }
+  .nav-links { min-width: 0; max-width: 100%; overflow-x: auto; }
   .nav-links .at-only { display: none; }
   .step { grid-template-columns: 1fr; gap: 14px; }
   .dial { width: 52px; height: 52px; }
