@@ -11,10 +11,10 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@remotion/cli": "4.0.494",
+    "@remotion/cli": "4.0.518",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
-    "remotion": "4.0.494"
+    "remotion": "4.0.518"
   },
   "devDependencies": {
     "@types/bun": "^1.3.14",
